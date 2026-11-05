@@ -390,6 +390,60 @@ body.menu-open .cursor svg{color:#222}
   .pg-works,.pg-works.two{grid-template-columns:minmax(0,1fr)}
 }
 
+/* 3D studies gallery (dark band inside Pratt page) */
+.d3{background:#141414;color:#EDEDED;padding-block:120px 140px;margin-top:8px}
+.d3-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px 48px;align-items:end;padding-bottom:56px;border-bottom:1px solid #2c2c2c}
+.d3-label{grid-column:1/-1;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8a8a8a}
+.d3-title{font-size:clamp(48px,7.4vw,112px);font-weight:200;letter-spacing:-.06em;line-height:.9;color:#F4F4F4}
+.d3-lead{font-size:15px;color:#a3a3a3;max-width:30em;justify-self:end}
+.d3-count{grid-column:1/-1;font-size:12px;color:#6f6f6f;font-variant-numeric:tabular-nums}
+.d3-list{display:grid;gap:110px;padding-top:72px}
+.d3-work{display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1.45fr);gap:clamp(24px,4vw,64px);align-items:start}
+.d3-cap{position:sticky;top:96px;display:grid;gap:10px;align-content:start}
+.d3-no{font-size:12px;color:#7a7a7a;font-variant-numeric:tabular-nums}
+.d3-cap h4{font-size:clamp(26px,2.6vw,38px);font-weight:300;letter-spacing:-.035em;line-height:1.05;color:#F4F4F4}
+.d3-kind{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#9a9a9a;padding-bottom:14px;border-bottom:1px solid #2c2c2c}
+.d3-cap p{font-size:14px;color:#a3a3a3;line-height:1.7}
+.d3-grid{display:grid;gap:12px}
+.d3-grid.trio{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto auto}
+.d3-grid.trio .d3-ph:first-child{grid-row:1/3;aspect-ratio:auto;min-height:100%}
+.d3-grid.trio .d3-ph:not(:first-child){aspect-ratio:3/2}
+.d3-grid.trio.r .d3-ph:first-child{grid-column:2}
+.d3-grid.trio.r .d3-ph:nth-child(2){grid-column:1;grid-row:1}
+.d3-grid.trio.r .d3-ph:nth-child(3){grid-column:1;grid-row:2}
+.d3-grid.duo{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.d3-grid.duo .d3-ph{aspect-ratio:2/3}
+.d3-grid.wide .d3-ph{aspect-ratio:1.415/1}
+.d3-ph{all:unset;box-sizing:border-box;display:block;position:relative;overflow:hidden;border-radius:3px;background:#1d1d1d;cursor:zoom-in;max-width:100%}
+.d3-ph img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.04);transition:transform 1.4s var(--ease),filter .8s;filter:brightness(.94)}
+.d3-ph:hover img,.d3-ph:focus-visible img{transform:scale(1.09);filter:brightness(1.04)}
+.d3-ph:focus-visible{outline:2px solid #EDEDED;outline-offset:3px}
+.d3-ph.in img{animation:d3in 1.6s var(--ease) both}
+@keyframes d3in{from{transform:scale(1.16)}to{transform:scale(1.04)}}
+.pg-end{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-block:48px 120px;font-size:13px;color:var(--ink-2)}
+.pg-end .link{color:var(--ink);font-size:14px}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:95;background:rgba(10,10,10,.96);display:grid;place-items:center;padding:calc(56px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(56px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.lb-fig{margin:0;display:grid;gap:14px;justify-items:center;max-width:min(1200px,100%)}
+.lb-fig img{max-width:100%;max-height:calc(100vh - 170px);object-fit:contain;border-radius:2px}
+.lb-fig figcaption{display:flex;gap:18px;justify-content:space-between;width:100%;font-size:12px;color:#9a9a9a;letter-spacing:.02em}
+.lb-btn{position:absolute;border:1px solid #3a3a3a;background:transparent;color:#EDEDED;width:48px;height:48px;border-radius:50%;cursor:pointer;font-size:16px;transition:background .3s,color .3s}
+.lb-btn:hover{background:#EDEDED;color:#141414}
+.lb-x{top:calc(16px + env(safe-area-inset-top,0px));right:max(16px,env(safe-area-inset-right,0px))}
+.lb-prev{left:max(16px,env(safe-area-inset-left,0px));top:50%;transform:translateY(-50%)}
+.lb-next{right:max(16px,env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%)}
+body.lb-open .cursor{background:#EDEDED}
+@media (max-width:760px){
+  .d3{padding-block:80px 96px}
+  .d3-head{grid-template-columns:minmax(0,1fr)}
+  .d3-lead{justify-self:start}
+  .d3-work{grid-template-columns:minmax(0,1fr)}
+  .d3-cap{position:static}
+  .d3-list{gap:72px}
+  .lb-prev,.lb-next{top:auto;bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:none}
+}
+
 /* cta + footer */
 .cta{padding-block:160px 120px;text-align:center}
 .cta h2{font-size:clamp(28px,3.6vw,44px);margin-bottom:14px}
@@ -657,7 +711,7 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
       <div class="head rv"><span class="label">Archive</span><h2 class="h2">Before the Career</h2><p class="lead">지금의 작업 방식이 만들어진 시간들이에요. 대학 시절 작품과 인턴십 작업을 따로 모았어요.</p></div>
       <div class="arc-grid">
         <a class="arc rv" href="#university" data-cursor="1">
-          <div class="arc-img"><img data-img="s2" alt="Pratt 스튜디오 리서치 벽"></div>
+          <div class="arc-img"><img src="assets/3d/edged-2.webp" alt="석고 조형 Aesthetic Edged Surface"></div>
           <div class="arc-body"><span class="arc-no">Archive 01</span><h3>Pratt Years</h3><p>Pratt Institute 산업디자인 · 2010 — 2016</p><span class="arrow-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
         </a>
         <a class="arc rv" href="#internship" data-cursor="1">
@@ -758,8 +812,37 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
       <figure><div class="im"><img data-img="s1" alt="디자인 기회 매핑"></div><figcaption>Mapping design opportunities</figcaption></figure>
       <figure><div class="im"><img data-img="s4" alt="스튜디오 크리틱"></div><figcaption>Studio critique</figcaption></figure>
     </div>
-    <div class="pg-sub"><h3>Selected Works</h3><span>대학 시절 작품</span></div>
-    <div class="pg-works"><article class="pw"><div class="im">Image</div><div class="cap">Work 01<span>이미지 준비 중</span></div></article><article class="pw"><div class="im">Image</div><div class="cap">Work 02<span>이미지 준비 중</span></div></article><article class="pw"><div class="im">Image</div><div class="cap">Work 03<span>이미지 준비 중</span></div></article><article class="pw"><div class="im">Image</div><div class="cap">Work 04<span>이미지 준비 중</span></div></article><article class="pw"><div class="im">Image</div><div class="cap">Work 05<span>이미지 준비 중</span></div></article><article class="pw"><div class="im">Image</div><div class="cap">Work 06<span>이미지 준비 중</span></div></article></div>
+    </div></div>
+  <section class="d3" aria-labelledby="d3-title">
+    <div class="wrap"><div class="c">
+      <div class="d3-head">
+        <span class="d3-label">Course — 3D Elements Studies</span>
+        <h3 class="d3-title" id="d3-title">Form, studied<br>by hand.</h3>
+        <p class="d3-lead">석고, 종이, 나무, 아크릴을 손으로 다루며 공간·방향·우선순위·움직임의 원리를 탐구한 3D 조형 수업 작업이에요.</p>
+        <span class="d3-count">5 Works · 10 Photographs</span>
+      </div>
+      <div class="d3-list">
+        <article class="d3-work">
+          <header class="d3-cap"><span class="d3-no">01</span><h4>Organic Convexity</h4><span class="d3-kind">3D Plaster Sculpture</span><p>볼록한 곡면이 서로 이어지고 감싸며 만드는 유기적인 형태를 석고로 표현했어요.</p></header>
+          <div class="d3-grid trio"><button class="d3-ph" type="button" data-lb="0" data-cursor="1" aria-label="석고 조형 Organic Convexity — 세로 구도 크게 보기"><img src="assets/3d/convexity-1.webp" alt="석고 조형 Organic Convexity — 세로 구도" loading="lazy" decoding="async"></button><button class="d3-ph" type="button" data-lb="1" data-cursor="1" aria-label="석고 조형 Organic Convexity — 측면 크게 보기"><img src="assets/3d/convexity-2.webp" alt="석고 조형 Organic Convexity — 측면" loading="lazy" decoding="async"></button><button class="d3-ph" type="button" data-lb="2" data-cursor="1" aria-label="석고 조형 Organic Convexity — 위에서 본 모습 크게 보기"><img src="assets/3d/convexity-3.webp" alt="석고 조형 Organic Convexity — 위에서 본 모습" loading="lazy" decoding="async"></button></div>
+        </article><article class="d3-work">
+          <header class="d3-cap"><span class="d3-no">02</span><h4>Organic Fluidity</h4><span class="d3-kind">3D Paper Sculpture</span><p>끊기지 않고 이어지는 종이 띠로 흐르는 듯한 움직임을 만들었어요. 바닥에 놓인 형태와 공중에 매단 형태로 구성했어요.</p></header>
+          <div class="d3-grid duo"><button class="d3-ph" type="button" data-lb="3" data-cursor="1" aria-label="종이 조형 Organic Fluidity — 바닥에 놓인 형태 크게 보기"><img src="assets/3d/fluidity-1.webp" alt="종이 조형 Organic Fluidity — 바닥에 놓인 형태" loading="lazy" decoding="async"></button><button class="d3-ph" type="button" data-lb="4" data-cursor="1" aria-label="종이 조형 Organic Fluidity — 매달린 형태 크게 보기"><img src="assets/3d/fluidity-2.webp" alt="종이 조형 Organic Fluidity — 매달린 형태" loading="lazy" decoding="async"></button></div>
+        </article><article class="d3-work">
+          <header class="d3-cap"><span class="d3-no">03</span><h4>Space Analysis Box</h4><span class="d3-kind">Spatial Study</span><p>상자 안에 면과 선을 매달아 공간의 깊이와 요소 사이의 관계를 분석했어요.</p></header>
+          <div class="d3-grid wide"><button class="d3-ph" type="button" data-lb="5" data-cursor="1" aria-label="공간 분석 박스 — 상자 안에 매달린 색 면들 크게 보기"><img src="assets/3d/space-box.webp" alt="공간 분석 박스 — 상자 안에 매달린 색 면들" loading="lazy" decoding="async"></button></div>
+        </article><article class="d3-work">
+          <header class="d3-cap"><span class="d3-no">04</span><h4>3D Elements Studies</h4><span class="d3-kind">Space · Direction · Priority · Movement</span><p>공간, 방향, 우선순위, 움직임의 원리를 하나의 구성 안에서 실험했어요.</p></header>
+          <div class="d3-grid wide"><button class="d3-ph" type="button" data-lb="6" data-cursor="1" aria-label="3D 요소 연구 — 받침 위의 곡면과 선, 나무 형태 크게 보기"><img src="assets/3d/elements.webp" alt="3D 요소 연구 — 받침 위의 곡면과 선, 나무 형태" loading="lazy" decoding="async"></button></div>
+        </article><article class="d3-work">
+          <header class="d3-cap"><span class="d3-no">05</span><h4>Aesthetic Edged Surface</h4><span class="d3-kind">3D Plaster Sculpture</span><p>구를 날카로운 엣지로 잘라 내, 곡면과 단면이 만나는 긴장감을 석고로 표현했어요.</p></header>
+          <div class="d3-grid trio r"><button class="d3-ph" type="button" data-lb="7" data-cursor="1" aria-label="석고 조형 Aesthetic Edged Surface — 정면 크게 보기"><img src="assets/3d/edged-1.webp" alt="석고 조형 Aesthetic Edged Surface — 정면" loading="lazy" decoding="async"></button><button class="d3-ph" type="button" data-lb="8" data-cursor="1" aria-label="석고 조형 Aesthetic Edged Surface — 근접 크게 보기"><img src="assets/3d/edged-2.webp" alt="석고 조형 Aesthetic Edged Surface — 근접" loading="lazy" decoding="async"></button><button class="d3-ph" type="button" data-lb="9" data-cursor="1" aria-label="석고 조형 Aesthetic Edged Surface — 측면 크게 보기"><img src="assets/3d/edged-3.webp" alt="석고 조형 Aesthetic Edged Surface — 측면" loading="lazy" decoding="async"></button></div>
+        </article>
+      </div>
+    </div></div>
+  </section>
+  <div class="wrap"><div class="c">
+    <div class="pg-end"><span>Pratt Institute — Industrial Design</span><button class="link" type="button" data-close>메인으로 돌아가기 ↗</button></div>
   </div></div>
 </div>
 
@@ -774,6 +857,13 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
     <div class="pg-sub"><h3>Selected Works</h3><span>인턴십 작업</span></div>
     <div class="pg-works two"><article class="pw"><div class="im">Image</div><div class="cap">Work 01<span>이미지 준비 중</span></div></article><article class="pw"><div class="im">Image</div><div class="cap">Work 02<span>이미지 준비 중</span></div></article><article class="pw"><div class="im">Image</div><div class="cap">Work 03<span>이미지 준비 중</span></div></article><article class="pw"><div class="im">Image</div><div class="cap">Work 04<span>이미지 준비 중</span></div></article></div>
   </div></div>
+</div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="작품 크게 보기" hidden>
+  <figure class="lb-fig"><img id="lb-img" alt=""><figcaption><span id="lb-cap"></span><span id="lb-pos"></span></figcaption></figure>
+  <button class="lb-btn lb-x" type="button" id="lb-x" aria-label="닫기">✕</button>
+  <button class="lb-btn lb-prev" type="button" id="lb-prev" aria-label="이전 사진">←</button>
+  <button class="lb-btn lb-next" type="button" id="lb-next" aria-label="다음 사진">→</button>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -1181,6 +1271,28 @@ if(!reduce){
     }
     requestAnimationFrame(wloop);
   })(performance.now());
+}
+
+/* ---------- 3D 작품 라이트박스 ---------- */
+const LB=[{"src": "assets/3d/convexity-1.webp", "alt": "석고 조형 Organic Convexity — 세로 구도", "cap": "Organic Convexity — 3D Plaster Sculpture"}, {"src": "assets/3d/convexity-2.webp", "alt": "석고 조형 Organic Convexity — 측면", "cap": "Organic Convexity — 3D Plaster Sculpture"}, {"src": "assets/3d/convexity-3.webp", "alt": "석고 조형 Organic Convexity — 위에서 본 모습", "cap": "Organic Convexity — 3D Plaster Sculpture"}, {"src": "assets/3d/fluidity-1.webp", "alt": "종이 조형 Organic Fluidity — 바닥에 놓인 형태", "cap": "Organic Fluidity — 3D Paper Sculpture"}, {"src": "assets/3d/fluidity-2.webp", "alt": "종이 조형 Organic Fluidity — 매달린 형태", "cap": "Organic Fluidity — 3D Paper Sculpture"}, {"src": "assets/3d/space-box.webp", "alt": "공간 분석 박스 — 상자 안에 매달린 색 면들", "cap": "Space Analysis Box — Spatial Study"}, {"src": "assets/3d/elements.webp", "alt": "3D 요소 연구 — 받침 위의 곡면과 선, 나무 형태", "cap": "3D Elements Studies — Space · Direction · Priority · Movement"}, {"src": "assets/3d/edged-1.webp", "alt": "석고 조형 Aesthetic Edged Surface — 정면", "cap": "Aesthetic Edged Surface — 3D Plaster Sculpture"}, {"src": "assets/3d/edged-2.webp", "alt": "석고 조형 Aesthetic Edged Surface — 근접", "cap": "Aesthetic Edged Surface — 3D Plaster Sculpture"}, {"src": "assets/3d/edged-3.webp", "alt": "석고 조형 Aesthetic Edged Surface — 측면", "cap": "Aesthetic Edged Surface — 3D Plaster Sculpture"}];
+const lb=document.getElementById('lb'), lbImg=document.getElementById('lb-img');
+let lbI=0, lbRet=null;
+function lbShow(i){ lbI=(i+LB.length)%LB.length; const d=LB[lbI]; lbImg.src=d.src; lbImg.alt=d.alt; document.getElementById('lb-cap').textContent=d.cap; document.getElementById('lb-pos').textContent=String(lbI+1).padStart(2,'0')+' / '+String(LB.length).padStart(2,'0');
+  if(window.gsap&&!reduce) gsap.fromTo(lbImg,{opacity:0,scale:.97},{opacity:1,scale:1,duration:.6,ease:'expo.out'}); }
+function lbOpen(i){ lbRet=document.activeElement; lb.hidden=false; document.body.classList.add('lb-open'); lbShow(i); document.getElementById('lb-x').focus(); }
+function lbClose(){ lb.hidden=true; document.body.classList.remove('lb-open'); if(lbRet&&lbRet.focus) lbRet.focus(); }
+document.querySelectorAll('[data-lb]').forEach(b=>b.addEventListener('click',()=>lbOpen(+b.dataset.lb)));
+document.getElementById('lb-x').addEventListener('click',lbClose);
+document.getElementById('lb-prev').addEventListener('click',()=>lbShow(lbI-1));
+document.getElementById('lb-next').addEventListener('click',()=>lbShow(lbI+1));
+lb.addEventListener('click',e=>{ if(e.target===lb) lbClose(); });
+addEventListener('keydown',e=>{ if(lb.hidden) return; if(e.key==='Escape'){e.stopImmediatePropagation();lbClose();} if(e.key==='ArrowRight') lbShow(lbI+1); if(e.key==='ArrowLeft') lbShow(lbI-1); },true);
+let lbX=null; lb.addEventListener('touchstart',e=>{lbX=e.touches[0].clientX;},{passive:true});
+lb.addEventListener('touchend',e=>{ if(lbX===null) return; const dx=e.changedTouches[0].clientX-lbX; if(Math.abs(dx)>50) lbShow(lbI+(dx<0?1:-1)); lbX=null; });
+if('IntersectionObserver' in window && !reduce){
+  const pu=document.getElementById('pg-university');
+  const io3=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io3.unobserve(e.target); } }),{root:pu,threshold:.15});
+  document.querySelectorAll('.d3-ph').forEach(el=>io3.observe(el));
 }
 
 /* ---------- 스크롤 모션 ---------- */
