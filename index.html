@@ -444,6 +444,36 @@ body.lb-open .cursor{background:#EDEDED}
   .lb-prev,.lb-next{top:auto;bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:none}
 }
 
+/* internship (Karim Rashid) */
+.krp{display:grid;gap:28px;padding-block:72px;border-top:1px solid var(--line)}
+.krp + .krp{margin-top:24px}
+.kr-ph{background:var(--line)}
+.kr-hero{aspect-ratio:1.42/1}
+.kr-info{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr) minmax(0,.8fr);gap:clamp(20px,3vw,48px);align-items:start;padding-block:12px 8px}
+.kr-no{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);margin-bottom:12px}
+.kr-title h3{font-size:clamp(34px,4.4vw,64px);font-weight:250;letter-spacing:-.05em;line-height:.95}
+.kr-desc{font-size:15px;line-height:1.75;color:var(--ink-soft);padding-top:26px}
+.kr-spec{margin:0;border-top:1px solid var(--line-2);margin-top:26px}
+.kr-spec div{display:grid;grid-template-columns:80px minmax(0,1fr);gap:10px;padding-block:9px;border-bottom:1px solid var(--line)}
+.kr-spec dt{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.kr-spec dd{margin:0;font-size:13.5px}
+.kr-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.kr-pair .kr-ph{aspect-ratio:1/1}
+.kr-pair .kr-ph img{object-position:center 88%}
+.kr-product{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.kr-product .kr-ph{aspect-ratio:3/4;background:#DCDDDC}
+.kr-product .kr-ph img{object-fit:contain}
+.kr-word{background:#DCDDDC;border-radius:3px;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(20px,3vw,40px);overflow:hidden}
+.kr-word span{white-space:nowrap;font-size:clamp(56px,10vw,176px);font-weight:200;letter-spacing:-.07em;line-height:.8;color:var(--ink)}
+.kr-word small{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#6d6d6d}
+@media (max-width:760px){
+  .krp{padding-block:48px}
+  .kr-info{grid-template-columns:minmax(0,1fr);gap:8px}
+  .kr-desc,.kr-spec{padding-top:10px;margin-top:10px}
+  .kr-word{aspect-ratio:3/4}
+  .kr-word span{font-size:12.5vw}
+}
+
 /* cta + footer */
 .cta{padding-block:160px 120px;text-align:center}
 .cta h2{font-size:clamp(28px,3.6vw,44px);margin-bottom:14px}
@@ -629,7 +659,7 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
       <div class="about-right rv">
         <div class="thumb" data-cursor><canvas class="art" data-scene="1"></canvas><span class="arrow-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
         <ul class="points">
-          <li><i>+</i><span>미국에서 약 8년간 고교와 Pratt Institute 산업디자인 학위 과정을 마치고 현지 취업까지 경험했어요. 해외 법인·협력사·글로벌 전시 파트너와 영어로 직접 소통합니다.</span></li>
+          <li><i>+</i><span>미국에서 약 8년간 고교와 Pratt Institute 산업디자인 학위 과정을 마치고, Karim Rashid 스튜디오 인턴십과 현지 취업까지 경험했어요. 해외 법인·협력사·글로벌 전시 파트너와 영어로 직접 소통합니다.</span></li>
           <li><i>+</i><span>한국암웨이, 이공이공, 가온그룹을 거치며 제품·브랜드·디지털 콘텐츠 전 영역을 다뤘어요.</span></li>
         </ul>
       </div>
@@ -715,8 +745,8 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
           <div class="arc-body"><span class="arc-no">Archive 01</span><h3>Pratt Years</h3><p>Pratt Institute 산업디자인 · 2010 — 2016</p><span class="arrow-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
         </a>
         <a class="arc rv" href="#internship" data-cursor="1">
-          <div class="arc-img blank" aria-hidden="true">Intern.</div>
-          <div class="arc-body"><span class="arc-no">Archive 02</span><h3>Internship</h3><p>Coming soon · 작업 정리 중</p><span class="arrow-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
+          <div class="arc-img"><img src="assets/intern/ottawa-wall.webp" alt="BoConcept Ottawa 사이드 테이블이 놓인 공간"></div>
+          <div class="arc-body"><span class="arc-no">Archive 02</span><h3>Internship</h3><p>Karim Rashid Studio, New York · Furniture · Lighting</p><span class="arrow-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
         </a>
       </div>
     </div>
@@ -851,11 +881,31 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
   <div class="wrap"><div class="c">
     <header class="pg-head">
       <h2 class="pg-title" id="pi-title">Internship</h2>
-      <div class="pg-meta"><span><b>Coming soon</b></span><span>작업 정리 중</span></div>
+      <div class="pg-meta"><span><b>Karim Rashid Studio</b>, New York</span><span>Design Intern</span><span>Furniture · Lighting</span></div>
     </header>
-    <div class="pg-intro"><span class="label">About this chapter</span><p class="pg-lead">인턴십 기간에 진행한 작업들을 정리하고 있어요. 곧 이 페이지에서 소개할게요.</p></div>
-    <div class="pg-sub"><h3>Selected Works</h3><span>인턴십 작업</span></div>
-    <div class="pg-works two"><article class="pw"><div class="im">Image</div><div class="cap">Work 01<span>이미지 준비 중</span></div></article><article class="pw"><div class="im">Image</div><div class="cap">Work 02<span>이미지 준비 중</span></div></article><article class="pw"><div class="im">Image</div><div class="cap">Work 03<span>이미지 준비 중</span></div></article><article class="pw"><div class="im">Image</div><div class="cap">Work 04<span>이미지 준비 중</span></div></article></div>
+    <div class="pg-intro"><span class="label">About this chapter</span><p class="pg-lead">뉴욕의 Karim Rashid 스튜디오에서 인턴으로 일하며, 실제 브랜드와 함께 제품화된 가구·조명 프로젝트에 참여했어요. 스튜디오의 디자인이 브랜드의 제품이 되는 과정을 가까이에서 경험한 시간이에요.</p></div>
+
+    <article class="krp">
+      <button class="d3-ph kr-ph kr-hero" type="button" data-lb="10" data-cursor="1" aria-label="BoConcept Ottawa 사이드 테이블 — 벽 선반과 함께 연출된 공간 크게 보기"><img src="assets/intern/ottawa-wall.webp" alt="BoConcept Ottawa 사이드 테이블 — 벽 선반과 함께 연출된 공간" loading="lazy" decoding="async"></button>
+      <div class="kr-info">
+        <div class="kr-title"><span class="kr-no">01 — BoConcept</span><h3>Ottawa<br>Side Table</h3></div>
+        <p class="kr-desc">BoConcept Ottawa 컬렉션의 사이드 테이블이에요. 얇은 금속 판을 접어 상판과 받침이 하나로 이어지는 형태로, 받침을 소파 좌석 아래로 밀어 넣어 쓸 수 있어요.</p>
+        <dl class="kr-spec"><div><dt>Brand</dt><dd>BoConcept</dd></div><div><dt>Category</dt><dd>Furniture · Side Table</dd></div><div><dt>Studio</dt><dd>Karim Rashid</dd></div></dl>
+      </div>
+      <div class="kr-pair"><button class="d3-ph kr-ph " type="button" data-lb="11" data-cursor="1" aria-label="Ottawa 사이드 테이블 — 소파 옆에 놓인 모습 크게 보기"><img src="assets/intern/ottawa-lounge-1.webp" alt="Ottawa 사이드 테이블 — 소파 옆에 놓인 모습" loading="lazy" decoding="async"></button><button class="d3-ph kr-ph " type="button" data-lb="12" data-cursor="1" aria-label="Ottawa 사이드 테이블 — 소파 좌석 아래로 밀어 넣은 모습 크게 보기"><img src="assets/intern/ottawa-lounge-2.webp" alt="Ottawa 사이드 테이블 — 소파 좌석 아래로 밀어 넣은 모습" loading="lazy" decoding="async"></button></div>
+    </article>
+
+    <article class="krp">
+      <button class="d3-ph kr-ph kr-hero" type="button" data-lb="13" data-cursor="1" aria-label="Kundalini TOOT 테이블 램프 — 인테리어 연출 크게 보기"><img src="assets/intern/toot-interior.webp" alt="Kundalini TOOT 테이블 램프 — 인테리어 연출" loading="lazy" decoding="async"></button>
+      <div class="kr-info">
+        <div class="kr-title"><span class="kr-no">02 — Kundalini</span><h3>TOOT<br>Table Lamp</h3></div>
+        <p class="kr-desc">Kundalini의 TOOT 테이블 램프예요. 길이와 색이 다른 원통들이 모여 하나의 조형을 이루고, 그중 일부 원통이 빛을 내요.</p>
+        <dl class="kr-spec"><div><dt>Brand</dt><dd>Kundalini</dd></div><div><dt>Year</dt><dd>2017</dd></div><div><dt>Category</dt><dd>Lighting · Table Lamp</dd></div><div><dt>Studio</dt><dd>Karim Rashid</dd></div></dl>
+      </div>
+      <div class="kr-product"><button class="d3-ph kr-ph " type="button" data-lb="14" data-cursor="1" aria-label="Kundalini TOOT 테이블 램프 — 제품 단독 컷 크게 보기"><img src="assets/intern/toot-product.webp" alt="Kundalini TOOT 테이블 램프 — 제품 단독 컷" loading="lazy" decoding="async"></button><div class="kr-word" aria-hidden="true"><span>TOOT</span><small>Kundalini — 2017</small></div></div>
+    </article>
+
+    <div class="pg-end"><span>Karim Rashid Studio — New York</span><button class="link" type="button" data-close>메인으로 돌아가기 ↗</button></div>
   </div></div>
 </div>
 
@@ -1054,6 +1104,8 @@ const JOURNEY=[
    pts:['국내 브랜드 약 10개사 아마존 북미 입점용 디자인','이미지 A/B 개선으로 CTR 약 15%·CVR 약 10% 향상','제품 콘셉트 촬영 기획·디렉팅, 프리랜서 디자이너 관리']},
   {co:'한국암웨이 (Amway Korea)', date:'2018.03 — 2020.03 · 2년', role:'R&D 아시아 이노베이션센터 · 산업디자이너', tags:['Industrial','Package'], w:8,
    pts:['아티스트리·앳모스피어 신제품 기획·디자인·개발','스마트 디퓨저 디자인권 등록 (제30-1007738호)','오픈 이노베이션 컨셉 3건 채택, 자재·패키징 원가 약 5% 절감']},
+  {co:'Karim Rashid Studio, New York', date:'Internship', role:'디자인 인턴 · 가구·조명 프로젝트 참여', tags:['Furniture','Lighting'], w:null, page:'internship', imgs:['assets/intern/ottawa-wall.webp','assets/intern/toot-interior.webp','assets/intern/toot-product.webp'],
+   pts:['BoConcept Ottawa 사이드 테이블 프로젝트 참여','Kundalini TOOT 테이블 램프(2017) 프로젝트 참여']},
   {co:'Pratt Institute, New York', date:'2010.08 — 2016.06', role:'산업디자인 학사 (BID, Industrial Design)', tags:['Education','USA'], w:null, page:'university', imgs:['s3','s2','s4'],
    pts:['미국 오리건·메릴랜드·뉴욕 약 8년 거주 (고교·대학·현지 취업)','영어 비즈니스 상급 (회화·독해·작문)']},
 ];
@@ -1077,9 +1129,9 @@ JOURNEY.forEach((j,i)=>{
       <div class="tags">${j.tags.map(t=>`<span class="chip">${t}</span>`).join('')}</div>
     </button>
     <div class="jpanel" id="${pid}" role="region" aria-labelledby="jb${i}"><div><div class="jin">
-      <div class="jthumbs">${j.imgs?j.imgs.map(k=>`<div class="t"><img src="${IMGS[k]}" alt="" style="width:100%;height:100%;object-fit:cover;filter:grayscale(1)"></div>`).join(''):[0,1,2].map(()=>'<div class="t"><canvas class="art"></canvas></div>').join('')}</div>
+      <div class="jthumbs">${j.imgs?j.imgs.map(k=>`<div class="t"><img src="${IMGS[k]||k}" alt="" style="width:100%;height:100%;object-fit:cover;filter:grayscale(1)"></div>`).join(''):[0,1,2].map(()=>'<div class="t"><canvas class="art"></canvas></div>').join('')}</div>
       <ul class="jpts">${j.pts.map(p=>`<li>${p}</li>`).join('')}</ul>
-      ${j.page?`<a class="arrow-btn" href="#${j.page}" aria-label="Pratt 작품 페이지 보기">${ARROW}</a>`:j.w===null?'<span></span>':`<button class="arrow-btn" type="button" data-open="${j.w}" aria-label="${WORKS[j.w].title} 프로젝트 보기">${ARROW}</button>`}
+      ${j.page?`<a class="arrow-btn" href="#${j.page}" aria-label="${j.page==='internship'?'인턴 작업 페이지 보기':'Pratt 작품 페이지 보기'}">${ARROW}</a>`:j.w===null?'<span></span>':`<button class="arrow-btn" type="button" data-open="${j.w}" aria-label="${WORKS[j.w].title} 프로젝트 보기">${ARROW}</button>`}
     </div></div></div>`;
   jl.appendChild(row);
   row.querySelectorAll('.t canvas').forEach((c,k)=>addArt(c,'scene',SCENES[k]));
@@ -1274,12 +1326,13 @@ if(!reduce){
 }
 
 /* ---------- 3D 작품 라이트박스 ---------- */
-const LB=[{"src": "assets/3d/convexity-1.webp", "alt": "석고 조형 Organic Convexity — 세로 구도", "cap": "Organic Convexity — 3D Plaster Sculpture"}, {"src": "assets/3d/convexity-2.webp", "alt": "석고 조형 Organic Convexity — 측면", "cap": "Organic Convexity — 3D Plaster Sculpture"}, {"src": "assets/3d/convexity-3.webp", "alt": "석고 조형 Organic Convexity — 위에서 본 모습", "cap": "Organic Convexity — 3D Plaster Sculpture"}, {"src": "assets/3d/fluidity-1.webp", "alt": "종이 조형 Organic Fluidity — 바닥에 놓인 형태", "cap": "Organic Fluidity — 3D Paper Sculpture"}, {"src": "assets/3d/fluidity-2.webp", "alt": "종이 조형 Organic Fluidity — 매달린 형태", "cap": "Organic Fluidity — 3D Paper Sculpture"}, {"src": "assets/3d/space-box.webp", "alt": "공간 분석 박스 — 상자 안에 매달린 색 면들", "cap": "Space Analysis Box — Spatial Study"}, {"src": "assets/3d/elements.webp", "alt": "3D 요소 연구 — 받침 위의 곡면과 선, 나무 형태", "cap": "3D Elements Studies — Space · Direction · Priority · Movement"}, {"src": "assets/3d/edged-1.webp", "alt": "석고 조형 Aesthetic Edged Surface — 정면", "cap": "Aesthetic Edged Surface — 3D Plaster Sculpture"}, {"src": "assets/3d/edged-2.webp", "alt": "석고 조형 Aesthetic Edged Surface — 근접", "cap": "Aesthetic Edged Surface — 3D Plaster Sculpture"}, {"src": "assets/3d/edged-3.webp", "alt": "석고 조형 Aesthetic Edged Surface — 측면", "cap": "Aesthetic Edged Surface — 3D Plaster Sculpture"}];
+const LB=[{"src": "assets/3d/convexity-1.webp", "alt": "석고 조형 Organic Convexity — 세로 구도", "cap": "Organic Convexity — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/3d/convexity-2.webp", "alt": "석고 조형 Organic Convexity — 측면", "cap": "Organic Convexity — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/3d/convexity-3.webp", "alt": "석고 조형 Organic Convexity — 위에서 본 모습", "cap": "Organic Convexity — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/3d/fluidity-1.webp", "alt": "종이 조형 Organic Fluidity — 바닥에 놓인 형태", "cap": "Organic Fluidity — 3D Paper Sculpture", "g": "u"}, {"src": "assets/3d/fluidity-2.webp", "alt": "종이 조형 Organic Fluidity — 매달린 형태", "cap": "Organic Fluidity — 3D Paper Sculpture", "g": "u"}, {"src": "assets/3d/space-box.webp", "alt": "공간 분석 박스 — 상자 안에 매달린 색 면들", "cap": "Space Analysis Box — Spatial Study", "g": "u"}, {"src": "assets/3d/elements.webp", "alt": "3D 요소 연구 — 받침 위의 곡면과 선, 나무 형태", "cap": "3D Elements Studies — Space · Direction · Priority · Movement", "g": "u"}, {"src": "assets/3d/edged-1.webp", "alt": "석고 조형 Aesthetic Edged Surface — 정면", "cap": "Aesthetic Edged Surface — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/3d/edged-2.webp", "alt": "석고 조형 Aesthetic Edged Surface — 근접", "cap": "Aesthetic Edged Surface — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/3d/edged-3.webp", "alt": "석고 조형 Aesthetic Edged Surface — 측면", "cap": "Aesthetic Edged Surface — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/intern/ottawa-wall.webp", "alt": "BoConcept Ottawa 사이드 테이블 — 벽 선반과 함께 연출된 공간", "cap": "Ottawa Side Table — BoConcept", "g": "i"}, {"src": "assets/intern/ottawa-lounge-1.webp", "alt": "Ottawa 사이드 테이블 — 소파 옆에 놓인 모습", "cap": "Ottawa Side Table — BoConcept", "g": "i"}, {"src": "assets/intern/ottawa-lounge-2.webp", "alt": "Ottawa 사이드 테이블 — 소파 좌석 아래로 밀어 넣은 모습", "cap": "Ottawa Side Table — BoConcept", "g": "i"}, {"src": "assets/intern/toot-interior.webp", "alt": "Kundalini TOOT 테이블 램프 — 인테리어 연출", "cap": "TOOT Table Lamp — Kundalini, 2017", "g": "i"}, {"src": "assets/intern/toot-product.webp", "alt": "Kundalini TOOT 테이블 램프 — 제품 단독 컷", "cap": "TOOT Table Lamp — Kundalini, 2017", "g": "i"}];
 const lb=document.getElementById('lb'), lbImg=document.getElementById('lb-img');
 let lbI=0, lbRet=null;
-function lbShow(i){ lbI=(i+LB.length)%LB.length; const d=LB[lbI]; lbImg.src=d.src; lbImg.alt=d.alt; document.getElementById('lb-cap').textContent=d.cap; document.getElementById('lb-pos').textContent=String(lbI+1).padStart(2,'0')+' / '+String(LB.length).padStart(2,'0');
+let lbSet=[];
+function lbShow(n){ lbI=(n+lbSet.length)%lbSet.length; const d=LB[lbSet[lbI]]; lbImg.src=d.src; lbImg.alt=d.alt; document.getElementById('lb-cap').textContent=d.cap; document.getElementById('lb-pos').textContent=String(lbI+1).padStart(2,'0')+' / '+String(lbSet.length).padStart(2,'0');
   if(window.gsap&&!reduce) gsap.fromTo(lbImg,{opacity:0,scale:.97},{opacity:1,scale:1,duration:.6,ease:'expo.out'}); }
-function lbOpen(i){ lbRet=document.activeElement; lb.hidden=false; document.body.classList.add('lb-open'); lbShow(i); document.getElementById('lb-x').focus(); }
+function lbOpen(i){ const g=LB[i].g; lbSet=LB.map((d,k)=>d.g===g?k:-1).filter(k=>k>=0); lbRet=document.activeElement; lb.hidden=false; document.body.classList.add('lb-open'); lbShow(lbSet.indexOf(i)); document.getElementById('lb-x').focus(); }
 function lbClose(){ lb.hidden=true; document.body.classList.remove('lb-open'); if(lbRet&&lbRet.focus) lbRet.focus(); }
 document.querySelectorAll('[data-lb]').forEach(b=>b.addEventListener('click',()=>lbOpen(+b.dataset.lb)));
 document.getElementById('lb-x').addEventListener('click',lbClose);
@@ -1292,7 +1345,10 @@ lb.addEventListener('touchend',e=>{ if(lbX===null) return; const dx=e.changedTou
 if('IntersectionObserver' in window && !reduce){
   const pu=document.getElementById('pg-university');
   const io3=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io3.unobserve(e.target); } }),{root:pu,threshold:.15});
-  document.querySelectorAll('.d3-ph').forEach(el=>io3.observe(el));
+  pu.querySelectorAll('.d3-ph').forEach(el=>io3.observe(el));
+  const pi=document.getElementById('pg-internship');
+  const io4=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io4.unobserve(e.target); } }),{root:pi,threshold:.15});
+  pi.querySelectorAll('.d3-ph').forEach(el=>io4.observe(el));
 }
 
 /* ---------- 스크롤 모션 ---------- */
