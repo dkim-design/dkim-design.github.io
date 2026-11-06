@@ -537,6 +537,92 @@ body.lb-open .cursor{background:#EDEDED}
   .kr-credit{text-align:left;margin-top:-8px}
 }
 
+/* LinkFit project page (brand: dark + lime) */
+.lf{--lime:#C8FF00;background:#0B0B0B;color:#EDEDED;padding-block:110px 130px;margin-top:56px}
+.lf-ch{display:grid;gap:48px}
+.lf-ch + .lf-ch{margin-top:140px;padding-top:110px;border-top:1px solid #222}
+.lf-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px 48px;align-items:end}
+.lf-no{grid-column:1/-1;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--lime)}
+.lf-title{font-size:clamp(44px,6.4vw,96px);font-weight:200;letter-spacing:-.06em;line-height:.92;color:#F4F4F4}
+.lf-title em{font-style:normal;color:var(--lime)}
+.lf-lead{font-size:15px;line-height:1.75;color:#A6A6A6;max-width:32em;justify-self:end;margin:0}
+.lf-tags{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px}
+.lf-tags span{font-size:12px;border:1px solid #2D2D2D;border-radius:999px;padding:6px 12px;color:#CFCFCF}
+.lf-browser{border:1px solid #2D2D2D;border-radius:14px;overflow:hidden;background:#121212;box-shadow:0 50px 90px -50px rgba(200,255,0,.18)}
+.lf-bar{display:flex;align-items:center;gap:7px;padding:12px 16px;border-bottom:1px solid #222;background:#161616}
+.lf-bar i{width:10px;height:10px;border-radius:50%;background:#333}
+.lf-bar span{margin-left:10px;font-size:11px;color:#7a7a7a;letter-spacing:.04em}
+.lf-view{height:clamp(320px,64vh,660px);overflow-y:auto;scrollbar-width:none;overscroll-behavior:contain;outline:none}
+.lf-view::-webkit-scrollbar{display:none}
+.lf-view:focus-visible{box-shadow:inset 0 0 0 2px var(--lime)}
+.lf-view img{display:block;width:100%;height:auto}
+.lf-hint{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:11.5px;color:#7a7a7a;margin-top:14px}
+.lf-phones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,3vw,40px);padding-inline:clamp(0px,5vw,80px)}
+.lf-phone{margin:0;display:grid;gap:12px;justify-items:center}
+.lf-phone .scr{width:100%;max-width:300px;aspect-ratio:390/844;border-radius:clamp(18px,3vw,38px);border:clamp(4px,.7vw,8px) solid #1C1C1C;box-shadow:0 0 0 1px #2D2D2D;overflow:hidden;background:#000}
+.lf-phone .scr img{width:100%;height:100%;object-fit:cover;display:block}
+.lf-phone figcaption{font-size:12px;color:#8a8a8a;text-align:center}
+.lf-wide{display:grid;gap:28px}
+.lf-wide figure{margin:0;display:grid;gap:12px}
+.lf-wide img{width:100%;border-radius:12px;border:1px solid #222;display:block}
+.lf-wide figcaption{font-size:12px;color:#8a8a8a}
+.lf-ds{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.lf-card{background:#151515;border:1px solid #2D2D2D;border-radius:16px;padding:20px;display:grid;gap:14px;align-content:start}
+.lf-card h5{margin:0;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8a8a8a;font-weight:500}
+.lf-card p{font-size:12.5px;color:#A6A6A6;line-height:1.65;margin:0}
+.lf-sw{display:flex;gap:6px}
+.lf-sw i{width:34px;height:34px;border-radius:9px;box-shadow:inset 0 0 0 1px #2D2D2D}
+.lf-btn{display:block;text-align:center;border-radius:999px;padding:10px 8px;font-size:12.5px;font-weight:600}
+.lf-btn.p{background:var(--lime);color:#0B0B0B}
+.lf-btn.s{background:#2A2A2A;color:#EDEDED}
+.lf-btn.o{box-shadow:inset 0 0 0 1px var(--lime);color:var(--lime)}
+.lf-row2{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.lf-chips{display:flex;flex-wrap:wrap;gap:5px}
+.lf-chips span{font-size:11px;font-weight:600;border-radius:999px;padding:4px 9px;background:#2A3305;color:var(--lime)}
+.lf-chips span.w{background:#3A2A08;color:#FFB020}
+.lf-chips span.g{background:#123222;color:#3ECF8E}
+.lf-chips span.n{background:#2A2A2A;color:#AAAAAA}
+.lf-keys{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,3.4vw,48px);padding-top:24px}
+.lf-key{display:grid;gap:14px;align-content:start}
+.lf-key h5{margin:6px 0 0;font-size:clamp(18px,1.6vw,22px);font-weight:400;color:#F4F4F4;letter-spacing:-.02em}
+.lf-key h5 span{color:var(--lime);font-size:12px;margin-right:10px;font-variant-numeric:tabular-nums}
+.lf-key p{font-size:13.5px;color:#A6A6A6;margin:0;line-height:1.7}
+.lf .d3-ph{background:transparent;border-radius:clamp(20px,2.4vw,34px)}
+.lf .d3-ph img{object-fit:contain;transform:none;filter:none}
+.lf .d3-ph:hover img,.lf .d3-ph:focus-visible img{transform:translateY(-6px);filter:none}
+.lf .d3-ph.in img{animation:none}
+.lf .d3-ph:focus-visible{outline:2px solid var(--lime)}
+.lf-key .d3-ph{aspect-ratio:520/1118;width:100%;max-width:320px}
+.lf-gal{display:grid;gap:22px;padding-top:40px}
+.lf-galhead{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.lf-galhead h4{margin:0;font-size:clamp(26px,2.6vw,36px);font-weight:250;letter-spacing:-.04em;color:#F4F4F4}
+.lf-tabs{display:flex;gap:6px;flex-wrap:wrap}
+.lf-tabs button{border:1px solid #2D2D2D;background:transparent;color:#CFCFCF;border-radius:999px;padding:8px 13px;font:400 12.5px/1 var(--f);cursor:pointer;transition:background .3s,color .3s,border-color .3s}
+.lf-tabs button:hover{border-color:#5a5a5a}
+.lf-tabs button b{font-weight:500;color:#6f6f6f;margin-left:6px}
+.lf-tabs button[aria-pressed="true"]{background:var(--lime);color:#0B0B0B;border-color:var(--lime)}
+.lf-tabs button[aria-pressed="true"] b{color:#3b4a00}
+.lf-flow{display:flex;gap:18px;overflow-x:auto;padding-bottom:18px;scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:#333 transparent;cursor:grab}
+.lf-scr{flex:0 0 clamp(150px,15vw,196px);display:grid;gap:10px;scroll-snap-align:start}
+.lf-scr.off{display:none}
+.lf-scr .d3-ph{aspect-ratio:520/1118}
+.lf-scr span{font-size:12px;color:#9a9a9a;line-height:1.4}
+.lf-scr span b{color:var(--lime);font-weight:500;margin-right:6px;font-variant-numeric:tabular-nums}
+@media (max-width:900px){
+  .lf-ds{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:760px){
+  .lf{padding-block:80px 96px}
+  .lf-head{grid-template-columns:minmax(0,1fr)}
+  .lf-lead{justify-self:start}
+  .lf-ch + .lf-ch{margin-top:96px;padding-top:80px}
+  .lf-keys{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+  .lf-key p{display:none}
+  .lf-key h5{font-size:13px}
+  .lf-key h5 span{display:block;margin:0 0 2px}
+  .lf-ds{grid-template-columns:minmax(0,1fr)}
+}
+
 /* cta + footer */
 .cta{padding-block:160px 120px;text-align:center}
 .cta h2{font-size:clamp(28px,3.6vw,44px);margin-bottom:14px}
@@ -987,6 +1073,80 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
   </div></div>
 </div>
 
+<div class="case page" id="pg-linkfit" role="dialog" aria-modal="true" aria-labelledby="pl-title" hidden>
+  <div class="case-top wrap"><div class="c"><span class="label">Project — LinkFit</span><button class="closeb" type="button" data-close>닫기 ✕</button></div></div>
+  <div class="wrap"><div class="c">
+    <header class="pg-head">
+      <h2 class="pg-title" id="pl-title">LinkFit</h2>
+      <div class="pg-meta"><span><b>Freelance</b> · Product Designer &amp; Service Planner</span><span>2026.01 — 현재</span><span>Website · App · Brand</span></div>
+    </header>
+    <div class="pg-intro"><span class="label">About this project</span><p class="pg-lead">헬스장 이용권을 시간 단위로 예약·결제하는 B2C 피트니스 서비스예요. 서비스 플로우와 화면 기획부터 BI, 앱 디자인 시스템, 런칭 웹사이트까지 기획자이자 디자이너로 맡았어요.</p></div>
+    <dl class="ix-stats">
+      <div><dt>App screens</dt><dd>36</dd></div>
+      <div><dt>User flows</dt><dd>7</dd></div>
+      <div><dt>Deliverables</dt><dd>Website<br>App · Admin</dd></div>
+      <div><dt>Accent</dt><dd>#C8FF00</dd></div>
+    </dl>
+  </div></div>
+
+  <section class="lf" aria-label="LinkFit 웹사이트와 앱">
+    <div class="wrap"><div class="c">
+
+      <div class="lf-ch" id="lf-web">
+        <div class="lf-head">
+          <span class="lf-no">01 — Website</span>
+          <h3 class="lf-title">Book the gym<br><em>by the hour.</em></h3>
+          <p class="lf-lead">앱 설치로 이어지는 런칭 랜딩페이지예요. 첫 화면의 시간표를 드래그해 원하는 시간을 직접 담아 보게 해서, "1시간 단위 예약"이라는 핵심 가치를 읽기 전에 먼저 체험하도록 설계했어요.</p>
+          <div class="lf-tags"><span>Hero · 시간표 드래그 인터랙션</span><span>Why LinkFit · 4가지 혜택</span><span>How it works · 3단계</span><span>Together</span><span>FAQ</span><span>GA4 · UTM 성과 측정</span></div>
+        </div>
+        <div>
+          <div class="lf-browser">
+            <div class="lf-bar" aria-hidden="true"><i></i><i></i><i></i><span>LinkFit — Landing Page</span></div>
+            <div class="lf-view" id="lf-view" tabindex="0" aria-label="링크핏 랜딩페이지 전체 화면, 스크롤해서 볼 수 있어요"><img src="assets/linkfit/web/desktop-long.webp" alt="링크핏 랜딩페이지 데스크톱 전체 화면" loading="lazy" decoding="async"></div>
+          </div>
+          <div class="lf-hint"><span>Desktop · 1440</span><span>자동으로 스크롤돼요 · 마우스를 올리면 직접 스크롤할 수 있어요</span></div>
+        </div>
+        <div class="lf-phones">
+          <figure class="lf-phone"><div class="scr"><img src="assets/linkfit/web/mobile-hero.webp" alt="링크핏 랜딩페이지 모바일 — 히어로" loading="lazy"></div><figcaption>Mobile · Hero</figcaption></figure>
+          <figure class="lf-phone"><div class="scr"><img src="assets/linkfit/web/mobile-why.webp" alt="링크핏 랜딩페이지 모바일 — Why LinkFit" loading="lazy"></div><figcaption>Mobile · Why LinkFit</figcaption></figure>
+          <figure class="lf-phone"><div class="scr"><img src="assets/linkfit/web/mobile-flow.webp" alt="링크핏 랜딩페이지 모바일 — How it works" loading="lazy"></div><figcaption>Mobile · How it works</figcaption></figure>
+        </div>
+        <div class="lf-wide">
+          <figure><img src="assets/linkfit/web/desktop-why.webp" alt="링크핏 랜딩페이지 — 4가지 혜택 카드와 키워드 띠" loading="lazy"><figcaption>Why LinkFit — 1시간 단위 결제 · 약정 0원 · QR 입장 · 전액 환불</figcaption></figure>
+          <figure><img src="assets/linkfit/web/desktop-together.webp" alt="링크핏 랜딩페이지 — Together 섹션" loading="lazy"><figcaption>Together — 함께 결제하고 함께 입장하는 기능 소개</figcaption></figure>
+        </div>
+      </div>
+
+      <div class="lf-ch" id="lf-app">
+        <div class="lf-head">
+          <span class="lf-no">02 — App</span>
+          <h3 class="lf-title">36 screens,<br><em>one system.</em></h3>
+          <p class="lf-lead">진입부터 MY까지 사용자 앱의 전체 흐름을 하나의 디자인 시스템으로 다시 그렸어요. QA에서 나온 수정 사항을 화면마다 반영하며 실제 출시 기준으로 다듬었어요.</p>
+        </div>
+
+        <div class="lf-ds">
+          <div class="lf-card"><h5>Color</h5><div class="lf-sw"><i style="background:#C8FF00"></i><i style="background:#0B0B0B"></i><i style="background:#141414"></i><i style="background:#1E1E1E"></i><i style="background:#2D2D2D"></i></div><p>강조색은 #C8FF00 하나. 에러(#FF4444)는 취소·실패에만 써요.</p></div>
+          <div class="lf-card"><h5>Button</h5><span class="lf-btn p">기본</span><div class="lf-row2"><span class="lf-btn s">보조</span><span class="lf-btn o">강조 외곽</span></div><p>모두 알약형, 화면당 기본 버튼은 하나.</p></div>
+          <div class="lf-card"><h5>Status</h5><div class="lf-chips"><span>이용예정</span><span>이용중</span><span>수락 대기</span><span class="w">답변 대기</span><span class="g">수락 완료</span><span class="n">환불 완료</span><span class="n">취소됨</span></div><p>상태는 화면마다 한 번만, 목록과 상세에서 같은 단어로.</p></div>
+          <div class="lf-card"><h5>Layout</h5><p>좌우 여백 20px · 카드 16px 라운드 · 1px #2D2D2D 테두리<br>하단 버튼·시트는 시스템 바 위 SafeArea<br>팝업이 뜨면 뒤 화면 딤 + 터치 차단</p></div>
+        </div>
+
+        <div class="lf-keys"><article class="lf-key"><button class="d3-ph " type="button" data-lb="18" data-cursor="1" aria-label="04 홈 화면 크게 보기"><img src="assets/linkfit/app/04.webp" alt="링크핏 앱 화면 — 04 홈" loading="lazy" decoding="async"></button><h5><span>04</span>홈</h5><p>다가오는 예약을 카운트다운 카드로 맨 위에 두고, 내 위치 기준 주변 시설을 바로 보여줘요.</p></article><article class="lf-key"><button class="d3-ph " type="button" data-lb="27" data-cursor="1" aria-label="13 이용시간 선택 화면 크게 보기"><img src="assets/linkfit/app/13.webp" alt="링크핏 앱 화면 — 13 이용시간 선택" loading="lazy" decoding="async"></button><h5><span>13</span>이용시간 선택</h5><p>날짜와 1시간 단위 시간칸을 한 화면에서 고르고, 가격과 할인을 바로 확인해요.</p></article><article class="lf-key"><button class="d3-ph " type="button" data-lb="34" data-cursor="1" aria-label="19 QR 입장 화면 크게 보기"><img src="assets/linkfit/app/20.webp" alt="링크핏 앱 화면 — 19 QR 입장" loading="lazy" decoding="async"></button><h5><span>19</span>QR 입장</h5><p>헬스장 입구 리더기에 QR을 스캔하면 바로 입장해요.</p></article></div>
+
+        <div class="lf-gal">
+          <div class="lf-galhead"><h4>Full Flow</h4><div class="lf-tabs" id="lf-tabs" role="group" aria-label="앱 흐름별 보기"><button type="button" id="lf-t-all" data-f="all" aria-pressed="true">All<b>36</b></button><button type="button" id="lf-t-A" data-f="A" aria-pressed="false">A 진입<b>3</b></button><button type="button" id="lf-t-B" data-f="B" aria-pressed="false">B 탐색<b>7</b></button><button type="button" id="lf-t-C" data-f="C" aria-pressed="false">C 예약 · 결제<b>7</b></button><button type="button" id="lf-t-D" data-f="D" aria-pressed="false">D 이용<b>6</b></button><button type="button" id="lf-t-E" data-f="E" aria-pressed="false">E 선물<b>4</b></button><button type="button" id="lf-t-F" data-f="F" aria-pressed="false">F 취소 · 환불<b>2</b></button><button type="button" id="lf-t-G" data-f="G" aria-pressed="false">G MY<b>7</b></button></div></div>
+          <div class="lf-flow" id="lf-flow" data-drag="1"><div class="lf-scr" data-f="A"><button class="d3-ph " type="button" data-lb="15" data-cursor="1" aria-label="01 스플래시 화면 크게 보기"><img src="assets/linkfit/app/01.webp" alt="링크핏 앱 화면 — 01 스플래시" loading="lazy" decoding="async"></button><span><b>01</b>스플래시</span></div><div class="lf-scr" data-f="A"><button class="d3-ph " type="button" data-lb="16" data-cursor="1" aria-label="02 로그인 화면 크게 보기"><img src="assets/linkfit/app/02.webp" alt="링크핏 앱 화면 — 02 로그인" loading="lazy" decoding="async"></button><span><b>02</b>로그인</span></div><div class="lf-scr" data-f="A"><button class="d3-ph " type="button" data-lb="17" data-cursor="1" aria-label="03 로그인 진행 중 화면 크게 보기"><img src="assets/linkfit/app/03.webp" alt="링크핏 앱 화면 — 03 로그인 진행 중" loading="lazy" decoding="async"></button><span><b>03</b>로그인 진행 중</span></div><div class="lf-scr" data-f="B"><button class="d3-ph " type="button" data-lb="18" data-cursor="1" aria-label="04 홈 화면 크게 보기"><img src="assets/linkfit/app/04.webp" alt="링크핏 앱 화면 — 04 홈" loading="lazy" decoding="async"></button><span><b>04</b>홈</span></div><div class="lf-scr" data-f="B"><button class="d3-ph " type="button" data-lb="19" data-cursor="1" aria-label="05 알림 화면 크게 보기"><img src="assets/linkfit/app/05.webp" alt="링크핏 앱 화면 — 05 알림" loading="lazy" decoding="async"></button><span><b>05</b>알림</span></div><div class="lf-scr" data-f="B"><button class="d3-ph " type="button" data-lb="20" data-cursor="1" aria-label="06 검색 화면 크게 보기"><img src="assets/linkfit/app/06.webp" alt="링크핏 앱 화면 — 06 검색" loading="lazy" decoding="async"></button><span><b>06</b>검색</span></div><div class="lf-scr" data-f="B"><button class="d3-ph " type="button" data-lb="21" data-cursor="1" aria-label="07 검색 결과 화면 크게 보기"><img src="assets/linkfit/app/07.webp" alt="링크핏 앱 화면 — 07 검색 결과" loading="lazy" decoding="async"></button><span><b>07</b>검색 결과</span></div><div class="lf-scr" data-f="B"><button class="d3-ph " type="button" data-lb="22" data-cursor="1" aria-label="08 검색 필터 화면 크게 보기"><img src="assets/linkfit/app/08.webp" alt="링크핏 앱 화면 — 08 검색 필터" loading="lazy" decoding="async"></button><span><b>08</b>검색 필터</span></div><div class="lf-scr" data-f="B"><button class="d3-ph " type="button" data-lb="23" data-cursor="1" aria-label="09 내 주변 지도 화면 크게 보기"><img src="assets/linkfit/app/09.webp" alt="링크핏 앱 화면 — 09 내 주변 지도" loading="lazy" decoding="async"></button><span><b>09</b>내 주변 지도</span></div><div class="lf-scr" data-f="B"><button class="d3-ph " type="button" data-lb="24" data-cursor="1" aria-label="10 내 주변 필터 시트 화면 크게 보기"><img src="assets/linkfit/app/10.webp" alt="링크핏 앱 화면 — 10 내 주변 필터 시트" loading="lazy" decoding="async"></button><span><b>10</b>내 주변 필터 시트</span></div><div class="lf-scr" data-f="C"><button class="d3-ph " type="button" data-lb="25" data-cursor="1" aria-label="11 시설 상세 화면 크게 보기"><img src="assets/linkfit/app/11.webp" alt="링크핏 앱 화면 — 11 시설 상세" loading="lazy" decoding="async"></button><span><b>11</b>시설 상세</span></div><div class="lf-scr" data-f="C"><button class="d3-ph " type="button" data-lb="26" data-cursor="1" aria-label="12 시설 상세 · 이용권 · 후기 화면 크게 보기"><img src="assets/linkfit/app/12.webp" alt="링크핏 앱 화면 — 12 시설 상세 · 이용권 · 후기" loading="lazy" decoding="async"></button><span><b>12</b>시설 상세 · 이용권 · 후기</span></div><div class="lf-scr" data-f="C"><button class="d3-ph " type="button" data-lb="27" data-cursor="1" aria-label="13 이용시간 선택 화면 크게 보기"><img src="assets/linkfit/app/13.webp" alt="링크핏 앱 화면 — 13 이용시간 선택" loading="lazy" decoding="async"></button><span><b>13</b>이용시간 선택</span></div><div class="lf-scr" data-f="C"><button class="d3-ph " type="button" data-lb="28" data-cursor="1" aria-label="14 결제하기 화면 크게 보기"><img src="assets/linkfit/app/14.webp" alt="링크핏 앱 화면 — 14 결제하기" loading="lazy" decoding="async"></button><span><b>14</b>결제하기</span></div><div class="lf-scr" data-f="C"><button class="d3-ph " type="button" data-lb="29" data-cursor="1" aria-label="15 중복 시간 알림 화면 크게 보기"><img src="assets/linkfit/app/15.webp" alt="링크핏 앱 화면 — 15 중복 시간 알림" loading="lazy" decoding="async"></button><span><b>15</b>중복 시간 알림</span></div><div class="lf-scr" data-f="C"><button class="d3-ph " type="button" data-lb="30" data-cursor="1" aria-label="15B 결제 확정 대기 화면 크게 보기"><img src="assets/linkfit/app/16.webp" alt="링크핏 앱 화면 — 15B 결제 확정 대기" loading="lazy" decoding="async"></button><span><b>15B</b>결제 확정 대기</span></div><div class="lf-scr" data-f="C"><button class="d3-ph " type="button" data-lb="31" data-cursor="1" aria-label="16 결제 완료 화면 크게 보기"><img src="assets/linkfit/app/17.webp" alt="링크핏 앱 화면 — 16 결제 완료" loading="lazy" decoding="async"></button><span><b>16</b>결제 완료</span></div><div class="lf-scr" data-f="D"><button class="d3-ph " type="button" data-lb="32" data-cursor="1" aria-label="17 이용현황 화면 크게 보기"><img src="assets/linkfit/app/18.webp" alt="링크핏 앱 화면 — 17 이용현황" loading="lazy" decoding="async"></button><span><b>17</b>이용현황</span></div><div class="lf-scr" data-f="D"><button class="d3-ph " type="button" data-lb="33" data-cursor="1" aria-label="18 이용권 상세 화면 크게 보기"><img src="assets/linkfit/app/19.webp" alt="링크핏 앱 화면 — 18 이용권 상세" loading="lazy" decoding="async"></button><span><b>18</b>이용권 상세</span></div><div class="lf-scr" data-f="D"><button class="d3-ph " type="button" data-lb="34" data-cursor="1" aria-label="19 QR 입장 화면 크게 보기"><img src="assets/linkfit/app/20.webp" alt="링크핏 앱 화면 — 19 QR 입장" loading="lazy" decoding="async"></button><span><b>19</b>QR 입장</span></div><div class="lf-scr" data-f="D"><button class="d3-ph " type="button" data-lb="35" data-cursor="1" aria-label="20 이용 중 화면 크게 보기"><img src="assets/linkfit/app/21.webp" alt="링크핏 앱 화면 — 20 이용 중" loading="lazy" decoding="async"></button><span><b>20</b>이용 중</span></div><div class="lf-scr" data-f="D"><button class="d3-ph " type="button" data-lb="36" data-cursor="1" aria-label="21 이용 시간 연장 화면 크게 보기"><img src="assets/linkfit/app/22.webp" alt="링크핏 앱 화면 — 21 이용 시간 연장" loading="lazy" decoding="async"></button><span><b>21</b>이용 시간 연장</span></div><div class="lf-scr" data-f="D"><button class="d3-ph " type="button" data-lb="37" data-cursor="1" aria-label="22 이용 완료 · 후기 화면 크게 보기"><img src="assets/linkfit/app/23.webp" alt="링크핏 앱 화면 — 22 이용 완료 · 후기" loading="lazy" decoding="async"></button><span><b>22</b>이용 완료 · 후기</span></div><div class="lf-scr" data-f="E"><button class="d3-ph " type="button" data-lb="38" data-cursor="1" aria-label="23 선물 보내기 화면 크게 보기"><img src="assets/linkfit/app/24.webp" alt="링크핏 앱 화면 — 23 선물 보내기" loading="lazy" decoding="async"></button><span><b>23</b>선물 보내기</span></div><div class="lf-scr" data-f="E"><button class="d3-ph " type="button" data-lb="39" data-cursor="1" aria-label="24 선물 링크 완료 화면 크게 보기"><img src="assets/linkfit/app/25.webp" alt="링크핏 앱 화면 — 24 선물 링크 완료" loading="lazy" decoding="async"></button><span><b>24</b>선물 링크 완료</span></div><div class="lf-scr" data-f="E"><button class="d3-ph " type="button" data-lb="40" data-cursor="1" aria-label="25 보낸 선물 화면 크게 보기"><img src="assets/linkfit/app/26.webp" alt="링크핏 앱 화면 — 25 보낸 선물" loading="lazy" decoding="async"></button><span><b>25</b>보낸 선물</span></div><div class="lf-scr" data-f="E"><button class="d3-ph " type="button" data-lb="41" data-cursor="1" aria-label="26 선물 받기 화면 크게 보기"><img src="assets/linkfit/app/27.webp" alt="링크핏 앱 화면 — 26 선물 받기" loading="lazy" decoding="async"></button><span><b>26</b>선물 받기</span></div><div class="lf-scr" data-f="F"><button class="d3-ph " type="button" data-lb="42" data-cursor="1" aria-label="27 예약 취소 확인 화면 크게 보기"><img src="assets/linkfit/app/28.webp" alt="링크핏 앱 화면 — 27 예약 취소 확인" loading="lazy" decoding="async"></button><span><b>27</b>예약 취소 확인</span></div><div class="lf-scr" data-f="F"><button class="d3-ph " type="button" data-lb="43" data-cursor="1" aria-label="28 구매내역 상세 화면 크게 보기"><img src="assets/linkfit/app/29.webp" alt="링크핏 앱 화면 — 28 구매내역 상세" loading="lazy" decoding="async"></button><span><b>28</b>구매내역 상세</span></div><div class="lf-scr" data-f="G"><button class="d3-ph " type="button" data-lb="44" data-cursor="1" aria-label="29 MY 화면 크게 보기"><img src="assets/linkfit/app/30.webp" alt="링크핏 앱 화면 — 29 MY" loading="lazy" decoding="async"></button><span><b>29</b>MY</span></div><div class="lf-scr" data-f="G"><button class="d3-ph " type="button" data-lb="45" data-cursor="1" aria-label="30 헬스레벨 안내 화면 크게 보기"><img src="assets/linkfit/app/31.webp" alt="링크핏 앱 화면 — 30 헬스레벨 안내" loading="lazy" decoding="async"></button><span><b>30</b>헬스레벨 안내</span></div><div class="lf-scr" data-f="G"><button class="d3-ph " type="button" data-lb="46" data-cursor="1" aria-label="31 레벨 공유 화면 크게 보기"><img src="assets/linkfit/app/32.webp" alt="링크핏 앱 화면 — 31 레벨 공유" loading="lazy" decoding="async"></button><span><b>31</b>레벨 공유</span></div><div class="lf-scr" data-f="G"><button class="d3-ph " type="button" data-lb="47" data-cursor="1" aria-label="32 이용권 구매내역 화면 크게 보기"><img src="assets/linkfit/app/33.webp" alt="링크핏 앱 화면 — 32 이용권 구매내역" loading="lazy" decoding="async"></button><span><b>32</b>이용권 구매내역</span></div><div class="lf-scr" data-f="G"><button class="d3-ph " type="button" data-lb="48" data-cursor="1" aria-label="33 고객센터 · FAQ 화면 크게 보기"><img src="assets/linkfit/app/34.webp" alt="링크핏 앱 화면 — 33 고객센터 · FAQ" loading="lazy" decoding="async"></button><span><b>33</b>고객센터 · FAQ</span></div><div class="lf-scr" data-f="G"><button class="d3-ph " type="button" data-lb="49" data-cursor="1" aria-label="34 내 문의내역 화면 크게 보기"><img src="assets/linkfit/app/35.webp" alt="링크핏 앱 화면 — 34 내 문의내역" loading="lazy" decoding="async"></button><span><b>34</b>내 문의내역</span></div><div class="lf-scr" data-f="G"><button class="d3-ph " type="button" data-lb="50" data-cursor="1" aria-label="35 설정 화면 크게 보기"><img src="assets/linkfit/app/36.webp" alt="링크핏 앱 화면 — 35 설정" loading="lazy" decoding="async"></button><span><b>35</b>설정</span></div></div>
+          <div class="lf-hint"><span>A 진입 → B 탐색 → C 예약·결제 → D 이용 → E 선물 → F 취소·환불 → G MY</span><span>화면을 누르면 크게 볼 수 있어요</span></div>
+        </div>
+      </div>
+
+    </div></div>
+  </section>
+  <div class="wrap"><div class="c">
+    <div class="pg-end"><span>LinkFit — Website · App</span><button class="link" type="button" data-close>메인으로 돌아가기 ↗</button></div>
+  </div></div>
+</div>
+
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="작품 크게 보기" hidden>
   <figure class="lb-fig"><img id="lb-img" alt=""><figcaption><span id="lb-cap"></span><span id="lb-pos"></span></figcaption></figure>
   <button class="lb-btn lb-x" type="button" id="lb-x" aria-label="닫기">✕</button>
@@ -1146,7 +1306,7 @@ const WORKS=[
    ch:'그룹사와 계열사의 브랜드 아이덴티티, 그리고 해외 전시 비주얼을 함께 맡는 역할이었어요.',
    ap:'CI·BI 신규 개발과 리뉴얼, 로고·심볼·패턴·사원증을 제작하고, 신사업 Sool.Zip의 브랜딩과 앱 UIUX를 기획·디자인했어요. IBC·MWC·BBWF 등 전시의 부스 외벽·배너·사인·스펙보드 디자인과 영상·브로슈어·리플렛 제작을 총괄했어요.',
    out:'CI·BI 4건을 개발·리뉴얼하고 글로벌 전시 6회 이상의 비주얼을 총괄했어요. 계열사 K-FutureTech 로고는 상표 등록(제40-2058814호)까지 이어졌어요.'},
-  {title:'LinkFit', sub:'Freelance', tag:'Product · Planning', period:'2026.01 — 현재', cat:['product','brand','content'], scene:5,
+  {title:'LinkFit', page:'linkfit', img:'assets/linkfit/web/desktop-hero.webp', sub:'Freelance', tag:'Website · App', period:'2026.01 — 현재', cat:['product','brand','content'], scene:5,
    kr:'헬스장 이용권을 시간 단위로 예약·결제하는 B2C 피트니스 앱의 서비스 기획과 디자인', role:'Product Designer & Service Planner', client:'LinkFit', tools:'Figma, GA4, Search Console, Suno',
    kpis:[['Flow','서비스 플로우·화면기획서 작성'],['Admin','권한 분리 파트너 대시보드 설계'],['2명','개발자와 핸드오프·QA 협업']],
    ch:'헬스장 이용권을 시간 단위로 예약·결제하는 B2C 앱을 서비스 구조부터 기획하고 디자인하는 프로젝트예요.',
@@ -1174,7 +1334,7 @@ const WORKS=[
 const JOURNEY=[
   {co:'가온그룹 (KAON Group)', date:'2021.09 — 현재 · 5년 2개월', role:'Corporate실 마케팅팀 매니저 / Visual Contents Designer', tags:['AI Workflow','Brand · IP'], w:0,
    pts:['AI 에이전트 2종 구축으로 리서치 시간 약 80%↓, 월 발행량 2배','그룹 캐릭터 IP 가온 프렌즈 5종 기획·디자인, 저작권 5건 등록','CI·BI 4건 개발·리뉴얼, IBC·MWC·BBWF 글로벌 전시 6회 이상 총괄','LinkedIn·YouTube·Facebook·X 공식 채널 콘텐츠 기획·운영']},
-  {co:'LinkFit', date:'2026.01 — 현재 · Freelance', role:'프리랜서 · 프로덕트 디자이너 & 서비스 기획자', tags:['Product','Planning'], w:5,
+  {co:'LinkFit', date:'2026.01 — 현재 · Freelance', role:'프리랜서 · 프로덕트 디자이너 & 서비스 기획자', tags:['Product','Planning'], w:5, page:'linkfit', imgs:['assets/linkfit/app/04.webp','assets/linkfit/app/13.webp','assets/linkfit/app/20.webp'],
    pts:['시간 단위 헬스장 예약 앱의 서비스 플로우 설계와 화면기획서 작성, UIUX 디자인','결제 조회·환불 권한을 분리한 파트너 어드민 대시보드 설계','BI·앱 디자인 시스템, 랜딩페이지, GA4·UTM 성과 측정 체계']},
   {co:'greyd', date:'2022.07 — 2024.08 · Side Project', role:'프리랜서 · 크리에이티브 디렉터 & UIUX 디자이너', tags:['UIUX','Ads'], w:6,
    pts:['핵심 기능 서비스 플로우·화면 설계 주도, 특허 확보에 기획자로 참여','플랫폼 브랜딩 및 앱·웹사이트 UIUX 설계','메타·구글 광고 집행 (월 약 100만원, ROAS 약 200%)']},
@@ -1192,9 +1352,9 @@ const JOURNEY=[
 const strip=document.getElementById('strip');
 WORKS.forEach((wk,i)=>{
   const el=document.createElement('div'); el.className='shot'; el.dataset.drag='1';
-  el.innerHTML=`<div class="frame"><canvas class="art"></canvas></div><div class="cap">${wk.title} <small>${wk.sub}</small></div>`;
+  el.innerHTML=`<div class="frame">${wk.img?`<img class="art" src="${wk.img}" alt="${wk.title}" style="object-fit:cover">`:'<canvas class="art"></canvas>'}</div><div class="cap">${wk.title} <small>${wk.sub}</small></div>`;
   strip.appendChild(el);
-  addArt(el.querySelector('canvas'),'scene',SCENES[i%SCENES.length]);
+  if(!wk.img) addArt(el.querySelector('canvas'),'scene',SCENES[i%SCENES.length]);
 });
 
 const jl=document.getElementById('jlist');
@@ -1209,7 +1369,7 @@ JOURNEY.forEach((j,i)=>{
     <div class="jpanel" id="${pid}" role="region" aria-labelledby="jb${i}"><div><div class="jin">
       ${j.imgs?`<div class="jthumbs">${j.imgs.map(k=>`<div class="t"><img src="${IMGS[k]||k}" alt="" style="width:100%;height:100%;object-fit:cover;filter:grayscale(1)"></div>`).join('')}</div>`:'<span class="jspacer" aria-hidden="true"></span>'}
       <ul class="jpts">${j.pts.map(p=>`<li>${p}</li>`).join('')}</ul>
-      ${j.page?`<a class="arrow-btn" href="#${j.page}" aria-label="${j.page==='internship'?'인턴 작업 페이지 보기':'Pratt 작품 페이지 보기'}">${ARROW}</a>`:j.w===null?'<span></span>':`<button class="arrow-btn" type="button" data-open="${j.w}" aria-label="${WORKS[j.w].title} 프로젝트 보기">${ARROW}</button>`}
+      ${j.page?`<a class="arrow-btn" href="#${j.page}" aria-label="${({internship:'인턴 작업 페이지 보기',university:'Pratt 작품 페이지 보기',linkfit:'링크핏 프로젝트 페이지 보기'})[j.page]}">${ARROW}</a>`:j.w===null?'<span></span>':`<button class="arrow-btn" type="button" data-open="${j.w}" aria-label="${WORKS[j.w].title} 프로젝트 보기">${ARROW}</button>`}
     </div></div></div>`;
   jl.appendChild(row);
   row.querySelectorAll('.t canvas').forEach((c,k)=>addArt(c,'scene',SCENES[k]));
@@ -1225,12 +1385,13 @@ const wg=document.getElementById('wgrid');
 WORKS.forEach((wk,i)=>{
   const el=document.createElement('article'); el.className='work'; el.tabIndex=0; el.dataset.i=i; el.dataset.cursor='1';
   el.setAttribute('role','button'); el.setAttribute('aria-label',wk.title+' 자세히 보기');
-  el.innerHTML=`<div class="frame"><canvas class="art"></canvas><div class="ov"><span>${wk.tag}</span><span>${wk.period}</span><span class="arrow-btn" aria-hidden="true">${ARROW}</span></div></div>
+  el.innerHTML=`<div class="frame">${wk.img?`<img class="art" src="${wk.img}" alt="" style="object-fit:cover;position:absolute;inset:0">`:'<canvas class="art"></canvas>'}<div class="ov"><span>${wk.tag}</span><span>${wk.period}</span><span class="arrow-btn" aria-hidden="true">${ARROW}</span></div></div>
     <div class="cap">${wk.title} <small>${wk.sub}</small></div><p class="wkr">${wk.kr}</p>`;
   wg.appendChild(el);
-  addArt(el.querySelector('canvas'),'scene',SCENES[i%SCENES.length]);
-  el.addEventListener('click',()=>openCase(i));
-  el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openCase(i);}});
+  if(!wk.img) addArt(el.querySelector('canvas'),'scene',SCENES[i%SCENES.length]);
+  const go=()=>wk.page?goPage(wk.page):openCase(i);
+  el.addEventListener('click',go);
+  el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});
 });
 jl.addEventListener('click',e=>{const b=e.target.closest('[data-open]'); if(b) openCase(+b.dataset.open);});
 
@@ -1294,7 +1455,8 @@ document.getElementById('close').addEventListener('click',closeCase);
 addEventListener('keydown',e=>{if(e.key==='Escape'&&!caseEl.hidden) closeCase();});
 
 /* ---------- 서브 페이지 (#university, #internship) ---------- */
-const PAGES={university:document.getElementById('pg-university'),internship:document.getElementById('pg-internship')};
+const PAGES={university:document.getElementById('pg-university'),internship:document.getElementById('pg-internship'),linkfit:document.getElementById('pg-linkfit')};
+function goPage(k){ history.pushState({fromSite:true},'','#'+k); route(); }
 let pageReturn=null;
 function showPage(el){
   pageReturn=document.activeElement;
@@ -1316,7 +1478,7 @@ function route(){
 }
 function leavePage(){ if(history.state&&history.state.fromSite){ history.back(); } else { history.replaceState(null,'',location.pathname+location.search+'#archive'); route(); } }
 document.addEventListener('click',e=>{
-  const a=e.target.closest('a[href="#university"],a[href="#internship"]'); if(!a) return;
+  const a=e.target.closest('a[href="#university"],a[href="#internship"],a[href="#linkfit"]'); if(!a) return;
   e.preventDefault(); history.pushState({fromSite:true},'',a.getAttribute('href')); route();
 });
 document.querySelectorAll('.page [data-close]').forEach(b=>b.addEventListener('click',leavePage));
@@ -1403,8 +1565,34 @@ if(!reduce){
   })(performance.now());
 }
 
+/* ---------- LinkFit 페이지 ---------- */
+document.querySelectorAll('#lf-tabs button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('#lf-tabs button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
+  const f=b.dataset.f; document.querySelectorAll('#lf-flow .lf-scr').forEach(sc=>sc.classList.toggle('off',f!=='all'&&sc.dataset.f!==f));
+  document.getElementById('lf-flow').scrollTo({left:0,behavior:reduce?'auto':'smooth'});
+}));
+(()=>{ const fl=document.getElementById('lf-flow'); let down=false,sx=0,sl=0,moved=false;
+  fl.addEventListener('pointerdown',e=>{ if(e.pointerType!=='mouse') return; down=true; moved=false; sx=e.clientX; sl=fl.scrollLeft; });
+  addEventListener('pointermove',e=>{ if(!down) return; const dx=e.clientX-sx; if(Math.abs(dx)>4){ moved=true; fl.scrollLeft=sl-dx; } });
+  addEventListener('pointerup',()=>{ down=false; });
+  fl.addEventListener('click',e=>{ if(moved){ e.stopPropagation(); e.preventDefault(); moved=false; } },true);
+})();
+(()=>{ const v=document.getElementById('lf-view'), pg=document.getElementById('pg-linkfit'); if(!v||reduce) return;
+  let run=true,last=0,hold=null;
+  const stop=()=>{ run=false; clearTimeout(hold); };
+  const resume=()=>{ clearTimeout(hold); hold=setTimeout(()=>{ run=true; },2600); };
+  ['wheel','touchstart','pointerdown','keydown'].forEach(ev=>v.addEventListener(ev,stop,{passive:true}));
+  v.addEventListener('pointerenter',stop); v.addEventListener('pointerleave',resume); v.addEventListener('touchend',resume);
+  (function tick(t){ const dt=Math.min(50,t-last); last=t;
+    if(run && !pg.hidden && v.scrollHeight>v.clientHeight){
+      v.scrollTop+=dt*0.05;
+      if(v.scrollTop+v.clientHeight>=v.scrollHeight-1){ run=false; hold=setTimeout(()=>{ v.scrollTo({top:0,behavior:'smooth'}); hold=setTimeout(()=>{ run=true; },1600); },1800); }
+    }
+    requestAnimationFrame(tick); })(performance.now());
+})();
+
 /* ---------- 3D 작품 라이트박스 ---------- */
-const LB=[{"src": "assets/3d/convexity-1.webp", "alt": "석고 조형 Organic Convexity — 세로 구도", "cap": "Organic Convexity — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/3d/convexity-2.webp", "alt": "석고 조형 Organic Convexity — 측면", "cap": "Organic Convexity — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/3d/convexity-3.webp", "alt": "석고 조형 Organic Convexity — 위에서 본 모습", "cap": "Organic Convexity — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/3d/fluidity-1.webp", "alt": "종이 조형 Organic Fluidity — 바닥에 놓인 형태", "cap": "Organic Fluidity — 3D Paper Sculpture", "g": "u"}, {"src": "assets/3d/fluidity-2.webp", "alt": "종이 조형 Organic Fluidity — 매달린 형태", "cap": "Organic Fluidity — 3D Paper Sculpture", "g": "u"}, {"src": "assets/3d/space-box.webp", "alt": "공간 분석 박스 — 상자 안에 매달린 색 면들", "cap": "Space Analysis Box — Spatial Study", "g": "u"}, {"src": "assets/3d/elements.webp", "alt": "3D 요소 연구 — 받침 위의 곡면과 선, 나무 형태", "cap": "3D Elements Studies — Space · Direction · Priority · Movement", "g": "u"}, {"src": "assets/3d/edged-1.webp", "alt": "석고 조형 Aesthetic Edged Surface — 정면", "cap": "Aesthetic Edged Surface — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/3d/edged-2.webp", "alt": "석고 조형 Aesthetic Edged Surface — 근접", "cap": "Aesthetic Edged Surface — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/3d/edged-3.webp", "alt": "석고 조형 Aesthetic Edged Surface — 측면", "cap": "Aesthetic Edged Surface — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/intern/ottawa-wall.webp", "alt": "BoConcept Ottawa 사이드 테이블 — 벽 선반과 함께 연출된 공간", "cap": "Ottawa Side Table — BoConcept · Photography © BoConcept", "g": "i"}, {"src": "assets/intern/ottawa-lounge-1.webp", "alt": "Ottawa 사이드 테이블 — 소파 옆에 놓인 모습", "cap": "Ottawa Side Table — BoConcept · Photography © BoConcept", "g": "i"}, {"src": "assets/intern/ottawa-lounge-2.webp", "alt": "Ottawa 사이드 테이블 — 소파 좌석 아래로 밀어 넣은 모습", "cap": "Ottawa Side Table — BoConcept · Photography © BoConcept", "g": "i"}, {"src": "assets/intern/toot-interior.webp", "alt": "Kundalini TOOT 테이블 램프 — 인테리어 연출", "cap": "TOOT Table Lamp — Kundalini, 2017 · Photography © Kundalini", "g": "i"}, {"src": "assets/intern/toot-product.webp", "alt": "Kundalini TOOT 테이블 램프 — 제품 단독 컷", "cap": "TOOT Table Lamp — Kundalini, 2017 · Photography © Kundalini", "g": "i"}];
+const LB=[{"src": "assets/3d/convexity-1.webp", "alt": "석고 조형 Organic Convexity — 세로 구도", "cap": "Organic Convexity — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/3d/convexity-2.webp", "alt": "석고 조형 Organic Convexity — 측면", "cap": "Organic Convexity — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/3d/convexity-3.webp", "alt": "석고 조형 Organic Convexity — 위에서 본 모습", "cap": "Organic Convexity — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/3d/fluidity-1.webp", "alt": "종이 조형 Organic Fluidity — 바닥에 놓인 형태", "cap": "Organic Fluidity — 3D Paper Sculpture", "g": "u"}, {"src": "assets/3d/fluidity-2.webp", "alt": "종이 조형 Organic Fluidity — 매달린 형태", "cap": "Organic Fluidity — 3D Paper Sculpture", "g": "u"}, {"src": "assets/3d/space-box.webp", "alt": "공간 분석 박스 — 상자 안에 매달린 색 면들", "cap": "Space Analysis Box — Spatial Study", "g": "u"}, {"src": "assets/3d/elements.webp", "alt": "3D 요소 연구 — 받침 위의 곡면과 선, 나무 형태", "cap": "3D Elements Studies — Space · Direction · Priority · Movement", "g": "u"}, {"src": "assets/3d/edged-1.webp", "alt": "석고 조형 Aesthetic Edged Surface — 정면", "cap": "Aesthetic Edged Surface — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/3d/edged-2.webp", "alt": "석고 조형 Aesthetic Edged Surface — 근접", "cap": "Aesthetic Edged Surface — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/3d/edged-3.webp", "alt": "석고 조형 Aesthetic Edged Surface — 측면", "cap": "Aesthetic Edged Surface — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/intern/ottawa-wall.webp", "alt": "BoConcept Ottawa 사이드 테이블 — 벽 선반과 함께 연출된 공간", "cap": "Ottawa Side Table — BoConcept · Photography © BoConcept", "g": "i"}, {"src": "assets/intern/ottawa-lounge-1.webp", "alt": "Ottawa 사이드 테이블 — 소파 옆에 놓인 모습", "cap": "Ottawa Side Table — BoConcept · Photography © BoConcept", "g": "i"}, {"src": "assets/intern/ottawa-lounge-2.webp", "alt": "Ottawa 사이드 테이블 — 소파 좌석 아래로 밀어 넣은 모습", "cap": "Ottawa Side Table — BoConcept · Photography © BoConcept", "g": "i"}, {"src": "assets/intern/toot-interior.webp", "alt": "Kundalini TOOT 테이블 램프 — 인테리어 연출", "cap": "TOOT Table Lamp — Kundalini, 2017 · Photography © Kundalini", "g": "i"}, {"src": "assets/intern/toot-product.webp", "alt": "Kundalini TOOT 테이블 램프 — 제품 단독 컷", "cap": "TOOT Table Lamp — Kundalini, 2017 · Photography © Kundalini", "g": "i"}, {"src": "assets/linkfit/app/01.webp", "alt": "링크핏 앱 화면 — 01 스플래시", "cap": "LinkFit App — A 진입 · 01 스플래시", "g": "l"}, {"src": "assets/linkfit/app/02.webp", "alt": "링크핏 앱 화면 — 02 로그인", "cap": "LinkFit App — A 진입 · 02 로그인", "g": "l"}, {"src": "assets/linkfit/app/03.webp", "alt": "링크핏 앱 화면 — 03 로그인 진행 중", "cap": "LinkFit App — A 진입 · 03 로그인 진행 중", "g": "l"}, {"src": "assets/linkfit/app/04.webp", "alt": "링크핏 앱 화면 — 04 홈", "cap": "LinkFit App — B 탐색 · 04 홈", "g": "l"}, {"src": "assets/linkfit/app/05.webp", "alt": "링크핏 앱 화면 — 05 알림", "cap": "LinkFit App — B 탐색 · 05 알림", "g": "l"}, {"src": "assets/linkfit/app/06.webp", "alt": "링크핏 앱 화면 — 06 검색", "cap": "LinkFit App — B 탐색 · 06 검색", "g": "l"}, {"src": "assets/linkfit/app/07.webp", "alt": "링크핏 앱 화면 — 07 검색 결과", "cap": "LinkFit App — B 탐색 · 07 검색 결과", "g": "l"}, {"src": "assets/linkfit/app/08.webp", "alt": "링크핏 앱 화면 — 08 검색 필터", "cap": "LinkFit App — B 탐색 · 08 검색 필터", "g": "l"}, {"src": "assets/linkfit/app/09.webp", "alt": "링크핏 앱 화면 — 09 내 주변 지도", "cap": "LinkFit App — B 탐색 · 09 내 주변 지도", "g": "l"}, {"src": "assets/linkfit/app/10.webp", "alt": "링크핏 앱 화면 — 10 내 주변 필터 시트", "cap": "LinkFit App — B 탐색 · 10 내 주변 필터 시트", "g": "l"}, {"src": "assets/linkfit/app/11.webp", "alt": "링크핏 앱 화면 — 11 시설 상세", "cap": "LinkFit App — C 예약 · 결제 · 11 시설 상세", "g": "l"}, {"src": "assets/linkfit/app/12.webp", "alt": "링크핏 앱 화면 — 12 시설 상세 · 이용권 · 후기", "cap": "LinkFit App — C 예약 · 결제 · 12 시설 상세 · 이용권 · 후기", "g": "l"}, {"src": "assets/linkfit/app/13.webp", "alt": "링크핏 앱 화면 — 13 이용시간 선택", "cap": "LinkFit App — C 예약 · 결제 · 13 이용시간 선택", "g": "l"}, {"src": "assets/linkfit/app/14.webp", "alt": "링크핏 앱 화면 — 14 결제하기", "cap": "LinkFit App — C 예약 · 결제 · 14 결제하기", "g": "l"}, {"src": "assets/linkfit/app/15.webp", "alt": "링크핏 앱 화면 — 15 중복 시간 알림", "cap": "LinkFit App — C 예약 · 결제 · 15 중복 시간 알림", "g": "l"}, {"src": "assets/linkfit/app/16.webp", "alt": "링크핏 앱 화면 — 15B 결제 확정 대기", "cap": "LinkFit App — C 예약 · 결제 · 15B 결제 확정 대기", "g": "l"}, {"src": "assets/linkfit/app/17.webp", "alt": "링크핏 앱 화면 — 16 결제 완료", "cap": "LinkFit App — C 예약 · 결제 · 16 결제 완료", "g": "l"}, {"src": "assets/linkfit/app/18.webp", "alt": "링크핏 앱 화면 — 17 이용현황", "cap": "LinkFit App — D 이용 · 17 이용현황", "g": "l"}, {"src": "assets/linkfit/app/19.webp", "alt": "링크핏 앱 화면 — 18 이용권 상세", "cap": "LinkFit App — D 이용 · 18 이용권 상세", "g": "l"}, {"src": "assets/linkfit/app/20.webp", "alt": "링크핏 앱 화면 — 19 QR 입장", "cap": "LinkFit App — D 이용 · 19 QR 입장", "g": "l"}, {"src": "assets/linkfit/app/21.webp", "alt": "링크핏 앱 화면 — 20 이용 중", "cap": "LinkFit App — D 이용 · 20 이용 중", "g": "l"}, {"src": "assets/linkfit/app/22.webp", "alt": "링크핏 앱 화면 — 21 이용 시간 연장", "cap": "LinkFit App — D 이용 · 21 이용 시간 연장", "g": "l"}, {"src": "assets/linkfit/app/23.webp", "alt": "링크핏 앱 화면 — 22 이용 완료 · 후기", "cap": "LinkFit App — D 이용 · 22 이용 완료 · 후기", "g": "l"}, {"src": "assets/linkfit/app/24.webp", "alt": "링크핏 앱 화면 — 23 선물 보내기", "cap": "LinkFit App — E 선물 · 23 선물 보내기", "g": "l"}, {"src": "assets/linkfit/app/25.webp", "alt": "링크핏 앱 화면 — 24 선물 링크 완료", "cap": "LinkFit App — E 선물 · 24 선물 링크 완료", "g": "l"}, {"src": "assets/linkfit/app/26.webp", "alt": "링크핏 앱 화면 — 25 보낸 선물", "cap": "LinkFit App — E 선물 · 25 보낸 선물", "g": "l"}, {"src": "assets/linkfit/app/27.webp", "alt": "링크핏 앱 화면 — 26 선물 받기", "cap": "LinkFit App — E 선물 · 26 선물 받기", "g": "l"}, {"src": "assets/linkfit/app/28.webp", "alt": "링크핏 앱 화면 — 27 예약 취소 확인", "cap": "LinkFit App — F 취소 · 환불 · 27 예약 취소 확인", "g": "l"}, {"src": "assets/linkfit/app/29.webp", "alt": "링크핏 앱 화면 — 28 구매내역 상세", "cap": "LinkFit App — F 취소 · 환불 · 28 구매내역 상세", "g": "l"}, {"src": "assets/linkfit/app/30.webp", "alt": "링크핏 앱 화면 — 29 MY", "cap": "LinkFit App — G MY · 29 MY", "g": "l"}, {"src": "assets/linkfit/app/31.webp", "alt": "링크핏 앱 화면 — 30 헬스레벨 안내", "cap": "LinkFit App — G MY · 30 헬스레벨 안내", "g": "l"}, {"src": "assets/linkfit/app/32.webp", "alt": "링크핏 앱 화면 — 31 레벨 공유", "cap": "LinkFit App — G MY · 31 레벨 공유", "g": "l"}, {"src": "assets/linkfit/app/33.webp", "alt": "링크핏 앱 화면 — 32 이용권 구매내역", "cap": "LinkFit App — G MY · 32 이용권 구매내역", "g": "l"}, {"src": "assets/linkfit/app/34.webp", "alt": "링크핏 앱 화면 — 33 고객센터 · FAQ", "cap": "LinkFit App — G MY · 33 고객센터 · FAQ", "g": "l"}, {"src": "assets/linkfit/app/35.webp", "alt": "링크핏 앱 화면 — 34 내 문의내역", "cap": "LinkFit App — G MY · 34 내 문의내역", "g": "l"}, {"src": "assets/linkfit/app/36.webp", "alt": "링크핏 앱 화면 — 35 설정", "cap": "LinkFit App — G MY · 35 설정", "g": "l"}];
 const lb=document.getElementById('lb'), lbImg=document.getElementById('lb-img');
 let lbI=0, lbRet=null;
 let lbSet=[];
