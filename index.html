@@ -889,6 +889,141 @@ body.lb-open .cursor{background:#EDEDED}
   .pc-w,.pc-w::after,.pc-s,.pc-glow{animation:none}.pc-w,.pc-s{display:none}
 }
 
+/* K-FutureTech branding page */
+.kf{--ko:#FF7B0F;--kb:#2E3192;padding-bottom:140px}
+.kf-hero{position:relative;height:clamp(420px,74vh,760px);display:grid;place-items:center;overflow:hidden;background:#0E0E10;transition:background .8s var(--ease);margin-top:8px}
+.kf-hero[data-bg="light"]{background:#F1F1F1}
+.kf-hero::before{content:"";position:absolute;inset:-20%;background:radial-gradient(40% 40% at 50% 60%,rgba(255,123,15,.14),transparent 70%);transition:opacity .8s;pointer-events:none}
+.kf-hero[data-v="a"]::before{background:radial-gradient(40% 40% at 50% 60%,rgba(46,49,146,.28),transparent 70%)}
+.kf-hero[data-v="b"]::before{opacity:0}
+.kf-logo{position:relative;width:min(64vw,760px);aspect-ratio:1400/271}
+.kf-logo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.kf-logo .t{clip-path:inset(0 100% 47% 0)}
+.kf-logo .s{clip-path:inset(66% 100% 0 0)}
+.kf-hero.in .kf-logo .t{clip-path:inset(0 0 47% 0);transition:clip-path 1.3s cubic-bezier(.7,0,.2,1) .2s}
+.kf-hero.in .kf-logo .s{clip-path:inset(66% 0 0 0);transition:clip-path 1.1s cubic-bezier(.5,0,.1,1) 1.1s}
+.kf-ctl{position:absolute;left:50%;bottom:28px;translate:-50% 0;display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.kf-seg{display:flex;padding:4px;border-radius:999px;background:rgba(127,127,127,.16);backdrop-filter:blur(8px)}
+.kf-seg button{border:0;background:none;padding:8px 14px;border-radius:999px;font:500 12px/1 var(--f);color:#9a9a9a;cursor:pointer;transition:background .35s,color .35s}
+.kf-seg button.on{background:#fff;color:#111}
+.kf-hero[data-bg="light"] .kf-seg button.on{background:#111;color:#fff}
+.kf-hcap{position:absolute;left:clamp(16px,4vw,48px);top:24px;margin:0;font-size:12px;color:#7d7d7d;max-width:30em}
+.kf-sec{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:28px clamp(28px,5vw,80px);padding-block:120px 48px;align-items:end}
+.kf-no{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ko)}
+.kf-cap{display:grid;gap:16px}
+.kf-h{font-size:clamp(38px,5vw,80px);font-weight:200;letter-spacing:-.055em;line-height:.95}
+.kf-h em{font-style:normal;color:var(--ink-2)}
+.kf-txt{display:grid;gap:14px;max-width:34em}
+.kf-txt p{margin:0;font-size:15px;line-height:1.8;color:var(--ink-soft)}
+.kf-card{margin:0;background:var(--white);border-radius:6px;padding:clamp(20px,2.4vw,32px);display:grid;gap:24px;align-content:start;box-shadow:0 0 0 1px var(--line)}
+.kf-card figcaption{display:grid;gap:4px}
+.kf-card figcaption b{font-weight:500;font-size:16px;letter-spacing:-.01em}
+.kf-card figcaption span{font-size:12.5px;color:var(--ink-2)}
+.kf-research{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.kf-axes{position:relative;aspect-ratio:1;font-size:11px;color:var(--ink-2)}
+.kf-axes .ax-x,.kf-axes .ax-y{position:absolute;background:var(--ink)}
+.kf-axes .ax-x{left:0;right:0;top:50%;height:1px;transform:scaleX(0);transition:transform 1s var(--ease)}
+.kf-axes .ax-y{top:0;bottom:0;left:50%;width:1px;transform:scaleY(0);transition:transform 1s var(--ease) .15s}
+.kf-axes .kf-al{position:absolute;font-weight:500;color:var(--ink);opacity:0;transition:opacity .6s .6s}
+.kf-axes .kf-al.t{left:52%;top:0}.kf-axes .kf-al.b{right:52%;bottom:0}.kf-axes .kf-al.l{left:0;top:53%}.kf-axes .kf-al.r{right:0;top:53%}
+.kf-pin{position:absolute;left:78%;top:20%;display:grid;justify-items:center;gap:8px;font-weight:600;color:var(--ink);font-size:12px;white-space:nowrap;translate:-50% -50%;opacity:0;transform:scale(.6);transition:opacity .6s 1s,transform .8s cubic-bezier(.3,1.6,.5,1) 1s}
+.kf-pin i{width:14px;height:14px;border-radius:50%;background:var(--ko);box-shadow:0 0 0 6px rgba(255,123,15,.18)}
+.kf-dn{position:relative;width:min(100%,220px);aspect-ratio:1;justify-self:center}
+.kf-dn svg{width:100%;height:100%;rotate:-90deg}
+.kf-dn circle{fill:none;stroke-width:14}
+.kf-dn .bg{stroke:#ECECEC}
+.kf-dn .fg{stroke:var(--kb);stroke-dasharray:0 100;transition:stroke-dasharray 1.6s var(--ease) .3s}
+.kf-dv{position:absolute;inset:0;display:grid;place-content:center;text-align:center;gap:2px}
+.kf-dv b{font-size:clamp(34px,3.4vw,46px);font-weight:300;letter-spacing:-.04em}
+.kf-dv small{font-size:10.5px;color:var(--ink-2)}
+.kf-dl{margin:0;font-size:12.5px;line-height:1.7;color:var(--ink-2)}
+.kf-score ul{list-style:none;margin:0;padding:0;display:grid;gap:22px}
+.kf-score li{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:6px 10px;align-items:center;font-size:11.5px}
+.kf-score .l,.kf-score .r{font-weight:500}
+.kf-score .l{grid-column:1;grid-row:1}.kf-score .r{grid-column:3;grid-row:1;text-align:right}
+.kf-score .tr{grid-column:1/-1;grid-row:2;position:relative;height:18px;display:flex;justify-content:space-between;align-items:center}
+.kf-score .tr::before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:var(--ink)}
+.kf-score .tr i{width:1px;height:12px;background:var(--ink);position:relative}
+.kf-score .tr b{position:absolute;top:0;left:0;width:6px;height:18px;margin-left:-3px;border-radius:3px;background:var(--ko);transition:left 1.2s var(--ease);transition-delay:calc(var(--k)*.12s + .3s)}
+.kf-score .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.kf-pers{list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.kf-pers li{background:var(--white);border-radius:6px;padding:26px 22px 28px;display:grid;gap:12px;align-content:start;box-shadow:0 0 0 1px var(--line);transition:transform .6s var(--ease),box-shadow .6s}
+.kf-pers li:hover{transform:translateY(-4px);box-shadow:0 0 0 1px var(--ko),0 18px 40px rgba(0,0,0,.06)}
+.kf-pers .kf-pn{font-size:11px;letter-spacing:.1em;color:var(--ko)}
+.kf-pers svg{width:34px;height:34px;color:var(--ink)}
+.kf-pers h5{margin:6px 0 0;font-size:16px;font-weight:500;letter-spacing:-.01em}
+.kf-pers p{margin:0;font-size:13px;line-height:1.65;color:var(--ink-2)}
+.kf-vars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.kf-var{margin:0;background:var(--white);border-radius:6px;box-shadow:0 0 0 1px var(--line);display:grid;grid-template-rows:1fr auto;overflow:hidden}
+.kf-vimg{aspect-ratio:16/9;display:grid;place-items:center;padding:12%}
+.kf-var.lt .kf-vimg{padding:16%}
+.kf-vimg img{width:100%;height:auto;transition:transform .9s var(--ease)}
+.kf-var:hover .kf-vimg img{transform:scale(1.05)}
+.kf-var figcaption{font-size:12px;color:var(--ink-2);padding:12px 16px;border-top:1px solid var(--line)}
+.kf-rules{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:16px;margin-top:16px}
+.kf-gstage{position:relative;aspect-ratio:16/8;justify-content:flex-start!important;gap:14%!important;padding:0 8% 0 6%!important;border-radius:4px;background-color:#FAFAFA;
+  background-image:linear-gradient(#E4E4E4 1px,transparent 1px),linear-gradient(90deg,#E4E4E4 1px,transparent 1px),linear-gradient(#F0F0F0 1px,transparent 1px),linear-gradient(90deg,#F0F0F0 1px,transparent 1px);
+  background-size:8% 16%,8% 16%,4% 8%,4% 8%;display:flex;align-items:center;justify-content:space-around;gap:6%;padding:0 6%}
+.kf-gbox{position:relative;width:52%}
+.kf-gbox img,.kf-gmin img{width:100%;display:block}
+.kf-gbox::after{content:"";position:absolute;inset:-4% -2%;border:1px dashed var(--kb)}
+.kf-gbox .dw,.kf-gbox .dh,.kf-gmin span{position:absolute;font-size:10.5px;color:var(--kb);font-variant-numeric:tabular-nums}
+.kf-gbox .dw{left:50%;top:-26px;translate:-50% 0}.kf-gbox .dh{left:calc(100% + 10px);top:50%;translate:0 -50%;white-space:nowrap}
+.kf-gmin{position:relative;width:14%}.kf-gmin::after{content:"";position:absolute;inset:-6px -4px;border:1px dashed var(--kb)}.kf-gmin span{left:50%;top:-26px;translate:-50% 0;white-space:nowrap}
+.kf-sstage{position:relative;aspect-ratio:16/10;display:grid;place-items:center;border-radius:4px;background:#FAFAFA}
+.kf-sbox{position:relative;width:56%;padding:9% 7%;background:repeating-linear-gradient(45deg,rgba(46,49,146,.06) 0 6px,transparent 6px 12px);outline:1px dashed var(--kb);outline-offset:0}
+.kf-sbox img{width:100%;display:block;position:relative;background:#FAFAFA}
+.kf-sbox .y{position:absolute;right:-9%;bottom:9%;font-size:10.5px;color:var(--kb)}
+.kf-sstage .k2{position:absolute;font-size:10.5px;color:var(--kb)}
+.kf-sstage .k2.t{top:10%;left:50%;translate:-50% 0}.kf-sstage .k2.l{left:12%;top:50%;translate:0 -50%}
+.kf-colors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.kf-sw{background:var(--white);border-radius:6px;overflow:hidden;box-shadow:0 0 0 1px var(--line);display:grid}
+.kf-chip{background:var(--c);color:#fff;padding:clamp(28px,4vw,56px) clamp(20px,2.4vw,32px) 22px;display:grid;gap:6px;min-height:clamp(160px,18vw,240px);align-content:end}
+.kf-chip span{font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+.kf-chip b{font-size:clamp(24px,2.4vw,34px);font-weight:300;letter-spacing:-.03em}
+.kf-sw dl{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:0;padding:18px clamp(20px,2.4vw,32px) 6px;gap:12px}
+.kf-sw dt{font-size:10px;letter-spacing:.1em;color:var(--ink-2)}
+.kf-sw dd{margin:4px 0 0;font-size:13px;font-variant-numeric:tabular-nums}
+.kf-ramp{display:grid;grid-template-columns:repeat(9,1fr);height:22px;margin:12px clamp(20px,2.4vw,32px) 0;border-radius:3px;overflow:hidden}
+.kf-sw p{margin:0;padding:14px clamp(20px,2.4vw,32px) 24px;font-size:12.5px;color:var(--ink-2)}
+.kf-usage{margin-top:16px}
+.kf-urows{display:grid;gap:10px}
+.kf-urow{position:relative;height:clamp(54px,6.4vw,84px);border-radius:3px;overflow:hidden}
+.kf-ubar{position:absolute;inset:0;display:grid;grid-template-columns:repeat(10,1fr)}
+.kf-urow img{position:absolute;top:50%;height:46%;translate:0 -50%;width:auto;max-width:24%;object-fit:contain}
+.kf-urow .lo{left:5%}.kf-urow .hi{right:5%}
+.kf-urow.lt img{height:30%}
+.kf-uscale{display:flex;justify-content:space-between;font-size:11px;color:var(--ink-2)}
+.kf-apps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.kf-apps figure{margin:0;display:grid;gap:12px}
+.kf-apps figure.w{grid-column:1/-1}
+.kf-ph{display:block;width:100%;padding:0;border:0;border-radius:6px;overflow:hidden;cursor:pointer;background:#EEE;aspect-ratio:729/547}
+.kf-apps .w .kf-ph{aspect-ratio:963/616}
+.kf-ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s var(--ease)}
+.kf-ph:hover img,.kf-ph:focus-visible img{transform:scale(1.04)}
+.kf-apps figcaption{display:flex;justify-content:space-between;gap:12px;font-size:12.5px;color:var(--ink-2);border-top:1px solid var(--line);padding-top:12px}
+.kf-apps figcaption b{font-weight:500;color:var(--ink)}
+.kf-research.in .ax-x{transform:none}.kf-research.in .ax-y{transform:none}.kf-research.in .kf-al{opacity:1}.kf-research.in .kf-pin{opacity:1;transform:none}
+.kf-research.in .kf-dn .fg{stroke-dasharray:90 100}
+.kf-research.in .kf-score .tr b{left:calc(var(--v)*100%)}
+@media (max-width:980px){ .kf-research{grid-template-columns:repeat(2,minmax(0,1fr))} .kf-score{grid-column:1/-1} .kf-pers{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (max-width:760px){
+  .kf-sec{grid-template-columns:minmax(0,1fr);padding-block:88px 32px}
+  .kf-research,.kf-rules,.kf-colors,.kf-apps{grid-template-columns:minmax(0,1fr)}
+  .kf-vars{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .kf-sw dl{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .kf-logo{width:84vw}
+  .kf-hcap{display:none}
+  .kf-hero{height:clamp(360px,64vh,520px)}
+  .kf-urow img{max-width:30%}
+  .kf-title{font-size:clamp(44px,13vw,64px)}
+}
+@media (prefers-reduced-motion:reduce){
+  .kf-logo .t,.kf-logo .s{clip-path:none!important;transition:none!important}
+  .kf-axes .ax-x,.kf-axes .ax-y{transform:none}.kf-axes .kf-al,.kf-pin{opacity:1;transform:none}
+  .kf-dn .fg{stroke-dasharray:90 100;transition:none}.kf-score .tr b{left:calc(var(--v)*100%);transition:none}
+}
+
 /* cta + footer */
 .cta{padding-block:160px 120px;text-align:center}
 .cta h2{font-size:clamp(28px,3.6vw,44px);margin-bottom:14px}
@@ -1199,7 +1334,7 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
       <div class="creds">
         <div class="cred rv"><span class="y">2010 — 2016</span><span class="k chip">Education</span><h3>Pratt Institute, New York<small>산업디자인 학사 (BID, Industrial Design)</small></h3><span class="no"></span></div>
         <div class="cred rv"><span class="y">2006 — 2010</span><span class="k chip">Education</span><h3>Chapelgate Christian Academy, Maryland<small>졸업, Presidential Award 수상</small></h3><span class="no"></span></div>
-        <div class="cred rv"><span class="y">2023.07</span><span class="k chip">Trademark</span><h3>계열사 K-FutureTech 로고 상표 등록<small>42류, 2021.11 출원</small></h3><span class="no">제40-2058814호</span></div>
+        <div class="cred rv"><span class="y">2023.07</span><span class="k chip">Trademark</span><h3>계열사 K-FutureTech 로고 상표 등록<small>42류, 2021.11 출원 · 현 KAON ROBOTICS</small></h3><span class="no">제40-2058814호<br><a class="cred-link" href="#kfuturetech">작품 보기 ↗</a></span></div>
         <div class="cred rv"><span class="y">2022.11</span><span class="k chip">Copyright</span><h3>가온 프렌즈 캐릭터 5종 저작권 등록<small>K · Fi · Maverick · Solu · Robi, 한국저작권위원회 (회사 명의 업무상 저작물)</small></h3><span class="no">제C-2022-047023~047027호</span></div>
         <div class="cred rv"><span class="y">2018</span><span class="k chip">Design Right</span><h3>스마트 디퓨저 디자인권 등록<small>한국암웨이 재직 중 디자인 개발</small></h3><span class="no">제30-1007738호</span></div>
         <div class="cred rv"><span class="y">2018</span><span class="k chip">Award</span><h3>신일 미니 선풍기 디자인 공모전 장려상<small>휴대용 미니 선풍기 Windmate (WM 1800)</small></h3><span class="no"><a class="cred-link" href="#windmate">작품 보기 ↗</a></span></div>
@@ -1574,6 +1709,106 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
   </section>
 </div>
 
+<div class="case page" id="pg-kfuturetech" role="dialog" aria-modal="true" aria-labelledby="pk-title" hidden>
+  <div class="case-top wrap"><div class="c"><span class="label">Project — KAON Group · In-house</span><button class="closeb" type="button" data-close>닫기 ✕</button></div></div>
+  <div class="wrap"><div class="c">
+    <header class="pg-head">
+      <h2 class="pg-title kf-title" id="pk-title">K-FutureTech</h2>
+      <div class="pg-meta"><span><b>KAON Group</b> · 사내 프로젝트</span><span>현 KAON ROBOTICS</span><span>Brand Identity · CI / BI · Guideline</span></div>
+    </header>
+    <div class="pg-intro"><span class="label">About this project</span><p class="pg-lead">가온미디어의 자회사로 2021년 4월 출범한 K-FutureTech(현 KAON ROBOTICS)의 브랜드 아이덴티티예요. AR/XR 융합 기술과 AI 솔루션을 다루는 회사의 성격을 리서치로 정의하고, 워드마크와 컬러 시스템, 사용 규정, 명함과 서식류까지 이어지는 CI·BI를 만들었어요.</p></div>
+    <dl class="ix-stats">
+      <div><dt>Trademark</dt><dd>등록<br><small>제40-2058814호 (2023.07)</small></dd></div>
+      <div><dt>Logo Set</dt><dd>6<br><small>Wordmark 3 · Logotype 3</small></dd></div>
+      <div><dt>Colors</dt><dd>2 + 2<br><small>Primary · Secondary</small></dd></div>
+      <div><dt>Guideline</dt><dd>Grid · Space<br><small>Color Usage · Stationery</small></dd></div>
+    </dl>
+  </div></div>
+
+  <section class="kf" aria-label="K-FutureTech 브랜딩 상세">
+    <div class="kf-hero" id="kf-hero" data-bg="dark">
+      <div class="kf-logo"><img class="t" src="assets/kft/wm-basic-w.webp" alt="K-FutureTech 워드마크"><img class="s" src="assets/kft/wm-basic-w.webp" alt="" aria-hidden="true"></div>
+      <div class="kf-ctl" role="group" aria-label="워드마크 미리보기 설정">
+        <div class="kf-seg" data-k="v"><button type="button" class="on" data-v="basic">Orange</button><button type="button" data-v="a">Sapphire</button><button type="button" data-v="b">Mono</button></div>
+        <div class="kf-seg" data-k="bg"><button type="button" class="on" data-v="dark">Dark</button><button type="button" data-v="light">Light</button></div>
+      </div>
+      <p class="kf-hcap">Wordmark — 지구 표면의 곡률을 샤프하게 다듬은 스우시 위에 로고타입을 올린 형태</p>
+    </div>
+
+    <div class="wrap"><div class="c">
+      <div class="kf-sec">
+        <div class="kf-cap"><span class="kf-no">01 — Research</span><h3 class="kf-h">Positioning<br><em>before the pen.</em></h3></div>
+        <div class="kf-txt"><p>로고를 그리기 전에 회사의 핵심 가치와 비전, 방향성을 기준으로 이미지 포지션을 먼저 정했어요. 기술 기반 Tech·IT 기업 로고의 트렌드를 조사하고, 회사가 지향하는 성격에 점수를 매겨 형태·스타일·색상의 방향을 잡았어요.</p></div>
+      </div>
+      <div class="kf-research">
+        <figure class="kf-card kf-map">
+          <figcaption><b>Image Positioning</b><span>다이나믹하고 테크 중심적인 위치</span></figcaption>
+          <div class="kf-axes" aria-hidden="true">
+            <span class="ax-x"></span><span class="ax-y"></span>
+            <span class="kf-al t">Tech-oriented</span><span class="kf-al b">Emotional</span><span class="kf-al l">Gentle</span><span class="kf-al r">Dynamic</span>
+            <span class="kf-pin"><i></i>K-FutureTech</span>
+          </div>
+        </figure>
+        <figure class="kf-card kf-donut">
+          <figcaption><b>Market Logo Trend</b><span>Tech · IT · 서비스 플랫폼 기업 로고</span></figcaption>
+          <div class="kf-dn">
+            <svg viewBox="0 0 120 120" aria-hidden="true"><circle class="bg" cx="60" cy="60" r="48"/><circle class="fg" cx="60" cy="60" r="48" pathLength="100"/></svg>
+            <div class="kf-dv"><b><span data-count="90">0</span>%</b><small>Tech-oriented &amp; Dynamic</small></div>
+          </div>
+          <p class="kf-dl">정교함 · 믿음직함 · 강인함 · 무게감 · 신속함을 강조하는 다이나믹하고 샤프한 스타일이 90% 이상이었어요.</p>
+        </figure>
+        <figure class="kf-card kf-score">
+          <figcaption><b>Personality Score</b><span>지향하는 성격의 9단계 점수</span></figcaption>
+          <ul><li style="--v:0.8889;--k:0"><span class="l">Classic</span><span class="tr" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><b></b></span><span class="r">Modern</span><span class="sr">Classic–Modern 척도 9칸 중 8</span></li><li style="--v:0.7778;--k:1"><span class="l">Gentle</span><span class="tr" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><b></b></span><span class="r">Dynamic</span><span class="sr">Gentle–Dynamic 척도 9칸 중 7</span></li><li style="--v:0.6667;--k:2"><span class="l">Friendly</span><span class="tr" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><b></b></span><span class="r">Authoritative</span><span class="sr">Friendly–Authoritative 척도 9칸 중 6</span></li><li style="--v:0.8889;--k:3"><span class="l">Adventurous</span><span class="tr" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><b></b></span><span class="r">Secure</span><span class="sr">Adventurous–Secure 척도 9칸 중 8</span></li></ul>
+        </figure>
+      </div>
+      <ul class="kf-pers"><li style="--k:0"><span class="kf-pn">P1</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M6 18l2-2M16 8l2-2"/><circle cx="12" cy="12" r="3.2"/></svg><h5>Future / Tech-oriented</h5><p>AR/XR 융복합, AI 등 혁신적인 기술로 미래를 선도하는 기업</p></li><li style="--k:1"><span class="kf-pn">P2</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V9l8-5 8 5v11"/><path d="M9 20v-6h6v6"/></svg><h5>Firm / Strong / Healthy</h5><p>견고하고 튼튼한 기술력을 바탕으로 세계로 뻗어 나갈 준비</p></li><li style="--k:2"><span class="kf-pn">P3</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 15c4 0 6-6 10-6h8"/><path d="M17 5l4 4-4 4"/><path d="M3 9h5M3 19h8"/></svg><h5>Dynamic / Speedy</h5><p>변화를 두려워하지 않고 끊임없이 도전하며 한발 앞서 나아감</p></li><li style="--k:3"><span class="kf-pn">P4</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><h5>Secure / Reliable / Trust</h5><p>신뢰와 안전성을 바탕으로 고객과 함께 성장하는 기업</p></li></ul>
+
+      <div class="kf-sec">
+        <div class="kf-cap"><span class="kf-no">02 — Logo</span><h3 class="kf-h">Sharp, yet<br><em>rounded.</em></h3></div>
+        <div class="kf-txt"><p>워드마크는 역동성과 단순함을 강조해요. 지구 표면의 형상을 샤프하게 다듬은 심볼 위에 로고타입을 올려, 세계 무대를 발판으로 우주까지 뻗어 나가는 가능성을 담았어요.</p><p>샤프하지만 라운드한 심볼은 빠르게 변하는 기술과 트렌드를 발 빠르게 받아들이는 태도를 뜻해요. 기본은 상하 조합형이고, 지면이나 설치 조건이 맞지 않을 때는 로고타입형을 써요.</p></div>
+      </div>
+      <div class="kf-vars"><figure class="kf-var"><div class="kf-vimg"><img src="assets/kft/wm-basic.webp" alt="K-FutureTech Wordmark Basic" loading="lazy" decoding="async"></div><figcaption>Wordmark Basic</figcaption></figure><figure class="kf-var"><div class="kf-vimg"><img src="assets/kft/wm-a.webp" alt="K-FutureTech Wordmark A" loading="lazy" decoding="async"></div><figcaption>Wordmark A</figcaption></figure><figure class="kf-var"><div class="kf-vimg"><img src="assets/kft/wm-b.webp" alt="K-FutureTech Wordmark B" loading="lazy" decoding="async"></div><figcaption>Wordmark B</figcaption></figure><figure class="kf-var lt"><div class="kf-vimg"><img src="assets/kft/lt-basic.webp" alt="K-FutureTech Logotype Basic" loading="lazy" decoding="async"></div><figcaption>Logotype Basic</figcaption></figure><figure class="kf-var lt"><div class="kf-vimg"><img src="assets/kft/lt-a.webp" alt="K-FutureTech Logotype A" loading="lazy" decoding="async"></div><figcaption>Logotype A</figcaption></figure><figure class="kf-var lt"><div class="kf-vimg"><img src="assets/kft/lt-b.webp" alt="K-FutureTech Logotype B" loading="lazy" decoding="async"></div><figcaption>Logotype B</figcaption></figure></div>
+
+      <div class="kf-rules">
+        <figure class="kf-card kf-grid">
+          <figcaption><b>Grid System</b><span>기본 517 × 100 px · 최소 141 × 27 px (50 × 9.6 mm)</span></figcaption>
+          <div class="kf-gstage" aria-hidden="true"><div class="kf-gbox"><img src="assets/kft/wm-basic.webp" alt=""><span class="dw">517 px</span><span class="dh">100 px</span></div><div class="kf-gmin"><img src="assets/kft/wm-basic.webp" alt=""><span>141 px</span></div></div>
+        </figure>
+        <figure class="kf-card kf-space">
+          <figcaption><b>Clear Space</b><span>로고타입 아랫면 ~ 심볼 아랫면 = Y, 사방 2Y 확보</span></figcaption>
+          <div class="kf-sstage" aria-hidden="true"><div class="kf-sbox"><img src="assets/kft/wm-basic.webp" alt=""><span class="y">Y</span></div><span class="k2 t">2Y</span><span class="k2 l">2Y</span></div>
+        </figure>
+      </div>
+
+      <div class="kf-sec">
+        <div class="kf-cap"><span class="kf-no">03 — Color</span><h3 class="kf-h">K Orange,<br><em>K Blue.</em></h3></div>
+        <div class="kf-txt"><p>파란색은 신뢰와 안정, 첨단 기술과 미래지향을, 주황색은 역동성과 신속함, 에너지를 뜻해요. 두 고유색을 모든 영역에 같은 기준으로 적용해 브랜드 이미지를 쌓도록 했어요. 보조색은 White(P 179-1C)와 Black(Process Black C)이에요.</p></div>
+      </div>
+      <div class="kf-colors"><div class="kf-sw" style="--c:#FF7B0F"><div class="kf-chip"><span>K Orange</span><b>Flamenco Orange</b></div>
+          <dl><div><dt>HEX</dt><dd>#FF7B0F</dd></div><div><dt>RGB</dt><dd>255 / 123 / 15</dd></div><div><dt>CMYK</dt><dd>0 / 67 / 100 / 0</dd></div><div><dt>PANTONE</dt><dd>1505 C</dd></div></dl>
+          <div class="kf-ramp" aria-hidden="true"><i style="background:#FF7B0F"></i><i style="background:#FF8B2C"></i><i style="background:#FF9B49"></i><i style="background:#FFAB65"></i><i style="background:#FFBA82"></i><i style="background:#FFCA9F"></i><i style="background:#FFDABC"></i><i style="background:#FFEAD9"></i><i style="background:#FFF6EE"></i></div><p>역동성 · 신속함 · 활발함 · 에너지</p></div><div class="kf-sw" style="--c:#2E3192"><div class="kf-chip"><span>K Blue</span><b>Sapphire Blue</b></div>
+          <dl><div><dt>HEX</dt><dd>#2E3192</dd></div><div><dt>RGB</dt><dd>46 / 49 / 146</dd></div><div><dt>CMYK</dt><dd>98 / 90 / 0 / 0</dd></div><div><dt>PANTONE</dt><dd>2746 C</dd></div></dl>
+          <div class="kf-ramp" aria-hidden="true"><i style="background:#2E3192"></i><i style="background:#474A9F"></i><i style="background:#6062AC"></i><i style="background:#797BB9"></i><i style="background:#9294C6"></i><i style="background:#ABADD3"></i><i style="background:#C4C5E0"></i><i style="background:#DEDEEE"></i><i style="background:#F0F1F7"></i></div><p>신뢰 · 안정 · 정직 · 첨단 기술 · 미래지향</p></div></div>
+      <figure class="kf-card kf-usage">
+        <figcaption><b>Color Usage</b><span>배경 명도 0–100%에 따른 워드마크 적용 규정</span></figcaption>
+        <div class="kf-urows"><div class="kf-urow" style="--k:0"><div class="kf-ubar" aria-hidden="true"><i style=background:#E6E6E6></i><i style=background:#CCCCCC></i><i style=background:#B3B3B3></i><i style=background:#999999></i><i style=background:#808080></i><i style=background:#666666></i><i style=background:#4D4D4D></i><i style=background:#333333></i><i style=background:#1A1A1A></i><i style=background:#000000></i></div><img class="lo" src="assets/kft/wm-basic.webp" alt="" loading="lazy" decoding="async"><img class="hi" src="assets/kft/wm-basic-w.webp" alt="" loading="lazy" decoding="async"></div><div class="kf-urow" style="--k:1"><div class="kf-ubar" aria-hidden="true"><i style=background:#E6E6E6></i><i style=background:#CCCCCC></i><i style=background:#B3B3B3></i><i style=background:#999999></i><i style=background:#808080></i><i style=background:#666666></i><i style=background:#4D4D4D></i><i style=background:#333333></i><i style=background:#1A1A1A></i><i style=background:#000000></i></div><img class="lo" src="assets/kft/wm-a.webp" alt="" loading="lazy" decoding="async"><img class="hi" src="assets/kft/wm-a-w.webp" alt="" loading="lazy" decoding="async"></div><div class="kf-urow lt" style="--k:2"><div class="kf-ubar" aria-hidden="true"><i style=background:#E6E6E6></i><i style=background:#CCCCCC></i><i style=background:#B3B3B3></i><i style=background:#999999></i><i style=background:#808080></i><i style=background:#666666></i><i style=background:#4D4D4D></i><i style=background:#333333></i><i style=background:#1A1A1A></i><i style=background:#000000></i></div><img class="lo" src="assets/kft/lt-basic.webp" alt="" loading="lazy" decoding="async"><img class="hi" src="assets/kft/lt-basic-w.webp" alt="" loading="lazy" decoding="async"></div><div class="kf-urow lt" style="--k:3"><div class="kf-ubar" aria-hidden="true"><i style=background:#E6E6E6></i><i style=background:#CCCCCC></i><i style=background:#B3B3B3></i><i style=background:#999999></i><i style=background:#808080></i><i style=background:#666666></i><i style=background:#4D4D4D></i><i style=background:#333333></i><i style=background:#1A1A1A></i><i style=background:#000000></i></div><img class="lo" src="assets/kft/lt-a.webp" alt="" loading="lazy" decoding="async"><img class="hi" src="assets/kft/lt-b-w.webp" alt="" loading="lazy" decoding="async"></div></div>
+        <div class="kf-uscale" aria-hidden="true"><span>0%</span><span>50%</span><span>100%</span></div>
+      </figure>
+
+      <div class="kf-sec">
+        <div class="kf-cap"><span class="kf-no">04 — Application</span><h3 class="kf-h">First<br><em>impressions.</em></h3></div>
+        <div class="kf-txt"><p>대외 활동에서 가장 먼저 건네는 명함과 레터지·봉투에 규정을 적용했어요. 각 부서나 개인이 임의로 만들지 않도록 주소 블록 조합(좌측·우측·중앙·가로 정렬)까지 정리했어요.</p></div>
+      </div>
+      <div class="kf-apps">
+        <figure><button class="kf-ph" type="button" data-lb="83" data-cursor="1" aria-label="화이트 명함 목업 크게 보기"><img src="assets/kft/card-light.webp" alt="K-FutureTech — 화이트 명함 목업" loading="lazy" decoding="async"></button><figcaption><b>Business Card</b><span>Light · 90 × 55 mm</span></figcaption></figure>
+        <figure><button class="kf-ph" type="button" data-lb="84" data-cursor="1" aria-label="다크 명함 목업 크게 보기"><img src="assets/kft/card-dark.webp" alt="K-FutureTech — 다크 명함 목업" loading="lazy" decoding="async"></button><figcaption><b>Business Card</b><span>Dark</span></figcaption></figure>
+        <figure class="w"><button class="kf-ph" type="button" data-lb="85" data-cursor="1" aria-label="레터지와 봉투 목업 크게 보기"><img src="assets/kft/envelope.webp" alt="K-FutureTech — 레터지와 봉투 목업" loading="lazy" decoding="async"></button><figcaption><b>Letter &amp; Envelope</b><span>210 × 297 mm · 220 × 105 mm</span></figcaption></figure>
+      </div>
+    </div></div>
+  </section>
+</div>
+
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="작품 크게 보기" hidden>
   <figure class="lb-fig"><img id="lb-img" alt=""><figcaption><span id="lb-cap"></span><span id="lb-pos"></span></figcaption></figure>
   <button class="lb-btn lb-x" type="button" id="lb-x" aria-label="닫기">✕</button>
@@ -1733,6 +1968,9 @@ const WORKS=[
    ch:'그룹사와 계열사의 브랜드 아이덴티티, 그리고 해외 전시 비주얼을 함께 맡는 역할이었어요.',
    ap:'CI·BI 신규 개발과 리뉴얼, 로고·심볼·패턴·사원증을 제작하고, 신사업 Sool.Zip의 브랜딩과 앱 UIUX를 기획·디자인했어요. IBC·MWC·BBWF 등 전시의 부스 외벽·배너·사인·스펙보드 디자인과 영상·브로슈어·리플렛 제작을 총괄했어요.',
    out:'CI·BI 4건을 개발·리뉴얼하고 글로벌 전시 6회 이상의 비주얼을 총괄했어요. 계열사 K-FutureTech 로고는 상표 등록(제40-2058814호)까지 이어졌어요.'},
+  {title:'K-FutureTech Branding', page:'kfuturetech', img:'assets/kft/card-dark.webp', sub:'KAON Group', tag:'CI · BI', period:'사내 프로젝트', cat:['brand'], scene:4,
+   kr:'계열사 K-FutureTech(현 KAON ROBOTICS) 브랜드 아이덴티티와 가이드라인', role:'Brand Designer', client:'K-FutureTech', tools:'Illustrator, Photoshop',
+   kpis:[], ch:'', ap:'', out:''},
   {title:'LinkFit', page:'linkfit', img:'assets/linkfit/web/s-hero.webp', sub:'Freelance', tag:'Website · App', period:'2026.01 — 현재', cat:['product','brand','content'], scene:5,
    kr:'헬스장 이용권을 시간 단위로 예약·결제하는 B2C 피트니스 앱의 서비스 기획과 디자인', role:'Product Designer & Service Planner', client:'LinkFit', tools:'Figma, GA4, Search Console, Suno',
    kpis:[['Flow','서비스 플로우·화면기획서 작성'],['Admin','권한 분리 파트너 대시보드 설계'],['2명','개발자와 핸드오프·QA 협업']],
@@ -1761,13 +1999,13 @@ const WORKS=[
 const JOURNEY=[
   {co:'가온그룹 (KAON Group)', date:'2021.09 — 현재 · 5년 2개월', role:'Corporate실 마케팅팀 매니저 / Visual Contents Designer', tags:['AI Workflow','Brand · IP'], w:0,
    pts:['AI 에이전트 2종 구축으로 리서치 시간 약 80%↓, 월 발행량 2배','그룹 캐릭터 IP 가온 프렌즈 5종 기획·디자인, 저작권 5건 등록','CI·BI 4건 개발·리뉴얼, IBC·MWC·BBWF 글로벌 전시 6회 이상 총괄','LinkedIn·YouTube·Facebook·X 공식 채널 콘텐츠 기획·운영']},
-  {co:'LinkFit', date:'2026.01 — 현재 · Freelance', role:'프리랜서 · 프로덕트 디자이너 & 서비스 기획자', tags:['Product','Planning'], w:5, page:'linkfit', imgs:['assets/linkfit/app/04.webp','assets/linkfit/app/13.webp','assets/linkfit/app/20.webp'],
+  {co:'LinkFit', date:'2026.01 — 현재 · Freelance', role:'프리랜서 · 프로덕트 디자이너 & 서비스 기획자', tags:['Product','Planning'], w:6, page:'linkfit', imgs:['assets/linkfit/app/04.webp','assets/linkfit/app/13.webp','assets/linkfit/app/20.webp'],
    pts:['시간 단위 헬스장 예약 앱의 서비스 플로우 설계와 화면기획서 작성, UIUX 디자인','결제 조회·환불 권한을 분리한 파트너 어드민 대시보드 설계','BI·앱 디자인 시스템, 랜딩페이지, GA4·UTM 성과 측정 체계']},
-  {co:'greyd', date:'2022.07 — 2024.08 · Side Project', role:'프리랜서 · 크리에이티브 디렉터 & UIUX 디자이너', tags:['UIUX','Ads'], w:6,
+  {co:'greyd', date:'2022.07 — 2024.08 · Side Project', role:'프리랜서 · 크리에이티브 디렉터 & UIUX 디자이너', tags:['UIUX','Ads'], w:7,
    pts:['핵심 기능 서비스 플로우·화면 설계 주도, 특허 확보에 기획자로 참여','플랫폼 브랜딩 및 앱·웹사이트 UIUX 설계','메타·구글 광고 집행 (월 약 100만원, ROAS 약 200%)']},
-  {co:'이공이공 (Egongegong)', date:'2021.01 — 2021.09 · 9개월', role:'마케팅본부 리브랜딩팀 · 리브랜딩 디자이너 (초기 멤버)', tags:['E-commerce','Localization'], w:7,
+  {co:'이공이공 (Egongegong)', date:'2021.01 — 2021.09 · 9개월', role:'마케팅본부 리브랜딩팀 · 리브랜딩 디자이너 (초기 멤버)', tags:['E-commerce','Localization'], w:8,
    pts:['국내 브랜드 약 10개사 아마존 북미 입점용 디자인','이미지 A/B 개선으로 CTR 약 15%·CVR 약 10% 향상','제품 콘셉트 촬영 기획·디렉팅, 프리랜서 디자이너 관리']},
-  {co:'한국암웨이 (Amway Korea)', date:'2018.03 — 2020.03 · 2년', role:'R&D 아시아 이노베이션센터 · 산업디자이너', tags:['Industrial','Package'], w:8,
+  {co:'한국암웨이 (Amway Korea)', date:'2018.03 — 2020.03 · 2년', role:'R&D 아시아 이노베이션센터 · 산업디자이너', tags:['Industrial','Package'], w:9,
    pts:['아티스트리·앳모스피어 신제품 기획·디자인·개발','스마트 디퓨저 디자인권 등록 (제30-1007738호)','오픈 이노베이션 컨셉 3건 채택, 자재·패키징 원가 약 5% 절감']},
   {co:'Design Internships', date:'2014.06 — 2017.03 · 6곳', role:'Karim Rashid · Stephen Burks · David Weeks · BoConcept · Design MU · Nep Plus', tags:['Product','Furniture'], w:null, page:'internship', imgs:['assets/intern/ottawa-wall.webp','assets/intern/toot-interior.webp','assets/intern/toot-product.webp'],
    pts:['Karim Rashid Inc. — BoConcept·Kundalini 등 클라이언트 프로젝트 3D 모델링·렌더링','Stephen Burks Man Made — Art Basel 2016 Miami Beach 설치 공간 3D 데이터·프로토타입','David Weeks Studio — 조명 프로토타이핑, ICFF 기간 회사 전시 운영','Design MU · Nep Plus (서울) — 현대자동차, Carrier, Winix 제품 디자인 참여']},
@@ -1796,7 +2034,7 @@ JOURNEY.forEach((j,i)=>{
     <div class="jpanel" id="${pid}" role="region" aria-labelledby="jb${i}"><div><div class="jin">
       ${j.imgs?`<div class="jthumbs">${j.imgs.map(k=>`<div class="t"><img src="${IMGS[k]||k}" alt="" style="width:100%;height:100%;object-fit:cover;filter:grayscale(1)"></div>`).join('')}</div>`:'<span class="jspacer" aria-hidden="true"></span>'}
       <ul class="jpts">${j.pts.map(p=>`<li>${p}</li>`).join('')}</ul>
-      ${j.page?`<a class="arrow-btn" href="#${j.page}" aria-label="${({internship:'인턴 작업 페이지 보기',university:'Pratt 작품 페이지 보기',linkfit:'링크핏 프로젝트 페이지 보기'})[j.page]}">${ARROW}</a>`:j.w===null?'<span></span>':`<button class="arrow-btn" type="button" data-open="${j.w}" aria-label="${WORKS[j.w].title} 프로젝트 보기">${ARROW}</button>`}
+      ${j.page?`<a class="arrow-btn" href="#${j.page}" aria-label="${({internship:'인턴 작업 페이지 보기',university:'Pratt 작품 페이지 보기',linkfit:'링크핏 프로젝트 페이지 보기',kfuturetech:'K-FutureTech 브랜딩 페이지 보기'})[j.page]}">${ARROW}</a>`:j.w===null?'<span></span>':`<button class="arrow-btn" type="button" data-open="${j.w}" aria-label="${WORKS[j.w].title} 프로젝트 보기">${ARROW}</button>`}
     </div></div></div>`;
   jl.appendChild(row);
   row.querySelectorAll('.t canvas').forEach((c,k)=>addArt(c,'scene',SCENES[k]));
@@ -1882,7 +2120,7 @@ document.getElementById('close').addEventListener('click',closeCase);
 addEventListener('keydown',e=>{if(e.key==='Escape'&&!caseEl.hidden) closeCase();});
 
 /* ---------- 서브 페이지 (#university, #internship) ---------- */
-const PAGES={university:document.getElementById('pg-university'),internship:document.getElementById('pg-internship'),linkfit:document.getElementById('pg-linkfit'),windmate:document.getElementById('pg-windmate'),panastove:document.getElementById('pg-panastove')};
+const PAGES={university:document.getElementById('pg-university'),internship:document.getElementById('pg-internship'),linkfit:document.getElementById('pg-linkfit'),windmate:document.getElementById('pg-windmate'),panastove:document.getElementById('pg-panastove'),kfuturetech:document.getElementById('pg-kfuturetech')};
 function goPage(k){ history.pushState({fromSite:true},'','#'+k); route(); }
 let pageReturn=null;
 function showPage(el){
@@ -1905,7 +2143,7 @@ function route(){
 }
 function leavePage(){ if(history.state&&history.state.fromSite){ history.back(); } else { history.replaceState(null,'',location.pathname+location.search+'#archive'); route(); } }
 document.addEventListener('click',e=>{
-  const a=e.target.closest('a[href="#university"],a[href="#internship"],a[href="#linkfit"],a[href="#windmate"],a[href="#panastove"]'); if(!a) return;
+  const a=e.target.closest('a[href="#university"],a[href="#internship"],a[href="#linkfit"],a[href="#windmate"],a[href="#panastove"],a[href="#kfuturetech"]'); if(!a) return;
   e.preventDefault(); history.pushState({fromSite:true},'',a.getAttribute('href')); route();
 });
 document.querySelectorAll('.page [data-close]').forEach(b=>b.addEventListener('click',leavePage));
@@ -2062,8 +2300,23 @@ document.querySelectorAll('#lf-tabs button').forEach(b=>b.addEventListener('clic
     list.querySelectorAll('li').forEach(li=>{ li.addEventListener('pointerenter',()=>hl(li.dataset.n)); li.addEventListener('pointerleave',()=>hl(null)); }); }
 })();
 
+(()=>{ const pg=document.getElementById('pg-kfuturetech'); if(!pg) return;
+  const hero=pg.querySelector('#kf-hero'), imgs=[...hero.querySelectorAll('.kf-logo img')];
+  const st={v:'basic',bg:'dark'};
+  const apply=()=>{ hero.dataset.bg=st.bg; hero.dataset.v=st.v; const f='assets/kft/wm-'+st.v+(st.bg==='dark'?'-w':'')+'.webp'; imgs.forEach(im=>im.src=f); };
+  hero.querySelectorAll('.kf-seg').forEach(g=>g.addEventListener('click',e=>{ const b=e.target.closest('button'); if(!b) return;
+    g.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b)); st[g.dataset.k]=b.dataset.v; apply(); }));
+  const cnt=pg.querySelector('[data-count]');
+  const run=el=>{ el.classList.add('in'); if(el.classList.contains('kf-research')&&cnt){ const T=+cnt.dataset.count, t0=performance.now(); const f=t=>{ const p=Math.min(1,(t-t0-300)/1600); cnt.textContent=Math.max(0,Math.round(T*(1-Math.pow(1-Math.max(p,0),3)))); if(p<1) requestAnimationFrame(f); }; reduce?cnt.textContent=T:requestAnimationFrame(f); } };
+  const els=[hero,pg.querySelector('.kf-research')];
+  if(reduce||!('IntersectionObserver' in window)){ els.forEach(run); return; }
+  const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ run(e.target); io.unobserve(e.target);} }),{root:pg,threshold:.3});
+  new MutationObserver(()=>{ if(pg.hidden){ els.forEach(e=>{ e.classList.remove('in'); io.unobserve(e); }); if(cnt) cnt.textContent='0'; } else els.forEach(e=>io.observe(e)); }).observe(pg,{attributes:true,attributeFilter:['hidden']});
+  if(!pg.hidden) els.forEach(e=>io.observe(e));
+})();
+
 /* ---------- 3D 작품 라이트박스 ---------- */
-const LB=[{"src": "assets/3d/convexity-1.webp", "alt": "석고 조형 Organic Convexity — 세로 구도", "cap": "Organic Convexity — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/3d/convexity-2.webp", "alt": "석고 조형 Organic Convexity — 측면", "cap": "Organic Convexity — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/3d/convexity-3.webp", "alt": "석고 조형 Organic Convexity — 위에서 본 모습", "cap": "Organic Convexity — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/3d/fluidity-1.webp", "alt": "종이 조형 Organic Fluidity — 바닥에 놓인 형태", "cap": "Organic Fluidity — 3D Paper Sculpture", "g": "u"}, {"src": "assets/3d/fluidity-2.webp", "alt": "종이 조형 Organic Fluidity — 매달린 형태", "cap": "Organic Fluidity — 3D Paper Sculpture", "g": "u"}, {"src": "assets/3d/space-box.webp", "alt": "공간 분석 박스 — 상자 안에 매달린 색 면들", "cap": "Space Analysis Box — Spatial Study", "g": "u"}, {"src": "assets/3d/elements.webp", "alt": "3D 요소 연구 — 받침 위의 곡면과 선, 나무 형태", "cap": "3D Elements Studies — Space · Direction · Priority · Movement", "g": "u"}, {"src": "assets/3d/edged-1.webp", "alt": "석고 조형 Aesthetic Edged Surface — 정면", "cap": "Aesthetic Edged Surface — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/3d/edged-2.webp", "alt": "석고 조형 Aesthetic Edged Surface — 근접", "cap": "Aesthetic Edged Surface — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/3d/edged-3.webp", "alt": "석고 조형 Aesthetic Edged Surface — 측면", "cap": "Aesthetic Edged Surface — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/intern/ottawa-wall.webp", "alt": "BoConcept Ottawa 사이드 테이블 — 벽 선반과 함께 연출된 공간", "cap": "Ottawa Side Table — BoConcept · Photography © BoConcept", "g": "i"}, {"src": "assets/intern/ottawa-lounge-1.webp", "alt": "Ottawa 사이드 테이블 — 소파 옆에 놓인 모습", "cap": "Ottawa Side Table — BoConcept · Photography © BoConcept", "g": "i"}, {"src": "assets/intern/ottawa-lounge-2.webp", "alt": "Ottawa 사이드 테이블 — 소파 좌석 아래로 밀어 넣은 모습", "cap": "Ottawa Side Table — BoConcept · Photography © BoConcept", "g": "i"}, {"src": "assets/intern/toot-interior.webp", "alt": "Kundalini TOOT 테이블 램프 — 인테리어 연출", "cap": "TOOT Table Lamp — Kundalini, 2017 · Photography © Kundalini", "g": "i"}, {"src": "assets/intern/toot-product.webp", "alt": "Kundalini TOOT 테이블 램프 — 제품 단독 컷", "cap": "TOOT Table Lamp — Kundalini, 2017 · Photography © Kundalini", "g": "i"}, {"src": "assets/linkfit/app/01.webp", "alt": "링크핏 앱 화면 — 01 스플래시", "cap": "LinkFit App — A 진입 · 01 스플래시", "g": "l"}, {"src": "assets/linkfit/app/02.webp", "alt": "링크핏 앱 화면 — 02 로그인", "cap": "LinkFit App — A 진입 · 02 로그인", "g": "l"}, {"src": "assets/linkfit/app/03.webp", "alt": "링크핏 앱 화면 — 03 로그인 진행 중", "cap": "LinkFit App — A 진입 · 03 로그인 진행 중", "g": "l"}, {"src": "assets/linkfit/app/04.webp", "alt": "링크핏 앱 화면 — 04 홈", "cap": "LinkFit App — B 탐색 · 04 홈", "g": "l"}, {"src": "assets/linkfit/app/05.webp", "alt": "링크핏 앱 화면 — 05 알림", "cap": "LinkFit App — B 탐색 · 05 알림", "g": "l"}, {"src": "assets/linkfit/app/06.webp", "alt": "링크핏 앱 화면 — 06 검색", "cap": "LinkFit App — B 탐색 · 06 검색", "g": "l"}, {"src": "assets/linkfit/app/07.webp", "alt": "링크핏 앱 화면 — 07 검색 결과", "cap": "LinkFit App — B 탐색 · 07 검색 결과", "g": "l"}, {"src": "assets/linkfit/app/08.webp", "alt": "링크핏 앱 화면 — 08 검색 필터", "cap": "LinkFit App — B 탐색 · 08 검색 필터", "g": "l"}, {"src": "assets/linkfit/app/09.webp", "alt": "링크핏 앱 화면 — 09 내 주변 지도", "cap": "LinkFit App — B 탐색 · 09 내 주변 지도", "g": "l"}, {"src": "assets/linkfit/app/10.webp", "alt": "링크핏 앱 화면 — 10 내 주변 필터 시트", "cap": "LinkFit App — B 탐색 · 10 내 주변 필터 시트", "g": "l"}, {"src": "assets/linkfit/app/11.webp", "alt": "링크핏 앱 화면 — 11 시설 상세", "cap": "LinkFit App — C 예약 · 결제 · 11 시설 상세", "g": "l"}, {"src": "assets/linkfit/app/12.webp", "alt": "링크핏 앱 화면 — 12 시설 상세 · 이용권 · 후기", "cap": "LinkFit App — C 예약 · 결제 · 12 시설 상세 · 이용권 · 후기", "g": "l"}, {"src": "assets/linkfit/app/13.webp", "alt": "링크핏 앱 화면 — 13 이용시간 선택", "cap": "LinkFit App — C 예약 · 결제 · 13 이용시간 선택", "g": "l"}, {"src": "assets/linkfit/app/14.webp", "alt": "링크핏 앱 화면 — 14 결제하기", "cap": "LinkFit App — C 예약 · 결제 · 14 결제하기", "g": "l"}, {"src": "assets/linkfit/app/15.webp", "alt": "링크핏 앱 화면 — 15 중복 시간 알림", "cap": "LinkFit App — C 예약 · 결제 · 15 중복 시간 알림", "g": "l"}, {"src": "assets/linkfit/app/16.webp", "alt": "링크핏 앱 화면 — 15B 결제 확정 대기", "cap": "LinkFit App — C 예약 · 결제 · 15B 결제 확정 대기", "g": "l"}, {"src": "assets/linkfit/app/17.webp", "alt": "링크핏 앱 화면 — 16 결제 완료", "cap": "LinkFit App — C 예약 · 결제 · 16 결제 완료", "g": "l"}, {"src": "assets/linkfit/app/18.webp", "alt": "링크핏 앱 화면 — 17 이용현황", "cap": "LinkFit App — D 이용 · 17 이용현황", "g": "l"}, {"src": "assets/linkfit/app/19.webp", "alt": "링크핏 앱 화면 — 18 이용권 상세", "cap": "LinkFit App — D 이용 · 18 이용권 상세", "g": "l"}, {"src": "assets/linkfit/app/20.webp", "alt": "링크핏 앱 화면 — 19 QR 입장", "cap": "LinkFit App — D 이용 · 19 QR 입장", "g": "l"}, {"src": "assets/linkfit/app/21.webp", "alt": "링크핏 앱 화면 — 20 이용 중", "cap": "LinkFit App — D 이용 · 20 이용 중", "g": "l"}, {"src": "assets/linkfit/app/22.webp", "alt": "링크핏 앱 화면 — 21 이용 시간 연장", "cap": "LinkFit App — D 이용 · 21 이용 시간 연장", "g": "l"}, {"src": "assets/linkfit/app/23.webp", "alt": "링크핏 앱 화면 — 22 이용 완료 · 후기", "cap": "LinkFit App — D 이용 · 22 이용 완료 · 후기", "g": "l"}, {"src": "assets/linkfit/app/24.webp", "alt": "링크핏 앱 화면 — 23 선물 보내기", "cap": "LinkFit App — E 선물 · 23 선물 보내기", "g": "l"}, {"src": "assets/linkfit/app/25.webp", "alt": "링크핏 앱 화면 — 24 선물 링크 완료", "cap": "LinkFit App — E 선물 · 24 선물 링크 완료", "g": "l"}, {"src": "assets/linkfit/app/26.webp", "alt": "링크핏 앱 화면 — 25 보낸 선물", "cap": "LinkFit App — E 선물 · 25 보낸 선물", "g": "l"}, {"src": "assets/linkfit/app/27.webp", "alt": "링크핏 앱 화면 — 26 선물 받기", "cap": "LinkFit App — E 선물 · 26 선물 받기", "g": "l"}, {"src": "assets/linkfit/app/28.webp", "alt": "링크핏 앱 화면 — 27 예약 취소 확인", "cap": "LinkFit App — F 취소 · 환불 · 27 예약 취소 확인", "g": "l"}, {"src": "assets/linkfit/app/29.webp", "alt": "링크핏 앱 화면 — 28 구매내역 상세", "cap": "LinkFit App — F 취소 · 환불 · 28 구매내역 상세", "g": "l"}, {"src": "assets/linkfit/app/30.webp", "alt": "링크핏 앱 화면 — 29 MY", "cap": "LinkFit App — G MY · 29 MY", "g": "l"}, {"src": "assets/linkfit/app/31.webp", "alt": "링크핏 앱 화면 — 30 헬스레벨 안내", "cap": "LinkFit App — G MY · 30 헬스레벨 안내", "g": "l"}, {"src": "assets/linkfit/app/32.webp", "alt": "링크핏 앱 화면 — 31 레벨 공유", "cap": "LinkFit App — G MY · 31 레벨 공유", "g": "l"}, {"src": "assets/linkfit/app/33.webp", "alt": "링크핏 앱 화면 — 32 이용권 구매내역", "cap": "LinkFit App — G MY · 32 이용권 구매내역", "g": "l"}, {"src": "assets/linkfit/app/34.webp", "alt": "링크핏 앱 화면 — 33 고객센터 · FAQ", "cap": "LinkFit App — G MY · 33 고객센터 · FAQ", "g": "l"}, {"src": "assets/linkfit/app/35.webp", "alt": "링크핏 앱 화면 — 34 내 문의내역", "cap": "LinkFit App — G MY · 34 내 문의내역", "g": "l"}, {"src": "assets/linkfit/app/36.webp", "alt": "링크핏 앱 화면 — 35 설정", "cap": "LinkFit App — G MY · 35 설정", "g": "l"}, {"src": "assets/linkfit/web/s-hero.webp", "alt": "링크핏 웹사이트 — Hero — 시간표를 드래그해 원하는 시간을 담는 첫 화면", "cap": "LinkFit Website — Hero — 시간표를 드래그해 원하는 시간을 담는 첫 화면", "g": "w"}, {"src": "assets/linkfit/web/s-why.webp", "alt": "링크핏 웹사이트 — Why LinkFit — 4가지 혜택 카드와 키워드 띠", "cap": "LinkFit Website — Why LinkFit — 4가지 혜택 카드와 키워드 띠", "g": "w"}, {"src": "assets/linkfit/web/s-how.webp", "alt": "링크핏 웹사이트 — How it works — 3단계 안내와 앱 화면", "cap": "LinkFit Website — How it works — 3단계 안내와 앱 화면", "g": "w"}, {"src": "assets/linkfit/web/s-together.webp", "alt": "링크핏 웹사이트 — Together — 함께 결제하고 함께 입장", "cap": "LinkFit Website — Together — 함께 결제하고 함께 입장", "g": "w"}, {"src": "assets/linkfit/web/s-faq.webp", "alt": "링크핏 웹사이트 — FAQ — 자주 묻는 질문 아코디언", "cap": "LinkFit Website — FAQ — 자주 묻는 질문 아코디언", "g": "w"}, {"src": "assets/linkfit/web/m-hero.webp", "alt": "링크핏 웹사이트 — Mobile — Hero", "cap": "LinkFit Website — Mobile — Hero", "g": "w"}, {"src": "assets/linkfit/web/m-why.webp", "alt": "링크핏 웹사이트 — Mobile — Why LinkFit", "cap": "LinkFit Website — Mobile — Why LinkFit", "g": "w"}, {"src": "assets/linkfit/web/m-how.webp", "alt": "링크핏 웹사이트 — Mobile — How it works", "cap": "LinkFit Website — Mobile — How it works", "g": "w"}, {"src": "assets/windmate/phone.webp", "alt": "Windmate 미니 선풍기 — With Phone — 스마트폰과 결합한 모습", "cap": "Windmate — With Phone — 스마트폰과 결합한 모습", "g": "m"}, {"src": "assets/windmate/back.webp", "alt": "Windmate 미니 선풍기 — Back — 손잡이가 스마트폰을 감싸는 뒷면", "cap": "Windmate — Back — 손잡이가 스마트폰을 감싸는 뒷면", "g": "m"}, {"src": "assets/windmate/fan.webp", "alt": "Windmate 미니 선풍기 — Fan Mode — 커버를 열면 선풍기", "cap": "Windmate — Fan Mode — 커버를 열면 선풍기", "g": "m"}, {"src": "assets/windmate/cover.webp", "alt": "Windmate 미니 선풍기 — Dryer Mode — 커버를 씌우면 드라이어", "cap": "Windmate — Dryer Mode — 커버를 씌우면 드라이어", "g": "m"}, {"src": "assets/windmate/detach.webp", "alt": "Windmate 미니 선풍기 — Two in One — 분리되는 드라이어 커버", "cap": "Windmate — Two in One — 분리되는 드라이어 커버", "g": "m"}, {"src": "assets/windmate/scene-full.webp", "alt": "Windmate 미니 선풍기 — Lifestyle — 드라이어로 머리를 말리는 장면", "cap": "Windmate — Lifestyle — 드라이어로 머리를 말리는 장면", "g": "m"}, {"src": "assets/windmate/d-hub.webp", "alt": "Windmate 미니 선풍기 — Detail — 허브의 메시지 Two become one, carry your wind", "cap": "Windmate — Detail — 허브의 메시지 Two become one, carry your wind", "g": "m"}, {"src": "assets/windmate/d-louver.webp", "alt": "Windmate 미니 선풍기 — Detail — 루버 커버와 WM 1800 각인", "cap": "Windmate — Detail — 루버 커버와 WM 1800 각인", "g": "m"}, {"src": "assets/windmate/d-grip.webp", "alt": "Windmate 미니 선풍기 — Detail — 네이비 레더 텍스처 그립", "cap": "Windmate — Detail — 네이비 레더 텍스처 그립", "g": "m"}, {"src": "assets/panastove/kitchen.webp", "alt": "PANASTOVE 충전식 프라이팬 — Hero — 키친 싱크 위의 PANASTOVE", "cap": "PANASTOVE — Hero — 키친 싱크 위의 PANASTOVE", "g": "p"}, {"src": "assets/panastove/prob-1.webp", "alt": "PANASTOVE 충전식 프라이팬 — Problem — 불 위에 올린 주전자", "cap": "PANASTOVE — Problem — 불 위에 올린 주전자", "g": "p"}, {"src": "assets/panastove/prob-2.webp", "alt": "PANASTOVE 충전식 프라이팬 — Problem — 캠핑 화로에서의 조리", "cap": "PANASTOVE — Problem — 캠핑 화로에서의 조리", "g": "p"}, {"src": "assets/panastove/prob-3.webp", "alt": "PANASTOVE 충전식 프라이팬 — Problem — 숲속 캠핑 바비큐", "cap": "PANASTOVE — Problem — 숲속 캠핑 바비큐", "g": "p"}, {"src": "assets/panastove/prob-4.webp", "alt": "PANASTOVE 충전식 프라이팬 — Problem — 숯불 그릴", "cap": "PANASTOVE — Problem — 숯불 그릴", "g": "p"}, {"src": "assets/panastove/prob-5.webp", "alt": "PANASTOVE 충전식 프라이팬 — Problem — 바비큐 그릴 뚜껑", "cap": "PANASTOVE — Problem — 바비큐 그릴 뚜껑", "g": "p"}, {"src": "assets/panastove/prob-6.webp", "alt": "PANASTOVE 충전식 프라이팬 — Problem — 치솟는 그릴 불길", "cap": "PANASTOVE — Problem — 치솟는 그릴 불길", "g": "p"}, {"src": "assets/panastove/concept.webp", "alt": "PANASTOVE 충전식 프라이팬 — Concept — 가스·전기·그릴 없이, 새로운 조리 경험", "cap": "PANASTOVE — Concept — 가스·전기·그릴 없이, 새로운 조리 경험", "g": "p"}, {"src": "assets/panastove/lineup.webp", "alt": "PANASTOVE 충전식 프라이팬 — Lineup — 지름 13인치, 높이 3.5인치, 손잡이 6인치", "cap": "PANASTOVE — Lineup — 지름 13인치 · 높이 3.5인치 · 손잡이 6인치", "g": "p"}, {"src": "assets/panastove/button.webp", "alt": "PANASTOVE 충전식 프라이팬 — Detail — 슬라이딩 파워 버튼 (0–3단)", "cap": "PANASTOVE — Detail — 슬라이딩 파워 버튼 (0–3단)", "g": "p"}, {"src": "assets/panastove/charge.webp", "alt": "PANASTOVE 충전식 프라이팬 — Detail — 손잡이 끝 전원·배터리 충전 단자와 러버 그립", "cap": "PANASTOVE — Detail — 손잡이 끝 전원·배터리 충전 단자와 러버 그립", "g": "p"}, {"src": "assets/panastove/anatomy.webp", "alt": "PANASTOVE 충전식 프라이팬 — Anatomy — 아노다이징 알루미늄 팬, 히팅 패널, 히팅 파워 보드", "cap": "PANASTOVE — Anatomy — 아노다이징 알루미늄 팬, 히팅 패널, 히팅 파워 보드", "g": "p"}, {"src": "assets/panastove/package.webp", "alt": "PANASTOVE 충전식 프라이팬 — Packaging — 팬과 충전 코드를 담는 패키지", "cap": "PANASTOVE — Packaging — 팬과 충전 코드를 담는 패키지", "g": "p"}, {"src": "assets/panastove/logo.webp", "alt": "PANASTOVE 충전식 프라이팬 — Packaging — 음각 로고 디테일", "cap": "PANASTOVE — Packaging — 음각 로고 디테일", "g": "p"}, {"src": "assets/panastove/cafe.webp", "alt": "PANASTOVE 충전식 프라이팬 — In Use — 식탁 위에서 바로 데우는 요리", "cap": "PANASTOVE — In Use — 식탁 위에서 바로 데우는 요리", "g": "p"}];
+const LB=[{"src": "assets/3d/convexity-1.webp", "alt": "석고 조형 Organic Convexity — 세로 구도", "cap": "Organic Convexity — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/3d/convexity-2.webp", "alt": "석고 조형 Organic Convexity — 측면", "cap": "Organic Convexity — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/3d/convexity-3.webp", "alt": "석고 조형 Organic Convexity — 위에서 본 모습", "cap": "Organic Convexity — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/3d/fluidity-1.webp", "alt": "종이 조형 Organic Fluidity — 바닥에 놓인 형태", "cap": "Organic Fluidity — 3D Paper Sculpture", "g": "u"}, {"src": "assets/3d/fluidity-2.webp", "alt": "종이 조형 Organic Fluidity — 매달린 형태", "cap": "Organic Fluidity — 3D Paper Sculpture", "g": "u"}, {"src": "assets/3d/space-box.webp", "alt": "공간 분석 박스 — 상자 안에 매달린 색 면들", "cap": "Space Analysis Box — Spatial Study", "g": "u"}, {"src": "assets/3d/elements.webp", "alt": "3D 요소 연구 — 받침 위의 곡면과 선, 나무 형태", "cap": "3D Elements Studies — Space · Direction · Priority · Movement", "g": "u"}, {"src": "assets/3d/edged-1.webp", "alt": "석고 조형 Aesthetic Edged Surface — 정면", "cap": "Aesthetic Edged Surface — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/3d/edged-2.webp", "alt": "석고 조형 Aesthetic Edged Surface — 근접", "cap": "Aesthetic Edged Surface — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/3d/edged-3.webp", "alt": "석고 조형 Aesthetic Edged Surface — 측면", "cap": "Aesthetic Edged Surface — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/intern/ottawa-wall.webp", "alt": "BoConcept Ottawa 사이드 테이블 — 벽 선반과 함께 연출된 공간", "cap": "Ottawa Side Table — BoConcept · Photography © BoConcept", "g": "i"}, {"src": "assets/intern/ottawa-lounge-1.webp", "alt": "Ottawa 사이드 테이블 — 소파 옆에 놓인 모습", "cap": "Ottawa Side Table — BoConcept · Photography © BoConcept", "g": "i"}, {"src": "assets/intern/ottawa-lounge-2.webp", "alt": "Ottawa 사이드 테이블 — 소파 좌석 아래로 밀어 넣은 모습", "cap": "Ottawa Side Table — BoConcept · Photography © BoConcept", "g": "i"}, {"src": "assets/intern/toot-interior.webp", "alt": "Kundalini TOOT 테이블 램프 — 인테리어 연출", "cap": "TOOT Table Lamp — Kundalini, 2017 · Photography © Kundalini", "g": "i"}, {"src": "assets/intern/toot-product.webp", "alt": "Kundalini TOOT 테이블 램프 — 제품 단독 컷", "cap": "TOOT Table Lamp — Kundalini, 2017 · Photography © Kundalini", "g": "i"}, {"src": "assets/linkfit/app/01.webp", "alt": "링크핏 앱 화면 — 01 스플래시", "cap": "LinkFit App — A 진입 · 01 스플래시", "g": "l"}, {"src": "assets/linkfit/app/02.webp", "alt": "링크핏 앱 화면 — 02 로그인", "cap": "LinkFit App — A 진입 · 02 로그인", "g": "l"}, {"src": "assets/linkfit/app/03.webp", "alt": "링크핏 앱 화면 — 03 로그인 진행 중", "cap": "LinkFit App — A 진입 · 03 로그인 진행 중", "g": "l"}, {"src": "assets/linkfit/app/04.webp", "alt": "링크핏 앱 화면 — 04 홈", "cap": "LinkFit App — B 탐색 · 04 홈", "g": "l"}, {"src": "assets/linkfit/app/05.webp", "alt": "링크핏 앱 화면 — 05 알림", "cap": "LinkFit App — B 탐색 · 05 알림", "g": "l"}, {"src": "assets/linkfit/app/06.webp", "alt": "링크핏 앱 화면 — 06 검색", "cap": "LinkFit App — B 탐색 · 06 검색", "g": "l"}, {"src": "assets/linkfit/app/07.webp", "alt": "링크핏 앱 화면 — 07 검색 결과", "cap": "LinkFit App — B 탐색 · 07 검색 결과", "g": "l"}, {"src": "assets/linkfit/app/08.webp", "alt": "링크핏 앱 화면 — 08 검색 필터", "cap": "LinkFit App — B 탐색 · 08 검색 필터", "g": "l"}, {"src": "assets/linkfit/app/09.webp", "alt": "링크핏 앱 화면 — 09 내 주변 지도", "cap": "LinkFit App — B 탐색 · 09 내 주변 지도", "g": "l"}, {"src": "assets/linkfit/app/10.webp", "alt": "링크핏 앱 화면 — 10 내 주변 필터 시트", "cap": "LinkFit App — B 탐색 · 10 내 주변 필터 시트", "g": "l"}, {"src": "assets/linkfit/app/11.webp", "alt": "링크핏 앱 화면 — 11 시설 상세", "cap": "LinkFit App — C 예약 · 결제 · 11 시설 상세", "g": "l"}, {"src": "assets/linkfit/app/12.webp", "alt": "링크핏 앱 화면 — 12 시설 상세 · 이용권 · 후기", "cap": "LinkFit App — C 예약 · 결제 · 12 시설 상세 · 이용권 · 후기", "g": "l"}, {"src": "assets/linkfit/app/13.webp", "alt": "링크핏 앱 화면 — 13 이용시간 선택", "cap": "LinkFit App — C 예약 · 결제 · 13 이용시간 선택", "g": "l"}, {"src": "assets/linkfit/app/14.webp", "alt": "링크핏 앱 화면 — 14 결제하기", "cap": "LinkFit App — C 예약 · 결제 · 14 결제하기", "g": "l"}, {"src": "assets/linkfit/app/15.webp", "alt": "링크핏 앱 화면 — 15 중복 시간 알림", "cap": "LinkFit App — C 예약 · 결제 · 15 중복 시간 알림", "g": "l"}, {"src": "assets/linkfit/app/16.webp", "alt": "링크핏 앱 화면 — 15B 결제 확정 대기", "cap": "LinkFit App — C 예약 · 결제 · 15B 결제 확정 대기", "g": "l"}, {"src": "assets/linkfit/app/17.webp", "alt": "링크핏 앱 화면 — 16 결제 완료", "cap": "LinkFit App — C 예약 · 결제 · 16 결제 완료", "g": "l"}, {"src": "assets/linkfit/app/18.webp", "alt": "링크핏 앱 화면 — 17 이용현황", "cap": "LinkFit App — D 이용 · 17 이용현황", "g": "l"}, {"src": "assets/linkfit/app/19.webp", "alt": "링크핏 앱 화면 — 18 이용권 상세", "cap": "LinkFit App — D 이용 · 18 이용권 상세", "g": "l"}, {"src": "assets/linkfit/app/20.webp", "alt": "링크핏 앱 화면 — 19 QR 입장", "cap": "LinkFit App — D 이용 · 19 QR 입장", "g": "l"}, {"src": "assets/linkfit/app/21.webp", "alt": "링크핏 앱 화면 — 20 이용 중", "cap": "LinkFit App — D 이용 · 20 이용 중", "g": "l"}, {"src": "assets/linkfit/app/22.webp", "alt": "링크핏 앱 화면 — 21 이용 시간 연장", "cap": "LinkFit App — D 이용 · 21 이용 시간 연장", "g": "l"}, {"src": "assets/linkfit/app/23.webp", "alt": "링크핏 앱 화면 — 22 이용 완료 · 후기", "cap": "LinkFit App — D 이용 · 22 이용 완료 · 후기", "g": "l"}, {"src": "assets/linkfit/app/24.webp", "alt": "링크핏 앱 화면 — 23 선물 보내기", "cap": "LinkFit App — E 선물 · 23 선물 보내기", "g": "l"}, {"src": "assets/linkfit/app/25.webp", "alt": "링크핏 앱 화면 — 24 선물 링크 완료", "cap": "LinkFit App — E 선물 · 24 선물 링크 완료", "g": "l"}, {"src": "assets/linkfit/app/26.webp", "alt": "링크핏 앱 화면 — 25 보낸 선물", "cap": "LinkFit App — E 선물 · 25 보낸 선물", "g": "l"}, {"src": "assets/linkfit/app/27.webp", "alt": "링크핏 앱 화면 — 26 선물 받기", "cap": "LinkFit App — E 선물 · 26 선물 받기", "g": "l"}, {"src": "assets/linkfit/app/28.webp", "alt": "링크핏 앱 화면 — 27 예약 취소 확인", "cap": "LinkFit App — F 취소 · 환불 · 27 예약 취소 확인", "g": "l"}, {"src": "assets/linkfit/app/29.webp", "alt": "링크핏 앱 화면 — 28 구매내역 상세", "cap": "LinkFit App — F 취소 · 환불 · 28 구매내역 상세", "g": "l"}, {"src": "assets/linkfit/app/30.webp", "alt": "링크핏 앱 화면 — 29 MY", "cap": "LinkFit App — G MY · 29 MY", "g": "l"}, {"src": "assets/linkfit/app/31.webp", "alt": "링크핏 앱 화면 — 30 헬스레벨 안내", "cap": "LinkFit App — G MY · 30 헬스레벨 안내", "g": "l"}, {"src": "assets/linkfit/app/32.webp", "alt": "링크핏 앱 화면 — 31 레벨 공유", "cap": "LinkFit App — G MY · 31 레벨 공유", "g": "l"}, {"src": "assets/linkfit/app/33.webp", "alt": "링크핏 앱 화면 — 32 이용권 구매내역", "cap": "LinkFit App — G MY · 32 이용권 구매내역", "g": "l"}, {"src": "assets/linkfit/app/34.webp", "alt": "링크핏 앱 화면 — 33 고객센터 · FAQ", "cap": "LinkFit App — G MY · 33 고객센터 · FAQ", "g": "l"}, {"src": "assets/linkfit/app/35.webp", "alt": "링크핏 앱 화면 — 34 내 문의내역", "cap": "LinkFit App — G MY · 34 내 문의내역", "g": "l"}, {"src": "assets/linkfit/app/36.webp", "alt": "링크핏 앱 화면 — 35 설정", "cap": "LinkFit App — G MY · 35 설정", "g": "l"}, {"src": "assets/linkfit/web/s-hero.webp", "alt": "링크핏 웹사이트 — Hero — 시간표를 드래그해 원하는 시간을 담는 첫 화면", "cap": "LinkFit Website — Hero — 시간표를 드래그해 원하는 시간을 담는 첫 화면", "g": "w"}, {"src": "assets/linkfit/web/s-why.webp", "alt": "링크핏 웹사이트 — Why LinkFit — 4가지 혜택 카드와 키워드 띠", "cap": "LinkFit Website — Why LinkFit — 4가지 혜택 카드와 키워드 띠", "g": "w"}, {"src": "assets/linkfit/web/s-how.webp", "alt": "링크핏 웹사이트 — How it works — 3단계 안내와 앱 화면", "cap": "LinkFit Website — How it works — 3단계 안내와 앱 화면", "g": "w"}, {"src": "assets/linkfit/web/s-together.webp", "alt": "링크핏 웹사이트 — Together — 함께 결제하고 함께 입장", "cap": "LinkFit Website — Together — 함께 결제하고 함께 입장", "g": "w"}, {"src": "assets/linkfit/web/s-faq.webp", "alt": "링크핏 웹사이트 — FAQ — 자주 묻는 질문 아코디언", "cap": "LinkFit Website — FAQ — 자주 묻는 질문 아코디언", "g": "w"}, {"src": "assets/linkfit/web/m-hero.webp", "alt": "링크핏 웹사이트 — Mobile — Hero", "cap": "LinkFit Website — Mobile — Hero", "g": "w"}, {"src": "assets/linkfit/web/m-why.webp", "alt": "링크핏 웹사이트 — Mobile — Why LinkFit", "cap": "LinkFit Website — Mobile — Why LinkFit", "g": "w"}, {"src": "assets/linkfit/web/m-how.webp", "alt": "링크핏 웹사이트 — Mobile — How it works", "cap": "LinkFit Website — Mobile — How it works", "g": "w"}, {"src": "assets/windmate/phone.webp", "alt": "Windmate 미니 선풍기 — With Phone — 스마트폰과 결합한 모습", "cap": "Windmate — With Phone — 스마트폰과 결합한 모습", "g": "m"}, {"src": "assets/windmate/back.webp", "alt": "Windmate 미니 선풍기 — Back — 손잡이가 스마트폰을 감싸는 뒷면", "cap": "Windmate — Back — 손잡이가 스마트폰을 감싸는 뒷면", "g": "m"}, {"src": "assets/windmate/fan.webp", "alt": "Windmate 미니 선풍기 — Fan Mode — 커버를 열면 선풍기", "cap": "Windmate — Fan Mode — 커버를 열면 선풍기", "g": "m"}, {"src": "assets/windmate/cover.webp", "alt": "Windmate 미니 선풍기 — Dryer Mode — 커버를 씌우면 드라이어", "cap": "Windmate — Dryer Mode — 커버를 씌우면 드라이어", "g": "m"}, {"src": "assets/windmate/detach.webp", "alt": "Windmate 미니 선풍기 — Two in One — 분리되는 드라이어 커버", "cap": "Windmate — Two in One — 분리되는 드라이어 커버", "g": "m"}, {"src": "assets/windmate/scene-full.webp", "alt": "Windmate 미니 선풍기 — Lifestyle — 드라이어로 머리를 말리는 장면", "cap": "Windmate — Lifestyle — 드라이어로 머리를 말리는 장면", "g": "m"}, {"src": "assets/windmate/d-hub.webp", "alt": "Windmate 미니 선풍기 — Detail — 허브의 메시지 Two become one, carry your wind", "cap": "Windmate — Detail — 허브의 메시지 Two become one, carry your wind", "g": "m"}, {"src": "assets/windmate/d-louver.webp", "alt": "Windmate 미니 선풍기 — Detail — 루버 커버와 WM 1800 각인", "cap": "Windmate — Detail — 루버 커버와 WM 1800 각인", "g": "m"}, {"src": "assets/windmate/d-grip.webp", "alt": "Windmate 미니 선풍기 — Detail — 네이비 레더 텍스처 그립", "cap": "Windmate — Detail — 네이비 레더 텍스처 그립", "g": "m"}, {"src": "assets/panastove/kitchen.webp", "alt": "PANASTOVE 충전식 프라이팬 — Hero — 키친 싱크 위의 PANASTOVE", "cap": "PANASTOVE — Hero — 키친 싱크 위의 PANASTOVE", "g": "p"}, {"src": "assets/panastove/prob-1.webp", "alt": "PANASTOVE 충전식 프라이팬 — Problem — 불 위에 올린 주전자", "cap": "PANASTOVE — Problem — 불 위에 올린 주전자", "g": "p"}, {"src": "assets/panastove/prob-2.webp", "alt": "PANASTOVE 충전식 프라이팬 — Problem — 캠핑 화로에서의 조리", "cap": "PANASTOVE — Problem — 캠핑 화로에서의 조리", "g": "p"}, {"src": "assets/panastove/prob-3.webp", "alt": "PANASTOVE 충전식 프라이팬 — Problem — 숲속 캠핑 바비큐", "cap": "PANASTOVE — Problem — 숲속 캠핑 바비큐", "g": "p"}, {"src": "assets/panastove/prob-4.webp", "alt": "PANASTOVE 충전식 프라이팬 — Problem — 숯불 그릴", "cap": "PANASTOVE — Problem — 숯불 그릴", "g": "p"}, {"src": "assets/panastove/prob-5.webp", "alt": "PANASTOVE 충전식 프라이팬 — Problem — 바비큐 그릴 뚜껑", "cap": "PANASTOVE — Problem — 바비큐 그릴 뚜껑", "g": "p"}, {"src": "assets/panastove/prob-6.webp", "alt": "PANASTOVE 충전식 프라이팬 — Problem — 치솟는 그릴 불길", "cap": "PANASTOVE — Problem — 치솟는 그릴 불길", "g": "p"}, {"src": "assets/panastove/concept.webp", "alt": "PANASTOVE 충전식 프라이팬 — Concept — 가스·전기·그릴 없이, 새로운 조리 경험", "cap": "PANASTOVE — Concept — 가스·전기·그릴 없이, 새로운 조리 경험", "g": "p"}, {"src": "assets/panastove/lineup.webp", "alt": "PANASTOVE 충전식 프라이팬 — Lineup — 지름 13인치, 높이 3.5인치, 손잡이 6인치", "cap": "PANASTOVE — Lineup — 지름 13인치 · 높이 3.5인치 · 손잡이 6인치", "g": "p"}, {"src": "assets/panastove/button.webp", "alt": "PANASTOVE 충전식 프라이팬 — Detail — 슬라이딩 파워 버튼 (0–3단)", "cap": "PANASTOVE — Detail — 슬라이딩 파워 버튼 (0–3단)", "g": "p"}, {"src": "assets/panastove/charge.webp", "alt": "PANASTOVE 충전식 프라이팬 — Detail — 손잡이 끝 전원·배터리 충전 단자와 러버 그립", "cap": "PANASTOVE — Detail — 손잡이 끝 전원·배터리 충전 단자와 러버 그립", "g": "p"}, {"src": "assets/panastove/anatomy.webp", "alt": "PANASTOVE 충전식 프라이팬 — Anatomy — 아노다이징 알루미늄 팬, 히팅 패널, 히팅 파워 보드", "cap": "PANASTOVE — Anatomy — 아노다이징 알루미늄 팬, 히팅 패널, 히팅 파워 보드", "g": "p"}, {"src": "assets/panastove/package.webp", "alt": "PANASTOVE 충전식 프라이팬 — Packaging — 팬과 충전 코드를 담는 패키지", "cap": "PANASTOVE — Packaging — 팬과 충전 코드를 담는 패키지", "g": "p"}, {"src": "assets/panastove/logo.webp", "alt": "PANASTOVE 충전식 프라이팬 — Packaging — 음각 로고 디테일", "cap": "PANASTOVE — Packaging — 음각 로고 디테일", "g": "p"}, {"src": "assets/panastove/cafe.webp", "alt": "PANASTOVE 충전식 프라이팬 — In Use — 식탁 위에서 바로 데우는 요리", "cap": "PANASTOVE — In Use — 식탁 위에서 바로 데우는 요리", "g": "p"}, {"src": "assets/kft/card-light.webp", "alt": "K-FutureTech 브랜딩 — Business Card — 화이트 명함 (90 × 55 mm)", "cap": "K-FutureTech — Business Card — 화이트 명함 (90 × 55 mm)", "g": "k"}, {"src": "assets/kft/card-dark.webp", "alt": "K-FutureTech 브랜딩 — Business Card — 다크 명함", "cap": "K-FutureTech — Business Card — 다크 명함", "g": "k"}, {"src": "assets/kft/envelope.webp", "alt": "K-FutureTech 브랜딩 — Stationery — 레터지 210 × 297 mm · 봉투 220 × 105 mm", "cap": "K-FutureTech — Stationery — 레터지 210 × 297 mm · 봉투 220 × 105 mm", "g": "k"}];
 const lb=document.getElementById('lb'), lbImg=document.getElementById('lb-img');
 let lbI=0, lbRet=null;
 let lbSet=[];
