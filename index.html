@@ -719,13 +719,10 @@ body.lb-open .cursor{background:#EDEDED}
 .wm-sbtn{position:relative;display:block;width:100%;aspect-ratio:1;padding:0;border:0;border-radius:6px;overflow:hidden;cursor:pointer;
   background:radial-gradient(70% 70% at 62% 38%,#F3F1EE 0%,#E3DFDA 60%,#D6D1CB 100%)}
 .wm-sbtn img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
-.wm-shair{filter:url(#wm-wind);-webkit-mask-image:radial-gradient(10% 21% at 42% 70%,#000 35%,transparent 100%);mask-image:radial-gradient(10% 21% at 42% 70%,#000 35%,transparent 100%)}
-.wm-air{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;mix-blend-mode:screen}
-.wm-air path{fill:none;stroke:url(#wm-ag);stroke-width:3.5;stroke-linecap:round;filter:drop-shadow(0 0 3px rgba(255,255,255,.8));stroke-dasharray:70 150;animation:wmair 1.6s linear infinite;opacity:.9}
-.wm-air path:nth-child(3){animation-delay:-.4s;stroke-width:2}.wm-air path:nth-child(4){animation-delay:-.9s}.wm-air path:nth-child(5){animation-delay:-1.2s;stroke-width:2}.wm-air path:nth-child(6){animation-delay:-.6s;stroke-width:1.6}
-@keyframes wmair{from{stroke-dashoffset:220}to{stroke-dashoffset:0}}
+.wm-smoke{filter:url(#wm-wind);transform-origin:16% 66%;animation:wmsmoke 4.5s ease-in-out infinite}
+@keyframes wmsmoke{0%,100%{opacity:.88;transform:scale(1) rotate(0)}50%{opacity:1;transform:scale(1.035) rotate(-1.2deg)}}
 @media (max-width:900px){ .wm-life{grid-template-columns:minmax(0,1fr);padding-top:88px} }
-@media (prefers-reduced-motion:reduce){ .wm-air path{animation:none;stroke-dasharray:none;opacity:.5} .wm-shair{filter:none} }
+@media (prefers-reduced-motion:reduce){ .wm-smoke{animation:none;filter:none} }
 .ix-stats dd small{font-size:12px;color:var(--ink-2);font-weight:400;letter-spacing:0}
 @media (max-width:900px){
   .wm-show{grid-template-columns:minmax(0,1fr)}
@@ -750,6 +747,72 @@ body.lb-open .cursor{background:#EDEDED}
 .arc-wide .arc-img img{height:100%;object-fit:contain;filter:grayscale(1) drop-shadow(0 18px 24px rgba(0,0,0,.08))}
 .arc-wide .arc-img img:nth-child(2){transition-delay:.06s}.arc-wide .arc-img img:nth-child(3){transition-delay:.12s}
 @media (max-width:760px){ .arc-wide .arc-img{aspect-ratio:4/3;padding:6% 2% 0} }
+
+/* PANASTOVE (concept) page */
+.pn{background:#121212;color:#E9E9E9;padding-bottom:0;margin-top:8px;--amb:#F5B027}
+.pn-hero{margin:0;height:clamp(360px,86vh,940px);overflow:hidden;position:relative}
+.pn-hero .pn-ph{position:absolute;inset:0;border-radius:0;aspect-ratio:auto}
+.pn-hero .pn-ph img{transform:scale(1.08);transition:transform 2.4s var(--ease)}
+.pn-hero.in .pn-ph img{transform:scale(1)}
+.pn-hero .pn-ph:hover img{transform:scale(1.02)}
+.pn-end{margin-top:72px}
+.pn-ph{display:block;width:100%;padding:0;border:0;background:#0c0c0c;overflow:hidden;border-radius:6px;cursor:pointer;position:relative}
+.pn-ph img{display:block;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease),filter .8s var(--ease)}
+.pn-ph:hover img,.pn-ph:focus-visible img{transform:scale(1.035)}
+.pn-sec{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:28px clamp(28px,5vw,80px);padding-block:120px 48px;align-items:end}
+.pn-no{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--amb)}
+.pn-cap{display:grid;gap:16px;align-content:start}
+.pn-h{font-size:clamp(38px,5vw,80px);font-weight:200;letter-spacing:-.055em;line-height:.95;color:#F4F4F4}
+.pn-h em{font-style:normal;color:#7d7d7d}
+.pn-txt{display:grid;gap:14px;max-width:34em}
+.pn-txt p{margin:0;font-size:15px;line-height:1.8;color:#A9A9A9}
+.pn-txt .pn-en{font-size:13px;font-style:italic;color:#6e6e6e;line-height:1.7}
+.pn-mosaic{display:grid;grid-template-columns:1.4fr .7fr 1.4fr;grid-template-rows:clamp(160px,22vw,320px) clamp(150px,19vw,280px);gap:10px}
+.pn-mosaic .m4,.pn-mosaic .m5,.pn-mosaic .m6{grid-row:2}
+.pn-mosaic .m4{grid-column:1}.pn-mosaic .m5{grid-column:2/3}.pn-mosaic .m6{grid-column:3}
+.pn-mosaic .pn-ph img{filter:grayscale(1) brightness(.8)}
+.pn-mosaic .pn-ph:hover img,.pn-mosaic .pn-ph:focus-visible img{filter:none}
+.pn-wide{margin:0}
+.pn-wide .pn-ph{aspect-ratio:2382/1684}
+.pn-flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:56px 20px;counter-reset:s;position:relative}
+.pn-step{position:relative;display:grid;gap:18px;align-content:start;opacity:.25;transform:translateY(16px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:calc(var(--d)*.16s)}
+.pn-flow.in .pn-step{opacity:1;transform:none}
+.pn-dot{position:relative;width:clamp(96px,9vw,132px);aspect-ratio:1;border-radius:50%;border:1px solid var(--amb);display:grid;place-items:center}
+.pn-dot b{font-weight:300;font-size:clamp(22px,2vw,30px);letter-spacing:-.03em;color:#F4F4F4;font-variant-numeric:tabular-nums}
+.pn-dot::after{content:"";position:absolute;inset:-1px;border-radius:50%;border:1px solid var(--amb);opacity:0}
+.pn-flow.in .pn-step .pn-dot::after{animation:pnpulse 7s linear infinite;animation-delay:calc(var(--d)*1s + 1.2s)}
+@keyframes pnpulse{0%{opacity:0;transform:scale(1)}3%{opacity:.9;background:rgba(245,176,39,.12)}14%{opacity:0;transform:scale(1.22)}100%{opacity:0}}
+.pn-step:not(:last-child) .pn-dot::before{content:"";position:absolute;left:calc(100% + 14px);top:50%;width:calc(100vw);max-width:clamp(40px,7vw,150px);height:1px;background:linear-gradient(90deg,var(--amb),transparent)}
+.pn-step:nth-child(4n) .pn-dot::before{display:none}
+.pn-step h5{margin:0;font-size:16px;font-weight:400;letter-spacing:-.01em;color:#F0F0F0}
+.pn-step p{margin:6px 0 0;font-size:13.5px;color:#9a9a9a;display:grid;gap:4px}
+.pn-step small{font-size:12px;color:var(--amb);opacity:.85}
+.pn-duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px}
+.pn-duo figure{margin:0;display:grid;gap:12px}
+.pn-duo .pn-ph{aspect-ratio:2382/1684}
+.pn-duo figcaption,.pn-wide figcaption{display:flex;justify-content:space-between;gap:12px;font-size:12.5px;color:#7d7d7d;border-top:1px solid #2a2a2a;padding-top:12px}
+.pn-duo figcaption b{font-weight:500;color:#E0E0E0}
+.pn-anat{grid-template-columns:minmax(0,.7fr) minmax(0,1.6fr);align-items:center}
+.pn-anat-ph{margin:0}.pn-anat-ph .pn-ph{aspect-ratio:2382/1684}
+.pn-parts{list-style:none;margin:16px 0 0;padding:0;border-top:1px solid #2a2a2a}
+.pn-parts li{display:flex;gap:14px;align-items:baseline;padding:11px 0;border-bottom:1px solid #222;font-size:14px;color:#cfcfcf}
+.pn-parts span{font-size:11px;color:var(--amb);font-variant-numeric:tabular-nums}
+@media (max-width:900px){
+  .pn-flow{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pn-step .pn-dot::before{display:none}
+  .pn-anat{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:760px){
+  .pn-sec{grid-template-columns:minmax(0,1fr);padding-block:88px 32px}
+  .pn-mosaic{grid-template-columns:1fr 1fr;grid-template-rows:none;grid-auto-rows:clamp(120px,34vw,200px)}
+  .pn-mosaic .pn-ph{grid-row:auto!important;grid-column:auto!important}
+  .pn-duo{grid-template-columns:minmax(0,1fr)}
+  .pn-duo figcaption{flex-direction:column;gap:4px}
+  .pn-hero{height:clamp(300px,62vh,520px)}
+}
+@media (prefers-reduced-motion:reduce){ .pn-step{opacity:1;transform:none;transition:none} .pn-flow.in .pn-step .pn-dot::after{animation:none} .pn-hero .pn-ph img{transform:none} }
+.arc-wide.arc-dark .arc-img{background:#141414;padding:0;display:block}
+.arc-wide.arc-dark .arc-img img{width:100%;height:100%;object-fit:cover;object-position:50% 62%;filter:grayscale(1);aspect-ratio:auto}
 
 /* cta + footer */
 .cta{padding-block:160px 120px;text-align:center}
@@ -874,7 +937,7 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
           <li><a href="#about"><span>About Me</span><em>소개</em></a></li>
           <li><a href="#journey"><span>Journey</span><em>경력</em></a></li>
           <li><a href="#work"><span>Projects</span><em>프로젝트</em></a></li>
-          <li><a href="#archive"><span>Archive</span><em>대학·인턴·수상작</em></a></li>
+          <li><a href="#archive"><span>Archive</span><em>대학·인턴·수상·콘셉트</em></a></li>
           <li><a href="#services"><span>Capabilities</span><em>핵심역량</em></a></li>
           <li><a href="#credentials"><span>Credentials</span><em>학력·지식재산</em></a></li>
           <li><a href="#contact"><span>Contact</span><em>연락하기</em></a></li>
@@ -1015,7 +1078,7 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
   <!-- ARCHIVE -->
   <section class="archive wrap" id="archive">
     <div class="c">
-      <div class="head rv"><span class="label">Archive</span><h2 class="h2">Before the Career</h2><p class="lead">지금의 작업 방식이 만들어진 시간들이에요. 대학 시절 작품과 인턴십 작업, 공모전 수상작을 따로 모았어요.</p></div>
+      <div class="head rv"><span class="label">Archive</span><h2 class="h2">Before the Career</h2><p class="lead">지금의 작업 방식이 만들어진 시간들이에요. 대학 시절 작품과 인턴십 작업, 공모전 수상작과 콘셉트 제품을 따로 모았어요.</p></div>
       <div class="arc-grid">
         <a class="arc rv" href="#university" data-cursor="1">
           <div class="arc-img"><img src="assets/3d/edged-2.webp" alt="석고 조형 Aesthetic Edged Surface"></div>
@@ -1028,6 +1091,10 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
         <a class="arc arc-wide rv" href="#windmate" data-cursor="1">
           <div class="arc-img"><img src="assets/windmate/phone.webp" alt="Windmate 미니 선풍기 — 스마트폰 결합"><img src="assets/windmate/cover.webp" alt="Windmate 미니 선풍기 — 커버 장착"><img src="assets/windmate/detach.webp" alt="Windmate 미니 선풍기 — 커버 분리"></div>
           <div class="arc-body"><span class="arc-no">Archive 03 — Award</span><h3>Windmate</h3><p>신일 미니 선풍기 디자인 공모전 장려상 · 2018</p><span class="arrow-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
+        </a>
+        <a class="arc arc-wide arc-dark rv" href="#panastove" data-cursor="1">
+          <div class="arc-img"><img src="assets/panastove/kitchen.webp" alt="PANASTOVE 충전식 프라이팬 — 키친 싱크 위 렌더"></div>
+          <div class="arc-body"><span class="arc-no">Archive 04 — Concept Product</span><h3>Panastove</h3><p>충전식 프라이팬 콘셉트 · Product · Packaging</p><span class="arrow-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
         </a>
       </div>
     </div>
@@ -1301,7 +1368,7 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
     </dl>
   </div></div>
 
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="wm-wind" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency="0.012 0.03" numOctaves="2" seed="4" result="n"><animate attributeName="baseFrequency" dur="5s" values="0.012 0.03;0.016 0.036;0.012 0.03" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="14" xChannelSelector="R" yChannelSelector="G"><animate attributeName="scale" dur="1.8s" values="3;8;4;7;3" repeatCount="indefinite"/></feDisplacementMap></filter></svg>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="wm-wind" x="-15%" y="-15%" width="130%" height="130%"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.014" numOctaves="2" seed="7" result="n"><animate attributeName="baseFrequency" dur="6s" values="0.008 0.014;0.011 0.018;0.008 0.014" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="12" xChannelSelector="R" yChannelSelector="G"><animate attributeName="scale" dur="3s" values="8;16;8" repeatCount="indefinite"/></feDisplacementMap></filter></svg>
   <section class="wm" aria-label="Windmate 제품 쇼케이스">
     <div class="wrap"><div class="c">
       <div class="wm-head">
@@ -1327,21 +1394,13 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
         <div class="wm-ltxt">
           <span class="wm-no">02 — Dryer Mode</span>
           <h3 class="wm-title wm-t2">Fan in summer,<br><em>dryer every morning.</em></h3>
-          <p class="wm-lead">커버를 씌우면 퍼지던 바람이 한곳으로 모여 머리를 말리는 드라이어가 돼요. 계절 가전인 미니 선풍기를 사계절 내내 손이 가는 제품으로 바꾸는 것, 그게 이 디자인의 두 번째 답이었어요.</p>
-          <ul class="wm-pair"><li><b>Cover Off</b><span>Fan · 넓게 퍼지는 바람</span></li><li><b>Cover On</b><span>Dryer · 모아서 보내는 바람</span></li></ul>
+          <p class="wm-lead">커버를 씌우면 퍼지던 바람이 따뜻한 바람으로 한곳에 모여, 머리를 말리는 드라이어가 돼요. 계절 가전인 미니 선풍기를 사계절 내내 손이 가는 제품으로 바꾸는 것, 그게 이 디자인의 두 번째 답이었어요.</p>
+          <ul class="wm-pair"><li><b>Cover Off</b><span>Fan · 넓게 퍼지는 바람</span></li><li><b>Cover On</b><span>Dryer · 모아서 보내는 따뜻한 바람</span></li></ul>
         </div>
         <figure class="wm-scene" data-cursor="1">
           <button class="wm-sbtn" type="button" data-lb="64" aria-label="드라이어 사용 장면 크게 보기">
-            <img class="wm-sbase" src="assets/windmate/scene.webp" alt="Windmate를 드라이어 모드로 들고 머리를 말리는 여성" loading="lazy" decoding="async">
-            <img class="wm-shair" src="assets/windmate/scene.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
-            <svg class="wm-air" viewBox="0 0 1000 1000" aria-hidden="true">
-              <defs><linearGradient id="wm-ag" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".25" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
-              <path d="M360 690 C 400 660, 430 700, 470 668 S 530 640, 560 655"/>
-              <path d="M365 720 C 410 700, 440 740, 480 712 S 540 690, 575 708"/>
-              <path d="M358 752 C 400 740, 440 775, 478 752 S 535 735, 565 758"/>
-              <path d="M370 660 C 405 625, 440 655, 470 625 S 520 600, 548 612"/>
-              <path d="M372 785 C 410 780, 445 810, 480 792 S 530 780, 556 800"/>
-            </svg>
+            <img class="wm-sbase" src="assets/windmate/scene.webp" alt="Windmate 드라이어 모드에서 나온 따뜻한 바람으로 머리를 말리는 여성" loading="lazy" decoding="async">
+            <img class="wm-smoke" src="assets/windmate/scene-air.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
           </button>
           <figcaption>Lifestyle — Dryer Mode</figcaption>
         </figure>
@@ -1365,6 +1424,82 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
         <p><b>2018 신일 미니 선풍기 디자인 공모전 장려상</b><span>Shinil Mini Fan Design Competition — Honorable Mention</span></p>
       </div>
     </div></div>
+  </section>
+</div>
+
+<div class="case page" id="pg-panastove" role="dialog" aria-modal="true" aria-labelledby="pp-title" hidden>
+  <div class="case-top wrap"><div class="c"><span class="label">Archive 04 — Concept Product</span><button class="closeb" type="button" data-close>닫기 ✕</button></div></div>
+  <div class="wrap"><div class="c">
+    <header class="pg-head">
+      <h2 class="pg-title" id="pp-title">Panastove</h2>
+      <div class="pg-meta"><span><b>Chargeable Frypan</b> · Concept Product</span><span>Industrial Design</span><span>Product · Interaction · Packaging</span></div>
+    </header>
+    <div class="pg-intro"><span class="label">About this project</span><p class="pg-lead">불도, 가스도, 전기레인지도 없이 쓰는 충전식 프라이팬이에요. 팬 바닥에 히팅 패널과 배터리를 품어, 코드를 꽂아 조리하고 코드를 뽑아 식탁으로 옮긴 뒤에도 그 자리에서 다시 데울 수 있게 설계했어요.</p></div>
+    <dl class="ix-stats">
+      <div><dt>Sizes</dt><dd>6 — 13<br><small>Inch · 높이 3.5 Inch</small></dd></div>
+      <div><dt>Power</dt><dd>Battery<br><small>+ 코드 직결</small></dd></div>
+      <div><dt>Heat</dt><dd>0 — 3<br><small>Sliding Power Button</small></dd></div>
+      <div><dt>Deliverables</dt><dd>Product<br><small>Packaging · Usage Flow</small></dd></div>
+    </dl>
+  </div></div>
+
+  <section class="pn" aria-label="PANASTOVE 프로젝트 상세">
+    <figure class="pn-hero"><button class="pn-ph pn-hero-ph" type="button" data-lb="68" data-cursor="1" aria-label="Hero — 키친 싱크 위의 PANASTOVE 크게 보기"><img src="assets/panastove/kitchen.webp" alt="PANASTOVE — 키친 싱크 옆에 놓인 블랙 충전식 프라이팬" loading="lazy" decoding="async"></button></figure>
+
+    <div class="wrap"><div class="c">
+      <div class="pn-sec">
+        <div class="pn-cap"><span class="pn-no">01 — Problem</span><h3 class="pn-h">Cooking outside is<br><em>a pain in the neck.</em></h3></div>
+        <div class="pn-txt">
+          <p>바깥에서 요리하려면 커다란 그릴과 가스, 스토브를 챙기고 불부터 피워야 해요. 집 안에서도 전기·가스레인지 설치에는 큰 비용이 들죠.</p>
+          <p>식탁과 주방을 오가며 음식을 다시 데우는 일, 식당에서 직원에게 요리를 데워 달라고 부탁하는 일도 시간과 수고가 들어요.</p>
+          <p class="pn-en">“Bringing a big barbeque grill, gas, stove, and making fire is a pain in the neck when it comes to cooking outside.”</p>
+        </div>
+      </div>
+      <div class="pn-mosaic"><button class="pn-ph m1" type="button" data-lb="69" data-cursor="1" aria-label="Problem — 불 위에 올린 주전자 크게 보기"><img src="assets/panastove/prob-1.webp" alt="PANASTOVE — Problem — 불 위에 올린 주전자" loading="lazy" decoding="async"></button><button class="pn-ph m2" type="button" data-lb="70" data-cursor="1" aria-label="Problem — 캠핑 화로에서의 조리 크게 보기"><img src="assets/panastove/prob-2.webp" alt="PANASTOVE — Problem — 캠핑 화로에서의 조리" loading="lazy" decoding="async"></button><button class="pn-ph m3" type="button" data-lb="71" data-cursor="1" aria-label="Problem — 숲속 캠핑 바비큐 크게 보기"><img src="assets/panastove/prob-3.webp" alt="PANASTOVE — Problem — 숲속 캠핑 바비큐" loading="lazy" decoding="async"></button><button class="pn-ph m4" type="button" data-lb="72" data-cursor="1" aria-label="Problem — 숯불 그릴 크게 보기"><img src="assets/panastove/prob-4.webp" alt="PANASTOVE — Problem — 숯불 그릴" loading="lazy" decoding="async"></button><button class="pn-ph m5" type="button" data-lb="73" data-cursor="1" aria-label="Problem — 바비큐 그릴 뚜껑 크게 보기"><img src="assets/panastove/prob-5.webp" alt="PANASTOVE — Problem — 바비큐 그릴 뚜껑" loading="lazy" decoding="async"></button><button class="pn-ph m6" type="button" data-lb="74" data-cursor="1" aria-label="Problem — 치솟는 그릴 불길 크게 보기"><img src="assets/panastove/prob-6.webp" alt="PANASTOVE — Problem — 치솟는 그릴 불길" loading="lazy" decoding="async"></button></div>
+
+      <div class="pn-sec">
+        <div class="pn-cap"><span class="pn-no">02 — Concept</span><h3 class="pn-h">New cooking<br><em>experience.</em></h3></div>
+        <div class="pn-txt"><p>가스 밸브, 플러그, 레인지, 바비큐 그릴, 주방과 식탁을 오가는 발걸음까지. 요리를 둘러싼 번거로움을 프라이팬 하나에 모두 담아 덜어내는 것이 이 디자인의 출발점이에요.</p><p class="pn-en">“Now you don’t need to worry about these…”</p></div>
+      </div>
+      <figure class="pn-wide"><button class="pn-ph " type="button" data-lb="75" data-cursor="1" aria-label="Concept — 가스·전기·그릴 없이, 새로운 조리 경험 크게 보기"><img src="assets/panastove/concept.webp" alt="PANASTOVE — 가스·플러그·레인지 아이콘이 프라이팬 위로 흩어지는 콘셉트 이미지" loading="lazy" decoding="async"></button></figure>
+
+      <div class="pn-sec">
+        <div class="pn-cap"><span class="pn-no">03 — How it works</span><h3 class="pn-h">Plug, cook,<br><em>unplug, enjoy.</em></h3></div>
+        <div class="pn-txt"><p>코드를 꽂은 채로도, 충전된 배터리만으로도 조리를 시작할 수 있어요. 조리가 끝나면 코드를 뽑아 식탁으로 옮기고, 남은 배터리는 다음을 위해 충전해요.</p></div>
+      </div>
+      <ol class="pn-flow" id="pn-flow"><li class="pn-step" style="--d:0"><span class="pn-dot"><b>01</b></span><div><h5>Plug in the power cord</h5><p>전원 코드 연결<small>충전된 배터리만으로도 시작할 수 있어요</small></p></div></li><li class="pn-step" style="--d:1"><span class="pn-dot"><b>02</b></span><div><h5>Place your food</h5><p>재료 올리기</p></div></li><li class="pn-step" style="--d:2"><span class="pn-dot"><b>03</b></span><div><h5>Start cooking</h5><p>조리 시작<small>손잡이의 슬라이드 버튼으로 0–3단 조절</small></p></div></li><li class="pn-step" style="--d:3"><span class="pn-dot"><b>04</b></span><div><h5>Finish cooking</h5><p>조리 완료</p></div></li><li class="pn-step" style="--d:4"><span class="pn-dot"><b>05</b></span><div><h5>Remove the power cord</h5><p>코드 분리<small>선 없이 식탁으로 그대로 이동</small></p></div></li><li class="pn-step" style="--d:5"><span class="pn-dot"><b>06</b></span><div><h5>Enjoy your food</h5><p>식탁에서 바로<small>식으면 그 자리에서 다시 데워요</small></p></div></li><li class="pn-step" style="--d:6"><span class="pn-dot"><b>07</b></span><div><h5>Charge the battery</h5><p>다음을 위해 충전</p></div></li></ol>
+
+      <div class="pn-sec">
+        <div class="pn-cap"><span class="pn-no">04 — Lineup &amp; Details</span><h3 class="pn-h">One handle,<br><em>every size.</em></h3></div>
+        <div class="pn-txt"><p>6인치부터 13인치까지 같은 손잡이 언어로 라인업을 구성했어요. 손잡이에는 0–3단의 슬라이딩 파워 버튼을, 끝단에는 전원과 배터리 충전을 겸하는 단자를 숨기고 러버 그립으로 감쌌어요.</p></div>
+      </div>
+      <figure class="pn-wide"><button class="pn-ph " type="button" data-lb="76" data-cursor="1" aria-label="Lineup — 6인치부터 13인치까지, 높이 3.5인치 크게 보기"><img src="assets/panastove/lineup.webp" alt="PANASTOVE — 6인치부터 13인치까지 다양한 크기의 프라이팬 라인업" loading="lazy" decoding="async"></button></figure>
+      <div class="pn-duo">
+        <figure><button class="pn-ph " type="button" data-lb="77" data-cursor="1" aria-label="Detail — 슬라이딩 파워 버튼 (0–3단) 크게 보기"><img src="assets/panastove/button.webp" alt="PANASTOVE — Detail — 슬라이딩 파워 버튼 (0–3단)" loading="lazy" decoding="async"></button><figcaption><b>Sliding Power Button</b><span>0 · 1 · 2 · 3단 화력 조절</span></figcaption></figure>
+        <figure><button class="pn-ph " type="button" data-lb="78" data-cursor="1" aria-label="Detail — 손잡이 끝 전원·배터리 충전 단자와 러버 그립 크게 보기"><img src="assets/panastove/charge.webp" alt="PANASTOVE — Detail — 손잡이 끝 전원·배터리 충전 단자와 러버 그립" loading="lazy" decoding="async"></button><figcaption><b>Power &amp; Battery Charge</b><span>손잡이 끝 단자 · Rubber Grip</span></figcaption></figure>
+      </div>
+
+      <div class="pn-sec pn-anat">
+        <div class="pn-cap"><span class="pn-no">05 — Anatomy</span><h3 class="pn-h">What’s<br><em>inside.</em></h3>
+          <ul class="pn-parts"><li><span>01</span>Anodized Aluminum Pan</li><li><span>02</span>Heating Panel</li><li><span>03</span>Heating Power Board</li><li><span>04</span>Heating Panel Cover / Bottom</li><li><span>05</span>Center Pipe</li><li><span>06</span>Sliding Power Button</li><li><span>07</span>Rubber Grip</li><li><span>08</span>Power &amp; Battery Charger</li></ul></div>
+        <figure class="pn-anat-ph"><button class="pn-ph " type="button" data-lb="79" data-cursor="1" aria-label="Anatomy — 아노다이징 알루미늄 팬, 히팅 패널, 히팅 파워 보드 크게 보기"><img src="assets/panastove/anatomy.webp" alt="PANASTOVE — 팬, 히팅 패널, 파워 보드, 커버로 분해된 구조도" loading="lazy" decoding="async"></button></figure>
+      </div>
+
+      <div class="pn-sec">
+        <div class="pn-cap"><span class="pn-no">06 — Packaging</span><h3 class="pn-h">Unboxing,<br><em>quietly.</em></h3></div>
+        <div class="pn-txt"><p>팬의 원형을 그대로 음각한 정사각 패키지에 팬과 충전 코드를 나란히 담았어요. 손잡이는 상자 밖으로 내어 꺼내기 쉽게 하고, 로고는 인쇄 대신 음각으로 새겼어요.</p></div>
+      </div>
+      <div class="pn-duo pn-pack">
+        <figure><button class="pn-ph " type="button" data-lb="80" data-cursor="1" aria-label="Packaging — 팬과 충전 코드를 담는 패키지 크게 보기"><img src="assets/panastove/package.webp" alt="PANASTOVE — Packaging — 팬과 충전 코드를 담는 패키지" loading="lazy" decoding="async"></button><figcaption><b>Packaging</b><span>팬과 코드를 함께 담는 구성</span></figcaption></figure>
+        <figure><button class="pn-ph " type="button" data-lb="81" data-cursor="1" aria-label="Packaging — 음각 로고 디테일 크게 보기"><img src="assets/panastove/logo.webp" alt="PANASTOVE — Packaging — 음각 로고 디테일" loading="lazy" decoding="async"></button><figcaption><b>Embedded Logo</b><span>음각 로고 디테일</span></figcaption></figure>
+      </div>
+
+      <div class="pn-sec">
+        <div class="pn-cap"><span class="pn-no">07 — In Use</span><h3 class="pn-h">From the stove<br><em>to the table.</em></h3></div>
+        <div class="pn-txt"><p>주방에서 만든 요리를 코드 없이 식탁으로 옮기고, 식으면 그 자리에서 다시 데워요.</p></div>
+      </div>
+    </div></div>
+    <figure class="pn-hero pn-end"><button class="pn-ph pn-hero-ph" type="button" data-lb="82" data-cursor="1" aria-label="In Use — 식탁 위에서 바로 데우는 요리 크게 보기"><img src="assets/panastove/cafe.webp" alt="PANASTOVE — 카페 테이블 위에서 김이 오르는 요리가 담긴 프라이팬" loading="lazy" decoding="async"></button></figure>
   </section>
 </div>
 
@@ -1676,7 +1811,7 @@ document.getElementById('close').addEventListener('click',closeCase);
 addEventListener('keydown',e=>{if(e.key==='Escape'&&!caseEl.hidden) closeCase();});
 
 /* ---------- 서브 페이지 (#university, #internship) ---------- */
-const PAGES={university:document.getElementById('pg-university'),internship:document.getElementById('pg-internship'),linkfit:document.getElementById('pg-linkfit'),windmate:document.getElementById('pg-windmate')};
+const PAGES={university:document.getElementById('pg-university'),internship:document.getElementById('pg-internship'),linkfit:document.getElementById('pg-linkfit'),windmate:document.getElementById('pg-windmate'),panastove:document.getElementById('pg-panastove')};
 function goPage(k){ history.pushState({fromSite:true},'','#'+k); route(); }
 let pageReturn=null;
 function showPage(el){
@@ -1699,7 +1834,7 @@ function route(){
 }
 function leavePage(){ if(history.state&&history.state.fromSite){ history.back(); } else { history.replaceState(null,'',location.pathname+location.search+'#archive'); route(); } }
 document.addEventListener('click',e=>{
-  const a=e.target.closest('a[href="#university"],a[href="#internship"],a[href="#linkfit"],a[href="#windmate"]'); if(!a) return;
+  const a=e.target.closest('a[href="#university"],a[href="#internship"],a[href="#linkfit"],a[href="#windmate"],a[href="#panastove"]'); if(!a) return;
   e.preventDefault(); history.pushState({fromSite:true},'',a.getAttribute('href')); route();
 });
 document.querySelectorAll('.page [data-close]').forEach(b=>b.addEventListener('click',leavePage));
@@ -1837,8 +1972,16 @@ document.querySelectorAll('#lf-tabs button').forEach(b=>b.addEventListener('clic
   if(!pg.hidden) play();
 })();
 
+(()=>{ const pg=document.getElementById('pg-panastove'); if(!pg) return;
+  const els=[...pg.querySelectorAll('.pn-flow,.pn-hero')];
+  if(reduce||!('IntersectionObserver' in window)){ els.forEach(e=>e.classList.add('in')); return; }
+  const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }),{root:pg,threshold:.25});
+  new MutationObserver(()=>{ if(pg.hidden){ els.forEach(e=>{ e.classList.remove('in'); io.unobserve(e); }); } else { els.forEach(e=>io.observe(e)); } }).observe(pg,{attributes:true,attributeFilter:['hidden']});
+  if(!pg.hidden) els.forEach(e=>io.observe(e));
+})();
+
 /* ---------- 3D 작품 라이트박스 ---------- */
-const LB=[{"src": "assets/3d/convexity-1.webp", "alt": "석고 조형 Organic Convexity — 세로 구도", "cap": "Organic Convexity — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/3d/convexity-2.webp", "alt": "석고 조형 Organic Convexity — 측면", "cap": "Organic Convexity — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/3d/convexity-3.webp", "alt": "석고 조형 Organic Convexity — 위에서 본 모습", "cap": "Organic Convexity — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/3d/fluidity-1.webp", "alt": "종이 조형 Organic Fluidity — 바닥에 놓인 형태", "cap": "Organic Fluidity — 3D Paper Sculpture", "g": "u"}, {"src": "assets/3d/fluidity-2.webp", "alt": "종이 조형 Organic Fluidity — 매달린 형태", "cap": "Organic Fluidity — 3D Paper Sculpture", "g": "u"}, {"src": "assets/3d/space-box.webp", "alt": "공간 분석 박스 — 상자 안에 매달린 색 면들", "cap": "Space Analysis Box — Spatial Study", "g": "u"}, {"src": "assets/3d/elements.webp", "alt": "3D 요소 연구 — 받침 위의 곡면과 선, 나무 형태", "cap": "3D Elements Studies — Space · Direction · Priority · Movement", "g": "u"}, {"src": "assets/3d/edged-1.webp", "alt": "석고 조형 Aesthetic Edged Surface — 정면", "cap": "Aesthetic Edged Surface — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/3d/edged-2.webp", "alt": "석고 조형 Aesthetic Edged Surface — 근접", "cap": "Aesthetic Edged Surface — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/3d/edged-3.webp", "alt": "석고 조형 Aesthetic Edged Surface — 측면", "cap": "Aesthetic Edged Surface — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/intern/ottawa-wall.webp", "alt": "BoConcept Ottawa 사이드 테이블 — 벽 선반과 함께 연출된 공간", "cap": "Ottawa Side Table — BoConcept · Photography © BoConcept", "g": "i"}, {"src": "assets/intern/ottawa-lounge-1.webp", "alt": "Ottawa 사이드 테이블 — 소파 옆에 놓인 모습", "cap": "Ottawa Side Table — BoConcept · Photography © BoConcept", "g": "i"}, {"src": "assets/intern/ottawa-lounge-2.webp", "alt": "Ottawa 사이드 테이블 — 소파 좌석 아래로 밀어 넣은 모습", "cap": "Ottawa Side Table — BoConcept · Photography © BoConcept", "g": "i"}, {"src": "assets/intern/toot-interior.webp", "alt": "Kundalini TOOT 테이블 램프 — 인테리어 연출", "cap": "TOOT Table Lamp — Kundalini, 2017 · Photography © Kundalini", "g": "i"}, {"src": "assets/intern/toot-product.webp", "alt": "Kundalini TOOT 테이블 램프 — 제품 단독 컷", "cap": "TOOT Table Lamp — Kundalini, 2017 · Photography © Kundalini", "g": "i"}, {"src": "assets/linkfit/app/01.webp", "alt": "링크핏 앱 화면 — 01 스플래시", "cap": "LinkFit App — A 진입 · 01 스플래시", "g": "l"}, {"src": "assets/linkfit/app/02.webp", "alt": "링크핏 앱 화면 — 02 로그인", "cap": "LinkFit App — A 진입 · 02 로그인", "g": "l"}, {"src": "assets/linkfit/app/03.webp", "alt": "링크핏 앱 화면 — 03 로그인 진행 중", "cap": "LinkFit App — A 진입 · 03 로그인 진행 중", "g": "l"}, {"src": "assets/linkfit/app/04.webp", "alt": "링크핏 앱 화면 — 04 홈", "cap": "LinkFit App — B 탐색 · 04 홈", "g": "l"}, {"src": "assets/linkfit/app/05.webp", "alt": "링크핏 앱 화면 — 05 알림", "cap": "LinkFit App — B 탐색 · 05 알림", "g": "l"}, {"src": "assets/linkfit/app/06.webp", "alt": "링크핏 앱 화면 — 06 검색", "cap": "LinkFit App — B 탐색 · 06 검색", "g": "l"}, {"src": "assets/linkfit/app/07.webp", "alt": "링크핏 앱 화면 — 07 검색 결과", "cap": "LinkFit App — B 탐색 · 07 검색 결과", "g": "l"}, {"src": "assets/linkfit/app/08.webp", "alt": "링크핏 앱 화면 — 08 검색 필터", "cap": "LinkFit App — B 탐색 · 08 검색 필터", "g": "l"}, {"src": "assets/linkfit/app/09.webp", "alt": "링크핏 앱 화면 — 09 내 주변 지도", "cap": "LinkFit App — B 탐색 · 09 내 주변 지도", "g": "l"}, {"src": "assets/linkfit/app/10.webp", "alt": "링크핏 앱 화면 — 10 내 주변 필터 시트", "cap": "LinkFit App — B 탐색 · 10 내 주변 필터 시트", "g": "l"}, {"src": "assets/linkfit/app/11.webp", "alt": "링크핏 앱 화면 — 11 시설 상세", "cap": "LinkFit App — C 예약 · 결제 · 11 시설 상세", "g": "l"}, {"src": "assets/linkfit/app/12.webp", "alt": "링크핏 앱 화면 — 12 시설 상세 · 이용권 · 후기", "cap": "LinkFit App — C 예약 · 결제 · 12 시설 상세 · 이용권 · 후기", "g": "l"}, {"src": "assets/linkfit/app/13.webp", "alt": "링크핏 앱 화면 — 13 이용시간 선택", "cap": "LinkFit App — C 예약 · 결제 · 13 이용시간 선택", "g": "l"}, {"src": "assets/linkfit/app/14.webp", "alt": "링크핏 앱 화면 — 14 결제하기", "cap": "LinkFit App — C 예약 · 결제 · 14 결제하기", "g": "l"}, {"src": "assets/linkfit/app/15.webp", "alt": "링크핏 앱 화면 — 15 중복 시간 알림", "cap": "LinkFit App — C 예약 · 결제 · 15 중복 시간 알림", "g": "l"}, {"src": "assets/linkfit/app/16.webp", "alt": "링크핏 앱 화면 — 15B 결제 확정 대기", "cap": "LinkFit App — C 예약 · 결제 · 15B 결제 확정 대기", "g": "l"}, {"src": "assets/linkfit/app/17.webp", "alt": "링크핏 앱 화면 — 16 결제 완료", "cap": "LinkFit App — C 예약 · 결제 · 16 결제 완료", "g": "l"}, {"src": "assets/linkfit/app/18.webp", "alt": "링크핏 앱 화면 — 17 이용현황", "cap": "LinkFit App — D 이용 · 17 이용현황", "g": "l"}, {"src": "assets/linkfit/app/19.webp", "alt": "링크핏 앱 화면 — 18 이용권 상세", "cap": "LinkFit App — D 이용 · 18 이용권 상세", "g": "l"}, {"src": "assets/linkfit/app/20.webp", "alt": "링크핏 앱 화면 — 19 QR 입장", "cap": "LinkFit App — D 이용 · 19 QR 입장", "g": "l"}, {"src": "assets/linkfit/app/21.webp", "alt": "링크핏 앱 화면 — 20 이용 중", "cap": "LinkFit App — D 이용 · 20 이용 중", "g": "l"}, {"src": "assets/linkfit/app/22.webp", "alt": "링크핏 앱 화면 — 21 이용 시간 연장", "cap": "LinkFit App — D 이용 · 21 이용 시간 연장", "g": "l"}, {"src": "assets/linkfit/app/23.webp", "alt": "링크핏 앱 화면 — 22 이용 완료 · 후기", "cap": "LinkFit App — D 이용 · 22 이용 완료 · 후기", "g": "l"}, {"src": "assets/linkfit/app/24.webp", "alt": "링크핏 앱 화면 — 23 선물 보내기", "cap": "LinkFit App — E 선물 · 23 선물 보내기", "g": "l"}, {"src": "assets/linkfit/app/25.webp", "alt": "링크핏 앱 화면 — 24 선물 링크 완료", "cap": "LinkFit App — E 선물 · 24 선물 링크 완료", "g": "l"}, {"src": "assets/linkfit/app/26.webp", "alt": "링크핏 앱 화면 — 25 보낸 선물", "cap": "LinkFit App — E 선물 · 25 보낸 선물", "g": "l"}, {"src": "assets/linkfit/app/27.webp", "alt": "링크핏 앱 화면 — 26 선물 받기", "cap": "LinkFit App — E 선물 · 26 선물 받기", "g": "l"}, {"src": "assets/linkfit/app/28.webp", "alt": "링크핏 앱 화면 — 27 예약 취소 확인", "cap": "LinkFit App — F 취소 · 환불 · 27 예약 취소 확인", "g": "l"}, {"src": "assets/linkfit/app/29.webp", "alt": "링크핏 앱 화면 — 28 구매내역 상세", "cap": "LinkFit App — F 취소 · 환불 · 28 구매내역 상세", "g": "l"}, {"src": "assets/linkfit/app/30.webp", "alt": "링크핏 앱 화면 — 29 MY", "cap": "LinkFit App — G MY · 29 MY", "g": "l"}, {"src": "assets/linkfit/app/31.webp", "alt": "링크핏 앱 화면 — 30 헬스레벨 안내", "cap": "LinkFit App — G MY · 30 헬스레벨 안내", "g": "l"}, {"src": "assets/linkfit/app/32.webp", "alt": "링크핏 앱 화면 — 31 레벨 공유", "cap": "LinkFit App — G MY · 31 레벨 공유", "g": "l"}, {"src": "assets/linkfit/app/33.webp", "alt": "링크핏 앱 화면 — 32 이용권 구매내역", "cap": "LinkFit App — G MY · 32 이용권 구매내역", "g": "l"}, {"src": "assets/linkfit/app/34.webp", "alt": "링크핏 앱 화면 — 33 고객센터 · FAQ", "cap": "LinkFit App — G MY · 33 고객센터 · FAQ", "g": "l"}, {"src": "assets/linkfit/app/35.webp", "alt": "링크핏 앱 화면 — 34 내 문의내역", "cap": "LinkFit App — G MY · 34 내 문의내역", "g": "l"}, {"src": "assets/linkfit/app/36.webp", "alt": "링크핏 앱 화면 — 35 설정", "cap": "LinkFit App — G MY · 35 설정", "g": "l"}, {"src": "assets/linkfit/web/s-hero.webp", "alt": "링크핏 웹사이트 — Hero — 시간표를 드래그해 원하는 시간을 담는 첫 화면", "cap": "LinkFit Website — Hero — 시간표를 드래그해 원하는 시간을 담는 첫 화면", "g": "w"}, {"src": "assets/linkfit/web/s-why.webp", "alt": "링크핏 웹사이트 — Why LinkFit — 4가지 혜택 카드와 키워드 띠", "cap": "LinkFit Website — Why LinkFit — 4가지 혜택 카드와 키워드 띠", "g": "w"}, {"src": "assets/linkfit/web/s-how.webp", "alt": "링크핏 웹사이트 — How it works — 3단계 안내와 앱 화면", "cap": "LinkFit Website — How it works — 3단계 안내와 앱 화면", "g": "w"}, {"src": "assets/linkfit/web/s-together.webp", "alt": "링크핏 웹사이트 — Together — 함께 결제하고 함께 입장", "cap": "LinkFit Website — Together — 함께 결제하고 함께 입장", "g": "w"}, {"src": "assets/linkfit/web/s-faq.webp", "alt": "링크핏 웹사이트 — FAQ — 자주 묻는 질문 아코디언", "cap": "LinkFit Website — FAQ — 자주 묻는 질문 아코디언", "g": "w"}, {"src": "assets/linkfit/web/m-hero.webp", "alt": "링크핏 웹사이트 — Mobile — Hero", "cap": "LinkFit Website — Mobile — Hero", "g": "w"}, {"src": "assets/linkfit/web/m-why.webp", "alt": "링크핏 웹사이트 — Mobile — Why LinkFit", "cap": "LinkFit Website — Mobile — Why LinkFit", "g": "w"}, {"src": "assets/linkfit/web/m-how.webp", "alt": "링크핏 웹사이트 — Mobile — How it works", "cap": "LinkFit Website — Mobile — How it works", "g": "w"}, {"src": "assets/windmate/phone.webp", "alt": "Windmate 미니 선풍기 — With Phone — 스마트폰과 결합한 모습", "cap": "Windmate — With Phone — 스마트폰과 결합한 모습", "g": "m"}, {"src": "assets/windmate/back.webp", "alt": "Windmate 미니 선풍기 — Back — 손잡이가 스마트폰을 감싸는 뒷면", "cap": "Windmate — Back — 손잡이가 스마트폰을 감싸는 뒷면", "g": "m"}, {"src": "assets/windmate/fan.webp", "alt": "Windmate 미니 선풍기 — Fan Mode — 커버를 열면 선풍기", "cap": "Windmate — Fan Mode — 커버를 열면 선풍기", "g": "m"}, {"src": "assets/windmate/cover.webp", "alt": "Windmate 미니 선풍기 — Dryer Mode — 커버를 씌우면 드라이어", "cap": "Windmate — Dryer Mode — 커버를 씌우면 드라이어", "g": "m"}, {"src": "assets/windmate/detach.webp", "alt": "Windmate 미니 선풍기 — Two in One — 분리되는 드라이어 커버", "cap": "Windmate — Two in One — 분리되는 드라이어 커버", "g": "m"}, {"src": "assets/windmate/scene.webp", "alt": "Windmate 미니 선풍기 — Lifestyle — 드라이어로 머리를 말리는 장면", "cap": "Windmate — Lifestyle — 드라이어로 머리를 말리는 장면", "g": "m"}, {"src": "assets/windmate/d-hub.webp", "alt": "Windmate 미니 선풍기 — Detail — 허브의 메시지 Two become one, carry your wind", "cap": "Windmate — Detail — 허브의 메시지 Two become one, carry your wind", "g": "m"}, {"src": "assets/windmate/d-louver.webp", "alt": "Windmate 미니 선풍기 — Detail — 루버 커버와 WM 1800 각인", "cap": "Windmate — Detail — 루버 커버와 WM 1800 각인", "g": "m"}, {"src": "assets/windmate/d-grip.webp", "alt": "Windmate 미니 선풍기 — Detail — 네이비 레더 텍스처 그립", "cap": "Windmate — Detail — 네이비 레더 텍스처 그립", "g": "m"}];
+const LB=[{"src": "assets/3d/convexity-1.webp", "alt": "석고 조형 Organic Convexity — 세로 구도", "cap": "Organic Convexity — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/3d/convexity-2.webp", "alt": "석고 조형 Organic Convexity — 측면", "cap": "Organic Convexity — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/3d/convexity-3.webp", "alt": "석고 조형 Organic Convexity — 위에서 본 모습", "cap": "Organic Convexity — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/3d/fluidity-1.webp", "alt": "종이 조형 Organic Fluidity — 바닥에 놓인 형태", "cap": "Organic Fluidity — 3D Paper Sculpture", "g": "u"}, {"src": "assets/3d/fluidity-2.webp", "alt": "종이 조형 Organic Fluidity — 매달린 형태", "cap": "Organic Fluidity — 3D Paper Sculpture", "g": "u"}, {"src": "assets/3d/space-box.webp", "alt": "공간 분석 박스 — 상자 안에 매달린 색 면들", "cap": "Space Analysis Box — Spatial Study", "g": "u"}, {"src": "assets/3d/elements.webp", "alt": "3D 요소 연구 — 받침 위의 곡면과 선, 나무 형태", "cap": "3D Elements Studies — Space · Direction · Priority · Movement", "g": "u"}, {"src": "assets/3d/edged-1.webp", "alt": "석고 조형 Aesthetic Edged Surface — 정면", "cap": "Aesthetic Edged Surface — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/3d/edged-2.webp", "alt": "석고 조형 Aesthetic Edged Surface — 근접", "cap": "Aesthetic Edged Surface — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/3d/edged-3.webp", "alt": "석고 조형 Aesthetic Edged Surface — 측면", "cap": "Aesthetic Edged Surface — 3D Plaster Sculpture", "g": "u"}, {"src": "assets/intern/ottawa-wall.webp", "alt": "BoConcept Ottawa 사이드 테이블 — 벽 선반과 함께 연출된 공간", "cap": "Ottawa Side Table — BoConcept · Photography © BoConcept", "g": "i"}, {"src": "assets/intern/ottawa-lounge-1.webp", "alt": "Ottawa 사이드 테이블 — 소파 옆에 놓인 모습", "cap": "Ottawa Side Table — BoConcept · Photography © BoConcept", "g": "i"}, {"src": "assets/intern/ottawa-lounge-2.webp", "alt": "Ottawa 사이드 테이블 — 소파 좌석 아래로 밀어 넣은 모습", "cap": "Ottawa Side Table — BoConcept · Photography © BoConcept", "g": "i"}, {"src": "assets/intern/toot-interior.webp", "alt": "Kundalini TOOT 테이블 램프 — 인테리어 연출", "cap": "TOOT Table Lamp — Kundalini, 2017 · Photography © Kundalini", "g": "i"}, {"src": "assets/intern/toot-product.webp", "alt": "Kundalini TOOT 테이블 램프 — 제품 단독 컷", "cap": "TOOT Table Lamp — Kundalini, 2017 · Photography © Kundalini", "g": "i"}, {"src": "assets/linkfit/app/01.webp", "alt": "링크핏 앱 화면 — 01 스플래시", "cap": "LinkFit App — A 진입 · 01 스플래시", "g": "l"}, {"src": "assets/linkfit/app/02.webp", "alt": "링크핏 앱 화면 — 02 로그인", "cap": "LinkFit App — A 진입 · 02 로그인", "g": "l"}, {"src": "assets/linkfit/app/03.webp", "alt": "링크핏 앱 화면 — 03 로그인 진행 중", "cap": "LinkFit App — A 진입 · 03 로그인 진행 중", "g": "l"}, {"src": "assets/linkfit/app/04.webp", "alt": "링크핏 앱 화면 — 04 홈", "cap": "LinkFit App — B 탐색 · 04 홈", "g": "l"}, {"src": "assets/linkfit/app/05.webp", "alt": "링크핏 앱 화면 — 05 알림", "cap": "LinkFit App — B 탐색 · 05 알림", "g": "l"}, {"src": "assets/linkfit/app/06.webp", "alt": "링크핏 앱 화면 — 06 검색", "cap": "LinkFit App — B 탐색 · 06 검색", "g": "l"}, {"src": "assets/linkfit/app/07.webp", "alt": "링크핏 앱 화면 — 07 검색 결과", "cap": "LinkFit App — B 탐색 · 07 검색 결과", "g": "l"}, {"src": "assets/linkfit/app/08.webp", "alt": "링크핏 앱 화면 — 08 검색 필터", "cap": "LinkFit App — B 탐색 · 08 검색 필터", "g": "l"}, {"src": "assets/linkfit/app/09.webp", "alt": "링크핏 앱 화면 — 09 내 주변 지도", "cap": "LinkFit App — B 탐색 · 09 내 주변 지도", "g": "l"}, {"src": "assets/linkfit/app/10.webp", "alt": "링크핏 앱 화면 — 10 내 주변 필터 시트", "cap": "LinkFit App — B 탐색 · 10 내 주변 필터 시트", "g": "l"}, {"src": "assets/linkfit/app/11.webp", "alt": "링크핏 앱 화면 — 11 시설 상세", "cap": "LinkFit App — C 예약 · 결제 · 11 시설 상세", "g": "l"}, {"src": "assets/linkfit/app/12.webp", "alt": "링크핏 앱 화면 — 12 시설 상세 · 이용권 · 후기", "cap": "LinkFit App — C 예약 · 결제 · 12 시설 상세 · 이용권 · 후기", "g": "l"}, {"src": "assets/linkfit/app/13.webp", "alt": "링크핏 앱 화면 — 13 이용시간 선택", "cap": "LinkFit App — C 예약 · 결제 · 13 이용시간 선택", "g": "l"}, {"src": "assets/linkfit/app/14.webp", "alt": "링크핏 앱 화면 — 14 결제하기", "cap": "LinkFit App — C 예약 · 결제 · 14 결제하기", "g": "l"}, {"src": "assets/linkfit/app/15.webp", "alt": "링크핏 앱 화면 — 15 중복 시간 알림", "cap": "LinkFit App — C 예약 · 결제 · 15 중복 시간 알림", "g": "l"}, {"src": "assets/linkfit/app/16.webp", "alt": "링크핏 앱 화면 — 15B 결제 확정 대기", "cap": "LinkFit App — C 예약 · 결제 · 15B 결제 확정 대기", "g": "l"}, {"src": "assets/linkfit/app/17.webp", "alt": "링크핏 앱 화면 — 16 결제 완료", "cap": "LinkFit App — C 예약 · 결제 · 16 결제 완료", "g": "l"}, {"src": "assets/linkfit/app/18.webp", "alt": "링크핏 앱 화면 — 17 이용현황", "cap": "LinkFit App — D 이용 · 17 이용현황", "g": "l"}, {"src": "assets/linkfit/app/19.webp", "alt": "링크핏 앱 화면 — 18 이용권 상세", "cap": "LinkFit App — D 이용 · 18 이용권 상세", "g": "l"}, {"src": "assets/linkfit/app/20.webp", "alt": "링크핏 앱 화면 — 19 QR 입장", "cap": "LinkFit App — D 이용 · 19 QR 입장", "g": "l"}, {"src": "assets/linkfit/app/21.webp", "alt": "링크핏 앱 화면 — 20 이용 중", "cap": "LinkFit App — D 이용 · 20 이용 중", "g": "l"}, {"src": "assets/linkfit/app/22.webp", "alt": "링크핏 앱 화면 — 21 이용 시간 연장", "cap": "LinkFit App — D 이용 · 21 이용 시간 연장", "g": "l"}, {"src": "assets/linkfit/app/23.webp", "alt": "링크핏 앱 화면 — 22 이용 완료 · 후기", "cap": "LinkFit App — D 이용 · 22 이용 완료 · 후기", "g": "l"}, {"src": "assets/linkfit/app/24.webp", "alt": "링크핏 앱 화면 — 23 선물 보내기", "cap": "LinkFit App — E 선물 · 23 선물 보내기", "g": "l"}, {"src": "assets/linkfit/app/25.webp", "alt": "링크핏 앱 화면 — 24 선물 링크 완료", "cap": "LinkFit App — E 선물 · 24 선물 링크 완료", "g": "l"}, {"src": "assets/linkfit/app/26.webp", "alt": "링크핏 앱 화면 — 25 보낸 선물", "cap": "LinkFit App — E 선물 · 25 보낸 선물", "g": "l"}, {"src": "assets/linkfit/app/27.webp", "alt": "링크핏 앱 화면 — 26 선물 받기", "cap": "LinkFit App — E 선물 · 26 선물 받기", "g": "l"}, {"src": "assets/linkfit/app/28.webp", "alt": "링크핏 앱 화면 — 27 예약 취소 확인", "cap": "LinkFit App — F 취소 · 환불 · 27 예약 취소 확인", "g": "l"}, {"src": "assets/linkfit/app/29.webp", "alt": "링크핏 앱 화면 — 28 구매내역 상세", "cap": "LinkFit App — F 취소 · 환불 · 28 구매내역 상세", "g": "l"}, {"src": "assets/linkfit/app/30.webp", "alt": "링크핏 앱 화면 — 29 MY", "cap": "LinkFit App — G MY · 29 MY", "g": "l"}, {"src": "assets/linkfit/app/31.webp", "alt": "링크핏 앱 화면 — 30 헬스레벨 안내", "cap": "LinkFit App — G MY · 30 헬스레벨 안내", "g": "l"}, {"src": "assets/linkfit/app/32.webp", "alt": "링크핏 앱 화면 — 31 레벨 공유", "cap": "LinkFit App — G MY · 31 레벨 공유", "g": "l"}, {"src": "assets/linkfit/app/33.webp", "alt": "링크핏 앱 화면 — 32 이용권 구매내역", "cap": "LinkFit App — G MY · 32 이용권 구매내역", "g": "l"}, {"src": "assets/linkfit/app/34.webp", "alt": "링크핏 앱 화면 — 33 고객센터 · FAQ", "cap": "LinkFit App — G MY · 33 고객센터 · FAQ", "g": "l"}, {"src": "assets/linkfit/app/35.webp", "alt": "링크핏 앱 화면 — 34 내 문의내역", "cap": "LinkFit App — G MY · 34 내 문의내역", "g": "l"}, {"src": "assets/linkfit/app/36.webp", "alt": "링크핏 앱 화면 — 35 설정", "cap": "LinkFit App — G MY · 35 설정", "g": "l"}, {"src": "assets/linkfit/web/s-hero.webp", "alt": "링크핏 웹사이트 — Hero — 시간표를 드래그해 원하는 시간을 담는 첫 화면", "cap": "LinkFit Website — Hero — 시간표를 드래그해 원하는 시간을 담는 첫 화면", "g": "w"}, {"src": "assets/linkfit/web/s-why.webp", "alt": "링크핏 웹사이트 — Why LinkFit — 4가지 혜택 카드와 키워드 띠", "cap": "LinkFit Website — Why LinkFit — 4가지 혜택 카드와 키워드 띠", "g": "w"}, {"src": "assets/linkfit/web/s-how.webp", "alt": "링크핏 웹사이트 — How it works — 3단계 안내와 앱 화면", "cap": "LinkFit Website — How it works — 3단계 안내와 앱 화면", "g": "w"}, {"src": "assets/linkfit/web/s-together.webp", "alt": "링크핏 웹사이트 — Together — 함께 결제하고 함께 입장", "cap": "LinkFit Website — Together — 함께 결제하고 함께 입장", "g": "w"}, {"src": "assets/linkfit/web/s-faq.webp", "alt": "링크핏 웹사이트 — FAQ — 자주 묻는 질문 아코디언", "cap": "LinkFit Website — FAQ — 자주 묻는 질문 아코디언", "g": "w"}, {"src": "assets/linkfit/web/m-hero.webp", "alt": "링크핏 웹사이트 — Mobile — Hero", "cap": "LinkFit Website — Mobile — Hero", "g": "w"}, {"src": "assets/linkfit/web/m-why.webp", "alt": "링크핏 웹사이트 — Mobile — Why LinkFit", "cap": "LinkFit Website — Mobile — Why LinkFit", "g": "w"}, {"src": "assets/linkfit/web/m-how.webp", "alt": "링크핏 웹사이트 — Mobile — How it works", "cap": "LinkFit Website — Mobile — How it works", "g": "w"}, {"src": "assets/windmate/phone.webp", "alt": "Windmate 미니 선풍기 — With Phone — 스마트폰과 결합한 모습", "cap": "Windmate — With Phone — 스마트폰과 결합한 모습", "g": "m"}, {"src": "assets/windmate/back.webp", "alt": "Windmate 미니 선풍기 — Back — 손잡이가 스마트폰을 감싸는 뒷면", "cap": "Windmate — Back — 손잡이가 스마트폰을 감싸는 뒷면", "g": "m"}, {"src": "assets/windmate/fan.webp", "alt": "Windmate 미니 선풍기 — Fan Mode — 커버를 열면 선풍기", "cap": "Windmate — Fan Mode — 커버를 열면 선풍기", "g": "m"}, {"src": "assets/windmate/cover.webp", "alt": "Windmate 미니 선풍기 — Dryer Mode — 커버를 씌우면 드라이어", "cap": "Windmate — Dryer Mode — 커버를 씌우면 드라이어", "g": "m"}, {"src": "assets/windmate/detach.webp", "alt": "Windmate 미니 선풍기 — Two in One — 분리되는 드라이어 커버", "cap": "Windmate — Two in One — 분리되는 드라이어 커버", "g": "m"}, {"src": "assets/windmate/scene-full.webp", "alt": "Windmate 미니 선풍기 — Lifestyle — 드라이어로 머리를 말리는 장면", "cap": "Windmate — Lifestyle — 드라이어로 머리를 말리는 장면", "g": "m"}, {"src": "assets/windmate/d-hub.webp", "alt": "Windmate 미니 선풍기 — Detail — 허브의 메시지 Two become one, carry your wind", "cap": "Windmate — Detail — 허브의 메시지 Two become one, carry your wind", "g": "m"}, {"src": "assets/windmate/d-louver.webp", "alt": "Windmate 미니 선풍기 — Detail — 루버 커버와 WM 1800 각인", "cap": "Windmate — Detail — 루버 커버와 WM 1800 각인", "g": "m"}, {"src": "assets/windmate/d-grip.webp", "alt": "Windmate 미니 선풍기 — Detail — 네이비 레더 텍스처 그립", "cap": "Windmate — Detail — 네이비 레더 텍스처 그립", "g": "m"}, {"src": "assets/panastove/kitchen.webp", "alt": "PANASTOVE 충전식 프라이팬 — Hero — 키친 싱크 위의 PANASTOVE", "cap": "PANASTOVE — Hero — 키친 싱크 위의 PANASTOVE", "g": "p"}, {"src": "assets/panastove/prob-1.webp", "alt": "PANASTOVE 충전식 프라이팬 — Problem — 불 위에 올린 주전자", "cap": "PANASTOVE — Problem — 불 위에 올린 주전자", "g": "p"}, {"src": "assets/panastove/prob-2.webp", "alt": "PANASTOVE 충전식 프라이팬 — Problem — 캠핑 화로에서의 조리", "cap": "PANASTOVE — Problem — 캠핑 화로에서의 조리", "g": "p"}, {"src": "assets/panastove/prob-3.webp", "alt": "PANASTOVE 충전식 프라이팬 — Problem — 숲속 캠핑 바비큐", "cap": "PANASTOVE — Problem — 숲속 캠핑 바비큐", "g": "p"}, {"src": "assets/panastove/prob-4.webp", "alt": "PANASTOVE 충전식 프라이팬 — Problem — 숯불 그릴", "cap": "PANASTOVE — Problem — 숯불 그릴", "g": "p"}, {"src": "assets/panastove/prob-5.webp", "alt": "PANASTOVE 충전식 프라이팬 — Problem — 바비큐 그릴 뚜껑", "cap": "PANASTOVE — Problem — 바비큐 그릴 뚜껑", "g": "p"}, {"src": "assets/panastove/prob-6.webp", "alt": "PANASTOVE 충전식 프라이팬 — Problem — 치솟는 그릴 불길", "cap": "PANASTOVE — Problem — 치솟는 그릴 불길", "g": "p"}, {"src": "assets/panastove/concept.webp", "alt": "PANASTOVE 충전식 프라이팬 — Concept — 가스·전기·그릴 없이, 새로운 조리 경험", "cap": "PANASTOVE — Concept — 가스·전기·그릴 없이, 새로운 조리 경험", "g": "p"}, {"src": "assets/panastove/lineup.webp", "alt": "PANASTOVE 충전식 프라이팬 — Lineup — 6인치부터 13인치까지, 높이 3.5인치", "cap": "PANASTOVE — Lineup — 6인치부터 13인치까지, 높이 3.5인치", "g": "p"}, {"src": "assets/panastove/button.webp", "alt": "PANASTOVE 충전식 프라이팬 — Detail — 슬라이딩 파워 버튼 (0–3단)", "cap": "PANASTOVE — Detail — 슬라이딩 파워 버튼 (0–3단)", "g": "p"}, {"src": "assets/panastove/charge.webp", "alt": "PANASTOVE 충전식 프라이팬 — Detail — 손잡이 끝 전원·배터리 충전 단자와 러버 그립", "cap": "PANASTOVE — Detail — 손잡이 끝 전원·배터리 충전 단자와 러버 그립", "g": "p"}, {"src": "assets/panastove/anatomy.webp", "alt": "PANASTOVE 충전식 프라이팬 — Anatomy — 아노다이징 알루미늄 팬, 히팅 패널, 히팅 파워 보드", "cap": "PANASTOVE — Anatomy — 아노다이징 알루미늄 팬, 히팅 패널, 히팅 파워 보드", "g": "p"}, {"src": "assets/panastove/package.webp", "alt": "PANASTOVE 충전식 프라이팬 — Packaging — 팬과 충전 코드를 담는 패키지", "cap": "PANASTOVE — Packaging — 팬과 충전 코드를 담는 패키지", "g": "p"}, {"src": "assets/panastove/logo.webp", "alt": "PANASTOVE 충전식 프라이팬 — Packaging — 음각 로고 디테일", "cap": "PANASTOVE — Packaging — 음각 로고 디테일", "g": "p"}, {"src": "assets/panastove/cafe.webp", "alt": "PANASTOVE 충전식 프라이팬 — In Use — 식탁 위에서 바로 데우는 요리", "cap": "PANASTOVE — In Use — 식탁 위에서 바로 데우는 요리", "g": "p"}];
 const lb=document.getElementById('lb'), lbImg=document.getElementById('lb-img');
 let lbI=0, lbRet=null;
 let lbSet=[];
