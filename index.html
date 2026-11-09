@@ -704,6 +704,13 @@ body.lb-open .cursor{background:#EDEDED}
 .wm-det figcaption b{font-weight:500;color:var(--ink)}
 .wm-award{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:28px;margin-top:96px;padding-top:28px;border-top:1px solid var(--ink)}
 .wm-award p{margin:0;display:grid;gap:8px}
+.wm-acap{display:grid;gap:22px;align-content:start}
+.wm-award .wm-no{font-size:11px;letter-spacing:.1em}
+.wm-alogo{width:clamp(120px,12vw,170px);height:auto}
+.wm-introl{display:grid;gap:36px;align-content:start}
+.wm-host{margin:0;display:grid;gap:12px;justify-items:start}
+.wm-host figcaption{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.wm-host img{width:clamp(150px,15vw,210px);height:auto}
 .wm-award b{font-size:clamp(20px,2vw,28px);font-weight:300;letter-spacing:-.03em}
 .wm-award span{font-size:13px;color:var(--ink-2)}
 .wm-life{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(28px,5vw,80px);align-items:center;padding-top:120px}
@@ -1359,7 +1366,7 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
       <h2 class="pg-title" id="pw-title">Windmate</h2>
       <div class="pg-meta"><span><b>신일 미니 선풍기 디자인 공모전</b> · 장려상</span><span>2018</span><span>Industrial Design · 3D Rendering</span></div>
     </header>
-    <div class="pg-intro"><span class="label">About this project</span><p class="pg-lead">스마트폰과 하나로 결합되는 휴대용 미니 선풍기이자, 커버를 씌우면 헤어 드라이어가 되는 2-in-1 제품이에요. 늘 손에 들고 있는 스마트폰을 선풍기의 일부로 끌어들여, 두 기기를 하나처럼 들고 다니는 방식을 제안했어요.</p></div>
+    <div class="pg-intro"><div class="wm-introl"><span class="label">About this project</span><figure class="wm-host"><figcaption>Competition by</figcaption><img src="assets/windmate/shinil-logo.png" alt="신일전자 SHINIL 로고" width="469" height="84" loading="lazy" decoding="async"></figure></div><p class="pg-lead">스마트폰과 하나로 결합되는 휴대용 미니 선풍기이자, 커버를 씌우면 헤어 드라이어가 되는 2-in-1 제품이에요. 늘 손에 들고 있는 스마트폰을 선풍기의 일부로 끌어들여, 두 기기를 하나처럼 들고 다니는 방식을 제안했어요.</p></div>
     <dl class="ix-stats">
       <div><dt>Award</dt><dd>장려상<br><small>Honorable Mention</small></dd></div>
       <div><dt>Competition</dt><dd>신일<br>미니 선풍기 공모전</dd></div>
@@ -1420,7 +1427,7 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
         <figure class="wm-det"><button class="wm-dimg" type="button" data-lb="67" data-cursor="1" aria-label="Grip 크게 보기"><img src="assets/windmate/d-grip.webp" alt="Windmate 디테일 — Grip" loading="lazy" decoding="async"></button><figcaption><b>Grip</b><span>네이비 레더 텍스처</span></figcaption></figure>
       </div>
       <div class="wm-award">
-        <span class="wm-no">Recognition</span>
+        <div class="wm-acap"><span class="wm-no">Recognition</span><img class="wm-alogo" src="assets/windmate/shinil-logo.png" alt="신일전자 SHINIL 로고" width="469" height="84" loading="lazy" decoding="async"></div>
         <p><b>2018 신일 미니 선풍기 디자인 공모전 장려상</b><span>Shinil Mini Fan Design Competition — Honorable Mention</span></p>
       </div>
     </div></div>
