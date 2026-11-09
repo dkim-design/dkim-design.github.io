@@ -604,8 +604,11 @@ body.lb-open .cursor{background:#EDEDED}
 .lf-tabs button b{font-weight:500;color:#6f6f6f;margin-left:6px}
 .lf-tabs button[aria-pressed="true"]{background:var(--lime);color:#0B0B0B;border-color:var(--lime)}
 .lf-tabs button[aria-pressed="true"] b{color:#3b4a00}
-.lf-flow{display:flex;gap:18px;overflow-x:auto;padding-bottom:18px;scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:#333 transparent;cursor:grab}
-.lf-scr{flex:0 0 clamp(150px,15vw,196px);display:grid;gap:10px;scroll-snap-align:start}
+.lf-flow{display:flex;gap:18px;overflow-x:auto;padding-bottom:18px;scroll-snap-type:none;scrollbar-width:thin;scrollbar-color:#333 transparent;cursor:grab}
+.lf-scr{flex:0 0 clamp(150px,15vw,196px);display:grid;gap:10px}
+.lf-flow.dragging{cursor:grabbing}
+.lf-flow.fade{opacity:0;transition:opacity .5s}
+.lf-flow{transition:opacity .5s}
 .lf-scr.off{display:none}
 .lf-scr .d3-ph{aspect-ratio:520/1118}
 .lf-scr span{font-size:12px;color:#9a9a9a;line-height:1.4}
@@ -2440,8 +2443,30 @@ document.querySelectorAll('#lf-tabs button').forEach(b=>b.addEventListener('clic
 (()=>{ const fl=document.getElementById('lf-flow'); let down=false,sx=0,sl=0,moved=false;
   fl.addEventListener('pointerdown',e=>{ if(e.pointerType!=='mouse') return; down=true; moved=false; sx=e.clientX; sl=fl.scrollLeft; });
   addEventListener('pointermove',e=>{ if(!down) return; const dx=e.clientX-sx; if(Math.abs(dx)>4){ moved=true; fl.scrollLeft=sl-dx; } });
-  addEventListener('pointerup',()=>{ down=false; });
+  addEventListener('pointerup',()=>{ down=false; fl.classList.remove('dragging'); });
+  fl.addEventListener('pointerdown',()=>fl.classList.add('dragging'));
   fl.addEventListener('click',e=>{ if(moved){ e.stopPropagation(); e.preventDefault(); moved=false; } },true);
+  /* auto drift: screens slowly move right → left; pauses on hover/drag/touch/wheel, resumes after idle */
+  if(reduce) return;
+  const pg=document.getElementById('pg-linkfit'); const SPEED=28; /* px per second */
+  let pos=fl.scrollLeft, last=0, hold=0, hover=false, vis=false, raf=0, resetting=false;
+  const pause=(ms=2500)=>{ hold=performance.now()+ms; pos=fl.scrollLeft; };
+  fl.addEventListener('pointerenter',e=>{ if(e.pointerType==='mouse') hover=true; });
+  fl.addEventListener('pointerleave',()=>{ hover=false; pause(1200); });
+  fl.addEventListener('pointerdown',()=>pause(3000));
+  fl.addEventListener('touchstart',()=>pause(3500),{passive:true});
+  fl.addEventListener('wheel',()=>pause(2500),{passive:true});
+  fl.addEventListener('scroll',()=>{ if(Math.abs(fl.scrollLeft-pos)>2 && !resetting) pos=fl.scrollLeft; },{passive:true});
+  document.querySelectorAll('#lf-tabs button').forEach(b=>b.addEventListener('click',()=>{ pos=0; pause(1800); }));
+  const tick=t=>{ raf=requestAnimationFrame(tick); const dt=last?Math.min(.05,(t-last)/1000):0; last=t;
+    if(!vis||pg.hidden||hover||down||resetting||t<hold||document.hidden) return;
+    const max=fl.scrollWidth-fl.clientWidth; if(max<=4) return;
+    pos+=SPEED*dt;
+    if(pos>=max){ resetting=true; fl.classList.add('fade'); setTimeout(()=>{ fl.scrollLeft=0; pos=0; fl.classList.remove('fade'); setTimeout(()=>{ resetting=false; hold=performance.now()+1500; },500); },700); return; }
+    fl.scrollLeft=pos; };
+  if('IntersectionObserver' in window){ new IntersectionObserver(es=>es.forEach(e=>{ vis=e.isIntersecting; if(vis){ pos=fl.scrollLeft; last=0; } }),{root:pg,threshold:.2}).observe(fl); } else vis=true;
+  new MutationObserver(()=>{ if(pg.hidden){ cancelAnimationFrame(raf); raf=0; } else if(!raf){ last=0; pos=fl.scrollLeft; hold=performance.now()+1200; raf=requestAnimationFrame(tick); } }).observe(pg,{attributes:true,attributeFilter:['hidden']});
+  if(!pg.hidden) raf=requestAnimationFrame(tick);
 })();
 (()=>{ const pg=document.getElementById('pg-linkfit'); const vids=[...pg.querySelectorAll('video')];
   const sync=v=>{ const bt=pg.querySelector('.lf-vbtn[data-v="'+v.id+'"]'); if(bt){ bt.textContent=v.paused?'Play':'Pause'; bt.setAttribute('aria-label',v.paused?'영상 재생':'영상 일시정지'); } };
