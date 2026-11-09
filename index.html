@@ -1322,7 +1322,7 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
         <a class="scroll" href="#about">Scroll down <svg viewBox="0 0 12 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 1v12M1.5 8.5 6 13l4.5-4.5"/></svg></a>
       </div>
       <div class="portrait">
-        <img class="pf-img" src="assets/profile/portrait-m.webp" srcset="assets/profile/portrait-m.webp 900w, assets/profile/portrait.webp 1333w" sizes="(max-width:760px) 100vw, 45vw" alt="김동영 프로필 사진 — 회색 니트에 팔짱을 낀 정면 상반신" fetchpriority="high" decoding="async">
+        <img class="pf-img" src="assets/profile/portrait-m.webp?v=2" srcset="assets/profile/portrait-m.webp?v=2 900w, assets/profile/portrait.webp?v=2 1333w" sizes="(max-width:760px) 100vw, 45vw" alt="김동영 프로필 사진 — 회색 니트에 팔짱을 낀 정면 상반신" fetchpriority="high" decoding="async">
         <span class="cap-tl">Dongyoung Kim<br>Seongnam, KR · 37.40°N 127.11°E</span>
       </div>
     </div>
@@ -2420,9 +2420,11 @@ if(fine&&!reduce&&G){
 
 /* ---------- 히어로: 단어 슬롯 ---------- */
 const slotWords=[...document.querySelectorAll('#slot span')];
-if(!reduce){ let si=0; setInterval(()=>{ const cur=slotWords[si]; si=(si+1)%slotWords.length; const nx=slotWords[si];
-  cur.classList.remove('on'); cur.classList.add('out'); nx.classList.remove('out'); nx.classList.add('on');
-  setTimeout(()=>cur.classList.remove('out'),950); },2400); }
+if(!reduce){ let si=0; setInterval(()=>{ if(document.hidden) return; const cur=slotWords[si]; si=(si+1)%slotWords.length; const nx=slotWords[si];
+  slotWords.forEach(w=>{ if(w!==cur&&w!==nx){ w.style.transition='none'; w.classList.remove('on','out'); } });
+  nx.style.transition='none'; nx.classList.remove('out','on'); nx.offsetWidth; nx.style.transition='';
+  cur.classList.remove('on'); cur.classList.add('out'); nx.classList.add('on');
+  setTimeout(()=>{ cur.style.transition='none'; cur.classList.remove('out'); cur.offsetWidth; cur.style.transition=''; },950); },2400); }
 
 /* ---------- 히어로: 커서에 반응하는 가변 굵기 ---------- */
 const helloL=[...document.querySelectorAll('#hello span')];
