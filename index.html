@@ -770,7 +770,7 @@ body.lb-open .cursor{background:#EDEDED}
 
 /* PANASTOVE (concept) page */
 .pn{background:#121212;color:#E9E9E9;padding-bottom:0;margin-top:8px;--amb:#F5B027}
-.pn-hero{margin:0;height:clamp(360px,86vh,940px);overflow:hidden;position:relative}
+.pn-hero{margin:0;aspect-ratio:2382/1685;height:auto;overflow:hidden;position:relative}
 .pn-hero .pn-ph{position:absolute;inset:0;border-radius:0;aspect-ratio:auto}
 .pn-hero .pn-ph img{transform:scale(1.08);transition:transform 2.4s var(--ease)}
 .pn-hero.in .pn-ph img{transform:scale(1)}
@@ -828,7 +828,6 @@ body.lb-open .cursor{background:#EDEDED}
   .pn-mosaic .pn-ph{grid-row:auto!important;grid-column:auto!important}
   .pn-duo{grid-template-columns:minmax(0,1fr)}
   .pn-duo figcaption{flex-direction:column;gap:4px}
-  .pn-hero{height:clamp(300px,62vh,520px)}
 }
 @media (prefers-reduced-motion:reduce){ .pn-step{opacity:1;transform:none;transition:none} .pn-flow.in .pn-step .pn-dot::after{animation:none} .pn-hero .pn-ph img{transform:none} }
 .arc-wide.arc-dark .arc-img{background:#141414;padding:0;display:block}
