@@ -1161,6 +1161,8 @@ body.lb-open .cursor{background:#EDEDED}
 .jlogo img{max-width:100%;max-height:100%;object-fit:contain;display:block}
 .jlogo.dk{background:#111;box-shadow:none}
 .jlogo.wd{padding:5px}
+.jlogo.fl{padding:0}
+.jlogo.fl img{width:100%;height:100%;max-width:none;max-height:none;object-fit:cover}
 .jlogo.multi{grid-auto-flow:row;gap:3px;padding:7px}
 .jlogo.multi img{max-height:20px}
 .jlogo b{font-size:12px;font-weight:600;letter-spacing:-.01em;color:var(--ink)}
@@ -2236,7 +2238,7 @@ const JOURNEY=[
    pts:['시간 단위 헬스장 예약 앱의 서비스 플로우 설계와 화면기획서 작성, UIUX 디자인','결제 조회·환불 권한을 분리한 파트너 어드민 대시보드 설계','BI·앱 디자인 시스템, 랜딩페이지, GA4·UTM 성과 측정 체계']},
   {co:'ARBAIM (greyd)', logo:'assets/logos/greyd.png', date:'2022.07 — 2024.08 · Side Project', role:'프리랜서 · 크리에이티브 디렉터 & UIUX 디자이너', tags:['UIUX','Ads'], w:7,
    pts:['핵심 기능 서비스 플로우·화면 설계 주도, 특허 확보에 기획자로 참여','플랫폼 브랜딩 및 앱·웹사이트 UIUX 설계','메타·구글 광고 집행 (월 약 100만원, ROAS 약 200%)']},
-  {co:'이공이공 (Egongegong)', logo:'assets/logos/egong.png', dark:1, wide:1, date:'2021.01 — 2021.09 · 9개월', role:'마케팅본부 리브랜딩팀 · 리브랜딩 디자이너 (초기 멤버)', tags:['E-commerce','Localization'], w:8,
+  {co:'이공이공 (Egongegong)', logo:'assets/logos/egong.png?v=2', dark:1, full:1, date:'2021.01 — 2021.09 · 9개월', role:'마케팅본부 리브랜딩팀 · 리브랜딩 디자이너 (초기 멤버)', tags:['E-commerce','Localization'], w:8,
    pts:['국내 브랜드 약 10개사 아마존 북미 입점용 디자인','이미지 A/B 개선으로 CTR 약 15%·CVR 약 10% 향상','제품 콘셉트 촬영 기획·디렉팅, 프리랜서 디자이너 관리']},
   {co:'한국암웨이 (Amway Korea)', logo:'assets/logos/amway.png', wide:1, date:'2018.03 — 2020.03 · 2년', role:'R&D 아시아 이노베이션센터 · 산업디자이너', tags:['Industrial','Package'], w:9,
    pts:['아티스트리·앳모스피어 신제품 기획·디자인·개발','스마트 디퓨저 디자인권 등록 (제30-1007738호)','오픈 이노베이션 컨셉 3건 채택, 자재·패키징 원가 약 5% 절감']},
@@ -2260,7 +2262,7 @@ JOURNEY.forEach((j,i)=>{
   const row=document.createElement('div'); row.className='jrow'+(i===0?' open':'');
   const pid='jp'+i;
   row.innerHTML=`<button class="jbtn" type="button" id="jb${i}" aria-expanded="${i===0}" aria-controls="${pid}">
-      <div class="jco"><span class="jlogo${j.wide?' wd':''}${j.dark?' dk':''}${j.logos?' multi':''}" aria-hidden="true">${j.logos?j.logos.map(l=>`<img src="${l}" alt="" loading="lazy">`).join(''):j.logo?`<img src="${j.logo}" alt="" loading="lazy">`:`<b>${j.mono||j.co.slice(0,2)}</b>`}</span><div><h3>${j.co}</h3><div class="date">${j.date}</div></div></div>
+      <div class="jco"><span class="jlogo${j.full?' fl':''}${j.wide?' wd':''}${j.dark?' dk':''}${j.logos?' multi':''}" aria-hidden="true">${j.logos?j.logos.map(l=>`<img src="${l}" alt="" loading="lazy">`).join(''):j.logo?`<img src="${j.logo}" alt="" loading="lazy">`:`<b>${j.mono||j.co.slice(0,2)}</b>`}</span><div><h3>${j.co}</h3><div class="date">${j.date}</div></div></div>
       <p class="role">${j.role}</p>
       <div class="tags">${j.tags.map(t=>`<span class="chip">${t}</span>`).join('')}</div>
     </button>
