@@ -1223,7 +1223,8 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
 .cursor.drag{width:76px;height:76px;margin:-38px 0 0 -38px}
 .cursor .dt{position:absolute;color:var(--white);font-size:11px;opacity:0;transition:opacity .25s}
 .cursor.drag .dt{opacity:1}
-@media (pointer:fine){ body.has-cursor *{cursor:none!important} }
+[data-cursor],[data-lb],.work,.arc,.hp-wp,.wm-tab,.kf-seg button{cursor:pointer}
+[data-drag]{cursor:grab}
 @media not (pointer:fine){ .cursor{display:none} }
 
 /* responsive */
@@ -2423,19 +2424,13 @@ addEventListener('keydown',e=>{
 /* ---------- 커서 ---------- */
 const cur=document.querySelector('.cursor');
 if(fine&&!reduce&&G){
-  document.body.classList.add('has-cursor');
-  const xTo=G.quickTo(cur,'x',{duration:.09,ease:'power2.out'}), yTo=G.quickTo(cur,'y',{duration:.09,ease:'power2.out'});
-  addEventListener('pointermove',e=>{xTo(e.clientX);yTo(e.clientY);},{passive:true});
-  document.addEventListener('pointerover',e=>{
-    const open=caseEl.hidden;
-    cur.classList.toggle('big',open&&!!e.target.closest('[data-cursor]'));
-    cur.classList.toggle('drag',open&&!!e.target.closest('[data-drag]'));
-  });
+  /* native OS cursor is used (custom follower cursor removed for responsiveness) */
+  cur.remove();
   document.querySelectorAll('.arrow-btn,.filters button,.fnav a').forEach(m=>{
     m.addEventListener('pointermove',e=>{const r=m.getBoundingClientRect(); G.to(m,{x:(e.clientX-r.left-r.width/2)*.3,y:(e.clientY-r.top-r.height/2)*.3,duration:.4,ease:'power3'});});
     m.addEventListener('pointerleave',()=>G.to(m,{x:0,y:0,duration:.8,ease:'elastic.out(1,.4)'}));
   });
-} else cur.style.display='none';
+} else cur.remove();
 
 /* ---------- 히어로: 단어 슬롯 ---------- */
 const slotWords=[...document.querySelectorAll('#slot span')];
