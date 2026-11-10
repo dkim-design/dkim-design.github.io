@@ -1169,7 +1169,7 @@ body.lb-open .cursor{background:#EDEDED}
 @media (max-width:760px){ .jco{grid-template-columns:48px minmax(0,1fr);gap:14px} .jlogo{width:48px;height:48px;border-radius:10px;padding:7px} .jlogo.multi img{max-height:15px} .jlogo b{font-size:10px} }
 .portrait{background:#EFEFEF;border-radius:6px}
 .portrait .pf-img{position:absolute;inset:-3%;width:106%;height:106%;max-width:none;object-fit:cover;object-position:50% 22%;filter:grayscale(1) contrast(1.04);
-  transform:translate(var(--px,0px),var(--py,0px));transition:filter 1.2s var(--ease),transform 1.2s var(--ease)}
+  transform:translate(var(--px,0px),var(--py,0px));transition:filter 1.2s var(--ease),transform 1.2s var(--ease);will-change:transform}
 .portrait .cap-tl{z-index:1}
 .portrait:hover .pf-img{filter:grayscale(0) contrast(1)}
 .about-right .thumb .pf-thumb{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1);transition:filter .9s var(--ease),transform 1.2s var(--ease)}
@@ -1216,7 +1216,7 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
 .slot{margin-top:48px;border:1px dashed var(--line-2);border-radius:6px;padding:56px 24px;text-align:center;color:var(--ink-2);font-size:14px}
 
 /* cursor */
-.cursor{position:fixed;left:0;top:0;z-index:90;pointer-events:none;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:var(--ink);display:grid;place-items:center;transition:width .4s var(--ease),height .4s var(--ease),margin .4s var(--ease)}
+.cursor{position:fixed;left:0;top:0;z-index:90;pointer-events:none;will-change:transform;contain:layout style;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:var(--ink);display:grid;place-items:center;transition:width .4s var(--ease),height .4s var(--ease),margin .4s var(--ease)}
 .cursor svg{width:20px;height:20px;color:var(--white);opacity:0;transform:rotate(-45deg);transition:opacity .25s,transform .4s var(--ease)}
 .cursor.big{width:76px;height:76px;margin:-38px 0 0 -38px}
 .cursor.big svg{opacity:1;transform:none}
@@ -2424,8 +2424,8 @@ addEventListener('keydown',e=>{
 const cur=document.querySelector('.cursor');
 if(fine&&!reduce&&G){
   document.body.classList.add('has-cursor');
-  const xTo=G.quickTo(cur,'x',{duration:.22,ease:'power3'}), yTo=G.quickTo(cur,'y',{duration:.22,ease:'power3'});
-  addEventListener('pointermove',e=>{xTo(e.clientX);yTo(e.clientY);});
+  const xTo=G.quickTo(cur,'x',{duration:.09,ease:'power2.out'}), yTo=G.quickTo(cur,'y',{duration:.09,ease:'power2.out'});
+  addEventListener('pointermove',e=>{xTo(e.clientX);yTo(e.clientY);},{passive:true});
   document.addEventListener('pointerover',e=>{
     const open=caseEl.hidden;
     cur.classList.toggle('big',open&&!!e.target.closest('[data-cursor]'));
@@ -2450,20 +2450,33 @@ const helloL=[...document.querySelectorAll('#hello span')];
 const heroEl=document.querySelector('.hero');
 if(!reduce){
   const W0=220, W1=820, wt=helloL.map(()=>W0); let px=-1e4, py=-1e4; const introStart=performance.now()+1150;
-  heroEl.addEventListener('pointermove',e=>{px=e.clientX;py=e.clientY;});
-  heroEl.addEventListener('pointerleave',()=>{px=py=-1e4;});
-  (function wloop(now){
-    if(scrollY < heroEl.offsetHeight+200){
-      const ip=(now-introStart)/1400;
-      helloL.forEach((l,i)=>{
-        const r=l.getBoundingClientRect();
-        let tgt=W0+(W1-W0)*Math.max(0,1-Math.hypot(px-(r.left+r.width/2),py-(r.top+r.height/2))/(r.height*1.25));
-        if(ip>0&&ip<1){ const ph=ip*(helloL.length+2)-1; tgt=Math.max(tgt,W0+(W1-W0)*Math.exp(-((i-ph)**2)/.8)); }
-        wt[i]+=(tgt-wt[i])*.1; l.style.fontWeight=Math.round(wt[i]);
-      });
+  /* perf: letter centres are measured once (and on resize/scroll), never inside the per-frame write loop,
+     so changing font-weight no longer forces a synchronous layout 5x per frame; the loop sleeps when idle. */
+  const shown=helloL.map(()=>W0); let ctr=[], dirty=true, raf=0, idleSince=0, heroVis=true;
+  const measure=()=>{ ctr=helloL.map(l=>{ const r=l.getBoundingClientRect(); return [r.left+r.width/2,r.top+r.height/2,r.height]; }); dirty=false; };
+  const wake=()=>{ if(!raf) raf=requestAnimationFrame(wloop); };
+  heroEl.addEventListener('pointermove',e=>{px=e.clientX;py=e.clientY;wake();},{passive:true});
+  heroEl.addEventListener('pointerleave',()=>{px=py=-1e4;wake();});
+  addEventListener('resize',()=>{dirty=true;},{passive:true});
+  addEventListener('scroll',()=>{dirty=true;},{passive:true});
+  if('IntersectionObserver' in window) new IntersectionObserver(es=>{ heroVis=es[0].isIntersecting; if(heroVis){dirty=true;wake();} }).observe(heroEl);
+  function wloop(now){
+    raf=0; if(!heroVis) return;
+    if(dirty) measure();
+    const ip=(now-introStart)/1400; let moving=false;
+    for(let i=0;i<helloL.length;i++){
+      const [cx,cy,h]=ctr[i];
+      let tgt=W0+(W1-W0)*Math.max(0,1-Math.hypot(px-cx,py-cy)/(h*1.25));
+      if(ip>0&&ip<1){ const ph=ip*(helloL.length+2)-1; tgt=Math.max(tgt,W0+(W1-W0)*Math.exp(-((i-ph)**2)/.8)); }
+      wt[i]+=(tgt-wt[i])*.12; if(Math.abs(tgt-wt[i])>.5) moving=true;
+      const v=Math.round(wt[i]/10)*10; if(v!==shown[i]){ shown[i]=v; helloL[i].style.fontWeight=v; }
     }
-    requestAnimationFrame(wloop);
-  })(performance.now());
+    if(moving||ip<1.05){ idleSince=0; raf=requestAnimationFrame(wloop); }
+    else if(!idleSince){ idleSince=now; raf=requestAnimationFrame(wloop); }
+    else if(now-idleSince<300) raf=requestAnimationFrame(wloop);
+  }
+  setTimeout(()=>{dirty=true;wake();},300); if(document.fonts) document.fonts.ready.then(()=>{dirty=true;wake();});
+  wake();
 }
 
 /* ---------- LinkFit 페이지 ---------- */
