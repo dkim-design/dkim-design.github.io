@@ -832,7 +832,8 @@ body.lb-open .cursor{background:#EDEDED}
 }
 @media (prefers-reduced-motion:reduce){ .pn-step{opacity:1;transform:none;transition:none} .pn-flow.in .pn-step .pn-dot::after{animation:none} .pn-hero .pn-ph img{transform:none} }
 .arc-wide.arc-dark .arc-img{background:#141414;padding:0;display:block}
-.arc-wide.arc-dark .arc-img img{width:100%;height:100%;object-fit:cover;object-position:50% 62%;filter:grayscale(1);aspect-ratio:auto}
+.arc-wide.arc-dark .arc-img img{width:100%;height:100%;object-fit:cover;object-position:var(--op,50% 50%);filter:grayscale(1);aspect-ratio:auto}
+.arc-wide.arc-dark .arc-img{aspect-ratio:16/9}
 
 /* PANASTOVE — callouts & concept stage */
 .pn-co{margin:72px 0 0;display:grid;gap:16px}
@@ -1496,11 +1497,11 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
           <div class="arc-body"><span class="arc-no">Archive 03 — Award</span><h3>Windmate</h3><p>신일 미니 선풍기 디자인 공모전 장려상 · 2018</p><span class="arrow-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
         </a>
         <a class="arc arc-wide arc-dark rv" href="#panastove" data-cursor="1">
-          <div class="arc-img"><img src="assets/panastove/kitchen.webp" alt="PANASTOVE 충전식 프라이팬 — 키친 싱크 위 렌더"></div>
+          <div class="arc-img"><img style="--op:50% 6%" src="assets/panastove/kitchen.webp" alt="PANASTOVE 충전식 프라이팬 — 키친 싱크 위 렌더"></div>
           <div class="arc-body"><span class="arc-no">Archive 04 — Personal Project</span><h3>Panastove</h3><p>충전식 프라이팬 · 신사업 아이템 공모전 출품작</p><span class="arrow-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
         </a>
         <a class="arc arc-wide arc-dark rv" href="#magus" data-cursor="1">
-          <div class="arc-img"><img src="assets/magus/hero.webp" alt="MAGUS 플로어스탠딩 블루투스 스피커가 놓인 거실"></div>
+          <div class="arc-img"><img style="--op:50% 96%" src="assets/magus/hero.webp" alt="MAGUS 플로어스탠딩 블루투스 스피커가 놓인 거실"></div>
           <div class="arc-body"><span class="arc-no">Archive 05 — Concept Product</span><h3>Magus</h3><p>플로어스탠딩 블루투스 스피커 · Product · CMF</p><span class="arrow-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
         </a>
       </div>
