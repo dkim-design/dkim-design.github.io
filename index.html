@@ -1364,6 +1364,107 @@ body.lb-open .cursor{background:#EDEDED}
 .jstudios img{max-width:100%;max-height:100%;object-fit:contain}
 .jstudios span{font-size:8.5px;line-height:1.2;text-align:center;color:var(--ink-2);font-weight:500}
 @media (max-width:760px){ .jstudios{grid-column:1/-1;order:3;max-width:none;grid-template-columns:repeat(6,minmax(0,1fr));gap:5px} .jstudios li{border-radius:7px;padding:5px} .jstudios span{font-size:6.5px} }
+/* KAON integrated CI page */
+.kc{--acc:#FF7B0F;padding-bottom:140px}
+.kc-hero{position:relative;height:clamp(420px,72vh,740px);display:grid;place-items:center;overflow:hidden;margin-top:8px;background:#fff;transition:background .7s var(--ease);box-shadow:inset 0 0 0 1px var(--line)}
+.kc-hero[data-bg="primary"]{background:var(--acc)}
+.kc-hero[data-bg="dark"]{background:#0D0D0D}
+.kc-power{position:absolute;width:min(90vh,90vw);aspect-ratio:1;border-radius:50%;border:clamp(36px,6vw,90px) solid var(--acc);opacity:.06;transform:scale(.9);transition:border-color .7s,opacity .7s}
+.kc-power i{position:absolute;left:50%;top:-20%;width:clamp(36px,6vw,90px);height:52%;translate:-50% 0;border-radius:999px;background:var(--acc);box-shadow:0 0 0 clamp(18px,3vw,40px) #fff;transition:background .7s,box-shadow .7s}
+.kc-hero[data-bg="primary"] .kc-power{border-color:#fff;opacity:.12}.kc-hero[data-bg="primary"] .kc-power i{background:#fff;box-shadow:0 0 0 clamp(18px,3vw,40px) var(--acc)}
+.kc-hero[data-bg="dark"] .kc-power{opacity:.14}.kc-hero[data-bg="dark"] .kc-power i{box-shadow:0 0 0 clamp(18px,3vw,40px) #0D0D0D}
+.kc-hero.in .kc-power{animation:kcpow 1.6s var(--ease) both}
+@keyframes kcpow{0%{transform:scale(.6) rotate(-60deg);opacity:0}100%{transform:scale(.9) rotate(0);opacity:.06}}
+.kc-logo{position:relative;width:min(66vw,760px);display:grid;place-items:center}
+.kc-logo img{max-width:100%;max-height:clamp(120px,22vh,230px);object-fit:contain;transition:opacity .35s,transform .6s var(--ease)}
+.kc-logo img.sw{opacity:0;transform:translateY(10px) scale(.98)}
+.kc-ctl{position:absolute;left:50%;bottom:26px;translate:-50% 0;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;width:max-content;max-width:94%}
+.kc-seg{display:flex;padding:4px;border-radius:999px;background:rgba(127,127,127,.16);backdrop-filter:blur(8px)}
+.kc-seg button{border:0;background:none;padding:8px 14px;border-radius:999px;font:500 12px/1 var(--f);letter-spacing:.04em;color:#8a8a8a;cursor:pointer;transition:background .35s,color .35s}
+.kc-seg button.on{background:#111;color:#fff}
+.kc-hero[data-bg="dark"] .kc-seg button.on,.kc-hero[data-bg="primary"] .kc-seg button.on{background:#fff;color:#111}
+.kc-hero[data-bg="primary"] .kc-seg button:not(.on),.kc-hero[data-bg="dark"] .kc-seg button:not(.on){color:rgba(255,255,255,.75)}
+.kc-hcap{position:absolute;left:clamp(16px,4vw,48px);top:24px;margin:0;font-size:12.5px;line-height:1.6;color:#7d7d7d;max-width:32em;transition:color .5s}
+.kc-hero[data-bg="primary"] .kc-hcap,.kc-hero[data-bg="dark"] .kc-hcap{color:rgba(255,255,255,.75)}
+.kc-sec{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:28px clamp(28px,5vw,80px);padding-block:120px 48px;align-items:end}
+.kc-no{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);transition:color .5s}
+.kc-cap{display:grid;gap:16px}
+.kc-h{font-size:clamp(38px,5vw,80px);font-weight:200;letter-spacing:-.055em;line-height:.95}
+.kc-h em{font-style:normal;color:var(--ink-2)}
+.kc-txt p{margin:0;font-size:15px;line-height:1.8;color:var(--ink-soft);max-width:34em}
+.kc-family{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;position:relative}
+.kc-fam{all:unset;box-sizing:border-box;cursor:pointer;background:var(--white);border-radius:6px;box-shadow:0 0 0 1px var(--line);padding:22px 22px 26px;display:grid;gap:22px;transition:box-shadow .4s,transform .5s var(--ease)}
+.kc-fam:hover{transform:translateY(-4px)}
+.kc-fam.on{box-shadow:0 0 0 2px var(--acc),0 18px 40px rgba(0,0,0,.06)}
+.kc-fam:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.kc-fl{font-size:11px;letter-spacing:.12em;color:var(--ink-2)}
+.kc-fam.on .kc-fl{color:var(--acc)}
+.kc-fimg{height:clamp(60px,6vw,84px);display:grid;place-items:center start}
+.kc-fimg img{max-width:100%;max-height:44px;object-fit:contain}
+.kc-types{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr);gap:16px}
+.kc-types figure{min-width:0}
+.kc-types figure{margin:0;display:grid;gap:12px}
+.kc-tbox{position:relative;aspect-ratio:16/10;background:var(--white);border-radius:6px;box-shadow:0 0 0 1px var(--line);display:flex;align-items:center;justify-content:center;padding:12%;box-sizing:border-box;overflow:hidden}
+.kc-tbox img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;transition:opacity .35s;min-width:0}
+.kc-min img{width:clamp(70px,7vw,102px)}
+.kc-ruler{position:absolute;left:50%;bottom:16%;translate:-50% 0;display:grid;justify-items:center;gap:6px;font-size:10.5px;color:var(--ink-2);width:clamp(70px,7vw,102px)}
+.kc-ruler i{width:100%;height:8px;border:1px solid var(--ink-2);border-top:0}
+.kc-types figcaption,.kc-misuse figcaption{display:flex;justify-content:space-between;gap:12px;font-size:12.5px;color:var(--ink-2);border-top:1px solid var(--line);padding-top:12px}
+.kc-types figcaption b{font-weight:500;color:var(--ink)}
+.kc-colors{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.kc-sw{all:unset;box-sizing:border-box;cursor:pointer;display:grid;gap:6px;align-content:start;background:var(--white);border-radius:6px;box-shadow:0 0 0 1px var(--line);overflow:hidden;padding-bottom:16px;transition:transform .5s var(--ease)}
+.kc-sw:hover{transform:translateY(-4px)}
+.kc-sw:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.kc-chip{display:block;aspect-ratio:4/3;background:var(--c);box-shadow:inset 0 -1px 0 var(--line);margin-bottom:8px;transition:background .6s}
+.kc-sw b,.kc-sw span:not(.kc-chip),.kc-sw em{padding-inline:14px}
+.kc-sw b{font-size:13px;font-weight:500;letter-spacing:.02em}
+.kc-sw span:not(.kc-chip){font-size:11px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.kc-sw em{font-style:normal;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.kc-copied{min-height:1.4em;margin:12px 0 0;font-size:12.5px;color:var(--acc)}
+.kc-space{display:grid;place-items:center;background:var(--white);border-radius:6px;box-shadow:0 0 0 1px var(--line);padding:clamp(40px,7vw,100px) 16px}
+.kc-sbox{position:relative;width:min(560px,86%);padding:var(--a,46px);outline:1px dashed #9a9a9a;--a:clamp(26px,4.6vw,56px)}
+.kc-sbox img{display:block;width:100%;outline:1px dashed #c9c9c9}
+.kc-q{position:absolute;width:var(--a);height:var(--a);background:rgba(255,120,120,.22);transform:scale(0);transition:transform .8s var(--ease)}
+.kc-q.tl{left:0;top:0;transform-origin:0 0}.kc-q.tr{right:0;top:0;transform-origin:100% 0}.kc-q.bl{left:0;bottom:0;transform-origin:0 100%}.kc-q.br{right:0;bottom:0;transform-origin:100% 100%}
+.kc-space.in .kc-q{transform:none}
+.kc-space.in .kc-q.tr{transition-delay:.12s}.kc-space.in .kc-q.bl{transition-delay:.24s}.kc-space.in .kc-q.br{transition-delay:.36s}
+.kc-a{position:absolute;font-size:12px;color:var(--ink-2)}
+.kc-a.t{left:calc(var(--a) / 2);top:calc(var(--a) * -0.6);translate:-50% 0}.kc-a.l{left:calc(var(--a) * -0.55);top:calc(var(--a) / 2);translate:0 -50%}
+.kc-slogan{background:var(--white);border-radius:6px;box-shadow:0 0 0 1px var(--line);padding:22px;display:grid;gap:24px}
+.kc-sm{justify-self:start}
+.kc-sm button.on{background:#111;color:#fff}
+.kc-sstage{display:flex;align-items:center;justify-content:center;gap:clamp(16px,3vw,40px);min-height:clamp(220px,28vw,340px);flex-direction:column;transition:gap .6s}
+.kc-slogan[data-mode="h"] .kc-sstage{flex-direction:row}
+.kc-sl-logo{width:min(320px,60%);transition:width .6s var(--ease)}
+.kc-sl-txt{width:min(320px,60%);transition:width .6s var(--ease)}
+.kc-slogan[data-mode="h"] .kc-sl-logo{width:min(300px,38%)}
+.kc-slogan[data-mode="h"] .kc-sl-txt{width:min(420px,52%)}
+.kc-misuse{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.kc-misuse figure{margin:0;display:grid;gap:12px}
+.kc-mbox{aspect-ratio:16/10;border-radius:6px;background:var(--white);box-shadow:0 0 0 1px var(--line);display:grid;place-items:center;padding:16%;overflow:hidden;transition:background .6s}
+.kc-mimg{max-width:100%;max-height:100%;transition:transform .7s var(--ease),filter .7s var(--ease)}
+.kc-mk{display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;background:#E5322D;color:#fff;font-size:10px;margin-right:8px;flex:none}
+.kc-mk.ok{background:#2E9E58}
+.kc-misuse figcaption{justify-content:flex-start;align-items:center;line-height:1.4}
+.kc-bad:hover .kc-mbox,.kc-bad.play .kc-mbox{background:#fafafa}
+.kc-bad[data-x="stretch"]:hover .kc-mimg,.kc-bad[data-x="stretch"].play .kc-mimg{transform:scale(.72,1.45)}
+.kc-bad[data-x="hue"]:hover .kc-mimg,.kc-bad[data-x="hue"].play .kc-mimg{filter:hue-rotate(140deg) saturate(1.4)}
+.kc-bad[data-x="lowc"]:hover .kc-mbox,.kc-bad[data-x="lowc"].play .kc-mbox{background:#2F2F2F}
+.kc-bad[data-x="lowc"]:hover .kc-mimg,.kc-bad[data-x="lowc"].play .kc-mimg{filter:brightness(.85)}
+@media (max-width:900px){ .kc-colors{grid-template-columns:repeat(3,minmax(0,1fr))} .kc-misuse{grid-template-columns:1fr 1fr} .kc-types{grid-template-columns:minmax(0,1fr) minmax(0,1fr)} .kc-types figure:first-child{grid-column:1/-1} }
+@media (max-width:760px){
+  .kc-sec{grid-template-columns:minmax(0,1fr);padding-block:88px 32px}
+  .kc-family{grid-template-columns:minmax(0,1fr)}
+  .kc-colors{grid-template-columns:1fr 1fr}
+  .kc-hcap{display:none}
+  .kc-hero{height:clamp(380px,66vh,560px)}
+  .kc-logo{width:84vw}
+  .kc-ctl{bottom:16px}
+  .kc-seg button{padding:7px 10px;font-size:11px}
+  .kc-slogan[data-mode="h"] .kc-sstage{flex-direction:column}
+}
+@media (prefers-reduced-motion:reduce){ .kc-hero.in .kc-power{animation:none} .kc-q{transform:none} }
+
 /* cta + footer */
 .cta{padding-block:160px 120px;text-align:center}
 .cta h2{font-size:clamp(28px,3.6vw,44px);margin-bottom:14px}
@@ -2374,6 +2475,88 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
   </section>
 </div>
 
+<div class="case page" id="pg-kaonci" role="dialog" aria-modal="true" aria-labelledby="pkc-title" hidden>
+  <div class="case-top wrap"><div class="c"><span class="label">Project — KAON Group · In-house</span><button class="closeb" type="button" data-close>닫기 ✕</button></div></div>
+  <div class="wrap"><div class="c">
+    <header class="pg-head">
+      <h2 class="pg-title" id="pkc-title">KAON CI</h2>
+      <div class="pg-meta"><span><b>KAON Group</b> · 사내 프로젝트</span><span>Integrated Corporate Identity Guidelines</span><span>KAON · BROADBAND · ROBOTICS</span></div>
+    </header>
+    <div class="pg-intro"><span class="label">About this project</span><p class="pg-lead">가온그룹 재직 중 그룹사와 계열사 2곳의 CI를 하나의 체계로 통합한 프로젝트예요. 전원 버튼 형태의 마스터 로고를 기준으로 계열사별 포인트 색과 사업명 조합 규칙을 정하고, 색상·배경·여백·주소 조합·슬로건·오용 사례까지 담은 통합 가이드라인(29p)을 만들었어요.</p></div>
+    <dl class="ix-stats">
+      <div><dt>Brands</dt><dd>3<br><small>Group · Broadband · Robotics</small></dd></div>
+      <div><dt>Guideline</dt><dd>29p<br><small>Integrated CI Guidelines</small></dd></div>
+      <div><dt>Rules</dt><dd>8<br><small>브랜드별 기본 시스템 항목</small></dd></div>
+      <div><dt>Slogan</dt><dd>CONNECTED+<br><small>그룹 공통 슬로건</small></dd></div>
+    </dl>
+  </div></div>
+
+  <section class="kc" id="kc" aria-label="KAON 통합 CI 상세" style="--acc:#FF7B0F">
+    <div class="kc-hero" data-bg="white">
+      <div class="kc-power" aria-hidden="true"><i></i></div>
+      <div class="kc-logo"><img id="kc-main" src="assets/kaonci/group.png" alt="KAON 로고"></div>
+      <div class="kc-ctl">
+        <div class="kc-seg" role="tablist" aria-label="브랜드 선택" data-k="b"><button type="button" class="on" data-v="group">GROUP</button><button type="button" data-v="bb">BROADBAND</button><button type="button" data-v="rb">ROBOTICS</button></div>
+        <div class="kc-seg" aria-label="배경 선택" data-k="bg"><button type="button" class="on" data-v="white">White</button><button type="button" data-v="primary">Primary</button><button type="button" data-v="dark">Dark</button></div>
+      </div>
+      <p class="kc-hcap" id="kc-hcap">그룹 전체를 대표하는 마스터 로고예요. 전원 버튼을 형상화한 O가 “연결되고 켜지는” 기술 기업의 성격을 한 글자로 보여줘요.</p>
+    </div>
+
+    <div class="wrap"><div class="c">
+      <div class="kc-sec">
+        <div class="kc-cap"><span class="kc-no">01 — Brand Architecture</span><h3 class="kc-h">One power button,<br><em>three companies.</em></h3></div>
+        <div class="kc-txt"><p>세 회사가 하나의 그룹으로 보이도록 KAON 로고타입과 전원 버튼 심볼은 공통으로 두고, 계열사는 사업명과 포인트 색으로만 구분했어요. 카드를 누르면 위 미리보기가 해당 브랜드로 바뀌어요.</p></div>
+      </div>
+      <div class="kc-family"><button type="button" class="kc-fam" data-b="group" style="--acc:#FF7B0F"><span class="kc-fl">KAON GROUP</span><span class="kc-fimg"><img src="assets/kaonci/group.png" alt="KAON GROUP 로고" loading="lazy" decoding="async"></span></button><button type="button" class="kc-fam" data-b="bb" style="--acc:#0E7AE6"><span class="kc-fl">KAON BROADBAND</span><span class="kc-fimg"><img src="assets/kaonci/bb-h.png" alt="KAON BROADBAND 로고" loading="lazy" decoding="async"></span></button><button type="button" class="kc-fam" data-b="rb" style="--acc:#FF7B0F"><span class="kc-fl">KAON ROBOTICS</span><span class="kc-fimg"><img src="assets/kaonci/rb-h.png" alt="KAON ROBOTICS 로고" loading="lazy" decoding="async"></span></button></div>
+
+      <div class="kc-sec">
+        <div class="kc-cap"><span class="kc-no">02 — Logotype</span><h3 class="kc-h">Horizontal,<br><em>vertical.</em></h3></div>
+        <div class="kc-txt"><p>계열사 로고는 가로형과 세로형 두 가지 조합을 두고, 최소 사용 크기를 102px(20mm)로 정했어요. 매체의 비율에 맞춰 선택해 쓰도록 했어요.</p></div>
+      </div>
+      <div class="kc-types">
+        <figure><div class="kc-tbox"><img id="kc-h" src="assets/kaonci/group.png" alt="가로형 로고"></div><figcaption><b>Horizontal Type</b><span>가로형</span></figcaption></figure>
+        <figure><div class="kc-tbox"><img id="kc-v" src="assets/kaonci/group.png" alt="세로형 로고"></div><figcaption><b>Vertical Type</b><span>세로형</span></figcaption></figure>
+        <figure><div class="kc-tbox kc-min"><img id="kc-m" src="assets/kaonci/group.png" alt="최소 크기 로고"><span class="kc-ruler"><i></i>102px / 20mm</span></div><figcaption><b>Minimum Size</b><span>최소 크기</span></figcaption></figure>
+      </div>
+
+      <div class="kc-sec">
+        <div class="kc-cap"><span class="kc-no">03 — Color System</span><h3 class="kc-h">Orange for the group,<br><em>blue for the network.</em></h3></div>
+        <div class="kc-txt"><p>Primary 2색과 Secondary 3색으로 구성했어요. 인쇄 방식과 소재에 따라 색이 달라지지 않도록 HEX와 PANTONE 값을 함께 지정했어요. 색상 칩을 누르면 HEX 값이 복사돼요.</p></div>
+      </div>
+      <div class="kc-colors" id="kc-colors"><button type="button" class="kc-sw" style="--c:#FF7B0F" data-hex="#FF7B0F"><span class="kc-chip"></span><b>KAON ORANGE</b><span>#FF7B0F · PANTONE 144 U</span><em>Primary</em></button><button type="button" class="kc-sw" style="--c:#000000" data-hex="#000000"><span class="kc-chip"></span><b>KAON BLACK</b><span>#000000 · Process Black C</span><em>Primary</em></button><button type="button" class="kc-sw" style="--c:#3A3B4D" data-hex="#3A3B4D"><span class="kc-chip"></span><b>DARK BLUE</b><span>#3A3B4D · PANTONE 174-16 C</span><em>Secondary</em></button><button type="button" class="kc-sw" style="--c:#B0B0B0" data-hex="#B0B0B0"><span class="kc-chip"></span><b>SILVER GRAY</b><span>#B0B0B0 · PANTONE 1505 C</span><em>Secondary</em></button><button type="button" class="kc-sw" style="--c:#FFFFFF" data-hex="#FFFFFF"><span class="kc-chip"></span><b>WHITE</b><span>#FFFFFF · PANTONE 179-1 C</span><em>Secondary</em></button></div>
+      <p class="kc-copied" id="kc-copied" aria-live="polite"></p>
+
+      <div class="kc-sec">
+        <div class="kc-cap"><span class="kc-no">04 — Clear Space</span><h3 class="kc-h">Room to<br><em>breathe.</em></h3></div>
+        <div class="kc-txt"><p>로고 높이를 기준 단위 <b>a</b>로 삼아, 사방에 a만큼의 여백을 확보하도록 했어요. 주소 조합에서는 로고와 주소 사이를 2a(세로형), 3a(가로형)로 정했어요.</p></div>
+      </div>
+      <div class="kc-space">
+        <div class="kc-sbox"><span class="kc-q tl"></span><span class="kc-q tr"></span><span class="kc-q bl"></span><span class="kc-q br"></span><img id="kc-s" src="assets/kaonci/group.png" alt="최소 공간 규정 예시"><span class="kc-a t">a</span><span class="kc-a l">a</span></div>
+      </div>
+
+      <div class="kc-sec">
+        <div class="kc-cap"><span class="kc-no">05 — Slogan</span><h3 class="kc-h">Connected,<br><em>and more.</em></h3></div>
+        <div class="kc-txt"><p>그룹 공통 슬로건 CONNECTED+를 로고와 결합하는 세로형·가로형 규칙을 만들었어요. 슬로건의 너비는 로고타입의 너비에 맞춰 정렬해요.</p></div>
+      </div>
+      <div class="kc-slogan" id="kc-slogan" data-mode="v">
+        <div class="kc-seg kc-sm" data-k="sl"><button type="button" class="on" data-v="v">Vertical</button><button type="button" data-v="h">Horizontal</button></div>
+        <div class="kc-sstage"><img class="kc-sl-logo" src="assets/kaonci/group.png" alt="KAON 로고"><img class="kc-sl-txt" src="assets/kaonci/slogan.png?v=3" alt="CONNECTED+ 슬로건"></div>
+      </div>
+
+      <div class="kc-sec">
+        <div class="kc-cap"><span class="kc-no">06 — Logo Misuse</span><h3 class="kc-h">Don’t<br><em>break it.</em></h3></div>
+        <div class="kc-txt"><p>로고는 형태와 비율, 색상, 간격을 반드시 지켜야 하는 핵심 자산이에요. 카드에 마우스를 올리면 잘못 쓰인 모습으로 바뀌어요.</p></div>
+      </div>
+      <div class="kc-misuse">
+        <figure class="kc-ok"><div class="kc-mbox"><img class="kc-mimg" src="assets/kaonci/group.png" alt="올바른 로고"></div><figcaption><span class="kc-mk ok">✓</span>Original</figcaption></figure>
+        <figure class="kc-bad" data-x="stretch"><div class="kc-mbox"><img class="kc-mimg" src="assets/kaonci/group.png" alt=""></div><figcaption><span class="kc-mk">✕</span>크기·비율을 임의로 변형하지 않아요</figcaption></figure>
+        <figure class="kc-bad" data-x="hue"><div class="kc-mbox"><img class="kc-mimg" src="assets/kaonci/group.png" alt=""></div><figcaption><span class="kc-mk">✕</span>지정색 이외의 색을 쓰지 않아요</figcaption></figure>
+        <figure class="kc-bad" data-x="lowc"><div class="kc-mbox"><img class="kc-mimg" src="assets/kaonci/group.png" alt=""></div><figcaption><span class="kc-mk">✕</span>명도 대비가 낮은 배경에 쓰지 않아요</figcaption></figure>
+      </div>
+    </div></div>
+  </section>
+</div>
+
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="작품 크게 보기" hidden>
   <figure class="lb-fig"><img id="lb-img" alt=""><figcaption><span id="lb-cap"></span><span id="lb-pos"></span></figcaption></figure>
   <button class="lb-btn lb-x" type="button" id="lb-x" aria-label="닫기">✕</button>
@@ -2533,6 +2716,9 @@ const WORKS=[
    ch:'그룹사와 계열사의 브랜드 아이덴티티, 그리고 해외 전시 비주얼을 함께 맡는 역할이었어요.',
    ap:'CI·BI 신규 개발과 리뉴얼, 로고·심볼·패턴·사원증을 제작하고, 신사업 Sool.Zip의 브랜딩과 앱 UIUX를 기획·디자인했어요. IBC·MWC·BBWF 등 전시의 부스 외벽·배너·사인·스펙보드 디자인과 영상·브로슈어·리플렛 제작을 총괄했어요.',
    out:'CI·BI 4건을 개발·리뉴얼하고 글로벌 전시 6회 이상의 비주얼을 총괄했어요. 계열사 K-FutureTech 로고는 상표 등록(제40-2058814호)까지 이어졌어요.'},
+  {title:'KAON Group CI', page:'kaonci', img:'assets/kaonci/thumb.webp', sub:'KAON Group', tag:'CI · Guideline', period:'사내 프로젝트', cat:['brand'], scene:4,
+   kr:'그룹사·계열사 2곳(BROADBAND·ROBOTICS) 통합 CI와 가이드라인', role:'Brand Designer', client:'가온그룹', tools:'Illustrator, Photoshop',
+   kpis:[], ch:'', ap:'', out:''},
   {title:'K-FutureTech Branding', page:'kfuturetech', img:'assets/kft/thumb-grid.webp?v=2', sub:'KAON Group', tag:'CI · BI', period:'사내 프로젝트', cat:['brand'], scene:4,
    kr:'계열사 K-FutureTech(현 KAON ROBOTICS) 브랜드 아이덴티티와 가이드라인', role:'Brand Designer', client:'K-FutureTech', tools:'Illustrator, Photoshop',
    kpis:[], ch:'', ap:'', out:''},
@@ -2564,13 +2750,13 @@ const WORKS=[
 const JOURNEY=[
   {co:'가온그룹 (KAON Group)', grp:'ft', logo:'assets/logos/kaon.png', wide:1, date:'2021.09 — 현재 · 5년 2개월', role:'Corporate실 마케팅팀 매니저 / Visual Contents Designer', tags:['AI Workflow','Brand · IP'], w:0,
    pts:['AI 에이전트 2종 구축으로 리서치 시간 약 80%↓, 월 발행량 2배','그룹 캐릭터 IP 가온 프렌즈 5종 기획·디자인, 저작권 5건 등록','CI·BI 4건 개발·리뉴얼, IBC·MWC·BBWF 글로벌 전시 6회 이상 총괄','LinkedIn·YouTube·Facebook·X 공식 채널 콘텐츠 기획·운영']},
-  {co:'이공이공 (Egongegong)', grp:'ft', logo:'assets/logos/egong.png?v=2', dark:1, full:1, date:'2021.01 — 2021.09 · 9개월', role:'마케팅본부 리브랜딩팀 · 리브랜딩 디자이너 (초기 멤버)', tags:['E-commerce','Localization'], w:8,
+  {co:'이공이공 (Egongegong)', grp:'ft', logo:'assets/logos/egong.png?v=2', dark:1, full:1, date:'2021.01 — 2021.09 · 9개월', role:'마케팅본부 리브랜딩팀 · 리브랜딩 디자이너 (초기 멤버)', tags:['E-commerce','Localization'], w:9,
    pts:['국내 브랜드 약 10개사 아마존 북미 입점용 디자인','이미지 A/B 개선으로 CTR 약 15%·CVR 약 10% 향상','제품 콘셉트 촬영 기획·디렉팅, 프리랜서 디자이너 관리']},
-  {co:'한국암웨이 (Amway Korea)', grp:'ft', logo:'assets/logos/amway.png', wide:1, date:'2018.03 — 2020.03 · 2년', role:'R&D 아시아 이노베이션센터 · 산업디자이너', tags:['Industrial','Package'], w:9,
+  {co:'한국암웨이 (Amway Korea)', grp:'ft', logo:'assets/logos/amway.png', wide:1, date:'2018.03 — 2020.03 · 2년', role:'R&D 아시아 이노베이션센터 · 산업디자이너', tags:['Industrial','Package'], w:10,
    pts:['아티스트리·앳모스피어 신제품 기획·디자인·개발','스마트 디퓨저 디자인권 등록 (제30-1007738호)','오픈 이노베이션 컨셉 3건 채택, 자재·패키징 원가 약 5% 절감']},
-  {co:'LinkFit', grp:'fl', logo:'assets/logos/linkfit.png?v=2', dark:1, date:'2026.01 — 현재 · Freelance', role:'프리랜서 · 프로덕트 디자이너 & 서비스 기획자', tags:['Product','Planning'], w:6, page:'linkfit', imgs:['assets/linkfit/app/04.webp','assets/linkfit/app/13.webp','assets/linkfit/app/20.webp'],
+  {co:'LinkFit', grp:'fl', logo:'assets/logos/linkfit.png?v=2', dark:1, date:'2026.01 — 현재 · Freelance', role:'프리랜서 · 프로덕트 디자이너 & 서비스 기획자', tags:['Product','Planning'], w:7, page:'linkfit', imgs:['assets/linkfit/app/04.webp','assets/linkfit/app/13.webp','assets/linkfit/app/20.webp'],
    pts:['시간 단위 헬스장 예약 앱의 서비스 플로우 설계와 화면기획서 작성, UIUX 디자인','결제 조회·환불 권한을 분리한 파트너 어드민 대시보드 설계','BI·앱 디자인 시스템, 랜딩페이지, GA4·UTM 성과 측정 체계']},
-  {co:'ARBAIM (greyd)', grp:'fl', logo:'assets/logos/greyd.png', date:'2022.07 — 2024.08 · Side Project', role:'프리랜서 · 크리에이티브 디렉터 & UIUX 디자이너', tags:['UIUX','Ads'], w:7,
+  {co:'ARBAIM (greyd)', grp:'fl', logo:'assets/logos/greyd.png', date:'2022.07 — 2024.08 · Side Project', role:'프리랜서 · 크리에이티브 디렉터 & UIUX 디자이너', tags:['UIUX','Ads'], w:8,
    pts:['핵심 기능 서비스 플로우·화면 설계 주도, 특허 확보에 기획자로 참여','플랫폼 브랜딩 및 앱·웹사이트 UIUX 설계','메타·구글 광고 집행 (월 약 100만원, ROAS 약 200%)']},
   {co:'Design Internships', grp:'ed', logos:['assets/logos/karim-rashid.png','assets/logos/david-weeks.png','assets/logos/boconcept.svg','assets/logos/designmu.png','assets/logos/nepplus.png'], studios:[['Karim Rashid','karim-rashid.png'],['Stephen Burks Man Made',''],['David Weeks Studio','david-weeks.png'],['BoConcept','boconcept.svg'],['Design MU','designmu.png'],['Nep Plus','nepplus.png']], date:'2014.06 — 2017.03 · 6곳', role:'Karim Rashid · Stephen Burks · David Weeks · BoConcept · Design MU · Nep Plus', tags:['Product','Furniture'], w:null, page:'internship', imgs:['assets/intern/ottawa-wall.webp','assets/intern/toot-interior.webp','assets/intern/toot-product.webp'],
    pts:['Karim Rashid Inc. — BoConcept·Kundalini 등 클라이언트 프로젝트 3D 모델링·렌더링','Stephen Burks Man Made — Art Basel 2016 Miami Beach 설치 공간 3D 데이터·프로토타입','David Weeks Studio — 조명 프로토타이핑, ICFF 기간 회사 전시 운영','Design MU · Nep Plus (서울) — 현대자동차, Carrier, Winix 제품 디자인 참여']},
@@ -2602,7 +2788,7 @@ JOURNEY.forEach((j,i)=>{
     <div class="jpanel" id="${pid}" role="region" aria-labelledby="jb${i}"><div><div class="jin">
       ${j.imgs?`<div class="jthumbs">${j.imgs.map(k=>`<div class="t"><img src="${IMGS[k]||k}" alt="" style="width:100%;height:100%;object-fit:cover;filter:grayscale(1)"></div>`).join('')}</div>`:'<span class="jspacer" aria-hidden="true"></span>'}
       <ul class="jpts">${j.pts.map(p=>`<li>${p}</li>`).join('')}</ul>
-      ${j.page?`<a class="arrow-btn" href="#${j.page}" aria-label="${({internship:'인턴 작업 페이지 보기',university:'Pratt 작품 페이지 보기',linkfit:'링크핏 프로젝트 페이지 보기',kfuturetech:'K-FutureTech 브랜딩 페이지 보기'})[j.page]}">${ARROW}</a>`:j.w===null?'<span></span>':`<button class="arrow-btn" type="button" data-open="${j.w}" aria-label="${WORKS[j.w].title} 프로젝트 보기">${ARROW}</button>`}
+      ${j.page?`<a class="arrow-btn" href="#${j.page}" aria-label="${({internship:'인턴 작업 페이지 보기',university:'Pratt 작품 페이지 보기',linkfit:'링크핏 프로젝트 페이지 보기',kfuturetech:'K-FutureTech 브랜딩 페이지 보기',kaonci:'KAON 통합 CI 페이지 보기'})[j.page]}">${ARROW}</a>`:j.w===null?'<span></span>':`<button class="arrow-btn" type="button" data-open="${j.w}" aria-label="${WORKS[j.w].title} 프로젝트 보기">${ARROW}</button>`}
     </div></div></div>`;
   jl.appendChild(row);
   row.querySelectorAll('.t canvas').forEach((c,k)=>addArt(c,'scene',SCENES[k]));
@@ -2690,7 +2876,7 @@ document.getElementById('close').addEventListener('click',closeCase);
 addEventListener('keydown',e=>{if(e.key==='Escape'&&!caseEl.hidden) closeCase();});
 
 /* ---------- 서브 페이지 (#university, #internship) ---------- */
-const PAGES={university:document.getElementById('pg-university'),internship:document.getElementById('pg-internship'),linkfit:document.getElementById('pg-linkfit'),windmate:document.getElementById('pg-windmate'),panastove:document.getElementById('pg-panastove'),kfuturetech:document.getElementById('pg-kfuturetech'),human:document.getElementById('pg-human'),magus:document.getElementById('pg-magus'),jandi:document.getElementById('pg-jandi')};
+const PAGES={university:document.getElementById('pg-university'),internship:document.getElementById('pg-internship'),linkfit:document.getElementById('pg-linkfit'),windmate:document.getElementById('pg-windmate'),panastove:document.getElementById('pg-panastove'),kfuturetech:document.getElementById('pg-kfuturetech'),human:document.getElementById('pg-human'),magus:document.getElementById('pg-magus'),jandi:document.getElementById('pg-jandi'),kaonci:document.getElementById('pg-kaonci')};
 function goPage(k){ history.pushState({fromSite:true},'','#'+k); route(); }
 let pageReturn=null;
 function showPage(el){
@@ -2713,7 +2899,7 @@ function route(){
 }
 function leavePage(){ if(history.state&&history.state.fromSite){ history.back(); } else { history.replaceState(null,'',location.pathname+location.search+'#archive'); route(); } }
 document.addEventListener('click',e=>{
-  const a=e.target.closest('a[href="#university"],a[href="#internship"],a[href="#linkfit"],a[href="#windmate"],a[href="#panastove"],a[href="#kfuturetech"],a[href="#human"],a[href="#magus"],a[href="#jandi"]'); if(!a) return;
+  const a=e.target.closest('a[href="#university"],a[href="#internship"],a[href="#linkfit"],a[href="#windmate"],a[href="#panastove"],a[href="#kfuturetech"],a[href="#human"],a[href="#magus"],a[href="#jandi"],a[href="#kaonci"]'); if(!a) return;
   e.preventDefault(); history.pushState({fromSite:true},'',a.getAttribute('href')); route();
 });
 document.querySelectorAll('.page [data-close]').forEach(b=>b.addEventListener('click',leavePage));
@@ -2963,6 +3149,40 @@ document.querySelectorAll('#lf-tabs button').forEach(b=>b.addEventListener('clic
   if(list&&an){ const hl=k=>{ list.querySelectorAll('li').forEach(li=>li.classList.toggle('on',li.dataset.n===k)); an.querySelectorAll('.co-dot').forEach(x=>x.classList.toggle('on',x.dataset.n===k)); };
     list.querySelectorAll('li').forEach(li=>{ li.addEventListener('pointerenter',()=>hl(li.dataset.n)); li.addEventListener('pointerleave',()=>hl(null)); }); }
   const hz=pg.querySelector('.jd-haze'); if(hz&&matchMedia('(hover:none)').matches&&'IntersectionObserver' in window){ const o=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ setTimeout(()=>hz.classList.add('clear'),900); o.disconnect(); } }),{root:pg,threshold:.5}); o.observe(hz); }
+})();
+
+(()=>{ const pg=document.getElementById('pg-kaonci'); if(!pg) return;
+  const B={"group": {"name": "KAON GROUP", "acc": "#FF7B0F", "h": "group", "v": "group", "desc": "그룹 전체를 대표하는 마스터 로고예요. 전원 버튼을 형상화한 O가 “연결되고 켜지는” 기술 기업의 성격을 한 글자로 보여줘요.", "colors": [["KAON ORANGE", "#FF7B0F", "PANTONE 144 U", "Primary"], ["KAON BLACK", "#000000", "Process Black C", "Primary"], ["DARK BLUE", "#3A3B4D", "PANTONE 174-16 C", "Secondary"], ["SILVER GRAY", "#B0B0B0", "PANTONE 1505 C", "Secondary"], ["WHITE", "#FFFFFF", "PANTONE 179-1 C", "Secondary"]]}, "bb": {"name": "KAON BROADBAND", "acc": "#0E7AE6", "h": "bb-h", "v": "bb-v", "desc": "통신 장비 계열사로, 마스터 로고의 구조는 그대로 두고 포인트 색을 블루로 바꿔 네트워크와 신뢰의 이미지를 더했어요.", "colors": [["KAON BLUE", "#0E7AE6", "PANTONE P 104-8 C", "Primary"], ["KAON BLACK", "#000000", "Process Black C", "Primary"], ["DARK BLUE", "#3A3B4D", "PANTONE 174-16 C", "Secondary"], ["SILVER GRAY", "#B0B0B0", "PANTONE 1505 C", "Secondary"], ["WHITE", "#FFFFFF", "PANTONE 179-1 C", "Secondary"]]}, "rb": {"name": "KAON ROBOTICS", "acc": "#FF7B0F", "h": "rb-h", "v": "rb-v", "desc": "로봇 계열사(구 K-FutureTech)로, 그룹의 오렌지를 이어받고 사업명 서체만 기계적인 형태로 바꿔 로보틱스의 성격을 드러냈어요.", "colors": [["KAON ORANGE", "#FF7B0F", "PANTONE 144 U", "Primary"], ["KAON BLACK", "#000000", "Process Black C", "Primary"], ["DARK BLUE", "#3A3B4D", "PANTONE 174-16 C", "Secondary"], ["SILVER GRAY", "#B0B0B0", "PANTONE 1505 C", "Secondary"], ["WHITE", "#FFFFFF", "PANTONE 179-1 C", "Secondary"]]}};
+  const A='assets/kaonci/', kc=pg.querySelector('#kc'), hero=pg.querySelector('.kc-hero'), main=pg.querySelector('#kc-main');
+  const st={b:'group',bg:'white'};
+  const img=(k,v,white)=>A+B[k][v]+(white===2?'-ww':white?'-w':'')+'.png';
+  const apply=(anim)=>{ const b=B[st.b]; kc.style.setProperty('--acc',b.acc);
+    const white=st.bg==='primary'?2:st.bg==='dark'?1:0;
+    const swap=()=>{ main.src=img(st.b,'h',white); };
+    if(anim&&!reduce){ main.classList.add('sw'); setTimeout(()=>{ swap(); main.classList.remove('sw'); },220); } else swap();
+    hero.dataset.bg=st.bg; pg.querySelector('#kc-hcap').textContent=b.desc;
+    pg.querySelector('#kc-h').src=img(st.b,'h'); pg.querySelector('#kc-v').src=img(st.b,'v'); pg.querySelector('#kc-m').src=img(st.b,'v'); pg.querySelector('#kc-s').src=img(st.b,'h');
+    pg.querySelectorAll('.kc-sl-logo').forEach(i=>i.src=img(st.b, pg.querySelector('#kc-slogan').dataset.mode==='h'?'v':'h'));
+    pg.querySelectorAll('.kc-mimg').forEach(i=>i.src=img(st.b,'h'));
+    pg.querySelector('#kc-colors').innerHTML=b.colors.map(([n,h,p,k])=>`<button type="button" class="kc-sw" style="--c:${h}" data-hex="${h}"><span class="kc-chip"></span><b>${n}</b><span>${h} · ${p}</span><em>${k}</em></button>`).join('');
+    pg.querySelectorAll('.kc-fam').forEach(f=>f.classList.toggle('on',f.dataset.b===st.b));
+    pg.querySelectorAll('.kc-seg[data-k="b"] button').forEach(x=>x.classList.toggle('on',x.dataset.v===st.b));
+  };
+  pg.querySelectorAll('.kc-seg').forEach(g=>g.addEventListener('click',e=>{ const t=e.target.closest('button'); if(!t) return;
+    g.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===t));
+    if(g.dataset.k==='sl'){ pg.querySelector('#kc-slogan').dataset.mode=t.dataset.v; apply(false); return; }
+    st[g.dataset.k]=t.dataset.v; apply(true); }));
+  pg.querySelectorAll('.kc-fam').forEach(f=>f.addEventListener('click',()=>{ st.b=f.dataset.b; apply(true); hero.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'}); }));
+  pg.querySelector('#kc-colors').addEventListener('click',e=>{ const t=e.target.closest('.kc-sw'); if(!t) return; const h=t.dataset.hex, m=pg.querySelector('#kc-copied');
+    const done=()=>{ m.textContent=h+' 복사했어요'; setTimeout(()=>m.textContent='',1800); };
+    try{ navigator.clipboard.writeText(h).then(done,()=>{ m.textContent=h; }); }catch(_){ m.textContent=h; } });
+  if(matchMedia('(hover:none)').matches){ pg.querySelectorAll('.kc-bad').forEach(f=>f.addEventListener('click',()=>f.classList.toggle('play'))); }
+  apply(false);
+  const els=[hero,pg.querySelector('.kc-space')];
+  if(reduce||!('IntersectionObserver' in window)){ els.forEach(e=>e.classList.add('in')); return; }
+  const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }),{root:pg,threshold:.3});
+  new MutationObserver(()=>{ if(pg.hidden){ els.forEach(e=>{ e.classList.remove('in'); io.unobserve(e); }); } else els.forEach(e=>io.observe(e)); }).observe(pg,{attributes:true,attributeFilter:['hidden']});
+  if(!pg.hidden) els.forEach(e=>io.observe(e));
 })();
 
 /* ---------- 3D 작품 라이트박스 ---------- */
