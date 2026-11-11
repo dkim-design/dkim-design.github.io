@@ -1355,6 +1355,15 @@ body.lb-open .cursor{background:#EDEDED}
 .lg-host .lg-row img:hover{transform:scale(1.06)}
 .lg-host .lg-txt{font-size:11.5px;line-height:1.25;letter-spacing:.02em;color:var(--ink-2);text-align:center;font-weight:500}
 @media (max-width:760px){ .lg-host .lg-row{width:100%} .lg-host .lg-row > *{height:64px} }
+.jlogo.multi{display:block;position:relative;padding:10px}
+.jlogo.multi img{position:absolute;inset:10px;width:calc(100% - 20px);height:calc(100% - 20px);max-height:none;object-fit:contain;opacity:0;transform:scale(.9);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.jlogo.multi img.on{opacity:1;transform:none}
+.jstudios{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;max-width:440px}
+.jstudios li{aspect-ratio:1;border-radius:10px;background:var(--white);box-shadow:0 0 0 1px var(--line);display:grid;place-items:center;padding:8px;box-sizing:border-box;transition:transform .4s var(--ease),box-shadow .4s}
+.jstudios li:hover{transform:translateY(-3px);box-shadow:0 0 0 1px var(--ink-2)}
+.jstudios img{max-width:100%;max-height:100%;object-fit:contain}
+.jstudios span{font-size:8.5px;line-height:1.2;text-align:center;color:var(--ink-2);font-weight:500}
+@media (max-width:760px){ .jstudios{grid-column:1/-1;order:3;max-width:none;grid-template-columns:repeat(6,minmax(0,1fr));gap:5px} .jstudios li{border-radius:7px;padding:5px} .jstudios span{font-size:6.5px} }
 /* cta + footer */
 .cta{padding-block:160px 120px;text-align:center}
 .cta h2{font-size:clamp(28px,3.6vw,44px);margin-bottom:14px}
@@ -2563,7 +2572,7 @@ const JOURNEY=[
    pts:['시간 단위 헬스장 예약 앱의 서비스 플로우 설계와 화면기획서 작성, UIUX 디자인','결제 조회·환불 권한을 분리한 파트너 어드민 대시보드 설계','BI·앱 디자인 시스템, 랜딩페이지, GA4·UTM 성과 측정 체계']},
   {co:'ARBAIM (greyd)', grp:'fl', logo:'assets/logos/greyd.png', date:'2022.07 — 2024.08 · Side Project', role:'프리랜서 · 크리에이티브 디렉터 & UIUX 디자이너', tags:['UIUX','Ads'], w:7,
    pts:['핵심 기능 서비스 플로우·화면 설계 주도, 특허 확보에 기획자로 참여','플랫폼 브랜딩 및 앱·웹사이트 UIUX 설계','메타·구글 광고 집행 (월 약 100만원, ROAS 약 200%)']},
-  {co:'Design Internships', grp:'ed', logos:['assets/logos/karim-rashid.png','assets/logos/david-weeks.png'], date:'2014.06 — 2017.03 · 6곳', role:'Karim Rashid · Stephen Burks · David Weeks · BoConcept · Design MU · Nep Plus', tags:['Product','Furniture'], w:null, page:'internship', imgs:['assets/intern/ottawa-wall.webp','assets/intern/toot-interior.webp','assets/intern/toot-product.webp'],
+  {co:'Design Internships', grp:'ed', logos:['assets/logos/karim-rashid.png','assets/logos/david-weeks.png','assets/logos/boconcept.svg','assets/logos/designmu.png','assets/logos/nepplus.png'], studios:[['Karim Rashid','karim-rashid.png'],['Stephen Burks Man Made',''],['David Weeks Studio','david-weeks.png'],['BoConcept','boconcept.svg'],['Design MU','designmu.png'],['Nep Plus','nepplus.png']], date:'2014.06 — 2017.03 · 6곳', role:'Karim Rashid · Stephen Burks · David Weeks · BoConcept · Design MU · Nep Plus', tags:['Product','Furniture'], w:null, page:'internship', imgs:['assets/intern/ottawa-wall.webp','assets/intern/toot-interior.webp','assets/intern/toot-product.webp'],
    pts:['Karim Rashid Inc. — BoConcept·Kundalini 등 클라이언트 프로젝트 3D 모델링·렌더링','Stephen Burks Man Made — Art Basel 2016 Miami Beach 설치 공간 3D 데이터·프로토타입','David Weeks Studio — 조명 프로토타이핑, ICFF 기간 회사 전시 운영','Design MU · Nep Plus (서울) — 현대자동차, Carrier, Winix 제품 디자인 참여']},
   {co:'Pratt Institute, New York', grp:'ed', logo:'assets/logos/pratt.png', date:'2010.08 — 2016.06', role:'산업디자인 학사 (BID, Industrial Design)', tags:['Education','USA'], w:null, page:'university', imgs:['assets/3d/convexity-1.webp','assets/3d/fluidity-1.webp','assets/3d/edged-2.webp'],
    pts:['미국 오리건·메릴랜드·뉴욕 약 8년 거주 (고교·대학·현지 취업)','영어 비즈니스 상급 (회화·독해·작문)']},
@@ -2586,8 +2595,8 @@ JOURNEY.forEach((j,i)=>{
   const row=document.createElement('div'); row.className='jrow'+(i===0?' open':'');
   const pid='jp'+i;
   row.innerHTML=`<button class="jbtn" type="button" id="jb${i}" aria-expanded="${i===0}" aria-controls="${pid}">
-      <div class="jco"><span class="jlogo${j.full?' fl':''}${j.wide?' wd':''}${j.dark?' dk':''}${j.logos?' multi':''}" aria-hidden="true">${j.logos?j.logos.map(l=>`<img src="${l}" alt="" loading="lazy">`).join(''):j.logo?`<img src="${j.logo}" alt="" loading="lazy">`:`<b>${j.mono||j.co.slice(0,2)}</b>`}</span><div><h3>${j.co}</h3><div class="date">${j.date}</div></div></div>
-      <p class="role">${j.role}</p>
+      <div class="jco"><span class="jlogo${j.full?' fl':''}${j.wide?' wd':''}${j.dark?' dk':''}${j.logos?' multi':''}" aria-hidden="true">${j.logos?j.logos.map((l,k)=>`<img class="${k===0?'on':''}" src="${l}" alt="" loading="lazy">`).join(''):j.logo?`<img src="${j.logo}" alt="" loading="lazy">`:`<b>${j.mono||j.co.slice(0,2)}</b>`}</span><div><h3>${j.co}</h3><div class="date">${j.date}</div></div></div>
+      ${j.studios?`<ul class="jstudios" aria-label="${j.role}">${j.studios.map(([n,f])=>`<li title="${n}">${f?`<img src="assets/logos/${f}" alt="${n}" loading="lazy">`:`<span>${n.replace(" Man Made","<br>Man Made")}</span>`}</li>`).join('')}</ul>`:`<p class="role">${j.role}</p>`}
       <div class="tags">${j.tags.map(t=>`<span class="chip">${t}</span>`).join('')}</div>
     </button>
     <div class="jpanel" id="${pid}" role="region" aria-labelledby="jb${i}"><div><div class="jin">
@@ -2617,6 +2626,7 @@ WORKS.forEach((wk,i)=>{
   el.addEventListener('click',go);
   el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});
 });
+(()=>{ const box=jl.querySelector('.jlogo.multi'); if(!box||reduce) return; const im=[...box.querySelectorAll('img')]; let k=0; setInterval(()=>{ if(document.hidden) return; im[k].classList.remove('on'); k=(k+1)%im.length; im[k].classList.add('on'); },1800); })();
 jl.addEventListener('click',e=>{const b=e.target.closest('[data-open]'); if(b) openCase(+b.dataset.open);});
 
 document.querySelectorAll('[data-scene]').forEach(c=>addArt(c,'scene',SCENES[+c.dataset.scene]));
