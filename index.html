@@ -1343,6 +1343,18 @@ body.lb-open .cursor{background:#EDEDED}
 .jgrp .jg-n{font-size:12px;color:var(--ink-2);border:1px solid var(--line-2);border-radius:999px;padding:3px 10px;font-variant-numeric:tabular-nums}
 .jlist::before{display:none}
 @media (max-width:760px){ .jgrp{grid-template-columns:auto 1fr auto;padding:44px 14px 12px} .jgrp .jg-kr{grid-column:2/4;grid-row:2} }
+/* studio logo wall */
+.lg-host .lg-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;width:min(100%,460px)}
+.lg-host .lg-row > *{background:var(--paper);min-width:0;height:76px;display:grid;place-items:center;box-sizing:border-box;padding:14px}
+.lg-host .lg-row img{background:none;width:auto!important;height:auto!important;max-width:100%;max-height:30px;object-fit:contain;justify-self:center;align-self:center;padding:0;transition:transform .5s var(--ease)}
+.lg-host .lg-row img.lg-kr{max-height:36px}
+.lg-host .lg-row img.lg-dws{max-height:44px}
+.lg-host .lg-row img.lg-bc{max-height:20px}
+.lg-host .lg-row img.lg-dm{max-height:22px}
+.lg-host .lg-row img.lg-np{max-height:24px}
+.lg-host .lg-row img:hover{transform:scale(1.06)}
+.lg-host .lg-txt{font-size:11.5px;line-height:1.25;letter-spacing:.02em;color:var(--ink-2);text-align:center;font-weight:500}
+@media (max-width:760px){ .lg-host .lg-row{width:100%} .lg-host .lg-row > *{height:64px} }
 /* cta + footer */
 .cta{padding-block:160px 120px;text-align:center}
 .cta h2{font-size:clamp(28px,3.6vw,44px);margin-bottom:14px}
@@ -1769,7 +1781,7 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
       <h2 class="pg-title" id="pi-title">Internship</h2>
       <div class="pg-meta"><span><b>6 Internships</b>, New York · Seoul</span><span>2014 — 2017</span><span>Product · Furniture · Lighting</span></div>
     </header>
-    <div class="pg-intro"><div class="wm-introl"><span class="label">About this chapter</span><figure class="wm-host lg-host"><figcaption>Studios</figcaption><div class="lg-row"><img class="lg-kr" src="assets/logos/karim-rashid.png" alt="Karim Rashid 로고" width="288" height="126" loading="lazy" decoding="async"><img class="lg-dws" src="assets/logos/david-weeks.png" alt="David Weeks Studio 로고" width="437" height="346" loading="lazy" decoding="async"><img class="lg-bc" src="assets/logos/boconcept.svg" alt="BoConcept 로고" width="2449" height="520" loading="lazy" decoding="async"><img class="lg-dm" src="assets/logos/designmu.png" alt="Design MU 로고" loading="lazy" decoding="async"><img class="lg-np" src="assets/logos/nepplus.png" alt="NEP+ 로고" loading="lazy" decoding="async"></div></figure></div><p class="pg-lead">뉴욕과 서울의 디자인 스튜디오 여섯 곳에서 인턴으로 일했어요. 디자이너의 스케치를 3D 데이터와 프로토타입으로 옮기고, 실제 브랜드의 제품과 전시가 만들어지는 과정을 가까이에서 경험했습니다.</p></div>
+    <div class="pg-intro"><div class="wm-introl"><span class="label">About this chapter</span><figure class="wm-host lg-host"><figcaption>Studios</figcaption><div class="lg-row"><span class="lg-cell"><img class="lg-kr" src="assets/logos/karim-rashid.png" alt="Karim Rashid 로고" width="288" height="126" loading="lazy" decoding="async"></span><span class="lg-cell"><img class="lg-dws" src="assets/logos/david-weeks.png" alt="David Weeks Studio 로고" width="437" height="346" loading="lazy" decoding="async"></span><span class="lg-cell"><img class="lg-bc" src="assets/logos/boconcept.svg" alt="BoConcept 로고" width="2449" height="520" loading="lazy" decoding="async"></span><span class="lg-cell"><img class="lg-dm" src="assets/logos/designmu.png" alt="Design MU 로고" loading="lazy" decoding="async"></span><span class="lg-cell"><img class="lg-np" src="assets/logos/nepplus.png" alt="NEP+ 로고" loading="lazy" decoding="async"></span><span class="lg-txt">Stephen Burks<br>Man Made</span></div></figure></div><p class="pg-lead">뉴욕과 서울의 디자인 스튜디오 여섯 곳에서 인턴으로 일했어요. 디자이너의 스케치를 3D 데이터와 프로토타입으로 옮기고, 실제 브랜드의 제품과 전시가 만들어지는 과정을 가까이에서 경험했습니다.</p></div>
     <dl class="ix-stats">
       <div><dt>Studios</dt><dd>6</dd></div>
       <div><dt>Cities</dt><dd>New York<br>Seoul</dd></div>
