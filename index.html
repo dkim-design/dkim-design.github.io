@@ -201,7 +201,21 @@ body.menu-open .cursor svg{color:#222}
 
 /* strip */
 .strip{margin-top:72px;overflow:hidden}
-.strip-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-left:var(--gl);padding-right:var(--gr);cursor:grab}
+.strip-track{display:flex;gap:14px;overflow-x:auto;scrollbar-width:none;cursor:grab;-webkit-user-select:none;user-select:none;overscroll-behavior-x:contain}
+.strip-track img{-webkit-user-drag:none;pointer-events:none}
+.shot{cursor:pointer}
+.strip-track.drag .shot{cursor:grabbing}
+.shot .frame img.art{transition:transform 1.1s var(--ease)}
+.shot:hover .frame img.art{transform:scale(1.03)}
+.strip-ctl{display:flex;align-items:center;gap:24px;margin-top:28px}
+.strip-prog{flex:1;height:1px;background:var(--line);position:relative;overflow:hidden}
+.strip-prog i{position:absolute;left:0;top:0;bottom:0;width:100%;background:var(--ink);transform-origin:0 50%;transform:scaleX(0)}
+.strip-btns{display:flex;gap:10px}
+.strip-btns button{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--ink);display:grid;place-items:center;cursor:pointer;transition:background .3s,color .3s,border-color .3s}
+.strip-btns button:hover{background:var(--ink);color:var(--white);border-color:var(--ink)}
+.strip-btns button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.strip-btns svg{width:18px;height:18px}
+.strip-play{font-size:12px;letter-spacing:.08em;color:var(--ink-2);background:none;border:0;cursor:pointer;padding:6px 0;white-space:nowrap}
 .strip-track::-webkit-scrollbar{display:none}
 .strip-track.drag{cursor:grabbing;scroll-snap-type:none}
 .shot{flex:0 0 auto;scroll-snap-align:center;display:grid;gap:12px}
@@ -1842,6 +1856,7 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
 
     <div class="strip" aria-label="대표 프로젝트 미리보기">
       <div class="strip-track" id="strip"></div>
+      <div class="wrap"><div class="strip-ctl c"><div class="strip-prog" aria-hidden="true"><i></i></div><button type="button" class="strip-play" aria-pressed="false">PAUSE</button><div class="strip-btns"><button type="button" class="sp-prev" aria-label="이전 프로젝트"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 5l-7 7 7 7"/></svg></button><button type="button" class="sp-next" aria-label="다음 프로젝트"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 5l7 7-7 7"/></svg></button></div></div></div>
     </div>
   </section>
 
@@ -3108,13 +3123,14 @@ const JOURNEY=[
 
 /* ---------- 렌더 ---------- */
 const strip=document.getElementById('strip');
-WORKS.forEach((wk,i)=>{
-  const el=document.createElement('div'); el.className='shot'; el.dataset.drag='1';
+[0,1].forEach(pass=>WORKS.forEach((wk,i)=>{
+  const el=document.createElement('div'); el.className='shot'; el.dataset.drag='1'; el.dataset.i=i;
+  if(pass){ el.setAttribute('aria-hidden','true'); el.classList.add('clone'); } else { el.tabIndex=0; el.setAttribute('role','button'); el.setAttribute('aria-label',wk.title+' 자세히 보기'); }
   el.innerHTML=`<div class="frame">${wk.img?`<img class="art" src="${wk.img}" alt="${wk.title}" style="object-fit:contain">`:'<canvas class="art"></canvas>'}</div><div class="cap">${wk.title} <small>${wk.sub}</small></div>`;
   strip.appendChild(el);
   const im=el.querySelector('img.art'); if(im){ const fit=()=>{ if(im.naturalWidth) el.querySelector('.frame').style.aspectRatio=im.naturalWidth+'/'+im.naturalHeight; }; im.complete?fit():im.addEventListener('load',fit); }
   if(!wk.img) addArt(el.querySelector('canvas'),'scene',SCENES[i%SCENES.length]);
-});
+}));
 
 const jl=document.getElementById('jlist');
 const JGRP={ft:['01','Full-time','정규직으로 근무한 회사'],fl:['02','Freelance','프리랜서·사이드 프로젝트'],ed:['03','Internship & Education','인턴십과 학력']};
@@ -3182,12 +3198,50 @@ document.querySelectorAll('.filters button').forEach(b=>b.addEventListener('clic
   wg.querySelectorAll('.work').forEach(w=>w.classList.toggle('off',!(f==='all'||WORKS[w.dataset.i].cat.includes(f))));
 }));
 
-/* ---------- 드래그 스크롤 스트립 ---------- */
-(()=>{let down=false,sx=0,sl=0,moved=false;
-  strip.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse')return; down=true;moved=false;sx=e.clientX;sl=strip.scrollLeft;strip.classList.add('drag');});
-  addEventListener('pointermove',e=>{if(!down)return; const dx=e.clientX-sx; if(Math.abs(dx)>3)moved=true; strip.scrollLeft=sl-dx;});
-  addEventListener('pointerup',()=>{if(!down)return; down=false;strip.classList.remove('drag');});
+/* ---------- 프로젝트 스트립: 자동 무한 루프 + 관성 드래그 + 화살표 ---------- */
+(()=>{
+  const N=WORKS.length, ctl=document.querySelector('.strip-ctl'), bar=ctl.querySelector('.strip-prog i'), playBtn=ctl.querySelector('.strip-play');
+  const SPEED=36; // px/s
+  let pos=0, vel=0, hold=0, hover=false, down=false, vis=true, paused=!!reduce, tw=null, last=0, setV=-1, moved=false, sx=0, sp=0, lx=0, lt=0;
+  const span=()=>{ const c=strip.children; return c[N]?c[N].offsetLeft-c[0].offsetLeft:0; };
+  const gl=()=>Math.max(16,ctl.getBoundingClientRect().left-strip.getBoundingClientRect().left);
+  const wrap=()=>{ const S=span(); if(S>0){ while(pos>=S) pos-=S; while(pos<0) pos+=S; } };
+  const put=()=>{ wrap(); strip.scrollLeft=pos; setV=strip.scrollLeft; const S=span(); if(S) bar.style.transform=`scaleX(${((pos+gl())%S)/S})`; };
+  const step=()=>{ const c=strip.children[0]; return c?c.offsetWidth+14:300; };
+  const go=d=>{ hold=4; vel=0; tw={from:pos,to:pos+d*step(),t:0}; };
+  const syncPlay=()=>{ playBtn.textContent=paused?'PLAY':'PAUSE'; playBtn.setAttribute('aria-pressed',String(paused)); };
+  if(reduce) syncPlay();
+  requestAnimationFrame(()=>{ pos=span()-gl(); put(); });
+  addEventListener('resize',()=>put());
+  function tick(t){
+    const dt=Math.min(.05,(t-(last||t))/1000); last=t;
+    if(vis && !document.hidden && !down){
+      let ch=false;
+      if(tw){ tw.t=Math.min(1,tw.t+dt/.7); const e=1-Math.pow(1-tw.t,3); pos=tw.from+(tw.to-tw.from)*e; ch=true; if(tw.t>=1) tw=null; }
+      else if(Math.abs(vel)>8){ pos+=vel*dt; vel*=Math.pow(.02,dt); ch=true; }
+      else if(hold>0) hold-=dt;
+      else if(!hover && !paused){ pos+=SPEED*dt; ch=true; }
+      if(ch) put();
+    }
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+  if('IntersectionObserver' in window) new IntersectionObserver(es=>{ vis=es[0].isIntersecting; },{rootMargin:'80px'}).observe(strip);
+  // 네이티브 스크롤(터치·트랙패드) 동기화
+  strip.addEventListener('scroll',()=>{ if(down&&!moved) return; if(Math.abs(strip.scrollLeft-setV)>1){ pos=strip.scrollLeft; hold=3; tw=null; vel=0; const S=span(); if(S&&(pos>=S||pos<1)){ put(); } else { setV=strip.scrollLeft; if(S) bar.style.transform=`scaleX(${((pos+gl())%S)/S})`; } } },{passive:true});
+  strip.addEventListener('pointerenter',e=>{ if(e.pointerType==='mouse') hover=true; });
+  strip.addEventListener('pointerleave',e=>{ if(e.pointerType==='mouse'){ hover=false; } });
+  strip.addEventListener('pointerdown',e=>{ moved=false; tw=null; vel=0; if(e.pointerType!=='mouse'){ hold=3; return; } down=true; sx=lx=e.clientX; sp=pos; lt=performance.now(); strip.classList.add('drag'); });
+  addEventListener('pointermove',e=>{ if(!down) return; const dx=e.clientX-sx; if(Math.abs(dx)>4) moved=true; const now=performance.now(), d=now-lt; if(d>0){ vel=-(e.clientX-lx)/d*1000*.9+vel*.1; } lx=e.clientX; lt=now; pos=sp-dx; put(); });
+  addEventListener('pointerup',()=>{ if(!down) return; down=false; strip.classList.remove('drag'); hold=2.5; if(performance.now()-lt>80) vel=0; });
   strip.addEventListener('dragstart',e=>e.preventDefault());
+  // 카드 클릭 → 프로젝트 열기 (드래그 후 클릭은 무시)
+  strip.addEventListener('click',e=>{ const sh=e.target.closest('.shot'); if(!sh) return; if(moved){ e.preventDefault(); e.stopPropagation(); moved=false; return; } const wk=WORKS[+sh.dataset.i]; wk.page?goPage(wk.page):openCase(+sh.dataset.i); },true);
+  strip.addEventListener('keydown',e=>{ const sh=e.target.closest('.shot'); if(sh&&(e.key==='Enter'||e.key===' ')){ e.preventDefault(); sh.click(); } });
+  strip.addEventListener('focusin',()=>{ hold=6; });
+  ctl.querySelector('.sp-prev').addEventListener('click',()=>go(-1));
+  ctl.querySelector('.sp-next').addEventListener('click',()=>go(1));
+  playBtn.addEventListener('click',()=>{ paused=!paused; syncPlay(); });
 })();
 
 /* ---------- 케이스 스터디 ---------- */
@@ -3637,7 +3691,7 @@ G.to('.portrait .pf-img',{yPercent:6,scale:1.04,ease:'none',scrollTrigger:{trigg
 G.to('.side .bar i',{top:'65%',ease:'none',scrollTrigger:{trigger:'body',start:'top top',end:'bottom bottom',scrub:true}});
 
 // 스트립: 스크롤에 따라 자연스럽게 흘러감
-G.fromTo(strip,{scrollLeft:0},{scrollLeft:()=>Math.min(strip.scrollWidth-strip.clientWidth, innerWidth*.35),ease:'none',scrollTrigger:{trigger:'.strip',start:'top bottom',end:'bottom top',scrub:.8}});
+
 
 // Pratt 콜라주 — 사진마다 다른 속도로 떠오름
 [['.oc1',-6],['.oc2',-16],['.oc3',-10],['.oc4',-22]].forEach(([sel,d])=>G.fromTo(sel,{yPercent:0},{yPercent:d,ease:'none',scrollTrigger:{trigger:'.origin',start:'top bottom',end:'bottom top',scrub:.6}}));
