@@ -7,3 +7,4 @@ Items the owner will provide later. Check this list at the start of every update
 3. **Hobby records** (freediving depth, running finishes) → numbers on the Human Profile "Work & Play" cards.
 4. **Company logos** for Journey rows (currently text placeholders): (Journey logos all done). Internship studio still without logo: Stephen Burks Man Made.
 5. **VIGO** — former employer (not an internship); needs period, role and achievements before adding to Journey with its logo (assets/logos/vigo.png ready).
+6. **KAON Stationery envelopes** (대/소봉투 시안) → add "Envelope" section to #stationery page.
