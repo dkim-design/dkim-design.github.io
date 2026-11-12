@@ -8,3 +8,5 @@ Items the owner will provide later. Check this list at the start of every update
 4. **Company logos** for Journey rows (currently text placeholders): (Journey logos all done). Internship studio still without logo: Stephen Burks Man Made.
 5. **VIGO** — former employer (not an internship); needs period, role and achievements before adding to Journey with its logo (assets/logos/vigo.png ready).
 6. ~~DONE~~ **KAON Stationery envelopes** (대/소봉투 시안) → add "Envelope" section to #stationery page.
+7. **KAON Artwork (2022)** — grid-system KAON logo artwork made during the KAON package design project, applied to the employee ID card. Separate project (not part of Stationery). Owner will upload.
+8. **KAON Rebranding (2023)** — separate project. Owner will share soon.
