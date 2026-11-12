@@ -3110,8 +3110,9 @@ const JOURNEY=[
 const strip=document.getElementById('strip');
 WORKS.forEach((wk,i)=>{
   const el=document.createElement('div'); el.className='shot'; el.dataset.drag='1';
-  el.innerHTML=`<div class="frame">${wk.img?`<img class="art" src="${wk.img}" alt="${wk.title}" style="object-fit:cover">`:'<canvas class="art"></canvas>'}</div><div class="cap">${wk.title} <small>${wk.sub}</small></div>`;
+  el.innerHTML=`<div class="frame">${wk.img?`<img class="art" src="${wk.img}" alt="${wk.title}" style="object-fit:contain">`:'<canvas class="art"></canvas>'}</div><div class="cap">${wk.title} <small>${wk.sub}</small></div>`;
   strip.appendChild(el);
+  const im=el.querySelector('img.art'); if(im){ const fit=()=>{ if(im.naturalWidth) el.querySelector('.frame').style.aspectRatio=im.naturalWidth+'/'+im.naturalHeight; }; im.complete?fit():im.addEventListener('load',fit); }
   if(!wk.img) addArt(el.querySelector('canvas'),'scene',SCENES[i%SCENES.length]);
 });
 
