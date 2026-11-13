@@ -1627,25 +1627,27 @@ body.lb-open .cursor{background:#EDEDED}
 /* stage */
 .cl-stage{position:relative;border-radius:18px;overflow:hidden;background:radial-gradient(90% 70% at 50% 30%,#FFF6EC 0%,#F7E2CF 55%,#EDCDB2 100%);padding:clamp(28px,5vw,64px) clamp(16px,4vw,56px) clamp(24px,4vw,44px);display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
 .cl-stage::after{content:"";position:absolute;left:0;right:0;bottom:0;height:34%;background:linear-gradient(180deg,rgba(255,255,255,0),rgba(214,170,134,.28));pointer-events:none}
-.dkc{position:relative;z-index:1;perspective:2200px;padding-top:4%;cursor:pointer;-webkit-tap-highlight-color:transparent}
-.dk-body{position:relative;transform-style:preserve-3d;transition:transform 1.1s cubic-bezier(.7,0,.2,1);transform:rotateX(5deg) rotateY(var(--ry,-8deg))}
-.dkc:hover .dk-body{--ry:-3deg}
-.dkc.back .dk-body{transform:rotateX(5deg) rotateY(calc(180deg + var(--ry,-8deg)))}
-.dk-face{position:relative;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform-style:preserve-3d}
-.dk-face.bk{position:absolute;inset:0;transform:rotateY(180deg)}
-.dk-face.fr{transition:opacity 0s .5s}.dk-face.bk{opacity:0;transition:opacity 0s .5s}.dkc.back .dk-face.fr{opacity:0}.dkc.back .dk-face.bk{opacity:1}
-.dk-sheet::before{content:"";position:absolute;left:4.4%;right:4.4%;top:1.1%;height:1.4%;z-index:4;background:radial-gradient(circle at 50% 50%,rgba(60,40,30,.55) 0 1.6px,transparent 2.2px) 0 0/12px 100% repeat-x;pointer-events:none}
-.dk-sheet{position:relative;aspect-ratio:1859/1504;transform-style:preserve-3d;perspective:1600px}
-.dk-sheet img{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;background:#fff;border-radius:3px;box-shadow:0 1px 0 rgba(0,0,0,.04)}
-.dk-sheet .stack{box-shadow:0 2px 0 #efe9e3,0 4px 0 #e6dfd8,0 6px 0 #ddd5cd,0 26px 50px -12px rgba(96,52,20,.45),0 10px 20px -8px rgba(96,52,20,.3)}
-.dk-sheet .fl{transform-origin:50% -2.4%;backface-visibility:hidden;-webkit-backface-visibility:hidden;z-index:2;will-change:transform}
-.dk-sheet .shade{position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,0) 30%);opacity:0;border-radius:3px}
-.dk-wire{position:absolute;left:4.4%;right:4.4%;top:-2.6%;height:4.6%;z-index:5;background:repeating-linear-gradient(90deg,transparent 0 4px,#2b2b30 4px 5.4px,#a6a6ae 5.4px 6.3px,#2b2b30 6.3px 7.4px,transparent 7.4px 12px);border-radius:3px;pointer-events:none;filter:drop-shadow(0 1px 1px rgba(0,0,0,.25))}
-.dk-wire::before{content:"";position:absolute;left:0;right:0;top:46%;height:2px;background:#3a3a40;opacity:.55}
-.dk-wire::after{content:"";position:absolute;left:46%;right:46%;top:-30%;height:60%;border:2px solid #4a4a50;border-bottom:0;border-radius:40px 40px 0 0;background:var(--cream)}
-.dk-base{position:relative;height:clamp(14px,2.2vw,26px);margin:0 -2.5%;background:linear-gradient(180deg,#fdfcfb 0%,#ece7e2 55%,#d9d2cb 100%);border-radius:3px 3px 6px 6px;box-shadow:0 18px 30px -10px rgba(96,52,20,.5);transform:translateZ(0)}
-.dk-base::after{content:"KAON FRIENDS · 2027";position:absolute;inset:0;display:grid;place-items:center;font-size:clamp(7px,.8vw,10px);letter-spacing:.32em;color:#b8aea5}
-.dk-floor{height:28px;margin:-6px 6% 0;background:radial-gradient(closest-side,rgba(110,60,25,.35),rgba(110,60,25,0));filter:blur(4px)}
+.dkc{position:relative;z-index:1;perspective:1800px;perspective-origin:50% 20%;cursor:pointer;padding:5% 6% 13%;-webkit-tap-highlight-color:transparent}
+.dk-body{position:relative;width:100%;aspect-ratio:1859/1430;transform-style:preserve-3d;transition:transform 1.25s cubic-bezier(.7,0,.2,1);transform:rotateX(-10deg) rotateY(var(--ry,-28deg))}
+.dkc:hover .dk-body{--ry:-20deg}
+.dkc.back .dk-body{transform:rotateX(-10deg) rotateY(calc(180deg + var(--ry,-28deg)))}
+.dk-face{position:absolute;left:0;top:0;width:100%;transform-style:preserve-3d;transform-origin:50% 0}
+.dk-face.fr{transform:rotateX(18deg)}
+.dk-face.bk{transform:rotateY(180deg) rotateX(18deg)}
+.dk-sheet{position:relative;aspect-ratio:1859/1504;transform-style:preserve-3d}
+.dk-sheet img,.dk-sheet .flb,.dk-board{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;background:#fff;border-radius:2px;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.dk-board{background:linear-gradient(180deg,#ece6df,#cbc1b6);transform:rotateY(180deg)}
+.dk-sheet .pg{transform:translateZ(1.5px);box-shadow:0 1px 0 #f1ece6,0 2px 0 #e4ddd5,0 3px 0 #d9d0c6,0 4px 0 #cfc5ba}
+.flw{position:absolute;inset:0;transform-style:preserve-3d;transform-origin:50% 0;z-index:2}
+.flw[hidden]{display:none}
+.flw .fl{transform:translateZ(2px)}
+.flw .flb{transform:rotateX(180deg) translateZ(-2px);background:linear-gradient(180deg,#fbf8f4,#ece5dc)}
+.dk-sheet .shade{position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,0) 35%);opacity:0;border-radius:2px;transform:translateZ(1.8px)}
+.dk-sheet::before{content:"";position:absolute;left:5%;right:5%;top:1.2%;height:1.5%;z-index:4;background:radial-gradient(circle at 50% 50%,rgba(60,40,30,.5) 0 1.5px,transparent 2.1px) 0 0/11px 100% repeat-x;pointer-events:none;transform:translateZ(1.6px)}
+.dk-wire{position:absolute;left:5%;right:5%;top:-1.9%;height:4%;z-index:5;background:repeating-linear-gradient(90deg,transparent 0 3.5px,#2b2b30 3.5px 4.8px,#a9a9b1 4.8px 5.6px,#2b2b30 5.6px 6.6px,transparent 6.6px 11px);border-radius:3px;pointer-events:none;transform:translateZ(3px)}
+.dk-wire::before{content:"";position:absolute;left:0;right:0;top:44%;height:2px;background:#3a3a40;opacity:.5}
+.dk-floor{display:none}
+.dkc::after{content:"";position:absolute;left:16%;right:12%;bottom:12.5%;height:9%;transform:rotate(6deg);background:radial-gradient(closest-side,rgba(110,60,25,.38),rgba(110,60,25,.12) 60%,rgba(110,60,25,0));filter:blur(6px);z-index:-1;pointer-events:none}
 .cl-info{position:relative;z-index:1;min-width:0}
 .cl-now{display:grid;gap:10px;min-height:210px}
 .cl-now .m{display:flex;align-items:baseline;gap:12px}
@@ -1713,6 +1715,20 @@ body.lb-open .cursor{background:#EDEDED}
 .cl-steps li::before{counter-increment:cs;content:"0" counter(cs);font-size:12px;letter-spacing:.14em;color:var(--o)}
 .cl-steps b{font-size:16px;font-weight:600;letter-spacing:-.02em}
 .cl-steps span{font-size:13.5px;line-height:1.65;color:#6b5546}
+.cl-kpi{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:0}
+.cl-kpi>div{padding:24px 22px 26px;border-radius:14px;background:#1d1611;color:#fff;display:grid;gap:6px;align-content:start}
+.cl-kpi dt{font-size:12px;letter-spacing:.08em;color:rgba(255,255,255,.6)}
+.cl-kpi dd{margin:0;font-size:20px;color:var(--o)}
+.cl-kpi dd b{font-size:clamp(48px,6vw,76px);font-weight:400;letter-spacing:-.05em;line-height:1;margin-right:4px}
+.cl-kpi span{font-size:13px;color:rgba(255,255,255,.72);line-height:1.6}
+.cl-vs{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:16px;align-items:stretch;margin-top:16px}
+.cl-vs>div{padding:20px 22px;border-radius:14px;border:1px solid var(--line);display:grid;gap:6px}
+.cl-vs>div.on{border-color:var(--o);background:rgba(243,122,32,.06)}
+.cl-vs small{font-size:11px;letter-spacing:.12em;color:var(--ink-2)}
+.cl-vs b{font-size:18px;font-weight:600;letter-spacing:-.02em}
+.cl-vs span{font-size:13px;color:var(--ink-2);line-height:1.6}
+.cl-vs i{align-self:center;font-style:normal;font-size:22px;color:var(--o)}
+@media (max-width:900px){ .cl-kpi{grid-template-columns:minmax(0,1fr)} .cl-vs{grid-template-columns:minmax(0,1fr)} .cl-vs i{justify-self:center;transform:rotate(90deg)} }
 .cl-quote{margin:clamp(40px,6vw,72px) 0 0;text-align:center;font-size:clamp(22px,3vw,38px);font-weight:400;letter-spacing:-.03em;line-height:1.3}
 .cl-quote em{font-style:normal;color:var(--o)}
 .cl-quote small{display:block;margin-top:12px;font-size:12px;letter-spacing:.14em;color:var(--ink-2)}
@@ -3031,22 +3047,22 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
     </header>
     <div class="pg-intro"><span class="label">About this project</span><p class="pg-lead">직접 만든 그룹 캐릭터 IP <b>가온프렌즈</b>를 주인공으로, 생성형 AI로 열네 달의 장면을 그린 2027 탁상 캘린더예요. 달마다 계절과 명절, 공휴일, 시기별 분위기를 키워드로 정리해 장면을 기획했고, 저작권 등록된 캐릭터의 조형과 컬러가 모든 장면에서 같은 모습으로 보이게 다듬었어요. 앞면은 아트워크와 날짜 띠, 뒷면은 주차·절기·음력까지 담은 플래너로 구성했고, 책상 위 자리 상태를 알리는 상태 카드 4종을 더했어요.</p></div>
     <dl class="ix-stats">
-      <div><dt>Months</dt><dd>14<br><small>2026.12 — 2028.01</small></dd></div>
+      <div><dt>Print run</dt><dd>500부<br><small>제작 · 배포 수량</small></dd></div>
+      <div><dt>Lead time</dt><dd>3주<br><small>2024 캘린더 대비 절반 이하</small></dd></div>
       <div><dt>Artworks</dt><dd>18<br><small>월별 14 · 상태 카드 4</small></dd></div>
-      <div><dt>Format</dt><dd>230×185<br><small>탁상 월판 · 양면</small></dd></div>
-      <div><dt>Made with</dt><dd>AI<br><small>생성형 AI · 편집디자인</small></dd></div>
+      <div><dt>Format</dt><dd>230×185<br><small>탁상 월판 · 양면 · 14개월</small></dd></div>
     </dl>
   </div></div>
 
   <section class="cl-sec"><div class="wrap"><div class="c">
-    <div class="cl-h"><span class="no">01 — Desk Mockup</span><h3>책상 위에서 넘겨 보는 열네 달</h3><p>캘린더를 누르거나 화살표로 한 장씩 넘겨 보세요. 앞면·뒷면 버튼을 누르면 캘린더가 돌아가며 뒷면 플래너가 보여요.</p></div>
+    <div class="cl-h"><span class="no">01 — Desk Mockup</span><h3>책상 위에서 넘겨 보는 열네 달</h3><p>삼각형으로 세워 두는 탁상 캘린더예요. 캘린더를 누르거나 화살표로 한 장씩 넘겨 보고, 뒷면 보기를 누르면 반대편 플래너 면으로 돌아가요.</p></div>
     <div class="cl-stage" id="cl-stage">
       <div class="dkc" id="cl-dk" role="group" aria-roledescription="탁상 캘린더 목업" aria-label="2027 캘린더 목업">
         <div class="dk-body">
-          <div class="dk-face fr"><div class="dk-sheet"><img class="stack pg" src="assets/calendar/cover.webp" alt="2027 캘린더 표지 — 가온프렌즈 피규어"><img class="fl" alt="" aria-hidden="true" hidden><span class="shade"></span><span class="dk-wire"></span></div><div class="dk-base"></div></div>
-          <div class="dk-face bk"><div class="dk-sheet"><img class="stack pg" src="assets/calendar/year27.webp" alt="2027 연간 달력 면"><img class="fl" alt="" aria-hidden="true" hidden><span class="shade"></span><span class="dk-wire"></span></div><div class="dk-base"></div></div>
+          <div class="dk-face fr"><div class="dk-sheet"><span class="dk-board" aria-hidden="true"></span><img class="pg" src="assets/calendar/cover.webp" alt="2027 캘린더 표지 — 가온프렌즈 피규어"><div class="flw" hidden aria-hidden="true"><img class="fl" alt=""><span class="flb"></span></div><span class="shade"></span><span class="dk-wire"></span></div></div>
+          <div class="dk-face bk"><div class="dk-sheet"><span class="dk-board" aria-hidden="true"></span><img class="pg" src="assets/calendar/year27.webp" alt="2027 연간 달력 면"><div class="flw" hidden aria-hidden="true"><img class="fl" alt=""><span class="flb"></span></div><span class="shade"></span><span class="dk-wire"></span></div></div>
+          <div class="dk-floor" aria-hidden="true"></div>
         </div>
-        <div class="dk-floor" aria-hidden="true"></div>
       </div>
       <div class="cl-info">
         <div class="cl-now" id="cl-now" aria-live="polite"><div class="m"><b>2027</b><span>COVER</span></div><h4>KAON Friends Calendar</h4><span class="tag">Beyond connection</span><p>가온프렌즈와 함께하는 2027년. 표지부터 한 장씩 넘겨 보세요.</p></div>
@@ -3097,6 +3113,19 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
       <li><b>톤 통일</b><span>부드러운 3D 피규어 질감과 따뜻한 자연광을 열네 장 모두 같은 톤으로 맞췄어요.</span></li>
       <li><b>편집 · 인쇄</b><span>230×185mm 양면 탁상 월판으로 앞면 아트와 날짜 띠, 뒷면 플래너를 편집하고 인쇄용 데이터로 정리했어요.</span></li>
     </ol>
+    <div class="cl-impact">
+      <div class="cl-h" style="margin-top:clamp(56px,8vw,96px)"><span class="no">06 — Impact</span><h3>더 친근하게, 절반의 시간으로</h3><p>2D 캐릭터로만 그리던 기존 콘텐츠와 달리, 실사 애니메이션 같은 입체 질감으로 캐릭터가 한층 친근하고 귀엽게, 톡톡 튀는 인상으로 전달됐어요.</p></div>
+      <dl class="cl-kpi">
+        <div><dt>제작 기간</dt><dd><b data-count="3">3</b>주</dd><span>2024 캘린더 대비 절반 이상 단축</span></div>
+        <div><dt>제작 · 배포</dt><dd><b data-count="500">500</b>부</dd><span>탁상 캘린더 제작 · 배포 수량</span></div>
+        <div><dt>아트워크</dt><dd><b data-count="18">18</b>점</dd><span>월별 장면 14점 · 상태 카드 4점</span></div>
+      </dl>
+      <div class="cl-vs">
+        <div><small>Before · 2024 Calendar</small><b>2D 캐릭터 중심</b><span>평면 2D 캐릭터 그래픽 중심의 표현</span></div>
+        <i aria-hidden="true">→</i>
+        <div class="on"><small>After · 2027 Calendar</small><b>AI 3D 피규어 장면</b><span>실사 애니메이션 같은 입체 질감 · 생성형 AI 기반 제작으로 기간 절반 이상 단축</span></div>
+      </div>
+    </div>
     <p class="cl-quote">“Beyond connection,<br><em>we create what truly matters.</em>”<small>2027 KAON FRIENDS CALENDAR</small></p>
   </div></div></section>
 </div>
@@ -3254,9 +3283,9 @@ const WORKS=[
    ch:'그룹 5대 사업군(Set-top Box·Broadband CPE·Metaverse/AR Glass·Solution·Robot)을 상징하는 캐릭터 IP를 만드는 과제였어요.',
    ap:'사업 특성을 반영한 네이밍과 성격·관계, 캐릭터별 스토리까지 세계관 전체를 설계했어요. 동작 표현이 쉬운 인간형 3종과 무형 사업의 상징성을 살린 비인간형 2종으로 조형 체계를 나누고, 기업 컬러(오렌지) 기반 컬러 시스템, 감정·상태를 보여주는 시그널 장치, 신장·체중 등 캐릭터 스펙을 정의했어요.',
    out:'캐릭터 5종 전체를 저작권 등록(2022.11)해 법적 보호가 가능한 그룹 IP로 전환했어요. 가이드라인(11p), 아크릴 등신대·스티커·키캡·마우스패드 굿즈, 신규 입사자 웰컴 키트까지 만들었고, 2026년에는 솔루·로비 조형을 리뉴얼해 표현 범위를 넓혔어요.'},
-  {title:'KAON Friends 2027 Calendar', page:'calendar', img:'assets/calendar/thumb.webp', sub:'KAON GROUP', tag:'AI Artwork · Calendar', period:'2026', cat:['ai','brand','content'], scene:3,
+  {title:'KAON Friends 2027 Calendar', page:'calendar', img:'assets/calendar/thumb.webp?v=2', sub:'KAON GROUP', tag:'AI Artwork · Calendar', period:'2026', cat:['ai','brand','content'], scene:3,
    kr:'가온프렌즈를 주인공으로 생성형 AI로 그린 2027 탁상 캘린더', role:'기획·AI 아트워크·편집디자인', client:'가온그룹', tools:'Generative AI, Photoshop, Illustrator',
-   kpis:[], ch:'', ap:'', out:''},
+   kpis:[['500부','제작·배포'],['3주','제작 기간 · 2024 대비 절반 이상 단축'],['18점','월별 14 · 상태 카드 4']], ch:'', ap:'', out:''},
   {title:'Group Brand & Exhibitions', sub:'KAON GROUP', tag:'Brand · Exhibition', period:'2021 — 현재', cat:['brand'], scene:4,
    kr:'그룹 브랜드 아이덴티티 운영과 글로벌 전시 비주얼', role:'Visual Contents Designer', client:'가온그룹 · 계열사', tools:'Illustrator, Photoshop, Figma',
    kpis:[['4건','그룹사·계열사 CI·BI 개발·리뉴얼'],['6회+','IBC·MWC·BBWF 등 글로벌 전시'],['1건','K-FutureTech 로고 상표 등록']],
@@ -3852,7 +3881,7 @@ addEventListener('keydown',e=>{ if(lb.hidden) return; if(e.key==='Escape'){e.sto
   const base=LB.length; E.forEach(e=>LB.push({src:e.src,alt:e.alt,cap:e.cap,g:e.g}));
   pg.querySelectorAll('[data-cl-lb]').forEach(b=>b.addEventListener('click',()=>{ const k=E.findIndex(e=>e.k===b.dataset.clLb); if(k>=0) lbOpen(base+k); }));
   const dk=document.getElementById('cl-dk'), now=document.getElementById('cl-now'), tl=document.getElementById('cl-tl'), sideB=document.getElementById('cl-side'), playB=document.getElementById('cl-play');
-  const faces=[...dk.querySelectorAll('.dk-face')].map(f=>({pg:f.querySelector('.pg'),fl:f.querySelector('.fl'),sh:f.querySelector('.shade')}));
+  const faces=[...dk.querySelectorAll('.dk-face')].map(f=>({pg:f.querySelector('.pg'),fl:f.querySelector('.fl'),flw:f.querySelector('.flw'),sh:f.querySelector('.shade')}));
   let cur=0, busy=false, back=false, auto=!reduce, hold=0, vis=false;
   ST.forEach(s=>{ const a=new Image(); a.decoding='async'; setTimeout(()=>{a.src=s.f;},1500); });
   const info=i=>{ const s=ST[i]; now.classList.add('sw'); setTimeout(()=>{ now.innerHTML=`<div class="m"><b>${s.n}</b><span>${s.ab}</span></div><h4>${s.t}</h4><span class="tag">${s.h}</span><p>${s.d}</p>`; now.classList.remove('sw'); },220);
@@ -3861,13 +3890,13 @@ addEventListener('keydown',e=>{ if(lb.hidden) return; if(e.key==='Escape'){e.sto
     const old=ST[cur][key], nw=ST[n][key];
     O.pg.src=ST[n][back?'f':'b'];
     info(n); cur=n;
-    if(reduce||!F.fl.animate){ F.pg.src=nw; return; }
-    busy=true; F.fl.hidden=false;
-    const ease='cubic-bezier(.55,.05,.25,1)', dur=950;
-    if(fwd){ F.fl.src=old; F.pg.src=nw; const a=F.fl.animate([{transform:'rotateX(0deg)',filter:'brightness(1)'},{transform:'rotateX(-100deg)',filter:'brightness(.86)',offset:.55},{transform:'rotateX(-180deg)',filter:'brightness(.7)'}],{duration:dur,easing:ease});
-      F.sh.animate([{opacity:0},{opacity:1,offset:.3},{opacity:0}],{duration:dur}); a.onfinish=()=>{F.fl.hidden=true; busy=false;}; }
-    else { F.fl.src=nw; const a=F.fl.animate([{transform:'rotateX(-180deg)',filter:'brightness(.7)'},{transform:'rotateX(-100deg)',filter:'brightness(.86)',offset:.45},{transform:'rotateX(0deg)',filter:'brightness(1)'}],{duration:dur,easing:ease});
-      a.onfinish=()=>{ F.pg.src=nw; F.fl.hidden=true; busy=false; }; }
+    if(reduce||!F.flw.animate){ F.pg.src=nw; return; }
+    busy=true; F.flw.hidden=false;
+    const ease='cubic-bezier(.5,.05,.3,1)', dur=1150, K=['rotateX(0deg)','rotateX(110deg)','rotateX(210deg)','rotateX(324deg)'];
+    if(fwd){ F.fl.src=old; F.pg.src=nw; const a=F.flw.animate(K.map((t,j)=>({transform:t,offset:[0,.38,.66,1][j]})),{duration:dur,easing:ease});
+      F.sh.animate([{opacity:0},{opacity:1,offset:.25},{opacity:0,offset:.5}],{duration:dur}); a.onfinish=()=>{F.flw.hidden=true; busy=false;}; }
+    else { F.fl.src=nw; const a=F.flw.animate(K.slice().reverse().map((t,j)=>({transform:t,offset:[0,.34,.62,1][j]})),{duration:dur,easing:ease});
+      a.onfinish=()=>{ F.pg.src=nw; F.flw.hidden=true; busy=false; }; }
   }
   const user=()=>{ hold=9; };
   document.getElementById('cl-next').addEventListener('click',()=>{user();go(cur+1);});
