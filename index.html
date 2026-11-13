@@ -218,15 +218,25 @@ body.menu-open .cursor svg{color:#222}
 .strip-play{font-size:12px;letter-spacing:.08em;color:var(--ink-2);background:none;border:0;cursor:pointer;padding:6px 0;white-space:nowrap}
 .strip-track::-webkit-scrollbar{display:none}
 .strip-track.drag{cursor:grabbing;scroll-snap-type:none}
-.shot{flex:0 0 auto;scroll-snap-align:center;display:grid;gap:12px}
+.shot{flex:0 0 auto;display:grid;gap:12px;align-content:start}
 .shot .frame{position:relative;height:clamp(260px,34vw,440px);overflow:hidden;border-radius:4px;background:var(--line)}
 .shot:nth-child(3n+1) .frame{aspect-ratio:3/4}
 .shot:nth-child(3n+2) .frame{aspect-ratio:5/4}
 .shot:nth-child(3n) .frame{aspect-ratio:3/4.4}
 .shot .frame canvas{transition:transform 1.1s var(--ease)}
 .shot:hover .frame canvas{transform:scale(1.05)}
-.shot .cap{font-size:15px;display:flex;gap:10px;align-items:baseline}
-.shot .cap small{font-size:11px;color:var(--ink-2)}
+.shot .cap{position:relative;width:0;min-width:100%;box-sizing:border-box;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px;align-items:start;padding-top:16px;margin-top:6px}
+.shot .cap::before,.shot .cap::after{content:"";position:absolute;left:0;top:0;height:1px;background:var(--line);right:0}
+.shot .cap::after{background:var(--ink);right:auto;width:0;transition:width .7s var(--ease)}
+.shot:hover .cap::after,.shot:focus-visible .cap::after{width:100%}
+.shot .cap .no{font-size:12px;letter-spacing:.06em;color:#F37A20;font-variant-numeric:tabular-nums;padding-top:5px}
+.shot .cap .ct{display:grid;gap:6px;min-width:0}
+.shot .cap b{font-size:clamp(18px,1.6vw,23px);font-weight:500;letter-spacing:-.03em;line-height:1.2;color:var(--ink)}
+.shot .cap .mt{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;font-size:11.5px;color:var(--ink-2);letter-spacing:.02em}
+.shot .cap .mt i{font-style:normal;padding:3px 9px;border:1px solid var(--line);border-radius:999px;white-space:nowrap}
+.shot .cap .go{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--ink);transition:background .4s,color .4s,border-color .4s,transform .5s var(--ease)}
+.shot .cap .go svg{width:14px;height:14px}
+.shot:hover .cap .go,.shot:focus-visible .cap .go{background:var(--ink);color:var(--white);border-color:var(--ink);transform:rotate(45deg)}
 
 /* journey */
 .journey{padding-block:140px 0}
@@ -3348,7 +3358,7 @@ const strip=document.getElementById('strip');
 [0,1].forEach(pass=>WORKS.forEach((wk,i)=>{
   const el=document.createElement('div'); el.className='shot'; el.dataset.drag='1'; el.dataset.i=i;
   if(pass){ el.setAttribute('aria-hidden','true'); el.classList.add('clone'); } else { el.tabIndex=0; el.setAttribute('role','button'); el.setAttribute('aria-label',wk.title+' 자세히 보기'); }
-  el.innerHTML=`<div class="frame">${wk.img?`<img class="art" src="${wk.img}" alt="${wk.title}" style="object-fit:contain">`:'<canvas class="art"></canvas>'}</div><div class="cap">${wk.title} <small>${wk.sub}</small></div>`;
+  el.innerHTML=`<div class="frame">${wk.img?`<img class="art" src="${wk.img}" alt="${wk.title}" style="object-fit:contain">`:'<canvas class="art"></canvas>'}</div><div class="cap"><span class="no">${String(i+1).padStart(2,'0')}</span><div class="ct"><b>${wk.title}</b><span class="mt"><span>${wk.sub}</span><i>${wk.tag}</i><span>${wk.period}</span></span></div><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>`;
   strip.appendChild(el);
   const im=el.querySelector('img.art'); if(im){ const fit=()=>{ if(im.naturalWidth) el.querySelector('.frame').style.aspectRatio=im.naturalWidth+'/'+im.naturalHeight; }; im.complete?fit():im.addEventListener('load',fit); }
   if(!wk.img) addArt(el.querySelector('canvas'),'scene',SCENES[i%SCENES.length]);
