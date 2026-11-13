@@ -10,3 +10,4 @@ Items the owner will provide later. Check this list at the start of every update
 6. ~~DONE~~ **KAON Stationery envelopes** (대/소봉투 시안) → add "Envelope" section to #stationery page.
 7. **KAON Artwork (2022)** — grid-system KAON logo artwork made during the KAON package design project, applied to the employee ID card. Separate project (not part of Stationery). Owner will upload.
 8. **KAON Rebranding (2023)** — separate project. Owner will share soon.
+9. **ESG campaign #2 goods** — acrylic standee + stickers (second ESG campaign). Owner will upload; link with KAON Friends Keycaps (2026.03, ESG campaign #1).
