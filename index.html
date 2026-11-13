@@ -192,6 +192,22 @@ body.menu-open .cursor svg{color:#222}
 .statcard b{font-weight:300;font-size:46px;line-height:1;letter-spacing:-.04em}
 .statcard p{font-size:13px;color:var(--ink-2)}
 .statcard .img{aspect-ratio:4/5;border-radius:4px;overflow:hidden;background:var(--paper)}
+.sc-rot{position:relative;align-content:start;overflow:hidden}
+.sc-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.sc-cat{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;padding:6px 11px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink-2)}
+.sc-dots{display:flex;gap:5px}
+.sc-dots button{width:6px;height:6px;padding:0;border:0;border-radius:50%;background:var(--line);cursor:pointer;transition:background .3s,width .3s}
+.sc-dots button.on{width:16px;border-radius:3px;background:var(--ink)}
+.sc-body{display:grid;gap:10px;min-height:104px}
+.sc-val{font-weight:300;font-size:46px;line-height:1;letter-spacing:-.04em;white-space:nowrap}
+.sc-body,.sc-vis>*{transition:opacity .45s var(--ease),transform .6s var(--ease)}
+.sc-rot.sw .sc-body{opacity:0;transform:translateY(10px)}
+.sc-rot.sw .sc-vis>*{opacity:0;transform:scale(1.04)}
+.sc-vis{position:relative;display:block;color:inherit}
+.sc-vis img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.sc-w{position:absolute;inset:0;display:grid;place-items:end start;padding:18px;font-size:clamp(40px,5vw,64px);font-weight:600;letter-spacing:-.04em;line-height:.9;color:rgba(255,255,255,.92)}
+.sc-bar{position:absolute;left:0;right:0;bottom:0;height:2px;background:transparent}
+.sc-bar i{display:block;height:100%;width:100%;background:var(--ink);transform-origin:0 50%;transform:scaleX(0)}
 .about-right{display:grid;gap:28px}
 .about-right .thumb{width:64%;margin-left:auto;aspect-ratio:2/3;border-radius:6px;overflow:hidden;position:relative}
 .about-right .thumb .arrow-btn{position:absolute;inset:0;margin:auto;width:40px;height:40px;background:rgba(34,34,34,.85)}
@@ -2080,11 +2096,11 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
         <a class="hp-link" href="#human" data-cursor>Human Profile — 어떤 에너지로 일하는지 보기 <span aria-hidden="true">↗</span></a>
         <svg class="squiggle" viewBox="0 0 160 90" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 70c30-58 70 30 100-20 10-16 30-30 50-34m0 0-12-4m12 4-6 11"/></svg>
       </div>
-      <div class="statcard rv">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#222" stroke-width="1.3"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M6 18l2-2M16 8l2-2"/><circle cx="12" cy="12" r="3"/></svg></span>
-        <b><span data-count="75">75</span>%↓</b>
-        <p>AI LinkedIn Content Planner로 줄인 포스팅 1건당 기획·카피 작성 시간 (4시간 → 1시간)</p>
-        <div class="img"><canvas class="art" data-scene="4"></canvas></div>
+      <div class="statcard rv sc-rot" id="sc-rot" aria-roledescription="carousel" aria-label="하이라이트">
+        <div class="sc-top"><span class="sc-cat">Achievement</span><span class="sc-dots" role="tablist"><button type="button" role="tab" aria-label="1번째 하이라이트" class=on></button><button type="button" role="tab" aria-label="2번째 하이라이트"></button><button type="button" role="tab" aria-label="3번째 하이라이트"></button><button type="button" role="tab" aria-label="4번째 하이라이트"></button><button type="button" role="tab" aria-label="5번째 하이라이트"></button><button type="button" role="tab" aria-label="6번째 하이라이트"></button><button type="button" role="tab" aria-label="7번째 하이라이트"></button><button type="button" role="tab" aria-label="8번째 하이라이트"></button></span></div>
+        <div class="sc-body" aria-live="polite"><b class="sc-val">75%↓</b><p class="sc-txt">AI LinkedIn Planner로 포스팅 기획·카피 시간 4시간 → 1시간</p></div>
+        <a class="img sc-vis" href="#human" aria-label="자세히 보기"><span class="sc-w" style="background:linear-gradient(135deg,#1d1d20,#3a3a40)">AI</span></a>
+        <span class="sc-bar" aria-hidden="true"><i></i></span>
       </div>
       <div class="about-right rv">
         <a class="thumb" href="#human" data-cursor aria-label="Human Profile 페이지 보기 — 성향과 일하는 방식"><img class="pf-thumb" src="assets/profile/human.webp?v=9" alt="" loading="lazy" decoding="async"><span class="hp-tag">ENFP · Human Profile</span><span class="arrow-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
@@ -4072,6 +4088,20 @@ document.getElementById('lb-prev').addEventListener('click',()=>lbShow(lbI-1));
 document.getElementById('lb-next').addEventListener('click',()=>lbShow(lbI+1));
 lb.addEventListener('click',e=>{ if(e.target===lb) lbClose(); });
 addEventListener('keydown',e=>{ if(lb.hidden) return; if(e.key==='Escape'){e.stopImmediatePropagation();lbClose();} if(e.key==='ArrowRight') lbShow(lbI+1); if(e.key==='ArrowLeft') lbShow(lbI-1); },true);
+
+/* ---------- About 하이라이트 롤링 ---------- */
+(()=>{ const el=document.getElementById('sc-rot'); if(!el) return; const D=[{"c": "Achievement", "v": "75%↓", "t": "AI LinkedIn Planner로 포스팅 기획·카피 시간 4시간 → 1시간", "img": "", "w": "AI", "g": "linear-gradient(135deg,#1d1d20,#3a3a40)"}, {"c": "Achievement", "v": "50%+↓", "t": "AI로 만든 2027 캘린더, 2024년 대비 제작 기간 절반 이상 단축", "img": "assets/calendar/thumb.webp?v=5", "go": "calendar"}, {"c": "Character IP", "v": "5종", "t": "직접 만든 가온프렌즈 캐릭터, 모두 저작권 등록", "img": "assets/keycap/k6.webp", "go": "keycap"}, {"c": "Global", "v": "6회+", "t": "IBC·MWC·BBWF 글로벌 전시 비주얼 담당", "img": "assets/ibc/booth2.webp", "go": "ibc"}, {"c": "Global", "v": "8년", "t": "미국 생활 · 영어로 해외 파트너와 직접 소통", "img": "", "w": "Hello.", "g": "linear-gradient(160deg,#2f5c9b,#8fb3e0)"}, {"c": "Personality", "v": "ENFP", "t": "재기발랄한 활동가 — 아이디어를 먼저 꺼내고 바로 만들어 봐요", "img": "", "w": "Spark!", "g": "linear-gradient(150deg,#F37A20,#ffc08a)", "go": "human"}, {"c": "Likes", "v": "Freediving", "t": "숨 한 번에 깊고 고요한 바다로", "img": "", "w": "Deep", "g": "linear-gradient(180deg,#0b4f7c,#03192b)", "go": "human"}, {"c": "Likes", "v": "Run · Collect", "t": "달리기로 머리를 비우고, 피규어를 모아요", "img": "", "w": "Play", "g": "linear-gradient(150deg,#d9d2c6,#b9ad9b)", "go": "human"}];
+  const cat=el.querySelector('.sc-cat'), val=el.querySelector('.sc-val'), txt=el.querySelector('.sc-txt'), vis=el.querySelector('.sc-vis'), dots=[...el.querySelectorAll('.sc-dots button')], bar=el.querySelector('.sc-bar i');
+  D.forEach(d=>{ if(d.img){ const im=new Image(); setTimeout(()=>{im.src=d.img;},2500); } });
+  let i=0, t=null, hover=false; const DUR=3600;
+  const paint=d=>{ cat.textContent=d.c; val.textContent=d.v; txt.textContent=d.t; vis.innerHTML=d.img?`<img src="${d.img}" alt="" loading="lazy" decoding="async">`:`<span class="sc-w" style="background:${d.g}">${d.w}</span>`; vis.setAttribute('href','#'+(d.go||'human')); vis.setAttribute('aria-label',d.v+' — 자세히 보기'); dots.forEach((b,k)=>b.classList.toggle('on',k===i)); };
+  const go=n=>{ i=(n+D.length)%D.length; el.classList.add('sw'); setTimeout(()=>{ paint(D[i]); el.classList.remove('sw'); },380); run(); };
+  const run=()=>{ clearTimeout(t); if(reduce) return; if(bar.animate){ bar.getAnimations().forEach(a=>a.cancel()); if(!hover) bar.animate([{transform:'scaleX(0)'},{transform:'scaleX(1)'}],{duration:DUR,easing:'linear',fill:'forwards'}); } if(!hover) t=setTimeout(()=>{ if(document.hidden){ run(); return; } go(i+1); },DUR); };
+  dots.forEach((b,k)=>b.addEventListener('click',()=>go(k)));
+  el.addEventListener('pointerenter',e=>{ if(e.pointerType==='mouse'){ hover=true; clearTimeout(t); bar.getAnimations&&bar.getAnimations().forEach(a=>a.pause()); } });
+  el.addEventListener('pointerleave',e=>{ if(e.pointerType==='mouse'){ hover=false; run(); } });
+  if('IntersectionObserver' in window){ new IntersectionObserver(es=>{ if(es[0].isIntersecting) run(); else { clearTimeout(t); } }).observe(el); } else run();
+})();
 
 /* ---------- KAON Friends Keycaps ---------- */
 (()=>{ const pg=document.getElementById('pg-keycap'); if(!pg) return; const E=[{"k": "m1", "src": "assets/keycap/m1.webp", "alt": "키캡 키링 정면 — 지구와 함께 · 재활용 마크 세트", "cap": "Product — Product · Front", "g": "keycap"}, {"k": "m2", "src": "assets/keycap/m2.webp", "alt": "키캡 키링 — 흰 키캡 버전", "cap": "Product — White Keycap", "g": "keycap"}, {"k": "m3", "src": "assets/keycap/m3.webp", "alt": "키캡 키링 — 스냅 고리 버전", "cap": "Product — Snap Hook", "g": "keycap"}, {"k": "m4", "src": "assets/keycap/m4.webp", "alt": "키캡 키링 — 측면 클리커 버전", "cap": "Product — Clicker", "g": "keycap"}, {"k": "k1", "src": "assets/keycap/k1.webp", "alt": "Enter · 재활용 마크", "cap": "Keycap 01 — Enter · 재활용 마크", "g": "keycap"}, {"k": "k2", "src": "assets/keycap/k2.webp", "alt": "Enter · 분리수거함", "cap": "Keycap 02 — Enter · 분리수거함", "g": "keycap"}, {"k": "k3", "src": "assets/keycap/k3.webp", "alt": "Enter · 지구 안기", "cap": "Keycap 03 — Enter · 지구 안기", "g": "keycap"}, {"k": "k4", "src": "assets/keycap/k4.webp", "alt": "재활용 마크", "cap": "Keycap 04 — 재활용 마크", "g": "keycap"}, {"k": "k5", "src": "assets/keycap/k5.webp", "alt": "분리배출", "cap": "Keycap 05 — 분리배출", "g": "keycap"}, {"k": "k6", "src": "assets/keycap/k6.webp", "alt": "지구와 함께", "cap": "Keycap 06 — 지구와 함께", "g": "keycap"}]; const base=LB.length; E.forEach(e=>LB.push({src:e.src,alt:e.alt,cap:e.cap,g:e.g}));
