@@ -1638,19 +1638,19 @@ body.lb-open .cursor{background:#EDEDED}
 .cl-stage{position:relative;border-radius:18px;overflow:hidden;background:radial-gradient(90% 70% at 50% 30%,#FFF6EC 0%,#F7E2CF 55%,#EDCDB2 100%);padding:clamp(28px,5vw,64px) clamp(16px,4vw,56px) clamp(24px,4vw,44px);display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
 .cl-stage::after{content:"";position:absolute;left:0;right:0;bottom:0;height:34%;background:linear-gradient(180deg,rgba(255,255,255,0),rgba(214,170,134,.28));pointer-events:none}
 .dkc{position:relative;z-index:1;perspective:1900px;perspective-origin:50% 18%;cursor:pointer;padding:6% 7% 12%;-webkit-tap-highlight-color:transparent;--th:20deg}
-.dk-body{position:relative;width:100%;aspect-ratio:1859/1729;transform-style:preserve-3d;transition:transform 1.25s cubic-bezier(.7,0,.2,1);transform:rotateX(-9deg) rotateY(var(--ry,-27deg))}
+.dk-body{position:relative;width:100%;aspect-ratio:1859/1555;transform-style:preserve-3d;transition:transform 1.25s cubic-bezier(.7,0,.2,1);transform:rotateX(-9deg) rotateY(var(--ry,-27deg))}
 .dkc:hover .dk-body{--ry:-19deg}
 .dkc.back .dk-body{transform:rotateX(-9deg) rotateY(calc(180deg + var(--ry,-27deg)))}
-.dk-face{position:absolute;left:0;top:0;width:100%;aspect-ratio:1859/1840;transform-style:preserve-3d;transform-origin:50% 0}
+.dk-face{position:absolute;left:0;top:0;width:100%;aspect-ratio:1859/1655;transform-style:preserve-3d;transform-origin:50% 0}
 .dk-face.fr{transform:rotateX(var(--th))}
 .dk-face.bk{transform:rotateY(180deg) rotateX(var(--th))}
 .dk-hb,.dk-inner{position:absolute;inset:0;border-radius:3px;backface-visibility:hidden;-webkit-backface-visibility:hidden}
 .dk-hb{background:linear-gradient(180deg,#F8913C 0%,#F37A20 38%,#E56A12 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12),inset 0 -2px 0 rgba(0,0,0,.12)}
 .dk-hb::before{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(115deg,rgba(255,255,255,.18) 0%,rgba(255,255,255,0) 32%,rgba(0,0,0,0) 70%,rgba(0,0,0,.10) 100%)}
 .dk-inner{background:linear-gradient(180deg,#d8661a,#b9510c);transform:rotateY(180deg)}
-.dk-lip{position:absolute;left:0;right:0;bottom:0;height:16.5%;display:grid;place-items:center;transform:translateZ(.6px);backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.dk-lip{position:absolute;left:0;right:0;bottom:0;height:10%;display:grid;place-items:center;transform:translateZ(.6px);backface-visibility:hidden;-webkit-backface-visibility:hidden}
 .dk-lip::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:rgba(0,0,0,.10);box-shadow:0 1px 0 rgba(255,255,255,.18)}
-.dk-foil{width:23%;aspect-ratio:1600/429;-webkit-mask:url(assets/calendar/kaon-mask.png) center/contain no-repeat;mask:url(assets/calendar/kaon-mask.png) center/contain no-repeat;background:linear-gradient(105deg,#9a9ea4 0%,#eef0f2 18%,#b5b9bf 34%,#ffffff 46%,#a7abb1 60%,#e3e6e9 78%,#9ea2a8 100%);background-size:220% 100%;background-position:0% 0;filter:drop-shadow(0 .5px 0 rgba(0,0,0,.28));transition:background-position 1.6s var(--ease)}
+.dk-foil{width:17%;aspect-ratio:1600/429;-webkit-mask:url(assets/calendar/kaon-mask.png) center/contain no-repeat;mask:url(assets/calendar/kaon-mask.png) center/contain no-repeat;background:linear-gradient(105deg,#9a9ea4 0%,#eef0f2 18%,#b5b9bf 34%,#ffffff 46%,#a7abb1 60%,#e3e6e9 78%,#9ea2a8 100%);background-size:220% 100%;background-position:0% 0;filter:drop-shadow(0 .5px 0 rgba(0,0,0,.28));transition:background-position 1.6s var(--ease)}
 .dkc:hover .dk-foil{background-position:100% 0}
 .dk-sheet{position:absolute;left:1.8%;right:1.8%;top:2.4%;aspect-ratio:1859/1504;transform-style:preserve-3d}
 .dk-sheet img,.dk-sheet .flb{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;background:#fff;border-radius:1.5px;backface-visibility:hidden;-webkit-backface-visibility:hidden}
@@ -3300,7 +3300,7 @@ const WORKS=[
    ch:'그룹 5대 사업군(Set-top Box·Broadband CPE·Metaverse/AR Glass·Solution·Robot)을 상징하는 캐릭터 IP를 만드는 과제였어요.',
    ap:'사업 특성을 반영한 네이밍과 성격·관계, 캐릭터별 스토리까지 세계관 전체를 설계했어요. 동작 표현이 쉬운 인간형 3종과 무형 사업의 상징성을 살린 비인간형 2종으로 조형 체계를 나누고, 기업 컬러(오렌지) 기반 컬러 시스템, 감정·상태를 보여주는 시그널 장치, 신장·체중 등 캐릭터 스펙을 정의했어요.',
    out:'캐릭터 5종 전체를 저작권 등록(2022.11)해 법적 보호가 가능한 그룹 IP로 전환했어요. 가이드라인(11p), 아크릴 등신대·스티커·키캡·마우스패드 굿즈, 신규 입사자 웰컴 키트까지 만들었고, 2026년에는 솔루·로비 조형을 리뉴얼해 표현 범위를 넓혔어요.'},
-  {title:'KAON Friends 2027 Calendar', page:'calendar', img:'assets/calendar/thumb.webp?v=3', sub:'KAON GROUP', tag:'AI Artwork · Calendar', period:'2026', cat:['ai','brand','content'], scene:3,
+  {title:'KAON Friends 2027 Calendar', page:'calendar', img:'assets/calendar/thumb.webp?v=4', sub:'KAON GROUP', tag:'AI Artwork · Calendar', period:'2026', cat:['ai','brand','content'], scene:3,
    kr:'가온프렌즈를 주인공으로 생성형 AI로 그린 2027 탁상 캘린더', role:'기획·AI 아트워크·편집디자인', client:'가온그룹', tools:'Generative AI, Photoshop, Illustrator',
    kpis:[['500부','제작·배포'],['3주','제작 기간 · 2024 대비 절반 이상 단축'],['18점','월별 14 · 상태 카드 4']], ch:'', ap:'', out:''},
   {title:'Group Brand & Exhibitions', sub:'KAON GROUP', tag:'Brand · Exhibition', period:'2021 — 현재', cat:['brand'], scene:4,
