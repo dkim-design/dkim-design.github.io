@@ -1648,6 +1648,14 @@ body.lb-open .cursor{background:#EDEDED}
 .ib-list li{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:14px;line-height:1.6}
 .ib-list li::before{content:"";width:8px;height:8px;margin-top:7px;border-radius:50%;background:var(--o)}
 .ib-list b{font-weight:600}
+.ib-art{margin:clamp(28px,4vw,48px) 0 0;display:grid;gap:10px}
+.ib-art .ib-ph{background:#fff;box-shadow:0 0 0 1px var(--line),0 24px 50px -30px rgba(40,30,20,.35)}
+.ib-art figcaption{display:flex;gap:10px;align-items:baseline;font-size:13px;color:var(--ink-2)}
+.ib-art figcaption span{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--o)}
+.ib-arts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}
+.ib-arts .ib-art{margin-top:clamp(28px,4vw,48px)}
+.ib-art.esg{max-width:760px;margin-inline:auto}
+@media (max-width:900px){ .ib-arts{grid-template-columns:minmax(0,1fr)} }
 .ib-slogan{margin:0;padding:clamp(40px,6vw,72px) 0;text-align:center}
 .ib-slogan b{display:block;font-size:clamp(40px,7vw,96px);font-weight:600;letter-spacing:-.04em;line-height:1}
 .ib-slogan b i{font-style:normal;color:var(--o)}
@@ -2022,7 +2030,7 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
         <div class="img"><canvas class="art" data-scene="4"></canvas></div>
       </div>
       <div class="about-right rv">
-        <a class="thumb" href="#human" data-cursor aria-label="Human Profile 페이지 보기 — 성향과 일하는 방식"><img class="pf-thumb" src="assets/profile/human2.webp" alt="" loading="lazy" decoding="async"><span class="hp-tag">ENFP · Human Profile</span><span class="arrow-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
+        <a class="thumb" href="#human" data-cursor aria-label="Human Profile 페이지 보기 — 성향과 일하는 방식"><img class="pf-thumb" src="assets/profile/human.webp?v=9" alt="" loading="lazy" decoding="async"><span class="hp-tag">ENFP · Human Profile</span><span class="arrow-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
         <ul class="points">
           <li><i>+</i><span>미국에서 약 8년간 고교와 Pratt Institute 산업디자인 학위 과정을 마치고, Karim Rashid, Stephen Burks, David Weeks 등 뉴욕 디자인 스튜디오에서 인턴십을 거쳤어요. 해외 법인·협력사·글로벌 전시 파트너와 영어로 직접 소통합니다.</span></li>
           <li><i>+</i><span>한국암웨이, 이공이공, 가온그룹을 거치며 제품·브랜드·디지털 콘텐츠 전 영역을 다뤘어요.</span></li>
@@ -3099,7 +3107,7 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
       <div><dt>Event</dt><dd>IBC<br><small>Amsterdam · Hall 1</small></dd></div>
       <div><dt>Role</dt><dd>Wall<br><small>부스 월그래픽 디자인</small></dd></div>
       <div><dt>Message</dt><dd>CONNECTED+<br><small>Connecting what truly matters</small></dd></div>
-      <div><dt>Graphics</dt><dd>4+<br><small>키비주얼 · 사업 · 솔루션 · ESG</small></dd></div>
+      <div><dt>Graphics</dt><dd>4<br><small>키비주얼 · 사업 · 솔루션 · ESG</small></dd></div>
     </dl>
     <button class="ib-ph ib-hero" type="button" data-ib-lb="booth" aria-label="IBC KAON 부스 전경 — 원형 행잉 사인과 CONNECTED+ 크게 보기"><img src="assets/ibc/booth.webp" alt="IBC KAON 부스 전경 — 원형 행잉 사인과 CONNECTED+" loading="lazy" decoding="async"><span class="tg">Booth Overview</span></button>
   </div></div>
@@ -3110,6 +3118,7 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
       <div class="ib-tx"><span class="no">01 — Key Visual</span><h3>복도에서 먼저 읽히는 한 장의 풍경</h3><p>강과 도시, 태양광·풍력 단지가 하나로 이어지는 파노라마 위에 KAON 로고와 "CONNECTED+ | Connecting what truly matters"를 올렸어요. 연결된 도시 풍경 자체가 슬로건의 뜻을 보여 주도록 구성했어요.</p>
         <ul class="ib-list"><li><span><b>수평 라인 정렬</b> — 벽 상단의 오렌지 라인 조명과 그래픽의 하늘 라인을 맞춰 부스 전체가 한 덩어리로 보이게</span></li><li><span><b>원거리 가독성</b> — 로고와 슬로건을 시선 높이에 두고, 풍경은 하단으로 낮춰 정보 위계를 분리</span></li></ul></div>
     </div>
+    <figure class="ib-art"><button class="ib-ph" type="button" data-ib-lb="g-key" aria-label="키비주얼 원본 — KAON, CONNECTED+ | Connecting what truly matters 크게 보기" style="aspect-ratio:2000/888"><img src="assets/ibc/g-key.webp" alt="키비주얼 원본 — KAON, CONNECTED+ | Connecting what truly matters" loading="lazy" decoding="async" style="object-fit:contain;background:#fff"></button><figcaption><span>Original Artwork</span>Key Visual · 도시·강·재생에너지 파노라마 위의 KAON 로고와 슬로건</figcaption></figure>
   </div></div></section>
 
   <section class="ib-sec"><div class="wrap"><div class="c">
@@ -3118,6 +3127,7 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
         <ul class="ib-list"><li><span><b>KAON GROUP</b> — Connected Media, Broadband and Robotics Innovation. Pay-TV/OTT/AI · Broadband/Network · Robot/Solution 3개 사업 축을 사진 카드와 핵심 키워드로 정리</span></li><li><span><b>AI-Converged Connected Home</b> — Video, Broadband, Robotics가 하나의 집 안에서 연결되는 모습을 아이소메트릭 구조도와 파트너 플랫폼 로고로 표현</span></li></ul></div>
       <button class="ib-ph " type="button" data-ib-lb="corner" aria-label="부스 코너 — KAON GROUP 사업 패널과 AI-Converged Connected Home 패널 크게 보기"><img src="assets/ibc/corner.webp" alt="부스 코너 — KAON GROUP 사업 패널과 AI-Converged Connected Home 패널" loading="lazy" decoding="async"><span class="tg">Business & Solution Panels</span></button>
     </div>
+    <div class="ib-arts"><figure class="ib-art "><button class="ib-ph" type="button" data-ib-lb="g-group" aria-label="KAON GROUP 사업 패널 원본 크게 보기" style="aspect-ratio:2000/1480"><img src="assets/ibc/g-group.webp" alt="KAON GROUP 사업 패널 원본" loading="lazy" decoding="async" style="object-fit:contain;background:#fff"></button><figcaption><span>Original Artwork</span>KAON GROUP · Connected Media, Broadband and Robotics Innovation</figcaption></figure><figure class="ib-art "><button class="ib-ph" type="button" data-ib-lb="g-home" aria-label="AI-Converged Connected Home 패널 원본 크게 보기" style="aspect-ratio:2000/1776"><img src="assets/ibc/g-home.webp" alt="AI-Converged Connected Home 패널 원본" loading="lazy" decoding="async" style="object-fit:contain;background:#fff"></button><figcaption><span>Original Artwork</span>AI-Converged Connected Home · Powered by Video, Broadband and Robotics</figcaption></figure></div>
   </div></div></section>
 
   <section class="ib-sec"><div class="wrap"><div class="c">
@@ -3126,6 +3136,7 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
       <figure><button class="ib-ph " type="button" data-ib-lb="lounge" aria-label="부스 라운지 — 데모존과 바, CONNECTED+ 월 사인 크게 보기"><img src="assets/ibc/lounge.webp" alt="부스 라운지 — 데모존과 바, CONNECTED+ 월 사인" loading="lazy" decoding="async"><span class="tg">Lounge & Demo</span></button><figcaption><b>라운지 · 데모존</b>AI Auto-Recovery, AI Remote Management 같은 데모 존 헤더와 바 뒤편 CONNECTED+ 월이 같은 서체·톤으로 이어져요.</figcaption></figure>
       <figure><button class="ib-ph " type="button" data-ib-lb="bar" aria-label="KAON BAR와 Sustainability in Action 패널 크게 보기"><img src="assets/ibc/bar.webp" alt="KAON BAR와 Sustainability in Action 패널" loading="lazy" decoding="async"><span class="tg">Sustainability in Action</span></button><figcaption><b>Sustainability in Action</b>바 뒤편에는 친환경 설계와 탄소발자국 인증, EcoVadis Platinum(Top 1%) 성과를 담은 지속가능성 패널을 배치했어요.</figcaption></figure>
     </div>
+    <figure class="ib-art esg"><button class="ib-ph" type="button" data-ib-lb="g-esg" aria-label="Sustainability in Action 패널 원본 크게 보기" style="aspect-ratio:2000/1834"><img src="assets/ibc/g-esg.webp" alt="Sustainability in Action 패널 원본" loading="lazy" decoding="async" style="object-fit:contain;background:#fff"></button><figcaption><span>Original Artwork</span>Sustainability in Action · EcoVadis Platinum Top 1% · CDP A List</figcaption></figure>
   </div></div></section>
 </div>
 
@@ -3970,7 +3981,7 @@ lb.addEventListener('click',e=>{ if(e.target===lb) lbClose(); });
 addEventListener('keydown',e=>{ if(lb.hidden) return; if(e.key==='Escape'){e.stopImmediatePropagation();lbClose();} if(e.key==='ArrowRight') lbShow(lbI+1); if(e.key==='ArrowLeft') lbShow(lbI-1); },true);
 
 /* ---------- IBC booth ---------- */
-(()=>{ const pg=document.getElementById('pg-ibc'); if(!pg) return; const E=[{"k": "booth", "src": "assets/ibc/booth.webp", "alt": "IBC KAON 부스 전경", "cap": "IBC — KAON Booth Overview", "g": "ibc"}, {"k": "keywall", "src": "assets/ibc/keywall.webp", "alt": "키비주얼 월", "cap": "Key Visual Wall — CONNECTED+", "g": "ibc"}, {"k": "corner", "src": "assets/ibc/corner.webp", "alt": "사업·솔루션 패널", "cap": "KAON GROUP · AI-Converged Connected Home", "g": "ibc"}, {"k": "lounge", "src": "assets/ibc/lounge.webp", "alt": "라운지와 데모존", "cap": "Lounge & Demo Zone", "g": "ibc"}, {"k": "bar", "src": "assets/ibc/bar.webp", "alt": "KAON BAR와 지속가능성 패널", "cap": "KAON BAR · Sustainability in Action", "g": "ibc"}]; const base=LB.length; E.forEach(e=>LB.push({src:e.src,alt:e.alt,cap:e.cap,g:e.g}));
+(()=>{ const pg=document.getElementById('pg-ibc'); if(!pg) return; const E=[{"k": "booth", "src": "assets/ibc/booth.webp", "alt": "IBC KAON 부스 전경", "cap": "IBC — KAON Booth Overview", "g": "ibc"}, {"k": "keywall", "src": "assets/ibc/keywall.webp", "alt": "키비주얼 월", "cap": "Key Visual Wall — CONNECTED+", "g": "ibc"}, {"k": "corner", "src": "assets/ibc/corner.webp", "alt": "사업·솔루션 패널", "cap": "KAON GROUP · AI-Converged Connected Home", "g": "ibc"}, {"k": "lounge", "src": "assets/ibc/lounge.webp", "alt": "라운지와 데모존", "cap": "Lounge & Demo Zone", "g": "ibc"}, {"k": "bar", "src": "assets/ibc/bar.webp", "alt": "KAON BAR와 지속가능성 패널", "cap": "KAON BAR · Sustainability in Action", "g": "ibc"}, {"k": "g-key", "src": "assets/ibc/g-key.webp", "alt": "키비주얼 원본", "cap": "Original — Key Visual", "g": "ibc"}, {"k": "g-group", "src": "assets/ibc/g-group.webp", "alt": "KAON GROUP 패널 원본", "cap": "Original — KAON GROUP Panel", "g": "ibc"}, {"k": "g-home", "src": "assets/ibc/g-home.webp", "alt": "Connected Home 패널 원본", "cap": "Original — AI-Converged Connected Home", "g": "ibc"}, {"k": "g-esg", "src": "assets/ibc/g-esg.webp", "alt": "Sustainability 패널 원본", "cap": "Original — Sustainability in Action", "g": "ibc"}]; const base=LB.length; E.forEach(e=>LB.push({src:e.src,alt:e.alt,cap:e.cap,g:e.g}));
   pg.querySelectorAll('[data-ib-lb]').forEach(b=>b.addEventListener('click',()=>{ const k=E.findIndex(e=>e.k===b.dataset.ibLb); if(k>=0) lbOpen(base+k); })); })();
 
 /* ---------- KAON Friends 2027 Calendar ---------- */
