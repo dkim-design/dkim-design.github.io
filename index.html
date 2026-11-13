@@ -1628,6 +1628,40 @@ body.lb-open .cursor{background:#EDEDED}
 @media (prefers-reduced-motion:reduce){ .st-paper{transition:none} }
 
 
+
+/* ===== KAON Friends Keycaps ===== */
+#pg-keycap{--g:#2E7D32;--g2:#5DBB46;--cream:#FEF2E9}
+.kk-stage{position:relative;margin-top:clamp(28px,4vw,48px);border-radius:18px;overflow:hidden;background:radial-gradient(90% 80% at 50% 30%,#fff 0%,#f6f4f0 55%,#ebe8e2 100%);padding:clamp(48px,7vw,96px) 16px clamp(56px,8vw,110px);display:grid;place-items:center}
+.kk-board{display:grid;grid-template-columns:repeat(3,auto);gap:clamp(14px,2.4vw,30px);transform:rotateX(52deg) rotateZ(-34deg);transform-style:preserve-3d}
+.kk{--s:clamp(92px,15vw,190px);position:relative;width:var(--s);height:var(--s);transform-style:preserve-3d;transition:transform .5s cubic-bezier(.3,1.4,.5,1);cursor:pointer;-webkit-tap-highlight-color:transparent}
+.kk::before{content:"";position:absolute;inset:-6%;border-radius:16%;background:linear-gradient(135deg,#fdfaf6,#e9e2d8);transform:translateZ(0);box-shadow:
+  1px 1px 0 #e3dbcf,2px 2px 0 #ddd4c7,3px 3px 0 #d8cec0,4px 4px 0 #d2c7b8,5px 5px 0 #ccc1b1,6px 6px 0 #c6baa9,7px 7px 0 #c0b3a2,8px 8px 0 #b9ac9a,9px 9px 0 #b2a593,10px 10px 0 #ab9e8c,
+  26px 30px 40px rgba(80,60,30,.28)}
+.kk .top{position:absolute;inset:0;border-radius:14%;overflow:hidden;background:var(--cream);box-shadow:inset 0 0 0 1px rgba(0,0,0,.04),inset 0 -6px 14px rgba(120,90,60,.10),inset 0 6px 10px rgba(255,255,255,.7);transform:translateZ(1px)}
+.kk .top img{width:100%;height:100%;display:block;object-fit:cover;filter:saturate(1.02)}
+.kk .top::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 25% 15%,rgba(255,255,255,.35),rgba(255,255,255,0) 45%);pointer-events:none}
+.kk:hover,.kk:focus-visible,.kk.on{transform:translate(5px,5px)}
+.kk:focus-visible{outline:none}
+.kk:focus-visible .top{box-shadow:0 0 0 3px var(--g2)}
+.kk.empty .top{display:grid;place-items:center;background:repeating-linear-gradient(45deg,#f6efe6 0 10px,#f1e8dd 10px 20px)}
+.kk.empty .top span{font-size:clamp(9px,1.1vw,13px);letter-spacing:.14em;color:#b3a594;transform:rotateZ(34deg)}
+.kk-hint{position:absolute;left:0;right:0;bottom:18px;text-align:center;font-size:12px;letter-spacing:.06em;color:#9a9186}
+.kk-sec{padding-block:clamp(56px,8vw,110px);border-top:1px solid var(--line)}
+.kk-msg{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(24px,5vw,72px);align-items:center}
+.kk-msg .big{font-size:clamp(56px,9vw,128px);font-weight:700;letter-spacing:-.04em;line-height:.9;color:var(--g)}
+.kk-msg .big small{display:block;margin-top:16px;font-size:clamp(20px,2.4vw,30px);font-weight:600;letter-spacing:-.02em;color:#3f8f3a}
+.kk-msg p{margin:0 0 14px;color:var(--ink-2);font-size:15px;line-height:1.75}
+.kk-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.kk-grid figure{margin:0;display:grid;gap:10px}
+.kk-grid .ph{all:unset;box-sizing:border-box;display:block;cursor:pointer;aspect-ratio:1;border-radius:14px;overflow:hidden;background:var(--cream);box-shadow:0 0 0 1px var(--line)}
+.kk-grid .ph img{width:100%;height:100%;display:block;object-fit:cover;transition:transform 1s var(--ease)}
+.kk-grid .ph:hover img{transform:scale(1.04)}
+.kk-grid .ph:focus-visible{outline:2px solid var(--g2);outline-offset:3px}
+.kk-grid .ph.empty{display:grid;place-items:center;cursor:default;background:repeating-linear-gradient(45deg,#faf5ef 0 12px,#f4ece2 12px 24px);color:#b3a594;font-size:12px;letter-spacing:.14em}
+.kk-grid figcaption{display:flex;gap:10px;align-items:baseline;font-size:13.5px;color:var(--ink-2)}
+.kk-grid figcaption b{font-size:12px;letter-spacing:.08em;color:var(--g)}
+@media (max-width:760px){ .kk-msg{grid-template-columns:minmax(0,1fr)} .kk-grid{grid-template-columns:repeat(2,minmax(0,1fr))} .kk::before{box-shadow:1px 1px 0 #e3dbcf,2px 2px 0 #ddd4c7,3px 3px 0 #d2c7b8,4px 4px 0 #c6baa9,5px 5px 0 #b9ac9a,6px 6px 0 #ab9e8c,14px 18px 24px rgba(80,60,30,.28)} }
+
 /* ===== IBC 2026 Booth Graphics ===== */
 #pg-ibc{--o:#F37A20;--cream:#FBF3EA}
 .ib-sec{padding-block:clamp(56px,8vw,110px);border-top:1px solid var(--line)}
@@ -2199,7 +2233,7 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
           <h3>SNS Channels</h3><p>B2B·B2C 공식 채널 운영·관리, 콘텐츠 기획·발행·모니터링, 톤앤매너 관리</p>
           <ul class="cap-tools"><li style="--bc:#0A66C2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</li><li style="--bc:#FF0000"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>YouTube</li><li style="--bc:#E4405F"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>Instagram</li><li style="--bc:#0866FF"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>Facebook</li><li style="--bc:#FFFFFF"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>X</li></ul>
           <span class="cap-go">Proof · AI LinkedIn Content Planner <em>↗</em></span>
-        </article><article class="cap-card  rv" style="--k:5" data-go="case:10" tabindex="0" role="button" aria-label="Digital Marketing — greyd 프로젝트 보기">
+        </article><article class="cap-card  rv" style="--k:5" data-go="case:11" tabindex="0" role="button" aria-label="Digital Marketing — greyd 프로젝트 보기">
           <div class="cap-top"><span class="cap-no">06</span><span class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 18 10 12l4 4 6-8"/><path d="M15 8h5v5"/></svg></span></div>
           <div class="cap-metric"><b data-to="200">0</b><i>%</i><small>광고 ROAS</small></div>
           <h3>Digital Marketing</h3><p>콘텐츠 전략 수립, 퍼포먼스 광고 집행, GA4·UTM 성과 분석</p>
@@ -3114,6 +3148,36 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
   </section>
 </div>
 
+<div class="case page" id="pg-keycap" role="dialog" aria-modal="true" aria-labelledby="pkk-title" hidden>
+  <div class="case-top wrap"><div class="c"><span class="label">Project — KAON GROUP · Character Goods</span><button class="closeb" type="button" data-close>닫기 ✕</button></div></div>
+  <div class="wrap"><div class="c">
+    <header class="pg-head">
+      <h2 class="pg-title" id="pkk-title">KAON Friends Keycaps</h2>
+      <div class="pg-meta"><span>KAON GROUP 사내 굿즈</span><span>Character Goods · Keycap Artwork</span><span>Enter — 함께 비우고 함께 순환</span></div>
+    </header>
+    <div class="pg-intro"><span class="label">About this project</span><p class="pg-lead">그룹 캐릭터 IP <b>가온프렌즈</b>로 만든 <b>키캡 키링</b> 굿즈예요. Enter 키캡과 캐릭터 일러스트 키캡 두 개를 투명 아크릴 케이스에 담아, 손으로 눌러 볼 수 있는 키링으로 만들었어요. 매일 누르는 <b>Enter</b> 키에 "함께 비우고 함께 순환"이라는 분리배출·재활용 메시지를 담아, 책상 위에서 자연스럽게 환경 캠페인을 떠올리게 했어요. 재활용 마크, 분리수거함, 지구를 안는 장면처럼 캐릭터가 직접 실천하는 모습으로 메시지를 친근하게 풀었어요.</p></div>
+    <dl class="ix-stats">
+      <div><dt>Designs</dt><dd>6<br><small>키캡 아트워크</small></dd></div>
+      <div><dt>Message</dt><dd>Enter<br><small>함께 비우고 함께 순환</small></dd></div>
+      <div><dt>Theme</dt><dd>Eco<br><small>분리배출 · 재활용 · 지구</small></dd></div>
+      <div><dt>Product</dt><dd>Keyring<br><small>2키 키캡 · 아크릴 케이스</small></dd></div>
+    </dl>
+    <div class="kk-stage"><div class="kk-board" id="kk-board"><button class="kk" type="button" data-kk-lb="k1" aria-label="키캡 1 — Enter · 재활용 마크 크게 보기"><span class="top"><img src="assets/keycap/k1.webp" alt="가온프렌즈 키캡 1 — Enter · 재활용 마크"></span></button><button class="kk" type="button" data-kk-lb="k2" aria-label="키캡 2 — Enter · 분리수거함 크게 보기"><span class="top"><img src="assets/keycap/k2.webp" alt="가온프렌즈 키캡 2 — Enter · 분리수거함"></span></button><button class="kk" type="button" data-kk-lb="k3" aria-label="키캡 3 — Enter · 지구 안기 크게 보기"><span class="top"><img src="assets/keycap/k3.webp" alt="가온프렌즈 키캡 3 — Enter · 지구 안기"></span></button><button class="kk" type="button" data-kk-lb="k4" aria-label="키캡 4 — 재활용 마크 크게 보기"><span class="top"><img src="assets/keycap/k4.webp" alt="가온프렌즈 키캡 4 — 재활용 마크"></span></button><button class="kk" type="button" data-kk-lb="k5" aria-label="키캡 5 — 분리배출 크게 보기"><span class="top"><img src="assets/keycap/k5.webp" alt="가온프렌즈 키캡 5 — 분리배출"></span></button><div class="kk empty" aria-hidden="true"><span class="top"><span>06</span></span></div></div><p class="kk-hint">키캡을 누르면 크게 볼 수 있어요</p></div>
+  </div></div>
+
+  <section class="kk-sec"><div class="wrap"><div class="c">
+    <div class="kk-msg">
+      <p class="big">Enter<small>함께 비우고 함께 순환</small></p>
+      <div><span class="label">01 — Concept</span><p style="margin-top:14px">Enter는 '실행'을 뜻하는 키예요. 하루에도 수십 번 누르는 이 키에 분리배출 메시지를 얹어, 누를 때마다 "비우고 순환하는 행동"을 시작한다는 의미를 담았어요.</p><p>브랜드 그린과 캐릭터 고유의 크림·오렌지 컬러를 조합하고, 작은 키캡 위에서도 읽히도록 굵은 타이포와 단순한 일러스트 라인으로 정리했어요.</p></div>
+    </div>
+  </div></div></section>
+
+  <section class="kk-sec"><div class="wrap"><div class="c">
+    <div class="cl-h"><span class="no" style="color:var(--g)">02 — Artwork</span><h3>여섯 가지 키캡 디자인</h3><p>메시지형 3종(Enter 타이포 + 캐릭터)과 일러스트형으로 구성했어요.</p></div>
+    <div class="kk-grid"><figure><button class="ph" type="button" data-kk-lb="k1" aria-label="Enter · 재활용 마크 크게 보기"><img src="assets/keycap/k1.webp" alt="가온프렌즈 키캡 아트워크 — Enter · 재활용 마크" loading="lazy" decoding="async"></button><figcaption><b>01</b>친구와 함께 재활용 마크 안에서 인사해요</figcaption></figure><figure><button class="ph" type="button" data-kk-lb="k2" aria-label="Enter · 분리수거함 크게 보기"><img src="assets/keycap/k2.webp" alt="가온프렌즈 키캡 아트워크 — Enter · 분리수거함" loading="lazy" decoding="async"></button><figcaption><b>02</b>K가 분리수거함에 기대 엄지를 들어요</figcaption></figure><figure><button class="ph" type="button" data-kk-lb="k3" aria-label="Enter · 지구 안기 크게 보기"><img src="assets/keycap/k3.webp" alt="가온프렌즈 키캡 아트워크 — Enter · 지구 안기" loading="lazy" decoding="async"></button><figcaption><b>03</b>지구를 꼭 안아 주는 마음을 담았어요</figcaption></figure><figure><button class="ph" type="button" data-kk-lb="k4" aria-label="재활용 마크 크게 보기"><img src="assets/keycap/k4.webp" alt="가온프렌즈 키캡 아트워크 — 재활용 마크" loading="lazy" decoding="async"></button><figcaption><b>04</b>캐릭터가 순환 화살표를 가리켜요</figcaption></figure><figure><button class="ph" type="button" data-kk-lb="k5" aria-label="분리배출 크게 보기"><img src="assets/keycap/k5.webp" alt="가온프렌즈 키캡 아트워크 — 분리배출" loading="lazy" decoding="async"></button><figcaption><b>05</b>병·캔·종이를 나눠 담는 장면이에요</figcaption></figure><figure><div class="ph empty">06 · COMING SOON</div><figcaption><b>06</b>여섯 번째 디자인</figcaption></figure></div>
+  </div></div></section>
+</div>
+
 <div class="case page" id="pg-ibc" role="dialog" aria-modal="true" aria-labelledby="pib-title" hidden>
   <div class="case-top wrap"><div class="c"><span class="label">Project — KAON GROUP · Global Exhibitions</span><button class="closeb" type="button" data-close>닫기 ✕</button></div></div>
   <div class="wrap"><div class="c">
@@ -3413,6 +3477,9 @@ const WORKS=[
    ch:'그룹 5대 사업군(Set-top Box·Broadband CPE·Metaverse/AR Glass·Solution·Robot)을 상징하는 캐릭터 IP를 만드는 과제였어요.',
    ap:'사업 특성을 반영한 네이밍과 성격·관계, 캐릭터별 스토리까지 세계관 전체를 설계했어요. 동작 표현이 쉬운 인간형 3종과 무형 사업의 상징성을 살린 비인간형 2종으로 조형 체계를 나누고, 기업 컬러(오렌지) 기반 컬러 시스템, 감정·상태를 보여주는 시그널 장치, 신장·체중 등 캐릭터 스펙을 정의했어요.',
    out:'캐릭터 5종 전체를 저작권 등록(2022.11)해 법적 보호가 가능한 그룹 IP로 전환했어요. 가이드라인(11p), 아크릴 등신대·스티커·키캡·마우스패드 굿즈, 신규 입사자 웰컴 키트까지 만들었고, 2026년에는 솔루·로비 조형을 리뉴얼해 표현 범위를 넓혔어요.'},
+  {title:'KAON Friends Keycaps', page:'keycap', img:'assets/keycap/thumb.webp', sub:'KAON GROUP', tag:'Character Goods · Keyring', period:'Goods', cat:['brand'], scene:3,
+   kr:'가온프렌즈 키캡 키링 굿즈 — Enter, 함께 비우고 함께 순환', role:'굿즈 기획 · 아트워크 디자인', client:'가온그룹', tools:'Illustrator',
+   kpis:[], ch:'', ap:'', out:''},
   {title:'KAON Friends 2027 Calendar', page:'calendar', img:'assets/calendar/thumb.webp?v=5', sub:'KAON GROUP', tag:'AI Artwork · Calendar', period:'2026', cat:['ai','brand','content'], scene:3,
    kr:'가온프렌즈를 주인공으로 생성형 AI로 그린 2027 탁상 캘린더', role:'기획·AI 아트워크·편집디자인', client:'가온그룹', tools:'Generative AI, Photoshop, Illustrator',
    kpis:[['500부','제작·배포'],['3주','제작 기간 · 2024 대비 절반 이상 단축'],['18점','월별 14 · 상태 카드 4']], ch:'', ap:'', out:''},
@@ -3456,13 +3523,13 @@ const WORKS=[
 const JOURNEY=[
   {co:'가온그룹 (KAON GROUP)', grp:'ft', page:'kaon', logo:'assets/logos/kaon.png', wide:1, date:'2021.09 — 현재 · 5년 2개월', role:'Corporate실 마케팅팀 매니저 / Visual Contents Designer', tags:['AI Workflow','Brand · IP'], w:0,
    pts:['AI 에이전트 2종 구축으로 리서치 시간 약 80%↓, 월 발행량 2배','그룹 캐릭터 IP 가온 프렌즈 5종 기획·디자인, 저작권 5건 등록','CI·BI 4건 개발·리뉴얼, IBC·MWC·BBWF 글로벌 전시 6회 이상 총괄','LinkedIn·YouTube·Facebook·X 공식 채널 콘텐츠 기획·운영']},
-  {co:'이공이공 (Egongegong)', grp:'ft', logo:'assets/logos/egong.png?v=2', dark:1, full:1, date:'2021.01 — 2021.09 · 9개월', role:'마케팅본부 리브랜딩팀 · 리브랜딩 디자이너 (초기 멤버)', tags:['E-commerce','Localization'], w:11,
+  {co:'이공이공 (Egongegong)', grp:'ft', logo:'assets/logos/egong.png?v=2', dark:1, full:1, date:'2021.01 — 2021.09 · 9개월', role:'마케팅본부 리브랜딩팀 · 리브랜딩 디자이너 (초기 멤버)', tags:['E-commerce','Localization'], w:12,
    pts:['국내 브랜드 약 10개사 아마존 북미 입점용 디자인','이미지 A/B 개선으로 CTR 약 15%·CVR 약 10% 향상','제품 콘셉트 촬영 기획·디렉팅, 프리랜서 디자이너 관리']},
-  {co:'한국암웨이 (Amway Korea)', grp:'ft', logo:'assets/logos/amway.png', wide:1, date:'2018.03 — 2020.03 · 2년', role:'R&D 아시아 이노베이션센터 · 산업디자이너', tags:['Industrial','Package'], w:12,
+  {co:'한국암웨이 (Amway Korea)', grp:'ft', logo:'assets/logos/amway.png', wide:1, date:'2018.03 — 2020.03 · 2년', role:'R&D 아시아 이노베이션센터 · 산업디자이너', tags:['Industrial','Package'], w:13,
    pts:['아티스트리·앳모스피어 신제품 기획·디자인·개발','스마트 디퓨저 디자인권 등록 (제30-1007738호)','오픈 이노베이션 컨셉 3건 채택, 자재·패키징 원가 약 5% 절감']},
-  {co:'LinkFit', grp:'fl', logo:'assets/logos/linkfit.png?v=2', dark:1, date:'2026.01 — 현재 · Freelance', role:'프리랜서 · 프로덕트 디자이너 & 서비스 기획자', tags:['Product','Planning'], w:9, page:'linkfit', imgs:['assets/linkfit/app/04.webp','assets/linkfit/app/13.webp','assets/linkfit/app/20.webp'],
+  {co:'LinkFit', grp:'fl', logo:'assets/logos/linkfit.png?v=2', dark:1, date:'2026.01 — 현재 · Freelance', role:'프리랜서 · 프로덕트 디자이너 & 서비스 기획자', tags:['Product','Planning'], w:10, page:'linkfit', imgs:['assets/linkfit/app/04.webp','assets/linkfit/app/13.webp','assets/linkfit/app/20.webp'],
    pts:['시간 단위 헬스장 예약 앱의 서비스 플로우 설계와 화면기획서 작성, UIUX 디자인','결제 조회·환불 권한을 분리한 파트너 어드민 대시보드 설계','BI·앱 디자인 시스템, 랜딩페이지, GA4·UTM 성과 측정 체계']},
-  {co:'ARBAIM (greyd)', grp:'fl', logo:'assets/logos/greyd.png', date:'2022.07 — 2024.08 · Side Project', role:'프리랜서 · 크리에이티브 디렉터 & UIUX 디자이너', tags:['UIUX','Ads'], w:10,
+  {co:'ARBAIM (greyd)', grp:'fl', logo:'assets/logos/greyd.png', date:'2022.07 — 2024.08 · Side Project', role:'프리랜서 · 크리에이티브 디렉터 & UIUX 디자이너', tags:['UIUX','Ads'], w:11,
    pts:['핵심 기능 서비스 플로우·화면 설계 주도, 특허 확보에 기획자로 참여','플랫폼 브랜딩 및 앱·웹사이트 UIUX 설계','메타·구글 광고 집행 (월 약 100만원, ROAS 약 200%)']},
   {co:'Design Internships', grp:'ed', logos:['assets/logos/karim-rashid.png','assets/logos/david-weeks.png','assets/logos/boconcept.svg','assets/logos/designmu.png','assets/logos/nepplus.png'], studios:[['Karim Rashid','karim-rashid.png'],['Stephen Burks Man Made',''],['David Weeks Studio','david-weeks.png'],['BoConcept','boconcept.svg'],['Design MU','designmu.png'],['Nep Plus','nepplus.png']], date:'2014.06 — 2017.03 · 6곳', role:'Karim Rashid · Stephen Burks · David Weeks · BoConcept · Design MU · Nep Plus', tags:['Product','Furniture'], w:null, page:'internship', imgs:['assets/intern/ottawa-wall.webp','assets/intern/toot-interior.webp','assets/intern/toot-product.webp'],
    pts:['Karim Rashid Inc. — BoConcept·Kundalini 등 클라이언트 프로젝트 3D 모델링·렌더링','Stephen Burks Man Made — Art Basel 2016 Miami Beach 설치 공간 3D 데이터·프로토타입','David Weeks Studio — 조명 프로토타이핑, ICFF 기간 회사 전시 운영','Design MU · Nep Plus (서울) — 현대자동차, Carrier, Winix 제품 디자인 참여']},
@@ -3622,7 +3689,7 @@ document.getElementById('close').addEventListener('click',closeCase);
 addEventListener('keydown',e=>{if(e.key==='Escape'&&!caseEl.hidden) closeCase();});
 
 /* ---------- 서브 페이지 (#university, #internship) ---------- */
-const PAGES={university:document.getElementById('pg-university'),internship:document.getElementById('pg-internship'),linkfit:document.getElementById('pg-linkfit'),windmate:document.getElementById('pg-windmate'),panastove:document.getElementById('pg-panastove'),kfuturetech:document.getElementById('pg-kfuturetech'),human:document.getElementById('pg-human'),magus:document.getElementById('pg-magus'),jandi:document.getElementById('pg-jandi'),kaonci:document.getElementById('pg-kaonci'),ibc:document.getElementById('pg-ibc'),calendar:document.getElementById('pg-calendar'),kaon:document.getElementById('pg-kaon'),stationery:document.getElementById('pg-stationery')};
+const PAGES={university:document.getElementById('pg-university'),internship:document.getElementById('pg-internship'),linkfit:document.getElementById('pg-linkfit'),windmate:document.getElementById('pg-windmate'),panastove:document.getElementById('pg-panastove'),kfuturetech:document.getElementById('pg-kfuturetech'),human:document.getElementById('pg-human'),magus:document.getElementById('pg-magus'),jandi:document.getElementById('pg-jandi'),kaonci:document.getElementById('pg-kaonci'),keycap:document.getElementById('pg-keycap'),ibc:document.getElementById('pg-ibc'),calendar:document.getElementById('pg-calendar'),kaon:document.getElementById('pg-kaon'),stationery:document.getElementById('pg-stationery')};
 function goPage(k){ history.pushState({fromSite:true},'','#'+k); route(); }
 let pageReturn=null;
 function showPage(el){
@@ -3645,7 +3712,7 @@ function route(){
 }
 function leavePage(){ if(history.state&&history.state.fromSite){ history.back(); } else { history.replaceState(null,'',location.pathname+location.search+'#archive'); route(); } }
 document.addEventListener('click',e=>{
-  const a=e.target.closest('a[href="#university"],a[href="#internship"],a[href="#linkfit"],a[href="#windmate"],a[href="#panastove"],a[href="#kfuturetech"],a[href="#human"],a[href="#magus"],a[href="#jandi"],a[href="#kaonci"],a[href="#kaon"],a[href="#stationery"],a[href="#calendar"],a[href="#ibc"]'); if(!a) return;
+  const a=e.target.closest('a[href="#university"],a[href="#internship"],a[href="#linkfit"],a[href="#windmate"],a[href="#panastove"],a[href="#kfuturetech"],a[href="#human"],a[href="#magus"],a[href="#jandi"],a[href="#kaonci"],a[href="#kaon"],a[href="#stationery"],a[href="#calendar"],a[href="#ibc"],a[href="#keycap"]'); if(!a) return;
   e.preventDefault(); history.pushState({fromSite:true},'',a.getAttribute('href')); route();
 });
 document.querySelectorAll('.page [data-close]').forEach(b=>b.addEventListener('click',leavePage));
@@ -4001,6 +4068,11 @@ document.getElementById('lb-prev').addEventListener('click',()=>lbShow(lbI-1));
 document.getElementById('lb-next').addEventListener('click',()=>lbShow(lbI+1));
 lb.addEventListener('click',e=>{ if(e.target===lb) lbClose(); });
 addEventListener('keydown',e=>{ if(lb.hidden) return; if(e.key==='Escape'){e.stopImmediatePropagation();lbClose();} if(e.key==='ArrowRight') lbShow(lbI+1); if(e.key==='ArrowLeft') lbShow(lbI-1); },true);
+
+/* ---------- KAON Friends Keycaps ---------- */
+(()=>{ const pg=document.getElementById('pg-keycap'); if(!pg) return; const E=[{"k": "k1", "src": "assets/keycap/k1.webp", "alt": "Enter · 재활용 마크", "cap": "Keycap 01 — Enter · 재활용 마크", "g": "keycap"}, {"k": "k2", "src": "assets/keycap/k2.webp", "alt": "Enter · 분리수거함", "cap": "Keycap 02 — Enter · 분리수거함", "g": "keycap"}, {"k": "k3", "src": "assets/keycap/k3.webp", "alt": "Enter · 지구 안기", "cap": "Keycap 03 — Enter · 지구 안기", "g": "keycap"}, {"k": "k4", "src": "assets/keycap/k4.webp", "alt": "재활용 마크", "cap": "Keycap 04 — 재활용 마크", "g": "keycap"}, {"k": "k5", "src": "assets/keycap/k5.webp", "alt": "분리배출", "cap": "Keycap 05 — 분리배출", "g": "keycap"}]; const base=LB.length; E.forEach(e=>LB.push({src:e.src,alt:e.alt,cap:e.cap,g:e.g}));
+  pg.querySelectorAll('[data-kk-lb]').forEach(b=>b.addEventListener('click',()=>{ const k=E.findIndex(e=>e.k===b.dataset.kkLb); if(k>=0) lbOpen(base+k); }));
+  const ks=[...pg.querySelectorAll('.kk:not(.empty)')]; let i=0; if(!reduce) setInterval(()=>{ if(pg.hidden||document.hidden) return; ks.forEach(k=>k.classList.remove('on')); ks[i%ks.length].classList.add('on'); setTimeout(()=>ks.forEach(k=>k.classList.remove('on')),380); i++; },1400); })();
 
 /* ---------- IBC booth ---------- */
 (()=>{ const pg=document.getElementById('pg-ibc'); if(!pg) return; const E=[{"k": "booth", "src": "assets/ibc/booth2.webp", "alt": "IBC KAON 부스 전경", "cap": "IBC — KAON Booth Overview", "g": "ibc"}, {"k": "showcase", "src": "assets/ibc/showcase.webp", "alt": "쇼케이스 월", "cap": "On Site — Showcase Wall", "g": "ibc"}, {"k": "corner2", "src": "assets/ibc/corner2.webp", "alt": "부스 코너", "cap": "On Site — Corner Panels", "g": "ibc"}, {"k": "bar2", "src": "assets/ibc/bar2.webp", "alt": "KAON BAR", "cap": "On Site — KAON BAR", "g": "ibc"}, {"k": "keywall", "src": "assets/ibc/keywall.webp", "alt": "키비주얼 월", "cap": "Key Visual Wall — CONNECTED+", "g": "ibc"}, {"k": "corner", "src": "assets/ibc/corner.webp", "alt": "사업·솔루션 패널", "cap": "KAON GROUP · AI-Converged Connected Home", "g": "ibc"}, {"k": "g-key", "src": "assets/ibc/g-key.webp", "alt": "키비주얼 원본", "cap": "Original — Key Visual", "g": "ibc"}, {"k": "g-group", "src": "assets/ibc/g-group.webp", "alt": "KAON GROUP 패널 원본", "cap": "Original — KAON GROUP Panel", "g": "ibc"}, {"k": "g-home", "src": "assets/ibc/g-home.webp", "alt": "Connected Home 패널 원본", "cap": "Original — AI-Converged Connected Home", "g": "ibc"}, {"k": "sim-front", "src": "assets/ibc/sim-front.webp?v=2", "alt": "부스 정면 3D 시뮬레이션", "cap": "Simulation — Front View", "g": "ibc"}, {"k": "sim-home", "src": "assets/ibc/sim-home.webp?v=2", "alt": "부스 측면 3D 시뮬레이션", "cap": "Simulation — Side View", "g": "ibc"}, {"k": "sim-esg", "src": "assets/ibc/sim-esg.webp?v=2", "alt": "바 뒤편 3D 시뮬레이션", "cap": "Simulation — Bar Wall", "g": "ibc"}]; const base=LB.length; E.forEach(e=>LB.push({src:e.src,alt:e.alt,cap:e.cap,g:e.g}));
