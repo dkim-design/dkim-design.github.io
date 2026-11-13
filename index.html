@@ -1636,8 +1636,10 @@ body.lb-open .cursor{background:#EDEDED}
 .ib-ph:hover img{transform:scale(1.03)}
 .ib-ph:focus-visible{outline:2px solid var(--o);outline-offset:3px}
 .ib-ph .tg{position:absolute;left:14px;bottom:12px;font-size:11px;letter-spacing:.1em;color:#fff;background:rgba(20,20,22,.55);padding:6px 11px;border-radius:999px;backdrop-filter:blur(6px)}
-.ib-hero{aspect-ratio:16/9;margin-top:clamp(28px,4vw,48px)}
-.ib-hero img{object-position:50% 40%}
+.ib-hero{aspect-ratio:1663/1247;margin-top:clamp(28px,4vw,48px)}
+.ib-gal{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px}
+.ib-gal .ib-ph{aspect-ratio:4/3}
+@media (max-width:760px){ .ib-gal{grid-template-columns:minmax(0,1fr)} }
 .ib-two{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
 .ib-two.r{grid-template-columns:minmax(0,1fr) minmax(0,1.35fr)}
 .ib-two .ib-ph{aspect-ratio:4/3}
@@ -3126,7 +3128,8 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
       <div><dt>Role</dt><dd>Wall · AI<br><small>월그래픽 디자인 · AI 이미지 제작</small></dd></div>
             <div><dt>Graphics</dt><dd>4<br><small>키비주얼 · 사업 · 솔루션 · ESG</small></dd></div>
     </dl>
-    <button class="ib-ph ib-hero" type="button" data-ib-lb="booth" aria-label="IBC KAON 부스 전경 — 원형 행잉 사인과 CONNECTED+ 크게 보기"><img src="assets/ibc/booth.webp" alt="IBC KAON 부스 전경 — 원형 행잉 사인과 CONNECTED+" loading="lazy" decoding="async"><span class="tg">Booth Overview</span></button>
+    <button class="ib-ph ib-hero" type="button" data-ib-lb="booth" aria-label="IBC KAON 부스 전경 — 원형 행잉 사인과 CONNECTED+ 크게 보기"><img src="assets/ibc/booth2.webp" alt="IBC KAON 부스 전경 — 원형 행잉 사인과 CONNECTED+" loading="lazy" decoding="async"><span class="tg">Booth Overview</span></button>
+    <div class="ib-gal"><button class="ib-ph" type="button" data-ib-lb="showcase" aria-label="Sustainability in Action 패널과 제품 쇼케이스 월 크게 보기"><img src="assets/ibc/showcase.webp" alt="Sustainability in Action 패널과 제품 쇼케이스 월" loading="lazy" decoding="async"><span class="tg">Showcase Wall</span></button><button class="ib-ph" type="button" data-ib-lb="corner2" aria-label="부스 코너 — KAON GROUP 패널과 Connected Home 패널 크게 보기"><img src="assets/ibc/corner2.webp" alt="부스 코너 — KAON GROUP 패널과 Connected Home 패널" loading="lazy" decoding="async"><span class="tg">Corner Panels</span></button><button class="ib-ph" type="button" data-ib-lb="bar2" aria-label="KAON BAR와 미팅룸 크게 보기"><img src="assets/ibc/bar2.webp" alt="KAON BAR와 미팅룸" loading="lazy" decoding="async"><span class="tg">KAON BAR</span></button></div>
   </div></div>
 
   <section class="ib-sec"><div class="wrap"><div class="c">
@@ -3413,7 +3416,7 @@ const WORKS=[
   {title:'KAON Friends 2027 Calendar', page:'calendar', img:'assets/calendar/thumb.webp?v=5', sub:'KAON GROUP', tag:'AI Artwork · Calendar', period:'2026', cat:['ai','brand','content'], scene:3,
    kr:'가온프렌즈를 주인공으로 생성형 AI로 그린 2027 탁상 캘린더', role:'기획·AI 아트워크·편집디자인', client:'가온그룹', tools:'Generative AI, Photoshop, Illustrator',
    kpis:[['500부','제작·배포'],['3주','제작 기간 · 2024 대비 절반 이상 단축'],['18점','월별 14 · 상태 카드 4']], ch:'', ap:'', out:''},
-  {title:'KAON Global Exhibitions', page:'ibc', img:'assets/ibc/thumb.webp', sub:'KAON GROUP', tag:'Exhibition · AI Wall Graphics', period:'2021 — 현재', cat:['brand','ai'], scene:4,
+  {title:'KAON Global Exhibitions', page:'ibc', img:'assets/ibc/thumb.webp?v=2', sub:'KAON GROUP', tag:'Exhibition · AI Wall Graphics', period:'2021 — 현재', cat:['brand','ai'], scene:4,
    kr:'IBC·MWC·BBWF 등 글로벌 전시 부스 그래픽 — 대표 사례 IBC 2026 (CONNECTED+)', role:'전시 부스 그래픽 디자인 · AI 이미지 제작', client:'가온그룹', tools:'Google AI Studio, ChatGPT, Illustrator',
    kpis:[], ch:'', ap:'', out:''},
   {title:'KAON GROUP CI', page:'kaonci', img:'assets/kaonci/thumb.webp?v=4', sub:'KAON GROUP', tag:'CI · Guideline', period:'2025', cat:['brand'], scene:4,
@@ -4000,7 +4003,7 @@ lb.addEventListener('click',e=>{ if(e.target===lb) lbClose(); });
 addEventListener('keydown',e=>{ if(lb.hidden) return; if(e.key==='Escape'){e.stopImmediatePropagation();lbClose();} if(e.key==='ArrowRight') lbShow(lbI+1); if(e.key==='ArrowLeft') lbShow(lbI-1); },true);
 
 /* ---------- IBC booth ---------- */
-(()=>{ const pg=document.getElementById('pg-ibc'); if(!pg) return; const E=[{"k": "booth", "src": "assets/ibc/booth.webp", "alt": "IBC KAON 부스 전경", "cap": "IBC — KAON Booth Overview", "g": "ibc"}, {"k": "keywall", "src": "assets/ibc/keywall.webp", "alt": "키비주얼 월", "cap": "Key Visual Wall — CONNECTED+", "g": "ibc"}, {"k": "corner", "src": "assets/ibc/corner.webp", "alt": "사업·솔루션 패널", "cap": "KAON GROUP · AI-Converged Connected Home", "g": "ibc"}, {"k": "g-key", "src": "assets/ibc/g-key.webp", "alt": "키비주얼 원본", "cap": "Original — Key Visual", "g": "ibc"}, {"k": "g-group", "src": "assets/ibc/g-group.webp", "alt": "KAON GROUP 패널 원본", "cap": "Original — KAON GROUP Panel", "g": "ibc"}, {"k": "g-home", "src": "assets/ibc/g-home.webp", "alt": "Connected Home 패널 원본", "cap": "Original — AI-Converged Connected Home", "g": "ibc"}, {"k": "sim-front", "src": "assets/ibc/sim-front.webp?v=2", "alt": "부스 정면 3D 시뮬레이션", "cap": "Simulation — Front View", "g": "ibc"}, {"k": "sim-home", "src": "assets/ibc/sim-home.webp?v=2", "alt": "부스 측면 3D 시뮬레이션", "cap": "Simulation — Side View", "g": "ibc"}, {"k": "sim-esg", "src": "assets/ibc/sim-esg.webp?v=2", "alt": "바 뒤편 3D 시뮬레이션", "cap": "Simulation — Bar Wall", "g": "ibc"}]; const base=LB.length; E.forEach(e=>LB.push({src:e.src,alt:e.alt,cap:e.cap,g:e.g}));
+(()=>{ const pg=document.getElementById('pg-ibc'); if(!pg) return; const E=[{"k": "booth", "src": "assets/ibc/booth2.webp", "alt": "IBC KAON 부스 전경", "cap": "IBC — KAON Booth Overview", "g": "ibc"}, {"k": "showcase", "src": "assets/ibc/showcase.webp", "alt": "쇼케이스 월", "cap": "On Site — Showcase Wall", "g": "ibc"}, {"k": "corner2", "src": "assets/ibc/corner2.webp", "alt": "부스 코너", "cap": "On Site — Corner Panels", "g": "ibc"}, {"k": "bar2", "src": "assets/ibc/bar2.webp", "alt": "KAON BAR", "cap": "On Site — KAON BAR", "g": "ibc"}, {"k": "keywall", "src": "assets/ibc/keywall.webp", "alt": "키비주얼 월", "cap": "Key Visual Wall — CONNECTED+", "g": "ibc"}, {"k": "corner", "src": "assets/ibc/corner.webp", "alt": "사업·솔루션 패널", "cap": "KAON GROUP · AI-Converged Connected Home", "g": "ibc"}, {"k": "g-key", "src": "assets/ibc/g-key.webp", "alt": "키비주얼 원본", "cap": "Original — Key Visual", "g": "ibc"}, {"k": "g-group", "src": "assets/ibc/g-group.webp", "alt": "KAON GROUP 패널 원본", "cap": "Original — KAON GROUP Panel", "g": "ibc"}, {"k": "g-home", "src": "assets/ibc/g-home.webp", "alt": "Connected Home 패널 원본", "cap": "Original — AI-Converged Connected Home", "g": "ibc"}, {"k": "sim-front", "src": "assets/ibc/sim-front.webp?v=2", "alt": "부스 정면 3D 시뮬레이션", "cap": "Simulation — Front View", "g": "ibc"}, {"k": "sim-home", "src": "assets/ibc/sim-home.webp?v=2", "alt": "부스 측면 3D 시뮬레이션", "cap": "Simulation — Side View", "g": "ibc"}, {"k": "sim-esg", "src": "assets/ibc/sim-esg.webp?v=2", "alt": "바 뒤편 3D 시뮬레이션", "cap": "Simulation — Bar Wall", "g": "ibc"}]; const base=LB.length; E.forEach(e=>LB.push({src:e.src,alt:e.alt,cap:e.cap,g:e.g}));
   pg.querySelectorAll('[data-ib-lb]').forEach(b=>b.addEventListener('click',()=>{ const k=E.findIndex(e=>e.k===b.dataset.ibLb); if(k>=0) lbOpen(base+k); })); })();
 
 /* ---------- KAON Friends 2027 Calendar ---------- */
