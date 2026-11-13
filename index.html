@@ -1656,6 +1656,9 @@ body.lb-open .cursor{background:#EDEDED}
 .ib-arts .ib-art{margin-top:clamp(28px,4vw,48px)}
 .ib-art.esg{max-width:760px;margin-inline:auto}
 @media (max-width:900px){ .ib-arts{grid-template-columns:minmax(0,1fr)} }
+.ib-tools{list-style:none;margin:0 0 28px;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.ib-tools li{display:inline-flex;align-items:center;gap:8px;padding:9px 16px 9px 10px;border:1px solid var(--line);border-radius:999px;font-size:14px;font-weight:500;background:#fff}
+.ib-tools small{font-size:10px;letter-spacing:.1em;padding:3px 7px;border-radius:999px;background:rgba(243,122,32,.12);color:#b4561a}
 .ib-slogan{margin:0;padding:clamp(40px,6vw,72px) 0;text-align:center}
 .ib-slogan b{display:block;font-size:clamp(40px,7vw,96px);font-weight:600;letter-spacing:-.04em;line-height:1}
 .ib-slogan b i{font-style:normal;color:var(--o)}
@@ -3132,11 +3135,12 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
 
   <section class="ib-sec"><div class="wrap"><div class="c">
     <div class="cl-h"><span class="no" style="color:var(--o)">03 — AI Workflow</span><h3>생성형 AI로 만든 대형 월그래픽</h3><p>촬영이나 구매 이미지 대신, 메시지에 꼭 맞는 장면을 생성형 AI로 직접 만들었어요. 수 미터 크기의 전시 벽에 출력해도 어색하지 않도록 장면 기획부터 보정·합성까지 거쳤어요.</p></div>
+    <ul class="ib-tools" aria-label="사용 도구"><li><small>AI</small>Google AI Studio</li><li><small>AI</small>ChatGPT</li><li><small>Design</small>Illustrator</li></ul>
     <ol class="cl-steps" style="padding:0;margin:0">
       <li><b>메시지 → 장면 기획</b><span>CONNECTED+의 '연결'을 강·다리·도시·재생에너지가 하나로 이어지는 풍경으로, 사업 패널은 거실·오피스·물류 현장 장면으로 풀었어요.</span></li>
-      <li><b>AI 이미지 생성</b><span>생성형 AI로 도시 파노라마, 아이소메트릭 커넥티드 홈, 사업별 사용 장면을 만들고 톤이 맞는 컷을 골랐어요.</span></li>
+      <li><b>AI 이미지 생성</b><span>Google AI Studio와 ChatGPT로 도시 파노라마, 아이소메트릭 커넥티드 홈, 사업별 사용 장면을 만들고 톤이 맞는 컷을 골랐어요.</span></li>
       <li><b>보정 · 합성</b><span>부스의 흰 벽과 오렌지 라인 조명에 맞춰 하늘빛·웜톤을 통일하고, 로고·아이콘·텍스트와 자연스럽게 겹치도록 여백과 밝기를 다듬었어요.</span></li>
-      <li><b>대형 출력 대응</b><span>벽 크기에 맞춰 이미지를 확장하고, 원거리에서도 읽히도록 로고·슬로건·정보 위계를 정리해 출력 데이터를 만들었어요.</span></li>
+      <li><b>대형 출력 대응</b><span>Illustrator에서 벽 크기에 맞춰 레이아웃을 잡고, 원거리에서도 읽히도록 로고·슬로건·정보 위계를 정리해 출력 데이터를 만들었어요.</span></li>
     </ol>
   </div></div></section>
 
@@ -3405,7 +3409,7 @@ const WORKS=[
    ap:'CI·BI 신규 개발과 리뉴얼, 로고·심볼·패턴·사원증을 제작하고, 신사업 Sool.Zip의 브랜딩과 앱 UIUX를 기획·디자인했어요. IBC·MWC·BBWF 등 전시의 부스 외벽·배너·사인·스펙보드 디자인과 영상·브로슈어·리플렛 제작을 총괄했어요.',
    out:'CI·BI 4건을 개발·리뉴얼하고 글로벌 전시 6회 이상의 비주얼을 총괄했어요. 계열사 K-FutureTech 로고는 상표 등록(제40-2058814호)까지 이어졌어요.'},
   {title:'IBC 2026 KAON Booth', page:'ibc', img:'assets/ibc/thumb.webp', sub:'KAON GROUP', tag:'Exhibition · AI Wall Graphics', period:'2026', cat:['brand','ai'], scene:4,
-   kr:'IBC 암스테르담 KAON 부스 월그래픽 디자인 (CONNECTED+)', role:'부스 월그래픽 디자인 · AI 이미지 제작', client:'가온그룹', tools:'Generative AI, Photoshop, Illustrator',
+   kr:'IBC 암스테르담 KAON 부스 월그래픽 디자인 (CONNECTED+)', role:'부스 월그래픽 디자인 · AI 이미지 제작', client:'가온그룹', tools:'Google AI Studio, ChatGPT, Illustrator',
    kpis:[], ch:'', ap:'', out:''},
   {title:'KAON GROUP CI', page:'kaonci', img:'assets/kaonci/thumb.webp?v=4', sub:'KAON GROUP', tag:'CI · Guideline', period:'2025', cat:['brand'], scene:4,
    kr:'그룹사·계열사 2곳(BROADBAND·ROBOTICS) 통합 CI와 가이드라인', role:'Brand Designer', client:'가온그룹', tools:'Illustrator, Photoshop',
