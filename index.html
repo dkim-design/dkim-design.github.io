@@ -1616,6 +1616,117 @@ body.lb-open .cursor{background:#EDEDED}
 @media (max-width:900px){ .st-stage{grid-template-columns:minmax(0,1fr)} .st-paper{width:min(78%,420px)} }
 @media (max-width:600px){ .st-family{grid-template-columns:minmax(0,1fr) minmax(0,1fr)} .st-family .st-fig:last-child{grid-column:1/-1;width:50%;justify-self:center} }
 @media (prefers-reduced-motion:reduce){ .st-paper{transition:none} }
+
+/* ===== KAON Friends 2027 Calendar ===== */
+#pg-calendar{--o:#F37A20;--cream:#FBF3EA}
+.cl-sec{padding-block:clamp(56px,8vw,110px);border-top:1px solid var(--line)}
+.cl-h{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin:0 0 clamp(28px,4vw,48px)}
+.cl-h .no{font-size:12px;letter-spacing:.14em;color:var(--o)}
+.cl-h h3{margin:0;font-size:clamp(26px,3.4vw,44px);font-weight:500;letter-spacing:-.03em;line-height:1.1}
+.cl-h p{margin:0;flex-basis:100%;max-width:640px;color:var(--ink-2);font-size:15px;line-height:1.7}
+/* stage */
+.cl-stage{position:relative;border-radius:18px;overflow:hidden;background:radial-gradient(90% 70% at 50% 30%,#FFF6EC 0%,#F7E2CF 55%,#EDCDB2 100%);padding:clamp(28px,5vw,64px) clamp(16px,4vw,56px) clamp(24px,4vw,44px);display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
+.cl-stage::after{content:"";position:absolute;left:0;right:0;bottom:0;height:34%;background:linear-gradient(180deg,rgba(255,255,255,0),rgba(214,170,134,.28));pointer-events:none}
+.dkc{position:relative;z-index:1;perspective:2200px;padding-top:4%;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.dk-body{position:relative;transform-style:preserve-3d;transition:transform 1.1s cubic-bezier(.7,0,.2,1);transform:rotateX(5deg) rotateY(var(--ry,-8deg))}
+.dkc:hover .dk-body{--ry:-3deg}
+.dkc.back .dk-body{transform:rotateX(5deg) rotateY(calc(180deg + var(--ry,-8deg)))}
+.dk-face{position:relative;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform-style:preserve-3d}
+.dk-face.bk{position:absolute;inset:0;transform:rotateY(180deg)}
+.dk-face.fr{transition:opacity 0s .5s}.dk-face.bk{opacity:0;transition:opacity 0s .5s}.dkc.back .dk-face.fr{opacity:0}.dkc.back .dk-face.bk{opacity:1}
+.dk-sheet::before{content:"";position:absolute;left:4.4%;right:4.4%;top:1.1%;height:1.4%;z-index:4;background:radial-gradient(circle at 50% 50%,rgba(60,40,30,.55) 0 1.6px,transparent 2.2px) 0 0/12px 100% repeat-x;pointer-events:none}
+.dk-sheet{position:relative;aspect-ratio:1859/1504;transform-style:preserve-3d;perspective:1600px}
+.dk-sheet img{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;background:#fff;border-radius:3px;box-shadow:0 1px 0 rgba(0,0,0,.04)}
+.dk-sheet .stack{box-shadow:0 2px 0 #efe9e3,0 4px 0 #e6dfd8,0 6px 0 #ddd5cd,0 26px 50px -12px rgba(96,52,20,.45),0 10px 20px -8px rgba(96,52,20,.3)}
+.dk-sheet .fl{transform-origin:50% -2.4%;backface-visibility:hidden;-webkit-backface-visibility:hidden;z-index:2;will-change:transform}
+.dk-sheet .shade{position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,0) 30%);opacity:0;border-radius:3px}
+.dk-wire{position:absolute;left:4.4%;right:4.4%;top:-2.6%;height:4.6%;z-index:5;background:repeating-linear-gradient(90deg,transparent 0 4px,#2b2b30 4px 5.4px,#a6a6ae 5.4px 6.3px,#2b2b30 6.3px 7.4px,transparent 7.4px 12px);border-radius:3px;pointer-events:none;filter:drop-shadow(0 1px 1px rgba(0,0,0,.25))}
+.dk-wire::before{content:"";position:absolute;left:0;right:0;top:46%;height:2px;background:#3a3a40;opacity:.55}
+.dk-wire::after{content:"";position:absolute;left:46%;right:46%;top:-30%;height:60%;border:2px solid #4a4a50;border-bottom:0;border-radius:40px 40px 0 0;background:var(--cream)}
+.dk-base{position:relative;height:clamp(14px,2.2vw,26px);margin:0 -2.5%;background:linear-gradient(180deg,#fdfcfb 0%,#ece7e2 55%,#d9d2cb 100%);border-radius:3px 3px 6px 6px;box-shadow:0 18px 30px -10px rgba(96,52,20,.5);transform:translateZ(0)}
+.dk-base::after{content:"KAON FRIENDS · 2027";position:absolute;inset:0;display:grid;place-items:center;font-size:clamp(7px,.8vw,10px);letter-spacing:.32em;color:#b8aea5}
+.dk-floor{height:28px;margin:-6px 6% 0;background:radial-gradient(closest-side,rgba(110,60,25,.35),rgba(110,60,25,0));filter:blur(4px)}
+.cl-info{position:relative;z-index:1;min-width:0}
+.cl-now{display:grid;gap:10px;min-height:210px}
+.cl-now .m{display:flex;align-items:baseline;gap:12px}
+.cl-now .m b{font-size:clamp(64px,8vw,112px);line-height:.85;font-weight:400;letter-spacing:-.05em;color:var(--o);font-variant-numeric:tabular-nums}
+.cl-now .m span{font-size:13px;letter-spacing:.16em;color:#7a5a44}
+.cl-now h4{margin:6px 0 0;font-size:clamp(20px,2.2vw,28px);font-weight:600;letter-spacing:-.03em;color:#2a1e16}
+.cl-now .tag{justify-self:start;font-size:11px;letter-spacing:.06em;padding:5px 11px;border-radius:999px;background:rgba(243,122,32,.12);color:#b4561a}
+.cl-now p{margin:0;color:#6b5546;font-size:14.5px;line-height:1.7;max-width:34ch}
+.cl-now>*{transition:opacity .35s,transform .45s var(--ease)}
+.cl-now.sw>*{opacity:0;transform:translateY(8px)}
+.cl-ctrl{display:flex;align-items:center;gap:10px;margin-top:26px;flex-wrap:wrap}
+.cl-ctrl button{height:44px;min-width:44px;padding:0 16px;border-radius:999px;border:1px solid rgba(90,50,20,.22);background:rgba(255,255,255,.55);color:#2a1e16;font:inherit;font-size:13px;cursor:pointer;display:inline-grid;place-items:center;transition:background .3s,color .3s,border-color .3s;backdrop-filter:blur(6px)}
+.cl-ctrl button:hover{background:#2a1e16;color:#fff;border-color:#2a1e16}
+.cl-ctrl button[aria-pressed="true"]{background:var(--o);border-color:var(--o);color:#fff}
+.cl-ctrl svg{width:16px;height:16px}
+.cl-tl{grid-column:1/-1;position:relative;z-index:1;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding:6px 2px 2px;margin-top:4px}
+.cl-tl::-webkit-scrollbar{display:none}
+.cl-tl button{flex:1 0 auto;min-width:44px;height:52px;border:0;background:none;cursor:pointer;display:grid;align-content:center;justify-items:center;gap:3px;color:#9a7b66;font:inherit;border-top:2px solid rgba(90,50,20,.14);transition:color .3s,border-color .3s}
+.cl-tl button b{font-size:15px;font-weight:500;font-variant-numeric:tabular-nums}
+.cl-tl button small{font-size:9px;letter-spacing:.1em}
+.cl-tl button:hover{color:#2a1e16}
+.cl-tl button.on{color:var(--o);border-top-color:var(--o)}
+.cl-tl .yr{flex:none;align-self:end;padding:0 6px 6px;font-size:9px;letter-spacing:.14em;color:#b39580;writing-mode:vertical-rl;transform:rotate(180deg)}
+.cl-hint{grid-column:1/-1;position:relative;z-index:1;margin:0;font-size:12px;color:#9a7b66}
+/* seasons */
+.cl-season{display:grid;grid-template-columns:200px minmax(0,1fr);gap:clamp(18px,3vw,40px);padding-block:clamp(26px,3.4vw,40px);border-top:1px solid var(--line)}
+.cl-season:first-of-type{border-top:0;padding-top:0}
+.cl-season>header b{display:block;font-size:clamp(26px,3vw,38px);font-weight:500;letter-spacing:-.03em}
+.cl-season>header span{font-size:12px;color:var(--ink-2);letter-spacing:.06em}
+.cl-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.cl-card{all:unset;box-sizing:border-box;display:grid;gap:12px;cursor:pointer;min-width:0}
+.cl-card .im{position:relative;aspect-ratio:1400/816;border-radius:10px;overflow:hidden;background:#f1e7dc}
+.cl-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.1s var(--ease)}
+.cl-card:hover img,.cl-card:focus-visible img{transform:scale(1.05)}
+.cl-card:focus-visible .im{outline:2px solid var(--o);outline-offset:3px}
+.cl-card .im::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(0,0,0,.38) 0%,rgba(0,0,0,0) 38%);pointer-events:none}
+.cl-card .im i{z-index:1;position:absolute;left:12px;top:10px;font-style:normal;font-size:clamp(26px,2.6vw,38px);font-weight:500;letter-spacing:-.04em;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.35);line-height:1}
+.cl-card .im i small{display:block;font-size:10px;letter-spacing:.16em;margin-top:4px;opacity:.9}
+.cl-card .tx{display:grid;gap:4px}
+.cl-card .tx b{font-size:15.5px;font-weight:600;letter-spacing:-.02em}
+.cl-card .tx em{font-style:normal;font-size:11px;color:var(--o);letter-spacing:.04em}
+.cl-card .tx span{font-size:13px;line-height:1.6;color:var(--ink-2)}
+/* planner */
+.cl-plan{display:grid;gap:16px}
+.cl-plan .side{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.cl-ph{all:unset;box-sizing:border-box;cursor:pointer;display:block;border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 0 0 1px var(--line)}
+.cl-ph img{display:block;width:100%;height:auto;transition:transform 1.1s var(--ease)}
+.cl-ph:hover img{transform:scale(1.025)}
+.cl-ph:focus-visible{outline:2px solid var(--o);outline-offset:3px}
+.cl-feat{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:28px}
+.cl-feat div{padding-top:14px;border-top:1px solid var(--ink)}
+.cl-feat b{display:block;font-size:14px;font-weight:600;margin-bottom:6px}
+.cl-feat span{font-size:13px;line-height:1.6;color:var(--ink-2)}
+.cl-pages{display:flex;gap:12px;overflow-x:auto;padding:22px 2px 6px;scrollbar-width:thin;scroll-snap-type:x proximity}
+.cl-pages .cl-ph{flex:0 0 clamp(180px,22vw,260px);scroll-snap-align:start}
+/* status */
+.cl-st{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.cl-st .cl-ph{position:relative}
+.cl-st .cl-ph span{position:absolute;left:12px;bottom:10px;font-size:10.5px;letter-spacing:.1em;color:#fff;background:rgba(30,20,12,.55);padding:5px 9px;border-radius:999px;backdrop-filter:blur(6px)}
+.cl-st .cl-ph:hover{transform:translateY(-4px)}
+.cl-st .cl-ph{transition:transform .5s var(--ease)}
+/* process */
+.cl-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;counter-reset:cs}
+.cl-steps li{list-style:none;padding:22px 20px 24px;border-radius:14px;background:var(--cream);display:grid;gap:8px;align-content:start}
+.cl-steps li::before{counter-increment:cs;content:"0" counter(cs);font-size:12px;letter-spacing:.14em;color:var(--o)}
+.cl-steps b{font-size:16px;font-weight:600;letter-spacing:-.02em}
+.cl-steps span{font-size:13.5px;line-height:1.65;color:#6b5546}
+.cl-quote{margin:clamp(40px,6vw,72px) 0 0;text-align:center;font-size:clamp(22px,3vw,38px);font-weight:400;letter-spacing:-.03em;line-height:1.3}
+.cl-quote em{font-style:normal;color:var(--o)}
+.cl-quote small{display:block;margin-top:12px;font-size:12px;letter-spacing:.14em;color:var(--ink-2)}
+@media (max-width:520px){ .cl-plan .side{grid-template-columns:minmax(0,1fr)} }
+@media (max-width:900px){
+  .cl-stage{grid-template-columns:minmax(0,1fr)}
+  .cl-now{min-height:0}
+  .cl-season{grid-template-columns:minmax(0,1fr)}
+  .cl-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cl-plan{grid-template-columns:minmax(0,1fr)}
+  .cl-feat,.cl-st,.cl-steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:520px){ .cl-cards{grid-template-columns:minmax(0,1fr)} .cl-steps{grid-template-columns:minmax(0,1fr)} .cl-tl button{min-width:36px} }
+
 /* stationery: live letter + envelopes */
 .lt{position:relative;width:100%;aspect-ratio:1241/1754;container-type:inline-size;overflow:hidden;background:#fff}
 .lt > img{position:absolute;inset:0;width:100%;height:100%;display:block}
@@ -1996,7 +2107,7 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
           <h3>SNS Channels</h3><p>B2B·B2C 공식 채널 운영·관리, 콘텐츠 기획·발행·모니터링, 톤앤매너 관리</p>
           <ul class="cap-tools"><li style="--bc:#0A66C2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</li><li style="--bc:#FF0000"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>YouTube</li><li style="--bc:#E4405F"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>Instagram</li><li style="--bc:#0866FF"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>Facebook</li><li style="--bc:#FFFFFF"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>X</li></ul>
           <span class="cap-go">Proof · AI LinkedIn Content Planner <em>↗</em></span>
-        </article><article class="cap-card  rv" style="--k:5" data-go="case:9" tabindex="0" role="button" aria-label="Digital Marketing — greyd 프로젝트 보기">
+        </article><article class="cap-card  rv" style="--k:5" data-go="case:10" tabindex="0" role="button" aria-label="Digital Marketing — greyd 프로젝트 보기">
           <div class="cap-top"><span class="cap-no">06</span><span class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 18 10 12l4 4 6-8"/><path d="M15 8h5v5"/></svg></span></div>
           <div class="cap-metric"><b data-to="200">0</b><i>%</i><small>광고 ROAS</small></div>
           <h3>Digital Marketing</h3><p>콘텐츠 전략 수립, 퍼포먼스 광고 집행, GA4·UTM 성과 분석</p>
@@ -2911,6 +3022,85 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
   </section>
 </div>
 
+<div class="case page" id="pg-calendar" role="dialog" aria-modal="true" aria-labelledby="pcl-title" hidden>
+  <div class="case-top wrap"><div class="c"><span class="label">Project — KAON GROUP · In-house</span><button class="closeb" type="button" data-close>닫기 ✕</button></div></div>
+  <div class="wrap"><div class="c">
+    <header class="pg-head">
+      <h2 class="pg-title" id="pcl-title">KAON Friends 2027 Calendar</h2>
+      <div class="pg-meta"><span><b>2026</b> · KAON GROUP 사내 프로젝트</span><span>Generative AI Artwork · Desk Calendar</span><span>230 × 185 mm · 2026.12 — 2028.01</span></div>
+    </header>
+    <div class="pg-intro"><span class="label">About this project</span><p class="pg-lead">직접 만든 그룹 캐릭터 IP <b>가온프렌즈</b>를 주인공으로, 생성형 AI로 열네 달의 장면을 그린 2027 탁상 캘린더예요. 달마다 계절과 명절, 공휴일, 시기별 분위기를 키워드로 정리해 장면을 기획했고, 저작권 등록된 캐릭터의 조형과 컬러가 모든 장면에서 같은 모습으로 보이게 다듬었어요. 앞면은 아트워크와 날짜 띠, 뒷면은 주차·절기·음력까지 담은 플래너로 구성했고, 책상 위 자리 상태를 알리는 상태 카드 4종을 더했어요.</p></div>
+    <dl class="ix-stats">
+      <div><dt>Months</dt><dd>14<br><small>2026.12 — 2028.01</small></dd></div>
+      <div><dt>Artworks</dt><dd>18<br><small>월별 14 · 상태 카드 4</small></dd></div>
+      <div><dt>Format</dt><dd>230×185<br><small>탁상 월판 · 양면</small></dd></div>
+      <div><dt>Made with</dt><dd>AI<br><small>생성형 AI · 편집디자인</small></dd></div>
+    </dl>
+  </div></div>
+
+  <section class="cl-sec"><div class="wrap"><div class="c">
+    <div class="cl-h"><span class="no">01 — Desk Mockup</span><h3>책상 위에서 넘겨 보는 열네 달</h3><p>캘린더를 누르거나 화살표로 한 장씩 넘겨 보세요. 앞면·뒷면 버튼을 누르면 캘린더가 돌아가며 뒷면 플래너가 보여요.</p></div>
+    <div class="cl-stage" id="cl-stage">
+      <div class="dkc" id="cl-dk" role="group" aria-roledescription="탁상 캘린더 목업" aria-label="2027 캘린더 목업">
+        <div class="dk-body">
+          <div class="dk-face fr"><div class="dk-sheet"><img class="stack pg" src="assets/calendar/cover.webp" alt="2027 캘린더 표지 — 가온프렌즈 피규어"><img class="fl" alt="" aria-hidden="true" hidden><span class="shade"></span><span class="dk-wire"></span></div><div class="dk-base"></div></div>
+          <div class="dk-face bk"><div class="dk-sheet"><img class="stack pg" src="assets/calendar/year27.webp" alt="2027 연간 달력 면"><img class="fl" alt="" aria-hidden="true" hidden><span class="shade"></span><span class="dk-wire"></span></div><div class="dk-base"></div></div>
+        </div>
+        <div class="dk-floor" aria-hidden="true"></div>
+      </div>
+      <div class="cl-info">
+        <div class="cl-now" id="cl-now" aria-live="polite"><div class="m"><b>2027</b><span>COVER</span></div><h4>KAON Friends Calendar</h4><span class="tag">Beyond connection</span><p>가온프렌즈와 함께하는 2027년. 표지부터 한 장씩 넘겨 보세요.</p></div>
+        <div class="cl-ctrl">
+          <button type="button" id="cl-prev" aria-label="이전 달"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button type="button" id="cl-next" aria-label="다음 달"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 5l7 7-7 7"/></svg></button>
+          <button type="button" id="cl-side" aria-pressed="false">뒷면 보기 ↻</button>
+          <button type="button" id="cl-play" aria-pressed="false">자동 넘김 끄기</button>
+        </div>
+      </div>
+      <div class="cl-tl" id="cl-tl" role="tablist" aria-label="월 선택"><button type="button" data-k="0" class="on" aria-label="표지"><b>◎</b><small>COVER</small></button><span class="yr">2026</span><button type="button" data-k="1" aria-label="2026년 12월 — 크리스마스 준비"><b>12</b><small>DEC</small></button><span class="yr">2027</span><button type="button" data-k="2" aria-label="2027년 1월 — 새해 일출"><b>01</b><small>JAN</small></button><button type="button" data-k="3" aria-label="2027년 2월 — 설날"><b>02</b><small>FEB</small></button><button type="button" data-k="4" aria-label="2027년 3월 — 봄 피크닉"><b>03</b><small>MAR</small></button><button type="button" data-k="5" aria-label="2027년 4월 — 벚꽃 산책"><b>04</b><small>APR</small></button><button type="button" data-k="6" aria-label="2027년 5월 — 놀이공원 나들이"><b>05</b><small>MAY</small></button><button type="button" data-k="7" aria-label="2027년 6월 — 호숫가 플로깅"><b>06</b><small>JUN</small></button><button type="button" data-k="8" aria-label="2027년 7월 — 장마"><b>07</b><small>JUL</small></button><button type="button" data-k="9" aria-label="2027년 8월 — 여름휴가"><b>08</b><small>AUG</small></button><button type="button" data-k="10" aria-label="2027년 9월 — 추석"><b>09</b><small>SEP</small></button><button type="button" data-k="11" aria-label="2027년 10월 — 단풍 하이킹"><b>10</b><small>OCT</small></button><button type="button" data-k="12" aria-label="2027년 11월 — 독서의 계절"><b>11</b><small>NOV</small></button><button type="button" data-k="13" aria-label="2027년 12월 — 연말 파티"><b>12</b><small>DEC</small></button><span class="yr">2028</span><button type="button" data-k="14" aria-label="2028년 1월 — 눈사람 만들기"><b>01</b><small>JAN</small></button></div>
+    </div>
+  </div></div></section>
+
+  <section class="cl-sec"><div class="wrap"><div class="c">
+    <div class="cl-h"><span class="no">02 — 14 Months, 14 Stories</span><h3>계절과 명절을 따라가는 장면 설계</h3><p>새해 일출, 설날, 벚꽃, 어린이날, 장마, 여름휴가, 추석, 단풍처럼 그 달을 대표하는 순간을 하나씩 골라 가온프렌즈의 하루로 연출했어요.</p></div>
+    <div class="cl-season"><header><b>Winter</b><span>겨울 · 2026 — 2027</span></header><div class="cl-cards"><button class="cl-card" type="button" data-cl-lb="a0" aria-label="2026년 12월 크리스마스 준비 크게 보기"><span class="im"><img src="assets/calendar/a01.webp" alt="2026년 12월 — 크리스마스 준비 장면의 가온프렌즈" loading="lazy" decoding="async"><i>12<small>DEC 2026</small></i></span><span class="tx"><em>Christmas Eve</em><b>크리스마스 준비</b><span>통창 너머 눈 덮인 산을 배경으로 다 함께 트리를 꾸미며 한 해의 마지막 달을 열어요.</span></span></button><button class="cl-card" type="button" data-cl-lb="a1" aria-label="2027년 1월 새해 일출 크게 보기"><span class="im"><img src="assets/calendar/a02.webp" alt="2027년 1월 — 새해 일출 장면의 가온프렌즈" loading="lazy" decoding="async"><i>01<small>JAN 2027</small></i></span><span class="tx"><em>신정 · New Year</em><b>새해 일출</b><span>눈 덮인 산 정상에서 첫 해돋이를 맞으며 새해 다짐을 나눠요.</span></span></button><button class="cl-card" type="button" data-cl-lb="a2" aria-label="2027년 2월 설날 크게 보기"><span class="im"><img src="assets/calendar/a03.webp" alt="2027년 2월 — 설날 장면의 가온프렌즈" loading="lazy" decoding="async"><i>02<small>FEB 2027</small></i></span><span class="tx"><em>설 연휴 · Seollal</em><b>설날</b><span>한복을 차려입고 다과상에 둘러앉아 명절의 정을 나눠요.</span></span></button></div></div><div class="cl-season"><header><b>Spring</b><span>봄 · 2027</span></header><div class="cl-cards"><button class="cl-card" type="button" data-cl-lb="a3" aria-label="2027년 3월 봄 피크닉 크게 보기"><span class="im"><img src="assets/calendar/a04.webp" alt="2027년 3월 — 봄 피크닉 장면의 가온프렌즈" loading="lazy" decoding="async"><i>03<small>MAR 2027</small></i></span><span class="tx"><em>삼일절 · 새 학기</em><b>봄 피크닉</b><span>호숫가 잔디밭에 돗자리를 펴고 봄의 시작을 맞아요.</span></span></button><button class="cl-card" type="button" data-cl-lb="a4" aria-label="2027년 4월 벚꽃 산책 크게 보기"><span class="im"><img src="assets/calendar/a05.webp" alt="2027년 4월 — 벚꽃 산책 장면의 가온프렌즈" loading="lazy" decoding="async"><i>04<small>APR 2027</small></i></span><span class="tx"><em>Cherry Blossom</em><b>벚꽃 산책</b><span>흩날리는 벚꽃길을 걸으며 서로의 사진을 찍어 줘요.</span></span></button><button class="cl-card" type="button" data-cl-lb="a5" aria-label="2027년 5월 놀이공원 나들이 크게 보기"><span class="im"><img src="assets/calendar/a06.webp" alt="2027년 5월 — 놀이공원 나들이 장면의 가온프렌즈" loading="lazy" decoding="async"><i>05<small>MAY 2027</small></i></span><span class="tx"><em>어린이날 · 가정의 달</em><b>놀이공원 나들이</b><span>풍선과 회전목마가 있는 놀이공원에서 어린이날을 보내요.</span></span></button></div></div><div class="cl-season"><header><b>Summer</b><span>여름 · 2027</span></header><div class="cl-cards"><button class="cl-card" type="button" data-cl-lb="a6" aria-label="2027년 6월 호숫가 플로깅 크게 보기"><span class="im"><img src="assets/calendar/a07.webp" alt="2027년 6월 — 호숫가 플로깅 장면의 가온프렌즈" loading="lazy" decoding="async"><i>06<small>JUN 2027</small></i></span><span class="tx"><em>환경의 날 · 초여름</em><b>호숫가 플로깅</b><span>초여름 호숫가 산책로에서 쓰레기를 주우며 환경을 지켜요.</span></span></button><button class="cl-card" type="button" data-cl-lb="a7" aria-label="2027년 7월 장마 크게 보기"><span class="im"><img src="assets/calendar/a08.webp" alt="2027년 7월 — 장마 장면의 가온프렌즈" loading="lazy" decoding="async"><i>07<small>JUL 2027</small></i></span><span class="tx"><em>Rainy Season</em><b>장마</b><span>수국이 핀 빗길을 커다란 우산 하나로 함께 걸어요.</span></span></button><button class="cl-card" type="button" data-cl-lb="a8" aria-label="2027년 8월 여름휴가 크게 보기"><span class="im"><img src="assets/calendar/a09.webp" alt="2027년 8월 — 여름휴가 장면의 가온프렌즈" loading="lazy" decoding="async"><i>08<small>AUG 2027</small></i></span><span class="tx"><em>광복절 · Summer Vacation</em><b>여름휴가</b><span>해변 선베드에서 쉬고 모래성을 쌓으며 여름휴가를 즐겨요.</span></span></button></div></div><div class="cl-season"><header><b>Autumn</b><span>가을 · 2027</span></header><div class="cl-cards"><button class="cl-card" type="button" data-cl-lb="a9" aria-label="2027년 9월 추석 크게 보기"><span class="im"><img src="assets/calendar/a10.webp" alt="2027년 9월 — 추석 장면의 가온프렌즈" loading="lazy" decoding="async"><i>09<small>SEP 2027</small></i></span><span class="tx"><em>한가위 · Chuseok</em><b>추석</b><span>보름달 아래 한옥 마루에서 송편과 다과를 나눠요.</span></span></button><button class="cl-card" type="button" data-cl-lb="a10" aria-label="2027년 10월 단풍 하이킹 크게 보기"><span class="im"><img src="assets/calendar/a11.webp" alt="2027년 10월 — 단풍 하이킹 장면의 가온프렌즈" loading="lazy" decoding="async"><i>10<small>OCT 2027</small></i></span><span class="tx"><em>개천절 · 한글날</em><b>단풍 하이킹</b><span>붉게 물든 돌담길을 배낭 메고 걸으며 가을을 만끽해요.</span></span></button><button class="cl-card" type="button" data-cl-lb="a11" aria-label="2027년 11월 독서의 계절 크게 보기"><span class="im"><img src="assets/calendar/a12.webp" alt="2027년 11월 — 독서의 계절 장면의 가온프렌즈" loading="lazy" decoding="async"><i>11<small>NOV 2027</small></i></span><span class="tx"><em>Late Autumn</em><b>독서의 계절</b><span>창가 서재에서 책과 따뜻한 차로 늦가을 오후를 보내요.</span></span></button></div></div><div class="cl-season"><header><b>Winter</b><span>겨울 · 2027 — 2028</span></header><div class="cl-cards"><button class="cl-card" type="button" data-cl-lb="a12" aria-label="2027년 12월 연말 파티 크게 보기"><span class="im"><img src="assets/calendar/a13.webp" alt="2027년 12월 — 연말 파티 장면의 가온프렌즈" loading="lazy" decoding="async"><i>12<small>DEC 2027</small></i></span><span class="tx"><em>크리스마스 · 송년</em><b>연말 파티</b><span>한 해의 사진을 걸고 선물을 포장하며 연말을 함께 정리해요.</span></span></button><button class="cl-card" type="button" data-cl-lb="a13" aria-label="2028년 1월 눈사람 만들기 크게 보기"><span class="im"><img src="assets/calendar/a14.webp" alt="2028년 1월 — 눈사람 만들기 장면의 가온프렌즈" loading="lazy" decoding="async"><i>01<small>JAN 2028</small></i></span><span class="tx"><em>신정 · Snow Day</em><b>눈사람 만들기</b><span>눈 내린 들판에서 목도리를 두른 눈사람을 함께 만들어요.</span></span></button></div></div>
+  </div></div></section>
+
+  <section class="cl-sec"><div class="wrap"><div class="c">
+    <div class="cl-h"><span class="no">03 — Planner Side</span><h3>뒷면은 매일 쓰는 플래너</h3><p>탁상 캘린더의 반대편은 일정을 적는 플래너예요. 표지와 연간 달력, 2026년 12월부터 2028년 2월까지 15개월 플래너 면을 담았어요.</p></div>
+    <div class="cl-plan">
+      <button class="cl-ph" type="button" data-cl-lb="c0" aria-label="표지 크게 보기"><img src="assets/calendar/cover-art.webp" alt="2027 캘린더 표지 — 가온프렌즈 피규어와 KAON 로고" loading="lazy" decoding="async"></button>
+      <div class="side">
+        <button class="cl-ph" type="button" data-cl-lb="c1" aria-label="2027 연간 달력 크게 보기"><img src="assets/calendar/year27.webp" alt="2027 연간 달력 — Beyond connection, we create what truly matters." loading="lazy" decoding="async"></button>
+        <button class="cl-ph" type="button" data-cl-lb="c2" aria-label="2028 연간 달력 크게 보기"><img src="assets/calendar/year28.webp" alt="2028 연간 달력 — CONNECTED +" loading="lazy" decoding="async"></button>
+      </div>
+    </div>
+    <div class="cl-pages" aria-label="월별 플래너 면"><button class="cl-ph" type="button" data-cl-lb="b1" aria-label="플래너 면 2026년 12월 크게 보기"><img src="assets/calendar/b01.webp" alt="플래너 면 2026년 12월" loading="lazy" decoding="async"></button><button class="cl-ph" type="button" data-cl-lb="b2" aria-label="플래너 면 2027년 1월 크게 보기"><img src="assets/calendar/b02.webp" alt="플래너 면 2027년 1월" loading="lazy" decoding="async"></button><button class="cl-ph" type="button" data-cl-lb="b3" aria-label="플래너 면 2027년 2월 크게 보기"><img src="assets/calendar/b03.webp" alt="플래너 면 2027년 2월" loading="lazy" decoding="async"></button><button class="cl-ph" type="button" data-cl-lb="b4" aria-label="플래너 면 2027년 3월 크게 보기"><img src="assets/calendar/b04.webp" alt="플래너 면 2027년 3월" loading="lazy" decoding="async"></button><button class="cl-ph" type="button" data-cl-lb="b5" aria-label="플래너 면 2027년 4월 크게 보기"><img src="assets/calendar/b05.webp" alt="플래너 면 2027년 4월" loading="lazy" decoding="async"></button><button class="cl-ph" type="button" data-cl-lb="b6" aria-label="플래너 면 2027년 5월 크게 보기"><img src="assets/calendar/b06.webp" alt="플래너 면 2027년 5월" loading="lazy" decoding="async"></button><button class="cl-ph" type="button" data-cl-lb="b7" aria-label="플래너 면 2027년 6월 크게 보기"><img src="assets/calendar/b07.webp" alt="플래너 면 2027년 6월" loading="lazy" decoding="async"></button><button class="cl-ph" type="button" data-cl-lb="b8" aria-label="플래너 면 2027년 7월 크게 보기"><img src="assets/calendar/b08.webp" alt="플래너 면 2027년 7월" loading="lazy" decoding="async"></button><button class="cl-ph" type="button" data-cl-lb="b9" aria-label="플래너 면 2027년 8월 크게 보기"><img src="assets/calendar/b09.webp" alt="플래너 면 2027년 8월" loading="lazy" decoding="async"></button><button class="cl-ph" type="button" data-cl-lb="b10" aria-label="플래너 면 2027년 9월 크게 보기"><img src="assets/calendar/b10.webp" alt="플래너 면 2027년 9월" loading="lazy" decoding="async"></button><button class="cl-ph" type="button" data-cl-lb="b11" aria-label="플래너 면 2027년 10월 크게 보기"><img src="assets/calendar/b11.webp" alt="플래너 면 2027년 10월" loading="lazy" decoding="async"></button><button class="cl-ph" type="button" data-cl-lb="b12" aria-label="플래너 면 2027년 11월 크게 보기"><img src="assets/calendar/b12.webp" alt="플래너 면 2027년 11월" loading="lazy" decoding="async"></button><button class="cl-ph" type="button" data-cl-lb="b13" aria-label="플래너 면 2027년 12월 크게 보기"><img src="assets/calendar/b13.webp" alt="플래너 면 2027년 12월" loading="lazy" decoding="async"></button><button class="cl-ph" type="button" data-cl-lb="b14" aria-label="플래너 면 2028년 1월 크게 보기"><img src="assets/calendar/b14.webp" alt="플래너 면 2028년 1월" loading="lazy" decoding="async"></button><button class="cl-ph" type="button" data-cl-lb="b15" aria-label="플래너 면 2028년 2월 크게 보기"><img src="assets/calendar/b15.webp" alt="플래너 면 2028년 2월" loading="lazy" decoding="async"></button></div>
+    <div class="cl-feat">
+      <div><b>주차 표기</b><span>일요일 칸에 Week 1–6을 넣어 업무 주간을 바로 확인해요.</span></div>
+      <div><b>절기 · 음력</b><span>소한·대한 같은 절기와 음력 날짜를 함께 표기했어요.</span></div>
+      <div><b>공휴일 강조</b><span>공휴일과 대체공휴일을 브랜드 오렌지로 강조했어요.</span></div>
+      <div><b>앞뒤 달 미니 달력</b><span>빈 칸에 이전·다음 달 미니 달력을 넣어 일정을 이어서 봐요.</span></div>
+    </div>
+  </div></div></section>
+
+  <section class="cl-sec"><div class="wrap"><div class="c">
+    <div class="cl-h"><span class="no">04 — Desk Signal</span><h3>자리를 비울 땐, 상태 카드</h3><p>캘린더 마지막 장에는 자리를 비울 때 펼쳐 두는 상태 카드 4종을 넣었어요. 말없이 자리를 비워도 동료가 상황을 바로 알 수 있어요.</p></div>
+    <div class="cl-st"><button class="cl-ph" type="button" data-cl-lb="s1" aria-label="상태 카드 휴가 중 크게 보기"><img src="assets/calendar/s1.webp" alt="상태 카드 — 휴가 중, 바다가 보이는 선베드에서 쉬는 장면" loading="lazy" decoding="async"><span>휴가 중 · On Vacation</span></button><button class="cl-ph" type="button" data-cl-lb="s2" aria-label="상태 카드 외근 중 크게 보기"><img src="assets/calendar/s2.webp" alt="상태 카드 — 외근 중, 서류 가방을 들고 밖으로 나서는 장면" loading="lazy" decoding="async"><span>외근 중 · Out of Office</span></button><button class="cl-ph" type="button" data-cl-lb="s3" aria-label="상태 카드 회의 중 크게 보기"><img src="assets/calendar/s3.webp" alt="상태 카드 — 회의 중, 화이트보드 앞에서 아이디어를 나누는 장면" loading="lazy" decoding="async"><span>회의 중 · In a Meeting</span></button><button class="cl-ph" type="button" data-cl-lb="s4" aria-label="상태 카드 출장 중 크게 보기"><img src="assets/calendar/s4.webp" alt="상태 카드 — 출장 중, 캐리어를 끌고 공항 라운지를 지나는 장면" loading="lazy" decoding="async"><span>출장 중 · Business Trip</span></button></div>
+  </div></div></section>
+
+  <section class="cl-sec"><div class="wrap"><div class="c">
+    <div class="cl-h"><span class="no">05 — Process</span><h3>기획부터 인쇄 데이터까지</h3></div>
+    <ol class="cl-steps" style="padding:0;margin:0">
+      <li><b>월별 테마 설계</b><span>계절, 명절, 공휴일, 시기별 분위기를 달마다 키워드로 정리하고 장면 콘셉트를 정했어요.</span></li>
+      <li><b>캐릭터 일관성</b><span>저작권 등록된 캐릭터의 비율, 표정, 오렌지 포인트 컬러를 기준으로 생성 결과를 고르고 다듬었어요.</span></li>
+      <li><b>톤 통일</b><span>부드러운 3D 피규어 질감과 따뜻한 자연광을 열네 장 모두 같은 톤으로 맞췄어요.</span></li>
+      <li><b>편집 · 인쇄</b><span>230×185mm 양면 탁상 월판으로 앞면 아트와 날짜 띠, 뒷면 플래너를 편집하고 인쇄용 데이터로 정리했어요.</span></li>
+    </ol>
+    <p class="cl-quote">“Beyond connection,<br><em>we create what truly matters.</em>”<small>2027 KAON FRIENDS CALENDAR</small></p>
+  </div></div></section>
+</div>
+
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="작품 크게 보기" hidden>
   <figure class="lb-fig"><img id="lb-img" alt=""><figcaption><span id="lb-cap"></span><span id="lb-pos"></span></figcaption></figure>
   <button class="lb-btn lb-x" type="button" id="lb-x" aria-label="닫기">✕</button>
@@ -3064,6 +3254,9 @@ const WORKS=[
    ch:'그룹 5대 사업군(Set-top Box·Broadband CPE·Metaverse/AR Glass·Solution·Robot)을 상징하는 캐릭터 IP를 만드는 과제였어요.',
    ap:'사업 특성을 반영한 네이밍과 성격·관계, 캐릭터별 스토리까지 세계관 전체를 설계했어요. 동작 표현이 쉬운 인간형 3종과 무형 사업의 상징성을 살린 비인간형 2종으로 조형 체계를 나누고, 기업 컬러(오렌지) 기반 컬러 시스템, 감정·상태를 보여주는 시그널 장치, 신장·체중 등 캐릭터 스펙을 정의했어요.',
    out:'캐릭터 5종 전체를 저작권 등록(2022.11)해 법적 보호가 가능한 그룹 IP로 전환했어요. 가이드라인(11p), 아크릴 등신대·스티커·키캡·마우스패드 굿즈, 신규 입사자 웰컴 키트까지 만들었고, 2026년에는 솔루·로비 조형을 리뉴얼해 표현 범위를 넓혔어요.'},
+  {title:'KAON Friends 2027 Calendar', page:'calendar', img:'assets/calendar/thumb.webp', sub:'KAON GROUP', tag:'AI Artwork · Calendar', period:'2026', cat:['ai','brand','content'], scene:3,
+   kr:'가온프렌즈를 주인공으로 생성형 AI로 그린 2027 탁상 캘린더', role:'기획·AI 아트워크·편집디자인', client:'가온그룹', tools:'Generative AI, Photoshop, Illustrator',
+   kpis:[], ch:'', ap:'', out:''},
   {title:'Group Brand & Exhibitions', sub:'KAON GROUP', tag:'Brand · Exhibition', period:'2021 — 현재', cat:['brand'], scene:4,
    kr:'그룹 브랜드 아이덴티티 운영과 글로벌 전시 비주얼', role:'Visual Contents Designer', client:'가온그룹 · 계열사', tools:'Illustrator, Photoshop, Figma',
    kpis:[['4건','그룹사·계열사 CI·BI 개발·리뉴얼'],['6회+','IBC·MWC·BBWF 등 글로벌 전시'],['1건','K-FutureTech 로고 상표 등록']],
@@ -3107,13 +3300,13 @@ const WORKS=[
 const JOURNEY=[
   {co:'가온그룹 (KAON GROUP)', grp:'ft', page:'kaon', logo:'assets/logos/kaon.png', wide:1, date:'2021.09 — 현재 · 5년 2개월', role:'Corporate실 마케팅팀 매니저 / Visual Contents Designer', tags:['AI Workflow','Brand · IP'], w:0,
    pts:['AI 에이전트 2종 구축으로 리서치 시간 약 80%↓, 월 발행량 2배','그룹 캐릭터 IP 가온 프렌즈 5종 기획·디자인, 저작권 5건 등록','CI·BI 4건 개발·리뉴얼, IBC·MWC·BBWF 글로벌 전시 6회 이상 총괄','LinkedIn·YouTube·Facebook·X 공식 채널 콘텐츠 기획·운영']},
-  {co:'이공이공 (Egongegong)', grp:'ft', logo:'assets/logos/egong.png?v=2', dark:1, full:1, date:'2021.01 — 2021.09 · 9개월', role:'마케팅본부 리브랜딩팀 · 리브랜딩 디자이너 (초기 멤버)', tags:['E-commerce','Localization'], w:10,
+  {co:'이공이공 (Egongegong)', grp:'ft', logo:'assets/logos/egong.png?v=2', dark:1, full:1, date:'2021.01 — 2021.09 · 9개월', role:'마케팅본부 리브랜딩팀 · 리브랜딩 디자이너 (초기 멤버)', tags:['E-commerce','Localization'], w:11,
    pts:['국내 브랜드 약 10개사 아마존 북미 입점용 디자인','이미지 A/B 개선으로 CTR 약 15%·CVR 약 10% 향상','제품 콘셉트 촬영 기획·디렉팅, 프리랜서 디자이너 관리']},
-  {co:'한국암웨이 (Amway Korea)', grp:'ft', logo:'assets/logos/amway.png', wide:1, date:'2018.03 — 2020.03 · 2년', role:'R&D 아시아 이노베이션센터 · 산업디자이너', tags:['Industrial','Package'], w:11,
+  {co:'한국암웨이 (Amway Korea)', grp:'ft', logo:'assets/logos/amway.png', wide:1, date:'2018.03 — 2020.03 · 2년', role:'R&D 아시아 이노베이션센터 · 산업디자이너', tags:['Industrial','Package'], w:12,
    pts:['아티스트리·앳모스피어 신제품 기획·디자인·개발','스마트 디퓨저 디자인권 등록 (제30-1007738호)','오픈 이노베이션 컨셉 3건 채택, 자재·패키징 원가 약 5% 절감']},
-  {co:'LinkFit', grp:'fl', logo:'assets/logos/linkfit.png?v=2', dark:1, date:'2026.01 — 현재 · Freelance', role:'프리랜서 · 프로덕트 디자이너 & 서비스 기획자', tags:['Product','Planning'], w:8, page:'linkfit', imgs:['assets/linkfit/app/04.webp','assets/linkfit/app/13.webp','assets/linkfit/app/20.webp'],
+  {co:'LinkFit', grp:'fl', logo:'assets/logos/linkfit.png?v=2', dark:1, date:'2026.01 — 현재 · Freelance', role:'프리랜서 · 프로덕트 디자이너 & 서비스 기획자', tags:['Product','Planning'], w:9, page:'linkfit', imgs:['assets/linkfit/app/04.webp','assets/linkfit/app/13.webp','assets/linkfit/app/20.webp'],
    pts:['시간 단위 헬스장 예약 앱의 서비스 플로우 설계와 화면기획서 작성, UIUX 디자인','결제 조회·환불 권한을 분리한 파트너 어드민 대시보드 설계','BI·앱 디자인 시스템, 랜딩페이지, GA4·UTM 성과 측정 체계']},
-  {co:'ARBAIM (greyd)', grp:'fl', logo:'assets/logos/greyd.png', date:'2022.07 — 2024.08 · Side Project', role:'프리랜서 · 크리에이티브 디렉터 & UIUX 디자이너', tags:['UIUX','Ads'], w:9,
+  {co:'ARBAIM (greyd)', grp:'fl', logo:'assets/logos/greyd.png', date:'2022.07 — 2024.08 · Side Project', role:'프리랜서 · 크리에이티브 디렉터 & UIUX 디자이너', tags:['UIUX','Ads'], w:10,
    pts:['핵심 기능 서비스 플로우·화면 설계 주도, 특허 확보에 기획자로 참여','플랫폼 브랜딩 및 앱·웹사이트 UIUX 설계','메타·구글 광고 집행 (월 약 100만원, ROAS 약 200%)']},
   {co:'Design Internships', grp:'ed', logos:['assets/logos/karim-rashid.png','assets/logos/david-weeks.png','assets/logos/boconcept.svg','assets/logos/designmu.png','assets/logos/nepplus.png'], studios:[['Karim Rashid','karim-rashid.png'],['Stephen Burks Man Made',''],['David Weeks Studio','david-weeks.png'],['BoConcept','boconcept.svg'],['Design MU','designmu.png'],['Nep Plus','nepplus.png']], date:'2014.06 — 2017.03 · 6곳', role:'Karim Rashid · Stephen Burks · David Weeks · BoConcept · Design MU · Nep Plus', tags:['Product','Furniture'], w:null, page:'internship', imgs:['assets/intern/ottawa-wall.webp','assets/intern/toot-interior.webp','assets/intern/toot-product.webp'],
    pts:['Karim Rashid Inc. — BoConcept·Kundalini 등 클라이언트 프로젝트 3D 모델링·렌더링','Stephen Burks Man Made — Art Basel 2016 Miami Beach 설치 공간 3D 데이터·프로토타입','David Weeks Studio — 조명 프로토타이핑, ICFF 기간 회사 전시 운영','Design MU · Nep Plus (서울) — 현대자동차, Carrier, Winix 제품 디자인 참여']},
@@ -3273,7 +3466,7 @@ document.getElementById('close').addEventListener('click',closeCase);
 addEventListener('keydown',e=>{if(e.key==='Escape'&&!caseEl.hidden) closeCase();});
 
 /* ---------- 서브 페이지 (#university, #internship) ---------- */
-const PAGES={university:document.getElementById('pg-university'),internship:document.getElementById('pg-internship'),linkfit:document.getElementById('pg-linkfit'),windmate:document.getElementById('pg-windmate'),panastove:document.getElementById('pg-panastove'),kfuturetech:document.getElementById('pg-kfuturetech'),human:document.getElementById('pg-human'),magus:document.getElementById('pg-magus'),jandi:document.getElementById('pg-jandi'),kaonci:document.getElementById('pg-kaonci'),kaon:document.getElementById('pg-kaon'),stationery:document.getElementById('pg-stationery')};
+const PAGES={university:document.getElementById('pg-university'),internship:document.getElementById('pg-internship'),linkfit:document.getElementById('pg-linkfit'),windmate:document.getElementById('pg-windmate'),panastove:document.getElementById('pg-panastove'),kfuturetech:document.getElementById('pg-kfuturetech'),human:document.getElementById('pg-human'),magus:document.getElementById('pg-magus'),jandi:document.getElementById('pg-jandi'),kaonci:document.getElementById('pg-kaonci'),calendar:document.getElementById('pg-calendar'),kaon:document.getElementById('pg-kaon'),stationery:document.getElementById('pg-stationery')};
 function goPage(k){ history.pushState({fromSite:true},'','#'+k); route(); }
 let pageReturn=null;
 function showPage(el){
@@ -3296,7 +3489,7 @@ function route(){
 }
 function leavePage(){ if(history.state&&history.state.fromSite){ history.back(); } else { history.replaceState(null,'',location.pathname+location.search+'#archive'); route(); } }
 document.addEventListener('click',e=>{
-  const a=e.target.closest('a[href="#university"],a[href="#internship"],a[href="#linkfit"],a[href="#windmate"],a[href="#panastove"],a[href="#kfuturetech"],a[href="#human"],a[href="#magus"],a[href="#jandi"],a[href="#kaonci"],a[href="#kaon"],a[href="#stationery"]'); if(!a) return;
+  const a=e.target.closest('a[href="#university"],a[href="#internship"],a[href="#linkfit"],a[href="#windmate"],a[href="#panastove"],a[href="#kfuturetech"],a[href="#human"],a[href="#magus"],a[href="#jandi"],a[href="#kaonci"],a[href="#kaon"],a[href="#stationery"],a[href="#calendar"]'); if(!a) return;
   e.preventDefault(); history.pushState({fromSite:true},'',a.getAttribute('href')); route();
 });
 document.querySelectorAll('.page [data-close]').forEach(b=>b.addEventListener('click',leavePage));
@@ -3652,6 +3845,46 @@ document.getElementById('lb-prev').addEventListener('click',()=>lbShow(lbI-1));
 document.getElementById('lb-next').addEventListener('click',()=>lbShow(lbI+1));
 lb.addEventListener('click',e=>{ if(e.target===lb) lbClose(); });
 addEventListener('keydown',e=>{ if(lb.hidden) return; if(e.key==='Escape'){e.stopImmediatePropagation();lbClose();} if(e.key==='ArrowRight') lbShow(lbI+1); if(e.key==='ArrowLeft') lbShow(lbI-1); },true);
+
+/* ---------- KAON Friends 2027 Calendar ---------- */
+(()=>{ const pg=document.getElementById('pg-calendar'); if(!pg) return;
+  const E=[{"k": "a0", "src": "assets/calendar/a01.webp", "alt": "2026년 12월 — 크리스마스 준비", "cap": "2026.12 — 크리스마스 준비 · Christmas Eve", "g": "cal"}, {"k": "a1", "src": "assets/calendar/a02.webp", "alt": "2027년 1월 — 새해 일출", "cap": "2027.01 — 새해 일출 · 신정 · New Year", "g": "cal"}, {"k": "a2", "src": "assets/calendar/a03.webp", "alt": "2027년 2월 — 설날", "cap": "2027.02 — 설날 · 설 연휴 · Seollal", "g": "cal"}, {"k": "a3", "src": "assets/calendar/a04.webp", "alt": "2027년 3월 — 봄 피크닉", "cap": "2027.03 — 봄 피크닉 · 삼일절 · 새 학기", "g": "cal"}, {"k": "a4", "src": "assets/calendar/a05.webp", "alt": "2027년 4월 — 벚꽃 산책", "cap": "2027.04 — 벚꽃 산책 · Cherry Blossom", "g": "cal"}, {"k": "a5", "src": "assets/calendar/a06.webp", "alt": "2027년 5월 — 놀이공원 나들이", "cap": "2027.05 — 놀이공원 나들이 · 어린이날 · 가정의 달", "g": "cal"}, {"k": "a6", "src": "assets/calendar/a07.webp", "alt": "2027년 6월 — 호숫가 플로깅", "cap": "2027.06 — 호숫가 플로깅 · 환경의 날 · 초여름", "g": "cal"}, {"k": "a7", "src": "assets/calendar/a08.webp", "alt": "2027년 7월 — 장마", "cap": "2027.07 — 장마 · Rainy Season", "g": "cal"}, {"k": "a8", "src": "assets/calendar/a09.webp", "alt": "2027년 8월 — 여름휴가", "cap": "2027.08 — 여름휴가 · 광복절 · Summer Vacation", "g": "cal"}, {"k": "a9", "src": "assets/calendar/a10.webp", "alt": "2027년 9월 — 추석", "cap": "2027.09 — 추석 · 한가위 · Chuseok", "g": "cal"}, {"k": "a10", "src": "assets/calendar/a11.webp", "alt": "2027년 10월 — 단풍 하이킹", "cap": "2027.10 — 단풍 하이킹 · 개천절 · 한글날", "g": "cal"}, {"k": "a11", "src": "assets/calendar/a12.webp", "alt": "2027년 11월 — 독서의 계절", "cap": "2027.11 — 독서의 계절 · Late Autumn", "g": "cal"}, {"k": "a12", "src": "assets/calendar/a13.webp", "alt": "2027년 12월 — 연말 파티", "cap": "2027.12 — 연말 파티 · 크리스마스 · 송년", "g": "cal"}, {"k": "a13", "src": "assets/calendar/a14.webp", "alt": "2028년 1월 — 눈사람 만들기", "cap": "2028.01 — 눈사람 만들기 · 신정 · Snow Day", "g": "cal"}, {"k": "c0", "src": "assets/calendar/cover-art.webp", "alt": "2027 캘린더 표지", "cap": "Cover — 2027 KAON Friends Calendar", "g": "calp"}, {"k": "c1", "src": "assets/calendar/year27.webp", "alt": "2027 연간 달력", "cap": "2027 — Beyond connection, we create what truly matters.", "g": "calp"}, {"k": "c2", "src": "assets/calendar/year28.webp", "alt": "2028 연간 달력", "cap": "2028 — CONNECTED +", "g": "calp"}, {"k": "b1", "src": "assets/calendar/b01.webp", "alt": "플래너 면 2026년 12월", "cap": "Planner — 2026.12", "g": "calp"}, {"k": "b2", "src": "assets/calendar/b02.webp", "alt": "플래너 면 2027년 1월", "cap": "Planner — 2027.01", "g": "calp"}, {"k": "b3", "src": "assets/calendar/b03.webp", "alt": "플래너 면 2027년 2월", "cap": "Planner — 2027.02", "g": "calp"}, {"k": "b4", "src": "assets/calendar/b04.webp", "alt": "플래너 면 2027년 3월", "cap": "Planner — 2027.03", "g": "calp"}, {"k": "b5", "src": "assets/calendar/b05.webp", "alt": "플래너 면 2027년 4월", "cap": "Planner — 2027.04", "g": "calp"}, {"k": "b6", "src": "assets/calendar/b06.webp", "alt": "플래너 면 2027년 5월", "cap": "Planner — 2027.05", "g": "calp"}, {"k": "b7", "src": "assets/calendar/b07.webp", "alt": "플래너 면 2027년 6월", "cap": "Planner — 2027.06", "g": "calp"}, {"k": "b8", "src": "assets/calendar/b08.webp", "alt": "플래너 면 2027년 7월", "cap": "Planner — 2027.07", "g": "calp"}, {"k": "b9", "src": "assets/calendar/b09.webp", "alt": "플래너 면 2027년 8월", "cap": "Planner — 2027.08", "g": "calp"}, {"k": "b10", "src": "assets/calendar/b10.webp", "alt": "플래너 면 2027년 9월", "cap": "Planner — 2027.09", "g": "calp"}, {"k": "b11", "src": "assets/calendar/b11.webp", "alt": "플래너 면 2027년 10월", "cap": "Planner — 2027.10", "g": "calp"}, {"k": "b12", "src": "assets/calendar/b12.webp", "alt": "플래너 면 2027년 11월", "cap": "Planner — 2027.11", "g": "calp"}, {"k": "b13", "src": "assets/calendar/b13.webp", "alt": "플래너 면 2027년 12월", "cap": "Planner — 2027.12", "g": "calp"}, {"k": "b14", "src": "assets/calendar/b14.webp", "alt": "플래너 면 2028년 1월", "cap": "Planner — 2028.01", "g": "calp"}, {"k": "b15", "src": "assets/calendar/b15.webp", "alt": "플래너 면 2028년 2월", "cap": "Planner — 2028.02", "g": "calp"}, {"k": "s1", "src": "assets/calendar/s1.webp", "alt": "상태 카드 휴가 중", "cap": "Desk Signal — 휴가 중 · On Vacation", "g": "cals"}, {"k": "s2", "src": "assets/calendar/s2.webp", "alt": "상태 카드 외근 중", "cap": "Desk Signal — 외근 중 · Out of Office", "g": "cals"}, {"k": "s3", "src": "assets/calendar/s3.webp", "alt": "상태 카드 회의 중", "cap": "Desk Signal — 회의 중 · In a Meeting", "g": "cals"}, {"k": "s4", "src": "assets/calendar/s4.webp", "alt": "상태 카드 출장 중", "cap": "Desk Signal — 출장 중 · Business Trip", "g": "cals"}], ST=[{"f": "assets/calendar/cover.webp", "b": "assets/calendar/year27.webp", "n": "2027", "ab": "COVER", "t": "KAON Friends Calendar", "h": "Beyond connection", "d": "가온프렌즈와 함께하는 2027년. 표지부터 한 장씩 넘겨 보세요."}, {"f": "assets/calendar/f01.webp", "b": "assets/calendar/b01.webp", "n": "12", "ab": "DEC 2026", "t": "크리스마스 준비", "h": "Christmas Eve", "d": "통창 너머 눈 덮인 산을 배경으로 다 함께 트리를 꾸미며 한 해의 마지막 달을 열어요."}, {"f": "assets/calendar/f02.webp", "b": "assets/calendar/b02.webp", "n": "01", "ab": "JAN 2027", "t": "새해 일출", "h": "신정 · New Year", "d": "눈 덮인 산 정상에서 첫 해돋이를 맞으며 새해 다짐을 나눠요."}, {"f": "assets/calendar/f03.webp", "b": "assets/calendar/b03.webp", "n": "02", "ab": "FEB 2027", "t": "설날", "h": "설 연휴 · Seollal", "d": "한복을 차려입고 다과상에 둘러앉아 명절의 정을 나눠요."}, {"f": "assets/calendar/f04.webp", "b": "assets/calendar/b04.webp", "n": "03", "ab": "MAR 2027", "t": "봄 피크닉", "h": "삼일절 · 새 학기", "d": "호숫가 잔디밭에 돗자리를 펴고 봄의 시작을 맞아요."}, {"f": "assets/calendar/f05.webp", "b": "assets/calendar/b05.webp", "n": "04", "ab": "APR 2027", "t": "벚꽃 산책", "h": "Cherry Blossom", "d": "흩날리는 벚꽃길을 걸으며 서로의 사진을 찍어 줘요."}, {"f": "assets/calendar/f06.webp", "b": "assets/calendar/b06.webp", "n": "05", "ab": "MAY 2027", "t": "놀이공원 나들이", "h": "어린이날 · 가정의 달", "d": "풍선과 회전목마가 있는 놀이공원에서 어린이날을 보내요."}, {"f": "assets/calendar/f07.webp", "b": "assets/calendar/b07.webp", "n": "06", "ab": "JUN 2027", "t": "호숫가 플로깅", "h": "환경의 날 · 초여름", "d": "초여름 호숫가 산책로에서 쓰레기를 주우며 환경을 지켜요."}, {"f": "assets/calendar/f08.webp", "b": "assets/calendar/b08.webp", "n": "07", "ab": "JUL 2027", "t": "장마", "h": "Rainy Season", "d": "수국이 핀 빗길을 커다란 우산 하나로 함께 걸어요."}, {"f": "assets/calendar/f09.webp", "b": "assets/calendar/b09.webp", "n": "08", "ab": "AUG 2027", "t": "여름휴가", "h": "광복절 · Summer Vacation", "d": "해변 선베드에서 쉬고 모래성을 쌓으며 여름휴가를 즐겨요."}, {"f": "assets/calendar/f10.webp", "b": "assets/calendar/b10.webp", "n": "09", "ab": "SEP 2027", "t": "추석", "h": "한가위 · Chuseok", "d": "보름달 아래 한옥 마루에서 송편과 다과를 나눠요."}, {"f": "assets/calendar/f11.webp", "b": "assets/calendar/b11.webp", "n": "10", "ab": "OCT 2027", "t": "단풍 하이킹", "h": "개천절 · 한글날", "d": "붉게 물든 돌담길을 배낭 메고 걸으며 가을을 만끽해요."}, {"f": "assets/calendar/f12.webp", "b": "assets/calendar/b12.webp", "n": "11", "ab": "NOV 2027", "t": "독서의 계절", "h": "Late Autumn", "d": "창가 서재에서 책과 따뜻한 차로 늦가을 오후를 보내요."}, {"f": "assets/calendar/f13.webp", "b": "assets/calendar/b13.webp", "n": "12", "ab": "DEC 2027", "t": "연말 파티", "h": "크리스마스 · 송년", "d": "한 해의 사진을 걸고 선물을 포장하며 연말을 함께 정리해요."}, {"f": "assets/calendar/f14.webp", "b": "assets/calendar/b14.webp", "n": "01", "ab": "JAN 2028", "t": "눈사람 만들기", "h": "신정 · Snow Day", "d": "눈 내린 들판에서 목도리를 두른 눈사람을 함께 만들어요."}];
+  const base=LB.length; E.forEach(e=>LB.push({src:e.src,alt:e.alt,cap:e.cap,g:e.g}));
+  pg.querySelectorAll('[data-cl-lb]').forEach(b=>b.addEventListener('click',()=>{ const k=E.findIndex(e=>e.k===b.dataset.clLb); if(k>=0) lbOpen(base+k); }));
+  const dk=document.getElementById('cl-dk'), now=document.getElementById('cl-now'), tl=document.getElementById('cl-tl'), sideB=document.getElementById('cl-side'), playB=document.getElementById('cl-play');
+  const faces=[...dk.querySelectorAll('.dk-face')].map(f=>({pg:f.querySelector('.pg'),fl:f.querySelector('.fl'),sh:f.querySelector('.shade')}));
+  let cur=0, busy=false, back=false, auto=!reduce, hold=0, vis=false;
+  ST.forEach(s=>{ const a=new Image(); a.decoding='async'; setTimeout(()=>{a.src=s.f;},1500); });
+  const info=i=>{ const s=ST[i]; now.classList.add('sw'); setTimeout(()=>{ now.innerHTML=`<div class="m"><b>${s.n}</b><span>${s.ab}</span></div><h4>${s.t}</h4><span class="tag">${s.h}</span><p>${s.d}</p>`; now.classList.remove('sw'); },220);
+    tl.querySelectorAll('button').forEach(b=>{ const on=+b.dataset.k===i; b.classList.toggle('on',on); b.setAttribute('aria-selected',String(on)); if(on&&vis){ const r=b.offsetLeft-tl.clientWidth/2+b.offsetWidth/2; tl.scrollTo({left:r,behavior:'smooth'}); } }); };
+  function go(n){ if(busy) return; n=(n+ST.length)%ST.length; if(n===cur) return; const fwd=n>cur, vi=back?1:0, F=faces[vi], O=faces[1-vi], key=back?'b':'f';
+    const old=ST[cur][key], nw=ST[n][key];
+    O.pg.src=ST[n][back?'f':'b'];
+    info(n); cur=n;
+    if(reduce||!F.fl.animate){ F.pg.src=nw; return; }
+    busy=true; F.fl.hidden=false;
+    const ease='cubic-bezier(.55,.05,.25,1)', dur=950;
+    if(fwd){ F.fl.src=old; F.pg.src=nw; const a=F.fl.animate([{transform:'rotateX(0deg)',filter:'brightness(1)'},{transform:'rotateX(-100deg)',filter:'brightness(.86)',offset:.55},{transform:'rotateX(-180deg)',filter:'brightness(.7)'}],{duration:dur,easing:ease});
+      F.sh.animate([{opacity:0},{opacity:1,offset:.3},{opacity:0}],{duration:dur}); a.onfinish=()=>{F.fl.hidden=true; busy=false;}; }
+    else { F.fl.src=nw; const a=F.fl.animate([{transform:'rotateX(-180deg)',filter:'brightness(.7)'},{transform:'rotateX(-100deg)',filter:'brightness(.86)',offset:.45},{transform:'rotateX(0deg)',filter:'brightness(1)'}],{duration:dur,easing:ease});
+      a.onfinish=()=>{ F.pg.src=nw; F.fl.hidden=true; busy=false; }; }
+  }
+  const user=()=>{ hold=9; };
+  document.getElementById('cl-next').addEventListener('click',()=>{user();go(cur+1);});
+  document.getElementById('cl-prev').addEventListener('click',()=>{user();go(cur-1);});
+  tl.addEventListener('click',e=>{ const b=e.target.closest('button'); if(b){ user(); go(+b.dataset.k); } });
+  const flipSide=()=>{ back=!back; dk.classList.toggle('back',back); sideB.setAttribute('aria-pressed',String(back)); sideB.textContent=back?'앞면 보기 ↻':'뒷면 보기 ↻'; user(); };
+  sideB.addEventListener('click',flipSide);
+  dk.addEventListener('click',()=>{ user(); go(cur+1); });
+  let tx=null; dk.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;},{passive:true});
+  dk.addEventListener('touchend',e=>{ if(tx===null) return; const dx=e.changedTouches[0].clientX-tx; if(Math.abs(dx)>40){ e.preventDefault(); user(); go(cur+(dx<0?1:-1)); } tx=null; });
+  const syncPlay=()=>{ playB.setAttribute('aria-pressed',String(!auto)); playB.textContent=auto?'자동 넘김 끄기':'자동 넘김 켜기'; };
+  syncPlay(); playB.addEventListener('click',()=>{ auto=!auto; syncPlay(); });
+  pg.addEventListener('keydown',e=>{ if(!lb.hidden) return; if(e.target.closest('input,textarea')) return; const r=dk.getBoundingClientRect(); if(r.bottom<0||r.top>innerHeight) return; if(e.key==='ArrowRight'){user();go(cur+1);} if(e.key==='ArrowLeft'){user();go(cur-1);} });
+  if('IntersectionObserver' in window) new IntersectionObserver(es=>{ vis=es[0].isIntersecting; },{root:pg,threshold:.35}).observe(dk); else vis=true;
+  setInterval(()=>{ if(pg.hidden||document.hidden) return; if(hold>0){ hold-=1; return; } if(auto&&vis&&!busy){ hold=3; go(cur+1); } },1000);
+})();
+
 let lbX=null; lb.addEventListener('touchstart',e=>{lbX=e.touches[0].clientX;},{passive:true});
 lb.addEventListener('touchend',e=>{ if(lbX===null) return; const dx=e.changedTouches[0].clientX-lbX; if(Math.abs(dx)>50) lbShow(lbI+(dx<0?1:-1)); lbX=null; });
 if('IntersectionObserver' in window && !reduce){
