@@ -1637,27 +1637,34 @@ body.lb-open .cursor{background:#EDEDED}
 /* stage */
 .cl-stage{position:relative;border-radius:18px;overflow:hidden;background:radial-gradient(90% 70% at 50% 30%,#FFF6EC 0%,#F7E2CF 55%,#EDCDB2 100%);padding:clamp(28px,5vw,64px) clamp(16px,4vw,56px) clamp(24px,4vw,44px);display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
 .cl-stage::after{content:"";position:absolute;left:0;right:0;bottom:0;height:34%;background:linear-gradient(180deg,rgba(255,255,255,0),rgba(214,170,134,.28));pointer-events:none}
-.dkc{position:relative;z-index:1;perspective:1800px;perspective-origin:50% 20%;cursor:pointer;padding:5% 6% 13%;-webkit-tap-highlight-color:transparent}
-.dk-body{position:relative;width:100%;aspect-ratio:1859/1430;transform-style:preserve-3d;transition:transform 1.25s cubic-bezier(.7,0,.2,1);transform:rotateX(-10deg) rotateY(var(--ry,-28deg))}
-.dkc:hover .dk-body{--ry:-20deg}
-.dkc.back .dk-body{transform:rotateX(-10deg) rotateY(calc(180deg + var(--ry,-28deg)))}
-.dk-face{position:absolute;left:0;top:0;width:100%;transform-style:preserve-3d;transform-origin:50% 0}
-.dk-face.fr{transform:rotateX(18deg)}
-.dk-face.bk{transform:rotateY(180deg) rotateX(18deg)}
-.dk-sheet{position:relative;aspect-ratio:1859/1504;transform-style:preserve-3d}
-.dk-sheet img,.dk-sheet .flb,.dk-board{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;background:#fff;border-radius:2px;backface-visibility:hidden;-webkit-backface-visibility:hidden}
-.dk-board{background:linear-gradient(180deg,#ece6df,#cbc1b6);transform:rotateY(180deg)}
-.dk-sheet .pg{transform:translateZ(1.5px);box-shadow:0 1px 0 #f1ece6,0 2px 0 #e4ddd5,0 3px 0 #d9d0c6,0 4px 0 #cfc5ba}
+.dkc{position:relative;z-index:1;perspective:1900px;perspective-origin:50% 18%;cursor:pointer;padding:6% 7% 12%;-webkit-tap-highlight-color:transparent;--th:20deg}
+.dk-body{position:relative;width:100%;aspect-ratio:1859/1729;transform-style:preserve-3d;transition:transform 1.25s cubic-bezier(.7,0,.2,1);transform:rotateX(-9deg) rotateY(var(--ry,-27deg))}
+.dkc:hover .dk-body{--ry:-19deg}
+.dkc.back .dk-body{transform:rotateX(-9deg) rotateY(calc(180deg + var(--ry,-27deg)))}
+.dk-face{position:absolute;left:0;top:0;width:100%;aspect-ratio:1859/1840;transform-style:preserve-3d;transform-origin:50% 0}
+.dk-face.fr{transform:rotateX(var(--th))}
+.dk-face.bk{transform:rotateY(180deg) rotateX(var(--th))}
+.dk-hb,.dk-inner{position:absolute;inset:0;border-radius:3px;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.dk-hb{background:linear-gradient(180deg,#F8913C 0%,#F37A20 38%,#E56A12 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12),inset 0 -2px 0 rgba(0,0,0,.12)}
+.dk-hb::before{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(115deg,rgba(255,255,255,.18) 0%,rgba(255,255,255,0) 32%,rgba(0,0,0,0) 70%,rgba(0,0,0,.10) 100%)}
+.dk-inner{background:linear-gradient(180deg,#d8661a,#b9510c);transform:rotateY(180deg)}
+.dk-lip{position:absolute;left:0;right:0;bottom:0;height:16.5%;display:grid;place-items:center;transform:translateZ(.6px);backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.dk-lip::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:rgba(0,0,0,.10);box-shadow:0 1px 0 rgba(255,255,255,.18)}
+.dk-foil{width:23%;aspect-ratio:1600/429;-webkit-mask:url(assets/calendar/kaon-mask.png) center/contain no-repeat;mask:url(assets/calendar/kaon-mask.png) center/contain no-repeat;background:linear-gradient(105deg,#9a9ea4 0%,#eef0f2 18%,#b5b9bf 34%,#ffffff 46%,#a7abb1 60%,#e3e6e9 78%,#9ea2a8 100%);background-size:220% 100%;background-position:0% 0;filter:drop-shadow(0 .5px 0 rgba(0,0,0,.28));transition:background-position 1.6s var(--ease)}
+.dkc:hover .dk-foil{background-position:100% 0}
+.dk-sheet{position:absolute;left:1.8%;right:1.8%;top:2.4%;aspect-ratio:1859/1504;transform-style:preserve-3d}
+.dk-sheet img,.dk-sheet .flb{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;background:#fff;border-radius:1.5px;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.dk-sheet .pg{transform:translateZ(1.6px);box-shadow:0 1px 0 #f2ede7,0 2px 0 #e7e0d8,0 3px 0 #dcd3c9,0 4px 0 #d2c8bd,0 10px 14px -6px rgba(90,35,0,.45)}
 .flw{position:absolute;inset:0;transform-style:preserve-3d;transform-origin:50% 0;z-index:2}
 .flw[hidden]{display:none}
-.flw .fl{transform:translateZ(2px)}
-.flw .flb{transform:rotateX(180deg) translateZ(-2px);background:linear-gradient(180deg,#fbf8f4,#ece5dc)}
-.dk-sheet .shade{position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,0) 35%);opacity:0;border-radius:2px;transform:translateZ(1.8px)}
-.dk-sheet::before{content:"";position:absolute;left:5%;right:5%;top:1.2%;height:1.5%;z-index:4;background:radial-gradient(circle at 50% 50%,rgba(60,40,30,.5) 0 1.5px,transparent 2.1px) 0 0/11px 100% repeat-x;pointer-events:none;transform:translateZ(1.6px)}
-.dk-wire{position:absolute;left:5%;right:5%;top:-1.9%;height:4%;z-index:5;background:repeating-linear-gradient(90deg,transparent 0 3.5px,#2b2b30 3.5px 4.8px,#a9a9b1 4.8px 5.6px,#2b2b30 5.6px 6.6px,transparent 6.6px 11px);border-radius:3px;pointer-events:none;transform:translateZ(3px)}
-.dk-wire::before{content:"";position:absolute;left:0;right:0;top:44%;height:2px;background:#3a3a40;opacity:.5}
+.flw .fl{transform:translateZ(2.2px)}
+.flw .flb{transform:rotateX(180deg) translateZ(-2.2px);background:linear-gradient(180deg,#fbf8f4,#ece5dc)}
+.dk-sheet .shade{position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,0) 35%);opacity:0;border-radius:2px;transform:translateZ(1.9px)}
+.dk-sheet::before{content:"";position:absolute;left:4.5%;right:4.5%;top:1.3%;height:1.6%;z-index:4;background:radial-gradient(circle at 50% 50%,rgba(60,40,30,.55) 0 1.5px,transparent 2.1px) 0 0/12px 100% repeat-x;pointer-events:none;transform:translateZ(1.7px)}
+.dk-wire{position:absolute;left:4.5%;right:4.5%;top:-3.4%;height:5.2%;z-index:5;pointer-events:none;transform:translateZ(3px);background:repeating-linear-gradient(90deg,transparent 0 3px,#9da0a6 3px 3.6px,#ffffff 3.6px 5.4px,#c9ccd1 5.4px 6.2px,#8e9197 6.2px 6.8px,transparent 6.8px 12px);border-radius:40%/30%;filter:drop-shadow(0 1.5px 1px rgba(0,0,0,.28))}
+.dk-wire::before{content:"";position:absolute;left:0;right:0;top:46%;height:2px;background:linear-gradient(180deg,#fff,#b9bcc1);opacity:.9}
 .dk-floor{display:none}
-.dkc::after{content:"";position:absolute;left:16%;right:12%;bottom:12.5%;height:9%;transform:rotate(6deg);background:radial-gradient(closest-side,rgba(110,60,25,.38),rgba(110,60,25,.12) 60%,rgba(110,60,25,0));filter:blur(6px);z-index:-1;pointer-events:none}
+.dkc::after{content:"";position:absolute;left:12%;right:9%;bottom:9%;height:10%;background:radial-gradient(closest-side,rgba(90,40,10,.42),rgba(90,40,10,.14) 60%,rgba(90,40,10,0));filter:blur(7px);transform:rotate(5deg);z-index:-1;pointer-events:none}
 .cl-info{position:relative;z-index:1;min-width:0}
 .cl-now{display:grid;gap:10px;min-height:210px}
 .cl-now .m{display:flex;align-items:baseline;gap:12px}
@@ -3069,8 +3076,8 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
     <div class="cl-stage" id="cl-stage">
       <div class="dkc" id="cl-dk" role="group" aria-roledescription="탁상 캘린더 목업" aria-label="2027 캘린더 목업">
         <div class="dk-body">
-          <div class="dk-face fr"><div class="dk-sheet"><span class="dk-board" aria-hidden="true"></span><img class="pg" src="assets/calendar/cover.webp" alt="2027 캘린더 표지 — 가온프렌즈 피규어"><div class="flw" hidden aria-hidden="true"><img class="fl" alt=""><span class="flb"></span></div><span class="shade"></span><span class="dk-wire"></span></div></div>
-          <div class="dk-face bk"><div class="dk-sheet"><span class="dk-board" aria-hidden="true"></span><img class="pg" src="assets/calendar/year27.webp" alt="2027 연간 달력 면"><div class="flw" hidden aria-hidden="true"><img class="fl" alt=""><span class="flb"></span></div><span class="shade"></span><span class="dk-wire"></span></div></div>
+          <div class="dk-face fr"><span class="dk-inner" aria-hidden="true"></span><span class="dk-hb" aria-hidden="true"></span><div class="dk-sheet"><img class="pg" src="assets/calendar/cover.webp" alt="2027 캘린더 표지 — 가온프렌즈 피규어"><div class="flw" hidden aria-hidden="true"><img class="fl" alt=""><span class="flb"></span></div><span class="shade"></span><span class="dk-wire"></span></div><span class="dk-lip" aria-hidden="true"><span class="dk-foil"></span></span></div>
+          <div class="dk-face bk"><span class="dk-inner" aria-hidden="true"></span><span class="dk-hb" aria-hidden="true"></span><div class="dk-sheet"><img class="pg" src="assets/calendar/year27.webp" alt="2027 연간 달력 면"><div class="flw" hidden aria-hidden="true"><img class="fl" alt=""><span class="flb"></span></div><span class="shade"></span><span class="dk-wire"></span></div><span class="dk-lip" aria-hidden="true"><span class="dk-foil"></span></span></div>
           <div class="dk-floor" aria-hidden="true"></div>
         </div>
       </div>
@@ -3293,7 +3300,7 @@ const WORKS=[
    ch:'그룹 5대 사업군(Set-top Box·Broadband CPE·Metaverse/AR Glass·Solution·Robot)을 상징하는 캐릭터 IP를 만드는 과제였어요.',
    ap:'사업 특성을 반영한 네이밍과 성격·관계, 캐릭터별 스토리까지 세계관 전체를 설계했어요. 동작 표현이 쉬운 인간형 3종과 무형 사업의 상징성을 살린 비인간형 2종으로 조형 체계를 나누고, 기업 컬러(오렌지) 기반 컬러 시스템, 감정·상태를 보여주는 시그널 장치, 신장·체중 등 캐릭터 스펙을 정의했어요.',
    out:'캐릭터 5종 전체를 저작권 등록(2022.11)해 법적 보호가 가능한 그룹 IP로 전환했어요. 가이드라인(11p), 아크릴 등신대·스티커·키캡·마우스패드 굿즈, 신규 입사자 웰컴 키트까지 만들었고, 2026년에는 솔루·로비 조형을 리뉴얼해 표현 범위를 넓혔어요.'},
-  {title:'KAON Friends 2027 Calendar', page:'calendar', img:'assets/calendar/thumb.webp?v=2', sub:'KAON GROUP', tag:'AI Artwork · Calendar', period:'2026', cat:['ai','brand','content'], scene:3,
+  {title:'KAON Friends 2027 Calendar', page:'calendar', img:'assets/calendar/thumb.webp?v=3', sub:'KAON GROUP', tag:'AI Artwork · Calendar', period:'2026', cat:['ai','brand','content'], scene:3,
    kr:'가온프렌즈를 주인공으로 생성형 AI로 그린 2027 탁상 캘린더', role:'기획·AI 아트워크·편집디자인', client:'가온그룹', tools:'Generative AI, Photoshop, Illustrator',
    kpis:[['500부','제작·배포'],['3주','제작 기간 · 2024 대비 절반 이상 단축'],['18점','월별 14 · 상태 카드 4']], ch:'', ap:'', out:''},
   {title:'Group Brand & Exhibitions', sub:'KAON GROUP', tag:'Brand · Exhibition', period:'2021 — 현재', cat:['brand'], scene:4,
@@ -3902,7 +3909,7 @@ addEventListener('keydown',e=>{ if(lb.hidden) return; if(e.key==='Escape'){e.sto
     info(n); cur=n;
     if(reduce||!F.flw.animate){ F.pg.src=nw; return; }
     busy=true; F.flw.hidden=false;
-    const ease='cubic-bezier(.5,.05,.3,1)', dur=1150, K=['rotateX(0deg)','rotateX(110deg)','rotateX(210deg)','rotateX(324deg)'];
+    const ease='cubic-bezier(.5,.05,.3,1)', dur=1150, K=['rotateX(0deg)','rotateX(110deg)','rotateX(210deg)','rotateX(318deg)'];
     if(fwd){ F.fl.src=old; F.pg.src=nw; const a=F.flw.animate(K.map((t,j)=>({transform:t,offset:[0,.38,.66,1][j]})),{duration:dur,easing:ease});
       F.sh.animate([{opacity:0},{opacity:1,offset:.25},{opacity:0,offset:.5}],{duration:dur}); a.onfinish=()=>{F.flw.hidden=true; busy=false;}; }
     else { F.fl.src=nw; const a=F.flw.animate(K.slice().reverse().map((t,j)=>({transform:t,offset:[0,.34,.62,1][j]})),{duration:dur,easing:ease});
