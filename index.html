@@ -20,7 +20,7 @@
 <meta property="og:image:alt" content="김동영 포트폴리오 — Hello, AI-Driven Visual Content Designer">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.dongyoungkim.com/assets/profile/og-image.jpg?v=6">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 32'%3E%3Crect width='40' height='32' fill='%23F8F8F8'/%3E%3Cg fill='%23222'%3E%3Cpath d='M16.4 4.6 19.8 1.4V28h-3.4Z'/%3E%3Cpath d='M16.4 12H7L2 17v6l5 5h9.4v-3.4H8.4l-3-3v-3.2l3-3h8Z'/%3E%3Cpath d='M19.8 18 29.6 8.2H34L19.8 22.4Z'/%3E%3Cpath d='M22.7 17.4 25.6 14.6 34 28h-4.2Z'/%3E%3Cpath d='M37.5 23.6 39.9 26 37.5 28.4 35.1 26Z'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 32'%3E%3Crect width='40' height='32' fill='%23F8F8F8'/%3E%3Cg fill='%23222'%3E%3Cpath d='M16 6 20 2V28H16Z'/%3E%3Cpath d='M16 12H7L2 17V23L7 28H16V24H9L6 21V19L9 16H16Z'/%3E%3Cpath d='M20 18 30 8H35L20 23Z'/%3E%3Cpath d='M22.5 20.5 25 18 35 28H30Z'/%3E%3Cpath d='M38 24 40 26 38 28 36 26Z'/%3E%3C/g%3E%3C/svg%3E">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Dongyoung Kim Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -79,12 +79,12 @@ p{margin:0}
 /* dk logo */
 .logo{display:inline-flex;align-items:center;gap:12px;color:var(--ink);flex:none}
 .dk{width:40px;height:32px;display:block;overflow:visible;fill:currentColor}
-.dk path{transform-box:view-box}
+.dk path{transform-box:view-box;stroke:currentColor;stroke-width:.12;stroke-linejoin:miter}
 .dk-s{transform-origin:18px 28px;animation:dkS .5s cubic-bezier(.8,0,.2,1) .1s backwards}
-.dk-b{transform-origin:16.4px 20px;animation:dkB .5s cubic-bezier(.8,0,.2,1) .35s backwards}
-.dk-a{transform-origin:19.8px 20px;animation:dkK .45s cubic-bezier(.8,0,.2,1) .6s backwards}
-.dk-l{transform-origin:24px 16px;animation:dkK .45s cubic-bezier(.8,0,.2,1) .72s backwards}
-.dk-d{transform-origin:37.5px 26px;animation:dkD .55s cubic-bezier(.8,0,.2,1) .95s backwards}
+.dk-b{transform-origin:16px 20px;animation:dkB .5s cubic-bezier(.8,0,.2,1) .35s backwards}
+.dk-a{transform-origin:20px 20px;animation:dkK .45s cubic-bezier(.8,0,.2,1) .6s backwards}
+.dk-l{transform-origin:25px 20px;animation:dkK .45s cubic-bezier(.8,0,.2,1) .72s backwards}
+.dk-d{transform-origin:38px 26px;animation:dkD .55s cubic-bezier(.8,0,.2,1) .95s backwards}
 @keyframes dkS{from{transform:scaleY(0)}}
 @keyframes dkB{from{transform:scaleX(0)}}
 @keyframes dkK{from{transform:scale(0)}}
@@ -1652,29 +1652,38 @@ body.lb-open .cursor{background:#EDEDED}
 /* ===== dk. Personal Identity ===== */
 #pg-dklogo{--o:#F37A20}
 .lg-svg{display:block;width:100%;height:auto;overflow:visible}
+.lg-svg:not(.wire):not(.lg-parts) path{stroke:var(--sk,currentColor);stroke-width:.12;stroke-linejoin:miter}
+.lg-svg[fill="#fff"]{--sk:#fff}.lg-svg[fill="#1d1d20"]{--sk:#1d1d20}
+.lg-anim .lg-d,.lg-m2 .lg-d{stroke:var(--o)!important}
 .lg-stage{position:relative;margin-top:clamp(28px,4vw,48px);border-radius:18px;background:#141416;color:#fff;aspect-ratio:16/9;display:grid;place-items:center;overflow:hidden;cursor:pointer}
 .lg-stage .lg-svg{width:min(42%,420px)}
 .lg-stage::after{content:"Click to replay";position:absolute;right:18px;bottom:14px;font-size:11px;letter-spacing:.12em;color:rgba(255,255,255,.45)}
 .lg-stage .lg-name{position:absolute;left:24px;bottom:18px;font-size:12px;letter-spacing:.1em;color:rgba(255,255,255,.6)}
 .lg-anim .lg-s{transform-box:view-box;transform-origin:18px 28px;animation:dkS .6s cubic-bezier(.8,0,.2,1) .2s backwards}
-.lg-anim .lg-b{transform-box:view-box;transform-origin:16.4px 20px;animation:dkB .6s cubic-bezier(.8,0,.2,1) .5s backwards}
-.lg-anim .lg-a{transform-box:view-box;transform-origin:19.8px 20px;animation:dkK .5s cubic-bezier(.8,0,.2,1) .8s backwards}
-.lg-anim .lg-l{transform-box:view-box;transform-origin:24px 16px;animation:dkK .5s cubic-bezier(.8,0,.2,1) .95s backwards}
-.lg-anim .lg-d{transform-box:view-box;transform-origin:37.5px 26px;animation:dkD .7s cubic-bezier(.8,0,.2,1) 1.2s backwards;fill:var(--o)}
+.lg-anim .lg-b{transform-box:view-box;transform-origin:16px 20px;animation:dkB .6s cubic-bezier(.8,0,.2,1) .5s backwards}
+.lg-anim .lg-a{transform-box:view-box;transform-origin:20px 20px;animation:dkK .5s cubic-bezier(.8,0,.2,1) .8s backwards}
+.lg-anim .lg-l{transform-box:view-box;transform-origin:25px 20px;animation:dkK .5s cubic-bezier(.8,0,.2,1) .95s backwards}
+.lg-anim .lg-d{transform-box:view-box;transform-origin:38px 26px;animation:dkD .7s cubic-bezier(.8,0,.2,1) 1.2s backwards;fill:var(--o)}
 .lg-sec{padding-block:clamp(56px,8vw,110px);border-top:1px solid var(--line)}
 .lg-two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(24px,5vw,72px);align-items:center}
 .lg-tx .no{font-size:12px;letter-spacing:.14em;color:var(--o)}
 .lg-tx h3{margin:12px 0 16px;font-size:clamp(26px,3.2vw,42px);font-weight:500;letter-spacing:-.03em;line-height:1.15}
 .lg-tx p{margin:0 0 14px;color:var(--ink-2);font-size:15px;line-height:1.75}
 .lg-board{border-radius:16px;background:#fff;box-shadow:0 0 0 1px var(--line);padding:clamp(24px,4vw,48px)}
-.lg-grid line{stroke:#e9e6e1;stroke-width:.06}
+.lg-grid line{stroke:#efece7;stroke-width:.04}.lg-grid line.mj{stroke:#ddd8d1;stroke-width:.07}
+.lg-gd line{stroke:#F37A20;stroke-width:.07;stroke-dasharray:.45 .35}.lg-gd line.lt{stroke:#c9c3bb}
+.lg-45 line{stroke:#4a7bd0;stroke-width:.07;stroke-dasharray:.45 .35}
+.lg-lab text,.lg-dim text,.lg-ang text{font-family:var(--f);font-size:.95px;fill:#8a8a8f;letter-spacing:.02em}
+.lg-dim text.c{text-anchor:middle}.lg-dim line{stroke:#1d1d20;stroke-width:.07}
+.lg-ang path{fill:none;stroke:#4a7bd0;stroke-width:.09}.lg-ang text{fill:#4a7bd0;font-weight:600}
+.lg-dim text{fill:#1d1d20;font-weight:600}.lg-dim text.w{fill:#fff}.lg-dim line.w{stroke:#fff}
 .lg-guide line{stroke:var(--o);stroke-width:.08;stroke-dasharray:.5 .4}
 .lg-guide .d45{stroke:#4a7bd0}
 .lg-parts path{transition:fill .3s,opacity .3s}
-.lg-parts .lg-s{fill:#1d1d20}.lg-parts .lg-b{fill:#5b5b62}.lg-parts .lg-a{fill:#F37A20}.lg-parts .lg-l{fill:#f6a35f}.lg-parts .lg-d{fill:#4a7bd0}
-.lg-parts.hl path{opacity:.15}.lg-parts.hl path.on{opacity:1}
+.lg-parts .lg-s{fill:#1d1d20}.lg-parts .lg-b{fill:#6b6b72}.lg-parts .lg-a{fill:#F37A20}.lg-parts .lg-l{fill:#f6a35f}.lg-parts .lg-d{fill:#4a7bd0}
+.lg-parts.hl > path{opacity:.15}.lg-parts.hl path.on{opacity:1}
 .lg-legend{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:8px}
-.lg-legend li{display:grid;grid-template-columns:14px 70px 1fr;gap:12px;align-items:baseline;font-size:14px;cursor:default;padding:6px 0;border-bottom:1px solid var(--line)}
+.lg-legend li{display:grid;grid-template-columns:14px 56px 1fr;gap:12px;align-items:baseline;font-size:14px;cursor:default;padding:6px 0;border-bottom:1px solid var(--line)}
 .lg-legend i{width:12px;height:12px;border-radius:3px;align-self:center}
 .lg-legend b{font-weight:600}
 .lg-legend span{color:var(--ink-2);font-size:13.5px}
@@ -1712,8 +1721,8 @@ body.lb-open .cursor{background:#EDEDED}
 .lg-m1:hover .lg-a{transform:translate(1.6px,-1.6px)}.lg-m1:hover .lg-l{transform:translate(1.6px,1.6px)}
 .lg-m2:hover .lg-d{transform:rotate(90deg)}
 .lg-m1 path,.lg-m2 path{transform-box:view-box;transition:transform .4s cubic-bezier(.8,0,.2,1)}
-.lg-m2 .lg-d{transform-origin:37.5px 26px;fill:var(--o)}
-.lg-m1 .lg-a{transform-origin:19.8px 20px}.lg-m1 .lg-l{transform-origin:24px 16px}
+.lg-m2 .lg-d{transform-origin:38px 26px;fill:var(--o)}
+.lg-m1 .lg-a{transform-origin:20px 20px}.lg-m1 .lg-l{transform-origin:25px 20px}
 @media (max-width:900px){ .lg-two{grid-template-columns:minmax(0,1fr)} .lg-steps{grid-template-columns:repeat(2,minmax(0,1fr))} .lg-apps{grid-template-columns:repeat(2,minmax(0,1fr))} .lg-app.span2,.lg-app.span3{grid-column:span 2} .lg-moto{grid-template-columns:minmax(0,1fr)} .lg-stage .lg-svg{width:56%} }
 
 /* ===== KAON Friends Keycaps ===== */
@@ -2081,11 +2090,11 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
   <div class="c">
     <a class="logo" href="#top" aria-label="dk — Dongyoung Kim, 맨 위로">
       <svg class="dk" viewBox="0 0 40 32" aria-hidden="true">
-        <path class="dk-s" d="M16.4 4.6 19.8 1.4V28h-3.4Z"/>
-        <path class="dk-b" d="M16.4 12H7L2 17v6l5 5h9.4v-3.4H8.4l-3-3v-3.2l3-3h8Z"/>
-        <path class="dk-a" d="M19.8 18 29.6 8.2H34L19.8 22.4Z"/>
-        <path class="dk-l" d="M22.7 17.4 25.6 14.6 34 28h-4.2Z"/>
-        <path class="dk-d" d="M37.5 23.6 39.9 26 37.5 28.4 35.1 26Z"/>
+        <path class="dk-s" d="M16 6 20 2V28H16Z"/>
+        <path class="dk-b" d="M16 12H7L2 17V23L7 28H16V24H9L6 21V19L9 16H16Z"/>
+        <path class="dk-a" d="M20 18 30 8H35L20 23Z"/>
+        <path class="dk-l" d="M22.5 20.5 25 18 35 28H30Z"/>
+        <path class="dk-d" d="M38 24 40 26 38 28 36 26Z"/>
       </svg>
       <span class="logo-name">Dongyoung Kim<small>AI-Driven Visual Content Designer</small></span>
     </a>
@@ -2104,7 +2113,7 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
 <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="사이트 메뉴" hidden>
   <div class="menu-in wrap">
     <div class="menu-top c">
-      <span class="menu-logo" aria-hidden="true"><svg class="dk" viewBox="0 0 40 32"><path class="dk-s" d="M16.4 4.6 19.8 1.4V28h-3.4Z"/><path class="dk-b" d="M16.4 12H7L2 17v6l5 5h9.4v-3.4H8.4l-3-3v-3.2l3-3h8Z"/><path class="dk-a" d="M19.8 18 29.6 8.2H34L19.8 22.4Z"/><path class="dk-l" d="M22.7 17.4 25.6 14.6 34 28h-4.2Z"/><path class="dk-d" d="M37.5 23.6 39.9 26 37.5 28.4 35.1 26Z"/></svg></span>
+      <span class="menu-logo" aria-hidden="true"><svg class="dk" viewBox="0 0 40 32"><path class="dk-s" d="M16 6 20 2V28H16Z"/><path class="dk-b" d="M16 12H7L2 17V23L7 28H16V24H9L6 21V19L9 16H16Z"/><path class="dk-a" d="M20 18 30 8H35L20 23Z"/><path class="dk-l" d="M22.5 20.5 25 18 35 28H30Z"/><path class="dk-d" d="M38 24 40 26 38 28 36 26Z"/></svg></span>
       <button class="menu-btn on-dark" type="button" id="menuClose"><span class="mb-t">Close</span><span class="mb-i x" aria-hidden="true"><i></i><i></i></span></button>
     </div>
     <div class="menu-body c">
@@ -3089,7 +3098,7 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
 
       <div class="kc-sec">
         <div class="kc-cap"><span class="kc-no">02 — Logotype</span><h3 class="kc-h">Horizontal,<br><em>vertical.</em></h3></div>
-        <div class="kc-txt"><p>계열사 로고는 가로형과 세로형 두 가지 조합을 두고, 최소 사용 크기를 102px(20mm)로 정했어요. 매체의 비율에 맞춰 선택해 쓰도록 했어요.</p></div>
+        <div class="kc-txt"><p>계열사 로고는 가로형과 세로형 두 가지 조합을 두고, 매체의 비율에 맞춰 골라 쓰도록 했어요. 로고타입의 최소 사용 크기는 가로 폭 기준 디지털 102px, 인쇄 20mm로 매체별로 따로 정했어요.</p></div>
       </div>
       <div class="kc-types">
         <figure><div class="kc-tbox"><img id="kc-h" src="assets/kaonci/group.png" alt="가로형 로고"></div><figcaption><b>Horizontal Type</b><span>가로형</span></figcaption></figure>
@@ -3099,14 +3108,14 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
 
       <div class="kc-sec">
         <div class="kc-cap"><span class="kc-no">03 — Color System</span><h3 class="kc-h">Orange for the group,<br><em>blue for the network.</em></h3></div>
-        <div class="kc-txt"><p>Primary 2색과 Secondary 3색으로 구성했어요. 인쇄 방식과 소재에 따라 색이 달라지지 않도록 HEX와 PANTONE 값을 함께 지정했어요. 색상 칩을 누르면 HEX 값이 복사돼요.</p></div>
+        <div class="kc-txt"><p>Primary 2색과 Secondary 3색으로 구성했어요. 인쇄 방식과 소재에 따라 같은 색도 다르게 발색되기 때문에, 색마다 별색(PANTONE)·인쇄(CMYK)·디지털(RGB·HEX) 값을 함께 지정해 매체별 기준을 정했어요. 색상 칩을 누르면 HEX 값이 복사돼요.</p></div>
       </div>
-      <div class="kc-colors" id="kc-colors"><button type="button" class="kc-sw" style="--c:#FF7B0F" data-hex="#FF7B0F"><span class="kc-chip"></span><b>KAON ORANGE</b><span>#FF7B0F · PANTONE 144 U</span><em>Primary</em></button><button type="button" class="kc-sw" style="--c:#000000" data-hex="#000000"><span class="kc-chip"></span><b>KAON BLACK</b><span>#000000 · Process Black C</span><em>Primary</em></button><button type="button" class="kc-sw" style="--c:#3A3B4D" data-hex="#3A3B4D"><span class="kc-chip"></span><b>DARK BLUE</b><span>#3A3B4D · PANTONE 174-16 C</span><em>Secondary</em></button><button type="button" class="kc-sw" style="--c:#B0B0B0" data-hex="#B0B0B0"><span class="kc-chip"></span><b>SILVER GRAY</b><span>#B0B0B0 · PANTONE 1505 C</span><em>Secondary</em></button><button type="button" class="kc-sw" style="--c:#FFFFFF" data-hex="#FFFFFF"><span class="kc-chip"></span><b>WHITE</b><span>#FFFFFF · PANTONE 179-1 C</span><em>Secondary</em></button></div>
+      <div class="kc-colors" id="kc-colors"><button type="button" class="kc-sw" style="--c:#FF7B0F" data-hex="#FF7B0F"><span class="kc-chip"></span><b>KAON ORANGE</b><span>#FF7B0F · PANTONE 144 U</span><em>Primary</em></button><button type="button" class="kc-sw" style="--c:#000000" data-hex="#000000"><span class="kc-chip"></span><b>KAON BLACK</b><span>#000000 · PANTONE P Process Black C</span><em>Primary</em></button><button type="button" class="kc-sw" style="--c:#3A3B4D" data-hex="#3A3B4D"><span class="kc-chip"></span><b>DARK BLUE</b><span>#3A3B4D · PANTONE P 174-16 C</span><em>Secondary</em></button><button type="button" class="kc-sw" style="--c:#B0B0B0" data-hex="#B0B0B0"><span class="kc-chip"></span><b>SILVER GRAY</b><span>#B0B0B0 · PANTONE 1505 C</span><em>Secondary</em></button><button type="button" class="kc-sw" style="--c:#FFFFFF" data-hex="#FFFFFF"><span class="kc-chip"></span><b>WHITE</b><span>#FFFFFF · PANTONE P 179-1 C</span><em>Secondary</em></button></div>
       <p class="kc-copied" id="kc-copied" aria-live="polite"></p>
 
       <div class="kc-sec">
         <div class="kc-cap"><span class="kc-no">04 — Clear Space</span><h3 class="kc-h">Room to<br><em>breathe.</em></h3></div>
-        <div class="kc-txt"><p>로고 높이를 기준 단위 <b>a</b>로 삼아, 사방에 a만큼의 여백을 확보하도록 했어요. 주소 조합에서는 로고와 주소 사이를 2a(세로형), 3a(가로형)로 정했어요.</p></div>
+        <div class="kc-txt"><p>로고타입의 글자 높이(K의 높이)를 기준 단위 <b>a</b>로 삼아, 사방에 a만큼의 최소 여백을 확보하도록 했어요. 주소 조합에서는 로고와 주소 사이를 2a(세로형), 3a(가로형)로 정했어요.</p></div>
       </div>
       <div class="kc-space">
         <div class="kc-sbox"><span class="kc-q tl"></span><span class="kc-q tr"></span><span class="kc-q bl"></span><span class="kc-q br"></span><img id="kc-s" src="assets/kaonci/group.png" alt="최소 공간 규정 예시"><span class="kc-a t">a</span><span class="kc-a l">a</span></div>
@@ -3114,7 +3123,7 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
 
       <div class="kc-sec">
         <div class="kc-cap"><span class="kc-no">05 — Slogan</span><h3 class="kc-h">Connected,<br><em>and more.</em></h3></div>
-        <div class="kc-txt"><p>그룹 공통 슬로건 CONNECTED+를 로고와 결합하는 세로형·가로형 규칙을 만들었어요. 슬로건의 너비는 로고타입의 너비에 맞춰 정렬해요.</p></div>
+        <div class="kc-txt"><p>그룹 공통 슬로건 CONNECTED+를 로고와 결합하는 세로형·가로형 규칙을 만들었어요. 세로형은 로고 아래에 a 간격을 두고 왼쪽 정렬로, 가로형은 로고 오른쪽에 a 간격을 두고 같은 높이에 배치해요.</p></div>
       </div>
       <div class="kc-slogan" id="kc-slogan" data-mode="v">
         <div class="kc-seg kc-sm" data-k="sl"><button type="button" class="on" data-v="v">Vertical</button><button type="button" data-v="h">Horizontal</button></div>
@@ -3227,7 +3236,7 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
 <div class="lt-sign"><span class="lt-script">Seojun Lee</span><b>이 서 준</b><small>KAON GROUP Corporate실장</small></div></div><div class="lt-foot"><p style="top:81.2%">Tel 031-724-8500<br>+82 31 724 8500</p><p style="top:84.4%">www.kaongroup.com</p><p style="top:87.6%">884-3, Seongnam-daero, Bundang-gu<br>Seongnam-si, Gyeonggi-do 13517, Korea</p></div></div></div><figcaption><b>KAON ROBOTICS</b><span>A4 · 210 × 297 mm</span></figcaption></figure></div>
 
       <div class="st-sec"><span class="st-no">03 — Envelope</span><h3 class="st-h">Large &amp; small,<br><em>one family.</em></h3>
-        <p class="st-p">대봉투는 세로로 긴 앞면에 회사 정보를 세로쓰기로 배치하고, 전원 버튼 심볼을 아래쪽에 크게 걸쳐 놓았어요. 소봉투는 같은 그래픽을 오른쪽으로 흘려 보내, 크기가 달라도 한 세트로 읽히도록 했어요.</p></div>
+        <p class="st-p">대·소봉투 모두 왼쪽 위에 로고와 국·영문 주소 블록을 두고, 오른쪽에는 오렌지 그라데이션 위에 전원 버튼 심볼을 크게 확대해 잘라 넣었어요. 세로형 대봉투는 같은 레이아웃을 90° 돌려 긴 변을 기준으로 앉혀, 크기와 방향이 달라도 한 세트로 읽혀요.</p></div>
       <div class="st-env" id="st-env" data-b="group">
         <div class="st-etabs" role="tablist" aria-label="봉투 브랜드 선택"><button type="button" class="on" data-b="group" style="--c:#F37A20"><i></i>KAON GROUP</button><button type="button" data-b="bb" style="--c:#3A73BC"><i></i>KAON BROADBAND</button></div>
         <div class="st-estage">
@@ -3246,53 +3255,51 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
       <h2 class="pg-title" id="plg-title">dk. Personal Identity</h2>
       <div class="pg-meta"><span><b>2026</b> · Personal Project</span><span>Logo · Monogram · Motion</span><span>Dongyoung Kim</span></div>
     </header>
-    <div class="pg-intro"><span class="label">About this project</span><p class="pg-lead">이름 이니셜 <b>d</b>와 <b>k</b>를 하나의 기둥으로 엮은 퍼스널 모노그램이에요. 브랜드·캐릭터·AI 콘텐츠를 한 사람이 끝까지 연결한다는 작업 방식을, <b>하나의 줄기에서 두 글자가 갈라지는 구조</b>로 표현했어요. 45° 모서리와 2단위 그리드로 형태를 정리하고, 마지막에 다이아몬드 마침표로 "끝까지 완성한다"는 태도를 찍었어요. 포트폴리오 사이트의 로고, 파비콘, 모션까지 하나의 시스템으로 적용했어요.</p></div>
+    <div class="pg-intro"><span class="label">About this project</span><p class="pg-lead">이름 이니셜 <b>d</b>와 <b>k</b>를 하나의 기둥으로 엮은 퍼스널 모노그램이에요. 브랜드·캐릭터·AI 콘텐츠를 한 사람이 끝까지 연결한다는 작업 방식을, <b>하나의 줄기에서 두 글자가 갈라지는 구조</b>로 표현했어요. 1단위 그리드 위에서 모든 사선을 45°로 정리하고, 마지막에 다이아몬드 마침표로 "끝까지 완성한다"는 태도를 찍었어요. 포트폴리오 사이트의 로고, 파비콘, 모션까지 하나의 시스템으로 적용했어요.</p></div>
     <dl class="ix-stats">
       <div><dt>Monogram</dt><dd>d + k<br><small>하나의 기둥을 공유</small></dd></div>
-      <div><dt>Grid</dt><dd>40 × 32<br><small>2단위 그리드 · 45° 각도</small></dd></div>
-      <div><dt>Parts</dt><dd>5<br><small>Stem · Bowl · Arm · Leg · Dot</small></dd></div>
+      <div><dt>Grid</dt><dd>40 × 32<br><small>1단위 그리드 · 사선 45°</small></dd></div>
+      <div><dt>Stroke</dt><dd>4 / 5<br><small>직선 4 · 45° 사선 수평 폭 5</small></dd></div>
       <div><dt>Applied</dt><dd>Web<br><small>로고 · 파비콘 · 모션</small></dd></div>
     </dl>
-    <div class="lg-stage" id="lg-stage" role="button" tabindex="0" aria-label="로고 애니메이션 다시 보기"><svg class="lg-svg lg-anim" viewBox="0 0 40 32" aria-hidden="true" fill="#fff"><path class="lg-s" d="M16.4 4.6 19.8 1.4V28h-3.4Z"/><path class="lg-b" d="M16.4 12H7L2 17v6l5 5h9.4v-3.4H8.4l-3-3v-3.2l3-3h8Z"/><path class="lg-a" d="M19.8 18 29.6 8.2H34L19.8 22.4Z"/><path class="lg-l" d="M22.7 17.4 25.6 14.6 34 28h-4.2Z"/><path class="lg-d" d="M37.5 23.6 39.9 26 37.5 28.4 35.1 26Z"/></svg><span class="lg-name">dk. — Dongyoung Kim</span></div>
+    <div class="lg-stage" id="lg-stage" role="button" tabindex="0" aria-label="로고 애니메이션 다시 보기"><svg class="lg-svg lg-anim" viewBox="0 0 40 32" aria-hidden="true" fill="#fff"><path class="lg-s" d="M16 6 20 2V28H16Z"/><path class="lg-b" d="M16 12H7L2 17V23L7 28H16V24H9L6 21V19L9 16H16Z"/><path class="lg-a" d="M20 18 30 8H35L20 23Z"/><path class="lg-l" d="M22.5 20.5 25 18 35 28H30Z"/><path class="lg-d" d="M38 24 40 26 38 28 36 26Z"/></svg><span class="lg-name">dk. — Dongyoung Kim</span></div>
   </div></div>
 
   <section class="lg-sec"><div class="wrap"><div class="c">
     <div class="cl-h"><span class="no" style="color:var(--o)">01 — Process</span><h3>타이핑한 글자에서 하나의 심볼까지</h3><p>네 단계를 거쳐 평범한 이니셜을 기억에 남는 모노그램으로 다듬었어요.</p></div>
     <div class="lg-steps">
       <figure><div class="bx"><span class="txt">dk</span></div><figcaption><small>STEP 01</small><b>이니셜에서 출발</b>소문자 d와 k가 모두 위로 솟은 세로획을 가진다는 점에 주목했어요.</figcaption></figure>
-      <figure><div class="bx"><svg class="lg-svg wire" viewBox="0 0 40 32" aria-hidden="true"><g class="lg-grid"><line x1="0" y1="0" x2="0" y2="32"/><line x1="2" y1="0" x2="2" y2="32"/><line x1="4" y1="0" x2="4" y2="32"/><line x1="6" y1="0" x2="6" y2="32"/><line x1="8" y1="0" x2="8" y2="32"/><line x1="10" y1="0" x2="10" y2="32"/><line x1="12" y1="0" x2="12" y2="32"/><line x1="14" y1="0" x2="14" y2="32"/><line x1="16" y1="0" x2="16" y2="32"/><line x1="18" y1="0" x2="18" y2="32"/><line x1="20" y1="0" x2="20" y2="32"/><line x1="22" y1="0" x2="22" y2="32"/><line x1="24" y1="0" x2="24" y2="32"/><line x1="26" y1="0" x2="26" y2="32"/><line x1="28" y1="0" x2="28" y2="32"/><line x1="30" y1="0" x2="30" y2="32"/><line x1="32" y1="0" x2="32" y2="32"/><line x1="34" y1="0" x2="34" y2="32"/><line x1="36" y1="0" x2="36" y2="32"/><line x1="38" y1="0" x2="38" y2="32"/><line x1="40" y1="0" x2="40" y2="32"/><line x1="0" y1="0" x2="40" y2="0"/><line x1="0" y1="2" x2="40" y2="2"/><line x1="0" y1="4" x2="40" y2="4"/><line x1="0" y1="6" x2="40" y2="6"/><line x1="0" y1="8" x2="40" y2="8"/><line x1="0" y1="10" x2="40" y2="10"/><line x1="0" y1="12" x2="40" y2="12"/><line x1="0" y1="14" x2="40" y2="14"/><line x1="0" y1="16" x2="40" y2="16"/><line x1="0" y1="18" x2="40" y2="18"/><line x1="0" y1="20" x2="40" y2="20"/><line x1="0" y1="22" x2="40" y2="22"/><line x1="0" y1="24" x2="40" y2="24"/><line x1="0" y1="26" x2="40" y2="26"/><line x1="0" y1="28" x2="40" y2="28"/><line x1="0" y1="30" x2="40" y2="30"/><line x1="0" y1="32" x2="40" y2="32"/></g><path d="M16.4 4.6 19.8 1.4V28h-3.4Z"/><path d="M16.4 12H7L2 17v6l5 5h9.4v-3.4H8.4l-3-3v-3.2l3-3h8Z"/><path d="M19.8 18 29.6 8.2H34L19.8 22.4Z"/><path d="M22.7 17.4 25.6 14.6 34 28h-4.2Z"/></svg></div><figcaption><small>STEP 02</small><b>기둥을 하나로</b>두 글자의 세로획을 하나로 합쳐, d의 끝이 곧 k의 시작이 되게 했어요.</figcaption></figure>
-      <figure><div class="bx"><svg class="lg-svg " viewBox="0 0 40 32" aria-hidden="true" fill="#1d1d20"><path class="lg-s" d="M16.4 4.6 19.8 1.4V28h-3.4Z"/><path class="lg-b" d="M16.4 12H7L2 17v6l5 5h9.4v-3.4H8.4l-3-3v-3.2l3-3h8Z"/><path class="lg-a" d="M19.8 18 29.6 8.2H34L19.8 22.4Z"/><path class="lg-l" d="M22.7 17.4 25.6 14.6 34 28h-4.2Z"/></svg></div><figcaption><small>STEP 03</small><b>45° 기하학</b>볼의 모서리와 팔·다리를 모두 45°로 정리해 단단하고 디지털한 인상을 만들었어요.</figcaption></figure>
-      <figure><div class="bx"><svg class="lg-svg lg-m2" viewBox="0 0 40 32" aria-hidden="true" fill="#1d1d20"><path class="lg-s" d="M16.4 4.6 19.8 1.4V28h-3.4Z"/><path class="lg-b" d="M16.4 12H7L2 17v6l5 5h9.4v-3.4H8.4l-3-3v-3.2l3-3h8Z"/><path class="lg-a" d="M19.8 18 29.6 8.2H34L19.8 22.4Z"/><path class="lg-l" d="M22.7 17.4 25.6 14.6 34 28h-4.2Z"/><path class="lg-d" d="M37.5 23.6 39.9 26 37.5 28.4 35.1 26Z"/></svg></div><figcaption><small>STEP 04</small><b>마침표를 찍다</b>다이아몬드 점으로 "끝까지 완성한다"는 태도를 더했어요. 마우스를 올려 보세요.</figcaption></figure>
+      <figure><div class="bx"><svg class="lg-svg wire" viewBox="0 0 40 32" aria-hidden="true"><g class="lg-grid"><line x1="0" y1="0" x2="0" y2="32"/><line x1="2" y1="0" x2="2" y2="32"/><line x1="4" y1="0" x2="4" y2="32"/><line x1="6" y1="0" x2="6" y2="32"/><line x1="8" y1="0" x2="8" y2="32"/><line x1="10" y1="0" x2="10" y2="32"/><line x1="12" y1="0" x2="12" y2="32"/><line x1="14" y1="0" x2="14" y2="32"/><line x1="16" y1="0" x2="16" y2="32"/><line x1="18" y1="0" x2="18" y2="32"/><line x1="20" y1="0" x2="20" y2="32"/><line x1="22" y1="0" x2="22" y2="32"/><line x1="24" y1="0" x2="24" y2="32"/><line x1="26" y1="0" x2="26" y2="32"/><line x1="28" y1="0" x2="28" y2="32"/><line x1="30" y1="0" x2="30" y2="32"/><line x1="32" y1="0" x2="32" y2="32"/><line x1="34" y1="0" x2="34" y2="32"/><line x1="36" y1="0" x2="36" y2="32"/><line x1="38" y1="0" x2="38" y2="32"/><line x1="40" y1="0" x2="40" y2="32"/><line x1="0" y1="0" x2="40" y2="0"/><line x1="0" y1="2" x2="40" y2="2"/><line x1="0" y1="4" x2="40" y2="4"/><line x1="0" y1="6" x2="40" y2="6"/><line x1="0" y1="8" x2="40" y2="8"/><line x1="0" y1="10" x2="40" y2="10"/><line x1="0" y1="12" x2="40" y2="12"/><line x1="0" y1="14" x2="40" y2="14"/><line x1="0" y1="16" x2="40" y2="16"/><line x1="0" y1="18" x2="40" y2="18"/><line x1="0" y1="20" x2="40" y2="20"/><line x1="0" y1="22" x2="40" y2="22"/><line x1="0" y1="24" x2="40" y2="24"/><line x1="0" y1="26" x2="40" y2="26"/><line x1="0" y1="28" x2="40" y2="28"/><line x1="0" y1="30" x2="40" y2="30"/><line x1="0" y1="32" x2="40" y2="32"/></g><path d="M16 6 20 2V28H16Z"/><path d="M16 12H7L2 17V23L7 28H16V24H9L6 21V19L9 16H16Z"/><path d="M20 18 30 8H35L20 23Z"/><path d="M22.5 20.5 25 18 35 28H30Z"/></svg></div><figcaption><small>STEP 02</small><b>기둥을 하나로</b>두 글자의 세로획을 하나로 합쳐, d의 끝이 곧 k의 시작이 되게 했어요.</figcaption></figure>
+      <figure><div class="bx"><svg class="lg-svg " viewBox="0 0 40 32" aria-hidden="true" fill="#1d1d20"><path class="lg-s" d="M16 6 20 2V28H16Z"/><path class="lg-b" d="M16 12H7L2 17V23L7 28H16V24H9L6 21V19L9 16H16Z"/><path class="lg-a" d="M20 18 30 8H35L20 23Z"/><path class="lg-l" d="M22.5 20.5 25 18 35 28H30Z"/></svg></div><figcaption><small>STEP 03</small><b>45° 기하학</b>기둥 윗면, 볼 모서리, 팔, 다리까지 모든 사선을 45°로 맞추고, 획 두께를 직선 4 · 사선 수평 폭 5로 통일했어요.</figcaption></figure>
+      <figure><div class="bx"><svg class="lg-svg lg-m2" viewBox="0 0 40 32" aria-hidden="true" fill="#1d1d20"><path class="lg-s" d="M16 6 20 2V28H16Z"/><path class="lg-b" d="M16 12H7L2 17V23L7 28H16V24H9L6 21V19L9 16H16Z"/><path class="lg-a" d="M20 18 30 8H35L20 23Z"/><path class="lg-l" d="M22.5 20.5 25 18 35 28H30Z"/><path class="lg-d" d="M38 24 40 26 38 28 36 26Z"/></svg></div><figcaption><small>STEP 04</small><b>마침표를 찍다</b>획 두께와 같은 대각선 4의 다이아몬드 점으로 "끝까지 완성한다"는 태도를 더했어요. 마우스를 올려 보세요.</figcaption></figure>
     </div>
   </div></div></section>
 
   <section class="lg-sec"><div class="wrap"><div class="c">
     <div class="lg-two">
-      <div class="lg-tx"><span class="no">02 — Construction</span><h3>2단위 그리드와 45°</h3><p>40 × 32 캔버스를 2단위 그리드로 나누고, 모든 사선을 45°에 맞췄어요. 획 두께는 3.4 단위로 통일해 작은 크기에서도 형태가 뭉개지지 않아요.</p>
-        <ul class="lg-legend" id="lg-legend"><li data-p="s"><i style="background:#1d1d20"></i><b>Stem</b><span>d와 k가 함께 쓰는 하나의 기둥</span></li><li data-p="b"><i style="background:#5b5b62"></i><b>Bowl</b><span>45° 모서리를 깎은 팔각형 d의 볼</span></li><li data-p="a"><i style="background:#F37A20"></i><b>Arm</b><span>기둥에서 오른쪽 위로 뻗는 k의 팔</span></li><li data-p="l"><i style="background:#f6a35f"></i><b>Leg</b><span>팔과 떨어져 대각선으로 내려오는 다리</span></li><li data-p="d"><i style="background:#4a7bd0"></i><b>Dot</b><span>마침표이자 포인트 — 다이아몬드 점</span></li></ul></div>
-      <div class="lg-board"><svg class="lg-svg lg-parts" id="lg-parts" viewBox="-1 -1 42 34" aria-hidden="true"><g class="lg-grid"><line x1="0" y1="0" x2="0" y2="32"/><line x1="2" y1="0" x2="2" y2="32"/><line x1="4" y1="0" x2="4" y2="32"/><line x1="6" y1="0" x2="6" y2="32"/><line x1="8" y1="0" x2="8" y2="32"/><line x1="10" y1="0" x2="10" y2="32"/><line x1="12" y1="0" x2="12" y2="32"/><line x1="14" y1="0" x2="14" y2="32"/><line x1="16" y1="0" x2="16" y2="32"/><line x1="18" y1="0" x2="18" y2="32"/><line x1="20" y1="0" x2="20" y2="32"/><line x1="22" y1="0" x2="22" y2="32"/><line x1="24" y1="0" x2="24" y2="32"/><line x1="26" y1="0" x2="26" y2="32"/><line x1="28" y1="0" x2="28" y2="32"/><line x1="30" y1="0" x2="30" y2="32"/><line x1="32" y1="0" x2="32" y2="32"/><line x1="34" y1="0" x2="34" y2="32"/><line x1="36" y1="0" x2="36" y2="32"/><line x1="38" y1="0" x2="38" y2="32"/><line x1="40" y1="0" x2="40" y2="32"/><line x1="0" y1="0" x2="40" y2="0"/><line x1="0" y1="2" x2="40" y2="2"/><line x1="0" y1="4" x2="40" y2="4"/><line x1="0" y1="6" x2="40" y2="6"/><line x1="0" y1="8" x2="40" y2="8"/><line x1="0" y1="10" x2="40" y2="10"/><line x1="0" y1="12" x2="40" y2="12"/><line x1="0" y1="14" x2="40" y2="14"/><line x1="0" y1="16" x2="40" y2="16"/><line x1="0" y1="18" x2="40" y2="18"/><line x1="0" y1="20" x2="40" y2="20"/><line x1="0" y1="22" x2="40" y2="22"/><line x1="0" y1="24" x2="40" y2="24"/><line x1="0" y1="26" x2="40" y2="26"/><line x1="0" y1="28" x2="40" y2="28"/><line x1="0" y1="30" x2="40" y2="30"/><line x1="0" y1="32" x2="40" y2="32"/></g><path class="lg-s" d="M16.4 4.6 19.8 1.4V28h-3.4Z"/><path class="lg-b" d="M16.4 12H7L2 17v6l5 5h9.4v-3.4H8.4l-3-3v-3.2l3-3h8Z"/><path class="lg-a" d="M19.8 18 29.6 8.2H34L19.8 22.4Z"/><path class="lg-l" d="M22.7 17.4 25.6 14.6 34 28h-4.2Z"/><path class="lg-d" d="M37.5 23.6 39.9 26 37.5 28.4 35.1 26Z"/><g class="lg-guide"><line x1="0" y1="28" x2="40" y2="28"/><line x1="0" y1="12" x2="40" y2="12"/><line x1="0" y1="1.4" x2="40" y2="1.4"/><line x1="16.4" y1="0" x2="16.4" y2="32"/><line x1="19.8" y1="0" x2="19.8" y2="32"/><line x1="12" y1="0" x2="44" y2="32" class="d45"/><line x1="44.2" y1="0" x2="12.2" y2="32" class="d45"/></g></svg></div>
-    </div>
+      <div class="lg-tx"><span class="no">02 — Construction</span><h3>1단위 그리드와 45° 사선</h3><p>40 × 32 캔버스를 1단위 그리드(4단위 메이저 라인)로 나눴어요. 획의 시작·끝점은 모두 그리드 교점에 놓이고, 사선은 전부 45°예요. 45° 사선 두 개가 만나는 k의 안쪽 교차점 한 곳(22.5, 20.5)만 0.5단위에 놓여요.</p><p>수직·수평 획은 4로 통일했어요. 45° 사선은 같은 수직 두께로 그리면 더 무거워 보여서, 수평 폭 5(수직 두께 약 3.5)로 보정했어요. 반대로 볼의 꺾이는 모서리는 얇아 보이지 않도록 단면을 약 4.2로 두었어요.</p><ul class="lg-legend" id="lg-legend"><li data-p="s"><i style="background:#1d1d20"></i><b>Stem</b><span>수직 획 4 · 윗면 4×4 45° 컷 · 높이 26 (Ascender 2 → Baseline 28)</span></li><li data-p="b"><i style="background:#6b6b72"></i><b>Bowl</b><span>x-height 16 · 획 4 · 모서리 바깥 5 / 안쪽 3 45° 컷</span></li><li data-p="a"><i style="background:#F37A20"></i><b>Arm</b><span>45° 사선 · 수평 폭 5 · x-height 위로 획 1개(4)만큼 돌출</span></li><li data-p="l"><i style="background:#f6a35f"></i><b>Leg</b><span>45° 사선 · 수평 폭 5 · 끝선을 팔 끝과 같은 x=35에 정렬</span></li><li data-p="d"><i style="background:#4a7bd0"></i><b>Dot</b><span>대각선 4(= 획 두께) 정사각형을 45° 회전 · 아래 꼭짓점이 Baseline</span></li></ul></div>
+      <div class="lg-board"><svg class="lg-svg lg-parts" id="lg-parts" viewBox="-1.2 -.4 48.4 34.2" role="img" aria-label="dk 로고 구조도 — 그리드, 기준선, 획 두께, 45도 사선"><g class="lg-grid"><line class="mj" x1="0" y1="0" x2="0" y2="32"/><line class="" x1="1" y1="0" x2="1" y2="32"/><line class="" x1="2" y1="0" x2="2" y2="32"/><line class="" x1="3" y1="0" x2="3" y2="32"/><line class="mj" x1="4" y1="0" x2="4" y2="32"/><line class="" x1="5" y1="0" x2="5" y2="32"/><line class="" x1="6" y1="0" x2="6" y2="32"/><line class="" x1="7" y1="0" x2="7" y2="32"/><line class="mj" x1="8" y1="0" x2="8" y2="32"/><line class="" x1="9" y1="0" x2="9" y2="32"/><line class="" x1="10" y1="0" x2="10" y2="32"/><line class="" x1="11" y1="0" x2="11" y2="32"/><line class="mj" x1="12" y1="0" x2="12" y2="32"/><line class="" x1="13" y1="0" x2="13" y2="32"/><line class="" x1="14" y1="0" x2="14" y2="32"/><line class="" x1="15" y1="0" x2="15" y2="32"/><line class="mj" x1="16" y1="0" x2="16" y2="32"/><line class="" x1="17" y1="0" x2="17" y2="32"/><line class="" x1="18" y1="0" x2="18" y2="32"/><line class="" x1="19" y1="0" x2="19" y2="32"/><line class="mj" x1="20" y1="0" x2="20" y2="32"/><line class="" x1="21" y1="0" x2="21" y2="32"/><line class="" x1="22" y1="0" x2="22" y2="32"/><line class="" x1="23" y1="0" x2="23" y2="32"/><line class="mj" x1="24" y1="0" x2="24" y2="32"/><line class="" x1="25" y1="0" x2="25" y2="32"/><line class="" x1="26" y1="0" x2="26" y2="32"/><line class="" x1="27" y1="0" x2="27" y2="32"/><line class="mj" x1="28" y1="0" x2="28" y2="32"/><line class="" x1="29" y1="0" x2="29" y2="32"/><line class="" x1="30" y1="0" x2="30" y2="32"/><line class="" x1="31" y1="0" x2="31" y2="32"/><line class="mj" x1="32" y1="0" x2="32" y2="32"/><line class="" x1="33" y1="0" x2="33" y2="32"/><line class="" x1="34" y1="0" x2="34" y2="32"/><line class="" x1="35" y1="0" x2="35" y2="32"/><line class="mj" x1="36" y1="0" x2="36" y2="32"/><line class="" x1="37" y1="0" x2="37" y2="32"/><line class="" x1="38" y1="0" x2="38" y2="32"/><line class="" x1="39" y1="0" x2="39" y2="32"/><line class="mj" x1="40" y1="0" x2="40" y2="32"/><line class="mj" x1="0" y1="0" x2="40" y2="0"/><line class="" x1="0" y1="1" x2="40" y2="1"/><line class="" x1="0" y1="2" x2="40" y2="2"/><line class="" x1="0" y1="3" x2="40" y2="3"/><line class="mj" x1="0" y1="4" x2="40" y2="4"/><line class="" x1="0" y1="5" x2="40" y2="5"/><line class="" x1="0" y1="6" x2="40" y2="6"/><line class="" x1="0" y1="7" x2="40" y2="7"/><line class="mj" x1="0" y1="8" x2="40" y2="8"/><line class="" x1="0" y1="9" x2="40" y2="9"/><line class="" x1="0" y1="10" x2="40" y2="10"/><line class="" x1="0" y1="11" x2="40" y2="11"/><line class="mj" x1="0" y1="12" x2="40" y2="12"/><line class="" x1="0" y1="13" x2="40" y2="13"/><line class="" x1="0" y1="14" x2="40" y2="14"/><line class="" x1="0" y1="15" x2="40" y2="15"/><line class="mj" x1="0" y1="16" x2="40" y2="16"/><line class="" x1="0" y1="17" x2="40" y2="17"/><line class="" x1="0" y1="18" x2="40" y2="18"/><line class="" x1="0" y1="19" x2="40" y2="19"/><line class="mj" x1="0" y1="20" x2="40" y2="20"/><line class="" x1="0" y1="21" x2="40" y2="21"/><line class="" x1="0" y1="22" x2="40" y2="22"/><line class="" x1="0" y1="23" x2="40" y2="23"/><line class="mj" x1="0" y1="24" x2="40" y2="24"/><line class="" x1="0" y1="25" x2="40" y2="25"/><line class="" x1="0" y1="26" x2="40" y2="26"/><line class="" x1="0" y1="27" x2="40" y2="27"/><line class="mj" x1="0" y1="28" x2="40" y2="28"/><line class="" x1="0" y1="29" x2="40" y2="29"/><line class="" x1="0" y1="30" x2="40" y2="30"/><line class="" x1="0" y1="31" x2="40" y2="31"/><line class="mj" x1="0" y1="32" x2="40" y2="32"/></g><g class="lg-gd"><line x1="-.6" y1="2" x2="40.6" y2="2"/><line x1="-.6" y1="8" x2="40.6" y2="8" class="lt"/><line x1="-.6" y1="12" x2="40.6" y2="12"/><line x1="-.6" y1="28" x2="40.6" y2="28"/><line x1="35" y1="6" x2="35" y2="30" class="lt"/></g><g class="lg-45"><line x1="23" y1="16" x2="37" y2="30"/><line x1="19" y1="24" x2="36.5" y2="6.5"/></g><g class="lg-lab"><text x="40.9" y="2.3" class="">Ascender 2</text><text x="40.9" y="8.3" class="">Arm top 8</text><text x="40.9" y="12.3" class="">x-height 12</text><text x="40.9" y="28.3" class="">Baseline 28</text></g><path class="lg-b" d="M16 12H7L2 17V23L7 28H16V24H9L6 21V19L9 16H16Z"/><path class="lg-s" d="M16 6 20 2V28H16Z"/><path class="lg-l" d="M22.5 20.5 25 18 35 28H30Z"/><path class="lg-a" d="M20 18 30 8H35L20 23Z"/><path class="lg-d" d="M38 24 40 26 38 28 36 26Z"/><g class="lg-dim"><line x1="16" y1="31" x2="20" y2="31"/><line x1="16" y1="30.4" x2="16" y2="31.6"/><line x1="20" y1="30.4" x2="20" y2="31.6"/><text x="18" y="32.9" class="c">4</text><line x1="2" y1="31" x2="6" y2="31"/><line x1="2" y1="30.4" x2="2" y2="31.6"/><line x1="6" y1="30.4" x2="6" y2="31.6"/><text x="4" y="32.9" class="c">4</text><line x1="30" y1="31" x2="35" y2="31"/><line x1="30" y1="30.4" x2="30" y2="31.6"/><line x1="35" y1="30.4" x2="35" y2="31.6"/><text x="32.5" y="32.9" class="c">5</text><line x1="30" y1="6.4" x2="35" y2="6.4"/><line x1="30" y1="5.8" x2="30" y2="7"/><line x1="35" y1="5.8" x2="35" y2="7"/><text x="32.5" y="5.6" class="c">5</text><line class="w" x1="11" y1="12.2" x2="11" y2="15.8"/><line class="w" x1="10.4" y1="12.2" x2="11.6" y2="12.2"/><line class="w" x1="10.4" y1="15.8" x2="11.6" y2="15.8"/><text x="12" y="14.4" class="w">4</text></g><g class="lg-ang"><path d="M33 28 A2 2 0 0 0 33.59 26.59"/><text x="33.3" y="29.7" class="">45°</text><path d="M24 8 A2 2 0 0 0 31.41 6.59" style="display:none"/><text x="36.2" y="10.2" class="">45°</text><path d="M33.4 8 A1.6 1.6 0 0 0 33.87 9.13"/></g></svg></div></div>
   </div></div></section>
 
   <section class="lg-sec"><div class="wrap"><div class="c">
     <div class="cl-h"><span class="no" style="color:var(--o)">03 — Motion</span><h3>움직이는 로고</h3><p>사이트에 들어오면 기둥 → 볼 → 팔·다리 → 점 순서로 로고가 조립되고, 마우스를 올리면 살짝 반응해요.</p></div>
     <div class="lg-moto">
-      <div><span class="lg-svg-wrap" style="width:110px"><svg class="lg-svg lg-anim lg-replay" viewBox="0 0 40 32" aria-hidden="true" fill="#1d1d20"><path class="lg-s" d="M16.4 4.6 19.8 1.4V28h-3.4Z"/><path class="lg-b" d="M16.4 12H7L2 17v6l5 5h9.4v-3.4H8.4l-3-3v-3.2l3-3h8Z"/><path class="lg-a" d="M19.8 18 29.6 8.2H34L19.8 22.4Z"/><path class="lg-l" d="M22.7 17.4 25.6 14.6 34 28h-4.2Z"/><path class="lg-d" d="M37.5 23.6 39.9 26 37.5 28.4 35.1 26Z"/></svg></span><b>Build-in</b><span>기둥이 솟고 볼이 펼쳐진 뒤, 팔과 다리가 붙고 점이 회전하며 완성돼요.</span></div>
-      <div><svg class="lg-svg lg-m1" viewBox="0 0 40 32" aria-hidden="true" fill="#1d1d20"><path class="lg-s" d="M16.4 4.6 19.8 1.4V28h-3.4Z"/><path class="lg-b" d="M16.4 12H7L2 17v6l5 5h9.4v-3.4H8.4l-3-3v-3.2l3-3h8Z"/><path class="lg-a" d="M19.8 18 29.6 8.2H34L19.8 22.4Z"/><path class="lg-l" d="M22.7 17.4 25.6 14.6 34 28h-4.2Z"/><path class="lg-d" d="M37.5 23.6 39.9 26 37.5 28.4 35.1 26Z"/></svg><b>Hover · Open</b><span>마우스를 올리면 k의 팔과 다리가 바깥으로 살짝 열려요.</span></div>
-      <div><svg class="lg-svg lg-m2" viewBox="0 0 40 32" aria-hidden="true" fill="#1d1d20"><path class="lg-s" d="M16.4 4.6 19.8 1.4V28h-3.4Z"/><path class="lg-b" d="M16.4 12H7L2 17v6l5 5h9.4v-3.4H8.4l-3-3v-3.2l3-3h8Z"/><path class="lg-a" d="M19.8 18 29.6 8.2H34L19.8 22.4Z"/><path class="lg-l" d="M22.7 17.4 25.6 14.6 34 28h-4.2Z"/><path class="lg-d" d="M37.5 23.6 39.9 26 37.5 28.4 35.1 26Z"/></svg><b>Hover · Dot</b><span>다이아몬드 점이 90° 회전하며 시선을 붙잡아요.</span></div>
+      <div><span class="lg-svg-wrap" style="width:110px"><svg class="lg-svg lg-anim lg-replay" viewBox="0 0 40 32" aria-hidden="true" fill="#1d1d20"><path class="lg-s" d="M16 6 20 2V28H16Z"/><path class="lg-b" d="M16 12H7L2 17V23L7 28H16V24H9L6 21V19L9 16H16Z"/><path class="lg-a" d="M20 18 30 8H35L20 23Z"/><path class="lg-l" d="M22.5 20.5 25 18 35 28H30Z"/><path class="lg-d" d="M38 24 40 26 38 28 36 26Z"/></svg></span><b>Build-in</b><span>기둥이 솟고 볼이 펼쳐진 뒤, 팔과 다리가 붙고 점이 회전하며 완성돼요.</span></div>
+      <div><svg class="lg-svg lg-m1" viewBox="0 0 40 32" aria-hidden="true" fill="#1d1d20"><path class="lg-s" d="M16 6 20 2V28H16Z"/><path class="lg-b" d="M16 12H7L2 17V23L7 28H16V24H9L6 21V19L9 16H16Z"/><path class="lg-a" d="M20 18 30 8H35L20 23Z"/><path class="lg-l" d="M22.5 20.5 25 18 35 28H30Z"/><path class="lg-d" d="M38 24 40 26 38 28 36 26Z"/></svg><b>Hover · Open</b><span>마우스를 올리면 k의 팔과 다리가 바깥으로 살짝 열려요.</span></div>
+      <div><svg class="lg-svg lg-m2" viewBox="0 0 40 32" aria-hidden="true" fill="#1d1d20"><path class="lg-s" d="M16 6 20 2V28H16Z"/><path class="lg-b" d="M16 12H7L2 17V23L7 28H16V24H9L6 21V19L9 16H16Z"/><path class="lg-a" d="M20 18 30 8H35L20 23Z"/><path class="lg-l" d="M22.5 20.5 25 18 35 28H30Z"/><path class="lg-d" d="M38 24 40 26 38 28 36 26Z"/></svg><b>Hover · Dot</b><span>다이아몬드 점이 90° 회전하며 시선을 붙잡아요.</span></div>
     </div>
   </div></div></section>
 
   <section class="lg-sec"><div class="wrap"><div class="c">
     <div class="cl-h"><span class="no" style="color:var(--o)">04 — Application</span><h3>어디에 놓여도 같은 사람</h3></div>
     <div class="lg-apps">
-      <div class="lg-app w span3"><div class="lg-lock"><svg class="lg-svg " viewBox="0 0 40 32" aria-hidden="true" fill="#1d1d20"><path class="lg-s" d="M16.4 4.6 19.8 1.4V28h-3.4Z"/><path class="lg-b" d="M16.4 12H7L2 17v6l5 5h9.4v-3.4H8.4l-3-3v-3.2l3-3h8Z"/><path class="lg-a" d="M19.8 18 29.6 8.2H34L19.8 22.4Z"/><path class="lg-l" d="M22.7 17.4 25.6 14.6 34 28h-4.2Z"/><path class="lg-d" d="M37.5 23.6 39.9 26 37.5 28.4 35.1 26Z"/></svg><div>Dongyoung Kim<small>AI-Driven Visual Content Designer</small></div></div><small>Lockup · Light</small></div>
-      <div class="lg-app dark span3"><div class="lg-lock"><svg class="lg-svg " viewBox="0 0 40 32" aria-hidden="true" fill="#fff"><path class="lg-s" d="M16.4 4.6 19.8 1.4V28h-3.4Z"/><path class="lg-b" d="M16.4 12H7L2 17v6l5 5h9.4v-3.4H8.4l-3-3v-3.2l3-3h8Z"/><path class="lg-a" d="M19.8 18 29.6 8.2H34L19.8 22.4Z"/><path class="lg-l" d="M22.7 17.4 25.6 14.6 34 28h-4.2Z"/><path class="lg-d" d="M37.5 23.6 39.9 26 37.5 28.4 35.1 26Z"/></svg><div>Dongyoung Kim<small>AI-Driven Visual Content Designer</small></div></div><small>Lockup · Dark</small></div>
-      <div class="lg-app w span2"><div class="lg-icon"><svg class="lg-svg " viewBox="0 0 40 32" aria-hidden="true" fill="#fff"><path class="lg-s" d="M16.4 4.6 19.8 1.4V28h-3.4Z"/><path class="lg-b" d="M16.4 12H7L2 17v6l5 5h9.4v-3.4H8.4l-3-3v-3.2l3-3h8Z"/><path class="lg-a" d="M19.8 18 29.6 8.2H34L19.8 22.4Z"/><path class="lg-l" d="M22.7 17.4 25.6 14.6 34 28h-4.2Z"/><path class="lg-d" d="M37.5 23.6 39.9 26 37.5 28.4 35.1 26Z"/></svg></div><small>App Icon · Favicon</small></div>
-      <div class="lg-app or span2"><div style="width:96px"><svg class="lg-svg " viewBox="0 0 40 32" aria-hidden="true" fill="#fff"><path class="lg-s" d="M16.4 4.6 19.8 1.4V28h-3.4Z"/><path class="lg-b" d="M16.4 12H7L2 17v6l5 5h9.4v-3.4H8.4l-3-3v-3.2l3-3h8Z"/><path class="lg-a" d="M19.8 18 29.6 8.2H34L19.8 22.4Z"/><path class="lg-l" d="M22.7 17.4 25.6 14.6 34 28h-4.2Z"/><path class="lg-d" d="M37.5 23.6 39.9 26 37.5 28.4 35.1 26Z"/></svg></div><small>Brand Orange</small></div>
-      <div class="lg-app w span2"><div class="lg-sizes"><span style="width:64px"><svg class="lg-svg " viewBox="0 0 40 32" aria-hidden="true" fill="#1d1d20"><path class="lg-s" d="M16.4 4.6 19.8 1.4V28h-3.4Z"/><path class="lg-b" d="M16.4 12H7L2 17v6l5 5h9.4v-3.4H8.4l-3-3v-3.2l3-3h8Z"/><path class="lg-a" d="M19.8 18 29.6 8.2H34L19.8 22.4Z"/><path class="lg-l" d="M22.7 17.4 25.6 14.6 34 28h-4.2Z"/><path class="lg-d" d="M37.5 23.6 39.9 26 37.5 28.4 35.1 26Z"/></svg></span><span style="width:32px"><svg class="lg-svg " viewBox="0 0 40 32" aria-hidden="true" fill="#1d1d20"><path class="lg-s" d="M16.4 4.6 19.8 1.4V28h-3.4Z"/><path class="lg-b" d="M16.4 12H7L2 17v6l5 5h9.4v-3.4H8.4l-3-3v-3.2l3-3h8Z"/><path class="lg-a" d="M19.8 18 29.6 8.2H34L19.8 22.4Z"/><path class="lg-l" d="M22.7 17.4 25.6 14.6 34 28h-4.2Z"/><path class="lg-d" d="M37.5 23.6 39.9 26 37.5 28.4 35.1 26Z"/></svg></span><span style="width:16px"><svg class="lg-svg " viewBox="0 0 40 32" aria-hidden="true" fill="#1d1d20"><path class="lg-s" d="M16.4 4.6 19.8 1.4V28h-3.4Z"/><path class="lg-b" d="M16.4 12H7L2 17v6l5 5h9.4v-3.4H8.4l-3-3v-3.2l3-3h8Z"/><path class="lg-a" d="M19.8 18 29.6 8.2H34L19.8 22.4Z"/><path class="lg-l" d="M22.7 17.4 25.6 14.6 34 28h-4.2Z"/><path class="lg-d" d="M37.5 23.6 39.9 26 37.5 28.4 35.1 26Z"/></svg></span></div><small>Min size · 16px</small></div>
-      <div class="lg-app w span3" style="background:#f3f1ed"><div class="lg-card"><svg class="lg-svg " viewBox="0 0 40 32" aria-hidden="true" fill="#1d1d20"><path class="lg-s" d="M16.4 4.6 19.8 1.4V28h-3.4Z"/><path class="lg-b" d="M16.4 12H7L2 17v6l5 5h9.4v-3.4H8.4l-3-3v-3.2l3-3h8Z"/><path class="lg-a" d="M19.8 18 29.6 8.2H34L19.8 22.4Z"/><path class="lg-l" d="M22.7 17.4 25.6 14.6 34 28h-4.2Z"/><path class="lg-d" d="M37.5 23.6 39.9 26 37.5 28.4 35.1 26Z"/></svg><p>Dongyoung Kim<small>AI-Driven Visual Content Designer · www.dongyoungkim.com</small></p></div><small>Business Card</small></div>
-      <div class="lg-app dark span3"><div style="text-align:center"><div style="width:120px;margin:0 auto 14px"><svg class="lg-svg " viewBox="0 0 40 32" aria-hidden="true" fill="#fff"><path class="lg-s" d="M16.4 4.6 19.8 1.4V28h-3.4Z"/><path class="lg-b" d="M16.4 12H7L2 17v6l5 5h9.4v-3.4H8.4l-3-3v-3.2l3-3h8Z"/><path class="lg-a" d="M19.8 18 29.6 8.2H34L19.8 22.4Z"/><path class="lg-l" d="M22.7 17.4 25.6 14.6 34 28h-4.2Z"/><path class="lg-d" d="M37.5 23.6 39.9 26 37.5 28.4 35.1 26Z"/></svg></div><span style="font-size:12px;letter-spacing:.2em;opacity:.6">PORTFOLIO 2026</span></div><small>Cover</small></div>
+      <div class="lg-app w span3"><div class="lg-lock"><svg class="lg-svg " viewBox="0 0 40 32" aria-hidden="true" fill="#1d1d20"><path class="lg-s" d="M16 6 20 2V28H16Z"/><path class="lg-b" d="M16 12H7L2 17V23L7 28H16V24H9L6 21V19L9 16H16Z"/><path class="lg-a" d="M20 18 30 8H35L20 23Z"/><path class="lg-l" d="M22.5 20.5 25 18 35 28H30Z"/><path class="lg-d" d="M38 24 40 26 38 28 36 26Z"/></svg><div>Dongyoung Kim<small>AI-Driven Visual Content Designer</small></div></div><small>Lockup · Light</small></div>
+      <div class="lg-app dark span3"><div class="lg-lock"><svg class="lg-svg " viewBox="0 0 40 32" aria-hidden="true" fill="#fff"><path class="lg-s" d="M16 6 20 2V28H16Z"/><path class="lg-b" d="M16 12H7L2 17V23L7 28H16V24H9L6 21V19L9 16H16Z"/><path class="lg-a" d="M20 18 30 8H35L20 23Z"/><path class="lg-l" d="M22.5 20.5 25 18 35 28H30Z"/><path class="lg-d" d="M38 24 40 26 38 28 36 26Z"/></svg><div>Dongyoung Kim<small>AI-Driven Visual Content Designer</small></div></div><small>Lockup · Dark</small></div>
+      <div class="lg-app w span2"><div class="lg-icon"><svg class="lg-svg " viewBox="0 0 40 32" aria-hidden="true" fill="#fff"><path class="lg-s" d="M16 6 20 2V28H16Z"/><path class="lg-b" d="M16 12H7L2 17V23L7 28H16V24H9L6 21V19L9 16H16Z"/><path class="lg-a" d="M20 18 30 8H35L20 23Z"/><path class="lg-l" d="M22.5 20.5 25 18 35 28H30Z"/><path class="lg-d" d="M38 24 40 26 38 28 36 26Z"/></svg></div><small>App Icon · Favicon</small></div>
+      <div class="lg-app or span2"><div style="width:96px"><svg class="lg-svg " viewBox="0 0 40 32" aria-hidden="true" fill="#fff"><path class="lg-s" d="M16 6 20 2V28H16Z"/><path class="lg-b" d="M16 12H7L2 17V23L7 28H16V24H9L6 21V19L9 16H16Z"/><path class="lg-a" d="M20 18 30 8H35L20 23Z"/><path class="lg-l" d="M22.5 20.5 25 18 35 28H30Z"/><path class="lg-d" d="M38 24 40 26 38 28 36 26Z"/></svg></div><small>Brand Orange</small></div>
+      <div class="lg-app w span2"><div class="lg-sizes"><span style="width:64px"><svg class="lg-svg " viewBox="0 0 40 32" aria-hidden="true" fill="#1d1d20"><path class="lg-s" d="M16 6 20 2V28H16Z"/><path class="lg-b" d="M16 12H7L2 17V23L7 28H16V24H9L6 21V19L9 16H16Z"/><path class="lg-a" d="M20 18 30 8H35L20 23Z"/><path class="lg-l" d="M22.5 20.5 25 18 35 28H30Z"/><path class="lg-d" d="M38 24 40 26 38 28 36 26Z"/></svg></span><span style="width:32px"><svg class="lg-svg " viewBox="0 0 40 32" aria-hidden="true" fill="#1d1d20"><path class="lg-s" d="M16 6 20 2V28H16Z"/><path class="lg-b" d="M16 12H7L2 17V23L7 28H16V24H9L6 21V19L9 16H16Z"/><path class="lg-a" d="M20 18 30 8H35L20 23Z"/><path class="lg-l" d="M22.5 20.5 25 18 35 28H30Z"/><path class="lg-d" d="M38 24 40 26 38 28 36 26Z"/></svg></span><span style="width:16px"><svg class="lg-svg " viewBox="0 0 40 32" aria-hidden="true" fill="#1d1d20"><path class="lg-s" d="M16 6 20 2V28H16Z"/><path class="lg-b" d="M16 12H7L2 17V23L7 28H16V24H9L6 21V19L9 16H16Z"/><path class="lg-a" d="M20 18 30 8H35L20 23Z"/><path class="lg-l" d="M22.5 20.5 25 18 35 28H30Z"/><path class="lg-d" d="M38 24 40 26 38 28 36 26Z"/></svg></span></div><small>Min size · 16px</small></div>
+      <div class="lg-app w span3" style="background:#f3f1ed"><div class="lg-card"><svg class="lg-svg " viewBox="0 0 40 32" aria-hidden="true" fill="#1d1d20"><path class="lg-s" d="M16 6 20 2V28H16Z"/><path class="lg-b" d="M16 12H7L2 17V23L7 28H16V24H9L6 21V19L9 16H16Z"/><path class="lg-a" d="M20 18 30 8H35L20 23Z"/><path class="lg-l" d="M22.5 20.5 25 18 35 28H30Z"/><path class="lg-d" d="M38 24 40 26 38 28 36 26Z"/></svg><p>Dongyoung Kim<small>AI-Driven Visual Content Designer · www.dongyoungkim.com</small></p></div><small>Business Card</small></div>
+      <div class="lg-app dark span3"><div style="text-align:center"><div style="width:120px;margin:0 auto 14px"><svg class="lg-svg " viewBox="0 0 40 32" aria-hidden="true" fill="#fff"><path class="lg-s" d="M16 6 20 2V28H16Z"/><path class="lg-b" d="M16 12H7L2 17V23L7 28H16V24H9L6 21V19L9 16H16Z"/><path class="lg-a" d="M20 18 30 8H35L20 23Z"/><path class="lg-l" d="M22.5 20.5 25 18 35 28H30Z"/><path class="lg-d" d="M38 24 40 26 38 28 36 26Z"/></svg></div><span style="font-size:12px;letter-spacing:.2em;opacity:.6">PORTFOLIO 2026</span></div><small>Cover</small></div>
     </div>
   </div></div></section>
 </div>
@@ -3317,7 +3324,7 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
   <section class="kk-sec"><div class="wrap"><div class="c">
     <div class="kk-msg">
       <p class="big">Enter<small>함께 비우고 함께 순환</small></p>
-      <div><span class="label">01 — Concept</span><p style="margin-top:14px">ESG팀의 환경 캠페인 메시지를 임직원과 고객사가 매일 손에 쥐는 물건에 담고 싶었어요. Enter는 '실행'을 뜻하는 키예요. 하루에도 수십 번 누르는 이 키에 분리배출 메시지를 얹어, 누를 때마다 "비우고 순환하는 행동"을 시작한다는 의미를 담았어요.</p><p>브랜드 그린과 캐릭터 고유의 크림·오렌지 컬러를 조합하고, 작은 키캡 위에서도 읽히도록 굵은 타이포와 단순한 일러스트 라인으로 정리했어요.</p></div>
+      <div><span class="label">01 — Concept</span><p style="margin-top:14px">ESG팀의 환경 캠페인 메시지를 임직원과 고객사가 매일 손에 쥐는 물건에 담고 싶었어요. Enter는 '실행'을 뜻하는 키예요. 하루에도 수십 번 누르는 이 키에 분리배출 메시지를 얹어, 누를 때마다 "비우고 순환하는 행동"을 시작한다는 의미를 담았어요.</p><p>재활용을 상징하는 그린을 캠페인 컬러로 두고, 캐릭터 고유의 크림·오렌지 컬러와 조합했어요. 작은 키캡 위에서도 읽히도록 굵은 타이포와 단순한 일러스트 라인으로 정리했어요.</p></div>
     </div>
   </div></div></section>
 
@@ -3349,7 +3356,7 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
     <div class="ib-two">
       <button class="ib-ph " type="button" data-ib-lb="keywall" aria-label="KAON 키비주얼 월 — 도시와 강이 이어지는 파노라마 위의 KAON 로고와 CONNECTED+ 크게 보기"><img src="assets/ibc/keywall.webp" alt="KAON 키비주얼 월 — 도시와 강이 이어지는 파노라마 위의 KAON 로고와 CONNECTED+" loading="lazy" decoding="async"><span class="tg">Key Visual Wall</span></button>
       <div class="ib-tx"><span class="no">01 — Key Visual</span><h3>복도에서 먼저 읽히는 한 장의 풍경</h3><p>강과 도시, 태양광·풍력 단지가 하나로 이어지는 파노라마 위에 KAON 로고와 "CONNECTED+ | Connecting what truly matters"를 올렸어요. 연결된 도시 풍경 자체가 슬로건의 뜻을 보여 주도록 구성했어요.</p>
-        <ul class="ib-list"><li><span><b>수평 라인 정렬</b> — 벽 상단의 오렌지 라인 조명과 그래픽의 하늘 라인을 맞춰 부스 전체가 한 덩어리로 보이게</span></li><li><span><b>원거리 가독성</b> — 로고와 슬로건을 시선 높이에 두고, 풍경은 하단으로 낮춰 정보 위계를 분리</span></li></ul></div>
+        <ul class="ib-list"><li><span><b>정보와 이미지 영역 분리</b> — 상단의 밝은 하늘 여백에 로고와 슬로건을, 하단에 풍경을 두어 이미지 위에서도 글자가 깨끗하게 읽히게</span></li><li><span><b>양끝 배치</b> — 로고는 왼쪽, CONNECTED+와 태그라인은 오른쪽 끝에 두어 넓은 벽에서도 브랜드와 메시지가 한눈에 구분되게</span></li></ul></div>
     </div>
     <figure class="ib-art"><button class="ib-ph" type="button" data-ib-lb="g-key" aria-label="키비주얼 원본 — KAON, CONNECTED+ | Connecting what truly matters 크게 보기" style="aspect-ratio:2000/888"><img src="assets/ibc/g-key.webp" alt="키비주얼 원본 — KAON, CONNECTED+ | Connecting what truly matters" loading="lazy" decoding="async" style="object-fit:contain;background:#fff"></button><figcaption><span>Original Artwork</span>Key Visual · 도시·강·재생에너지 파노라마 위의 KAON 로고와 슬로건</figcaption></figure>
   </div></div></section>
@@ -3374,7 +3381,7 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
     <ol class="cl-steps" style="padding:0;margin:0">
       <li><b>메시지 → 장면 기획</b><span>CONNECTED+의 '연결'을 강·다리·도시·재생에너지가 하나로 이어지는 풍경으로, 사업 패널은 거실·오피스·물류 현장 장면으로 풀었어요.</span></li>
       <li><b>AI 이미지 생성</b><span>Google AI Studio와 ChatGPT로 도시 파노라마, 아이소메트릭 커넥티드 홈, 사업별 사용 장면을 만들고 톤이 맞는 컷을 골랐어요.</span></li>
-      <li><b>보정 · 합성</b><span>부스의 흰 벽과 오렌지 라인 조명에 맞춰 하늘빛·웜톤을 통일하고, 로고·아이콘·텍스트와 자연스럽게 겹치도록 여백과 밝기를 다듬었어요.</span></li>
+      <li><b>보정 · 합성</b><span>패널마다 따로 생성한 장면의 하늘빛과 빛의 방향을 맞춰 톤을 통일하고, 로고·아이콘·텍스트가 올라갈 상단 영역은 밝게 비워 두었어요.</span></li>
       <li><b>대형 출력 대응</b><span>Illustrator에서 벽 크기에 맞춰 레이아웃을 잡고, 원거리에서도 읽히도록 로고·슬로건·정보 위계를 정리해 출력 데이터를 만들었어요.</span></li>
     </ol>
   </div></div></section>
@@ -3644,7 +3651,7 @@ const WORKS=[
   {title:'K-FutureTech Branding', page:'kfuturetech', img:'assets/kft/thumb-grid.webp?v=2', sub:'KAON GROUP', tag:'CI · BI', period:'2022', cat:['brand'], scene:4,
    kr:'계열사 K-FutureTech(현 KAON ROBOTICS) 브랜드 아이덴티티와 가이드라인', role:'Brand Designer (기획·디자인 전담, 기여도 100%)', client:'K-FutureTech', tools:'Illustrator, Photoshop',
    kpis:[], ch:'', ap:'', out:''},
-  {title:'dk. Personal Identity', page:'dklogo', img:'assets/dklogo/thumb.webp', sub:'Personal', tag:'Logo · Monogram', period:'2026', cat:['brand'], scene:5,
+  {title:'dk. Personal Identity', page:'dklogo', img:'assets/dklogo/thumb.webp?v=2', sub:'Personal', tag:'Logo · Monogram', period:'2026', cat:['brand'], scene:5,
    kr:'이니셜 d와 k를 하나의 기둥으로 엮은 퍼스널 모노그램과 모션', role:'로고 디자인 · 모션', client:'Personal', tools:'Illustrator, Figma, AI',
    kpis:[], ch:'', ap:'', out:''},
   {title:'LinkFit', page:'linkfit', img:'assets/linkfit/web/s-hero.webp', sub:'Freelance', tag:'Website · App', period:'2026.01 — 현재', cat:['product','brand','content'], scene:5,
