@@ -446,6 +446,22 @@ body.menu-open .cursor svg{color:#222}
 .arc:hover h3{transform:translateX(8px)}
 .arc p{grid-column:1;font-size:13px;color:var(--ink-2)}
 .arc .arrow-btn{grid-column:2;grid-row:2/4}
+.arc-sub{grid-column:1/-1;display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-top:36px;padding-top:22px;border-top:1px solid var(--line)}
+.arc-sub h3{margin:0;font-size:clamp(20px,2vw,26px);font-weight:400;letter-spacing:-.03em}
+.arc-sub span{font-size:12.5px;color:var(--ink-2)}
+.arc-row{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.arc.arc-sm .arc-img{aspect-ratio:4/3}
+.arc.arc-sm.light .arc-img{position:relative;background:radial-gradient(70% 80% at 50% 40%,#FFFFFF,#EDEDED)}
+.arc.arc-sm.light .arc-img img{position:absolute;left:10%;top:7%;width:80%;height:86%;object-fit:contain;filter:grayscale(1) drop-shadow(0 12px 16px rgba(0,0,0,.08))}
+.arc.arc-sm .arc-body{padding:16px 16px 18px;gap:4px 10px}
+.arc.arc-sm .arc-no{font-size:10.5px}
+.arc.arc-sm h3{font-size:clamp(20px,1.7vw,24px);font-weight:400;letter-spacing:-.03em}
+.arc.arc-sm p{font-size:12px;line-height:1.5}
+.arc.arc-sm .arrow-btn{width:34px;height:34px;align-self:end}
+.arc.arc-sm .arrow-btn svg{width:14px;height:14px}
+.arc.arc-sm:hover h3{transform:translateX(4px)}
+@media (max-width:1000px){ .arc-row{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (max-width:520px){ .arc-row{gap:12px} .arc.arc-sm .arc-body{padding:12px 12px 14px} .arc.arc-sm p{display:none} .arc.arc-sm .arrow-btn{width:30px;height:30px} .arc-sub{flex-direction:column;gap:4px} }
 
 /* sub pages */
 .page .pg-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:end;padding-block:40px 28px;border-bottom:1px solid var(--ink)}
@@ -2294,22 +2310,25 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
           <div class="arc-img"><img src="assets/intern/ottawa-wall.webp" alt="BoConcept Ottawa 사이드 테이블이 놓인 공간"></div>
           <div class="arc-body"><span class="arc-no">Archive 02</span><h3>Internship</h3><p>Karim Rashid · Stephen Burks · David Weeks 외 · 2014 — 2017</p><span class="arrow-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
         </a>
-        <a class="arc arc-wide rv" href="#windmate" data-cursor="1">
-          <div class="arc-img"><img src="assets/windmate/phone.webp" alt="Windmate 미니 선풍기 — 스마트폰 결합"><img src="assets/windmate/cover.webp" alt="Windmate 미니 선풍기 — 커버 장착"><img src="assets/windmate/detach.webp" alt="Windmate 미니 선풍기 — 커버 분리"></div>
-          <div class="arc-body"><span class="arc-no">Archive 03 — Award</span><h3>Windmate</h3><p>신일 미니 선풍기 디자인 공모전 장려상 · 2018</p><span class="arrow-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
-        </a>
-        <a class="arc arc-wide arc-dark rv" href="#panastove" data-cursor="1">
-          <div class="arc-img"><img style="--op:50% 6%" src="assets/panastove/kitchen.webp?v=2" alt="PANASTOVE 충전식 프라이팬 — 키친 싱크 위 렌더"></div>
-          <div class="arc-body"><span class="arc-no">Archive 04 — Personal Project</span><h3>Panastove</h3><p>충전식 프라이팬 · 신사업 아이템 공모전 출품작</p><span class="arrow-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
-        </a>
-        <a class="arc arc-wide arc-dark rv" href="#magus" data-cursor="1">
-          <div class="arc-img"><img style="--op:50% 96%" src="assets/magus/hero.webp?v=3" alt="MAGUS 플로어스탠딩 블루투스 스피커가 놓인 거실"></div>
-          <div class="arc-body"><span class="arc-no">Archive 05 — Concept Product</span><h3>Magus</h3><p>플로어스탠딩 블루투스 스피커 · Product · CMF</p><span class="arrow-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
-        </a>
-        <a class="arc arc-wide arc-dark rv" href="#jandi" data-cursor="1">
-          <div class="arc-img"><img style="--op:50% 50%" src="assets/jandi/hero.webp" alt="광장에 선 JANDI 도시형 공기청정기"></div>
-          <div class="arc-body"><span class="arc-no">Archive 06 — Concept Product</span><h3>Jandi</h3><p>태양광 자가발전 도시형 공기청정기 · Biomimicry</p><span class="arrow-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
-        </a>
+        <div class="arc-sub"><h3>Awards &amp; Product Concepts</h3><span>공모전 수상·출품작과 제품 콘셉트 · 4</span></div>
+        <div class="arc-row">
+          <a class="arc arc-sm light rv" href="#windmate" data-cursor="1">
+            <div class="arc-img"><img src="assets/windmate/cover.webp" alt="Windmate 미니 선풍기" loading="lazy" decoding="async"></div>
+            <div class="arc-body"><span class="arc-no">03 · Award</span><h3>Windmate</h3><p>신일 미니 선풍기 공모전 장려상 · 2018</p><span class="arrow-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
+          </a>
+          <a class="arc arc-sm  rv" href="#panastove" data-cursor="1">
+            <div class="arc-img"><img src="assets/panastove/kitchen.webp?v=2" alt="PANASTOVE 충전식 프라이팬" loading="lazy" decoding="async" style="object-position:50% 6%"></div>
+            <div class="arc-body"><span class="arc-no">04 · Personal Project</span><h3>Panastove</h3><p>충전식 프라이팬 · 신사업 공모전 출품</p><span class="arrow-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
+          </a>
+          <a class="arc arc-sm  rv" href="#magus" data-cursor="1">
+            <div class="arc-img"><img src="assets/magus/hero.webp?v=3" alt="MAGUS 플로어스탠딩 스피커" loading="lazy" decoding="async" style="object-position:50% 96%"></div>
+            <div class="arc-body"><span class="arc-no">05 · Concept Product</span><h3>Magus</h3><p>플로어스탠딩 블루투스 스피커 · CMF</p><span class="arrow-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
+          </a>
+          <a class="arc arc-sm  rv" href="#jandi" data-cursor="1">
+            <div class="arc-img"><img src="assets/jandi/hero.webp" alt="JANDI 도시형 공기청정기" loading="lazy" decoding="async" style="object-position:50% 50%"></div>
+            <div class="arc-body"><span class="arc-no">06 · Concept Product</span><h3>Jandi</h3><p>태양광 자가발전 공기청정기 · Biomimicry</p><span class="arrow-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
+          </a>
+        </div>
       </div>
     </div>
   </section>
