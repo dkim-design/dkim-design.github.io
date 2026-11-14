@@ -314,9 +314,14 @@ body.menu-open .cursor svg{color:#222}
 .work:hover .ov,.work:focus-visible .ov{opacity:1}
 .work:hover .ov .arrow-btn,.work:focus-visible .ov .arrow-btn{transform:scale(1)}
 .work .cap{display:flex;gap:10px;align-items:baseline;font-size:14px}
+.work .cap{position:relative;padding-top:12px;transition:color .4s}
+.work .cap::before,.work .cap::after{content:"";position:absolute;left:0;top:0;height:1px;right:0;background:var(--line)}
+.work .cap::after{right:auto;width:0;background:var(--brand);transition:width .7s var(--ease)}
+.work:hover .cap::after,.work:focus-visible .cap::after{width:100%}
+.work:hover .cap,.work:focus-visible .cap{color:var(--brand)}
 .work .cap small{font-size:11px;color:var(--ink-2)}
 .work:focus-visible{outline:none}
-.work:focus-visible .frame{outline:2px solid var(--ink);outline-offset:4px}
+.work:focus-visible .frame{outline:2px solid var(--brand);outline-offset:4px}
 .more{margin-top:40px;display:flex;justify-content:center;gap:18px;font-size:13px;color:var(--ink-2);align-items:center}
 
 /* services */
