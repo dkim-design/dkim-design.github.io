@@ -12,14 +12,14 @@
 <meta property="og:url" content="https://www.dongyoungkim.com/">
 <meta property="og:site_name" content="Dongyoung Kim Portfolio">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:image" content="https://www.dongyoungkim.com/assets/profile/og-image.jpg?v=6">
-<meta property="og:image:secure_url" content="https://www.dongyoungkim.com/assets/profile/og-image.jpg?v=6">
+<meta property="og:image" content="https://www.dongyoungkim.com/assets/profile/og-image.jpg?v=7">
+<meta property="og:image:secure_url" content="https://www.dongyoungkim.com/assets/profile/og-image.jpg?v=7">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="김동영 포트폴리오 — Hello, AI-Driven Visual Content Designer">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://www.dongyoungkim.com/assets/profile/og-image.jpg?v=6">
+<meta name="twitter:image" content="https://www.dongyoungkim.com/assets/profile/og-image.jpg?v=7">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 32'%3E%3Crect width='40' height='32' fill='%23F8F8F8'/%3E%3Cg fill='%23222'%3E%3Cpath d='M16 6 20 2V28H16Z'/%3E%3Cpath d='M16 12H7L2 17V23L7 28H16V24H9L6 21V19L9 16H16Z'/%3E%3Cpath d='M20 18 30 8H35L20 23Z'/%3E%3Cpath d='M22.5 20.5 25 18 35 28H30Z'/%3E%3Cpath fill='%230047AB' d='M38 24 40 26 38 28 36 26Z'/%3E%3C/g%3E%3C/svg%3E">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Dongyoung Kim Portfolio</title>
@@ -30,6 +30,7 @@
 /* Layout: 레퍼런스(D.Nova) 구조 — 모노톤 갤러리 벽 위에 3D 오브젝트 이미지가 놓인 '전시장'. 1200px 컨테이너, 화이트 카드, 거대한 라이트 웨이트 디스플레이 */
 :root{
   --ink:#222222; --ink-2:#7B7B7B; --paper:#F8F8F8; --white:#FFFFFF; --line:#E7E7E7; --line-2:#D6D6D6; --ink-soft:#4A4A4A;
+  --brand:#0047AB; --brand-d:#2F6BE0; --brand-t:#5B93F2; --brand-tint:rgba(0,71,171,.08);
   --f:"Geist","Noto Sans KR",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
   --gl:max(16px, env(safe-area-inset-left,0px)); --gr:max(16px, env(safe-area-inset-right,0px));
   --ease:cubic-bezier(.2,.7,.1,1);
@@ -38,7 +39,7 @@
 *,*::before,*::after{box-sizing:border-box}
 body{background:var(--paper);color:var(--ink);font-family:var(--f);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;word-break:keep-all;overflow-wrap:break-word}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--paper)}
-::selection{background:var(--ink);color:var(--white)}
+::selection{background:var(--brand);color:var(--white)}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:6px}
@@ -56,6 +57,7 @@ p{margin:0}
 .link{display:inline-flex;align-items:center;gap:4px;font-size:14px;border-bottom:1px solid currentColor;padding-bottom:1px;cursor:pointer;background:none;border-top:0;border-left:0;border-right:0}
 .link svg{width:12px;height:12px;transition:transform .35s var(--ease)}
 .link:hover svg{transform:translate(2px,-2px)}
+.link{transition:color .3s}.link:hover{color:var(--brand)}
 .chip{font-size:12px;border:1px solid var(--line-2);border-radius:999px;padding:5px 12px;color:var(--ink);background:var(--white);white-space:nowrap}
 .chip.dark{background:var(--ink);color:var(--white);border-color:var(--ink)}
 .art{display:block;width:100%;height:100%}
@@ -153,7 +155,7 @@ body.menu-open .cursor svg{color:#222}
 .side{display:flex;flex-direction:column;align-items:center;gap:16px;padding-block:24px 40px;color:var(--ink-2);font-size:12px}
 .side .v{writing-mode:vertical-rl;transform:rotate(180deg);letter-spacing:.04em}
 .side .bar{flex:1;width:1px;background:var(--line-2);position:relative;overflow:hidden}
-.side .bar i{position:absolute;left:0;top:0;width:1px;height:35%;background:var(--ink)}
+.side .bar i{position:absolute;left:0;top:0;width:1px;height:35%;background:var(--brand)}
 .hero-main{display:flex;flex-direction:column;padding-block:40px 40px;min-width:0}
 .stats{display:flex;gap:44px}
 .stat b{display:block;font-weight:250;font-size:34px;line-height:1;letter-spacing:-.03em}
@@ -171,7 +173,7 @@ body.menu-open .cursor svg{color:#222}
 .wslot span{grid-area:1/1;transform:translateY(105%);transition:transform .9s var(--ease)}
 .wslot span.on{transform:none}
 .wslot span.out{transform:translateY(-105%)}
-.wslot span.on::after{content:".";color:#3FAE5A}
+.wslot span.on::after{content:".";color:var(--brand)}
 .intro{margin-top:14px;font-size:14.5px;color:var(--ink-soft);max-width:30em}
 .portrait .cap-tl{position:absolute;left:16px;top:16px;font-size:11px;letter-spacing:.06em;color:var(--ink-2);text-transform:uppercase;font-variant-numeric:tabular-nums;line-height:1.5}
 .scroll{margin-top:56px;font-size:13px;display:inline-flex;gap:6px;align-items:center}
@@ -198,7 +200,7 @@ body.menu-open .cursor svg{color:#222}
 .sc-cat{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;padding:6px 11px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink-2)}
 .sc-dots{display:flex;gap:5px}
 .sc-dots button{width:6px;height:6px;padding:0;border:0;border-radius:50%;background:var(--line);cursor:pointer;transition:background .3s,width .3s}
-.sc-dots button.on{width:16px;border-radius:3px;background:var(--ink)}
+.sc-dots button.on{width:16px;border-radius:3px;background:var(--brand)}
 .sc-body{display:grid;gap:10px;min-height:104px}
 .sc-val{font-weight:300;font-size:46px;line-height:1;letter-spacing:-.04em;white-space:nowrap}
 .sc-body,.sc-vis>*{transition:opacity .45s var(--ease),transform .6s var(--ease)}
@@ -211,7 +213,7 @@ body.menu-open .cursor svg{color:#222}
 .sc-vis:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 .sc-wi{background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(0,0,0,.45))!important;font-size:clamp(28px,3.4vw,44px)}
 .sc-bar{position:absolute;left:0;right:0;bottom:0;height:2px;background:transparent}
-.sc-bar i{display:block;height:100%;width:100%;background:var(--ink);transform-origin:0 50%;transform:scaleX(0)}
+.sc-bar i{display:block;height:100%;width:100%;background:var(--brand);transform-origin:0 50%;transform:scaleX(0)}
 .about-right{display:grid;gap:28px}
 .about-right .thumb{width:64%;margin-left:auto;aspect-ratio:2/3;border-radius:6px;overflow:hidden;position:relative}
 .about-right .thumb .arrow-btn{position:absolute;inset:0;margin:auto;width:40px;height:40px;background:rgba(34,34,34,.85)}
@@ -229,10 +231,10 @@ body.menu-open .cursor svg{color:#222}
 .shot:hover .frame img.art{transform:scale(1.03)}
 .strip-ctl{display:flex;align-items:center;gap:24px;margin-top:28px}
 .strip-prog{flex:1;height:1px;background:var(--line);position:relative;overflow:hidden}
-.strip-prog i{position:absolute;left:0;top:0;bottom:0;width:100%;background:var(--ink);transform-origin:0 50%;transform:scaleX(0)}
+.strip-prog i{position:absolute;left:0;top:0;bottom:0;width:100%;background:var(--brand);transform-origin:0 50%;transform:scaleX(0)}
 .strip-btns{display:flex;gap:10px}
 .strip-btns button{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--ink);display:grid;place-items:center;cursor:pointer;transition:background .3s,color .3s,border-color .3s}
-.strip-btns button:hover{background:var(--ink);color:var(--white);border-color:var(--ink)}
+.strip-btns button:hover{background:var(--brand);color:var(--white);border-color:var(--brand)}
 .strip-btns button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 .strip-btns svg{width:18px;height:18px}
 .strip-play{font-size:12px;letter-spacing:.08em;color:var(--ink-2);background:none;border:0;cursor:pointer;padding:6px 0;white-space:nowrap}
@@ -247,16 +249,16 @@ body.menu-open .cursor svg{color:#222}
 .shot:hover .frame canvas{transform:scale(1.05)}
 .shot .cap{position:relative;width:0;min-width:100%;box-sizing:border-box;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px;align-items:start;padding-top:16px;margin-top:6px}
 .shot .cap::before,.shot .cap::after{content:"";position:absolute;left:0;top:0;height:1px;background:var(--line);right:0}
-.shot .cap::after{background:var(--ink);right:auto;width:0;transition:width .7s var(--ease)}
+.shot .cap::after{background:var(--brand);right:auto;width:0;transition:width .7s var(--ease)}
 .shot:hover .cap::after,.shot:focus-visible .cap::after{width:100%}
-.shot .cap .no{font-size:12px;letter-spacing:.06em;color:#0047AB;font-variant-numeric:tabular-nums;padding-top:5px}
+.shot .cap .no{font-size:12px;letter-spacing:.06em;color:var(--brand);font-variant-numeric:tabular-nums;padding-top:5px}
 .shot .cap .ct{display:grid;gap:6px;min-width:0}
 .shot .cap b{font-size:clamp(18px,1.6vw,23px);font-weight:500;letter-spacing:-.03em;line-height:1.2;color:var(--ink)}
 .shot .cap .mt{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;font-size:11.5px;color:var(--ink-2);letter-spacing:.02em}
 .shot .cap .mt i{font-style:normal;padding:3px 9px;border:1px solid var(--line);border-radius:999px;white-space:nowrap}
 .shot .cap .go{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--ink);transition:background .4s,color .4s,border-color .4s,transform .5s var(--ease)}
 .shot .cap .go svg{width:14px;height:14px}
-.shot:hover .cap .go,.shot:focus-visible .cap .go{background:var(--ink);color:var(--white);border-color:var(--ink);transform:rotate(45deg)}
+.shot:hover .cap .go,.shot:focus-visible .cap .go{background:var(--brand);color:var(--white);border-color:var(--ink);transform:rotate(45deg)}
 
 /* journey */
 .journey{padding-block:140px 0}
@@ -1094,7 +1096,7 @@ body.lb-open .cursor{background:#EDEDED}
 .kf-note{font-size:12.5px!important;color:var(--ink-2)!important}
 @media (max-width:760px){ .kf-robots{grid-template-columns:minmax(0,1fr)} }
 /* Human Profile page */
-.hp{--em:#FF5B2E;padding-bottom:140px}
+.hp{--em:var(--brand);padding-bottom:140px}
 .hp-title{line-height:.86}
 .hp-hero{position:relative;height:clamp(380px,70vh,720px);overflow:hidden;background:#0F0F10;display:grid;place-items:center;margin-top:8px;isolation:isolate}
 .hp-orb{position:absolute;inset:0;z-index:-1}
@@ -1191,7 +1193,7 @@ body.lb-open .cursor{background:#EDEDED}
 .about-right a.thumb{display:block;color:inherit}
 .about-right .thumb .hp-tag{position:absolute;left:14px;bottom:12px;font-size:11px;letter-spacing:.06em;color:#fff;background:rgba(34,34,34,.78);padding:6px 10px;border-radius:999px;backdrop-filter:blur(6px)}
 .hp-link{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-size:14px;color:var(--ink);border-bottom:1px solid currentColor;padding-bottom:3px;transition:color .3s}
-.hp-link:hover{color:#FF5B2E}
+.hp-link:hover{color:var(--brand)}
 
 .lg-host .lg-pratt{width:clamp(110px,10vw,150px);height:auto}
 .lg-row{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
@@ -1562,7 +1564,7 @@ body.lb-open .cursor{background:#EDEDED}
 .caps .lead{color:#9a9aa0;max-width:28em}
 .cap-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:minmax(300px,auto);gap:14px}
 .cap-card{position:relative;overflow:hidden;isolation:isolate;cursor:pointer;background:#17171A;border-radius:10px;box-shadow:inset 0 0 0 1px #26262B;padding:24px 24px 26px;display:flex;flex-direction:column;gap:12px;transition:transform .6s var(--ease),box-shadow .5s}
-.cap-card::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(255,123,15,.16),transparent 60%);opacity:0;transition:opacity .5s}
+.cap-card::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(47,107,224,.22),transparent 60%);opacity:0;transition:opacity .5s}
 .cap-card:hover::before,.cap-card:focus-visible::before{opacity:1}
 .cap-card:hover,.cap-card:focus-visible{transform:translateY(-6px);box-shadow:inset 0 0 0 1px #3a3a40,0 30px 60px -30px rgba(0,0,0,.6);outline:none}
 .cap-card.big{grid-column:span 2;grid-row:span 2;background:linear-gradient(160deg,#1E1E22,#121214)}
@@ -1571,10 +1573,10 @@ body.lb-open .cursor{background:#EDEDED}
 .cap-no{font-size:12px;color:#6f6f75;font-variant-numeric:tabular-nums;letter-spacing:.08em}
 .cap-ic{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:#24242A;color:#fff;transition:background .4s,color .4s,transform .6s var(--ease)}
 .cap-ic svg{width:18px;height:18px}
-.cap-card:hover .cap-ic{background:#FF7B0F;color:#111;transform:rotate(-12deg)}
+.cap-card:hover .cap-ic{background:var(--brand-d);color:#fff;transform:rotate(-12deg)}
 .cap-metric{display:flex;align-items:baseline;flex-wrap:wrap;gap:2px 6px;margin-top:auto;padding-top:20px}
 .cap-metric b{font-size:clamp(52px,5vw,76px);font-weight:200;letter-spacing:-.06em;line-height:.9;color:#fff;font-variant-numeric:tabular-nums}
-.cap-metric i{font-style:normal;font-size:clamp(22px,2vw,30px);font-weight:300;color:#FF7B0F}
+.cap-metric i{font-style:normal;font-size:clamp(22px,2vw,30px);font-weight:300;color:var(--brand-t)}
 .cap-metric small{flex-basis:100%;font-size:12px;color:#8a8a8f;margin-top:6px}
 .cap-card.big .cap-metric b{font-size:clamp(96px,11vw,180px)}
 .cap-card.big .cap-metric i{font-size:clamp(36px,3.6vw,56px)}
@@ -1585,26 +1587,26 @@ body.lb-open .cursor{background:#EDEDED}
 .cap-tools li{font-size:11.5px;color:#cfcfd4;border:1px solid #2f2f35;border-radius:999px;padding:4px 10px}
 .cap-go{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#6f6f75;border-top:1px solid #26262B;padding-top:12px;margin-top:6px;transition:color .4s}
 .cap-go em{font-style:normal;transition:transform .5s var(--ease)}
-.cap-card:hover .cap-go{color:#FF7B0F}
+.cap-card:hover .cap-go{color:var(--brand-t)}
 .cap-card:hover .cap-go em{transform:translate(3px,-3px)}
 .cap-marquee{margin-top:110px;border-block:1px solid #26262B;padding-block:26px;overflow:hidden;white-space:nowrap}
 .cap-mtrack{display:inline-flex;animation:capmq 45s linear infinite}
 .cap-mtrack span{font-size:clamp(28px,3.4vw,52px);font-weight:200;letter-spacing:-.04em;color:#3b3b42;padding-inline:.6em;position:relative}
-.cap-mtrack span::after{content:"✦";position:absolute;right:-.25em;top:50%;translate:0 -50%;font-size:.4em;color:#FF7B0F}
+.cap-mtrack span::after{content:"✦";position:absolute;right:-.25em;top:50%;translate:0 -50%;font-size:.4em;color:var(--brand-d)}
 @keyframes capmq{to{transform:translateX(-50%)}}
 @media (max-width:980px){ .cap-grid{grid-template-columns:repeat(2,minmax(0,1fr))} .cap-card.big{grid-column:1/-1;grid-row:auto} .caps-head{grid-template-columns:minmax(0,1fr)} }
 @media (max-width:600px){ .cap-grid{grid-template-columns:minmax(0,1fr)} .cap-card.wide{grid-column:auto} .caps{padding-block:96px 0;margin-top:96px} .cap-grid{grid-auto-rows:auto} }
 @media (prefers-reduced-motion:reduce){ .cap-mtrack{animation:none} }
 .cap-flow{list-style:none;margin:28px 0 0;padding:0;position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
-.cap-flow::before{content:"";position:absolute;left:12%;right:12%;top:22px;height:1px;background:linear-gradient(90deg,#2f2f35,#FF7B0F 50%,#2f2f35)}
+.cap-flow::before{content:"";position:absolute;left:12%;right:12%;top:22px;height:1px;background:linear-gradient(90deg,#2f2f35,#2F6BE0 50%,#2f2f35)}
 .cap-flow li{position:relative;display:grid;justify-items:center;gap:6px;text-align:center}
 .cap-flow li::before{content:"";width:44px;height:44px;border-radius:50%;background:#1b1b1f;box-shadow:inset 0 0 0 1px #33333a;display:block}
 .cap-flow b{font-weight:400;font-size:13px;color:#e8e8ec}
 .cap-flow small{font-size:11px;color:#77777d}
-.cap-dot{position:absolute;top:16px;left:12%;width:12px;height:12px;border-radius:50%;background:#FF7B0F;box-shadow:0 0 18px 4px rgba(255,123,15,.6);animation:capdot 4.8s cubic-bezier(.6,0,.4,1) infinite}
+.cap-dot{position:absolute;top:16px;left:12%;width:12px;height:12px;border-radius:50%;background:#2F6BE0;box-shadow:0 0 18px 4px rgba(47,107,224,.6);animation:capdot 4.8s cubic-bezier(.6,0,.4,1) infinite}
 @keyframes capdot{0%{left:calc(12.5% - 6px)}25%{left:calc(37.5% - 6px)}50%{left:calc(62.5% - 6px)}75%,100%{left:calc(87.5% - 6px)}}
 .cap-flow li:nth-child(1)::before{animation:capon 4.8s infinite 0s}.cap-flow li:nth-child(2)::before{animation:capon 4.8s infinite 1.2s}.cap-flow li:nth-child(3)::before{animation:capon 4.8s infinite 2.4s}.cap-flow li:nth-child(4)::before{animation:capon 4.8s infinite 3.6s}
-@keyframes capon{0%,18%{box-shadow:inset 0 0 0 1px #FF7B0F,0 0 0 6px rgba(255,123,15,.12)}30%,100%{box-shadow:inset 0 0 0 1px #33333a}}
+@keyframes capon{0%,18%{box-shadow:inset 0 0 0 1px #2F6BE0,0 0 0 6px rgba(47,107,224,.12)}30%,100%{box-shadow:inset 0 0 0 1px #33333a}}
 @media (max-width:600px){ .cap-flow small{display:none} }
 @media (prefers-reduced-motion:reduce){ .cap-dot,.cap-flow li::before{animation:none} }
 .cap-mtrack .cap-tool{display:inline-flex;align-items:center;gap:.4em;font-size:clamp(24px,2.8vw,42px);font-weight:300;letter-spacing:-.03em;color:#5d5d66;padding-inline:.9em;transition:color .4s}
@@ -2179,7 +2181,7 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
         <a class="scroll" href="#about">Scroll down <svg viewBox="0 0 12 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 1v12M1.5 8.5 6 13l4.5-4.5"/></svg></a>
       </div>
       <div class="portrait">
-        <img class="pf-img" src="assets/profile/portrait-m-f.webp?v=1" srcset="assets/profile/portrait-m-f.webp?v=1 900w, assets/profile/portrait-f.webp?v=1 1176w" sizes="(max-width:760px) 100vw, 45vw" alt="김동영 프로필 사진 — 회색 니트에 팔짱을 끼고 환하게 웃는 상반신" fetchpriority="high" decoding="async">
+        <img class="pf-img" src="assets/profile/portrait-m-f.webp?v=2" srcset="assets/profile/portrait-m-f.webp?v=2 900w, assets/profile/portrait-f.webp?v=2 1176w" sizes="(max-width:760px) 100vw, 45vw" alt="김동영 프로필 사진 — 회색 니트에 팔짱을 끼고 환하게 웃는 상반신" fetchpriority="high" decoding="async">
       </div>
     </div>
   </section>
@@ -2200,7 +2202,7 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
         <span class="sc-bar" aria-hidden="true"><i></i></span>
       </div>
       <div class="about-right rv">
-        <a class="thumb" href="#human" data-cursor aria-label="Human Profile 페이지 보기 — 성향과 일하는 방식"><img class="pf-thumb" src="assets/profile/human.webp?v=9" alt="" loading="lazy" decoding="async"><span class="hp-tag">ENFP · Human Profile</span><span class="arrow-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
+        <a class="thumb" href="#human" data-cursor aria-label="Human Profile 페이지 보기 — 성향과 일하는 방식"><img class="pf-thumb" src="assets/profile/human.webp?v=10" alt="" loading="lazy" decoding="async"><span class="hp-tag">ENFP · Human Profile</span><span class="arrow-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
         <ul class="points">
           <li><i>+</i><span>미국에서 약 8년간 고교와 Pratt Institute 산업디자인 학위 과정을 마치고, Karim Rashid, Stephen Burks, David Weeks 등 뉴욕 디자인 스튜디오에서 인턴십을 거쳤습니다. 해외 법인·협력사·글로벌 전시 파트너와 영어로 직접 소통합니다.</span></li>
           <li><i>+</i><span>한국암웨이, 이공이공, 가온그룹을 거치며 제품·브랜드·디지털 콘텐츠 전 영역을 다뤘습니다.</span></li>
@@ -2881,7 +2883,7 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
       <h2 class="pg-title hp-title" id="ph-title">Human<br>Profile</h2>
       <div class="pg-meta"><span><b>ENFP</b> · 재기발랄한 활동가</span><span>1990 · 경오년(庚午年) 말띠</span><span>Freediver · Runner · Collector</span></div>
     </header>
-    <div class="pg-intro"><div class="wm-introl"><span class="label">Why this page</span><figure class="hp-pf"><img src="assets/profile/human2.webp" alt="김동영 프로필 사진" loading="lazy" decoding="async"><figcaption>Dongyoung Kim · ENFP</figcaption></figure></div><p class="pg-lead">이력서가 "무엇을 했는지"를 말한다면, 이 페이지는 "어떤 에너지로 일하는지"를 보여드립니다. 함께 일할 사람을 고를 때 가장 궁금한 건 결국 사람이기 때문입니다.</p></div>
+    <div class="pg-intro"><div class="wm-introl"><span class="label">Why this page</span><figure class="hp-pf"><img src="assets/profile/human2.webp?v=2" alt="김동영 프로필 사진" loading="lazy" decoding="async"><figcaption>Dongyoung Kim · ENFP</figcaption></figure></div><p class="pg-lead">이력서가 "무엇을 했는지"를 말한다면, 이 페이지는 "어떤 에너지로 일하는지"를 보여드립니다. 함께 일할 사람을 고를 때 가장 궁금한 건 결국 사람이기 때문입니다.</p></div>
   </div></div>
 
   <section class="hp" aria-label="Human Profile">
@@ -2931,7 +2933,7 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
       <ol class="hp-why"><li style="--k:0"><span class="hp-wn">01</span><h4>Spark</h4><b>판을 여는 사람</b><p>새 프로젝트의 첫 불씨를 켜고, 흩어진 사람과 아이디어를 연결해 움직이게 만듭니다.</p><ul><li>반복 업무를 AI 에이전트 2종으로 직접 재설계</li><li>LinkFit에서 서비스 기획과 디자인을 1인 2역으로 수행</li></ul></li><li style="--k:1"><span class="hp-wn">02</span><h4>Deep Focus</h4><b>깊게 잠기는 몰입</b><p>한 번 잠기면 끝을 봅니다. 압박 속에서도 침착하게 본질만 남기는 집중력이 있습니다.</p><ul><li>캐릭터 IP 5종 세계관 설계부터 저작권 등록까지</li><li>K-FutureTech CI·BI를 리서치부터 가이드라인까지</li></ul></li><li style="--k:2"><span class="hp-wn">03</span><h4>Full-Stack Execution</h4><b>혼자서도 끝까지</b><p>리서치, 기획, 디자인, 제작, 배포까지 한 사람이 이어서 처리해 팀의 속도를 바꿉니다.</p><ul><li>업계 리서치 시간 주 6시간 → 1시간</li><li>LinkedIn 월 발행량 4건 → 8건, 포스팅당 작성 시간 75%↓</li></ul></li></ol>
 
       <div class="hp-end">
-        <figure class="hp-focus"><img src="assets/profile/focus.webp?v=2" alt="팔짱을 끼고 진지하게 정면을 바라보는 김동영" loading="lazy" decoding="async"><figcaption><span>Focus mode</span><span>집중할 때의 얼굴</span></figcaption></figure>
+        <figure class="hp-focus"><img src="assets/profile/focus.webp?v=3" alt="팔짱을 끼고 진지하게 정면을 바라보는 김동영" loading="lazy" decoding="async"><figcaption><span>Focus mode</span><span>집중할 때의 얼굴</span></figcaption></figure>
         <p>“아이디어는 빠르게, 마감은 정확하게.<br>그리고 그 사이를 즐겁게.”</p>
         <a class="hp-mail" href="mailto:ttuba0622@naver.com" data-cursor="1">함께 이야기합니다 <span aria-hidden="true">↗</span></a>
       </div>
