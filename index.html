@@ -436,9 +436,10 @@ body.menu-open .cursor svg{color:#222}
 .archive .head{display:grid;gap:12px;margin-bottom:44px}
 .arc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
 .arc{position:relative;display:block;border-radius:6px;overflow:hidden;background:var(--white);isolation:isolate}
-.arc-img{aspect-ratio:16/11;overflow:hidden;background:var(--white)}
+.arc-img{aspect-ratio:16/8;overflow:hidden;background:var(--white)}
 .arc-img img{width:100%;height:100%;object-fit:cover;filter:grayscale(1);transition:transform 1.2s var(--ease)}
-.arc:hover .arc-img img,.arc:focus-visible .arc-img img{transform:scale(1.06)}
+.arc:hover .arc-img img,.arc:focus-visible .arc-img img{transform:scale(1.06);filter:grayscale(0)}
+.arc-img img{transition:transform 1.2s var(--ease),filter .8s var(--ease)!important}
 .arc-img.blank{display:grid;place-items:center;color:var(--line-2);font-size:clamp(80px,12vw,180px);font-weight:200;letter-spacing:-.06em}
 .arc-body{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;align-items:end;padding:22px 22px 24px}
 .arc-no{grid-column:1/-1;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
@@ -448,10 +449,17 @@ body.menu-open .cursor svg{color:#222}
 .arc .arrow-btn{grid-column:2;grid-row:2/4}
 .arc-sub{grid-column:1/-1;display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-top:36px;padding-top:22px;border-top:1px solid var(--line)}
 .arc-sub h3{margin:0;font-size:clamp(20px,2vw,26px);font-weight:400;letter-spacing:-.03em}
-.arc-sub span{font-size:12.5px;color:var(--ink-2)}
+.arc-filt{display:flex;gap:6px;flex-wrap:wrap}
+.arc-filt button{height:34px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:var(--white);font-size:12.5px;color:var(--ink-2);cursor:pointer;transition:background .3s,color .3s,border-color .3s}
+.arc-filt button i{font-style:normal;margin-left:4px;opacity:.6;font-variant-numeric:tabular-nums}
+.arc-filt button:hover{border-color:var(--brand);color:var(--brand)}
+.arc-filt button.on{background:var(--brand);border-color:var(--brand);color:#fff}
+.arc-filt button:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.arc.arc-sm.off{display:none}
 .arc-row{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
 .arc.arc-sm .arc-img{aspect-ratio:4/3}
 .arc.arc-sm.light .arc-img{position:relative;background:radial-gradient(70% 80% at 50% 40%,#FFFFFF,#EDEDED)}
+.arc.arc-sm.light:hover .arc-img img{filter:grayscale(0) drop-shadow(0 12px 16px rgba(0,0,0,.08))}
 .arc.arc-sm.light .arc-img img{position:absolute;left:10%;top:7%;width:80%;height:86%;object-fit:contain;filter:grayscale(1) drop-shadow(0 12px 16px rgba(0,0,0,.08))}
 .arc.arc-sm .arc-body{padding:16px 16px 18px;gap:4px 10px}
 .arc.arc-sm .arc-no{font-size:10.5px}
@@ -2310,21 +2318,21 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
           <div class="arc-img"><img src="assets/intern/ottawa-wall.webp" alt="BoConcept Ottawa 사이드 테이블이 놓인 공간"></div>
           <div class="arc-body"><span class="arc-no">Archive 02</span><h3>Internship</h3><p>Karim Rashid · Stephen Burks · David Weeks 외 · 2014 — 2017</p><span class="arrow-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
         </a>
-        <div class="arc-sub"><h3>Awards &amp; Product Concepts</h3><span>공모전 수상·출품작과 제품 콘셉트 · 4</span></div>
+        <div class="arc-sub"><h3>Awards &amp; Product Concepts</h3><div class="arc-filt" role="group" aria-label="분류 필터"><button type="button" class="on" data-f="all" aria-pressed="true">All <i>4</i></button><button type="button" data-f="award" aria-pressed="false">Award <i>1</i></button><button type="button" data-f="personal" aria-pressed="false">Personal <i>1</i></button><button type="button" data-f="concept" aria-pressed="false">Concept <i>2</i></button></div></div>
         <div class="arc-row">
-          <a class="arc arc-sm light rv" href="#windmate" data-cursor="1">
+          <a class="arc arc-sm light rv" href="#windmate" data-c="award" data-cursor="1">
             <div class="arc-img"><img src="assets/windmate/cover.webp" alt="Windmate 미니 선풍기" loading="lazy" decoding="async"></div>
             <div class="arc-body"><span class="arc-no">03 · Award</span><h3>Windmate</h3><p>신일 미니 선풍기 공모전 장려상 · 2018</p><span class="arrow-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
           </a>
-          <a class="arc arc-sm  rv" href="#panastove" data-cursor="1">
+          <a class="arc arc-sm  rv" href="#panastove" data-c="personal" data-cursor="1">
             <div class="arc-img"><img src="assets/panastove/kitchen.webp?v=2" alt="PANASTOVE 충전식 프라이팬" loading="lazy" decoding="async" style="object-position:50% 6%"></div>
             <div class="arc-body"><span class="arc-no">04 · Personal Project</span><h3>Panastove</h3><p>충전식 프라이팬 · 신사업 공모전 출품</p><span class="arrow-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
           </a>
-          <a class="arc arc-sm  rv" href="#magus" data-cursor="1">
+          <a class="arc arc-sm  rv" href="#magus" data-c="concept" data-cursor="1">
             <div class="arc-img"><img src="assets/magus/hero.webp?v=3" alt="MAGUS 플로어스탠딩 스피커" loading="lazy" decoding="async" style="object-position:50% 96%"></div>
             <div class="arc-body"><span class="arc-no">05 · Concept Product</span><h3>Magus</h3><p>플로어스탠딩 블루투스 스피커 · CMF</p><span class="arrow-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
           </a>
-          <a class="arc arc-sm  rv" href="#jandi" data-cursor="1">
+          <a class="arc arc-sm  rv" href="#jandi" data-c="concept" data-cursor="1">
             <div class="arc-img"><img src="assets/jandi/hero.webp" alt="JANDI 도시형 공기청정기" loading="lazy" decoding="async" style="object-position:50% 50%"></div>
             <div class="arc-body"><span class="arc-no">06 · Concept Product</span><h3>Jandi</h3><p>태양광 자가발전 공기청정기 · Biomimicry</p><span class="arrow-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
           </a>
@@ -3685,10 +3693,10 @@ const WORKS=[
    ch:'그룹 5대 사업군(Set-top Box·Broadband CPE·Metaverse/AR Glass·Solution·Robot)을 상징하는 캐릭터 IP를 만드는 과제였습니다.',
    ap:'사업 특성을 반영한 네이밍과 성격·관계, 캐릭터별 스토리까지 세계관 전체를 설계했습니다. 동작 표현이 쉬운 인간형 3종과 무형 사업의 상징성을 살린 비인간형 2종으로 조형 체계를 나누고, 기업 컬러(오렌지) 기반 컬러 시스템, 감정·상태를 보여주는 시그널 장치, 신장·체중 등 캐릭터 스펙을 정의했습니다.',
    out:'캐릭터 5종 전체를 저작권 등록(2022.11)해 법적 보호가 가능한 그룹 IP로 전환했습니다. 가이드라인(11p), 아크릴 등신대·스티커·키캡·마우스패드 굿즈, 신규 입사자 웰컴 키트까지 만들었고, 2026년에는 솔루·로비 조형을 리뉴얼해 표현 범위를 넓혔습니다.'},
-  {title:'KAON Friends Keycaps', page:'keycap', img:'assets/keycap/thumb.webp?v=2', sub:'KAON GROUP', tag:'ESG Campaign Goods', period:'2026.03', cat:['brand'], scene:3,
+  {title:'KAON Friends Keycaps', page:'keycap', img:'assets/keycap/thumb.webp?v=3', sub:'KAON GROUP', tag:'ESG Campaign Goods', period:'2026.03', cat:['brand'], scene:3,
    kr:'ESG 환경 캠페인 가온프렌즈 키캡 키링 — Enter, 함께 비우고 함께 순환', role:'굿즈 기획 · 아트워크 디자인', client:'가온그룹 ESG팀', tools:'Illustrator',
    kpis:[], ch:'', ap:'', out:''},
-  {title:'KAON Friends 2027 Calendar', page:'calendar', img:'assets/calendar/thumb.webp?v=6', sub:'KAON GROUP', tag:'AI Artwork · Calendar', period:'2026', cat:['ai','brand','content'], scene:3,
+  {title:'KAON Friends 2027 Calendar', page:'calendar', img:'assets/calendar/thumb.webp?v=7', sub:'KAON GROUP', tag:'AI Artwork · Calendar', period:'2026', cat:['ai','brand','content'], scene:3,
    kr:'가온프렌즈를 주인공으로 생성형 AI로 그린 2027 탁상 캘린더', role:'기획·AI 아트워크·편집디자인', client:'가온그룹', tools:'Generative AI, Photoshop, Illustrator',
    kpis:[['500부','제작·배포'],['3주','제작 기간 · 2024 대비 절반 이상 단축'],['18점','월별 14 · 상태 카드 4']], ch:'', ap:'', out:''},
   {title:'KAON Global Exhibitions', page:'ibc', img:'assets/ibc/thumb.webp?v=2', sub:'KAON GROUP', tag:'Exhibition · AI Wall Graphics', period:'2021 — 현재', cat:['brand','ai'], scene:4,
@@ -3697,7 +3705,7 @@ const WORKS=[
   {title:'KAON GROUP CI', page:'kaonci', img:'assets/kaonci/thumb.webp?v=5', sub:'KAON GROUP', tag:'CI · Guideline', period:'2025', cat:['brand'], scene:4,
    kr:'그룹사·계열사 2곳(BROADBAND·ROBOTICS) 통합 CI와 가이드라인', role:'Brand Designer', client:'가온그룹', tools:'Illustrator, Photoshop',
    kpis:[], ch:'', ap:'', out:''},
-  {title:'KAON Stationery', page:'stationery', img:'assets/stationery/thumb.webp?v=4', sub:'KAON GROUP', tag:'Stationery', period:'2025', cat:['brand'], scene:4,
+  {title:'KAON Stationery', page:'stationery', img:'assets/stationery/thumb.webp?v=5', sub:'KAON GROUP', tag:'Stationery', period:'2025', cat:['brand'], scene:4,
    kr:'CI 심볼을 확장한 그룹·계열사 공식 레터헤드와 대·소봉투 체계', role:'Brand Designer', client:'가온그룹', tools:'Illustrator, Photoshop',
    kpis:[], ch:'', ap:'', out:''},
   {title:'K-FutureTech Branding', page:'kfuturetech', img:'assets/kft/thumb-grid.webp?v=2', sub:'KAON GROUP', tag:'CI · BI', period:'2022', cat:['brand'], scene:4,
@@ -3706,7 +3714,7 @@ const WORKS=[
   {title:'dk. Personal Identity', page:'dklogo', img:'assets/dklogo/thumb.webp?v=4', sub:'Personal', tag:'Logo · Monogram', period:'2026', cat:['brand'], scene:5,
    kr:'이니셜 d와 k를 하나의 기둥으로 엮은 퍼스널 모노그램과 모션', role:'로고 디자인 · 모션', client:'Personal', tools:'Illustrator, Figma, AI',
    kpis:[], ch:'', ap:'', out:''},
-  {title:'LinkFit', page:'linkfit', img:'assets/linkfit/web/s-hero.webp', sub:'Freelance', tag:'Website · App', period:'2026.01 — 현재', cat:['product','brand','content'], scene:5,
+  {title:'LinkFit', page:'linkfit', img:'assets/linkfit/thumb.webp', sub:'Freelance', tag:'Website · App', period:'2026.01 — 현재', cat:['product','brand','content'], scene:5,
    kr:'헬스장 이용권을 시간 단위로 예약·결제하는 B2C 피트니스 앱의 서비스 기획과 디자인', role:'Product Designer & Service Planner', client:'LinkFit', tools:'Figma, GA4, Search Console, Suno',
    kpis:[['Flow','서비스 플로우·화면기획서 작성'],['Admin','권한 분리 파트너 대시보드 설계'],['2명','개발자와 핸드오프·QA 협업']],
    ch:'헬스장 이용권을 시간 단위로 예약·결제하는 B2C 앱을 서비스 구조부터 기획하고 디자인하는 프로젝트입니다.',
@@ -4294,6 +4302,12 @@ addEventListener('keydown',e=>{ if(lb.hidden) return; if(e.key==='Escape'){e.sto
   el.addEventListener('pointerleave',e=>{ if(e.pointerType==='mouse'){ hover=false; run(); } });
   if('IntersectionObserver' in window){ new IntersectionObserver(es=>{ if(es[0].isIntersecting) run(); else { clearTimeout(t); } }).observe(el); } else run();
 })();
+
+/* ---------- Archive filter ---------- */
+(()=>{ const f=document.querySelector('.arc-filt'); if(!f) return; const bs=[...f.querySelectorAll('button')], cs=[...document.querySelectorAll('.arc-sm[data-c]')];
+  f.addEventListener('click',e=>{ const b=e.target.closest('button'); if(!b) return; const k=b.dataset.f;
+    bs.forEach(x=>{ const on=x===b; x.classList.toggle('on',on); x.setAttribute('aria-pressed',String(on)); });
+    cs.forEach(c=>c.classList.toggle('off',!(k==='all'||c.dataset.c===k))); window.ScrollTrigger&&ScrollTrigger.refresh(); }); })();
 
 /* ---------- dk. logo project ---------- */
 (()=>{ const pg=document.getElementById('pg-dklogo'); if(!pg) return;
