@@ -1684,6 +1684,13 @@ body.lb-open .cursor{background:#EDEDED}
 
 /* ===== KAON Friends 3D Guidelines ===== */
 #pg-kf3d .no{color:#FF7B0F}
+.c-rel{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:2px 16px;align-items:center;margin-top:24px;padding:16px 20px;border-radius:12px;background:var(--white);box-shadow:0 0 0 1px var(--line);transition:box-shadow .3s}
+.c-rel[hidden]{display:none}
+.c-rel small{grid-column:1;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.c-rel b{grid-column:1;font-size:15px;font-weight:500}
+.c-rel span{grid-column:2;grid-row:1/3;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:#fff;transition:background .3s}
+.c-rel:hover{box-shadow:0 0 0 1px var(--brand)}.c-rel:hover span{background:var(--brand)}
+.c-rel:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
 .f3-sec{padding-block:clamp(56px,8vw,110px);border-top:1px solid var(--line)}
 .f3-hero{margin-top:clamp(28px,4vw,48px);border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 0 0 1px var(--line)}
 .f3-hero img{display:block;width:100%;height:auto}
@@ -2499,6 +2506,7 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
       <div><h4>Challenge</h4><p id="c-ch"></p></div>
       <div><h4>Approach</h4><p id="c-ap"></p></div>
       <div><h4>Outcome</h4><p id="c-out"></p></div>
+      <a class="c-rel" id="c-rel" href="#" hidden><small>Related Project</small><b></b><span aria-hidden="true">→</span></a>
     </div>
     <div class="slot">실제 시안 이미지 · 목업 · 프로세스 자료가 들어갈 자리입니다.</div>
   </div></div>
@@ -3351,6 +3359,7 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
       <div><dt>Guideline</dt><dd>41p<br><small>브랜드 · 시각 규정 · 서사 · AI 제작</small></dd></div>
       <div><dt>Version</dt><dd>v3.0<br><small>2026.11 · 3D 전환</small></dd></div>
     </dl>
+    <button type="button" class="c-rel f3-rel" data-open-case="3"><small>Related Project</small><b>KAON Friends — 2D 캐릭터 IP 세계관 기획·디자인</b><span aria-hidden="true">→</span></button>
     <div class="f3-hero"><img src="assets/kf3d/cover-chars.webp" alt="손을 잡고 걷는 가온프렌즈 3D 캐릭터 다섯 명"></div>
   </div></div>
 
@@ -3777,13 +3786,13 @@ const WORKS=[
    ch:'콘텐츠 1건 제작에 평균 5일이 걸렸고, 제품 연출 컷은 외부 스튜디오 촬영에 의존했습니다.',
    ap:'Wi-Fi 8 LinkedIn 교육 시리즈(EP.1–6)는 기술 백서와 칩셋사 발표자료를 Claude로 리서치·구조화하고, Veo로 숏폼 영상 소재를 만들었습니다. Google AI Studio로 WiFi CPE 제품 연출 컷을 만들고, 사내 캠페인 \'슬기로운 가온생활\' 포스터를 생성형 AI로 고도화했습니다. 계열사 KONVOY 카드뉴스는 HTML 렌더링 기반으로 제작 공정을 표준화했습니다.',
    out:'Wi-Fi 8 시리즈는 편당 평균 노출 약 1,500회, 참여율 약 3%를 기록했고, 캠페인 시안 제작 기간은 3일에서 1.5일로 줄었습니다. AI 프롬프트·워크플로우 가이드 3종을 문서화해 팀원 5명에게 공유했습니다.'},
-  {title:'KAON Friends', sub:'KAON GROUP', tag:'Character IP', period:'2022 — 2026', cat:['brand'], scene:3,
+  {title:'KAON Friends', rel:['kf3d','KAON Friends 3D Guidelines — 3D 캐릭터 아이덴티티 매뉴얼'], sub:'KAON GROUP', tag:'Character IP', period:'2022 — 2026', cat:['brand'], scene:3,
    kr:'그룹 캐릭터 IP 5종 세계관 기획·디자인', role:'세계관 기획·디자인 전담 (기여도 100%)', client:'가온그룹', tools:'Illustrator, Photoshop',
    kpis:[['5종','K · Fi · Maverick · Solu · Robi'],['5건','한국저작권위원회 저작권 등록'],['11p','캐릭터 브랜드 가이드라인']],
    ch:'그룹 5대 사업군(Set-top Box·Broadband CPE·Metaverse/AR Glass·Solution·Robot)을 상징하는 캐릭터 IP를 만드는 과제였습니다.',
    ap:'사업 특성을 반영한 네이밍과 성격·관계, 캐릭터별 스토리까지 세계관 전체를 설계했습니다. 동작 표현이 쉬운 인간형 3종과 무형 사업의 상징성을 살린 비인간형 2종으로 조형 체계를 나누고, 기업 컬러(오렌지) 기반 컬러 시스템, 감정·상태를 보여주는 시그널 장치, 신장·체중 등 캐릭터 스펙을 정의했습니다.',
    out:'캐릭터 5종 전체를 저작권 등록(2022.11)해 법적 보호가 가능한 그룹 IP로 전환했습니다. 가이드라인(11p), 아크릴 등신대·스티커·키캡·마우스패드 굿즈, 신규 입사자 웰컴 키트까지 만들었고, 2026년에는 솔루·로비 조형을 리뉴얼해 표현 범위를 넓혔습니다.'},
-  {title:'KAON Friends 3D Guidelines', page:'kf3d', img:'assets/kf3d/thumb.webp', sub:'KAON GROUP', tag:'Character IP · Guideline', period:'2026.11', cat:['brand','ai'], scene:3,
+  {title:'KAON Friends 3D Guidelines', page:'kf3d', img:'assets/kf3d/thumb.webp?v=2', sub:'KAON GROUP', tag:'Character IP · Guideline', period:'2026.11', cat:['brand','ai'], scene:3,
    kr:'가온프렌즈 3D 캐릭터 아이덴티티 매뉴얼과 AI 제작 기준 (41p)', role:'캐릭터 가이드라인 기획·디자인', client:'가온그룹', tools:'Illustrator, Generative AI',
    kpis:[], ch:'', ap:'', out:''},
   {title:'KAON Friends Keycaps', page:'keycap', img:'assets/keycap/thumb.webp?v=3', sub:'KAON GROUP', tag:'ESG Campaign Goods', period:'2026.03', cat:['brand'], scene:3,
@@ -3981,6 +3990,7 @@ function openCase(i){
   document.getElementById('c-kr').textContent=p.kr;
   ['role','period','client','tools'].forEach(k=>document.getElementById('c-'+k).textContent=p[k]);
   document.getElementById('c-ch').textContent=p.ch; document.getElementById('c-ap').textContent=p.ap; document.getElementById('c-out').textContent=p.out;
+  { const r=document.getElementById('c-rel'); if(p.rel){ r.hidden=false; r.href='#'+p.rel[0]; r.querySelector('b').textContent=p.rel[1]; } else r.hidden=true; }
   document.getElementById('c-kpis').innerHTML=p.kpis.map(k=>`<div class="kpi"><b>${k[0]}</b><span>${k[1]}</span></div>`).join('');
   caseEl.hidden=false; caseEl.scrollTop=0; document.body.style.overflow='hidden';
   const cv=document.getElementById('c-canvas');
@@ -3998,6 +4008,7 @@ function closeCase(){
   if(G&&!reduce) G.to(caseEl,{clipPath:'inset(0 0 100% 0)',duration:.7,ease:'expo.inOut',onComplete:done}); else done();
 }
 document.getElementById('close').addEventListener('click',closeCase);
+document.getElementById('c-rel').addEventListener('click',e=>{ e.preventDefault(); const h=e.currentTarget.getAttribute('href'); closeCase(); setTimeout(()=>goPage(h.slice(1)),(window.gsap&&!reduce)?720:0); });
 addEventListener('keydown',e=>{if(e.key==='Escape'&&!caseEl.hidden) closeCase();});
 
 /* ---------- 서브 페이지 (#university, #internship) ---------- */
@@ -4404,6 +4415,7 @@ addEventListener('keydown',e=>{ if(lb.hidden) return; if(e.key==='Escape'){e.sto
 
 /* ---------- KAON Friends 3D Guidelines ---------- */
 (()=>{ const pg=document.getElementById('pg-kf3d'); if(!pg) return; const E=[{"src": "assets/kf3d/pages/p01.webp", "alt": "Cover", "cap": "KAON Friends 3D Guidelines — p.01 Cover", "g": "kf3d"}, {"src": "assets/kf3d/pages/p02.webp", "alt": "Contents", "cap": "KAON Friends 3D Guidelines — p.02 Contents", "g": "kf3d"}, {"src": "assets/kf3d/pages/p03.webp", "alt": "이 문서의 기준", "cap": "KAON Friends 3D Guidelines — p.03 이 문서의 기준", "g": "kf3d"}, {"src": "assets/kf3d/pages/p04.webp", "alt": "케이, 가온의 시작을 잇는 주인공", "cap": "KAON Friends 3D Guidelines — p.04 케이, 가온의 시작을 잇는 주인공", "g": "kf3d"}, {"src": "assets/kf3d/pages/p05.webp", "alt": "함께라서 더 쉬워지는 기술", "cap": "KAON Friends 3D Guidelines — p.05 함께라서 더 쉬워지는 기술", "g": "kf3d"}, {"src": "assets/kf3d/pages/p06.webp", "alt": "다섯 이름, 다섯 가지 탄생 배경", "cap": "KAON Friends 3D Guidelines — p.06 다섯 이름, 다섯 가지 탄생 배경", "g": "kf3d"}, {"src": "assets/kf3d/pages/p07.webp", "alt": "케이 / K", "cap": "KAON Friends 3D Guidelines — p.07 케이 / K", "g": "kf3d"}, {"src": "assets/kf3d/pages/p08.webp", "alt": "케이 / 6개 방향 전신", "cap": "KAON Friends 3D Guidelines — p.08 케이 / 6개 방향 전신", "g": "kf3d"}, {"src": "assets/kf3d/pages/p09.webp", "alt": "파이 / FI", "cap": "KAON Friends 3D Guidelines — p.09 파이 / FI", "g": "kf3d"}, {"src": "assets/kf3d/pages/p10.webp", "alt": "파이 / 6개 방향 전신", "cap": "KAON Friends 3D Guidelines — p.10 파이 / 6개 방향 전신", "g": "kf3d"}, {"src": "assets/kf3d/pages/p11.webp", "alt": "매버릭 / MAVERICK", "cap": "KAON Friends 3D Guidelines — p.11 매버릭 / MAVERICK", "g": "kf3d"}, {"src": "assets/kf3d/pages/p12.webp", "alt": "매버릭 / 6개 방향 전신", "cap": "KAON Friends 3D Guidelines — p.12 매버릭 / 6개 방향 전신", "g": "kf3d"}, {"src": "assets/kf3d/pages/p13.webp", "alt": "로비 / ROBI", "cap": "KAON Friends 3D Guidelines — p.13 로비 / ROBI", "g": "kf3d"}, {"src": "assets/kf3d/pages/p14.webp", "alt": "로비 / 6개 방향 전신", "cap": "KAON Friends 3D Guidelines — p.14 로비 / 6개 방향 전신", "g": "kf3d"}, {"src": "assets/kf3d/pages/p15.webp", "alt": "솔루 / SOLU", "cap": "KAON Friends 3D Guidelines — p.15 솔루 / SOLU", "g": "kf3d"}, {"src": "assets/kf3d/pages/p16.webp", "alt": "솔루 / 6개 방향 전신", "cap": "KAON Friends 3D Guidelines — p.16 솔루 / 6개 방향 전신", "g": "kf3d"}, {"src": "assets/kf3d/pages/p17.webp", "alt": "신체 설정과 단체 비율", "cap": "KAON Friends 3D Guidelines — p.17 신체 설정과 단체 비율", "g": "kf3d"}, {"src": "assets/kf3d/pages/p18.webp", "alt": "변하지 않는 캐릭터의 기준", "cap": "KAON Friends 3D Guidelines — p.18 변하지 않는 캐릭터의 기준", "g": "kf3d"}, {"src": "assets/kf3d/pages/p19.webp", "alt": "키와 머리·몸통·다리의 비율", "cap": "KAON Friends 3D Guidelines — p.19 키와 머리·몸통·다리의 비율", "g": "kf3d"}, {"src": "assets/kf3d/pages/p20.webp", "alt": "매버릭 / 형태 고정 규격", "cap": "KAON Friends 3D Guidelines — p.20 매버릭 / 형태 고정 규격", "g": "kf3d"}, {"src": "assets/kf3d/pages/p21.webp", "alt": "파이 / 형태 고정 규격", "cap": "KAON Friends 3D Guidelines — p.21 파이 / 형태 고정 규격", "g": "kf3d"}, {"src": "assets/kf3d/pages/p22.webp", "alt": "케이 / 형태 고정 규격", "cap": "KAON Friends 3D Guidelines — p.22 케이 / 형태 고정 규격", "g": "kf3d"}, {"src": "assets/kf3d/pages/p23.webp", "alt": "로비 / 형태 고정 규격", "cap": "KAON Friends 3D Guidelines — p.23 로비 / 형태 고정 규격", "g": "kf3d"}, {"src": "assets/kf3d/pages/p24.webp", "alt": "솔루 / 형태 고정 규격", "cap": "KAON Friends 3D Guidelines — p.24 솔루 / 형태 고정 규격", "g": "kf3d"}, {"src": "assets/kf3d/pages/p25.webp", "alt": "한 손은 엄지 포함 4개", "cap": "KAON Friends 3D Guidelines — p.25 한 손은 엄지 포함 4개", "g": "kf3d"}, {"src": "assets/kf3d/pages/p26.webp", "alt": "얼굴의 위치와 간격", "cap": "KAON Friends 3D Guidelines — p.26 얼굴의 위치와 간격", "g": "kf3d"}, {"src": "assets/kf3d/pages/p27.webp", "alt": "색상은 재질의 고정값으로 관리", "cap": "KAON Friends 3D Guidelines — p.27 색상은 재질의 고정값으로 관리", "g": "kf3d"}, {"src": "assets/kf3d/pages/p28.webp", "alt": "케이의 K·시그널과 솔루의 일체형 머리", "cap": "KAON Friends 3D Guidelines — p.28 케이의 K·시그널과 솔루의 일체형 머리", "g": "kf3d"}, {"src": "assets/kf3d/pages/p29.webp", "alt": "가능한 변주와 금지되는 변형", "cap": "KAON Friends 3D Guidelines — p.29 가능한 변주와 금지되는 변형", "g": "kf3d"}, {"src": "assets/kf3d/pages/p30.webp", "alt": "관계의 기본 축", "cap": "KAON Friends 3D Guidelines — p.30 관계의 기본 축", "g": "kf3d"}, {"src": "assets/kf3d/pages/p31.webp", "alt": "다섯 친구, 열 가지 연결", "cap": "KAON Friends 3D Guidelines — p.31 다섯 친구, 열 가지 연결", "g": "kf3d"}, {"src": "assets/kf3d/pages/p32.webp", "alt": "성격이 보이는 말과 행동", "cap": "KAON Friends 3D Guidelines — p.32 성격이 보이는 말과 행동", "g": "kf3d"}, {"src": "assets/kf3d/pages/p33.webp", "alt": "첫 에피소드: 함께 바꾸는 축제 준비", "cap": "KAON Friends 3D Guidelines — p.33 첫 에피소드: 함께 바꾸는 축제 준비", "g": "kf3d"}, {"src": "assets/kf3d/pages/p34.webp", "alt": "장면은 다양하게, 캐릭터는 일관되게", "cap": "KAON Friends 3D Guidelines — p.34 장면은 다양하게, 캐릭터는 일관되게", "g": "kf3d"}, {"src": "assets/kf3d/pages/p35.webp", "alt": "이름과 소개를 일관되게 쓰는 규칙", "cap": "KAON Friends 3D Guidelines — p.35 이름과 소개를 일관되게 쓰는 규칙", "g": "kf3d"}, {"src": "assets/kf3d/pages/p36.webp", "alt": "공통 프롬프트", "cap": "KAON Friends 3D Guidelines — p.36 공통 프롬프트", "g": "kf3d"}, {"src": "assets/kf3d/pages/p37.webp", "alt": "등장 캐릭터별 추가 지시", "cap": "KAON Friends 3D Guidelines — p.37 등장 캐릭터별 추가 지시", "g": "kf3d"}, {"src": "assets/kf3d/pages/p38.webp", "alt": "수정 요청과 후임 인수인계", "cap": "KAON Friends 3D Guidelines — p.38 수정 요청과 후임 인수인계", "g": "kf3d"}, {"src": "assets/kf3d/pages/p39.webp", "alt": "최종 승인 전 검수표", "cap": "KAON Friends 3D Guidelines — p.39 최종 승인 전 검수표", "g": "kf3d"}, {"src": "assets/kf3d/pages/p40.webp", "alt": "대표 가이드라인의 적용과 변경 기준", "cap": "KAON Friends 3D Guidelines — p.40 대표 가이드라인의 적용과 변경 기준", "g": "kf3d"}, {"src": "assets/kf3d/pages/p41.webp", "alt": "자료의 근거와 적용 범위", "cap": "KAON Friends 3D Guidelines — p.41 자료의 근거와 적용 범위", "g": "kf3d"}]; const base=LB.length; E.forEach(e=>LB.push(e));
+  pg.querySelector('[data-open-case]').addEventListener('click',()=>openCase(3));
   pg.querySelectorAll('[data-f3]').forEach(b=>b.addEventListener('click',()=>lbOpen(base+(+b.dataset.f3)-1)));
   const bf=pg.querySelector('.f3-bf'), t=pg.querySelector('.kc-track');
   bf.addEventListener('click',e=>{ const b=e.target.closest('button'); if(!b) return; e.stopImmediatePropagation(); bf.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b)); const v=b.dataset.v; t.querySelectorAll('.kc-pg').forEach(el=>el.classList.toggle('off',v!=='ALL'&&el.dataset.ch!==v)); t.scrollTo({left:0}); t.dispatchEvent(new Event('scroll')); },true);
