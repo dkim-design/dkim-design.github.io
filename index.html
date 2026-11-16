@@ -666,6 +666,23 @@ body.lb-open .cursor{background:#EDEDED}
 .lf-title{font-size:clamp(44px,6.4vw,96px);font-weight:200;letter-spacing:-.06em;line-height:.92;color:#F4F4F4}
 .lf-title em{font-style:normal;color:var(--lime)}
 /* LinkFit BI */
+.lfb-ic{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.lfb-ic-card{margin:0;min-width:0;border:1px solid #222;border-radius:12px;overflow:hidden;display:grid;grid-template-rows:auto 1fr;grid-template-columns:minmax(0,1fr)}
+.lfb-ic-card figcaption{padding:16px 18px;font-size:13px;line-height:1.65;color:#9a9a9a;border-top:1px solid #222}
+.lfb-ic-card figcaption b{display:block;font-size:15px;color:#F4F4F4;font-weight:500;margin-bottom:4px}
+.lfb-sns,.lfb-home{aspect-ratio:16/10;background:radial-gradient(80% 90% at 50% 30%,#1c1c1c,#0f0f0f);display:flex;align-items:center;justify-content:center;gap:clamp(20px,4vw,48px);padding:6%}
+.lfb-sns{flex-direction:column}
+.lfb-sns-row{display:flex;align-items:center;gap:18px}
+.lfb-sns-row .s1{width:clamp(80px,9vw,120px);height:auto;border-radius:50%;box-shadow:0 0 0 3px #0f0f0f,0 0 0 5px #E5FE53}
+.lfb-sns-row b{display:block;font-size:20px;color:#fff;font-weight:600}.lfb-sns-row span{font-size:13px;color:#8a8a8a}
+.lfb-sizes{display:flex;align-items:flex-end;gap:18px}.lfb-sizes img{height:auto;display:block}
+.lfb-phone{position:relative;width:clamp(120px,14vw,170px);aspect-ratio:9/18;border-radius:22px;background:linear-gradient(160deg,#2a3a1a,#0d0d0d 60%);box-shadow:0 0 0 4px #222,0 20px 40px -10px rgba(0,0,0,.6);padding:26px 12px 12px}
+.lfb-time{position:absolute;left:14px;top:8px;font-size:9px;color:#ddd}
+.lfb-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px 7px}
+.lfb-grid i{aspect-ratio:1;border-radius:28%;background:rgba(255,255,255,.12)}
+.lfb-app{display:grid;justify-items:center;gap:3px;min-width:0}.lfb-app img{width:100%;height:auto;display:block}.lfb-app em{font-style:normal;font-size:6.5px;color:#eee}
+.lfb-big{width:clamp(80px,9vw,120px);height:auto;filter:drop-shadow(0 12px 18px rgba(0,0,0,.5))}
+@media (max-width:900px){ .lfb-ic{grid-template-columns:minmax(0,1fr)} }
 .lfb-two{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:center}
 .lfb-cbox{border-radius:14px;overflow:hidden;border:1px solid #222}
 .lfb-cons{display:block;width:100%;height:auto}
@@ -2787,12 +2804,33 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
         <div class="lfb-c" style="--c:#000000;--t:#fff"><b>Black</b><span>#000000</span><small>RGB 0 · 0 · 0</small><em>기본 배경 · 모노 로고</em></div>
         <div class="lfb-c" style="--c:#FFFFFF;--t:#000"><b>White</b><span>#FFFFFF</span><small>RGB 255 · 255 · 255</small><em>심볼 L · 워드마크 Link</em></div>
       </div>
+
+      <div class="lfb-sub"><span class="lf-no">Profile &amp; App Icon</span></div>
+      <div class="lfb-ic">
+        <figure class="lfb-ic-card">
+          <div class="lfb-sns">
+            <div class="lfb-sns-row"><img src="assets/linkfit/bi/profile.png" alt="LinkFit 원형 프로필 이미지" class="s1"><div><b>LinkFit</b><span>YouTube · Instagram</span></div></div>
+            <div class="lfb-sizes"><img src="assets/linkfit/bi/profile.png" alt="" style="width:72px"><img src="assets/linkfit/bi/profile.png" alt="" style="width:44px"><img src="assets/linkfit/bi/profile.png" alt="" style="width:28px"></div>
+          </div>
+          <figcaption><b>SNS Profile</b>원형으로 잘리는 YouTube·Instagram 프로필에 맞춰 심볼만 원 중앙에 배치한 버전입니다. 작은 크기에서도 L·F가 구분되도록 워드마크는 뺐습니다.</figcaption>
+        </figure>
+        <figure class="lfb-ic-card">
+          <div class="lfb-home">
+            <div class="lfb-phone"><span class="lfb-time">9:41</span>
+              <div class="lfb-grid"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                <span class="lfb-app"><img src="assets/linkfit/bi/appicon.png" alt="LinkFit 안드로이드 앱 아이콘"><em>LinkFit</em></span><i></i><i></i><i></i></div>
+            </div>
+            <img src="assets/linkfit/bi/appicon.png" alt="" class="lfb-big">
+          </div>
+          <figcaption><b>Android App Icon</b>안드로이드 런처에 맞춘 둥근 사각형 버전입니다. 프로필 버전과 같은 심볼 크기·위치를 유지해 SNS와 앱에서 같은 얼굴로 보이게 했습니다.</figcaption>
+        </figure>
+      </div>
       <div class="lfb-sub"><span class="lf-no">Color Usage</span></div>
       <div class="lfb-use">
         <figure style="background:#000"><img src="assets/linkfit/bi/h-color.png" alt="검정 배경 위 컬러 로고"><figcaption>Black · 기본</figcaption></figure>
         <figure style="background:#fff"><img src="assets/linkfit/bi/h-black.png" alt="흰 배경 위 모노 로고"><figcaption style="color:#555">White · 모노</figcaption></figure>
         <figure style="background:#E5FE53"><img src="assets/linkfit/bi/h-black.png" alt="라임 배경 위 모노 로고"><figcaption style="color:#333">Lime · 모노</figcaption></figure>
-        <figure style="background:#1A1A1A"><img src="assets/linkfit/bi/emblem.png" alt="앱 아이콘 엠블럼" style="width:30%;height:auto"><figcaption>App Icon · Emblem</figcaption></figure>
+        <figure style="background:#1A1A1A"><img src="assets/linkfit/bi/emblem.png" alt="엠블럼" style="width:30%;height:auto"><figcaption>Emblem</figcaption></figure>
       </div>
     </div>
 </div></div>
