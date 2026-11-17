@@ -674,6 +674,45 @@ body.lb-open .cursor{background:#EDEDED}
 .lfo-f figcaption{font-size:12px;color:#8a8a8a}.lfo-f figcaption b{display:block;color:var(--lime);font-weight:600;font-size:11px;letter-spacing:.08em;margin-bottom:2px}
 @media (max-width:900px){ .lfo-row{grid-template-columns:repeat(3,minmax(0,1fr))} }
 @media (max-width:520px){ .lfo-row{grid-template-columns:repeat(2,minmax(0,1fr))} }
+
+/* onboarding interactive */
+.lfx{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:center;margin-top:clamp(28px,4vw,48px)}
+.lfx-stage{display:grid;justify-items:center;gap:16px}
+.lfx-ph{width:min(100%,340px);background:#1c1c1c;border-radius:15% / 7%;padding:2.4%;box-shadow:inset 0 0 0 2px #262626,0 30px 80px -30px rgba(229,254,83,.18);box-sizing:border-box}
+.lfx-sc{position:relative;aspect-ratio:572/1271;border-radius:10.2% / 4.6%;overflow:hidden;background:#0d0d0d;touch-action:pan-y;cursor:grab;outline:none;user-select:none;-webkit-user-select:none}
+.lfx-sc:focus-visible{box-shadow:0 0 0 2px #E5FE53}
+.lfx-sc.drag{cursor:grabbing}
+.lfx-tr{display:flex;height:100%;transition:transform .5s cubic-bezier(.2,.8,.2,1);will-change:transform}
+.lfx-sc.drag .lfx-tr{transition:none}
+.lfx-s{flex:0 0 100%;height:100%}
+.lfx-s img{display:block;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.lfx-hs{position:absolute;background:transparent;border:0;padding:0;cursor:pointer;border-radius:999px;z-index:2}
+.lfx-hs:focus-visible{outline:2px solid #E5FE53}
+.lfx-skip{left:75%;top:5%;width:21%;height:5%}
+.lfx-next{left:80%;top:88.8%;width:15%;height:6.8%}
+.lfx-start{left:56%;top:88.8%;width:39%;height:6.8%;display:none}
+.lfx.last .lfx-next,.lfx.last .lfx-skip{display:none}.lfx.last .lfx-start{display:block}
+.lfx-ctl{display:flex;align-items:center;gap:18px;font-size:13px;color:#8a8a8a;font-variant-numeric:tabular-nums}
+.lfx-ctl b{color:#E5FE53;font-weight:600}
+.lfx-ctl button{width:40px;height:40px;border-radius:50%;border:1px solid #2a2a2a;background:#111;color:#F4F4F4;font-size:16px;cursor:pointer;transition:border-color .2s,color .2s}
+.lfx-ctl button:hover{border-color:#E5FE53;color:#E5FE53}
+.lfx-ctl button:disabled{opacity:.3;cursor:default;border-color:#2a2a2a;color:#F4F4F4}
+.lfx-hint{margin:0;font-size:12px;color:#6f6f6f;text-align:center}
+.lfx-list{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.lfx-list button{width:100%;display:grid;grid-template-columns:44px 1fr;gap:4px 12px;text-align:left;background:transparent;border:0;border-top:1px solid #1f1f1f;padding:16px 4px 14px;color:inherit;cursor:pointer;position:relative;font:inherit}
+.lfx-list .n{font-size:13px;color:#5a5a5a;font-variant-numeric:tabular-nums;padding-top:3px;transition:color .3s}
+.lfx-list .t small{display:block;font-size:11px;letter-spacing:.12em;color:#6f6f6f;margin-bottom:4px}
+.lfx-list .t b{display:block;font-size:clamp(16px,1.5vw,19px);font-weight:500;color:#7a7a7a;transition:color .3s}
+.lfx-list .t em{display:block;font-style:normal;font-size:13px;line-height:1.6;color:#8a8a8a;max-height:0;overflow:hidden;opacity:0;transition:max-height .4s,opacity .4s,margin .4s}
+.lfx-list .bar{position:absolute;left:0;right:0;top:-1px;height:1px;background:transparent}
+.lfx-list .bar i{display:block;height:100%;width:0;background:#E5FE53;transition:width .5s}
+.lfx-list li.on .n{color:#E5FE53}
+.lfx-list li.on .t b{color:#F4F4F4}
+.lfx-list li.on .t em{max-height:60px;opacity:1;margin-top:6px}
+.lfx-list li.on .bar i{width:100%}
+.lfx-list button:hover .t b{color:#cfcfcf}
+@media (max-width:900px){ .lfx{grid-template-columns:minmax(0,1fr)} .lfx-list .t em{display:none} .lfx-list button{padding:12px 4px} }
+@media (prefers-reduced-motion:reduce){ .lfx-tr{transition:none} }
 /* LinkFit BI */
 .lfb-ba{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:20px;align-items:center}
 .lfb-ba-f{margin:0;border:1px solid #222;border-radius:12px;overflow:hidden}
@@ -2975,7 +3014,38 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
 
       <div class="lfo">
         <div class="lf-head"><span class="lf-no">Onboarding Guide</span><h3 class="lf-title" style="font-size:clamp(32px,4vw,56px)">Six steps,<br><em>one swipe.</em></h3><p class="lf-lead">처음 앱을 연 사용자가 '월 회원권 없이 1시간 단위'라는 핵심 가치부터 찾기 → 예약 → 입장 → 선물 → 레벨까지 서비스의 핵심 흐름을 한 번에 이해하도록 만든 온보딩 가이드입니다. 각 장면은 실제 앱 화면 구성을 단순화한 카드로 보여주고, 진행 표시와 '다시 보지 않기'·건너뛰기로 언제든 빠져나갈 수 있게 했습니다.</p></div>
-        <div class="lfo-row"><figure class="lfo-f"><img src="assets/linkfit/onb/s01.webp?v=2" alt="LinkFit 온보딩 01/06 — 원하는 시간만큼만 운동하세요" loading="lazy" decoding="async"><figcaption><b>01 / 06</b>WELCOME · 1시간 단위 이용권</figcaption></figure><figure class="lfo-f"><img src="assets/linkfit/onb/s02.webp?v=2" alt="LinkFit 온보딩 02/06 — 가까운 헬스장을 지도에서 찾아요" loading="lazy" decoding="async"><figcaption><b>02 / 06</b>STEP 1 · 찾기</figcaption></figure><figure class="lfo-f"><img src="assets/linkfit/onb/s03.webp?v=2" alt="LinkFit 온보딩 03/06 — 날짜와 시간을 고르고 이용권을 결제해요" loading="lazy" decoding="async"><figcaption><b>03 / 06</b>STEP 2 · 예약</figcaption></figure><figure class="lfo-f"><img src="assets/linkfit/onb/s04.webp?v=2" alt="LinkFit 온보딩 04/06 — QR 하나로 바로 입장해요" loading="lazy" decoding="async"><figcaption><b>04 / 06</b>STEP 3 · 입장</figcaption></figure><figure class="lfo-f"><img src="assets/linkfit/onb/s05.webp?v=2" alt="LinkFit 온보딩 05/06 — 친구에게 이용권을 선물해요" loading="lazy" decoding="async"><figcaption><b>05 / 06</b>STEP 4 · 선물</figcaption></figure><figure class="lfo-f"><img src="assets/linkfit/onb/s06.webp?v=2" alt="LinkFit 온보딩 06/06 — 운동할수록 레벨이 올라가요" loading="lazy" decoding="async"><figcaption><b>06 / 06</b>STEP 5 · 레벨</figcaption></figure></div>
+        <div class="lfx" id="lfx">
+          <div class="lfx-stage">
+            <div class="lfx-ph"><div class="lfx-sc" tabindex="0" aria-label="온보딩 화면 — 좌우로 드래그하거나 방향키로 넘기기">
+              <div class="lfx-tr"><div class="lfx-s" role="group" aria-roledescription="slide" aria-label="1 / 6"><img src="assets/linkfit/onb/sc01.webp?v=2" alt="LinkFit 온보딩 01/06 — 원하는 시간만큼만 운동하세요" draggable="false" decoding="async"></div><div class="lfx-s" role="group" aria-roledescription="slide" aria-label="2 / 6"><img src="assets/linkfit/onb/sc02.webp?v=2" alt="LinkFit 온보딩 02/06 — 가까운 헬스장을 지도에서 찾아요" draggable="false" loading="lazy" decoding="async"></div><div class="lfx-s" role="group" aria-roledescription="slide" aria-label="3 / 6"><img src="assets/linkfit/onb/sc03.webp?v=2" alt="LinkFit 온보딩 03/06 — 날짜와 시간을 고르고 결제해요" draggable="false" loading="lazy" decoding="async"></div><div class="lfx-s" role="group" aria-roledescription="slide" aria-label="4 / 6"><img src="assets/linkfit/onb/sc04.webp?v=2" alt="LinkFit 온보딩 04/06 — QR 하나로 바로 입장해요" draggable="false" loading="lazy" decoding="async"></div><div class="lfx-s" role="group" aria-roledescription="slide" aria-label="5 / 6"><img src="assets/linkfit/onb/sc05.webp?v=2" alt="LinkFit 온보딩 05/06 — 친구에게 이용권을 선물해요" draggable="false" loading="lazy" decoding="async"></div><div class="lfx-s" role="group" aria-roledescription="slide" aria-label="6 / 6"><img src="assets/linkfit/onb/sc06.webp?v=2" alt="LinkFit 온보딩 06/06 — 운동할수록 레벨이 올라가요" draggable="false" loading="lazy" decoding="async"></div></div>
+              <button type="button" class="lfx-hs lfx-skip" aria-label="건너뛰기"></button>
+              <button type="button" class="lfx-hs lfx-next" aria-label="다음 화면"></button>
+              <button type="button" class="lfx-hs lfx-start" aria-label="시작하기 — 처음으로"></button>
+            </div></div>
+            <div class="lfx-ctl"><button type="button" class="lfx-prev-b" aria-label="이전">←</button><span class="lfx-cnt"><b>01</b> / 06</span><button type="button" class="lfx-next-b" aria-label="다음">→</button></div>
+            <p class="lfx-hint">화면을 좌우로 드래그하거나 화면 속 버튼을 눌러 넘겨보십시오.</p>
+          </div>
+          <ol class="lfx-list"><li><button type="button" data-i="0"><span class="n">01</span><span class="t"><small>WELCOME · 1시간 단위 이용권</small><b>원하는 시간만큼만 운동하세요</b><em>월 회원권 없이 1시간 단위 이용권으로 내 주변 헬스장을 자유롭게 이용합니다.</em></span><i class="bar"><i></i></i></button></li><li><button type="button" data-i="1"><span class="n">02</span><span class="t"><small>STEP 1 · 찾기</small><b>가까운 헬스장을 지도에서 찾아요</b><em>내 위치를 기준으로 지금 이용할 수 있는 헬스장을 지도에 보여줍니다.</em></span><i class="bar"><i></i></i></button></li><li><button type="button" data-i="2"><span class="n">03</span><span class="t"><small>STEP 2 · 예약</small><b>날짜와 시간을 고르고 결제해요</b><em>시간만 선택하면 결제가 끝나고, 피크 시간대는 주황색으로 구분합니다.</em></span><i class="bar"><i></i></i></button></li><li><button type="button" data-i="3"><span class="n">04</span><span class="t"><small>STEP 3 · 입장</small><b>QR 하나로 바로 입장해요</b><em>이용 예정 카드를 누르면 입장용 QR이 열립니다.</em></span><i class="bar"><i></i></i></button></li><li><button type="button" data-i="4"><span class="n">05</span><span class="t"><small>STEP 4 · 선물</small><b>친구에게 이용권을 선물해요</b><em>남은 이용권을 링크 하나로 보내 함께 운동할 수 있습니다.</em></span><i class="bar"><i></i></i></button></li><li><button type="button" data-i="5"><span class="n">06</span><span class="t"><small>STEP 5 · 레벨</small><b>운동할수록 레벨이 올라가요</b><em>운동 시간이 쌓이면 Newbie부터 Link Grand Master까지 레벨이 올라갑니다.</em></span><i class="bar"><i></i></i></button></li></ol>
+        </div>
+<script>
+(function(){var r=document.getElementById('lfx');if(!r)return;var sc=r.querySelector('.lfx-sc'),tr=r.querySelector('.lfx-tr'),N=6,i=0,
+li=[].slice.call(r.querySelectorAll('.lfx-list li')),cnt=r.querySelector('.lfx-cnt b'),pb=r.querySelector('.lfx-prev-b'),nb=r.querySelector('.lfx-next-b');
+function go(k){i=Math.max(0,Math.min(N-1,k));tr.style.transform='translateX('+(-100*i)+'%)';cnt.textContent=('0'+(i+1)).slice(-2);
+li.forEach(function(e,j){e.classList.toggle('on',j===i)});r.classList.toggle('last',i===N-1);pb.disabled=i===0;nb.disabled=i===N-1;}
+r.querySelector('.lfx-next').onclick=function(){go(i+1)};nb.onclick=function(){go(i+1)};pb.onclick=function(){go(i-1)};
+r.querySelector('.lfx-skip').onclick=function(){go(N-1)};r.querySelector('.lfx-start').onclick=function(){go(0)};
+li.forEach(function(e,j){e.querySelector('button').onclick=function(){go(j)}});
+sc.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){go(i+1);e.preventDefault()}else if(e.key==='ArrowLeft'){go(i-1);e.preventDefault()}});
+var x0=null,y0=0,dx=0,w=1,lock=null,moved=false;
+sc.addEventListener('pointerdown',function(e){if(e.button>0)return;x0=e.clientX;y0=e.clientY;dx=0;lock=null;moved=false;w=sc.clientWidth;});
+window.addEventListener('pointermove',function(e){if(x0===null)return;var ddx=e.clientX-x0,ddy=e.clientY-y0;
+ if(lock===null&&(Math.abs(ddx)>6||Math.abs(ddy)>6)){lock=Math.abs(ddx)>Math.abs(ddy)?'x':'y';if(lock==='x')sc.classList.add('drag');}
+ if(lock!=='x')return;moved=true;dx=ddx;if((i===0&&dx>0)||(i===N-1&&dx<0))dx*=.35;tr.style.transform='translateX(calc('+(-100*i)+'% + '+dx+'px))';});
+function end(){if(x0===null)return;x0=null;sc.classList.remove('drag');if(lock==='x'){if(dx<-w*.18)go(i+1);else if(dx>w*.18)go(i-1);else go(i);}lock=null;}
+window.addEventListener('pointerup',end);window.addEventListener('pointercancel',end);
+sc.addEventListener('click',function(e){if(moved){e.stopPropagation();e.preventDefault();moved=false;}},true);
+go(0);})();
+</script>
       </div>
       </div>
 
