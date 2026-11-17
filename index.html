@@ -893,6 +893,37 @@ body.lb-open .cursor{background:#EDEDED}
   .ag-tl-shots .ag-ph:only-child{grid-column:auto}
   .ag-chart li{grid-template-columns:24px minmax(0,1fr) 92px;gap:10px}
 }
+
+/* ===== Artistry Derma Eye ===== */
+#pg-dermaeye .pg-title{font-size:clamp(56px,9vw,148px)}
+.de-hero{margin-top:clamp(28px,4vw,48px);border-radius:16px;overflow:hidden;box-shadow:0 0 0 1px var(--line)}
+.de-hero img{display:block;width:100%;height:auto}
+.de-sec{padding-block:clamp(64px,9vw,120px);border-top:1px solid var(--line)}
+.de-alt{background:#F4F3F1}
+.de-no{display:block;font-size:12px;letter-spacing:.08em;color:var(--brand);font-weight:500}
+.de-h{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:10px clamp(24px,5vw,72px);align-items:end;margin-bottom:clamp(32px,4vw,56px)}
+.de-h .de-no{grid-column:1/-1}
+.de-h h3{margin:0;font-size:clamp(30px,3.8vw,52px);font-weight:600;letter-spacing:-.04em;line-height:1.1}
+.de-h p{margin:0;font-size:15px;line-height:1.8;color:var(--ink-2)}
+.de-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 20px;align-items:start}
+.de-sk{margin:0;display:grid;gap:10px}
+.de-sk .de-ph{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center}
+.de-sk .de-ph img{width:100%;height:100%;object-fit:contain}
+@media (max-width:900px){ .de-grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (max-width:560px){ .de-grid{grid-template-columns:minmax(0,1fr)} }
+.de-ph{all:unset;box-sizing:border-box;display:block;cursor:zoom-in;background:#fff;border-radius:4px;overflow:hidden;box-shadow:0 1px 0 rgba(0,0,0,.04),0 18px 36px -24px rgba(20,20,30,.35),0 0 0 1px rgba(0,0,0,.05);transition:transform .5s var(--ease),box-shadow .5s}
+.de-ph:hover{transform:translateY(-3px) rotate(-.3deg);box-shadow:0 30px 50px -26px rgba(20,20,30,.45),0 0 0 1px rgba(0,0,0,.06)}
+.de-ph:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
+.de-ph img{display:block;width:100%;height:auto}
+.de-sk figcaption{font-size:12.5px;line-height:1.5;color:var(--ink-2);display:flex;gap:8px}
+.de-sk figcaption b{color:var(--brand);font-weight:600;font-variant-numeric:tabular-nums}
+.de-press{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.de-pr{display:grid;gap:6px;padding:24px;border-radius:14px;background:#fff;box-shadow:0 0 0 1px var(--line);color:inherit;text-decoration:none;transition:box-shadow .3s,transform .3s}
+.de-pr:hover{box-shadow:0 0 0 1.5px var(--brand);transform:translateY(-2px)}
+.de-pr small{font-size:12px;color:var(--ink-2);letter-spacing:.04em}
+.de-pr b{font-size:18px;font-weight:600;letter-spacing:-.02em}
+.de-pr span{font-size:13px;color:var(--brand);margin-top:8px}
+@media (max-width:900px){ .de-h,.de-press{grid-template-columns:minmax(0,1fr)} }
 /* LinkFit BI */
 .lfb-ba{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:20px;align-items:center}
 .lfb-ba-f{margin:0;border:1px solid #222;border-radius:12px;overflow:hidden}
@@ -4130,6 +4161,34 @@ go(0);})();
     <div class="pg-end"><span>KAON Content Agent — AX · AI Agent Platform</span><button class="link" type="button" data-close>메인으로 돌아가기 ↗</button></div>
   </div></div>
 </div>
+<div class="case page" id="pg-dermaeye" role="dialog" aria-modal="true" aria-labelledby="pde-title" hidden>
+  <div class="case-top wrap"><div class="c"><span class="label">Project — Amway Korea · Artistry · Beauty Device</span><button class="closeb" type="button" data-close>닫기 ✕</button></div></div>
+  <div class="wrap"><div class="c">
+    <header class="pg-head">
+      <h2 class="pg-title" id="pde-title">Artistry Derma Eye</h2>
+      <div class="pg-meta"><span><b>한국암웨이</b> · R&amp;D 아시아 이노베이션센터</span><span>Industrial Design · Beauty Device</span><span>Artistry</span></div>
+    </header>
+    <div class="pg-intro"><span class="label">About this project</span><p class="pg-lead">한국암웨이 R&amp;D 아시아 이노베이션센터 산업디자이너로 참여한 <b>아티스트리 더마 아이</b> 디자인 프로젝트입니다. 손에 쥐고 눈가에 쓰는 뷰티 디바이스로, 초기 아이디에이션 스케치부터 형태를 탐색했습니다.</p></div>
+    <div class="de-hero"><img src="assets/dermaeye/thumb.webp" alt="아티스트리 더마 아이 아이디에이션 스케치 시트" decoding="async"></div>
+  </div></div>
+
+  <section class="de-sec"><div class="wrap"><div class="c">
+    <div class="de-h"><span class="de-no">01 — Process</span><h3>Ideation &amp;<br>Initial Sketches</h3><p>기존 제품 출력물 위에 덧그리며 형태를 분석하는 데서 시작해, 헤드의 개수와 각도, 버튼 배치, 그립과 바디의 연결부를 펜 스케치로 넓게 탐색했습니다. 스케치를 누르면 크게 볼 수 있습니다.</p></div>
+    <div class="de-grid"><figure class="de-sk"><button class="de-ph" type="button" data-de-lb="s01" aria-label="스케치 01 — 기존 제품 출력물 위에 덧그린 형태 분석 크게 보기"><img src="assets/dermaeye/sketch/s01.webp" alt="더마 아이 아이디에이션 스케치 01 — 기존 제품 출력물 위에 덧그린 형태 분석" loading="lazy" decoding="async"></button><figcaption><b>01</b>기존 제품 출력물 위에 덧그린 형태 분석</figcaption></figure><figure class="de-sk"><button class="de-ph" type="button" data-de-lb="s02" aria-label="스케치 02 — 측면 프로파일과 정면 비례 탐색 크게 보기"><img src="assets/dermaeye/sketch/s02.webp" alt="더마 아이 아이디에이션 스케치 02 — 측면 프로파일과 정면 비례 탐색" loading="lazy" decoding="async"></button><figcaption><b>02</b>측면 프로파일과 정면 비례 탐색</figcaption></figure><figure class="de-sk"><button class="de-ph" type="button" data-de-lb="s03" aria-label="스케치 03 — 헤드 형태와 버튼 배치 베리에이션 크게 보기"><img src="assets/dermaeye/sketch/s03.webp" alt="더마 아이 아이디에이션 스케치 03 — 헤드 형태와 버튼 배치 베리에이션" loading="lazy" decoding="async"></button><figcaption><b>03</b>헤드 형태와 버튼 배치 베리에이션</figcaption></figure><figure class="de-sk"><button class="de-ph" type="button" data-de-lb="s04" aria-label="스케치 04 — 헤드 프로파일 3종 비교 크게 보기"><img src="assets/dermaeye/sketch/s04.webp" alt="더마 아이 아이디에이션 스케치 04 — 헤드 프로파일 3종 비교" loading="lazy" decoding="async"></button><figcaption><b>04</b>헤드 프로파일 3종 비교</figcaption></figure><figure class="de-sk"><button class="de-ph" type="button" data-de-lb="s05" aria-label="스케치 05 — 헤드 각도와 그립 연결부 크게 보기"><img src="assets/dermaeye/sketch/s05.webp" alt="더마 아이 아이디에이션 스케치 05 — 헤드 각도와 그립 연결부" loading="lazy" decoding="async"></button><figcaption><b>05</b>헤드 각도와 그립 연결부</figcaption></figure><figure class="de-sk"><button class="de-ph" type="button" data-de-lb="s06" aria-label="스케치 06 — 3구 헤드 구성 탐색 크게 보기"><img src="assets/dermaeye/sketch/s06.webp" alt="더마 아이 아이디에이션 스케치 06 — 3구 헤드 구성 탐색" loading="lazy" decoding="async"></button><figcaption><b>06</b>3구 헤드 구성 탐색</figcaption></figure><figure class="de-sk"><button class="de-ph" type="button" data-de-lb="s07" aria-label="스케치 07 — 헤드 각도 오버레이 스터디 크게 보기"><img src="assets/dermaeye/sketch/s07.webp" alt="더마 아이 아이디에이션 스케치 07 — 헤드 각도 오버레이 스터디" loading="lazy" decoding="async"></button><figcaption><b>07</b>헤드 각도 오버레이 스터디</figcaption></figure><figure class="de-sk"><button class="de-ph" type="button" data-de-lb="s08" aria-label="스케치 08 — MODE 버튼 위치와 넥 형태 크게 보기"><img src="assets/dermaeye/sketch/s08.webp" alt="더마 아이 아이디에이션 스케치 08 — MODE 버튼 위치와 넥 형태" loading="lazy" decoding="async"></button><figcaption><b>08</b>MODE 버튼 위치와 넥 형태</figcaption></figure><figure class="de-sk"><button class="de-ph" type="button" data-de-lb="s09" aria-label="스케치 09 — 헤드 마감 재질 표현 크게 보기"><img src="assets/dermaeye/sketch/s09.webp" alt="더마 아이 아이디에이션 스케치 09 — 헤드 마감 재질 표현" loading="lazy" decoding="async"></button><figcaption><b>09</b>헤드 마감 재질 표현</figcaption></figure><figure class="de-sk"><button class="de-ph" type="button" data-de-lb="s10" aria-label="스케치 10 — 구조 메모 — PCU · expansion 크게 보기"><img src="assets/dermaeye/sketch/s10.webp" alt="더마 아이 아이디에이션 스케치 10 — 구조 메모 — PCU · expansion" loading="lazy" decoding="async"></button><figcaption><b>10</b>구조 메모 — PCU · expansion</figcaption></figure><figure class="de-sk"><button class="de-ph" type="button" data-de-lb="s11" aria-label="스케치 11 — 3구 헤드 정면·측면 크게 보기"><img src="assets/dermaeye/sketch/s11.webp" alt="더마 아이 아이디에이션 스케치 11 — 3구 헤드 정면·측면" loading="lazy" decoding="async"></button><figcaption><b>11</b>3구 헤드 정면·측면</figcaption></figure><figure class="de-sk"><button class="de-ph" type="button" data-de-lb="s12" aria-label="스케치 12 — 바디 쉐도 라인과 정면 비례 크게 보기"><img src="assets/dermaeye/sketch/s12.webp" alt="더마 아이 아이디에이션 스케치 12 — 바디 쉐도 라인과 정면 비례" loading="lazy" decoding="async"></button><figcaption><b>12</b>바디 쉐도 라인과 정면 비례</figcaption></figure><figure class="de-sk"><button class="de-ph" type="button" data-de-lb="s13" aria-label="스케치 13 — MODE·전원 버튼 배치 비교 크게 보기"><img src="assets/dermaeye/sketch/s13.webp" alt="더마 아이 아이디에이션 스케치 13 — MODE·전원 버튼 배치 비교" loading="lazy" decoding="async"></button><figcaption><b>13</b>MODE·전원 버튼 배치 비교</figcaption></figure></div>
+  </div></div></section>
+
+  <section class="de-sec de-alt"><div class="wrap"><div class="c">
+    <div class="de-h"><span class="de-no">02 — Press</span><h3>언론 보도</h3><p>출시 당시 보도된 기사입니다. 기사를 누르면 원문으로 이동합니다.</p></div>
+    <div class="de-press">
+      <a class="de-pr" href="https://www.newswire.co.kr/newsRead.php?no=890094" target="_blank" rel="noopener"><small>뉴스와이어</small><b>아티스트리 더마 아이 출시 보도자료</b><span>원문 보기 ↗</span></a>
+      <a class="de-pr" href="https://www.gukjenews.com/news/articleView.html?idxno=1135272" target="_blank" rel="noopener"><small>국제뉴스</small><b>아티스트리 더마 아이 관련 기사</b><span>원문 보기 ↗</span></a>
+    </div>
+  </div></div></section>
+
+  <div class="wrap"><div class="c">
+    <div class="pg-end"><span>Artistry Derma Eye — Amway Korea</span><button class="link" type="button" data-close>메인으로 돌아가기 ↗</button></div>
+  </div></div>
+</div>
 <div class="case page" id="pg-keycap" role="dialog" aria-modal="true" aria-labelledby="pkk-title" hidden>
   <div class="case-top wrap"><div class="c"><span class="label">Project — KAON GROUP · Character Goods</span><button class="closeb" type="button" data-close>닫기 ✕</button></div></div>
   <div class="wrap"><div class="c">
@@ -4525,6 +4584,9 @@ const WORKS=[
    ch:'아마존 북미 진출 컨설팅 스타트업에서 국내 브랜드의 현지화 디자인을 맡았습니다.',
    ap:'약 10개 브랜드의 영문 썸네일·상세페이지·브랜드 스토어를 디자인하고, 클릭률과 구매전환율을 높이기 위해 이미지 A/B 개선을 진행했습니다. 제품 콘셉트 촬영도 기획·디렉팅했습니다.',
    out:'CTR이 약 15%, CVR이 약 10% 올랐습니다. 사내 브로슈어·웹사이트·자사몰 디자인을 총괄하고, 여러 프로젝트가 겹칠 때는 프리랜서 디자이너 섭외·업무 분배·품질 관리까지 맡았습니다.'},
+  {title:'Artistry Derma Eye', page:'dermaeye', img:'assets/dermaeye/thumb.webp', sub:'한국암웨이', tag:'Industrial · Beauty Device', period:'한국암웨이 재직', cat:['product'], scene:8,
+   kr:'아티스트리 뷰티 디바이스 산업디자인 — 아이디에이션 스케치와 언론 보도', role:'산업디자이너', client:'아티스트리', tools:'Sketch',
+   kpis:[], ch:'', ap:'', out:''},
   {title:'Amway Product Design', sub:'한국암웨이', tag:'Industrial', period:'2018.03 — 2020.03', cat:['product'], scene:8,
    kr:'뷰티·웰니스 브랜드 신제품 산업디자인', role:'산업디자이너, R&D 아시아 이노베이션센터', client:'아티스트리 · 앳모스피어 · 뉴트리라이트', tools:'제품 기획 · 시제품 · 패키지',
    kpis:[['1건','스마트 디퓨저 디자인권 등록'],['3건','오픈 이노베이션 컨셉 채택'],['5%↓','자재·패키징 원가']],
@@ -4537,7 +4599,7 @@ const JOURNEY=[
    pts:['AI 뉴스 대시보드(리서치 시간 약 80%↓)와 사내 AI 콘텐츠 플랫폼 KAON Content Agent 기획·구축·운영','그룹 캐릭터 IP 가온 프렌즈 5종 기획·디자인, 저작권 5건 등록','CI·BI 4건 개발·리뉴얼, IBC·MWC·BBWF 글로벌 전시 6회 이상 총괄','LinkedIn·YouTube·Facebook·X 공식 채널 콘텐츠 기획·운영']},
   {co:'이공이공 (Egongegong)', grp:'ft', logo:'assets/logos/egong.png?v=2', dark:1, full:1, date:'2021.01 — 2021.09 · 9개월', role:'마케팅본부 리브랜딩팀 · 리브랜딩 디자이너 (초기 멤버)', tags:['E-commerce','Localization'], w:14,
    pts:['국내 브랜드 약 10개사 아마존 북미 입점용 디자인','이미지 A/B 개선으로 CTR 약 15%·CVR 약 10% 향상','제품 콘셉트 촬영 기획·디렉팅, 프리랜서 디자이너 관리']},
-  {co:'한국암웨이 (Amway Korea)', grp:'ft', logo:'assets/logos/amway.png', wide:1, date:'2018.03 — 2020.03 · 2년', role:'R&D 아시아 이노베이션센터 · 산업디자이너', tags:['Industrial','Package'], w:15,
+  {co:'한국암웨이 (Amway Korea)', grp:'ft', logo:'assets/logos/amway.png', wide:1, date:'2018.03 — 2020.03 · 2년', role:'R&D 아시아 이노베이션센터 · 산업디자이너', tags:['Industrial','Package'], w:16, page:'dermaeye',
    pts:['아티스트리·앳모스피어 신제품 기획·디자인·개발','스마트 디퓨저 디자인권 등록 (제30-1007738호)','오픈 이노베이션 컨셉 3건 채택, 자재·패키징 원가 약 5% 절감']},
   {co:'LinkFit', grp:'fl', logo:'assets/logos/linkfit.png?v=2', dark:1, date:'2026.01 — 현재 · Freelance', role:'프리랜서 · 프로덕트 디자이너 & 서비스 기획자', tags:['Product','Planning'], w:12, page:'linkfit', imgs:['assets/linkfit/app/04.webp','assets/linkfit/app/13.webp','assets/linkfit/app/20.webp'],
    pts:['시간 단위 헬스장 예약 앱의 서비스 플로우 설계와 화면기획서 작성, UIUX 디자인','결제 조회·환불 권한을 분리한 파트너 어드민 대시보드 설계','BI·앱 디자인 시스템, 랜딩페이지, GA4·UTM 성과 측정 체계']},
@@ -4575,7 +4637,7 @@ JOURNEY.forEach((j,i)=>{
     <div class="jpanel" id="${pid}" role="region" aria-labelledby="jb${i}"><div><div class="jin">
       ${j.imgs?`<div class="jthumbs">${j.imgs.map(k=>`<div class="t"><img src="${IMGS[k]||k}" alt="" style="width:100%;height:100%;object-fit:cover;filter:grayscale(1)"></div>`).join('')}</div>`:'<span class="jspacer" aria-hidden="true"></span>'}
       <ul class="jpts">${j.pts.map(p=>`<li>${p}</li>`).join('')}</ul>
-      ${j.page?`<a class="arrow-btn" href="#${j.page}" aria-label="${({internship:'인턴 작업 페이지 보기',university:'Pratt 작품 페이지 보기',linkfit:'링크핏 프로젝트 페이지 보기',kfuturetech:'K-FutureTech 브랜딩 페이지 보기',kaonci:'KAON 통합 CI 페이지 보기',kaon:'가온그룹 프로젝트 모아보기'})[j.page]}">${ARROW}</a>`:j.w===null?'<span></span>':`<button class="arrow-btn" type="button" data-open="${j.w}" aria-label="${WORKS[j.w].title} 프로젝트 보기">${ARROW}</button>`}
+      ${j.page?`<a class="arrow-btn" href="#${j.page}" aria-label="${({internship:'인턴 작업 페이지 보기',university:'Pratt 작품 페이지 보기',linkfit:'링크핏 프로젝트 페이지 보기',kfuturetech:'K-FutureTech 브랜딩 페이지 보기',kaonci:'KAON 통합 CI 페이지 보기',kaon:'가온그룹 프로젝트 모아보기',dermaeye:'아티스트리 더마 아이 프로젝트 보기'})[j.page]}">${ARROW}</a>`:j.w===null?'<span></span>':`<button class="arrow-btn" type="button" data-open="${j.w}" aria-label="${WORKS[j.w].title} 프로젝트 보기">${ARROW}</button>`}
     </div></div></div>`;
   jl.appendChild(row);
   row.querySelectorAll('.t canvas').forEach((c,k)=>addArt(c,'scene',SCENES[k]));
@@ -4703,7 +4765,7 @@ document.getElementById('c-rel').addEventListener('click',e=>{ e.preventDefault(
 addEventListener('keydown',e=>{if(e.key==='Escape'&&!caseEl.hidden) closeCase();});
 
 /* ---------- 서브 페이지 (#university, #internship) ---------- */
-const PAGES={university:document.getElementById('pg-university'),internship:document.getElementById('pg-internship'),linkfit:document.getElementById('pg-linkfit'),windmate:document.getElementById('pg-windmate'),panastove:document.getElementById('pg-panastove'),kfuturetech:document.getElementById('pg-kfuturetech'),human:document.getElementById('pg-human'),magus:document.getElementById('pg-magus'),jandi:document.getElementById('pg-jandi'),kaonci:document.getElementById('pg-kaonci'),kf3d:document.getElementById('pg-kf3d'),dklogo:document.getElementById('pg-dklogo'),keycap:document.getElementById('pg-keycap'),agent:document.getElementById('pg-agent'),ibc:document.getElementById('pg-ibc'),calendar:document.getElementById('pg-calendar'),kaon:document.getElementById('pg-kaon'),stationery:document.getElementById('pg-stationery')};
+const PAGES={university:document.getElementById('pg-university'),internship:document.getElementById('pg-internship'),linkfit:document.getElementById('pg-linkfit'),windmate:document.getElementById('pg-windmate'),panastove:document.getElementById('pg-panastove'),kfuturetech:document.getElementById('pg-kfuturetech'),human:document.getElementById('pg-human'),magus:document.getElementById('pg-magus'),jandi:document.getElementById('pg-jandi'),kaonci:document.getElementById('pg-kaonci'),kf3d:document.getElementById('pg-kf3d'),dklogo:document.getElementById('pg-dklogo'),keycap:document.getElementById('pg-keycap'),agent:document.getElementById('pg-agent'),dermaeye:document.getElementById('pg-dermaeye'),ibc:document.getElementById('pg-ibc'),calendar:document.getElementById('pg-calendar'),kaon:document.getElementById('pg-kaon'),stationery:document.getElementById('pg-stationery')};
 function goPage(k){ history.pushState({fromSite:true},'','#'+k); route(); }
 let pageReturn=null;
 function showPage(el){
@@ -4726,7 +4788,7 @@ function route(){
 }
 function leavePage(){ if(history.state&&history.state.fromSite){ history.back(); } else { history.replaceState(null,'',location.pathname+location.search+'#archive'); route(); } }
 document.addEventListener('click',e=>{
-  const a=e.target.closest('a[href="#university"],a[href="#internship"],a[href="#linkfit"],a[href="#windmate"],a[href="#panastove"],a[href="#kfuturetech"],a[href="#human"],a[href="#magus"],a[href="#jandi"],a[href="#kaonci"],a[href="#kaon"],a[href="#stationery"],a[href="#calendar"],a[href="#ibc"],a[href="#keycap"],a[href="#agent"],a[href="#dklogo"],a[href="#kf3d"]'); if(!a) return;
+  const a=e.target.closest('a[href="#university"],a[href="#internship"],a[href="#linkfit"],a[href="#windmate"],a[href="#panastove"],a[href="#kfuturetech"],a[href="#human"],a[href="#magus"],a[href="#jandi"],a[href="#kaonci"],a[href="#kaon"],a[href="#stationery"],a[href="#calendar"],a[href="#ibc"],a[href="#keycap"],a[href="#agent"],a[href="#dermaeye"],a[href="#dklogo"],a[href="#kf3d"]'); if(!a) return;
   e.preventDefault(); history.pushState({fromSite:true},'',a.getAttribute('href')); route();
 });
 document.querySelectorAll('.page [data-close]').forEach(b=>b.addEventListener('click',leavePage));
@@ -5155,6 +5217,9 @@ addEventListener('keydown',e=>{ if(lb.hidden) return; if(e.key==='Escape'){e.sto
   if('IntersectionObserver' in window){ const io=new IntersectionObserver(es=>es.forEach(en=>{ if(en.target===chart&&en.isIntersecting) chart.classList.add('in');
       if(en.target===fl){ if(en.isIntersecting&&!ft){ fi=0; step(); ft=setInterval(()=>{ if(fi>=fli.length){ fi=0; } step(); },1100); } else if(!en.isIntersecting&&ft){ clearInterval(ft); ft=null; } } }),{threshold:.3});
     io.observe(chart); io.observe(fl); } else { chart.classList.add('in'); fli.forEach(l=>l.classList.add('on')); }
+})();
+(()=>{ const pg=document.getElementById('pg-dermaeye'); if(!pg) return; const E=[{"k": "s01", "src": "assets/dermaeye/sketch/s01.webp", "alt": "더마 아이 스케치 01", "cap": "Ideation Sketch 01 — 기존 제품 출력물 위에 덧그린 형태 분석", "g": "dermaeye"}, {"k": "s02", "src": "assets/dermaeye/sketch/s02.webp", "alt": "더마 아이 스케치 02", "cap": "Ideation Sketch 02 — 측면 프로파일과 정면 비례 탐색", "g": "dermaeye"}, {"k": "s03", "src": "assets/dermaeye/sketch/s03.webp", "alt": "더마 아이 스케치 03", "cap": "Ideation Sketch 03 — 헤드 형태와 버튼 배치 베리에이션", "g": "dermaeye"}, {"k": "s04", "src": "assets/dermaeye/sketch/s04.webp", "alt": "더마 아이 스케치 04", "cap": "Ideation Sketch 04 — 헤드 프로파일 3종 비교", "g": "dermaeye"}, {"k": "s05", "src": "assets/dermaeye/sketch/s05.webp", "alt": "더마 아이 스케치 05", "cap": "Ideation Sketch 05 — 헤드 각도와 그립 연결부", "g": "dermaeye"}, {"k": "s06", "src": "assets/dermaeye/sketch/s06.webp", "alt": "더마 아이 스케치 06", "cap": "Ideation Sketch 06 — 3구 헤드 구성 탐색", "g": "dermaeye"}, {"k": "s07", "src": "assets/dermaeye/sketch/s07.webp", "alt": "더마 아이 스케치 07", "cap": "Ideation Sketch 07 — 헤드 각도 오버레이 스터디", "g": "dermaeye"}, {"k": "s08", "src": "assets/dermaeye/sketch/s08.webp", "alt": "더마 아이 스케치 08", "cap": "Ideation Sketch 08 — MODE 버튼 위치와 넥 형태", "g": "dermaeye"}, {"k": "s09", "src": "assets/dermaeye/sketch/s09.webp", "alt": "더마 아이 스케치 09", "cap": "Ideation Sketch 09 — 헤드 마감 재질 표현", "g": "dermaeye"}, {"k": "s10", "src": "assets/dermaeye/sketch/s10.webp", "alt": "더마 아이 스케치 10", "cap": "Ideation Sketch 10 — 구조 메모 — PCU · expansion", "g": "dermaeye"}, {"k": "s11", "src": "assets/dermaeye/sketch/s11.webp", "alt": "더마 아이 스케치 11", "cap": "Ideation Sketch 11 — 3구 헤드 정면·측면", "g": "dermaeye"}, {"k": "s12", "src": "assets/dermaeye/sketch/s12.webp", "alt": "더마 아이 스케치 12", "cap": "Ideation Sketch 12 — 바디 쉐도 라인과 정면 비례", "g": "dermaeye"}, {"k": "s13", "src": "assets/dermaeye/sketch/s13.webp", "alt": "더마 아이 스케치 13", "cap": "Ideation Sketch 13 — MODE·전원 버튼 배치 비교", "g": "dermaeye"}]; const base=LB.length; E.forEach(e=>LB.push({src:e.src,alt:e.alt,cap:e.cap,g:e.g}));
+  pg.addEventListener('click',e=>{ const b=e.target.closest('[data-de-lb]'); if(!b) return; const i=E.findIndex(x=>x.k===b.dataset.deLb); if(i>=0) lbOpen(base+i); });
 })();
 (()=>{ const pg=document.getElementById('pg-keycap'); if(!pg) return; const E=[{"k": "m1", "src": "assets/keycap/m1.webp", "alt": "키캡 키링 정면 — 지구와 함께 · 재활용 마크 세트", "cap": "Product — Product · Front", "g": "keycap"}, {"k": "m2", "src": "assets/keycap/m2.webp", "alt": "키캡 키링 — 흰 키캡 버전", "cap": "Product — White Keycap", "g": "keycap"}, {"k": "m3", "src": "assets/keycap/m3.webp", "alt": "키캡 키링 — 스냅 고리 버전", "cap": "Product — Snap Hook", "g": "keycap"}, {"k": "m4", "src": "assets/keycap/m4.webp", "alt": "키캡 키링 — 측면 클리커 버전", "cap": "Product — Clicker", "g": "keycap"}, {"k": "k1", "src": "assets/keycap/k1.webp", "alt": "Enter · 재활용 마크", "cap": "Keycap 01 — Enter · 재활용 마크", "g": "keycap"}, {"k": "k2", "src": "assets/keycap/k2.webp", "alt": "Enter · 분리수거함", "cap": "Keycap 02 — Enter · 분리수거함", "g": "keycap"}, {"k": "k3", "src": "assets/keycap/k3.webp", "alt": "Enter · 지구 안기", "cap": "Keycap 03 — Enter · 지구 안기", "g": "keycap"}, {"k": "k4", "src": "assets/keycap/k4.webp", "alt": "재활용 마크", "cap": "Keycap 04 — 재활용 마크", "g": "keycap"}, {"k": "k5", "src": "assets/keycap/k5.webp", "alt": "분리배출", "cap": "Keycap 05 — 분리배출", "g": "keycap"}, {"k": "k6", "src": "assets/keycap/k6.webp", "alt": "지구와 함께", "cap": "Keycap 06 — 지구와 함께", "g": "keycap"}, {"k": "c4", "src": "assets/keycap/c4.webp", "alt": "캠페인 메인 사이니지 — 비우고, 모으고, 함께 순환", "cap": "Campaign Field — Main Signage", "g": "keycap"}, {"k": "c1", "src": "assets/keycap/c1.webp", "alt": "1층 로비 캠페인 존 — 배너와 전자제품 수거함", "cap": "Campaign Field — Campaign Zone", "g": "keycap"}, {"k": "c3", "src": "assets/keycap/c3.webp", "alt": "집중 배출일 현장 — 로비 수거 부스", "cap": "Campaign Field — Collection Day", "g": "keycap"}, {"k": "c2", "src": "assets/keycap/c2.webp", "alt": "참여 임직원에게 키캡 키링 배포", "cap": "Campaign Field — Goods Hand-out", "g": "keycap"}, {"k": "s2-zone", "src": "assets/keycap/s2-zone.webp", "alt": "시즌 2 캠페인 존 — 3D 가온프렌즈 사이니지와 배너·수거함", "cap": "Season 2 — Campaign Zone · S2", "g": "keycap"}, {"k": "s2-acrylic", "src": "assets/keycap/s2-acrylic.webp", "alt": "아크릴 피규어 3종 — 케이·솔루·메버릭과 키캡 키링", "cap": "Season 2 — Acrylic Figures", "g": "keycap"}, {"k": "s2-acrylic-table", "src": "assets/keycap/s2-acrylic-table.webp", "alt": "랜덤 굿즈 뽑기 테이블과 캐릭터별 안내 카드", "cap": "Season 2 — Random Goods", "g": "keycap"}, {"k": "s2-stickers", "src": "assets/keycap/s2-stickers.webp", "alt": "자원순환 스티커 12종 — 골라 가는 스티커 존", "cap": "Season 2 — Stickers · 12", "g": "keycap"}, {"k": "s2-sticker-hand", "src": "assets/keycap/s2-sticker-hand.webp", "alt": "메버릭 도시락 스티커와 ESG 스티커", "cap": "Season 2 — Sticker Detail", "g": "keycap"}, {"k": "st01", "src": "assets/keycap/st01.png?v=2", "alt": "지구를 안아 주는 케이", "cap": "Sticker 01 — 지구를 안아 주는 케이", "g": "keycap"}, {"k": "st02", "src": "assets/keycap/st02.png?v=2", "alt": "분리배출하는 로비", "cap": "Sticker 02 — 분리배출하는 로비", "g": "keycap"}, {"k": "st03", "src": "assets/keycap/st03.png?v=2", "alt": "다회용 컵 쓰는 파이", "cap": "Sticker 03 — 다회용 컵 쓰는 파이", "g": "keycap"}, {"k": "st04", "src": "assets/keycap/st04.png?v=2", "alt": "도시락 싸 온 메버릭", "cap": "Sticker 04 — 도시락 싸 온 메버릭", "g": "keycap"}, {"k": "st05", "src": "assets/keycap/st05.png?v=2", "alt": "새싹 키우는 솔루", "cap": "Sticker 05 — 새싹 키우는 솔루", "g": "keycap"}, {"k": "ac1", "src": "assets/keycap/ac1-fig.png", "alt": "지구를 꼭 안아 주는 케이", "cap": "Acrylic Figure NO.1 — 지구를 꼭 안아 주는 케이", "g": "keycap"}, {"k": "ac2", "src": "assets/keycap/ac2-fig.png", "alt": "빙글빙글 자원순환 솔루", "cap": "Acrylic Figure NO.2 — 빙글빙글 자원순환 솔루", "g": "keycap"}, {"k": "ac3", "src": "assets/keycap/ac3-fig.png", "alt": "폐건전지 모으는 메버릭", "cap": "Acrylic Figure NO.3 — 폐건전지 모으는 메버릭", "g": "keycap"}]; const base=LB.length; E.forEach(e=>LB.push({src:e.src,alt:e.alt,cap:e.cap,g:e.g}));
   pg.querySelectorAll('[data-kk-lb]').forEach(b=>b.addEventListener('click',()=>{ const k=E.findIndex(e=>e.k===b.dataset.kkLb); if(k>=0) lbOpen(base+k); }));
