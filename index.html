@@ -1032,6 +1032,29 @@ a.tl-card:hover{transform:translateY(-3px);box-shadow:0 0 0 1.5px #2F6BE0,0 26px
 .pl-f figcaption{font-size:12.5px;line-height:1.5;color:var(--ink-2);display:flex;gap:8px}
 .pl-f figcaption b{color:var(--brand);font-weight:600}
 @media (max-width:900px){ .pl-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;grid-template-areas:none} .pl-f{grid-area:auto!important} .pl-a{grid-column:1/-1!important} .pl-f .de-ph{height:auto;aspect-ratio:3/4} .pl-a .de-ph{aspect-ratio:4/5} }
+
+/* ===== Air Mask / KAON SNS ===== */
+#pg-airmask .pg-title,#pg-kaonsns .pg-title{font-size:clamp(52px,8.4vw,140px)}
+.mk-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:start}
+.mk-f{margin:0;display:grid;gap:10px}
+.mk-f .de-ph{border-radius:12px}
+.mk-f figcaption{font-size:12.5px;color:var(--ink-2);display:flex;gap:8px}.mk-f figcaption b{color:var(--brand)}
+.de-note{margin:16px 0 0;font-size:12px;color:var(--ink-2)}
+.sn-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.sn-c{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px 16px;align-items:center;padding:22px;border-radius:16px;background:#fff;box-shadow:0 0 0 1px var(--line);color:inherit;text-decoration:none;transition:transform .35s var(--ease),box-shadow .35s}
+a.sn-c:hover{transform:translateY(-3px);box-shadow:0 0 0 1.5px var(--brand),0 24px 44px -28px rgba(0,71,171,.4)}
+.sn-ic{width:58px;height:58px;border-radius:16px;background:var(--c);display:grid;place-items:center;box-shadow:0 14px 26px -16px var(--c)}
+.sn-tx{display:grid;gap:3px}.sn-tx b{font-size:17px;font-weight:600}.sn-tx small{font-size:12.5px;color:var(--ink-2);line-height:1.5}
+.sn-go{grid-column:1/-1;font-size:12.5px;color:var(--brand);font-weight:500}
+.sn-role{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.sn-role li{background:#fff;border-radius:14px;padding:22px 24px;box-shadow:0 0 0 1px var(--line);font-size:14px;line-height:1.75;color:var(--ink-2)}
+.sn-role b{display:block;font-size:17px;font-weight:600;color:var(--ink);margin-bottom:6px}
+.sn-rel{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.sn-rel a{display:grid;gap:6px;padding:22px;border-radius:14px;background:#fff;box-shadow:0 0 0 1px var(--line);color:inherit;text-decoration:none;transition:box-shadow .3s,transform .3s}
+.sn-rel a:hover{box-shadow:0 0 0 1.5px var(--brand);transform:translateY(-2px)}
+.sn-rel small{font-size:11.5px;letter-spacing:.06em;color:var(--ink-2)}.sn-rel b{font-size:18px;font-weight:600}.sn-rel span{font-size:13px;color:var(--brand)}
+@media (max-width:1000px){ .sn-grid{grid-template-columns:repeat(2,minmax(0,1fr))} .sn-rel{grid-template-columns:minmax(0,1fr)} }
+@media (max-width:700px){ .mk-grid,.sn-grid,.sn-role{grid-template-columns:minmax(0,1fr)} }
 /* LinkFit BI */
 .lfb-ba{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:20px;align-items:center}
 .lfb-ba-f{margin:0;border:1px solid #222;border-radius:12px;overflow:hidden}
@@ -3001,12 +3024,12 @@ addEventListener('scroll',prog,{passive:true});prog();})();
           <h3>Character IP</h3><p>캐릭터 세계관·스토리텔링 기획, 디자인 시스템 및 가이드라인 개발</p>
           <ul class="cap-tools"><li style="--bc:#FF9A00"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.53 10.73c-.1-.31-.19-.61-.29-.92-.1-.31-.19-.6-.27-.89-.08-.28-.15-.54-.22-.78h-.02c-.09.43-.2.86-.34 1.29-.15.48-.3.98-.46 1.48-.14.51-.29.98-.44 1.4h2.54c-.06-.211-.14-.46-.23-.721-.09-.269-.18-.559-.27-.859zM19.75.3H4.25C1.9.3 0 2.2 0 4.55v14.9c0 2.35 1.9 4.25 4.25 4.25h15.5c2.35 0 4.25-1.9 4.25-4.25V4.55C24 2.2 22.1.3 19.75.3zM14.7 16.83h-2.091c-.069.01-.139-.04-.159-.11l-.82-2.38H7.91l-.76 2.35c-.02.09-.1.15-.19.141H5.08c-.11 0-.14-.061-.11-.18L8.19 7.38c.03-.1.06-.21.1-.33.04-.21.06-.43.06-.65-.01-.05.03-.1.08-.11h2.59c.08 0 .12.03.13.08l3.65 10.3c.03.109 0 .16-.1.16zm3.4-.15c0 .11-.039.16-.129.16H16.01c-.1 0-.15-.061-.15-.16v-7.7c0-.1.041-.14.131-.14h1.98c.09 0 .129.05.129.14v7.7zm-.209-9.03c-.231.24-.571.37-.911.35-.33.01-.65-.12-.891-.35-.23-.25-.35-.58-.34-.92-.01-.34.12-.66.359-.89.242-.23.562-.35.892-.35.391 0 .689.12.91.35.22.24.34.56.33.89.01.34-.11.67-.349.92z"/></svg>Illustrator</li><li style="--bc:#31A8FF"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.85 8.42c-.37-.15-.77-.21-1.18-.2-.26 0-.49 0-.68.01-.2-.01-.34 0-.41.01v3.36c.14.01.27.02.39.02h.53c.39 0 .78-.06 1.15-.18.32-.09.6-.28.82-.53.21-.25.31-.59.31-1.03.01-.31-.07-.62-.23-.89-.17-.26-.41-.46-.7-.57zM19.75.3H4.25C1.9.3 0 2.2 0 4.55v14.899c0 2.35 1.9 4.25 4.25 4.25h15.5c2.35 0 4.25-1.9 4.25-4.25V4.55C24 2.2 22.1.3 19.75.3zm-7.391 11.65c-.399.56-.959.98-1.609 1.22-.68.25-1.43.34-2.25.34-.24 0-.4 0-.5-.01s-.24-.01-.43-.01v3.209c.01.07-.04.131-.11.141H5.52c-.08 0-.12-.041-.12-.131V6.42c0-.07.03-.11.1-.11.17 0 .33 0 .56-.01.24-.01.49-.01.76-.02s.56-.01.87-.02c.31-.01.61-.01.91-.01.82 0 1.5.1 2.06.31.5.17.96.45 1.34.82.32.32.57.71.73 1.14.149.42.229.85.229 1.3.001.86-.199 1.57-.6 2.13zm7.091 3.89c-.28.4-.671.709-1.12.891-.49.209-1.09.318-1.811.318-.459 0-.91-.039-1.359-.129-.35-.061-.7-.17-1.02-.32-.07-.039-.121-.109-.111-.189v-1.74c0-.029.011-.07.041-.09.029-.02.06-.01.09.01.39.23.8.391 1.24.49.379.1.779.15 1.18.15.38 0 .65-.051.83-.141.16-.07.27-.24.27-.42 0-.141-.08-.27-.24-.4-.16-.129-.489-.279-.979-.471-.51-.18-.979-.42-1.42-.719-.31-.221-.569-.51-.761-.85-.159-.32-.239-.67-.229-1.021 0-.43.12-.84.341-1.21.25-.4.619-.72 1.049-.92.469-.239 1.059-.349 1.769-.349.41 0 .83.03 1.24.09.3.04.59.12.86.23.039.01.08.05.1.09.01.04.02.08.02.12v1.63c0 .04-.02.08-.05.1-.09.02-.14.02-.18 0-.3-.16-.62-.27-.96-.34-.37-.08-.74-.13-1.12-.13-.2-.01-.41.02-.601.07-.129.03-.24.1-.31.2-.05.08-.08.18-.08.27s.04.18.101.26c.09.11.209.2.34.27.229.12.47.23.709.33.541.18 1.061.43 1.541.73.33.209.6.49.789.83.16.318.24.67.23 1.029.011.471-.129.94-.389 1.331z"/></svg>Photoshop</li></ul>
           <span class="cap-go">Proof · KAON Friends <em>↗</em></span>
-        </article><article class="cap-card  rv" style="--k:4" data-go="page:agent" tabindex="0" role="button" aria-label="SNS Channels — KAON Content Agent 프로젝트 보기">
+        </article><article class="cap-card  rv" style="--k:4" data-go="page:kaonsns" tabindex="0" role="button" aria-label="SNS Channels — KAON Social Channels 프로젝트 보기">
           <div class="cap-top"><span class="cap-no">05</span><span class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.3 11 15.7 7M8.3 13l7.4 4"/></svg></span></div>
           <div class="cap-metric"><b data-to="232">0</b><i>건</i><small>게시물 분석 기반 추천 게시일</small></div>
           <h3>SNS Channels</h3><p>B2B·B2C 공식 채널 운영·관리, 콘텐츠 기획·발행·모니터링, 톤앤매너 관리</p>
           <ul class="cap-tools"><li style="--bc:#0A66C2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</li><li style="--bc:#FF0000"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>YouTube</li><li style="--bc:#E4405F"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>Instagram</li><li style="--bc:#0866FF"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>Facebook</li><li style="--bc:#FFFFFF"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>X</li></ul>
-          <span class="cap-go">Proof · KAON Content Agent <em>↗</em></span>
+          <span class="cap-go">Proof · KAON Social Channels <em>↗</em></span>
         </article><article class="cap-card  rv" style="--k:5" data-go="case:13" tabindex="0" role="button" aria-label="Digital Marketing — greyd 프로젝트 보기">
           <div class="cap-top"><span class="cap-no">06</span><span class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 18 10 12l4 4 6-8"/><path d="M15 8h5v5"/></svg></span></div>
           <div class="cap-metric"><b data-to="200">0</b><i>%</i><small>광고 ROAS</small></div>
@@ -4368,6 +4391,68 @@ go(0);})();
     <div class="pg-end"><span>Plutonium — Amway Korea</span><button class="link" type="button" data-close>메인으로 돌아가기 ↗</button></div>
   </div></div>
 </div>
+<div class="case page" id="pg-airmask" role="dialog" aria-modal="true" aria-labelledby="pam2-title" hidden>
+  <div class="case-top wrap"><div class="c"><span class="label">Project — Amway Korea · Wearable Device</span><button class="closeb" type="button" data-close>닫기 ✕</button></div></div>
+  <div class="wrap"><div class="c">
+    <header class="pg-head">
+      <h2 class="pg-title" id="pam2-title">Wearable Air Mask</h2>
+      <div class="pg-meta"><span><b>한국암웨이</b> · R&amp;D 아시아 이노베이션센터</span><span>New Product Planning · Industrial Design</span><span>Powered Fine-dust Mask</span></div>
+    </header>
+    <div class="pg-intro"><span class="label">About this project</span><p class="pg-lead">미세먼지를 걸러 주는 <b>웨어러블 전동 마스크</b>의 신제품 기획과 디자인을 맡은 프로젝트입니다. 얼굴 3D 모델 위에서 마스크의 형태를 직접 모델링하며, 코와 턱을 감싸는 착용 곡면과 필터·공기 흡입부의 배치를 함께 설계했습니다.</p></div>
+    <div class="de-hero"><img src="assets/mask/thumb.webp" alt="웨어러블 전동 마스크 3D 모델 — 얼굴 모델 위의 마스크 형태와 측면 흡입구" decoding="async"></div>
+  </div></div>
+
+  <section class="de-sec"><div class="wrap"><div class="c">
+    <div class="de-h"><span class="de-no">01 — 3D Modeling</span><h3>얼굴 위에서<br>형태를 맞추다</h3><p>사람 얼굴 3D 모델을 기준으로 마스크 곡면을 그려, 착용했을 때 코·볼·턱과 뜨는 곳 없이 맞닿도록 형태를 다듬었습니다. 초기 시안에서는 얼굴을 감싸는 기본 곡면과 분할선을, 이후 시안에서는 측면 흡입구와 필터 커버가 들어간 구조를 검토했습니다. 이미지를 누르면 크게 볼 수 있습니다.</p></div>
+    <div class="mk-grid">
+      <figure class="mk-f"><button class="de-ph" type="button" data-mk-lb="m01" aria-label="초기 시안 크게 보기"><img src="assets/mask/m01.webp" alt="초기 시안 — 얼굴 3D 모델 위의 마스크 기본 곡면과 분할선" loading="lazy" decoding="async"></button><figcaption><b>01</b>초기 시안 — 얼굴을 감싸는 기본 곡면과 분할선</figcaption></figure>
+      <figure class="mk-f"><button class="de-ph" type="button" data-mk-lb="m02" aria-label="발전 시안 크게 보기"><img src="assets/mask/m02.webp?v=2" alt="발전 시안 — 측면 흡입구와 필터 커버가 들어간 마스크 구조" loading="lazy" decoding="async"></button><figcaption><b>02</b>발전 시안 — 측면 흡입구와 필터 커버 구조</figcaption></figure>
+    </div>
+    <p class="de-note">Rhino 작업 화면을 모니터에서 촬영한 이미지로, 화면 기울기를 보정해 실었습니다.</p>
+  </div></div></section>
+
+  <div class="wrap"><div class="c">
+    <div class="pg-end"><span>Wearable Air Mask — Amway Korea</span><button class="link" type="button" data-close>메인으로 돌아가기 ↗</button></div>
+  </div></div>
+</div>
+<div class="case page" id="pg-kaonsns" role="dialog" aria-modal="true" aria-labelledby="psn-title" hidden>
+  <div class="case-top wrap"><div class="c"><span class="label">Project — KAON GROUP · Social Channels</span><button class="closeb" type="button" data-close>닫기 ✕</button></div></div>
+  <div class="wrap"><div class="c">
+    <header class="pg-head">
+      <h2 class="pg-title" id="psn-title">KAON Social Channels</h2>
+      <div class="pg-meta"><span><b>가온그룹</b> · 마케팅팀</span><span>LinkedIn · YouTube · Facebook · X</span><span>Planning · Design · Operation</span></div>
+    </header>
+    <div class="pg-intro"><span class="label">About this project</span><p class="pg-lead">가온그룹 공식 SNS 채널의 <b>콘텐츠 기획·디자인·발행·운영 전반</b>을 맡고 있습니다. B2B 고객과 파트너가 보는 LinkedIn을 중심으로 YouTube·Facebook·X까지, 채널마다 톤앤매너를 관리하며 전시회·제품·사내 소식을 콘텐츠로 만들어 발행합니다.</p></div>
+  </div></div>
+
+  <section class="de-sec"><div class="wrap"><div class="c">
+    <div class="de-h"><span class="de-no">01 — Channels</span><h3>운영 채널</h3><p>카드를 누르면 각 공식 채널로 이동합니다.</p></div>
+    <div class="sn-grid"><a class="sn-c" href="https://www.linkedin.com/company/kaongroup" target="_blank" rel="noopener"><span class="sn-ic" style="--c:#0A66C2"><img src="assets/kaonsns/linkedin.svg" alt="" width="34" height="34"></span><span class="sn-tx"><b>LinkedIn</b><small>B2B 메인 채널 · 세 브랜드 운영</small></span><span class="sn-go">채널 보기 ↗</span></a><a class="sn-c" href="https://www.youtube.com/@kaongroup" target="_blank" rel="noopener"><span class="sn-ic" style="--c:#FF0000"><img src="assets/kaonsns/youtube.svg" alt="" width="34" height="34"></span><span class="sn-tx"><b>YouTube</b><small>@kaongroup · 기업·제품·전시 영상</small></span><span class="sn-go">채널 보기 ↗</span></a><div class="sn-c"><span class="sn-ic" style="--c:#0866FF"><img src="assets/kaonsns/facebook.svg" alt="" width="34" height="34"></span><span class="sn-tx"><b>Facebook</b><small>기업 소식·이벤트</small></span></div><div class="sn-c"><span class="sn-ic" style="--c:#111111"><img src="assets/kaonsns/x.svg" alt="" width="34" height="34"></span><span class="sn-tx"><b>X</b><small>기업 소식 단신</small></span></div></div>
+  </div></div></section>
+
+  <section class="de-sec de-alt"><div class="wrap"><div class="c">
+    <div class="de-h"><span class="de-no">02 — Role</span><h3>제가 맡은 일</h3><p>채널 운영의 처음부터 끝까지를 맡고, 반복되는 작업은 AI 도구로 직접 만들어 운영 방식을 바꿨습니다.</p></div>
+    <ul class="sn-role">
+      <li><b>콘텐츠 기획</b>업계 뉴스·전시회·제품 출시·사내 행사를 채널별 게시 주제로 정리하고 연간 일정을 관리합니다.</li>
+      <li><b>디자인·제작</b>게시 이미지, 캐러셀, 영상 등 채널에 올라가는 콘텐츠를 CI 기준에 맞춰 제작합니다.</li>
+      <li><b>발행·운영</b>게시 문구 작성과 발행, 채널별 톤앤매너 관리, 게시 이력 관리를 맡습니다.</li>
+      <li><b>운영 자동화</b>소재 발굴부터 게시 준비까지를 사내 AI 플랫폼으로 묶어 팀이 함께 운영합니다.</li>
+    </ul>
+  </div></div></section>
+
+  <section class="de-sec"><div class="wrap"><div class="c">
+    <div class="de-h"><span class="de-no">03 — Related</span><h3>관련 프로젝트</h3><p>채널 운영과 이어지는 프로젝트입니다.</p></div>
+    <div class="sn-rel">
+      <a href="#agent"><small>AX · AI Agent Platform</small><b>KAON Content Agent</b><span>LinkedIn 소재 발굴부터 게시까지 잇는 사내 AI 플랫폼 ↗</span></a>
+      <a href="#ibc"><small>Exhibition</small><b>KAON Global Exhibitions</b><span>전시회 현장과 연계한 캠페인 콘텐츠 ↗</span></a>
+      <a href="#keycap"><small>Campaign</small><b>KAON ESG Campaign Goods</b><span>ESG 캠페인 굿즈와 현장 콘텐츠 ↗</span></a>
+    </div>
+  </div></div></section>
+
+  <div class="wrap"><div class="c">
+    <div class="pg-end"><span>KAON Social Channels — KAON GROUP</span><button class="link" type="button" data-close>메인으로 돌아가기 ↗</button></div>
+  </div></div>
+</div>
 <div class="case page" id="pg-keycap" role="dialog" aria-modal="true" aria-labelledby="pkk-title" hidden>
   <div class="case-top wrap"><div class="c"><span class="label">Project — KAON GROUP · Character Goods</span><button class="closeb" type="button" data-close>닫기 ✕</button></div></div>
   <div class="wrap"><div class="c">
@@ -4769,19 +4854,25 @@ const WORKS=[
   {title:'Plutonium', page:'plutonium', img:'assets/plutonium/thumb.webp', sub:'한국암웨이', tag:'Industrial · Electric Diffuser', period:'한국암웨이 재직', cat:['product'], scene:8,
    kr:'전동 스마트 디퓨저 산업디자인 — 작동 목업과 디자인권 등록', role:'산업디자이너', client:'한국암웨이', tools:'Prototype',
    kpis:[], ch:'', ap:'', out:''},
+  {title:'Wearable Air Mask', page:'airmask', img:'assets/mask/thumb.webp', sub:'한국암웨이', tag:'Industrial · Wearable Device', period:'한국암웨이 재직', cat:['product'], scene:8,
+   kr:'미세먼지 웨어러블 전동 마스크 — 신제품 기획과 3D 디자인', role:'신제품 기획 · 산업디자이너', client:'한국암웨이', tools:'Rhino',
+   kpis:[], ch:'', ap:'', out:''},
   {title:'Amway Product Design', sub:'한국암웨이', tag:'Industrial', period:'2018.03 — 2020.03', cat:['product'], scene:8,
    kr:'뷰티·웰니스 브랜드 신제품 산업디자인', role:'산업디자이너, R&D 아시아 이노베이션센터', client:'아티스트리 · 앳모스피어 · 뉴트리라이트', tools:'제품 기획 · 시제품 · 패키지',
    kpis:[['1건','스마트 디퓨저 디자인권 등록'],['3건','오픈 이노베이션 컨셉 채택'],['5%↓','자재·패키징 원가']],
    ch:'뷰티·웰니스 브랜드의 신제품 디자인과 오픈 이노베이션 과제를 수행했습니다.',
    ap:'아티스트리 미용기기, 앳모스피어 웨어러블 디바이스·미세먼지 마스크, 스마트 디퓨저를 기획·디자인·개발하고, 뉴트리라이트 건강기능식품 패키지·라벨 디자인과 인쇄 감리를 맡았습니다.',
-   out:'스마트 디퓨저 디자인권(제30-1007738호)을 등록하고 오픈 이노베이션 신규 비즈니스 컨셉 3건이 채택됐습니다. 시제품으로 사업성을 검증하고, 제품 규격 조정으로 자재·패키징 원가를 약 5% 줄였습니다.'},
+   out:'스마트 디퓨저 디자인권(제30-1007738호)을 등록하고 오픈 이노베이션 신규 비즈니스 컨셉 3건이 채택됐습니다. 시제품으로 사업성을 검증하고, 제품 규격 조정으로 자재·패키징 원가를 약 5% 줄였습니다.'},,
+  {title:'KAON Social Channels', page:'kaonsns', img:'assets/kaonsns/thumb.webp', sub:'KAON GROUP', tag:'SNS · Channel Operation', period:'2021.09 — 현재', cat:['content'], scene:5,
+   kr:'가온그룹 LinkedIn·YouTube·Facebook·X 공식 채널 콘텐츠 기획·디자인·운영', role:'채널 운영 전담', client:'가온그룹', tools:'LinkedIn, YouTube, Facebook, X',
+   kpis:[], ch:'', ap:'', out:''}
 ];
 const JOURNEY=[
   {co:'가온그룹 (KAON GROUP)', grp:'ft', page:'kaon', logo:'assets/logos/kaon.png', wide:1, date:'2021.09 — 현재 · 5년 2개월', role:'Corporate실 마케팅팀 매니저 / Visual Contents Designer', tags:['AI Workflow','Brand · IP'], w:0,
    pts:['AI 뉴스 대시보드(리서치 시간 약 80%↓)와 사내 AI 콘텐츠 플랫폼 KAON Content Agent 기획·구축·운영','그룹 캐릭터 IP 가온 프렌즈 5종 기획·디자인, 저작권 5건 등록','CI·BI 4건 개발·리뉴얼, IBC·MWC·BBWF 글로벌 전시 6회 이상 총괄','LinkedIn·YouTube·Facebook·X 공식 채널 콘텐츠 기획·운영']},
   {co:'이공이공 (Egongegong)', grp:'ft', logo:'assets/logos/egong.png?v=2', dark:1, full:1, date:'2021.01 — 2021.09 · 9개월', role:'마케팅본부 리브랜딩팀 · 리브랜딩 디자이너 (초기 멤버)', tags:['E-commerce','Localization'], w:14,
    pts:['국내 브랜드 약 10개사 아마존 북미 입점용 디자인','이미지 A/B 개선으로 CTR 약 15%·CVR 약 10% 향상','제품 콘셉트 촬영 기획·디렉팅, 프리랜서 디자이너 관리']},
-  {co:'한국암웨이 (Amway Korea)', grp:'ft', logo:'assets/logos/amway.png', wide:1, date:'2018.03 — 2020.03 · 2년', role:'R&D 아시아 이노베이션센터 · 산업디자이너', tags:['Industrial','Package'], w:17, page:'amway',
+  {co:'한국암웨이 (Amway Korea)', grp:'ft', logo:'assets/logos/amway.png', wide:1, date:'2018.03 — 2020.03 · 2년', role:'R&D 아시아 이노베이션센터 · 산업디자이너', tags:['Industrial','Package'], w:18, page:'amway',
    pts:['아티스트리·앳모스피어 신제품 기획·디자인·개발','스마트 디퓨저 디자인권 등록 (제30-1007738호)','오픈 이노베이션 컨셉 3건 채택, 자재·패키징 원가 약 5% 절감']},
   {co:'LinkFit', grp:'fl', logo:'assets/logos/linkfit.png?v=2', dark:1, date:'2026.01 · Side Project', role:'사이드 프로젝트 · 프로덕트 디자이너 & 서비스 기획자', tags:['Product','Planning'], w:12, page:'linkfit', imgs:['assets/linkfit/app/04.webp','assets/linkfit/app/13.webp','assets/linkfit/app/20.webp'],
    pts:['시간 단위 헬스장 예약 앱의 서비스 플로우 설계와 화면기획서 작성, UIUX 디자인','결제 조회·환불 권한을 분리한 파트너 어드민 대시보드 설계','BI·앱 디자인 시스템, 랜딩페이지, GA4·UTM 성과 측정 체계']},
@@ -4947,7 +5038,7 @@ document.getElementById('c-rel').addEventListener('click',e=>{ e.preventDefault(
 addEventListener('keydown',e=>{if(e.key==='Escape'&&!caseEl.hidden) closeCase();});
 
 /* ---------- 서브 페이지 (#university, #internship) ---------- */
-const PAGES={university:document.getElementById('pg-university'),internship:document.getElementById('pg-internship'),linkfit:document.getElementById('pg-linkfit'),windmate:document.getElementById('pg-windmate'),panastove:document.getElementById('pg-panastove'),kfuturetech:document.getElementById('pg-kfuturetech'),human:document.getElementById('pg-human'),magus:document.getElementById('pg-magus'),jandi:document.getElementById('pg-jandi'),kaonci:document.getElementById('pg-kaonci'),kf3d:document.getElementById('pg-kf3d'),dklogo:document.getElementById('pg-dklogo'),keycap:document.getElementById('pg-keycap'),agent:document.getElementById('pg-agent'),dermaeye:document.getElementById('pg-dermaeye'),plutonium:document.getElementById('pg-plutonium'),amway:document.getElementById('pg-amway'),ibc:document.getElementById('pg-ibc'),calendar:document.getElementById('pg-calendar'),kaon:document.getElementById('pg-kaon'),stationery:document.getElementById('pg-stationery')};
+const PAGES={university:document.getElementById('pg-university'),internship:document.getElementById('pg-internship'),linkfit:document.getElementById('pg-linkfit'),windmate:document.getElementById('pg-windmate'),panastove:document.getElementById('pg-panastove'),kfuturetech:document.getElementById('pg-kfuturetech'),human:document.getElementById('pg-human'),magus:document.getElementById('pg-magus'),jandi:document.getElementById('pg-jandi'),kaonci:document.getElementById('pg-kaonci'),kf3d:document.getElementById('pg-kf3d'),dklogo:document.getElementById('pg-dklogo'),keycap:document.getElementById('pg-keycap'),agent:document.getElementById('pg-agent'),dermaeye:document.getElementById('pg-dermaeye'),plutonium:document.getElementById('pg-plutonium'),amway:document.getElementById('pg-amway'),airmask:document.getElementById('pg-airmask'),kaonsns:document.getElementById('pg-kaonsns'),ibc:document.getElementById('pg-ibc'),calendar:document.getElementById('pg-calendar'),kaon:document.getElementById('pg-kaon'),stationery:document.getElementById('pg-stationery')};
 function goPage(k){ history.pushState({fromSite:true},'','#'+k); route(); }
 let pageReturn=null;
 function showPage(el){
@@ -4970,7 +5061,7 @@ function route(){
 }
 function leavePage(){ if(history.state&&history.state.fromSite){ history.back(); } else { history.replaceState(null,'',location.pathname+location.search+'#archive'); route(); } }
 document.addEventListener('click',e=>{
-  const a=e.target.closest('a[href="#university"],a[href="#internship"],a[href="#linkfit"],a[href="#windmate"],a[href="#panastove"],a[href="#kfuturetech"],a[href="#human"],a[href="#magus"],a[href="#jandi"],a[href="#kaonci"],a[href="#kaon"],a[href="#stationery"],a[href="#calendar"],a[href="#ibc"],a[href="#keycap"],a[href="#agent"],a[href="#dermaeye"],a[href="#plutonium"],a[href="#amway"],a[href="#dklogo"],a[href="#kf3d"]'); if(!a) return;
+  const a=e.target.closest('a[href="#university"],a[href="#internship"],a[href="#linkfit"],a[href="#windmate"],a[href="#panastove"],a[href="#kfuturetech"],a[href="#human"],a[href="#magus"],a[href="#jandi"],a[href="#kaonci"],a[href="#kaon"],a[href="#stationery"],a[href="#calendar"],a[href="#ibc"],a[href="#keycap"],a[href="#agent"],a[href="#dermaeye"],a[href="#plutonium"],a[href="#amway"],a[href="#airmask"],a[href="#kaonsns"],a[href="#dklogo"],a[href="#kf3d"]'); if(!a) return;
   e.preventDefault(); history.pushState({fromSite:true},'',a.getAttribute('href')); route();
 });
 document.querySelectorAll('.page [data-close]').forEach(b=>b.addEventListener('click',leavePage));
@@ -5412,6 +5503,9 @@ addEventListener('keydown',e=>{ if(lb.hidden) return; if(e.key==='Escape'){e.sto
 })();
 (()=>{ const pg=document.getElementById('pg-plutonium'); if(!pg) return; const E=[{"k": "t04", "src": "assets/plutonium/t04.webp", "alt": "Plutonium 목업 — 전면 — 사선 슬릿 사이로 드러나는 내부와 하단 그린 링 라이트", "cap": "Plutonium Prototype 01 — 전면 — 사선 슬릿 사이로 드러나는 내부와 하단 그린 링 라이트", "g": "plutonium"}, {"k": "t05", "src": "assets/plutonium/t05.webp", "alt": "Plutonium 목업 — 상면 — 향 카트리지 4구와 쿨링 팬 배치", "cap": "Plutonium Prototype 02 — 상면 — 향 카트리지 4구와 쿨링 팬 배치", "g": "plutonium"}, {"k": "t01", "src": "assets/plutonium/t01.webp", "alt": "Plutonium 목업 — 내부 구조 조립 — 중앙 회전축과 팬 브래킷", "cap": "Plutonium Prototype 03 — 내부 구조 조립 — 중앙 회전축과 팬 브래킷", "g": "plutonium"}, {"k": "t02", "src": "assets/plutonium/t02.webp", "alt": "Plutonium 목업 — 쿨링 팬 위치 조정", "cap": "Plutonium Prototype 04 — 쿨링 팬 위치 조정", "g": "plutonium"}, {"k": "t03", "src": "assets/plutonium/t03.webp", "alt": "Plutonium 목업 — 외관 셸 결합 후 점등·동작 테스트", "cap": "Plutonium Prototype 05 — 외관 셸 결합 후 점등·동작 테스트", "g": "plutonium"}]; const base=LB.length; E.forEach(e=>LB.push({src:e.src,alt:e.alt,cap:e.cap,g:e.g}));
   pg.addEventListener('click',e=>{ const b=e.target.closest('[data-pl-lb]'); if(!b) return; const i=E.findIndex(x=>x.k===b.dataset.plLb); if(i>=0) lbOpen(base+i); });
+})();
+(()=>{ const pg=document.getElementById('pg-airmask'); if(!pg) return; const E=[{"k": "m01", "src": "assets/mask/m01.webp", "alt": "초기 시안", "cap": "Wearable Air Mask — 초기 시안", "g": "airmask"}, {"k": "m02", "src": "assets/mask/m02.webp?v=2", "alt": "발전 시안", "cap": "Wearable Air Mask — 측면 흡입구와 필터 커버", "g": "airmask"}]; const base=LB.length; E.forEach(e=>LB.push({src:e.src,alt:e.alt,cap:e.cap,g:e.g}));
+  pg.addEventListener('click',e=>{ const b=e.target.closest('[data-mk-lb]'); if(!b) return; const i=E.findIndex(x=>x.k===b.dataset.mkLb); if(i>=0) lbOpen(base+i); });
 })();
 (()=>{ const pg=document.getElementById('pg-keycap'); if(!pg) return; const E=[{"k": "m1", "src": "assets/keycap/m1.webp", "alt": "키캡 키링 정면 — 지구와 함께 · 재활용 마크 세트", "cap": "Product — Product · Front", "g": "keycap"}, {"k": "m2", "src": "assets/keycap/m2.webp", "alt": "키캡 키링 — 흰 키캡 버전", "cap": "Product — White Keycap", "g": "keycap"}, {"k": "m3", "src": "assets/keycap/m3.webp", "alt": "키캡 키링 — 스냅 고리 버전", "cap": "Product — Snap Hook", "g": "keycap"}, {"k": "m4", "src": "assets/keycap/m4.webp", "alt": "키캡 키링 — 측면 클리커 버전", "cap": "Product — Clicker", "g": "keycap"}, {"k": "k1", "src": "assets/keycap/k1.webp", "alt": "Enter · 재활용 마크", "cap": "Keycap 01 — Enter · 재활용 마크", "g": "keycap"}, {"k": "k2", "src": "assets/keycap/k2.webp", "alt": "Enter · 분리수거함", "cap": "Keycap 02 — Enter · 분리수거함", "g": "keycap"}, {"k": "k3", "src": "assets/keycap/k3.webp", "alt": "Enter · 지구 안기", "cap": "Keycap 03 — Enter · 지구 안기", "g": "keycap"}, {"k": "k4", "src": "assets/keycap/k4.webp", "alt": "재활용 마크", "cap": "Keycap 04 — 재활용 마크", "g": "keycap"}, {"k": "k5", "src": "assets/keycap/k5.webp", "alt": "분리배출", "cap": "Keycap 05 — 분리배출", "g": "keycap"}, {"k": "k6", "src": "assets/keycap/k6.webp", "alt": "지구와 함께", "cap": "Keycap 06 — 지구와 함께", "g": "keycap"}, {"k": "c4", "src": "assets/keycap/c4.webp", "alt": "캠페인 메인 사이니지 — 비우고, 모으고, 함께 순환", "cap": "Campaign Field — Main Signage", "g": "keycap"}, {"k": "c1", "src": "assets/keycap/c1.webp", "alt": "1층 로비 캠페인 존 — 배너와 전자제품 수거함", "cap": "Campaign Field — Campaign Zone", "g": "keycap"}, {"k": "c3", "src": "assets/keycap/c3.webp", "alt": "집중 배출일 현장 — 로비 수거 부스", "cap": "Campaign Field — Collection Day", "g": "keycap"}, {"k": "c2", "src": "assets/keycap/c2.webp", "alt": "참여 임직원에게 키캡 키링 배포", "cap": "Campaign Field — Goods Hand-out", "g": "keycap"}, {"k": "s2-zone", "src": "assets/keycap/s2-zone.webp", "alt": "시즌 2 캠페인 존 — 3D 가온프렌즈 사이니지와 배너·수거함", "cap": "Season 2 — Campaign Zone · S2", "g": "keycap"}, {"k": "s2-acrylic", "src": "assets/keycap/s2-acrylic.webp", "alt": "아크릴 피규어 3종 — 케이·솔루·메버릭과 키캡 키링", "cap": "Season 2 — Acrylic Figures", "g": "keycap"}, {"k": "s2-acrylic-table", "src": "assets/keycap/s2-acrylic-table.webp", "alt": "랜덤 굿즈 뽑기 테이블과 캐릭터별 안내 카드", "cap": "Season 2 — Random Goods", "g": "keycap"}, {"k": "s2-stickers", "src": "assets/keycap/s2-stickers.webp", "alt": "자원순환 스티커 12종 — 골라 가는 스티커 존", "cap": "Season 2 — Stickers · 12", "g": "keycap"}, {"k": "s2-sticker-hand", "src": "assets/keycap/s2-sticker-hand.webp", "alt": "메버릭 도시락 스티커와 ESG 스티커", "cap": "Season 2 — Sticker Detail", "g": "keycap"}, {"k": "st01", "src": "assets/keycap/st01.png?v=2", "alt": "지구를 안아 주는 케이", "cap": "Sticker 01 — 지구를 안아 주는 케이", "g": "keycap"}, {"k": "st02", "src": "assets/keycap/st02.png?v=2", "alt": "분리배출하는 로비", "cap": "Sticker 02 — 분리배출하는 로비", "g": "keycap"}, {"k": "st03", "src": "assets/keycap/st03.png?v=2", "alt": "다회용 컵 쓰는 파이", "cap": "Sticker 03 — 다회용 컵 쓰는 파이", "g": "keycap"}, {"k": "st04", "src": "assets/keycap/st04.png?v=2", "alt": "도시락 싸 온 메버릭", "cap": "Sticker 04 — 도시락 싸 온 메버릭", "g": "keycap"}, {"k": "st05", "src": "assets/keycap/st05.png?v=2", "alt": "새싹 키우는 솔루", "cap": "Sticker 05 — 새싹 키우는 솔루", "g": "keycap"}, {"k": "ac1", "src": "assets/keycap/ac1-fig.png", "alt": "지구를 꼭 안아 주는 케이", "cap": "Acrylic Figure NO.1 — 지구를 꼭 안아 주는 케이", "g": "keycap"}, {"k": "ac2", "src": "assets/keycap/ac2-fig.png", "alt": "빙글빙글 자원순환 솔루", "cap": "Acrylic Figure NO.2 — 빙글빙글 자원순환 솔루", "g": "keycap"}, {"k": "ac3", "src": "assets/keycap/ac3-fig.png", "alt": "폐건전지 모으는 메버릭", "cap": "Acrylic Figure NO.3 — 폐건전지 모으는 메버릭", "g": "keycap"}]; const base=LB.length; E.forEach(e=>LB.push({src:e.src,alt:e.alt,cap:e.cap,g:e.g}));
   pg.querySelectorAll('[data-kk-lb]').forEach(b=>b.addEventListener('click',()=>{ const k=E.findIndex(e=>e.k===b.dataset.kkLb); if(k>=0) lbOpen(base+k); }));
