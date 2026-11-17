@@ -253,7 +253,7 @@ body.menu-open .cursor svg{color:#222}
 .shot:hover .cap::after,.shot:focus-visible .cap::after{width:100%}
 .shot .cap .no{font-size:12px;letter-spacing:.06em;color:var(--brand);font-variant-numeric:tabular-nums;padding-top:5px}
 .shot .cap .ct{display:grid;gap:6px;min-width:0}
-.shot .cap b{font-size:clamp(18px,1.6vw,23px);font-weight:500;letter-spacing:-.03em;line-height:1.2;color:var(--ink)}
+.shot .cap b{font-size:clamp(18px,1.6vw,23px);font-weight:600;letter-spacing:-.03em;line-height:1.2;color:var(--ink)}
 .shot .cap .mt{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;font-size:11.5px;color:var(--ink-2);letter-spacing:.02em}
 .shot .cap .mt i{font-style:normal;padding:3px 9px;border:1px solid var(--line);border-radius:999px;white-space:nowrap}
 .shot .cap .go{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--ink);transition:background .4s,color .4s,border-color .4s,transform .5s var(--ease)}
@@ -340,16 +340,16 @@ body.menu-open .cursor svg{color:#222}
 .work{cursor:pointer;display:grid;gap:12px;transition:opacity .4s,filter .4s}
 .work.off{opacity:.15;filter:grayscale(1);pointer-events:none}
 .work .frame{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:4px}
-.work.feat{order:-1;grid-column:1/-1}.work.feat .frame{aspect-ratio:30/11}
+.work.feat{order:-1}
 .work .feat-b{display:inline-block;padding:3px 9px;border-radius:99px;background:#FF7B0F;color:#fff;font-size:11px;letter-spacing:.06em;align-self:center}
-@media (max-width:700px){ .work.feat .frame{aspect-ratio:4/3} }
 .work .frame canvas{transition:transform 1.1s var(--ease)}
 .work:hover .frame canvas,.work:focus-visible .frame canvas{transform:scale(1.06)}
 .work .ov{position:absolute;inset:0;display:flex;justify-content:space-between;align-items:flex-end;padding:14px;color:var(--white);font-size:12px;background:linear-gradient(transparent 55%,rgba(0,0,0,.35));opacity:0;transition:opacity .45s}
 .work .ov .arrow-btn{position:absolute;inset:0;margin:auto;transform:scale(.6);transition:transform .5s var(--ease)}
 .work:hover .ov,.work:focus-visible .ov{opacity:1}
 .work:hover .ov .arrow-btn,.work:focus-visible .ov .arrow-btn{transform:scale(1)}
-.work .cap{display:flex;gap:10px;align-items:baseline;font-size:14px}
+.work .cap{display:flex;gap:10px;align-items:baseline;font-size:14.5px;font-weight:600}
+.work .cap small{font-weight:400}
 .work .cap{position:relative;padding-top:12px;transition:color .4s}
 .work .cap::before,.work .cap::after{content:"";position:absolute;left:0;top:0;height:1px;right:0;background:var(--line)}
 .work .cap::after{right:auto;width:0;background:var(--brand);transition:width .7s var(--ease)}
@@ -2068,6 +2068,7 @@ body.lb-open .cursor{background:#EDEDED}
 .c-rel:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
 .f3-sec{padding-block:clamp(56px,8vw,110px);border-top:1px solid var(--line)}
 .f3-hero{margin-top:clamp(28px,4vw,48px);border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 0 0 1px var(--line)}
+.f3-hero{padding:clamp(28px,5vw,72px) clamp(40px,11vw,190px)}
 .f3-hero img{display:block;width:100%;height:auto}
 .f3-line{border-radius:16px;background:#fff;box-shadow:0 0 0 1px var(--line);padding:clamp(16px,3vw,36px)}
 .f3-line img{display:block;width:100%;height:auto}
@@ -3904,7 +3905,7 @@ go(0);})();
       <div><dt>Version</dt><dd>v3.0<br><small>2026.11 · 3D 전환</small></dd></div>
     </dl>
     <button type="button" class="c-rel f3-rel" data-open-case="3"><small>Related Project</small><b>KAON Friends — 2D 캐릭터 IP 세계관 기획·디자인</b><span aria-hidden="true">→</span></button>
-    <div class="f3-hero"><img src="assets/kf3d/cover-chars.webp" alt="손을 잡고 걷는 가온프렌즈 3D 캐릭터 다섯 명"></div>
+    <div class="f3-hero"><img src="assets/kf3d/cover-chars.webp?v=2" alt="손을 잡고 걷는 가온프렌즈 3D 캐릭터 다섯 명"></div>
   </div></div>
 
   <section class="f3-sec"><div class="wrap"><div class="c">
@@ -4585,7 +4586,7 @@ const wg=document.getElementById('wgrid');
 WORKS.forEach((wk,i)=>{
   const el=document.createElement('article'); el.className='work'+(wk.feat?' feat':''); el.tabIndex=0; el.dataset.i=i; el.dataset.cursor='1';
   el.setAttribute('role','button'); el.setAttribute('aria-label',wk.title+' 자세히 보기');
-  el.innerHTML=`<div class="frame">${wk.img?`<img class="art" src="${wk.feat&&wk.imgW?wk.imgW:wk.img}" alt="" style="object-fit:cover;position:absolute;inset:0">`:'<canvas class="art"></canvas>'}<div class="ov"><span>${wk.tag}</span><span>${wk.period}</span><span class="arrow-btn" aria-hidden="true">${ARROW}</span></div></div>
+  el.innerHTML=`<div class="frame">${wk.img?`<img class="art" src="${wk.img}" alt="" style="object-fit:cover;position:absolute;inset:0">`:'<canvas class="art"></canvas>'}<div class="ov"><span>${wk.tag}</span><span>${wk.period}</span><span class="arrow-btn" aria-hidden="true">${ARROW}</span></div></div>
     <div class="cap">${wk.feat?'<span class="feat-b">Main Project</span>':''}${wk.title} <small>${wk.sub}</small></div><p class="wkr">${wk.kr}</p>`;
   wg.appendChild(el);
   if(!wk.img) addArt(el.querySelector('canvas'),'scene',SCENES[i%SCENES.length]);
