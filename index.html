@@ -723,6 +723,20 @@ body.lb-open .cursor{background:#EDEDED}
 .bx2-h{font-weight:600!important;letter-spacing:-.05em!important}
 .caps-h{font-weight:600!important;letter-spacing:-.05em!important}
 
+
+/* about — recomposed */
+.about-grid{grid-template-columns:minmax(0,1.25fr) minmax(0,.95fr) minmax(0,.85fr)!important;gap:clamp(20px,2.4vw,36px)!important;align-items:stretch!important}
+.about-text{display:flex;flex-direction:column}
+.about-text p.lead{margin-bottom:32px!important}
+.about-text .points{margin-top:auto;padding-top:28px;border-top:1px solid var(--line);gap:18px}
+.about-text .hp-link{align-self:flex-start;margin-top:28px}
+.about-right{display:block!important}
+.about-right .thumb{width:100%!important;height:100%;min-height:520px;aspect-ratio:auto!important;margin:0!important;border-radius:10px!important}
+.about-right .thumb .pf-thumb{object-position:50% 22%}
+.about-grid>.statcard{display:flex;flex-direction:column;gap:14px;border-radius:10px;padding:22px;box-shadow:0 0 0 1px var(--line)}
+.about-grid>.statcard .sc-vis{flex:1;aspect-ratio:auto;min-height:220px}
+@media (max-width:980px){ .about-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important} .about-text{grid-column:1/-1} .about-text .points{margin-top:8px} .about-right .thumb{min-height:420px} }
+@media (max-width:640px){ .about-grid{grid-template-columns:minmax(0,1fr)!important} .about-right .thumb{min-height:0;aspect-ratio:4/5!important} }
 /* ===== Timeline ===== */
 .tl{padding-block:140px 0}
 .tl-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 60px;align-items:end;margin-bottom:56px}
@@ -2840,21 +2854,20 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
       <div class="about-text rv">
         <h2 class="h2">About Me</h2>
         <p class="lead">브랜드 아이덴티티부터 캐릭터 IP, 마케팅 온/오프라인 비주얼 콘텐츠, UI/UX, 영상 편집/제작, SNS 채널 운영/관리, 제품 디자인까지 콘셉트 기획에서 최종 산출물까지 직접 완성해 왔습니다. 최근에는 생성형 AI와 AI 에이전트를 실무에 도입해, 디자이너 한 명이 리서치부터 기획·제작·배포까지 처리하는 구조를 만들었습니다.</p>
+        <ul class="points">
+          <li><i>+</i><span>미국에서 약 8년간 고교와 Pratt Institute 산업디자인 학위 과정을 마치고, Karim Rashid, Stephen Burks, David Weeks 등 뉴욕 디자인 스튜디오에서 인턴십을 거쳤습니다. 해외 법인·협력사·글로벌 전시 파트너와 영어로 직접 소통합니다.</span></li>
+          <li><i>+</i><span>한국암웨이, 이공이공, 가온그룹을 거치며 제품·브랜드·디지털 콘텐츠 전 영역을 다뤘습니다.</span></li>
+        </ul>
         <a class="hp-link" href="#human" data-cursor>Human Profile — 어떤 에너지로 일하는지 보기 <span aria-hidden="true">↗</span></a>
-        <svg class="squiggle" viewBox="0 0 160 90" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 70c30-58 70 30 100-20 10-16 30-30 50-34m0 0-12-4m12 4-6 11"/></svg>
+      </div>
+      <div class="about-right rv">
+        <a class="thumb" href="#human" data-cursor aria-label="Human Profile 페이지 보기 — 성향과 일하는 방식"><img class="pf-thumb" src="assets/profile/human.webp?v=12" alt="" loading="lazy" decoding="async"><span class="hp-tag">ENFP · Human Profile</span><span class="arrow-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
       </div>
       <div class="statcard rv sc-rot" id="sc-rot" aria-roledescription="carousel" aria-label="하이라이트">
         <div class="sc-top"><span class="sc-cat">Personality</span><span class="sc-dots" role="tablist"><button type="button" role="tab" aria-label="1번째 하이라이트" class=on></button><button type="button" role="tab" aria-label="2번째 하이라이트"></button><button type="button" role="tab" aria-label="3번째 하이라이트"></button><button type="button" role="tab" aria-label="4번째 하이라이트"></button><button type="button" role="tab" aria-label="5번째 하이라이트"></button><button type="button" role="tab" aria-label="6번째 하이라이트"></button><button type="button" role="tab" aria-label="7번째 하이라이트"></button><button type="button" role="tab" aria-label="8번째 하이라이트"></button></span></div>
         <div class="sc-body" aria-live="polite"><b class="sc-val">ENFP</b><p class="sc-txt">재기발랄한 활동가 — 아이디어가 떠오르면 먼저 꺼내고 바로 만들어 봅니다</p></div>
         <a class="img sc-vis" href="#human" aria-label="자세히 보기"><span class="sc-w" style="background:linear-gradient(150deg,#0047AB,#6f9be0)">Spark!</span></a>
         <span class="sc-bar" aria-hidden="true"><i></i></span>
-      </div>
-      <div class="about-right rv">
-        <a class="thumb" href="#human" data-cursor aria-label="Human Profile 페이지 보기 — 성향과 일하는 방식"><img class="pf-thumb" src="assets/profile/human.webp?v=12" alt="" loading="lazy" decoding="async"><span class="hp-tag">ENFP · Human Profile</span><span class="arrow-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
-        <ul class="points">
-          <li><i>+</i><span>미국에서 약 8년간 고교와 Pratt Institute 산업디자인 학위 과정을 마치고, Karim Rashid, Stephen Burks, David Weeks 등 뉴욕 디자인 스튜디오에서 인턴십을 거쳤습니다. 해외 법인·협력사·글로벌 전시 파트너와 영어로 직접 소통합니다.</span></li>
-          <li><i>+</i><span>한국암웨이, 이공이공, 가온그룹을 거치며 제품·브랜드·디지털 콘텐츠 전 영역을 다뤘습니다.</span></li>
-        </ul>
       </div>
     </div>
 
@@ -4395,10 +4408,10 @@ go(0);})();
   <div class="case-top wrap"><div class="c"><span class="label">Project — Amway Korea · Wearable Device</span><button class="closeb" type="button" data-close>닫기 ✕</button></div></div>
   <div class="wrap"><div class="c">
     <header class="pg-head">
-      <h2 class="pg-title" id="pam2-title">Wearable Air Mask</h2>
-      <div class="pg-meta"><span><b>한국암웨이</b> · R&amp;D 아시아 이노베이션센터</span><span>New Product Planning · Industrial Design</span><span>Powered Fine-dust Mask</span></div>
+      <h2 class="pg-title" id="pam2-title">Atmosphere Air Mask</h2>
+      <div class="pg-meta"><span><b>한국암웨이</b> · R&amp;D 아시아 이노베이션센터</span><span>New Product Planning · Industrial Design</span><span>Atmosphere · Powered Fine-dust Mask</span></div>
     </header>
-    <div class="pg-intro"><span class="label">About this project</span><p class="pg-lead">미세먼지를 걸러 주는 <b>웨어러블 전동 마스크</b>의 신제품 기획과 디자인을 맡은 프로젝트입니다. 얼굴 3D 모델 위에서 마스크의 형태를 직접 모델링하며, 코와 턱을 감싸는 착용 곡면과 필터·공기 흡입부의 배치를 함께 설계했습니다.</p></div>
+    <div class="pg-intro"><span class="label">About this project</span><p class="pg-lead">암웨이의 주력 공기청정기 브랜드 <b>앳모스피어(Atmosphere)</b>의 확장 제품으로 기획한 <b>웨어러블 전동 미세먼지 마스크</b> 프로젝트입니다. 신제품 기획부터 디자인까지 맡았습니다. 얼굴 3D 모델 위에서 마스크의 형태를 직접 모델링하며, 코와 턱을 감싸는 착용 곡면과 필터·공기 흡입부의 배치를 함께 설계했습니다.</p></div>
     <div class="de-hero"><img src="assets/mask/thumb.webp" alt="웨어러블 전동 마스크 3D 모델 — 얼굴 모델 위의 마스크 형태와 측면 흡입구" decoding="async"></div>
   </div></div>
 
@@ -4412,7 +4425,7 @@ go(0);})();
   </div></div></section>
 
   <div class="wrap"><div class="c">
-    <div class="pg-end"><span>Wearable Air Mask — Amway Korea</span><button class="link" type="button" data-close>메인으로 돌아가기 ↗</button></div>
+    <div class="pg-end"><span>Atmosphere Air Mask — Amway Korea</span><button class="link" type="button" data-close>메인으로 돌아가기 ↗</button></div>
   </div></div>
 </div>
 <div class="case page" id="pg-kaonsns" role="dialog" aria-modal="true" aria-labelledby="psn-title" hidden>
@@ -4854,8 +4867,8 @@ const WORKS=[
   {title:'Plutonium', page:'plutonium', img:'assets/plutonium/thumb.webp', sub:'한국암웨이', tag:'Industrial · Electric Diffuser', period:'한국암웨이 재직', cat:['product'], scene:8,
    kr:'전동 스마트 디퓨저 산업디자인 — 작동 목업과 디자인권 등록', role:'산업디자이너', client:'한국암웨이', tools:'Prototype',
    kpis:[], ch:'', ap:'', out:''},
-  {title:'Wearable Air Mask', page:'airmask', img:'assets/mask/thumb.webp', sub:'한국암웨이', tag:'Industrial · Wearable Device', period:'한국암웨이 재직', cat:['product'], scene:8,
-   kr:'미세먼지 웨어러블 전동 마스크 — 신제품 기획과 3D 디자인', role:'신제품 기획 · 산업디자이너', client:'한국암웨이', tools:'Rhino',
+  {title:'Atmosphere Air Mask', page:'airmask', img:'assets/mask/thumb.webp', sub:'한국암웨이', tag:'Industrial · Wearable Device', period:'한국암웨이 재직', cat:['product'], scene:8,
+   kr:'앳모스피어 공기청정기 브랜드의 웨어러블 전동 미세먼지 마스크 — 신제품 기획과 3D 디자인', role:'신제품 기획 · 산업디자이너', client:'한국암웨이', tools:'Rhino',
    kpis:[], ch:'', ap:'', out:''},
   {title:'Amway Product Design', sub:'한국암웨이', tag:'Industrial', period:'2018.03 — 2020.03', cat:['product'], scene:8,
    kr:'뷰티·웰니스 브랜드 신제품 산업디자인', role:'산업디자이너, R&D 아시아 이노베이션센터', client:'아티스트리 · 앳모스피어 · 뉴트리라이트', tools:'제품 기획 · 시제품 · 패키지',
@@ -5504,7 +5517,7 @@ addEventListener('keydown',e=>{ if(lb.hidden) return; if(e.key==='Escape'){e.sto
 (()=>{ const pg=document.getElementById('pg-plutonium'); if(!pg) return; const E=[{"k": "t04", "src": "assets/plutonium/t04.webp", "alt": "Plutonium 목업 — 전면 — 사선 슬릿 사이로 드러나는 내부와 하단 그린 링 라이트", "cap": "Plutonium Prototype 01 — 전면 — 사선 슬릿 사이로 드러나는 내부와 하단 그린 링 라이트", "g": "plutonium"}, {"k": "t05", "src": "assets/plutonium/t05.webp", "alt": "Plutonium 목업 — 상면 — 향 카트리지 4구와 쿨링 팬 배치", "cap": "Plutonium Prototype 02 — 상면 — 향 카트리지 4구와 쿨링 팬 배치", "g": "plutonium"}, {"k": "t01", "src": "assets/plutonium/t01.webp", "alt": "Plutonium 목업 — 내부 구조 조립 — 중앙 회전축과 팬 브래킷", "cap": "Plutonium Prototype 03 — 내부 구조 조립 — 중앙 회전축과 팬 브래킷", "g": "plutonium"}, {"k": "t02", "src": "assets/plutonium/t02.webp", "alt": "Plutonium 목업 — 쿨링 팬 위치 조정", "cap": "Plutonium Prototype 04 — 쿨링 팬 위치 조정", "g": "plutonium"}, {"k": "t03", "src": "assets/plutonium/t03.webp", "alt": "Plutonium 목업 — 외관 셸 결합 후 점등·동작 테스트", "cap": "Plutonium Prototype 05 — 외관 셸 결합 후 점등·동작 테스트", "g": "plutonium"}]; const base=LB.length; E.forEach(e=>LB.push({src:e.src,alt:e.alt,cap:e.cap,g:e.g}));
   pg.addEventListener('click',e=>{ const b=e.target.closest('[data-pl-lb]'); if(!b) return; const i=E.findIndex(x=>x.k===b.dataset.plLb); if(i>=0) lbOpen(base+i); });
 })();
-(()=>{ const pg=document.getElementById('pg-airmask'); if(!pg) return; const E=[{"k": "m01", "src": "assets/mask/m01.webp", "alt": "초기 시안", "cap": "Wearable Air Mask — 초기 시안", "g": "airmask"}, {"k": "m02", "src": "assets/mask/m02.webp?v=2", "alt": "발전 시안", "cap": "Wearable Air Mask — 측면 흡입구와 필터 커버", "g": "airmask"}]; const base=LB.length; E.forEach(e=>LB.push({src:e.src,alt:e.alt,cap:e.cap,g:e.g}));
+(()=>{ const pg=document.getElementById('pg-airmask'); if(!pg) return; const E=[{"k": "m01", "src": "assets/mask/m01.webp", "alt": "초기 시안", "cap": "Atmosphere Air Mask — 초기 시안", "g": "airmask"}, {"k": "m02", "src": "assets/mask/m02.webp?v=2", "alt": "발전 시안", "cap": "Atmosphere Air Mask — 측면 흡입구와 필터 커버", "g": "airmask"}]; const base=LB.length; E.forEach(e=>LB.push({src:e.src,alt:e.alt,cap:e.cap,g:e.g}));
   pg.addEventListener('click',e=>{ const b=e.target.closest('[data-mk-lb]'); if(!b) return; const i=E.findIndex(x=>x.k===b.dataset.mkLb); if(i>=0) lbOpen(base+i); });
 })();
 (()=>{ const pg=document.getElementById('pg-keycap'); if(!pg) return; const E=[{"k": "m1", "src": "assets/keycap/m1.webp", "alt": "키캡 키링 정면 — 지구와 함께 · 재활용 마크 세트", "cap": "Product — Product · Front", "g": "keycap"}, {"k": "m2", "src": "assets/keycap/m2.webp", "alt": "키캡 키링 — 흰 키캡 버전", "cap": "Product — White Keycap", "g": "keycap"}, {"k": "m3", "src": "assets/keycap/m3.webp", "alt": "키캡 키링 — 스냅 고리 버전", "cap": "Product — Snap Hook", "g": "keycap"}, {"k": "m4", "src": "assets/keycap/m4.webp", "alt": "키캡 키링 — 측면 클리커 버전", "cap": "Product — Clicker", "g": "keycap"}, {"k": "k1", "src": "assets/keycap/k1.webp", "alt": "Enter · 재활용 마크", "cap": "Keycap 01 — Enter · 재활용 마크", "g": "keycap"}, {"k": "k2", "src": "assets/keycap/k2.webp", "alt": "Enter · 분리수거함", "cap": "Keycap 02 — Enter · 분리수거함", "g": "keycap"}, {"k": "k3", "src": "assets/keycap/k3.webp", "alt": "Enter · 지구 안기", "cap": "Keycap 03 — Enter · 지구 안기", "g": "keycap"}, {"k": "k4", "src": "assets/keycap/k4.webp", "alt": "재활용 마크", "cap": "Keycap 04 — 재활용 마크", "g": "keycap"}, {"k": "k5", "src": "assets/keycap/k5.webp", "alt": "분리배출", "cap": "Keycap 05 — 분리배출", "g": "keycap"}, {"k": "k6", "src": "assets/keycap/k6.webp", "alt": "지구와 함께", "cap": "Keycap 06 — 지구와 함께", "g": "keycap"}, {"k": "c4", "src": "assets/keycap/c4.webp", "alt": "캠페인 메인 사이니지 — 비우고, 모으고, 함께 순환", "cap": "Campaign Field — Main Signage", "g": "keycap"}, {"k": "c1", "src": "assets/keycap/c1.webp", "alt": "1층 로비 캠페인 존 — 배너와 전자제품 수거함", "cap": "Campaign Field — Campaign Zone", "g": "keycap"}, {"k": "c3", "src": "assets/keycap/c3.webp", "alt": "집중 배출일 현장 — 로비 수거 부스", "cap": "Campaign Field — Collection Day", "g": "keycap"}, {"k": "c2", "src": "assets/keycap/c2.webp", "alt": "참여 임직원에게 키캡 키링 배포", "cap": "Campaign Field — Goods Hand-out", "g": "keycap"}, {"k": "s2-zone", "src": "assets/keycap/s2-zone.webp", "alt": "시즌 2 캠페인 존 — 3D 가온프렌즈 사이니지와 배너·수거함", "cap": "Season 2 — Campaign Zone · S2", "g": "keycap"}, {"k": "s2-acrylic", "src": "assets/keycap/s2-acrylic.webp", "alt": "아크릴 피규어 3종 — 케이·솔루·메버릭과 키캡 키링", "cap": "Season 2 — Acrylic Figures", "g": "keycap"}, {"k": "s2-acrylic-table", "src": "assets/keycap/s2-acrylic-table.webp", "alt": "랜덤 굿즈 뽑기 테이블과 캐릭터별 안내 카드", "cap": "Season 2 — Random Goods", "g": "keycap"}, {"k": "s2-stickers", "src": "assets/keycap/s2-stickers.webp", "alt": "자원순환 스티커 12종 — 골라 가는 스티커 존", "cap": "Season 2 — Stickers · 12", "g": "keycap"}, {"k": "s2-sticker-hand", "src": "assets/keycap/s2-sticker-hand.webp", "alt": "메버릭 도시락 스티커와 ESG 스티커", "cap": "Season 2 — Sticker Detail", "g": "keycap"}, {"k": "st01", "src": "assets/keycap/st01.png?v=2", "alt": "지구를 안아 주는 케이", "cap": "Sticker 01 — 지구를 안아 주는 케이", "g": "keycap"}, {"k": "st02", "src": "assets/keycap/st02.png?v=2", "alt": "분리배출하는 로비", "cap": "Sticker 02 — 분리배출하는 로비", "g": "keycap"}, {"k": "st03", "src": "assets/keycap/st03.png?v=2", "alt": "다회용 컵 쓰는 파이", "cap": "Sticker 03 — 다회용 컵 쓰는 파이", "g": "keycap"}, {"k": "st04", "src": "assets/keycap/st04.png?v=2", "alt": "도시락 싸 온 메버릭", "cap": "Sticker 04 — 도시락 싸 온 메버릭", "g": "keycap"}, {"k": "st05", "src": "assets/keycap/st05.png?v=2", "alt": "새싹 키우는 솔루", "cap": "Sticker 05 — 새싹 키우는 솔루", "g": "keycap"}, {"k": "ac1", "src": "assets/keycap/ac1-fig.png", "alt": "지구를 꼭 안아 주는 케이", "cap": "Acrylic Figure NO.1 — 지구를 꼭 안아 주는 케이", "g": "keycap"}, {"k": "ac2", "src": "assets/keycap/ac2-fig.png", "alt": "빙글빙글 자원순환 솔루", "cap": "Acrylic Figure NO.2 — 빙글빙글 자원순환 솔루", "g": "keycap"}, {"k": "ac3", "src": "assets/keycap/ac3-fig.png", "alt": "폐건전지 모으는 메버릭", "cap": "Acrylic Figure NO.3 — 폐건전지 모으는 메버릭", "g": "keycap"}]; const base=LB.length; E.forEach(e=>LB.push({src:e.src,alt:e.alt,cap:e.cap,g:e.g}));
