@@ -1084,6 +1084,20 @@ a.sn-c:hover{transform:translateY(-3px);box-shadow:0 0 0 1.5px var(--brand),0 24
 .sn-rel small{font-size:11.5px;letter-spacing:.06em;color:var(--ink-2)}.sn-rel b{font-size:18px;font-weight:600}.sn-rel span{font-size:13px;color:var(--brand)}
 @media (max-width:1000px){ .sn-grid{grid-template-columns:repeat(2,minmax(0,1fr))} .sn-rel{grid-template-columns:minmax(0,1fr)} }
 @media (max-width:700px){ .mk-grid,.sn-grid,.sn-role{grid-template-columns:minmax(0,1fr)} }
+
+/* ===== The Garage Archive ===== */
+#pg-garage .pg-title{font-size:clamp(52px,8.4vw,140px)}
+.ga-hero{margin-top:clamp(28px,4vw,48px);border-radius:16px;overflow:hidden;box-shadow:0 0 0 1px var(--line)}
+.ga-hero img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.ga-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.ga-v{margin:0;display:grid;gap:10px}
+.ga-v .de-ph{border-radius:12px}
+.ga-v figcaption{font-size:12.5px;color:var(--ink-2);display:flex;gap:10px;align-items:baseline}
+.ga-v figcaption b{font-size:13px;font-weight:600;color:var(--ink)}
+.ga-cols{display:grid;grid-template-columns:2fr 2fr 1fr 1fr;gap:12px;margin-top:28px}
+.ga-c{border-radius:12px;padding:18px;min-height:130px;background:var(--c);color:var(--t);display:grid;align-content:end;gap:2px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
+.ga-c b{font-size:14px;font-weight:600}.ga-c span{font-size:18px;font-weight:300;letter-spacing:-.02em}.ga-c small{font-size:11px;opacity:.75}
+@media (max-width:800px){ .ga-grid{grid-template-columns:minmax(0,1fr)} .ga-cols{grid-template-columns:repeat(2,minmax(0,1fr))} }
 /* LinkFit BI */
 .lfb-ba{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:20px;align-items:center}
 .lfb-ba-f{margin:0;border:1px solid #222;border-radius:12px;overflow:hidden}
@@ -4487,6 +4501,27 @@ go(0);})();
     <div class="pg-end"><span>KAON Social Channels — KAON GROUP</span><button class="link" type="button" data-close>메인으로 돌아가기 ↗</button></div>
   </div></div>
 </div>
+<div class="case page" id="pg-garage" role="dialog" aria-modal="true" aria-labelledby="pga-title" hidden>
+  <div class="case-top wrap"><div class="c"><span class="label">Project — Logo Design · Social Enterprise</span><button class="closeb" type="button" data-close>닫기 ✕</button></div></div>
+  <div class="wrap"><div class="c">
+    <header class="pg-head">
+      <h2 class="pg-title" id="pga-title">The Garage Archive</h2>
+      <div class="pg-meta"><span><b>Logo Design</b> · Brand Identity</span><span>장애인 고용 사회적 기업</span><span>New-car Care Platform</span></div>
+    </header>
+    <div class="pg-intro"><span class="label">About this project</span><p class="pg-lead">장애인을 고용하는 사회적 기업 <b>The Garage Archive</b>의 로고 디자인 프로젝트입니다. 대기업 자동차 신차 플랫폼과 함께하는 서비스로, 이니셜 G와 A를 하나의 심볼로 겹쳐 차고(Garage)의 아치 형태를 만들고, 배경에 따라 쓸 수 있도록 컬러 베리에이션을 세 가지 방향으로 나눠 제안했습니다.</p></div>
+    <div class="ga-hero"><img src="assets/garage/thumb.webp" alt="The Garage Archive 로고 — G와 A가 겹친 심볼과 워드마크" decoding="async"></div>
+  </div></div>
+
+  <section class="de-sec"><div class="wrap"><div class="c">
+    <div class="de-h"><span class="de-no">01 — Version A</span><h3>Green × Navy</h3><p>원형의 G 안에 아치형 A를 겹쳐, 두 글자가 만나는 부분만 색을 바꿔 하나의 심볼로 읽히게 했습니다. 브랜드 그린을 중심으로 블랙·그린·네이비·화이트 네 가지 배경에서의 적용을 확인했습니다.</p></div>
+    <div class="ga-grid"><figure class="ga-v"><button class="de-ph" type="button" data-ga-lb="a1" aria-label="버전 A On Black 크게 보기"><img src="assets/garage/a1.webp" alt="The Garage Archive 로고 버전 A — 블랙 배경 · 그린 + 화이트" loading="lazy" decoding="async"></button><figcaption><b>On Black</b>블랙 배경 · 그린 + 화이트</figcaption></figure><figure class="ga-v"><button class="de-ph" type="button" data-ga-lb="a2" aria-label="버전 A On Green 크게 보기"><img src="assets/garage/a2.webp" alt="The Garage Archive 로고 버전 A — 브랜드 그린 배경 · 화이트 반전" loading="lazy" decoding="async"></button><figcaption><b>On Green</b>브랜드 그린 배경 · 화이트 반전</figcaption></figure><figure class="ga-v"><button class="de-ph" type="button" data-ga-lb="a3" aria-label="버전 A On Navy 크게 보기"><img src="assets/garage/a3.webp" alt="The Garage Archive 로고 버전 A — 네이비 배경 · 그린 + 화이트" loading="lazy" decoding="async"></button><figcaption><b>On Navy</b>네이비 배경 · 그린 + 화이트</figcaption></figure><figure class="ga-v"><button class="de-ph" type="button" data-ga-lb="a4" aria-label="버전 A On White 크게 보기"><img src="assets/garage/a4.webp" alt="The Garage Archive 로고 버전 A — 화이트 배경 · 그린 + 네이비 (기본형)" loading="lazy" decoding="async"></button><figcaption><b>On White</b>화이트 배경 · 그린 + 네이비 (기본형)</figcaption></figure></div>
+    <div class="ga-cols"><div class="ga-c" style="--c:#00AC42;--t:#fff"><b>Garage Green</b><span>#00AC42</span><small>RGB 0 · 172 · 66</small></div><div class="ga-c" style="--c:#303E49;--t:#fff"><b>Deep Navy</b><span>#303E49</span><small>RGB 48 · 62 · 73</small></div><div class="ga-c" style="--c:#111111;--t:#fff"><b>Black</b><span>#111111</span><small>RGB 17 · 17 · 17</small></div><div class="ga-c" style="--c:#FFFFFF;--t:#111"><b>White</b><span>#FFFFFF</span><small>RGB 255 · 255 · 255</small></div></div>
+  </div></div></section>
+
+  <div class="wrap"><div class="c">
+    <div class="pg-end"><span>The Garage Archive — Logo Design</span><button class="link" type="button" data-close>메인으로 돌아가기 ↗</button></div>
+  </div></div>
+</div>
 <div class="case page" id="pg-keycap" role="dialog" aria-modal="true" aria-labelledby="pkk-title" hidden>
   <div class="case-top wrap"><div class="c"><span class="label">Project — KAON GROUP · Character Goods</span><button class="closeb" type="button" data-close>닫기 ✕</button></div></div>
   <div class="wrap"><div class="c">
@@ -4899,6 +4934,9 @@ const WORKS=[
    out:'스마트 디퓨저 디자인권(제30-1007738호)을 등록하고 오픈 이노베이션 신규 비즈니스 컨셉 3건이 채택됐습니다. 시제품으로 사업성을 검증하고, 제품 규격 조정으로 자재·패키징 원가를 약 5% 줄였습니다.'},,
   {title:'KAON Social Channels', page:'kaonsns', img:'assets/kaonsns/thumb.webp', sub:'KAON GROUP', tag:'SNS · Channel Operation', period:'2021.09 — 현재', cat:['content'], scene:5,
    kr:'가온그룹 LinkedIn·YouTube·Facebook·X 공식 채널 콘텐츠 기획·디자인·운영', role:'채널 운영 전담', client:'가온그룹', tools:'LinkedIn, YouTube, Facebook, X',
+   kpis:[], ch:'', ap:'', out:''},
+  {title:'The Garage Archive', page:'garage', img:'assets/garage/thumb.webp', sub:'Logo Design', tag:'Logo · Brand Identity', period:'Social Enterprise', cat:['brand'], scene:4,
+   kr:'장애인 고용 사회적 기업의 신차 플랫폼 로고 디자인 — G·A 결합 심볼과 컬러 베리에이션', role:'로고 디자인', client:'The Garage Archive', tools:'Illustrator',
    kpis:[], ch:'', ap:'', out:''}
 ];
 const JOURNEY=[
@@ -5072,7 +5110,7 @@ document.getElementById('c-rel').addEventListener('click',e=>{ e.preventDefault(
 addEventListener('keydown',e=>{if(e.key==='Escape'&&!caseEl.hidden) closeCase();});
 
 /* ---------- 서브 페이지 (#university, #internship) ---------- */
-const PAGES={university:document.getElementById('pg-university'),internship:document.getElementById('pg-internship'),linkfit:document.getElementById('pg-linkfit'),windmate:document.getElementById('pg-windmate'),panastove:document.getElementById('pg-panastove'),kfuturetech:document.getElementById('pg-kfuturetech'),human:document.getElementById('pg-human'),magus:document.getElementById('pg-magus'),jandi:document.getElementById('pg-jandi'),kaonci:document.getElementById('pg-kaonci'),kf3d:document.getElementById('pg-kf3d'),dklogo:document.getElementById('pg-dklogo'),keycap:document.getElementById('pg-keycap'),agent:document.getElementById('pg-agent'),dermaeye:document.getElementById('pg-dermaeye'),plutonium:document.getElementById('pg-plutonium'),amway:document.getElementById('pg-amway'),airmask:document.getElementById('pg-airmask'),kaonsns:document.getElementById('pg-kaonsns'),ibc:document.getElementById('pg-ibc'),calendar:document.getElementById('pg-calendar'),kaon:document.getElementById('pg-kaon'),stationery:document.getElementById('pg-stationery')};
+const PAGES={university:document.getElementById('pg-university'),internship:document.getElementById('pg-internship'),linkfit:document.getElementById('pg-linkfit'),windmate:document.getElementById('pg-windmate'),panastove:document.getElementById('pg-panastove'),kfuturetech:document.getElementById('pg-kfuturetech'),human:document.getElementById('pg-human'),magus:document.getElementById('pg-magus'),jandi:document.getElementById('pg-jandi'),kaonci:document.getElementById('pg-kaonci'),kf3d:document.getElementById('pg-kf3d'),dklogo:document.getElementById('pg-dklogo'),keycap:document.getElementById('pg-keycap'),agent:document.getElementById('pg-agent'),dermaeye:document.getElementById('pg-dermaeye'),plutonium:document.getElementById('pg-plutonium'),amway:document.getElementById('pg-amway'),airmask:document.getElementById('pg-airmask'),kaonsns:document.getElementById('pg-kaonsns'),garage:document.getElementById('pg-garage'),ibc:document.getElementById('pg-ibc'),calendar:document.getElementById('pg-calendar'),kaon:document.getElementById('pg-kaon'),stationery:document.getElementById('pg-stationery')};
 function goPage(k){ history.pushState({fromSite:true},'','#'+k); route(); }
 let pageReturn=null;
 function showPage(el){
@@ -5095,7 +5133,7 @@ function route(){
 }
 function leavePage(){ if(history.state&&history.state.fromSite){ history.back(); } else { history.replaceState(null,'',location.pathname+location.search+'#archive'); route(); } }
 document.addEventListener('click',e=>{
-  const a=e.target.closest('a[href="#university"],a[href="#internship"],a[href="#linkfit"],a[href="#windmate"],a[href="#panastove"],a[href="#kfuturetech"],a[href="#human"],a[href="#magus"],a[href="#jandi"],a[href="#kaonci"],a[href="#kaon"],a[href="#stationery"],a[href="#calendar"],a[href="#ibc"],a[href="#keycap"],a[href="#agent"],a[href="#dermaeye"],a[href="#plutonium"],a[href="#amway"],a[href="#airmask"],a[href="#kaonsns"],a[href="#dklogo"],a[href="#kf3d"]'); if(!a) return;
+  const a=e.target.closest('a[href="#university"],a[href="#internship"],a[href="#linkfit"],a[href="#windmate"],a[href="#panastove"],a[href="#kfuturetech"],a[href="#human"],a[href="#magus"],a[href="#jandi"],a[href="#kaonci"],a[href="#kaon"],a[href="#stationery"],a[href="#calendar"],a[href="#ibc"],a[href="#keycap"],a[href="#agent"],a[href="#dermaeye"],a[href="#plutonium"],a[href="#amway"],a[href="#airmask"],a[href="#kaonsns"],a[href="#garage"],a[href="#dklogo"],a[href="#kf3d"]'); if(!a) return;
   e.preventDefault(); history.pushState({fromSite:true},'',a.getAttribute('href')); route();
 });
 document.querySelectorAll('.page [data-close]').forEach(b=>b.addEventListener('click',leavePage));
@@ -5540,6 +5578,9 @@ addEventListener('keydown',e=>{ if(lb.hidden) return; if(e.key==='Escape'){e.sto
 })();
 (()=>{ const pg=document.getElementById('pg-airmask'); if(!pg) return; const E=[{"k": "m01", "src": "assets/mask/m01.webp", "alt": "초기 시안", "cap": "Atmosphere Air Mask — 초기 시안", "g": "airmask"}, {"k": "m02", "src": "assets/mask/m02.webp?v=2", "alt": "발전 시안", "cap": "Atmosphere Air Mask — 측면 흡입구와 필터 커버", "g": "airmask"}]; const base=LB.length; E.forEach(e=>LB.push({src:e.src,alt:e.alt,cap:e.cap,g:e.g}));
   pg.addEventListener('click',e=>{ const b=e.target.closest('[data-mk-lb]'); if(!b) return; const i=E.findIndex(x=>x.k===b.dataset.mkLb); if(i>=0) lbOpen(base+i); });
+})();
+(()=>{ const pg=document.getElementById('pg-garage'); if(!pg) return; const E=[{"k": "a1", "src": "assets/garage/a1.webp", "alt": "The Garage Archive 로고 버전 A — 블랙 배경 · 그린 + 화이트", "cap": "Version A — On Black · 블랙 배경 · 그린 + 화이트", "g": "garage"}, {"k": "a2", "src": "assets/garage/a2.webp", "alt": "The Garage Archive 로고 버전 A — 브랜드 그린 배경 · 화이트 반전", "cap": "Version A — On Green · 브랜드 그린 배경 · 화이트 반전", "g": "garage"}, {"k": "a3", "src": "assets/garage/a3.webp", "alt": "The Garage Archive 로고 버전 A — 네이비 배경 · 그린 + 화이트", "cap": "Version A — On Navy · 네이비 배경 · 그린 + 화이트", "g": "garage"}, {"k": "a4", "src": "assets/garage/a4.webp", "alt": "The Garage Archive 로고 버전 A — 화이트 배경 · 그린 + 네이비 (기본형)", "cap": "Version A — On White · 화이트 배경 · 그린 + 네이비 (기본형)", "g": "garage"}]; const base=LB.length; E.forEach(e=>LB.push({src:e.src,alt:e.alt,cap:e.cap,g:e.g}));
+  pg.addEventListener('click',e=>{ const b=e.target.closest('[data-ga-lb]'); if(!b) return; const i=E.findIndex(x=>x.k===b.dataset.gaLb); if(i>=0) lbOpen(base+i); });
 })();
 (()=>{ const pg=document.getElementById('pg-keycap'); if(!pg) return; const E=[{"k": "m1", "src": "assets/keycap/m1.webp", "alt": "키캡 키링 정면 — 지구와 함께 · 재활용 마크 세트", "cap": "Product — Product · Front", "g": "keycap"}, {"k": "m2", "src": "assets/keycap/m2.webp", "alt": "키캡 키링 — 흰 키캡 버전", "cap": "Product — White Keycap", "g": "keycap"}, {"k": "m3", "src": "assets/keycap/m3.webp", "alt": "키캡 키링 — 스냅 고리 버전", "cap": "Product — Snap Hook", "g": "keycap"}, {"k": "m4", "src": "assets/keycap/m4.webp", "alt": "키캡 키링 — 측면 클리커 버전", "cap": "Product — Clicker", "g": "keycap"}, {"k": "k1", "src": "assets/keycap/k1.webp", "alt": "Enter · 재활용 마크", "cap": "Keycap 01 — Enter · 재활용 마크", "g": "keycap"}, {"k": "k2", "src": "assets/keycap/k2.webp", "alt": "Enter · 분리수거함", "cap": "Keycap 02 — Enter · 분리수거함", "g": "keycap"}, {"k": "k3", "src": "assets/keycap/k3.webp", "alt": "Enter · 지구 안기", "cap": "Keycap 03 — Enter · 지구 안기", "g": "keycap"}, {"k": "k4", "src": "assets/keycap/k4.webp", "alt": "재활용 마크", "cap": "Keycap 04 — 재활용 마크", "g": "keycap"}, {"k": "k5", "src": "assets/keycap/k5.webp", "alt": "분리배출", "cap": "Keycap 05 — 분리배출", "g": "keycap"}, {"k": "k6", "src": "assets/keycap/k6.webp", "alt": "지구와 함께", "cap": "Keycap 06 — 지구와 함께", "g": "keycap"}, {"k": "c4", "src": "assets/keycap/c4.webp", "alt": "캠페인 메인 사이니지 — 비우고, 모으고, 함께 순환", "cap": "Campaign Field — Main Signage", "g": "keycap"}, {"k": "c1", "src": "assets/keycap/c1.webp", "alt": "1층 로비 캠페인 존 — 배너와 전자제품 수거함", "cap": "Campaign Field — Campaign Zone", "g": "keycap"}, {"k": "c3", "src": "assets/keycap/c3.webp", "alt": "집중 배출일 현장 — 로비 수거 부스", "cap": "Campaign Field — Collection Day", "g": "keycap"}, {"k": "c2", "src": "assets/keycap/c2.webp", "alt": "참여 임직원에게 키캡 키링 배포", "cap": "Campaign Field — Goods Hand-out", "g": "keycap"}, {"k": "s2-zone", "src": "assets/keycap/s2-zone.webp", "alt": "시즌 2 캠페인 존 — 3D 가온프렌즈 사이니지와 배너·수거함", "cap": "Season 2 — Campaign Zone · S2", "g": "keycap"}, {"k": "s2-acrylic", "src": "assets/keycap/s2-acrylic.webp", "alt": "아크릴 피규어 3종 — 케이·솔루·메버릭과 키캡 키링", "cap": "Season 2 — Acrylic Figures", "g": "keycap"}, {"k": "s2-acrylic-table", "src": "assets/keycap/s2-acrylic-table.webp", "alt": "랜덤 굿즈 뽑기 테이블과 캐릭터별 안내 카드", "cap": "Season 2 — Random Goods", "g": "keycap"}, {"k": "s2-stickers", "src": "assets/keycap/s2-stickers.webp", "alt": "자원순환 스티커 12종 — 골라 가는 스티커 존", "cap": "Season 2 — Stickers · 12", "g": "keycap"}, {"k": "s2-sticker-hand", "src": "assets/keycap/s2-sticker-hand.webp", "alt": "메버릭 도시락 스티커와 ESG 스티커", "cap": "Season 2 — Sticker Detail", "g": "keycap"}, {"k": "st01", "src": "assets/keycap/st01.png?v=2", "alt": "지구를 안아 주는 케이", "cap": "Sticker 01 — 지구를 안아 주는 케이", "g": "keycap"}, {"k": "st02", "src": "assets/keycap/st02.png?v=2", "alt": "분리배출하는 로비", "cap": "Sticker 02 — 분리배출하는 로비", "g": "keycap"}, {"k": "st03", "src": "assets/keycap/st03.png?v=2", "alt": "다회용 컵 쓰는 파이", "cap": "Sticker 03 — 다회용 컵 쓰는 파이", "g": "keycap"}, {"k": "st04", "src": "assets/keycap/st04.png?v=2", "alt": "도시락 싸 온 메버릭", "cap": "Sticker 04 — 도시락 싸 온 메버릭", "g": "keycap"}, {"k": "st05", "src": "assets/keycap/st05.png?v=2", "alt": "새싹 키우는 솔루", "cap": "Sticker 05 — 새싹 키우는 솔루", "g": "keycap"}, {"k": "ac1", "src": "assets/keycap/ac1-fig.png", "alt": "지구를 꼭 안아 주는 케이", "cap": "Acrylic Figure NO.1 — 지구를 꼭 안아 주는 케이", "g": "keycap"}, {"k": "ac2", "src": "assets/keycap/ac2-fig.png", "alt": "빙글빙글 자원순환 솔루", "cap": "Acrylic Figure NO.2 — 빙글빙글 자원순환 솔루", "g": "keycap"}, {"k": "ac3", "src": "assets/keycap/ac3-fig.png", "alt": "폐건전지 모으는 메버릭", "cap": "Acrylic Figure NO.3 — 폐건전지 모으는 메버릭", "g": "keycap"}]; const base=LB.length; E.forEach(e=>LB.push({src:e.src,alt:e.alt,cap:e.cap,g:e.g}));
   pg.querySelectorAll('[data-kk-lb]').forEach(b=>b.addEventListener('click',()=>{ const k=E.findIndex(e=>e.k===b.dataset.kkLb); if(k>=0) lbOpen(base+k); }));
