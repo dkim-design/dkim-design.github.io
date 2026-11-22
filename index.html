@@ -1050,6 +1050,39 @@ a.tl-card:hover{transform:translateY(-3px);box-shadow:0 0 0 1.5px #2F6BE0,0 26px
 @media (max-width:900px){ .de-h,.de-press{grid-template-columns:minmax(0,1fr)} }
 
 /* ===== Plutonium ===== */
+.dr-info{margin:0 0 28px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--ink)}
+.dr-info>div{padding:18px 18px 0 0}.dr-info>div+div{padding-left:18px;border-left:1px solid var(--line)}
+.dr-info dt{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.dr-info dd{margin:8px 0 0;font-size:clamp(17px,1.6vw,22px);font-weight:600;letter-spacing:-.02em}
+.dr-info small{display:block;margin-top:4px;font-size:12px;font-weight:400;color:var(--ink-2)}
+.dr-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:12px}
+.dr-v{margin:0;display:grid;gap:8px}.dr-v .de-ph{border-radius:10px;aspect-ratio:1}
+.dr-v figcaption{font-size:12px;color:var(--ink-2);display:flex;gap:6px}.dr-v figcaption b{color:var(--brand);font-weight:600}
+@media (max-width:900px){ .dr-info{grid-template-columns:repeat(2,minmax(0,1fr))} .dr-info>div:nth-child(3){border-left:0;padding-left:0} .dr-grid{grid-template-columns:repeat(4,minmax(0,1fr))} }
+@media (max-width:560px){ .dr-grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
+
+#pg-plutonium .pl-hero{aspect-ratio:3/2!important;max-height:none!important}
+#pg-plutonium .pl-hero img{height:100%;object-fit:cover}
+.pl-feat{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.pl-feat li{background:#fff;border-radius:14px;padding:26px 24px;box-shadow:0 0 0 1px var(--line);display:grid;gap:6px;align-content:start}
+.pl-feat .n{font-size:12px;font-weight:600;color:var(--brand)}
+.pl-feat small{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin-top:14px}
+.pl-feat b{font-size:22px;font-weight:600;letter-spacing:-.03em}
+.pl-feat p{margin:4px 0 0;font-size:14px;line-height:1.75;color:var(--ink-2)}
+.pl-cobox{border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 0 0 1px var(--line)}
+.pl-co{display:block;width:100%;height:auto}
+.pl-co polyline{fill:none;stroke:#0047AB;stroke-width:2.4}
+.pl-co circle{fill:#fff;stroke:#0047AB;stroke-width:4}
+.pl-co .t{font-family:var(--f);font-size:38px;font-weight:600;fill:#111;letter-spacing:-.5px}
+.pl-co .t .n{fill:#0047AB}
+.pl-co .d{font-family:var(--f);font-size:27px;fill:#666}
+.pl-oc{margin:0}.pl-oc .de-ph{position:relative;border-radius:14px}
+.pl-tag{position:absolute;bottom:22px;font-size:12px;font-weight:600;letter-spacing:.06em;padding:7px 12px;border-radius:99px;background:#111;color:#fff}
+.pl-tag.l{left:30%}.pl-tag.r{left:63%}
+.pl-rs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.pl-rs .de-ph{border-radius:14px}
+@media (max-width:900px){ .pl-feat,.pl-rs{grid-template-columns:minmax(0,1fr)} .pl-co .d{display:none} .pl-tag.l{left:6%}.pl-tag.r{left:auto;right:6%} }
+
 #pg-plutonium .pg-title{font-size:clamp(56px,9vw,148px)}
 #pg-plutonium .de-hero{aspect-ratio:4/3;max-height:80vh}
 #pg-plutonium .de-hero img{height:100%;object-fit:cover}
@@ -4459,12 +4492,46 @@ go(0);})();
       <h2 class="pg-title" id="ppu-title">Plutonium</h2>
       <div class="pg-meta"><span><b>한국암웨이</b> · R&amp;D 아시아 이노베이션센터</span><span>Industrial Design · Smart Diffuser</span><span>디자인권 제30-1007738호</span></div>
     </header>
-    <div class="pg-intro"><span class="label">About this project</span><p class="pg-lead">한국암웨이 R&amp;D 아시아 이노베이션센터 산업디자이너로 참여한 <b>전동 스마트 디퓨저 Plutonium</b> 프로젝트입니다. 이 디자인으로 디자인권(제30-1007738호)을 등록했습니다. 원통형 화이트 셸을 사선 슬릿으로 가르고 하단에 링 라이트를 두었으며, 실제 크기의 작동 목업을 만들어 내부 구조와 동작을 직접 테스트했습니다.</p></div>
-    <div class="de-hero"><img src="assets/plutonium/thumb.webp" alt="Plutonium 작동 목업 — 사선 슬릿 화이트 셸과 그린 링 라이트" decoding="async"></div>
+    <div class="pg-intro"><span class="label">About this project</span><p class="pg-lead">향을 스스로 바꿔 가며 공간의 분위기를 연출하는 <b>전동 스마트 디퓨저 Plutonium</b>입니다. 본체 안에 서로 다른 향의 디퓨저 카트리지를 넣어 두고, 스마트폰 앱에서 원하는 향을 고르면 기기가 향을 전환합니다. 작동할 때는 상판 뚜껑이 열리며 향을 내보내고, 멈추면 닫혀 향을 가둡니다. 한국암웨이 R&amp;D 아시아 이노베이션센터 산업디자이너로 디자인을 맡았고, 이 디자인으로 디자인권(제30-1007738호)을 등록했습니다.</p></div>
+    <div class="de-hero pl-hero"><img src="assets/plutonium/r01.webp" alt="침실 협탁 위에서 하단 링 라이트를 켜고 작동 중인 Plutonium" decoding="async"></div>
   </div></div>
 
   <section class="de-sec"><div class="wrap"><div class="c">
-    <div class="de-h"><span class="de-no">01 — Prototype</span><h3>Working Prototype<br>&amp; Test</h3><p>디자인한 외관에 실제 부품을 넣은 작동 목업을 만들어, 향 카트리지 4구와 쿨링 팬의 배치, 내부 구조의 조립성, 외관 셸을 닫았을 때의 점등과 동작을 하나씩 확인했습니다. 사진을 누르면 크게 볼 수 있습니다.</p></div>
+    <div class="de-h"><span class="de-no">01 — Concept</span><h3>향을 바꾸는<br>디퓨저</h3><p>하나의 향만 계속 퍼뜨리는 기존 디퓨저와 달리, 여러 향을 한 기기에 담아 상황에 맞게 바꿔 쓰는 디퓨저를 목표로 했습니다.</p></div>
+    <ol class="pl-feat"><li><span class="n">01</span><small>Auto Lid</small><b>자동 개폐</b><p>작동하면 상판 뚜껑이 들어 올려지며 향이 퍼지고, 멈추면 닫혀 향이 새지 않게 가둡니다.</p></li><li><span class="n">02</span><small>Scent Cartridges</small><b>향 카트리지 전환</b><p>서로 다른 향의 디퓨저 카트리지를 본체 안에 함께 넣어 두고, 기기가 선택한 향으로 전환합니다.</p></li><li><span class="n">03</span><small>App Control</small><b>앱으로 분위기 연출</b><p>스마트폰 앱에서 향을 바꿔 가며 시간과 공간에 맞는 집 안의 분위기를 연출합니다.</p></li></ol>
+  </div></div></section>
+
+  <section class="de-sec de-alt"><div class="wrap"><div class="c">
+    <div class="de-h"><span class="de-no">02 — Design Detail</span><h3>단순한 원통,<br>한 줄의 슬릿</h3><p>집 안 어디에 두어도 가구처럼 어울리도록 원통형 화이트 몸체를 기본으로 하고, 사선 슬릿 하나로 조작부와 형태의 포인트를 동시에 만들었습니다.</p></div>
+    <div class="pl-cobox"><svg class="pl-co" viewBox="100 110 1900 1340" role="img" aria-label="Plutonium 디자인 디테일 콜아웃 — 상판, 확산 틈, 슬릿, 터치 아이콘, 하단 받침"><image href="assets/plutonium/r02.webp" x="0" y="0" width="2000" height="1470"/><g class="co"><polyline points="760,215 1050,215 1120,215"/><circle cx="760" cy="215" r="9"/><text x="1140" y="207" class="t"><tspan class="n">01</tspan> Auto Lid</text><text x="1140" y="249" class="d">작동 시 들어 올려지고, 멈추면 닫히는 알루미늄 상판</text></g><g class="co"><polyline points="800,300 1050,420 1120,420"/><circle cx="800" cy="300" r="9"/><text x="1140" y="412" class="t"><tspan class="n">02</tspan> Diffusing Gap</text><text x="1140" y="454" class="d">상판과 몸체 사이 360° 틈 — 향이 퍼져 나가는 출구</text></g><g class="co"><polyline points="475,520 1050,625 1120,625"/><circle cx="475" cy="520" r="9"/><text x="1140" y="617" class="t"><tspan class="n">03</tspan> Slit Line</text><text x="1140" y="659" class="d">몸체를 사선으로 가르는 블랙 슬릿 — 형태의 포인트이자 조작부</text></g><g class="co"><polyline points="563,1045 1050,1045 1120,1045"/><circle cx="563" cy="1045" r="9"/><text x="1140" y="1037" class="t"><tspan class="n">04</tspan> Touch Icons</text><text x="1140" y="1079" class="d">슬릿 안 LED 터치 아이콘 5개 — 본체에서 바로 조작</text></g><g class="co"><polyline points="850,1335 1050,1300 1120,1300"/><circle cx="850" cy="1335" r="9"/><text x="1140" y="1292" class="t"><tspan class="n">05</tspan> Base</text><text x="1140" y="1334" class="d">하단 받침 — 사용 장면에서는 링 라이트로 작동 상태 표시</text></g></svg></div>
+  </div></div></section>
+
+  <section class="de-sec"><div class="wrap"><div class="c">
+    <div class="de-h"><span class="de-no">03 — Open &amp; Closed</span><h3>열리면 퍼지고,<br>닫히면 가둡니다</h3><p>작동 중에는 상판이 들어 올려져 확산 틈과 LED 아이콘이 드러나고, 대기 중에는 상판이 몸체와 같은 높이로 내려앉아 매끈한 원통으로 돌아갑니다.</p></div>
+    <figure class="pl-oc"><button class="de-ph" type="button" data-pl-lb="r04" aria-label="작동 상태와 대기 상태 비교 크게 보기"><img src="assets/plutonium/r04.webp" alt="Plutonium 작동 상태(왼쪽)와 대기 상태(오른쪽)" loading="lazy" decoding="async"><span class="pl-tag l">Open · 작동</span><span class="pl-tag r">Closed · 대기</span></button></figure>
+  </div></div></section>
+
+  <section class="de-sec de-alt"><div class="wrap"><div class="c">
+    <div class="de-h"><span class="de-no">04 — Renders</span><h3>Final Renders</h3><p>슬릿을 정면과 측면에서 본 모습입니다. 이미지를 누르면 크게 볼 수 있습니다.</p></div>
+    <div class="pl-rs">
+      <button class="de-ph" type="button" data-pl-lb="r05" aria-label="두 대 정면 렌더 크게 보기"><img src="assets/plutonium/r05.webp" alt="Plutonium 두 대 — 작동과 대기" loading="lazy" decoding="async"></button>
+      <button class="de-ph" type="button" data-pl-lb="r03" aria-label="대기 상태 측면 렌더 크게 보기"><img src="assets/plutonium/r03.webp" alt="Plutonium 대기 상태 — 닫힌 슬릿 측면" loading="lazy" decoding="async"></button>
+    </div>
+  </div></div></section>
+
+  <section class="de-sec"><div class="wrap"><div class="c">
+    <div class="de-h"><span class="de-no">05 — Design Right</span><h3>디자인권 등록</h3><p>Plutonium의 형상과 모양을 '디퓨저' 물품으로 특허청에 디자인등록출원했고, 창작자로 참여했습니다. 출원서에 실린 일곱 방향의 도면입니다.</p></div>
+    <dl class="dr-info">
+      <div><dt>Registration</dt><dd>제30-1007738호<small>디자인 등록번호</small></dd></div>
+      <div><dt>Application</dt><dd>30-2018-0037236<small>출원일 2018.08.10 · 디자인심사등록출원</small></dd></div>
+      <div><dt>Article</dt><dd>디퓨저 (Diffuser)<small>물품류 제23류 · 단독디자인</small></dd></div>
+      <div><dt>Role</dt><dd>창작자<small>형상 및 모양의 결합을 창작 요점으로 출원</small></dd></div>
+    </dl>
+    <div class="dr-grid"><figure class="dr-v"><button class="de-ph" type="button" data-pl-lb="dr1" aria-label="디자인 도면 1.1 사시도 크게 보기"><img src="assets/plutonium/dr1.webp" alt="Plutonium 디자인등록 도면 1.1 — 사시도" loading="lazy" decoding="async"></button><figcaption><b>1.1</b>사시도</figcaption></figure><figure class="dr-v"><button class="de-ph" type="button" data-pl-lb="dr2" aria-label="디자인 도면 1.2 정면도 크게 보기"><img src="assets/plutonium/dr2.webp" alt="Plutonium 디자인등록 도면 1.2 — 정면도" loading="lazy" decoding="async"></button><figcaption><b>1.2</b>정면도</figcaption></figure><figure class="dr-v"><button class="de-ph" type="button" data-pl-lb="dr3" aria-label="디자인 도면 1.3 배면도 크게 보기"><img src="assets/plutonium/dr3.webp" alt="Plutonium 디자인등록 도면 1.3 — 배면도" loading="lazy" decoding="async"></button><figcaption><b>1.3</b>배면도</figcaption></figure><figure class="dr-v"><button class="de-ph" type="button" data-pl-lb="dr4" aria-label="디자인 도면 1.4 좌측면도 크게 보기"><img src="assets/plutonium/dr4.webp" alt="Plutonium 디자인등록 도면 1.4 — 좌측면도" loading="lazy" decoding="async"></button><figcaption><b>1.4</b>좌측면도</figcaption></figure><figure class="dr-v"><button class="de-ph" type="button" data-pl-lb="dr5" aria-label="디자인 도면 1.5 우측면도 크게 보기"><img src="assets/plutonium/dr5.webp" alt="Plutonium 디자인등록 도면 1.5 — 우측면도" loading="lazy" decoding="async"></button><figcaption><b>1.5</b>우측면도</figcaption></figure><figure class="dr-v"><button class="de-ph" type="button" data-pl-lb="dr6" aria-label="디자인 도면 1.6 평면도 크게 보기"><img src="assets/plutonium/dr6.webp" alt="Plutonium 디자인등록 도면 1.6 — 평면도" loading="lazy" decoding="async"></button><figcaption><b>1.6</b>평면도</figcaption></figure><figure class="dr-v"><button class="de-ph" type="button" data-pl-lb="dr7" aria-label="디자인 도면 1.7 저면도 크게 보기"><img src="assets/plutonium/dr7.webp" alt="Plutonium 디자인등록 도면 1.7 — 저면도" loading="lazy" decoding="async"></button><figcaption><b>1.7</b>저면도</figcaption></figure></div>
+  </div></div></section>
+
+  <section class="de-sec de-alt"><div class="wrap"><div class="c">
+    <div class="de-h"><span class="de-no">06 — Prototype</span><h3>Working Prototype<br>&amp; Test</h3><p>디자인한 외관에 실제 부품을 넣은 작동 목업을 만들어, 향 카트리지 4구와 쿨링 팬의 배치, 내부 구조의 조립성, 외관 셸을 닫았을 때의 점등과 동작을 하나씩 확인했습니다. 사진을 누르면 크게 볼 수 있습니다.</p></div>
     <div class="pl-grid"><figure class="pl-f pl-a"><button class="de-ph" type="button" data-pl-lb="t04" aria-label="전면 — 사선 슬릿 사이로 드러나는 내부와 하단 그린 링 라이트 크게 보기"><img src="assets/plutonium/t04.webp" alt="Plutonium 목업 — 전면 — 사선 슬릿 사이로 드러나는 내부와 하단 그린 링 라이트" loading="lazy" decoding="async"></button><figcaption><b>01</b>전면 — 사선 슬릿 사이로 드러나는 내부와 하단 그린 링 라이트</figcaption></figure><figure class="pl-f pl-b"><button class="de-ph" type="button" data-pl-lb="t05" aria-label="상면 — 향 카트리지 4구와 쿨링 팬 배치 크게 보기"><img src="assets/plutonium/t05.webp" alt="Plutonium 목업 — 상면 — 향 카트리지 4구와 쿨링 팬 배치" loading="lazy" decoding="async"></button><figcaption><b>02</b>상면 — 향 카트리지 4구와 쿨링 팬 배치</figcaption></figure><figure class="pl-f pl-c"><button class="de-ph" type="button" data-pl-lb="t01" aria-label="내부 구조 조립 — 중앙 회전축과 팬 브래킷 크게 보기"><img src="assets/plutonium/t01.webp" alt="Plutonium 목업 — 내부 구조 조립 — 중앙 회전축과 팬 브래킷" loading="lazy" decoding="async"></button><figcaption><b>03</b>내부 구조 조립 — 중앙 회전축과 팬 브래킷</figcaption></figure><figure class="pl-f pl-d"><button class="de-ph" type="button" data-pl-lb="t02" aria-label="쿨링 팬 위치 조정 크게 보기"><img src="assets/plutonium/t02.webp" alt="Plutonium 목업 — 쿨링 팬 위치 조정" loading="lazy" decoding="async"></button><figcaption><b>04</b>쿨링 팬 위치 조정</figcaption></figure><figure class="pl-f pl-e"><button class="de-ph" type="button" data-pl-lb="t03" aria-label="외관 셸 결합 후 점등·동작 테스트 크게 보기"><img src="assets/plutonium/t03.webp" alt="Plutonium 목업 — 외관 셸 결합 후 점등·동작 테스트" loading="lazy" decoding="async"></button><figcaption><b>05</b>외관 셸 결합 후 점등·동작 테스트</figcaption></figure></div>
   </div></div></section>
 
@@ -4990,8 +5057,8 @@ const WORKS=[
   {title:'Artistry Derma Eye', page:'dermaeye', img:'assets/dermaeye/thumb.webp?v=3', sub:'한국암웨이', tag:'Industrial · Beauty Device', period:'한국암웨이 재직', cat:['product'], scene:8,
    kr:'아티스트리 뷰티 디바이스 산업디자인 — 아이디에이션 스케치와 언론 보도', role:'산업디자이너', client:'아티스트리', tools:'Sketch',
    kpis:[], ch:'', ap:'', out:''},
-  {title:'Plutonium', page:'plutonium', img:'assets/plutonium/thumb.webp', sub:'한국암웨이', tag:'Industrial · Electric Diffuser', period:'한국암웨이 재직', cat:['product'], scene:8,
-   kr:'전동 스마트 디퓨저 산업디자인 — 작동 목업과 디자인권 등록', role:'산업디자이너', client:'한국암웨이', tools:'Prototype',
+  {title:'Plutonium', page:'plutonium', img:'assets/plutonium/thumb.webp?v=2', sub:'한국암웨이', tag:'Industrial · Electric Diffuser', period:'한국암웨이 재직', cat:['product'], scene:8,
+   kr:'앱으로 향을 바꾸는 전동 스마트 디퓨저 — 디자인권 등록', role:'산업디자이너', client:'한국암웨이', tools:'Prototype',
    kpis:[], ch:'', ap:'', out:''},
   {title:'Atmosphere Air Mask', page:'airmask', img:'assets/mask/thumb.webp', sub:'한국암웨이', tag:'Industrial · Wearable Device', period:'한국암웨이 재직', cat:['product'], scene:8,
    kr:'앳모스피어 공기청정기 브랜드의 웨어러블 전동 미세먼지 마스크 — 신제품 기획과 3D 디자인', role:'신제품 기획 · 산업디자이너', client:'한국암웨이', tools:'Rhino',
@@ -5648,7 +5715,7 @@ addEventListener('keydown',e=>{ if(lb.hidden) return; if(e.key==='Escape'){e.sto
 (()=>{ const pg=document.getElementById('pg-dermaeye'); if(!pg) return; const E=[{"k": "s01", "src": "assets/dermaeye/sketch/s01.webp", "alt": "더마 아이 스케치 01", "cap": "Ideation Sketch 01 — 기존 제품 출력물 위에 덧그린 형태 분석", "g": "dermaeye"}, {"k": "s13", "src": "assets/dermaeye/sketch/s13.webp", "alt": "더마 아이 스케치 02", "cap": "Ideation Sketch 02 — MODE·전원 버튼 배치 비교", "g": "dermaeye"}, {"k": "s03", "src": "assets/dermaeye/sketch/s03.webp", "alt": "더마 아이 스케치 03", "cap": "Ideation Sketch 03 — 헤드 형태와 버튼 배치 베리에이션", "g": "dermaeye"}, {"k": "s10", "src": "assets/dermaeye/sketch/s10.webp", "alt": "더마 아이 스케치 04", "cap": "Ideation Sketch 04 — 구조 메모 — PCU · expansion", "g": "dermaeye"}, {"k": "s02", "src": "assets/dermaeye/sketch/s02.webp", "alt": "더마 아이 스케치 05", "cap": "Ideation Sketch 05 — 측면 프로파일과 정면 비례 탐색", "g": "dermaeye"}, {"k": "s08", "src": "assets/dermaeye/sketch/s08.webp", "alt": "더마 아이 스케치 06", "cap": "Ideation Sketch 06 — MODE 버튼 위치와 넥 형태", "g": "dermaeye"}, {"k": "m01", "src": "assets/dermaeye/mock/m01.webp", "alt": "더마 아이 목업 — 정면 — 전원 버튼과 EYE 모드 표시, 메탈 헤드", "cap": "Working Mockup — 정면 — 전원 버튼과 EYE 모드 표시, 메탈 헤드", "g": "dermaeye"}, {"k": "m02", "src": "assets/dermaeye/mock/m02.webp", "alt": "더마 아이 목업 — 그립 — 엄지로 누르는 버튼 위치", "cap": "Working Mockup — 그립 — 엄지로 누르는 버튼 위치", "g": "dermaeye"}, {"k": "m03", "src": "assets/dermaeye/mock/m03.webp", "alt": "더마 아이 목업 — 측면 — 손에 감기는 바디 곡선", "cap": "Working Mockup — 측면 — 손에 감기는 바디 곡선", "g": "dermaeye"}, {"k": "m04", "src": "assets/dermaeye/mock/m04.webp", "alt": "더마 아이 목업 — 거치대 — ARTISTRY 충전 크래들", "cap": "Working Mockup — 거치대 — ARTISTRY 충전 크래들", "g": "dermaeye"}, {"k": "m05", "src": "assets/dermaeye/mock/m05.webp", "alt": "더마 아이 목업 — 작업 목업 — 헤드·크래들 비례 검토", "cap": "Working Mockup — 작업 목업 — 헤드·크래들 비례 검토", "g": "dermaeye"}, {"k": "f01", "src": "assets/dermaeye/final/f01.webp?v=2", "alt": "더마 아이 최종 제품", "cap": "Final Product — 본체와 충전 크래들", "g": "dermaeye"}, {"k": "f02", "src": "assets/dermaeye/final/f02.webp", "alt": "더마 아이 최종 제품 측면", "cap": "Final Product — 크래들에 거치한 측면", "g": "dermaeye"}]; const base=LB.length; E.forEach(e=>LB.push({src:e.src,alt:e.alt,cap:e.cap,g:e.g}));
   pg.addEventListener('click',e=>{ const b=e.target.closest('[data-de-lb]'); if(!b) return; const i=E.findIndex(x=>x.k===b.dataset.deLb); if(i>=0) lbOpen(base+i); });
 })();
-(()=>{ const pg=document.getElementById('pg-plutonium'); if(!pg) return; const E=[{"k": "t04", "src": "assets/plutonium/t04.webp", "alt": "Plutonium 목업 — 전면 — 사선 슬릿 사이로 드러나는 내부와 하단 그린 링 라이트", "cap": "Plutonium Prototype 01 — 전면 — 사선 슬릿 사이로 드러나는 내부와 하단 그린 링 라이트", "g": "plutonium"}, {"k": "t05", "src": "assets/plutonium/t05.webp", "alt": "Plutonium 목업 — 상면 — 향 카트리지 4구와 쿨링 팬 배치", "cap": "Plutonium Prototype 02 — 상면 — 향 카트리지 4구와 쿨링 팬 배치", "g": "plutonium"}, {"k": "t01", "src": "assets/plutonium/t01.webp", "alt": "Plutonium 목업 — 내부 구조 조립 — 중앙 회전축과 팬 브래킷", "cap": "Plutonium Prototype 03 — 내부 구조 조립 — 중앙 회전축과 팬 브래킷", "g": "plutonium"}, {"k": "t02", "src": "assets/plutonium/t02.webp", "alt": "Plutonium 목업 — 쿨링 팬 위치 조정", "cap": "Plutonium Prototype 04 — 쿨링 팬 위치 조정", "g": "plutonium"}, {"k": "t03", "src": "assets/plutonium/t03.webp", "alt": "Plutonium 목업 — 외관 셸 결합 후 점등·동작 테스트", "cap": "Plutonium Prototype 05 — 외관 셸 결합 후 점등·동작 테스트", "g": "plutonium"}]; const base=LB.length; E.forEach(e=>LB.push({src:e.src,alt:e.alt,cap:e.cap,g:e.g}));
+(()=>{ const pg=document.getElementById('pg-plutonium'); if(!pg) return; const E=[{"k": "t04", "src": "assets/plutonium/t04.webp", "alt": "Plutonium 목업 — 전면 — 사선 슬릿 사이로 드러나는 내부와 하단 그린 링 라이트", "cap": "Plutonium Prototype 01 — 전면 — 사선 슬릿 사이로 드러나는 내부와 하단 그린 링 라이트", "g": "plutonium"}, {"k": "t05", "src": "assets/plutonium/t05.webp", "alt": "Plutonium 목업 — 상면 — 향 카트리지 4구와 쿨링 팬 배치", "cap": "Plutonium Prototype 02 — 상면 — 향 카트리지 4구와 쿨링 팬 배치", "g": "plutonium"}, {"k": "t01", "src": "assets/plutonium/t01.webp", "alt": "Plutonium 목업 — 내부 구조 조립 — 중앙 회전축과 팬 브래킷", "cap": "Plutonium Prototype 03 — 내부 구조 조립 — 중앙 회전축과 팬 브래킷", "g": "plutonium"}, {"k": "t02", "src": "assets/plutonium/t02.webp", "alt": "Plutonium 목업 — 쿨링 팬 위치 조정", "cap": "Plutonium Prototype 04 — 쿨링 팬 위치 조정", "g": "plutonium"}, {"k": "t03", "src": "assets/plutonium/t03.webp", "alt": "Plutonium 목업 — 외관 셸 결합 후 점등·동작 테스트", "cap": "Plutonium Prototype 05 — 외관 셸 결합 후 점등·동작 테스트", "g": "plutonium"}, {"k": "r04", "src": "assets/plutonium/r04.webp", "alt": "작동 상태와 대기 상태", "cap": "Plutonium — 작동 상태와 대기 상태", "g": "plutonium"}, {"k": "r05", "src": "assets/plutonium/r05.webp", "alt": "두 대 정면 렌더", "cap": "Plutonium — 두 대 정면 렌더", "g": "plutonium"}, {"k": "r03", "src": "assets/plutonium/r03.webp", "alt": "대기 상태 측면 렌더", "cap": "Plutonium — 대기 상태 측면 렌더", "g": "plutonium"}, {"k": "dr1", "src": "assets/plutonium/dr1.webp", "alt": "디자인 도면 1.1 사시도", "cap": "Design Right — 도면 1.1 사시도", "g": "plutonium"}, {"k": "dr2", "src": "assets/plutonium/dr2.webp", "alt": "디자인 도면 1.2 정면도", "cap": "Design Right — 도면 1.2 정면도", "g": "plutonium"}, {"k": "dr3", "src": "assets/plutonium/dr3.webp", "alt": "디자인 도면 1.3 배면도", "cap": "Design Right — 도면 1.3 배면도", "g": "plutonium"}, {"k": "dr4", "src": "assets/plutonium/dr4.webp", "alt": "디자인 도면 1.4 좌측면도", "cap": "Design Right — 도면 1.4 좌측면도", "g": "plutonium"}, {"k": "dr5", "src": "assets/plutonium/dr5.webp", "alt": "디자인 도면 1.5 우측면도", "cap": "Design Right — 도면 1.5 우측면도", "g": "plutonium"}, {"k": "dr6", "src": "assets/plutonium/dr6.webp", "alt": "디자인 도면 1.6 평면도", "cap": "Design Right — 도면 1.6 평면도", "g": "plutonium"}, {"k": "dr7", "src": "assets/plutonium/dr7.webp", "alt": "디자인 도면 1.7 저면도", "cap": "Design Right — 도면 1.7 저면도", "g": "plutonium"}]; const base=LB.length; E.forEach(e=>LB.push({src:e.src,alt:e.alt,cap:e.cap,g:e.g}));
   pg.addEventListener('click',e=>{ const b=e.target.closest('[data-pl-lb]'); if(!b) return; const i=E.findIndex(x=>x.k===b.dataset.plLb); if(i>=0) lbOpen(base+i); });
 })();
 (()=>{ const pg=document.getElementById('pg-airmask'); if(!pg) return; const E=[{"k": "m01", "src": "assets/mask/m01.webp", "alt": "초기 시안", "cap": "Atmosphere Air Mask — 초기 시안", "g": "airmask"}, {"k": "m02", "src": "assets/mask/m02.webp?v=2", "alt": "발전 시안", "cap": "Atmosphere Air Mask — 측면 흡입구와 필터 커버", "g": "airmask"}]; const base=LB.length; E.forEach(e=>LB.push({src:e.src,alt:e.alt,cap:e.cap,g:e.g}));
