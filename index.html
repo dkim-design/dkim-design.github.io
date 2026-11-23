@@ -2543,6 +2543,8 @@ button.kf22-im img{width:100%;height:100%;display:block;object-fit:contain}
 .kk-ph{aspect-ratio:2000/1116;background:#f4f3f1}
 .kk-mgal{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 @media (max-width:760px){ .kk-mgal{grid-template-columns:minmax(0,1fr)} }
+.kk-cover{margin:clamp(28px,4vw,48px) 0 14px;border-radius:18px;overflow:hidden;aspect-ratio:16/9;background:#eee;box-shadow:0 0 0 1px var(--line)}
+.kk-cover img{display:block;width:100%;height:100%;object-fit:cover}
 .kk-field{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,4fr) minmax(0,3fr);gap:14px;align-items:stretch}
 .kk-fc{display:grid}.kk-fm{display:grid;grid-template-rows:1fr 1fr;gap:14px}
 .kk-fp{height:100%;min-height:0}
@@ -4743,6 +4745,7 @@ go(0);})();
       <div><dt>Campaign</dt><dd>ESG<br><small>2026.05 자원순환 캠페인 · 임직원 · 고객사 배포</small></dd></div>
       <div><dt>Product</dt><dd>Keyring<br><small>2키 키캡 · 아크릴 케이스</small></dd></div>
     </dl>
+    <figure class="kk-cover"><img src="assets/keycap/hero.webp" alt="ESG 캠페인 굿즈 — 아크릴 피규어 3종, 스티커 5종, 가온프렌즈 키캡 키링" decoding="async"></figure>
     <div class="kk-hero"><button class="ib-ph kk-ph big" type="button" data-kk-lb="m1" aria-label="키캡 키링 정면 — 지구와 함께 · 재활용 마크 세트 크게 보기"><img src="assets/keycap/m1.webp" alt="키캡 키링 정면 — 지구와 함께 · 재활용 마크 세트" loading="lazy" decoding="async"><span class="tg">Product · Front</span></button><div class="kk-mgal"><button class="ib-ph kk-ph " type="button" data-kk-lb="m2" aria-label="키캡 키링 — 흰 키캡 버전 크게 보기"><img src="assets/keycap/m2.webp" alt="키캡 키링 — 흰 키캡 버전" loading="lazy" decoding="async"><span class="tg">White Keycap</span></button><button class="ib-ph kk-ph " type="button" data-kk-lb="m3" aria-label="키캡 키링 — 스냅 고리 버전 크게 보기"><img src="assets/keycap/m3.webp" alt="키캡 키링 — 스냅 고리 버전" loading="lazy" decoding="async"><span class="tg">Snap Hook</span></button><button class="ib-ph kk-ph " type="button" data-kk-lb="m4" aria-label="키캡 키링 — 측면 클리커 버전 크게 보기"><img src="assets/keycap/m4.webp" alt="키캡 키링 — 측면 클리커 버전" loading="lazy" decoding="async"><span class="tg">Clicker</span></button></div></div>
   </div></div>
 
@@ -5087,7 +5090,7 @@ const WORKS=[
   {title:'KAON Friends 3D Guidelines', page:'kf3d', img:'assets/kf3d/thumb.webp?v=3', sub:'KAON GROUP', tag:'Character IP · Guideline', period:'2026.11', cat:['brand','ai'], scene:3,
    kr:'가온프렌즈 3D 캐릭터 아이덴티티 매뉴얼과 AI 제작 기준 (41p)', role:'캐릭터 가이드라인 기획·디자인', client:'가온그룹', tools:'Illustrator, Generative AI',
    kpis:[], ch:'', ap:'', out:''},
-  {title:'KAON ESG Campaign Goods', page:'keycap', img:'assets/keycap/thumb.webp?v=8', sub:'KAON GROUP', tag:'Campaign · Character Goods', period:'2026.03 — 10', cat:['brand'], scene:3,
+  {title:'KAON ESG Campaign Goods', page:'keycap', img:'assets/keycap/thumb.webp?v=9', sub:'KAON GROUP', tag:'Campaign · Character Goods', period:'2026.03 — 10', cat:['brand'], scene:3,
    kr:'ESG 자원순환 캠페인 1·2차 — 캠페인 비주얼과 키캡 키링·아크릴 피규어·스티커 굿즈', role:'캠페인 비주얼 · 굿즈 기획 · 아트워크 디자인', client:'가온그룹 ESG팀', tools:'Illustrator',
    kpis:[], ch:'', ap:'', out:''},
   {title:'KAON Friends 2027 Calendar', page:'calendar', img:'assets/calendar/thumb.webp?v=7', sub:'KAON GROUP', tag:'AI Artwork · Calendar', period:'2026', cat:['ai','brand','content'], scene:3,
