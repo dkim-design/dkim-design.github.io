@@ -1126,14 +1126,16 @@ a.sn-c:hover{transform:translateY(-3px);box-shadow:0 0 0 1.5px var(--brand),0 24
 @media (max-width:800px){ .ga-cards{grid-template-columns:minmax(0,1fr)} }
 
 .ga-cw{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:center}
-.ga-cbox{border-radius:14px;overflow:hidden;box-shadow:0 0 0 1px var(--line)}
+.ga-cbox{border-radius:14px;overflow:hidden;box-shadow:0 0 0 1px var(--line),0 30px 60px -40px rgba(20,24,40,.35);width:100%;max-width:520px;justify-self:center;background:#fff}
 .ga-cons{display:block;width:100%;height:auto}
-.ga-cons .gd circle{fill:none;stroke:#0047AB;stroke-width:1.4;stroke-dasharray:6 5}
-.ga-cons .gd line{stroke:#0047AB;stroke-width:1;stroke-opacity:.55;stroke-dasharray:4 5}
+.ga-cons .gd circle{fill:none;stroke:#0047AB;stroke-width:1.1;stroke-dasharray:5 4}
+.ga-cons .gd line{stroke:#0047AB;stroke-width:.9;stroke-opacity:.5;stroke-dasharray:3 4}
 .ga-cons .gd line.ax{stroke:#E5484D;stroke-opacity:.7}
 .ga-cons .ctr{fill:#E5484D}
-.ga-cons .dm line{stroke:#111;stroke-width:1.3}
-.ga-cons .dm text{font-family:var(--f);font-size:13px;font-weight:600;fill:#111;text-anchor:middle}
+.ga-cons .dm line{stroke:#111;stroke-width:1.1}
+.ga-cons .dm text{font-family:var(--f);font-size:12px;font-weight:600;fill:#111;text-anchor:middle;paint-order:stroke;stroke:#fff;stroke-width:4px}
+.ga-cons .ctl{font-family:var(--f);font-size:12px;font-weight:700;fill:#E5484D;text-anchor:end}
+.ga-cons .dm line.rg{stroke:#E5484D}
 .ga-dl{margin:0;display:grid}
 .ga-dl>div{display:grid;grid-template-columns:80px 1fr;gap:14px;padding:14px 0;border-top:1px solid var(--line)}
 .ga-dl dt{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);padding-top:4px}
@@ -4613,13 +4615,13 @@ go(0);})();
   </div></div>
 
     <section class="de-sec"><div class="wrap"><div class="c">
-    <div class="de-h"><span class="de-no">01 — Construction</span><h3>하나의 원,<br>하나의 획 두께</h3><p>심볼을 원본(626px) 기준으로 실측해 구조를 정리했습니다. 모든 획은 같은 두께 약 64px로, G의 원형 링·A의 두 기둥·G의 가로획이 같은 단위를 공유합니다.</p></div>
+    <div class="de-h"><span class="de-no">01 — Construction</span><h3>하나의 원,<br>하나의 획 두께</h3><p>심볼 원본(626px)을 안티앨리어싱 경계까지 서브픽셀 단위로 실측했습니다. G의 원형 링·A의 두 기둥·G의 가로획이 모두 63.6–64.8px, 약 64px 한 단위를 공유합니다.</p></div>
     <div class="ga-cw">
-      <div class="ga-cbox"><svg class="ga-cons" viewBox="40 60 590 520" role="img" aria-label="The Garage Archive 심볼 구조도 — 외경 원, 내경 원, 64px 획 두께"><rect x="40" y="60" width="590" height="520" fill="#fff"/><image href="assets/garage/a0.webp" x="0" y="0" width="626" height="626" opacity=".9"/><g class="gd"><circle cx="313" cy="312.5" r="195"/><circle cx="313" cy="312.5" r="131.5"/><line class="ax" x1="90" y1="312.5" x2="600" y2="312.5"/><line class="ax" x1="313" y1="90" x2="313" y2="540"/><line class="st" x1="253" y1="90" x2="253" y2="540"/><line class="st" x1="316" y1="90" x2="316" y2="540"/><line class="st" x1="445" y1="90" x2="445" y2="540"/><line class="st" x1="508" y1="90" x2="508" y2="540"/><line class="st" x1="90" y1="280" x2="600" y2="280"/><line class="st" x1="90" y1="343" x2="600" y2="343"/><line class="st" x1="90" y1="507.5" x2="600" y2="507.5"/></g><circle class="ctr" cx="313" cy="312.5" r="4"/><g class="dm"><line x1="253" y1="560" x2="316" y2="560"/><line x1="253" y1="554" x2="253" y2="566"/><line x1="316" y1="554" x2="316" y2="566"/><text x="284.5" y="551">64</text></g><g class="dm"><line x1="445" y1="560" x2="508" y2="560"/><line x1="445" y1="554" x2="445" y2="566"/><line x1="508" y1="554" x2="508" y2="566"/><text x="476.5" y="551">64</text></g><g class="dm"><line x1="590" y1="280" x2="590" y2="343"/><line x1="584" y1="280" x2="596" y2="280"/><line x1="584" y1="343" x2="596" y2="343"/><text x="600" y="316.5" text-anchor="start">64</text></g><g class="dm"><line x1="118" y1="84" x2="313" y2="84"/><line x1="118" y1="78" x2="118" y2="90"/><line x1="313" y1="78" x2="313" y2="90"/><text x="215.5" y="75">R 195</text></g></svg></div>
+      <div class="ga-cbox"><svg class="ga-cons" viewBox="70 70 560 500" role="img" aria-label="The Garage Archive 심볼 구조도 — 외경·내경 원, 획 두께 실측값"><rect x="70" y="70" width="560" height="500" fill="#fff"/><image href="assets/garage/a0@4x.webp" x="0" y="0" width="626" height="626"/><g class="gd"><circle cx="313.1" cy="312.5" r="195.2"/><circle cx="313.1" cy="312.5" r="131.6"/><line class="ax" x1="95" y1="312.5" x2="590" y2="312.5"/><line x1="251.5" y1="95" x2="251.5" y2="535"/><line x1="316.3" y1="95" x2="316.3" y2="535"/><line x1="445" y1="95" x2="445" y2="535"/><line x1="508.9" y1="95" x2="508.9" y2="535"/><line x1="95" y1="279.4" x2="590" y2="279.4"/><line x1="95" y1="343.9" x2="590" y2="343.9"/></g><circle class="ctr" cx="313.1" cy="312.5" r="4"/><text class="ctl" x="303.1" y="302.5">C</text><g class="dm"><line x1="251.5" y1="552" x2="316.3" y2="552"/><line x1="251.5" y1="546" x2="251.5" y2="558"/><line x1="316.3" y1="546" x2="316.3" y2="558"/><text x="283.9" y="545">64.8</text></g><g class="dm"><line x1="445" y1="552" x2="508.9" y2="552"/><line x1="445" y1="546" x2="445" y2="558"/><line x1="508.9" y1="546" x2="508.9" y2="558"/><text x="476.95" y="545">63.9</text></g><g class="dm"><line x1="560" y1="279.4" x2="560" y2="343.9"/><line x1="554" y1="279.4" x2="566" y2="279.4"/><line x1="554" y1="343.9" x2="566" y2="343.9"/><text x="570" y="316.65" style="text-anchor:start">64.5</text></g><g class="dm"><line x1="117.9" y1="92" x2="313.1" y2="92"/><line x1="117.9" y1="86" x2="117.9" y2="98"/><line x1="313.1" y1="86" x2="313.1" y2="98"/><text x="215.5" y="84">R 195.2</text></g><g class="dm"><line x1="120" y1="312.5" x2="181.5" y2="312.5" class="rg"/><text x="150.7" y="300">63.6</text></g></svg></div>
       <dl class="ga-dl">
-        <div><dt>Ring</dt><dd>R 195 / r 131.5<small>G 외경·내경의 차이 = 획 두께 약 64px</small></dd></div>
-        <div><dt>Stroke</dt><dd>64 px<small>G 링 · A 왼쪽·오른쪽 기둥 · G 가로획 모두 동일</small></dd></div>
-        <div><dt>Bar</dt><dd>Center line<small>G 가로획(280–343)의 중심이 원의 가로 중심선과 1px 이내로 일치</small></dd></div>
+        <div><dt>Ring</dt><dd>R 195.2 / r 131.6<small>G 외경·내경의 차이 = 링 두께 63.6px</small></dd></div>
+        <div><dt>Stroke</dt><dd>≈ 64 px<small>링 63.6 · A 왼쪽 기둥 64.8 · 오른쪽 기둥 63.9 · 가로획 64.5</small></dd></div>
+        <div><dt>Bar</dt><dd>Center line<small>가로획(279.4–343.9)의 중심이 원 중심 C의 가로선과 0.9px 차이로 일치</small></dd></div>
         <div><dt>Edges</dt><dd>Aligned<small>A 오른쪽 기둥 바깥선 = 원 오른쪽 끝, 두 기둥 바닥 = 원 바닥선</small></dd></div>
       </dl>
     </div>
