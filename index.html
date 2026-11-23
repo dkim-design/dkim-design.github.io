@@ -1109,6 +1109,12 @@ a.tl-card:hover{transform:translateY(-3px);box-shadow:0 0 0 1.5px #2F6BE0,0 26px
 .sn-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
 .sn-c{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px 16px;align-items:center;padding:22px;border-radius:16px;background:#fff;box-shadow:0 0 0 1px var(--line);color:inherit;text-decoration:none;transition:transform .35s var(--ease),box-shadow .35s}
 a.sn-c:hover{transform:translateY(-3px);box-shadow:0 0 0 1.5px var(--brand),0 24px 44px -28px rgba(0,71,171,.4)}
+.sn-c{grid-column:span 2}
+.sn-pv{grid-column:1/-1;display:block;position:relative;border-radius:12px;overflow:hidden;aspect-ratio:16/10;background:#f3f3f3;box-shadow:0 0 0 1px var(--line);margin-top:4px}
+.sn-pv::before{content:"";display:block;height:22px;background:#eceef1;border-bottom:1px solid var(--line);background-image:radial-gradient(circle at 14px 11px,#ff5f57 4px,transparent 4.5px),radial-gradient(circle at 28px 11px,#febc2e 4px,transparent 4.5px),radial-gradient(circle at 42px 11px,#28c840 4px,transparent 4.5px)}
+.sn-pv img{display:block;width:100%;height:calc(100% - 22px);object-fit:cover;object-position:top center;transition:transform 1.2s var(--ease)}
+.sn-pv::after{content:"";position:absolute;inset:auto 0 0 0;height:34%;background:linear-gradient(180deg,rgba(255,255,255,0),#fff 92%);pointer-events:none}
+a.sn-c:hover .sn-pv img{transform:scale(1.025)}
 .sn-ic{width:58px;height:58px;border-radius:16px;background:var(--c);display:grid;place-items:center;box-shadow:0 14px 26px -16px var(--c)}
 .sn-tx{display:grid;gap:3px}.sn-tx b{font-size:17px;font-weight:600}.sn-tx small{font-size:12.5px;color:var(--ink-2);line-height:1.5}
 .sn-go{grid-column:1/-1;font-size:12.5px;color:var(--brand);font-weight:500}
@@ -1119,8 +1125,8 @@ a.sn-c:hover{transform:translateY(-3px);box-shadow:0 0 0 1.5px var(--brand),0 24
 .sn-rel a{display:grid;gap:6px;padding:22px;border-radius:14px;background:#fff;box-shadow:0 0 0 1px var(--line);color:inherit;text-decoration:none;transition:box-shadow .3s,transform .3s}
 .sn-rel a:hover{box-shadow:0 0 0 1.5px var(--brand);transform:translateY(-2px)}
 .sn-rel small{font-size:11.5px;letter-spacing:.06em;color:var(--ink-2)}.sn-rel b{font-size:18px;font-weight:600}.sn-rel span{font-size:13px;color:var(--brand)}
-@media (max-width:1000px){ .sn-grid{grid-template-columns:repeat(2,minmax(0,1fr))} .sn-rel{grid-template-columns:minmax(0,1fr)} }
-@media (max-width:700px){ .mk-grid,.sn-grid,.sn-role{grid-template-columns:minmax(0,1fr)} }
+@media (max-width:1000px){ .sn-grid{grid-template-columns:repeat(2,minmax(0,1fr))} .sn-c{grid-column:auto} .sn-rel{grid-template-columns:minmax(0,1fr)} }
+@media (max-width:700px){ .mk-grid,.sn-grid,.sn-role{grid-template-columns:minmax(0,1fr)} .sn-c{grid-column:auto} }
 
 /* ===== The Garage Archive ===== */
 .ga-mock{display:block;border-radius:16px;margin-bottom:20px}
@@ -4639,7 +4645,7 @@ go(0);})();
 
   <section class="de-sec"><div class="wrap"><div class="c">
     <div class="de-h"><span class="de-no">01 — Channels</span><h3>운영 채널</h3><p>카드를 누르면 각 공식 채널로 이동합니다.</p></div>
-    <div class="sn-grid"><a class="sn-c" href="https://www.linkedin.com/company/kaongroup" target="_blank" rel="noopener"><span class="sn-ic" style="--c:#0A66C2"><img src="assets/kaonsns/linkedin.svg" alt="" width="34" height="34"></span><span class="sn-tx"><b>LinkedIn</b><small>B2B 메인 채널 · 세 브랜드 운영</small></span><span class="sn-go">채널 보기 ↗</span></a><a class="sn-c" href="https://www.youtube.com/@kaongroup" target="_blank" rel="noopener"><span class="sn-ic" style="--c:#FF0000"><img src="assets/kaonsns/youtube.svg" alt="" width="34" height="34"></span><span class="sn-tx"><b>YouTube</b><small>@kaongroup · 기업·제품·전시 영상</small></span><span class="sn-go">채널 보기 ↗</span></a><div class="sn-c"><span class="sn-ic" style="--c:#0866FF"><img src="assets/kaonsns/facebook.svg" alt="" width="34" height="34"></span><span class="sn-tx"><b>Facebook</b><small>기업 소식·이벤트</small></span></div><div class="sn-c"><span class="sn-ic" style="--c:#111111"><img src="assets/kaonsns/x.svg" alt="" width="34" height="34"></span><span class="sn-tx"><b>X</b><small>기업 소식 단신</small></span></div></div>
+    <div class="sn-grid"><a class="sn-c pv" href="https://www.linkedin.com/company/kaongroup" target="_blank" rel="noopener"><span class="sn-ic" style="--c:#0A66C2"><img src="assets/kaonsns/linkedin.svg" alt="" width="34" height="34"></span><span class="sn-tx"><b>LinkedIn</b><small>B2B 메인 채널 · 세 브랜드 운영</small></span><span class="sn-pv"><img src="assets/kaonsns/pv-linkedin.webp" alt="KAON GROUP LinkedIn 페이지 관리 화면 — 최근 게시물" loading="lazy" decoding="async"></span><span class="sn-go">채널 보기 ↗</span></a><a class="sn-c pv" href="https://www.youtube.com/@kaongroup" target="_blank" rel="noopener"><span class="sn-ic" style="--c:#FF0000"><img src="assets/kaonsns/youtube.svg" alt="" width="34" height="34"></span><span class="sn-tx"><b>YouTube</b><small>@kaongroup · 기업·제품·전시 영상</small></span><span class="sn-pv"><img src="assets/kaonsns/pv-youtube.webp" alt="KAON GROUP 유튜브 채널 홈 — CONNECTED+ 배너와 추천 영상" loading="lazy" decoding="async"></span><span class="sn-go">채널 보기 ↗</span></a><div class="sn-c"><span class="sn-ic" style="--c:#0866FF"><img src="assets/kaonsns/facebook.svg" alt="" width="34" height="34"></span><span class="sn-tx"><b>Facebook</b><small>기업 소식·이벤트</small></span></div><div class="sn-c"><span class="sn-ic" style="--c:#111111"><img src="assets/kaonsns/x.svg" alt="" width="34" height="34"></span><span class="sn-tx"><b>X</b><small>기업 소식 단신</small></span></div></div>
   </div></div></section>
 
   <section class="de-sec de-alt"><div class="wrap"><div class="c">
