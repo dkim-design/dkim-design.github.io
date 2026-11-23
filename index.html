@@ -749,6 +749,50 @@ body.lb-open .cursor{background:#EDEDED}
 
 
 
+
+/* about — icons & globe */
+.ab-ic{list-style:none;margin:0 0 8px;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.ab-ic li{display:grid;gap:3px;align-content:start;padding:14px 12px 13px;border-radius:12px;background:#fff;box-shadow:0 0 0 1px var(--line);transition:transform .45s var(--ease),box-shadow .45s}
+.ab-ic li:hover{transform:translateY(-3px);box-shadow:0 0 0 1px var(--line),0 16px 30px -22px rgba(0,40,110,.45)}
+.ab-ii{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:#EEF3FB;color:var(--brand);margin-bottom:8px;transition:background .35s,color .35s}
+.ab-ic li:hover .ab-ii{background:var(--brand);color:#fff}
+.ab-ii svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.ab-ic b{font-size:13px;font-weight:600;letter-spacing:-.01em;color:var(--ink)}
+.ab-ic small{font-size:11px;line-height:1.45;color:var(--ink-2)}
+.ab-ic.go li{animation:abIn .7s var(--ease) both;animation-delay:calc(var(--k)*70ms)}
+@keyframes abIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (max-width:1180px){ .ab-ic{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (max-width:980px){ .ab-ic{grid-template-columns:repeat(4,minmax(0,1fr))} }
+@media (max-width:560px){ .ab-ic{grid-template-columns:repeat(2,minmax(0,1fr))} }
+
+.gl{margin-top:clamp(28px,3vw,40px);display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:0;border-radius:18px;overflow:hidden;background:radial-gradient(120% 140% at 80% 40%,#14213d 0%,#0a0f1c 55%,#06080f 100%);color:#e9edf5;min-height:560px;position:relative}
+.gl-tx{padding:clamp(28px,4vw,56px);display:flex;flex-direction:column;gap:14px;position:relative;z-index:2}
+.gl-k{font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8fb3ff}
+.gl-tx h3{margin:0;font-size:clamp(34px,3.6vw,54px);font-weight:600;letter-spacing:-.045em;line-height:1}
+.gl-tx>p{margin:4px 0 6px;font-size:14px;line-height:1.75;color:#a7b0c2;max-width:30em}
+.gl-st{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:2px}
+.gl-st button{all:unset;box-sizing:border-box;width:100%;cursor:pointer;display:grid;grid-template-columns:30px minmax(0,1fr);gap:10px;padding:11px 12px;border-radius:10px;transition:background .35s}
+.gl-st button:hover{background:rgba(255,255,255,.05)}
+.gl-st button:focus-visible{outline:2px solid #8fb3ff;outline-offset:2px}
+.gl-n{font-size:11.5px;font-variant-numeric:tabular-nums;color:#5d6a85;padding-top:3px;transition:color .35s}
+.gl-t{display:grid;gap:2px}
+.gl-t b{font-size:15px;font-weight:600;color:#cfd6e4;transition:color .35s}.gl-t b em{font-style:normal;font-weight:400;font-size:12px;color:#6f7c96;margin-left:4px}
+.gl-t small{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#6f7c96}
+.gl-t span{display:grid;grid-template-rows:0fr;font-size:12.5px;line-height:1.6;color:#a7b0c2;overflow:hidden;transition:grid-template-rows .5s var(--ease),margin .5s}
+.gl-st li.on .gl-t span{grid-template-rows:1fr;margin-top:4px}
+.gl-st li.on button{background:rgba(143,179,255,.09)}
+.gl-st li.on .gl-n{color:#C8FF5A}.gl-st li.on .gl-t b{color:#fff}
+.gl-st li.done .gl-n{color:#8fb3ff}
+.gl-ft{margin-top:auto;padding-top:18px;border-top:1px solid rgba(255,255,255,.08);display:flex;flex-wrap:wrap;gap:8px 22px;font-size:12px;color:#7d89a3}
+.gl-ft b{font-size:18px;font-weight:600;color:#fff;margin-right:4px;letter-spacing:-.02em}
+.gl-cv{position:relative;min-height:460px;cursor:grab;touch-action:pan-y}
+.gl-cv:active{cursor:grabbing}
+.gl-cv canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.gl-re{all:unset;position:absolute;right:18px;bottom:18px;display:inline-flex;align-items:center;gap:7px;padding:9px 14px;border-radius:99px;background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12);font-size:12px;font-weight:600;color:#dfe6f3;cursor:pointer;transition:background .3s}
+.gl-re:hover{background:rgba(255,255,255,.16)}.gl-re svg{width:14px;height:14px}
+.gl-hint{position:absolute;left:20px;bottom:22px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#56617a}
+@media (max-width:980px){ .gl{grid-template-columns:minmax(0,1fr)} .gl-cv{order:-1;min-height:380px} }
+@media (max-width:560px){ .gl-cv{min-height:320px} .gl-hint{display:none} }
 /* ===== Timeline ===== */
 .tl{padding-block:140px 0}
 .tl-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 60px;align-items:end;margin-bottom:56px}
@@ -3009,6 +3053,7 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
       <div class="about-text rv">
         <h2 class="h2">About Me</h2>
         <p class="lead">브랜드/기업 아이덴티티(BI/CI) 제작부터 캐릭터 IP, 마케팅 온/오프라인 비주얼 콘텐츠, 플랫폼/웹 서비스 UI/UX 기획 및 디자인, 영상 편집/제작, SNS 채널 운영/관리, 제품 디자인까지 콘셉트 기획에서 최종 산출물까지 직접 완성해 왔습니다. 최근에는 생성형 AI와 AI 에이전트를 실무에 도입해, 디자이너 한 명이 리서치부터 기획·제작·배포까지 처리하는 구조를 만들었습니다.</p>
+        <ul class="ab-ic" aria-label="다루는 분야"><li style="--k:0"><span class="ab-ii"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8 21.2 12 12 21.2 2.8 12Z"/><path d="M12 8.2 15.8 12 12 15.8 8.2 12Z"/></svg></span><b>BI · CI</b><small>브랜드·기업 아이덴티티</small></li><li style="--k:1"><span class="ab-ii"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12.6" r="8.4"/><path d="M12 4.2V2.4"/><circle cx="12" cy="2" r=".6" fill="currentColor"/><path d="M9.2 11v1.4M14.8 11v1.4M9.4 15.6c1.5 1.2 3.7 1.2 5.2 0"/></svg></span><b>Character IP</b><small>캐릭터 기획·디자인</small></li><li style="--k:2"><span class="ab-ii"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="15" rx="2.5"/><circle cx="8.6" cy="9.6" r="1.7"/><path d="m3.5 17.5 5.2-4.6 3.6 3.1 3.4-2.9 4.8 4"/></svg></span><b>Visual Content</b><small>온·오프라인 마케팅</small></li><li style="--k:3"><span class="ab-ii"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.8" width="11" height="18.4" rx="2.6"/><path d="M9.5 7.5h5M9.5 11h5M9.5 14.5h3"/><path d="M10.8 18.4h2.4"/></svg></span><b>UI / UX</b><small>플랫폼·웹 서비스</small></li><li style="--k:4"><span class="ab-ii"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.8" y="5" width="18.4" height="14" rx="2.6"/><path d="m10.2 9.2 4.8 2.8-4.8 2.8Z" fill="currentColor"/></svg></span><b>Video</b><small>영상 편집·제작</small></li><li style="--k:5"><span class="ab-ii"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="17.5" cy="5.8" r="2.4"/><circle cx="6.5" cy="12" r="2.4"/><circle cx="17.5" cy="18.2" r="2.4"/><path d="m8.6 10.8 6.8-3.8M8.6 13.2l6.8 3.8"/></svg></span><b>SNS</b><small>채널 운영·관리</small></li><li style="--k:6"><span class="ab-ii"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8 20.2 7.4v9.2L12 21.2 3.8 16.6V7.4Z"/><path d="M3.8 7.4 12 12l8.2-4.6M12 12v9.2"/></svg></span><b>Product</b><small>제품 디자인</small></li><li style="--k:7"><span class="ab-ii"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c.6 3.9 2.1 5.4 6 6-3.9.6-5.4 2.1-6 6-.6-3.9-2.1-5.4-6-6 3.9-.6 5.4-2.1 6-6Z"/><path d="M18.6 14.6c.3 1.9 1 2.6 2.9 2.9-1.9.3-2.6 1-2.9 2.9-.3-1.9-1-2.6-2.9-2.9 1.9-.3 2.6-1 2.9-2.9Z"/></svg></span><b>AI Agent</b><small>생성형 AI·자동화</small></li></ul>
         <ul class="points">
           <li><i>+</i><span>미국에서 약 8년간 고교와 Pratt Institute 산업디자인 학위 과정을 마치고, Karim Rashid, Stephen Burks, David Weeks 등 뉴욕 디자인 스튜디오에서 인턴십을 거쳤습니다. 해외 법인·협력사·글로벌 전시 파트너와 영어로 직접 소통합니다.</span></li>
           <li><i>+</i><span>한국암웨이, 이공이공, 가온그룹을 거치며 제품·브랜드·디지털 콘텐츠 전 영역을 다뤘습니다.</span></li>
@@ -3023,6 +3068,21 @@ footer .c{padding-block:56px calc(40px + env(safe-area-inset-bottom,0px));displa
         <div class="sc-body" aria-live="polite"><b class="sc-val">ENFP</b><p class="sc-txt">재기발랄한 활동가 — 아이디어가 떠오르면 먼저 꺼내고 바로 만들어 봅니다</p></div>
         <a class="img sc-vis" href="#human" aria-label="자세히 보기"><span class="sc-w" style="background:linear-gradient(150deg,#0047AB,#6f9be0)">Spark!</span></a>
         <span class="sc-bar" aria-hidden="true"><i></i></span>
+      </div>
+    </div>
+
+    <div class="c gl rv" id="globe">
+      <div class="gl-tx">
+        <span class="gl-k">Where I grew up</span>
+        <h3>Seoul to<br>New York.</h3>
+        <p>중학교까지 한국에서, 고등학교와 대학교는 미국 서부에서 동부로 옮겨 가며 다녔습니다. 약 8년 동안 세 개 주에서 지내며 다른 문화와 언어 속에서 일하는 법을 배웠습니다.</p>
+        <ol class="gl-st"><li><button type="button" data-st="0"><span class="gl-n">01</span><span class="gl-t"><b>Seoul <em>Korea</em></b><small>~ Middle School</small><span>중학교까지 한국에서 교육을 받았습니다.</span></span></button></li><li><button type="button" data-st="1"><span class="gl-n">02</span><span class="gl-t"><b>Oregon <em>USA</em></b><small>High School</small><span>미국으로 건너가 오리건주에서 고등학교 생활을 시작했습니다.</span></span></button></li><li><button type="button" data-st="2"><span class="gl-n">03</span><span class="gl-t"><b>Maryland <em>USA</em></b><small>High School</small><span>동부 메릴랜드주로 옮겨 고등학교 과정을 이어 갔습니다.</span></span></button></li><li><button type="button" data-st="3"><span class="gl-n">04</span><span class="gl-t"><b>New York <em>USA</em></b><small>Pratt Institute · Studios</small><span>Pratt Institute 산업디자인 학사(2010–2016)를 마치고, 뉴욕 디자인 스튜디오에서 인턴십을 거쳤습니다.</span></span></button></li></ol>
+        <div class="gl-ft"><span><b>~8</b> yrs in USA</span><span><b>3</b> states</span><span><b>EN</b> business fluent</span></div>
+      </div>
+      <div class="gl-cv">
+        <canvas id="gl-c" aria-label="한국 서울에서 미국 오리건, 메릴랜드, 뉴욕으로 이어지는 이동 경로를 보여 주는 3D 지구본" role="img"></canvas>
+        <button type="button" class="gl-re" aria-label="경로 다시 보기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4.6h4.6"/></svg>Replay</button>
+        <span class="gl-hint" aria-hidden="true">Drag to rotate</span>
       </div>
     </div>
 
@@ -5241,6 +5301,91 @@ addArt(document.querySelector('[data-banner]'),'banner',null);
   pt.addEventListener('pointermove',e=>{ const r=pt.getBoundingClientRect(), x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5; im.style.setProperty('--px',(x*-14)+'px'); im.style.setProperty('--py',(y*-10)+'px'); });
   pt.addEventListener('pointerleave',()=>{ im.style.setProperty('--px','0px'); im.style.setProperty('--py','0px'); }); })();
 
+
+/* about — icon reveal + globe */
+(()=>{ const u=document.querySelector('.ab-ic'); if(!u) return; if(!('IntersectionObserver' in window)){u.classList.add('go');return;}
+  const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){u.classList.add('go'); io.disconnect();} }),{threshold:.3}); io.observe(u); })();
+(()=>{
+  const cv=document.getElementById('gl-c'); if(!cv) return; const box=cv.parentElement, ctx=cv.getContext('2d');
+  const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const D=Math.PI/180;
+  const ST=[{n:'Seoul',la:37.57,lo:126.98},{n:'Oregon',la:44.0,lo:-120.6},{n:'Maryland',la:39.05,lo:-76.8},{n:'New York',la:40.69,lo:-73.96}];
+  const LEG=[{h:.32,t:3.2,z:1.0},{h:.12,t:2.2,z:1.18},{h:.05,t:1.4,z:1.38}];
+  const v3=(la,lo)=>[Math.cos(la*D)*Math.cos(lo*D),Math.cos(la*D)*Math.sin(lo*D),Math.sin(la*D)];
+  const SV=ST.map(p=>v3(p.la,p.lo));
+  const slerp=(a,b,t)=>{const d=Math.acos(Math.min(1,a[0]*b[0]+a[1]*b[1]+a[2]*b[2])),s=Math.sin(d);if(s<1e-6)return a.slice();const k1=Math.sin((1-t)*d)/s,k2=Math.sin(t*d)/s;return[a[0]*k1+b[0]*k2,a[1]*k1+b[1]*k2,a[2]*k1+b[2]*k2];};
+  const ll=v=>[Math.asin(Math.max(-1,Math.min(1,v[2])))/D,Math.atan2(v[1],v[0])/D];
+  let dots=null; fetch('assets/about/dots.json').then(r=>r.json()).then(a=>{const n=a.length/2;dots=new Float32Array(n*3);for(let i=0;i<n;i++){const v=v3(a[2*i]/10,a[2*i+1]/10);dots.set(v,i*3);} draw();}).catch(()=>{});
+  let W=0,H=0,dpr=1;
+  const size=()=>{const r=box.getBoundingClientRect();dpr=Math.min(2,devicePixelRatio||1);W=r.width;H=r.height;cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);};
+  size(); addEventListener('resize',()=>{size();draw();});
+  const cam={la:30,lo:150,z:.92}; let tgt={la:30,lo:150,z:1};
+  let T=0, playing=false, manual=0, lastT=0;
+  const total=1.2+LEG.reduce((a,l)=>a+l.t+.7,0);
+  // phase from T: returns {leg, p}
+  const phase=t=>{ if(t<1.2) return {leg:-1,p:1}; t-=1.2; for(let i=0;i<LEG.length;i++){ if(t<LEG[i].t) return {leg:i,p:t/LEG[i].t}; t-=LEG[i].t; if(t<.7) return {leg:i,p:1}; t-=.7; } return {leg:LEG.length-1,p:1,end:1}; };
+  const ease=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+  const lis=[...document.querySelectorAll('.gl-st li')];
+  const setList=st=>lis.forEach((l,i)=>{l.classList.toggle('on',i===st);l.classList.toggle('done',i<st);});
+  const arcPt=(i,t)=>{const v=slerp(SV[i],SV[i+1],t),h=1+LEG[i].h*Math.sin(Math.PI*t);return[v[0]*h,v[1]*h,v[2]*h];};
+  function basis(){const la=cam.la*D,lo=cam.lo*D;return{f:[Math.cos(la)*Math.cos(lo),Math.cos(la)*Math.sin(lo),Math.sin(la)],e:[-Math.sin(lo),Math.cos(lo),0],n:[-Math.sin(la)*Math.cos(lo),-Math.sin(la)*Math.sin(lo),Math.cos(la)]};}
+  function draw(){
+    if(!W) return; const B=basis(), R=Math.min(W,H)*.40*cam.z, cx=W*.5, cy=H*.52;
+    ctx.setTransform(dpr,0,0,dpr,0,0); ctx.clearRect(0,0,W,H);
+    const P=p=>{const x=p[0]*B.e[0]+p[1]*B.e[1]+p[2]*B.e[2],y=p[0]*B.n[0]+p[1]*B.n[1]+p[2]*B.n[2],z=p[0]*B.f[0]+p[1]*B.f[1]+p[2]*B.f[2];return[cx+x*R,cy-y*R,z,Math.hypot(x,y)];};
+    // halo + sphere
+    let g=ctx.createRadialGradient(cx,cy,R*.9,cx,cy,R*1.35); g.addColorStop(0,'rgba(90,140,255,.22)'); g.addColorStop(1,'rgba(90,140,255,0)');
+    ctx.fillStyle=g; ctx.beginPath(); ctx.arc(cx,cy,R*1.35,0,7); ctx.fill();
+    g=ctx.createRadialGradient(cx-R*.35,cy-R*.4,R*.1,cx,cy,R); g.addColorStop(0,'#1d2d52'); g.addColorStop(1,'#0b1222');
+    ctx.fillStyle=g; ctx.beginPath(); ctx.arc(cx,cy,R,0,7); ctx.fill();
+    ctx.strokeStyle='rgba(143,179,255,.28)'; ctx.lineWidth=1; ctx.beginPath(); ctx.arc(cx,cy,R,0,7); ctx.stroke();
+    if(dots){ const n=dots.length/3, rr=Math.max(.7,R/260);
+      for(let i=0;i<n;i++){ const a=dots[i*3],b=dots[i*3+1],c=dots[i*3+2]; const z=a*B.f[0]+b*B.f[1]+c*B.f[2]; if(z<=0.02) continue;
+        const x=a*B.e[0]+b*B.e[1]+c*B.e[2], y=a*B.n[0]+b*B.n[1]+c*B.n[2]; const sx=cx+x*R, sy=cy-y*R; if(sx<-4||sx>W+4||sy<-4||sy>H+4) continue;
+        ctx.fillStyle=`rgba(${170+60*z|0},${190+50*z|0},255,${.18+.62*z})`; ctx.fillRect(sx-rr,sy-rr,rr*2,rr*2); } }
+    // routes
+    const ph=RM?{leg:LEG.length-1,p:1,end:1}:phase(T);
+    ctx.lineCap='round';
+    for(let i=0;i<LEG.length;i++){
+      const prog=i<ph.leg?1:i===ph.leg?ease(ph.p):0; if(prog<=0) continue;
+      const N=90, pts=[]; for(let k=0;k<=N*prog;k++){pts.push(P(arcPt(i,k/N)));} pts.push(P(arcPt(i,prog)));
+      const vis=q=>q[2]>0||q[3]>1;
+      ctx.setLineDash([2,6]); ctx.lineWidth=2; ctx.strokeStyle=i===ph.leg&&ph.p<1?'rgba(200,255,90,.95)':'rgba(200,255,90,.6)';
+      ctx.beginPath(); let pen=false; for(const q of pts){ if(!vis(q)){pen=false;continue;} pen?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1]); pen=true; } ctx.stroke(); ctx.setLineDash([]);
+      if(i===ph.leg&&ph.p<1){ const q=pts[pts.length-1]; if(vis(q)){ const gg=ctx.createRadialGradient(q[0],q[1],0,q[0],q[1],14); gg.addColorStop(0,'rgba(220,255,140,.95)'); gg.addColorStop(1,'rgba(200,255,90,0)'); ctx.fillStyle=gg; ctx.beginPath(); ctx.arc(q[0],q[1],14,0,7); ctx.fill(); ctx.fillStyle='#fff'; ctx.beginPath(); ctx.arc(q[0],q[1],2.6,0,7); ctx.fill(); } }
+    }
+    // markers
+    const reached=ph.leg<0?0:(ph.p>=1?ph.leg+1:ph.leg);
+    ctx.font='600 12px '+getComputedStyle(document.body).fontFamily; ctx.textBaseline='middle';
+    ST.forEach((s,i)=>{ if(i>reached) return; const q=P(SV[i]); if(q[2]<=0.05) return;
+      const cur=i===reached, t=performance.now()/1000;
+      if(cur&&!RM){ const k=(t%1.6)/1.6; ctx.strokeStyle=`rgba(200,255,90,${.7*(1-k)})`; ctx.lineWidth=1.5; ctx.beginPath(); ctx.arc(q[0],q[1],5+k*16,0,7); ctx.stroke(); }
+      ctx.fillStyle=cur?'#C8FF5A':'#8fb3ff'; ctx.beginPath(); ctx.arc(q[0],q[1],4.2,0,7); ctx.fill(); ctx.strokeStyle='#0a0f1c'; ctx.lineWidth=1.5; ctx.stroke();
+      const lx=q[0]+(i===2?-12:12), al=i===2?'right':'left'; ctx.textAlign=al;
+      const tw=ctx.measureText(s.n).width; const bx=al==='left'?lx-6:lx-tw-6;
+      ctx.fillStyle='rgba(6,9,16,.72)'; ctx.beginPath(); ctx.roundRect?ctx.roundRect(bx,q[1]-11,tw+12,22,11):ctx.rect(bx,q[1]-11,tw+12,22); ctx.fill();
+      ctx.fillStyle=cur?'#fff':'#c4cde0'; ctx.fillText(s.n,lx,q[1]+.5); });
+    setList(Math.min(reached,ST.length-1));
+  }
+  function camTarget(){ const ph=phase(T); let v,z;
+    if(ph.leg<0){v=SV[0];z=1;} else { const L=LEG[ph.leg]; const e=ease(ph.p); v=slerp(SV[ph.leg],SV[ph.leg+1],Math.min(1,e*1.0)); z=(ph.leg?LEG[ph.leg-1].z:1)+(L.z-(ph.leg?LEG[ph.leg-1].z:1))*e; }
+    const [la,lo]=ll(v); tgt={la:Math.max(-10,Math.min(55,la-6)),lo,z}; }
+  function step(now){ const dt=Math.min(.05,(now-lastT)/1000||0); lastT=now;
+    if(playing){ if(manual<=0){ T+=dt; if(T>total) T=total; camTarget(); let dl=((tgt.lo-cam.lo+540)%360)-180; cam.lo+=dl*Math.min(1,dt*2.6); cam.la+=(tgt.la-cam.la)*Math.min(1,dt*2.6); cam.z+=(tgt.z-cam.z)*Math.min(1,dt*2.2); } else manual-=dt; }
+    draw(); if(vis) raf=requestAnimationFrame(step); else raf=0; }
+  let vis=false, raf=0;
+  const start=()=>{ if(!raf){ lastT=performance.now(); raf=requestAnimationFrame(step);} };
+  const play=from=>{ T=from; playing=true; manual=0; start(); };
+  if(RM){ cam.la=38; cam.lo=-100; cam.z=1.15; draw(); }
+  else{ new IntersectionObserver(es=>es.forEach(e=>{ vis=e.isIntersecting; if(vis){ if(!playing) play(0); start(); } }),{threshold:.25}).observe(box); }
+  box.querySelector('.gl-re').addEventListener('click',()=>{ cam.lo=150; cam.la=30; cam.z=.92; play(0); });
+  const starts=[0,1.2]; for(let i=0;i<LEG.length-1;i++) starts.push(starts[starts.length-1]+LEG[i].t+.7);
+  lis.forEach((l,i)=>l.querySelector('button').addEventListener('click',()=>{ if(RM) return; play(i===0?0:starts[i]+ (i>0?LEG[i-1].t:0)); }));
+  // drag
+  let drag=null; box.addEventListener('pointerdown',e=>{ if(e.target.closest('.gl-re')) return; drag={x:e.clientX,y:e.clientY,lo:cam.lo,la:cam.la}; box.setPointerCapture(e.pointerId); });
+  box.addEventListener('pointermove',e=>{ if(!drag) return; const k=90/(Math.min(W,H)*.4*cam.z); cam.lo=drag.lo-(e.clientX-drag.x)*k; cam.la=Math.max(-60,Math.min(70,drag.la+(e.clientY-drag.y)*k)); manual=2.2; if(RM) draw(); });
+  const up=()=>{drag=null;}; box.addEventListener('pointerup',up); box.addEventListener('pointercancel',up);
+})();
 /* 애니메이션 루프 — 화면에 보이는 캔버스만 그림 */
 if('IntersectionObserver' in window){
   const io=new IntersectionObserver(es=>es.forEach(e=>{const a=arts.find(x=>x.canvas===e.target); if(a) a.vis=e.isIntersecting;}),{rootMargin:'100px'});
