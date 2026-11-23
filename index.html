@@ -337,6 +337,10 @@ body.menu-open .cursor svg{color:#222}
 .filters button:hover{border-color:var(--ink)}
 .filters button[aria-pressed="true"]{background:var(--ink);color:var(--white);border-color:var(--ink)}
 .wgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 20px;text-align:left}
+.disc{position:absolute;left:12px;top:12px;z-index:2;display:inline-flex;align-items:center;gap:7px;padding:6px 11px 6px 9px;border-radius:99px;background:rgba(18,18,20,.72);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:#fff;font-size:11.5px;font-weight:600;letter-spacing:.02em;line-height:1;pointer-events:none;box-shadow:0 0 0 1px rgba(255,255,255,.08)}
+.disc::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--dc);box-shadow:0 0 0 2px color-mix(in srgb,var(--dc) 30%,transparent)}
+.kh-img .disc{left:16px;top:16px}
+.kh-img,.work .frame,.shot .frame{isolation:isolate}
 .work{cursor:pointer;display:grid;gap:12px;transition:opacity .4s,filter .4s}
 .work.off{opacity:.15;filter:grayscale(1);pointer-events:none}
 .work .frame{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:4px}
@@ -5169,11 +5173,21 @@ const JOURNEY=[
 ];
 
 /* ---------- 렌더 ---------- */
+const DISC_C={product:'#2F6BFF',brand:'#FF7B0F',platform:'#B5E000',ai:'#8B5CF6',character:'#FF6FA5',content:'#14B8A6',graphic:'#F2C200'};
+const DISC={'KAON News Dashboard':['AI Platform','ai'],'KAON Content Agent':['AI Platform','ai'],'AI Content Production':['AI Content','ai'],
+ 'KAON Friends':['Character IP','character'],'KAON Friends 3D Guidelines':['Character IP','character'],'KAON ESG Campaign Goods':['Goods Design','graphic'],
+ 'KAON Friends 2027 Calendar':['Graphic Design','graphic'],'KAON Global Exhibitions':['Exhibition Design','graphic'],'KAON GROUP CI':['Brand Identity','brand'],
+ 'KAON Stationery':['Brand Identity','brand'],'K-FutureTech Branding':['Brand Identity','brand'],'dk. Personal Identity':['Brand Identity','brand'],
+ 'LinkFit':['Platform · App','platform'],'greyd':['Platform · App','platform'],'Amazon Localization':['E-commerce','content'],
+ 'Artistry Derma Eye':['Product Design','product'],'Plutonium':['Product Design','product'],'Atmosphere Air Mask':['Product Design','product'],
+ 'Amway Product Design':['Product Design','product'],'KAON Social Channels':['Content · SNS','content'],'The Garage Archive':['Brand Identity','brand']};
+const discChip=w=>{const d=DISC[w.title]; return d?`<span class="disc" style="--dc:${DISC_C[d[1]]}">${d[0]}</span>`:'';};
+
 const strip=document.getElementById('strip');
 [0,1].forEach(pass=>WORKS.forEach((wk,i)=>{
   const el=document.createElement('div'); el.className='shot'; el.dataset.drag='1'; el.dataset.i=i;
   if(pass){ el.setAttribute('aria-hidden','true'); el.classList.add('clone'); } else { el.tabIndex=0; el.setAttribute('role','button'); el.setAttribute('aria-label',wk.title+' 자세히 보기'); }
-  el.innerHTML=`<div class="frame">${wk.img?`<img class="art" src="${wk.img}" alt="${wk.title}" style="object-fit:contain">`:'<canvas class="art"></canvas>'}</div><div class="cap"><span class="no">${String(i+1).padStart(2,'0')}</span><div class="ct"><b>${wk.title}</b><span class="mt"><span>${wk.sub}</span><i>${wk.tag}</i><span>${wk.period}</span></span></div><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>`;
+  el.innerHTML=`<div class="frame">${wk.img?`<img class="art" src="${wk.img}" alt="${wk.title}" style="object-fit:contain">`:'<canvas class="art"></canvas>'}${discChip(wk)}</div><div class="cap"><span class="no">${String(i+1).padStart(2,'0')}</span><div class="ct"><b>${wk.title}</b><span class="mt"><span>${wk.sub}</span><i>${wk.tag}</i><span>${wk.period}</span></span></div><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>`;
   strip.appendChild(el);
   const im=el.querySelector('img.art'); if(im){ const fit=()=>{ if(im.naturalWidth) el.querySelector('.frame').style.aspectRatio=im.naturalWidth+'/'+im.naturalHeight; }; im.complete?fit():im.addEventListener('load',fit); }
   if(!wk.img) addArt(el.querySelector('canvas'),'scene',SCENES[i%SCENES.length]);
@@ -5210,7 +5224,7 @@ const wg=document.getElementById('wgrid');
 WORKS.forEach((wk,i)=>{
   const el=document.createElement('article'); el.className='work'+(wk.feat?' feat':''); el.tabIndex=0; el.dataset.i=i; el.dataset.cursor='1';
   el.setAttribute('role','button'); el.setAttribute('aria-label',wk.title+' 자세히 보기');
-  el.innerHTML=`<div class="frame">${wk.img?`<img class="art" src="${wk.img}" alt="" style="object-fit:cover;position:absolute;inset:0">`:'<canvas class="art"></canvas>'}<div class="ov"><span>${wk.tag}</span><span>${wk.period}</span><span class="arrow-btn" aria-hidden="true">${ARROW}</span></div></div>
+  el.innerHTML=`<div class="frame">${wk.img?`<img class="art" src="${wk.img}" alt="" style="object-fit:cover;position:absolute;inset:0">`:'<canvas class="art"></canvas>'}${discChip(wk)}<div class="ov"><span>${wk.tag}</span><span>${wk.period}</span><span class="arrow-btn" aria-hidden="true">${ARROW}</span></div></div>
     <div class="cap">${wk.feat?'<span class="feat-b">Main Project</span>':''}${wk.title} <small>${wk.sub}</small></div><p class="wkr">${wk.kr}</p>`;
   wg.appendChild(el);
   if(!wk.img) addArt(el.querySelector('canvas'),'scene',SCENES[i%SCENES.length]);
@@ -5634,7 +5648,7 @@ document.querySelectorAll('#lf-tabs button').forEach(b=>b.addEventListener('clic
 (()=>{ const pg=document.getElementById('pg-amway'); if(!pg) return; const g=pg.querySelector('#am-grid');
   const list=WORKS.map((w,i)=>({w,i})).filter(o=>o.w.sub==='한국암웨이'); const tone=['am','am','am'];
   g.innerHTML=list.map(({w,i},k)=>`<button type="button" class="kh-card" data-i="${i}">
-    <span class="kh-img ${w.img?'':tone[k%3]}">${w.img?`<img src="${w.img}" alt="" loading="lazy" decoding="async">`:`<span class="kh-num">0${k+1}</span><span class="kh-big">${w.tag}</span>`}</span>
+    <span class="kh-img ${w.img?'':tone[k%3]}">${w.img?`<img src="${w.img}" alt="" loading="lazy" decoding="async">`:`<span class="kh-num">0${k+1}</span><span class="kh-big">${w.tag}</span>`}${discChip(w)}</span>
     <span class="kh-body"><small>${w.tag} · ${w.period}</small><h4>${w.title}</h4><p>${w.kr}</p><span class="kh-go">${w.page?'프로젝트 페이지 보기 ↗':'자세히 보기 ↗'}</span></span></button>`).join('');
   g.addEventListener('click',e=>{ const c=e.target.closest('.kh-card'); if(!c) return; const w=WORKS[+c.dataset.i]; if(w.page) goPage(w.page); else openCase(+c.dataset.i); });
 })();
@@ -5642,7 +5656,7 @@ document.querySelectorAll('#lf-tabs button').forEach(b=>b.addEventListener('clic
   const list=WORKS.map((w,i)=>({w,i})).filter(o=>o.w.sub==='KAON GROUP');
   const tone=['t1','t2','t3'];
   g.innerHTML=list.map(({w,i},k)=>`<button type="button" class="kh-card" data-i="${i}" data-cat="${w.cat.includes('ai')?'ai':'brand'}">
-    <span class="kh-img ${w.img?'':tone[k%3]}">${w.img?`<img src="${w.img}" alt="" loading="lazy" decoding="async">`:`<span class="kh-num">0${k+1}</span><span class="kh-big">${w.tag}</span>`}</span>
+    <span class="kh-img ${w.img?'':tone[k%3]}">${w.img?`<img src="${w.img}" alt="" loading="lazy" decoding="async">`:`<span class="kh-num">0${k+1}</span><span class="kh-big">${w.tag}</span>`}${discChip(w)}</span>
     <span class="kh-body"><small>${w.tag} · ${w.period}</small><h4>${w.title}</h4><p>${w.kr}</p><span class="kh-go">${w.page?'프로젝트 페이지 보기 ↗':'자세히 보기 ↗'}</span></span></button>`).join('');
   g.addEventListener('click',e=>{ const c=e.target.closest('.kh-card'); if(!c) return; const w=WORKS[+c.dataset.i]; if(w.page) goPage(w.page); else openCase(+c.dataset.i); });
   pg.querySelector('.kh-filter').addEventListener('click',e=>{ const b=e.target.closest('button'); if(!b) return; pg.querySelectorAll('.kh-filter button').forEach(x=>x.classList.toggle('on',x===b)); g.querySelectorAll('.kh-card').forEach(c=>c.classList.toggle('off',b.dataset.f!=='all'&&c.dataset.cat!==b.dataset.f)); });
