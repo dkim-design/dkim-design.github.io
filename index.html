@@ -1180,6 +1180,33 @@ a.tl-card:hover{transform:translateY(-3px);box-shadow:0 0 0 1.5px #2F6BE0,0 26px
 .gy-flow p{margin:2px 0 0;font-size:13px;line-height:1.7;color:var(--ink-2)}
 @media (max-width:1000px){ .gy-flow{grid-template-columns:repeat(2,minmax(0,1fr))} .gy-flow li::after{display:none} }
 @media (max-width:560px){ .gy-flow{grid-template-columns:minmax(0,1fr)} }
+.ex-top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:26px}
+.ex-top h3{margin-top:10px;font-size:clamp(28px,3.4vw,46px);font-weight:600;letter-spacing:-.04em}
+.ex-top p{font-size:14px;color:var(--ink-2);max-width:26em}
+.ex-yr{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid var(--ink);margin-bottom:22px}
+.ex-yr button{all:unset;cursor:pointer;display:grid;gap:4px;padding:16px 4px 14px;border-bottom:1px solid var(--line);position:relative;transition:color .3s}
+.ex-yr button::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--brand);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.ex-yr button[aria-selected="true"]::after{transform:none}
+.ex-yr b{font-size:clamp(22px,2.4vw,34px);font-weight:300;letter-spacing:-.04em;color:#BDBDBD;transition:color .3s}
+.ex-yr button[aria-selected="true"] b,.ex-yr button:hover b{color:var(--ink)}
+.ex-yr small{font-size:11px;letter-spacing:.06em;color:var(--ink-2);min-height:1em}
+.ex-yr button:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.ex-pn{animation:exIn .6s var(--ease)}
+@keyframes exIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.ex-hd{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:16px}
+.ex-hd b{font-size:20px;font-weight:600;letter-spacing:-.02em}.ex-hd span{font-size:13px;color:var(--ink-2)}
+.ex-more{margin-left:auto;font-size:13px;color:var(--brand)}
+.ex-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.ex-grid:empty{display:none}
+.ex-grid .ib-ph{aspect-ratio:4/3}
+.ex-grid.ex-f{grid-template-columns:repeat(6,minmax(0,1fr))}
+.ex-f .ib-ph{grid-column:span 2}
+.ex-f .ib-ph:first-child{grid-column:span 4;grid-row:span 2;aspect-ratio:auto}
+.ex-f .ib-ph:nth-child(n+4){grid-column:span 3;aspect-ratio:16/9}
+.ex-grid .ib-ph img{width:100%;height:100%;object-fit:cover}
+.ex-empty{margin:0;padding:clamp(40px,6vw,72px) 20px;border-radius:14px;border:1px dashed var(--line-2);text-align:center;font-size:14px;color:var(--ink-2)}
+.ex-grid:not(:empty)+.ex-empty{display:none}
+@media (max-width:760px){ .ex-grid,.ex-grid.ex-f{grid-template-columns:repeat(2,minmax(0,1fr))} .ex-f .ib-ph,.ex-f .ib-ph:nth-child(n+4){grid-column:auto;aspect-ratio:4/3} .ex-f .ib-ph:first-child{grid-column:1/-1;grid-row:auto;aspect-ratio:4/3} .ex-yr b{font-size:20px} .ex-yr small{display:none} }
 .sn-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
 .sn-c{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px 16px;align-items:center;padding:22px;border-radius:16px;background:#fff;box-shadow:0 0 0 1px var(--line);color:inherit;text-decoration:none;transition:transform .35s var(--ease),box-shadow .35s}
 a.sn-c:hover{transform:translateY(-3px);box-shadow:0 0 0 1.5px var(--brand),0 24px 44px -28px rgba(0,71,171,.4)}
@@ -4950,7 +4977,13 @@ go(0);})();
     <div class="ib-gal"><button class="ib-ph" type="button" data-ib-lb="showcase" aria-label="Sustainability in Action 패널과 제품 쇼케이스 월 크게 보기"><img src="assets/ibc/showcase.webp" alt="Sustainability in Action 패널과 제품 쇼케이스 월" loading="lazy" decoding="async"><span class="tg">Showcase Wall</span></button><button class="ib-ph" type="button" data-ib-lb="corner2" aria-label="부스 코너 — KAON GROUP 패널과 Connected Home 패널 크게 보기"><img src="assets/ibc/corner2.webp" alt="부스 코너 — KAON GROUP 패널과 Connected Home 패널" loading="lazy" decoding="async"><span class="tg">Corner Panels</span></button><button class="ib-ph" type="button" data-ib-lb="bar2" aria-label="KAON BAR와 미팅룸 크게 보기"><img src="assets/ibc/bar2.webp" alt="KAON BAR와 미팅룸" loading="lazy" decoding="async"><span class="tg">KAON BAR</span></button></div>
   </div></div>
 
-  <section class="ib-sec"><div class="wrap"><div class="c">
+  <section class="ib-sec ex-sec"><div class="wrap"><div class="c">
+    <div class="ex-top"><div><span class="no">00 — Archive</span><h3>해마다 이어 온 전시</h3></div><p>연도를 누르면 그해 참가한 전시의 부스와 그래픽을 볼 수 있습니다.</p></div>
+    <div class="ex-yr" role="tablist" aria-label="연도별 전시"><button type="button" role="tab" id="ex-t2026" aria-controls="ex-p2026" aria-selected="true" data-y="2026"><b>2026</b><small>IBC · Amsterdam</small></button><button type="button" role="tab" id="ex-t2025" aria-controls="ex-p2025" aria-selected="false" data-y="2025"><b>2025</b><small>&nbsp;</small></button><button type="button" role="tab" id="ex-t2024" aria-controls="ex-p2024" aria-selected="false" data-y="2024"><b>2024</b><small>&nbsp;</small></button><button type="button" role="tab" id="ex-t2023" aria-controls="ex-p2023" aria-selected="false" data-y="2023"><b>2023</b><small>&nbsp;</small></button><button type="button" role="tab" id="ex-t2022" aria-controls="ex-p2022" aria-selected="false" data-y="2022"><b>2022</b><small>&nbsp;</small></button></div>
+    <div class="ex-pn" role="tabpanel" id="ex-p2026" aria-labelledby="ex-t2026" data-y="2026"><div class="ex-hd"><b>IBC 2026</b><span>Amsterdam · RAI · Hall 1</span><a href="#ib-kv" class="ex-more">아래에서 자세히 보기 ↓</a></div><div class="ex-grid ex-f"><button class="ib-ph" type="button" data-ib-lb="booth" aria-label="IBC KAON 부스 전경 크게 보기"><img src="assets/ibc/booth2.webp" alt="IBC KAON 부스 전경" loading="lazy" decoding="async"><span class="tg">Booth</span></button><button class="ib-ph" type="button" data-ib-lb="keywall" aria-label="KAON 키비주얼 월 크게 보기"><img src="assets/ibc/keywall.webp" alt="KAON 키비주얼 월" loading="lazy" decoding="async"><span class="tg">Key Visual Wall</span></button><button class="ib-ph" type="button" data-ib-lb="showcase" aria-label="Sustainability 패널과 쇼케이스 월 크게 보기"><img src="assets/ibc/showcase.webp" alt="Sustainability 패널과 쇼케이스 월" loading="lazy" decoding="async"><span class="tg">Showcase Wall</span></button><button class="ib-ph" type="button" data-ib-lb="corner2" aria-label="부스 코너 패널 크게 보기"><img src="assets/ibc/corner2.webp" alt="부스 코너 패널" loading="lazy" decoding="async"><span class="tg">Corner Panels</span></button><button class="ib-ph" type="button" data-ib-lb="bar2" aria-label="KAON BAR와 미팅룸 크게 보기"><img src="assets/ibc/bar2.webp" alt="KAON BAR와 미팅룸" loading="lazy" decoding="async"><span class="tg">KAON BAR</span></button></div></div><div class="ex-pn" role="tabpanel" id="ex-p2025" aria-labelledby="ex-t2025" data-y="2025" hidden><div class="ex-hd"><b>2025</b><span></span></div><div class="ex-grid"></div><p class="ex-empty">2025년 전시 사진을 정리하고 있습니다.</p></div><div class="ex-pn" role="tabpanel" id="ex-p2024" aria-labelledby="ex-t2024" data-y="2024" hidden><div class="ex-hd"><b>2024</b><span></span></div><div class="ex-grid"></div><p class="ex-empty">2024년 전시 사진을 정리하고 있습니다.</p></div><div class="ex-pn" role="tabpanel" id="ex-p2023" aria-labelledby="ex-t2023" data-y="2023" hidden><div class="ex-hd"><b>2023</b><span></span></div><div class="ex-grid"></div><p class="ex-empty">2023년 전시 사진을 정리하고 있습니다.</p></div><div class="ex-pn" role="tabpanel" id="ex-p2022" aria-labelledby="ex-t2022" data-y="2022" hidden><div class="ex-hd"><b>2022</b><span></span></div><div class="ex-grid"></div><p class="ex-empty">2022년 전시 사진을 정리하고 있습니다.</p></div>
+  </div></div></section>
+
+  <section class="ib-sec" id="ib-kv"><div class="wrap"><div class="c">
     <div class="ib-two">
       <button class="ib-ph " type="button" data-ib-lb="keywall" aria-label="KAON 키비주얼 월 — 도시와 강이 이어지는 파노라마 위의 KAON 로고와 CONNECTED+ 크게 보기"><img src="assets/ibc/keywall.webp" alt="KAON 키비주얼 월 — 도시와 강이 이어지는 파노라마 위의 KAON 로고와 CONNECTED+" loading="lazy" decoding="async"><span class="tg">Key Visual Wall</span></button>
       <div class="ib-tx"><span class="no">01 — Key Visual</span><h3>복도에서 먼저 읽히는 한 장의 풍경</h3><p>강과 도시, 태양광·풍력 단지가 하나로 이어지는 파노라마 위에 KAON 로고와 "CONNECTED+ | Connecting what truly matters"를 올렸습니다. 연결된 도시 풍경 자체가 슬로건의 뜻을 보여 주도록 구성했습니다.</p>
@@ -5472,6 +5505,12 @@ addArt(document.querySelector('[data-banner]'),'banner',null);
   let drag=null; box.addEventListener('pointerdown',e=>{ if(e.target.closest('.gl-re')) return; drag={x:e.clientX,y:e.clientY,lo:cam.lo,la:cam.la}; box.setPointerCapture(e.pointerId); });
   box.addEventListener('pointermove',e=>{ if(!drag) return; const k=90/(Math.min(W,H)*.4*cam.z); cam.lo=drag.lo-(e.clientX-drag.x)*k; cam.la=Math.max(-60,Math.min(70,drag.la+(e.clientY-drag.y)*k)); manual=2.2; if(RM) draw(); });
   const up=()=>{drag=null;}; box.addEventListener('pointerup',up); box.addEventListener('pointercancel',up);
+})();
+
+(()=>{ const pg=document.getElementById('pg-ibc'); if(!pg) return; const tabs=[...pg.querySelectorAll('.ex-yr [role=tab]')];
+  const sel=t=>{ tabs.forEach(x=>x.setAttribute('aria-selected',String(x===t))); pg.querySelectorAll('.ex-pn').forEach(p=>p.hidden=p.dataset.y!==t.dataset.y); };
+  tabs.forEach((t,i)=>{ t.addEventListener('click',()=>sel(t)); t.addEventListener('keydown',e=>{ const d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0; if(!d) return; e.preventDefault(); const n=tabs[(i+d+tabs.length)%tabs.length]; n.focus(); sel(n); }); });
+  const mo=pg.querySelector('.ex-more'); if(mo) mo.addEventListener('click',e=>{ e.preventDefault(); e.stopPropagation(); document.getElementById('ib-kv').scrollIntoView({behavior:'smooth',block:'start'}); });
 })();
 /* 애니메이션 루프 — 화면에 보이는 캔버스만 그림 */
 if('IntersectionObserver' in window){
