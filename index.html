@@ -1207,6 +1207,39 @@ a.tl-card:hover{transform:translateY(-3px);box-shadow:0 0 0 1.5px #2F6BE0,0 26px
 .ex-empty{margin:0;padding:clamp(40px,6vw,72px) 20px;border-radius:14px;border:1px dashed var(--line-2);text-align:center;font-size:14px;color:var(--ink-2)}
 .ex-grid:not(:empty)+.ex-empty{display:none}
 @media (max-width:760px){ .ex-grid,.ex-grid.ex-f{grid-template-columns:repeat(2,minmax(0,1fr))} .ex-f .ib-ph,.ex-f .ib-ph:nth-child(n+4){grid-column:auto;aspect-ratio:4/3} .ex-f .ib-ph:first-child{grid-column:1/-1;grid-row:auto;aspect-ratio:4/3} .ex-yr b{font-size:20px} .ex-yr small{display:none} }
+#pg-robo .pg-title{font-size:clamp(46px,7.4vw,124px)}
+.rb-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--ink);margin-bottom:24px}
+.rb-tabs button{all:unset;cursor:pointer;display:grid;gap:4px;padding:16px 4px 14px;border-bottom:1px solid var(--line);position:relative}
+.rb-tabs button::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:#F2501F;transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.rb-tabs button[aria-selected=true]::after{transform:none}
+.rb-tabs b{font-size:clamp(22px,2.6vw,36px);font-weight:600;letter-spacing:-.04em;color:#BDBDBD;transition:color .3s}
+.rb-tabs button[aria-selected=true] b,.rb-tabs button:hover b{color:var(--ink)}
+.rb-tabs small{font-size:12px;color:var(--ink-2)}
+.rb-tabs button:focus-visible{outline:2px solid #F2501F;outline-offset:2px}
+.rb-stage{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:center;padding:clamp(24px,4vw,56px);border-radius:18px;background:radial-gradient(90% 120% at 30% 40%,#fff,#EDEEF0);box-shadow:0 0 0 1px var(--line)}
+.rb-card{all:unset;cursor:pointer;justify-self:center;width:min(440px,100%);aspect-ratio:1413/2000;perspective:1600px}
+.rb-in{position:relative;display:block;width:100%;height:100%;transform-style:preserve-3d;transition:transform .9s cubic-bezier(.5,.05,.25,1)}
+.rb-card.flip .rb-in{transform:rotateY(180deg)}
+.rb-in img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:4px;backface-visibility:hidden;box-shadow:0 30px 60px -30px rgba(0,0,0,.45),0 0 0 1px rgba(0,0,0,.05)}
+.rb-in .rb-b{transform:rotateY(180deg)}
+.rb-card.one{cursor:zoom-in}
+.rb-card:focus-visible{outline:2px solid #F2501F;outline-offset:6px;border-radius:6px}
+.rb-info{display:grid;gap:10px;align-content:center}
+.rb-side{justify-self:start;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:#F2501F;padding:6px 11px;border-radius:99px}
+.rb-info h4{margin:6px 0 0;font-size:clamp(40px,5vw,76px);font-weight:700;letter-spacing:-.05em;line-height:.95}
+.rb-info small{font-size:14px;color:var(--ink-2)}
+.rb-info p{margin:8px 0 0;font-size:14px;line-height:1.75;color:var(--ink-2);max-width:30em}
+.rb-ctl{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.rb-ctl button{all:unset;cursor:pointer;font-size:13px;font-weight:500;padding:11px 18px;border-radius:99px;background:#fff;box-shadow:0 0 0 1px var(--line);transition:background .3s,color .3s}
+.rb-ctl button:hover{background:var(--ink);color:#fff}
+.rb-ctl button[disabled]{opacity:.35;pointer-events:none}
+.rb-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.rb-th{all:unset;cursor:zoom-in;display:grid;gap:8px}
+.rb-th img{width:100%;aspect-ratio:1413/2000;object-fit:cover;border-radius:4px;box-shadow:0 0 0 1px var(--line),0 14px 30px -22px rgba(0,0,0,.4);transition:transform .5s var(--ease)}
+.rb-th:hover img{transform:translateY(-4px)}
+.rb-th span{font-size:12px;color:var(--ink-2)}
+@media (max-width:900px){ .rb-stage{grid-template-columns:minmax(0,1fr)} .rb-grid{grid-template-columns:repeat(3,minmax(0,1fr))} .rb-tabs small{display:none} }
+@media (max-width:560px){ .rb-grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
 .sn-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
 .sn-c{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px 16px;align-items:center;padding:22px;border-radius:16px;background:#fff;box-shadow:0 0 0 1px var(--line);color:inherit;text-decoration:none;transition:transform .35s var(--ease),box-shadow .35s}
 a.sn-c:hover{transform:translateY(-3px);box-shadow:0 0 0 1.5px var(--brand),0 24px 44px -28px rgba(0,71,171,.4)}
@@ -5240,6 +5273,54 @@ go(0);})();
   </div></div></section>
 </div>
 
+<div class="case page" id="pg-robo" role="dialog" aria-modal="true" aria-labelledby="prb-title" hidden>
+  <div class="case-top wrap"><div class="c"><span class="label">Project — KAON ROBOTICS · Exhibition Leaflet</span><button class="closeb" type="button" data-close>닫기 ✕</button></div></div>
+  <div class="wrap"><div class="c">
+    <header class="pg-head">
+      <h2 class="pg-title" id="prb-title">KAON ROBOTICS Leaflets</h2>
+      <div class="pg-meta"><span><b>ROBOTWORLD</b> · 가온로보틱스 (가온그룹 계열사)</span><span>Product Leaflet · Editorial Design</span><span>A4 · MARS · RODY · RODY 2</span></div>
+    </header>
+    <div class="pg-intro"><span class="label">About this project</span><p class="pg-lead">가온그룹 계열사 <b>가온로보틱스</b>가 로보월드 전시회에서 배포한 제품 리플렛입니다. 모듈형 서비스 로봇 <b>MARS</b>, 자율주행 배송 로봇 <b>RODY</b>와 <b>RODY 2</b>를 한 장씩 소개하는 A4 시리즈로, 로봇을 실제 사용 공간에 세운 대형 비주얼과 오른쪽 특징 목록, 아래 세부 기능 카드라는 같은 틀을 세 제품에 맞춰, 부스에서 여러 장을 함께 받아도 하나의 시리즈로 읽히게 디자인했습니다.</p></div>
+    <dl class="ix-stats">
+      <div><dt>Products</dt><dd>3<br><small>MARS · RODY · RODY 2</small></dd></div>
+      <div><dt>Pages</dt><dd>5<br><small>A4 앞·뒷면</small></dd></div>
+      <div><dt>Event</dt><dd>ROBOTWORLD<br><small>전시 부스 배포용</small></dd></div>
+      <div><dt>Scope</dt><dd>Leaflet<br><small>편집 디자인 · 제품 비주얼</small></dd></div>
+    </dl>
+  </div></div>
+
+  <section class="cl-sec"><div class="wrap"><div class="c">
+    <div class="cl-h"><span class="no" style="color:#F2501F">01 — Leaflet Viewer</span><h3>한 장씩 넘겨 보는 리플렛</h3><p>제품을 고르고, 리플렛을 누르면 앞면과 뒷면이 뒤집힙니다. 돋보기 버튼으로 크게 볼 수 있습니다.</p></div>
+    <div class="rb-v" id="rb-v">
+      <div class="rb-tabs" role="tablist" aria-label="제품 선택"><button type="button" role="tab" data-p="rody2" aria-selected="true"><b>RODY 2</b><small>Physical AI 기반 자율주행 실내 서비스 로봇</small></button><button type="button" role="tab" data-p="rody" aria-selected="false"><b>RODY</b><small>자율주행 실내 배송 서비스 로봇</small></button><button type="button" role="tab" data-p="mars" aria-selected="false"><b>MARS</b><small>모듈형 실내 서비스 로봇</small></button></div>
+      <div class="rb-stage">
+        <button type="button" class="rb-card" id="rb-card" aria-label="리플렛 뒤집기"><span class="rb-in"><img class="rb-f" alt=""><img class="rb-b" alt=""></span></button>
+        <div class="rb-info"><span class="rb-side" id="rb-side">Front</span><h4 id="rb-n"></h4><small id="rb-sub"></small><p id="rb-d"></p>
+          <div class="rb-ctl"><button type="button" id="rb-flip">뒷면 보기 ↻</button><button type="button" id="rb-zoom">크게 보기 ⤢</button></div></div>
+      </div>
+    </div>
+  </div></div></section>
+
+  <section class="cl-sec"><div class="wrap"><div class="c">
+    <div class="cl-h"><span class="no" style="color:#F2501F">02 — Series System</span><h3>세 제품, 하나의 틀</h3><p>어느 리플렛을 펼쳐도 같은 순서로 읽히도록 공통 규칙을 세웠습니다.</p></div>
+    <ul class="sn-role">
+      <li><b>헤드라인 위계</b>회색 KAON ROBOTICS와 검정 제품명을 위아래로 쌓아, 회사와 제품이 한눈에 구분되게 했습니다.</li>
+      <li><b>공간 연출 비주얼</b>로봇을 매장·로비·라운지 같은 실제 사용 공간에 세워, 어디서 쓰는 로봇인지 먼저 보이게 했습니다.</li>
+      <li><b>오른쪽 특징 목록</b>오렌지 태그와 점선 구분선으로 주요 특징을 같은 리듬으로 나열했습니다.</li>
+      <li><b>하단 기능 카드</b>모듈 구조·환기·도착 알림 같은 세부 기능을 클로즈업 이미지 카드로 정리하고, 뒷면은 솔루션·사양표·연락처 띠로 마무리했습니다.</li>
+    </ul>
+  </div></div></section>
+
+  <section class="cl-sec"><div class="wrap"><div class="c">
+    <div class="cl-h"><span class="no" style="color:#F2501F">03 — All Pages</span><h3>전체 페이지</h3><p>이미지를 누르면 크게 볼 수 있습니다.</p></div>
+    <div class="rb-grid"><button class="rb-th" type="button" data-rb-lb="rody2-f" aria-label="KAON ROBOTICS RODY 2 리플렛 — 앞면 크게 보기"><img src="assets/robo/rody2-f.webp" alt="KAON ROBOTICS RODY 2 리플렛 — 앞면" loading="lazy" decoding="async"><span>RODY 2 Leaflet · Front</span></button><button class="rb-th" type="button" data-rb-lb="rody2-b" aria-label="KAON ROBOTICS RODY 2 리플렛 — 뒷면 크게 보기"><img src="assets/robo/rody2-b.webp" alt="KAON ROBOTICS RODY 2 리플렛 — 뒷면" loading="lazy" decoding="async"><span>RODY 2 Leaflet · Back</span></button><button class="rb-th" type="button" data-rb-lb="rody-f" aria-label="KAON ROBOTICS RODY 리플렛 — 앞면 크게 보기"><img src="assets/robo/rody-f.webp" alt="KAON ROBOTICS RODY 리플렛 — 앞면" loading="lazy" decoding="async"><span>RODY Leaflet · Front</span></button><button class="rb-th" type="button" data-rb-lb="rody-b" aria-label="KAON ROBOTICS RODY 리플렛 — 뒷면 크게 보기"><img src="assets/robo/rody-b.webp" alt="KAON ROBOTICS RODY 리플렛 — 뒷면" loading="lazy" decoding="async"><span>RODY Leaflet · Back</span></button><button class="rb-th" type="button" data-rb-lb="mars-f" aria-label="KAON ROBOTICS MARS 리플렛 — 앞면 크게 보기"><img src="assets/robo/mars-f.webp" alt="KAON ROBOTICS MARS 리플렛 — 앞면" loading="lazy" decoding="async"><span>MARS Leaflet · Front</span></button></div>
+  </div></div></section>
+
+  <div class="wrap"><div class="c">
+    <div class="pg-end"><span>KAON ROBOTICS Leaflets — ROBOTWORLD</span><button class="link" type="button" data-close>메인으로 돌아가기 ↗</button></div>
+  </div></div>
+</div>
+
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="작품 크게 보기" hidden>
   <figure class="lb-fig"><img id="lb-img" alt=""><figcaption><span id="lb-cap"></span><span id="lb-pos"></span></figcaption></figure>
   <button class="lb-btn lb-x" type="button" id="lb-x" aria-label="닫기">✕</button>
@@ -5408,6 +5489,9 @@ const WORKS=[
   {title:'KAON Global Exhibitions', page:'ibc', img:'assets/ibc/thumb.webp?v=2', sub:'KAON GROUP', tag:'Exhibition · AI Wall Graphics', period:'2021 — 현재', cat:['brand','ai'], scene:4,
    kr:'IBC·MWC·BBWF 등 글로벌 전시 부스 그래픽 — 대표 사례 IBC 2026 (CONNECTED+)', role:'전시 부스 그래픽 디자인 · AI 이미지 제작', client:'가온그룹', tools:'Google AI Studio, ChatGPT, Illustrator',
    kpis:[], ch:'', ap:'', out:''},
+  {title:'KAON ROBOTICS Leaflets', page:'robo', img:'assets/robo/thumb.webp', sub:'KAON GROUP', tag:'Exhibition · Product Leaflet', period:'ROBOTWORLD', cat:['brand','content'], scene:3,
+   kr:'가온로보틱스 로보월드 전시 배포용 서비스 로봇 리플렛 시리즈 — MARS · RODY · RODY 2', role:'리플렛 편집 디자인', client:'가온로보틱스', tools:'Illustrator, Photoshop',
+   kpis:[], ch:'', ap:'', out:''},
   {title:'KAON GROUP CI', page:'kaonci', img:'assets/kaonci/thumb.webp?v=5', sub:'KAON GROUP', tag:'CI · Guideline', period:'2025', cat:['brand'], scene:4,
    kr:'그룹사·계열사 2곳(BROADBAND·ROBOTICS) 통합 CI와 가이드라인', role:'Brand Designer', client:'가온그룹', tools:'Illustrator, Photoshop',
    kpis:[], ch:'', ap:'', out:''},
@@ -5464,13 +5548,13 @@ const WORKS=[
 const JOURNEY=[
   {co:'가온그룹 (KAON GROUP)', grp:'ft', page:'kaon', logo:'assets/logos/kaon.png', wide:1, date:'2021.09 — 현재 · 5년 2개월', role:'Corporate실 마케팅팀 매니저 / Visual Contents Designer', tags:['AI Workflow','Brand · IP'], w:0,
    pts:['AI 뉴스 대시보드(리서치 시간 약 80%↓)와 사내 AI 콘텐츠 플랫폼 KAON Content Agent 기획·구축·운영','그룹 캐릭터 IP 가온 프렌즈 5종 기획·디자인, 저작권 5건 등록','CI·BI 4건 개발·리뉴얼, IBC·MWC·BBWF 글로벌 전시 6회 이상 총괄','LinkedIn·YouTube·Facebook·X 공식 채널 콘텐츠 기획·운영']},
-  {co:'이공이공 (Egongegong)', grp:'ft', logo:'assets/logos/egong.png?v=2', dark:1, full:1, date:'2021.01 — 2021.09 · 9개월', role:'마케팅본부 리브랜딩팀 · 리브랜딩 디자이너 (초기 멤버)', tags:['E-commerce','Localization'], w:15,
+  {co:'이공이공 (Egongegong)', grp:'ft', logo:'assets/logos/egong.png?v=2', dark:1, full:1, date:'2021.01 — 2021.09 · 9개월', role:'마케팅본부 리브랜딩팀 · 리브랜딩 디자이너 (초기 멤버)', tags:['E-commerce','Localization'], w:16,
    pts:['국내 브랜드 약 10개사 아마존 북미 입점용 디자인','이미지 A/B 개선으로 CTR 약 15%·CVR 약 10% 향상','제품 콘셉트 촬영 기획·디렉팅, 프리랜서 디자이너 관리']},
-  {co:'한국암웨이 (Amway Korea)', grp:'ft', logo:'assets/logos/amway.png', wide:1, date:'2018.03 — 2020.03 · 2년', role:'R&D 아시아 이노베이션센터 · 산업디자이너', tags:['Industrial','Package'], w:19, page:'amway',
+  {co:'한국암웨이 (Amway Korea)', grp:'ft', logo:'assets/logos/amway.png', wide:1, date:'2018.03 — 2020.03 · 2년', role:'R&D 아시아 이노베이션센터 · 산업디자이너', tags:['Industrial','Package'], w:20, page:'amway',
    pts:['아티스트리·앳모스피어 신제품 기획·디자인·개발','스마트 디퓨저 디자인권 등록 (제30-1007738호)','오픈 이노베이션 컨셉 3건 채택, 자재·패키징 원가 약 5% 절감']},
-  {co:'LinkFit', grp:'fl', logo:'assets/logos/linkfit.png?v=2', dark:1, date:'2025.03 — · Side Project', role:'사이드 프로젝트 · 프로덕트 디자이너 & 서비스 기획자', tags:['Product','Planning'], w:13, page:'linkfit', imgs:['assets/linkfit/app/04.webp','assets/linkfit/app/13.webp','assets/linkfit/app/20.webp'],
+  {co:'LinkFit', grp:'fl', logo:'assets/logos/linkfit.png?v=2', dark:1, date:'2025.03 — · Side Project', role:'사이드 프로젝트 · 프로덕트 디자이너 & 서비스 기획자', tags:['Product','Planning'], w:14, page:'linkfit', imgs:['assets/linkfit/app/04.webp','assets/linkfit/app/13.webp','assets/linkfit/app/20.webp'],
    pts:['시간 단위 헬스장 예약 앱의 서비스 플로우 설계와 화면기획서 작성, UIUX 디자인','결제 조회·환불 권한을 분리한 파트너 어드민 대시보드 설계','BI·앱 디자인 시스템, 랜딩페이지, GA4·UTM 성과 측정 체계']},
-  {co:'ARBAIM (greyd)', grp:'fl', logo:'assets/logos/greyd.png', page:'greyd', date:'2022.07 — 2024.08 · Side Project', role:'사이드 프로젝트 · 크리에이티브 디렉터 & UIUX 디자이너', tags:['UIUX','Ads'], w:14,
+  {co:'ARBAIM (greyd)', grp:'fl', logo:'assets/logos/greyd.png', page:'greyd', date:'2022.07 — 2024.08 · Side Project', role:'사이드 프로젝트 · 크리에이티브 디렉터 & UIUX 디자이너', tags:['UIUX','Ads'], w:15,
    pts:['핵심 기능 서비스 플로우·화면 설계 주도, 특허 확보에 기획자로 참여','플랫폼 브랜딩 및 앱·웹사이트 UIUX 설계','메타·구글 광고 집행 (월 약 100만원, ROAS 약 200%)']},
   {co:'Design Internships', grp:'ed', logos:['assets/logos/karim-rashid.png','assets/logos/david-weeks.png','assets/logos/boconcept.svg','assets/logos/designmu.png?v=2','assets/logos/nepplus.png'], studios:[['Karim Rashid','karim-rashid.png'],['Stephen Burks Man Made',''],['David Weeks Studio','david-weeks.png'],['BoConcept','boconcept.svg'],['Design MU','designmu.png'],['Nep Plus','nepplus.png']], date:'2014.06 — 2017.03 · 6곳', role:'Karim Rashid · Stephen Burks · David Weeks · BoConcept · Design MU · Nep Plus', tags:['Product','Furniture'], w:null, page:'internship', imgs:['assets/intern/ottawa-wall.webp','assets/intern/toot-interior.webp','assets/intern/toot-product.webp'],
    pts:['Karim Rashid Inc. — BoConcept·Kundalini 등 클라이언트 프로젝트 3D 모델링·렌더링','Stephen Burks Man Made — Art Basel 2016 Miami Beach 설치 공간 3D 데이터·프로토타입','David Weeks Studio — 조명 프로토타이핑, ICFF 기간 회사 전시 운영','Design MU · Nep Plus (서울) — 현대자동차, Carrier, Winix 제품 디자인 참여']},
@@ -5482,7 +5566,7 @@ const JOURNEY=[
 const DISC_C={product:'#2F6BFF',brand:'#FF7B0F',platform:'#B5E000',ai:'#8B5CF6',character:'#FF6FA5',content:'#14B8A6',graphic:'#F2C200'};
 const DISC={'KAON News Dashboard':['AI Platform','ai'],'KAON Content Agent':['AI Platform','ai'],'AI Content Production':['AI Content','ai'],
  'KAON Friends':['Character IP','character'],'KAON Friends 3D Guidelines':['Character IP','character'],'KAON ESG Campaign Goods':['Goods Design','graphic'],
- 'KAON Friends 2027 Calendar':['Graphic Design','graphic'],'KAON 2026 Corporate Calendar':['Graphic Design','graphic'],'KAON Global Exhibitions':['Exhibition Design','graphic'],'KAON GROUP CI':['Brand Identity','brand'],
+ 'KAON Friends 2027 Calendar':['Graphic Design','graphic'],'KAON 2026 Corporate Calendar':['Graphic Design','graphic'],'KAON Global Exhibitions':['Exhibition Design','graphic'],'KAON ROBOTICS Leaflets':['Editorial Design','graphic'],'KAON GROUP CI':['Brand Identity','brand'],
  'KAON Stationery':['Brand Identity','brand'],'K-FutureTech Branding':['Brand Identity','brand'],'dk. Personal Identity':['Brand Identity','brand'],
  'LinkFit':['Platform · App','platform'],'greyd':['Platform · App','platform'],'Amazon Localization':['E-commerce','content'],
  'Artistry Derma Eye':['Product Design','product'],'Plutonium':['Product Design','product'],'Atmosphere Air Mask':['Product Design','product'],
@@ -5656,6 +5740,7 @@ addArt(document.querySelector('[data-banner]'),'banner',null);
   }
   if('IntersectionObserver' in window && !RM){ const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ const t=c.querySelector('.hpk-t[data-l="'+c.dataset.l+'"]'); t.classList.remove('in'); void t.offsetWidth; t.classList.add('in'); } }),{threshold:.4}); io.observe(c); }
 })();
+
 /* 애니메이션 루프 — 화면에 보이는 캔버스만 그림 */
 if('IntersectionObserver' in window){
   const io=new IntersectionObserver(es=>es.forEach(e=>{const a=arts.find(x=>x.canvas===e.target); if(a) a.vis=e.isIntersecting;}),{rootMargin:'100px'});
@@ -5765,7 +5850,7 @@ document.getElementById('c-rel').addEventListener('click',e=>{ e.preventDefault(
 addEventListener('keydown',e=>{if(e.key==='Escape'&&!caseEl.hidden) closeCase();});
 
 /* ---------- 서브 페이지 (#university, #internship) ---------- */
-const PAGES={university:document.getElementById('pg-university'),internship:document.getElementById('pg-internship'),linkfit:document.getElementById('pg-linkfit'),windmate:document.getElementById('pg-windmate'),panastove:document.getElementById('pg-panastove'),kfuturetech:document.getElementById('pg-kfuturetech'),human:document.getElementById('pg-human'),magus:document.getElementById('pg-magus'),jandi:document.getElementById('pg-jandi'),kaonci:document.getElementById('pg-kaonci'),kf3d:document.getElementById('pg-kf3d'),dklogo:document.getElementById('pg-dklogo'),keycap:document.getElementById('pg-keycap'),agent:document.getElementById('pg-agent'),dermaeye:document.getElementById('pg-dermaeye'),plutonium:document.getElementById('pg-plutonium'),amway:document.getElementById('pg-amway'),airmask:document.getElementById('pg-airmask'),kaonsns:document.getElementById('pg-kaonsns'),greyd:document.getElementById('pg-greyd'),garage:document.getElementById('pg-garage'),ibc:document.getElementById('pg-ibc'),calendar:document.getElementById('pg-calendar'),cal26:document.getElementById('pg-cal26'),kaon:document.getElementById('pg-kaon'),stationery:document.getElementById('pg-stationery')};
+const PAGES={university:document.getElementById('pg-university'),internship:document.getElementById('pg-internship'),linkfit:document.getElementById('pg-linkfit'),windmate:document.getElementById('pg-windmate'),panastove:document.getElementById('pg-panastove'),kfuturetech:document.getElementById('pg-kfuturetech'),human:document.getElementById('pg-human'),magus:document.getElementById('pg-magus'),jandi:document.getElementById('pg-jandi'),kaonci:document.getElementById('pg-kaonci'),kf3d:document.getElementById('pg-kf3d'),dklogo:document.getElementById('pg-dklogo'),keycap:document.getElementById('pg-keycap'),agent:document.getElementById('pg-agent'),dermaeye:document.getElementById('pg-dermaeye'),plutonium:document.getElementById('pg-plutonium'),amway:document.getElementById('pg-amway'),airmask:document.getElementById('pg-airmask'),kaonsns:document.getElementById('pg-kaonsns'),greyd:document.getElementById('pg-greyd'),garage:document.getElementById('pg-garage'),ibc:document.getElementById('pg-ibc'),calendar:document.getElementById('pg-calendar'),robo:document.getElementById('pg-robo'),cal26:document.getElementById('pg-cal26'),kaon:document.getElementById('pg-kaon'),stationery:document.getElementById('pg-stationery')};
 function goPage(k){ history.pushState({fromSite:true},'','#'+k); route(); }
 let pageReturn=null;
 function showPage(el){
@@ -5788,7 +5873,7 @@ function route(){
 }
 function leavePage(){ if(history.state&&history.state.fromSite){ history.back(); } else { history.replaceState(null,'',location.pathname+location.search+'#archive'); route(); } }
 document.addEventListener('click',e=>{
-  const a=e.target.closest('a[href="#university"],a[href="#internship"],a[href="#linkfit"],a[href="#windmate"],a[href="#panastove"],a[href="#kfuturetech"],a[href="#human"],a[href="#magus"],a[href="#jandi"],a[href="#kaonci"],a[href="#kaon"],a[href="#stationery"],a[href="#calendar"],a[href="#cal26"],a[href="#ibc"],a[href="#keycap"],a[href="#agent"],a[href="#dermaeye"],a[href="#plutonium"],a[href="#amway"],a[href="#airmask"],a[href="#kaonsns"],a[href="#greyd"],a[href="#garage"],a[href="#dklogo"],a[href="#kf3d"]'); if(!a) return;
+  const a=e.target.closest('a[href="#university"],a[href="#internship"],a[href="#linkfit"],a[href="#windmate"],a[href="#panastove"],a[href="#kfuturetech"],a[href="#human"],a[href="#magus"],a[href="#jandi"],a[href="#kaonci"],a[href="#kaon"],a[href="#stationery"],a[href="#calendar"],a[href="#robo"],a[href="#cal26"],a[href="#ibc"],a[href="#keycap"],a[href="#agent"],a[href="#dermaeye"],a[href="#plutonium"],a[href="#amway"],a[href="#airmask"],a[href="#kaonsns"],a[href="#greyd"],a[href="#garage"],a[href="#dklogo"],a[href="#kf3d"]'); if(!a) return;
   e.preventDefault(); history.pushState({fromSite:true},'',a.getAttribute('href')); route();
 });
 document.querySelectorAll('.page [data-close]').forEach(b=>b.addEventListener('click',leavePage));
@@ -6326,6 +6411,24 @@ addEventListener('keydown',e=>{ if(lb.hidden) return; if(e.key==='Escape'){e.sto
   if('IntersectionObserver' in window) new IntersectionObserver(es=>{ vis=es[0].isIntersecting; },{root:pg,threshold:.35}).observe(dk); else vis=true;
   setInterval(()=>{ if(pg.hidden||document.hidden) return; if(hold>0){ hold-=1; return; } if(auto&&vis&&!busy){ hold=3; go(cur+1); } },1000);
 })();
+(()=>{ const pg=document.getElementById('pg-robo'); if(!pg) return; const E=[{"k": "rody2-f", "src": "assets/robo/rody2-f.webp", "alt": "KAON ROBOTICS RODY 2 리플렛 — 앞면", "cap": "KAON ROBOTICS — RODY 2 Leaflet · Front", "g": "robo"}, {"k": "rody2-b", "src": "assets/robo/rody2-b.webp", "alt": "KAON ROBOTICS RODY 2 리플렛 — 뒷면", "cap": "KAON ROBOTICS — RODY 2 Leaflet · Back", "g": "robo"}, {"k": "rody-f", "src": "assets/robo/rody-f.webp", "alt": "KAON ROBOTICS RODY 리플렛 — 앞면", "cap": "KAON ROBOTICS — RODY Leaflet · Front", "g": "robo"}, {"k": "rody-b", "src": "assets/robo/rody-b.webp", "alt": "KAON ROBOTICS RODY 리플렛 — 뒷면", "cap": "KAON ROBOTICS — RODY Leaflet · Back", "g": "robo"}, {"k": "mars-f", "src": "assets/robo/mars-f.webp", "alt": "KAON ROBOTICS MARS 리플렛 — 앞면", "cap": "KAON ROBOTICS — MARS Leaflet · Front", "g": "robo"}], D={"rody2": {"n": "RODY 2", "sub": "Physical AI 기반 자율주행 실내 서비스 로봇", "d": "다중 도어 밀폐식 배송 시스템과 진동 스피커 도착 알림을 앞면에, 호텔·병원 활용 장면과 통합관제 롬니 연동, 사양표를 뒷면에 담았습니다.", "pg": ["assets/robo/rody2-f.webp", "assets/robo/rody2-b.webp"], "k": ["rody2-f", "rody2-b"]}, "rody": {"n": "RODY", "sub": "자율주행 실내 배송 서비스 로봇", "d": "HARDWARE 앞면에는 보안 배송·안전 주행·고속 충전 같은 하드웨어 특징을, SOFTWARE 뒷면에는 다중 로봇 운영과 엘리베이터 연동 등 4가지 솔루션을 정리했습니다.", "pg": ["assets/robo/rody-f.webp", "assets/robo/rody-b.webp"], "k": ["rody-f", "rody-b"]}, "mars": {"n": "MARS", "sub": "모듈형 실내 서비스 로봇", "d": "구동부는 그대로 두고 응용부만 바꿔 광고·배송·안내로 확장하는 모듈형 구조를, 매장 공간 연출 컷과 모듈 분해도로 보여 주었습니다.", "pg": ["assets/robo/mars-f.webp"], "k": ["mars-f"]}};
+  const base=LB.length; E.forEach(e=>LB.push({src:e.src,alt:e.alt,cap:e.cap,g:e.g}));
+  const open=k=>{ const i=E.findIndex(e=>e.k===k); if(i>=0) lbOpen(base+i); };
+  pg.querySelectorAll('[data-rb-lb]').forEach(b=>b.addEventListener('click',()=>open(b.dataset.rbLb)));
+  const card=document.getElementById('rb-card'), f=card.querySelector('.rb-f'), b=card.querySelector('.rb-b'), side=document.getElementById('rb-side'), flipB=document.getElementById('rb-flip');
+  let cur='rody2', back=false;
+  const sync=()=>{ const d=D[cur]; card.classList.toggle('flip',back); side.textContent=back?'Back':'Front'; flipB.textContent=back?'앞면 보기 ↻':'뒷면 보기 ↻'; flipB.disabled=d.pg.length<2; card.classList.toggle('one',d.pg.length<2); };
+  const set=k=>{ cur=k; back=false; const d=D[k]; f.src=d.pg[0]; f.alt='KAON ROBOTICS '+d.n+' 리플렛 앞면'; if(d.pg[1]){ b.src=d.pg[1]; b.alt='KAON ROBOTICS '+d.n+' 리플렛 뒷면'; } else b.removeAttribute('src');
+    document.getElementById('rb-n').textContent=d.n; document.getElementById('rb-sub').textContent=d.sub; document.getElementById('rb-d').textContent=d.d;
+    pg.querySelectorAll('.rb-tabs button').forEach(t=>t.setAttribute('aria-selected',String(t.dataset.p===k))); sync(); };
+  const flip=()=>{ if(D[cur].pg.length<2){ open(D[cur].k[0]); return; } back=!back; sync(); };
+  card.addEventListener('click',flip); flipB.addEventListener('click',flip);
+  document.getElementById('rb-zoom').addEventListener('click',()=>open(D[cur].k[back?1:0]));
+  const tabs=[...pg.querySelectorAll('.rb-tabs button')];
+  tabs.forEach((t,i)=>{ t.addEventListener('click',()=>set(t.dataset.p)); t.addEventListener('keydown',e=>{ const dd=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0; if(!dd) return; e.preventDefault(); const n=tabs[(i+dd+tabs.length)%tabs.length]; n.focus(); set(n.dataset.p); }); });
+  set(cur);
+})();
+
 
 let lbX=null; lb.addEventListener('touchstart',e=>{lbX=e.touches[0].clientX;},{passive:true});
 lb.addEventListener('touchend',e=>{ if(lbX===null) return; const dx=e.changedTouches[0].clientX-lbX; if(Math.abs(dx)>50) lbShow(lbI+(dx<0?1:-1)); lbX=null; });
