@@ -2152,6 +2152,26 @@ a.sn-c:hover .sn-pv img{transform:scale(1.025)}
 .hpk-h{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5)}
 @media (max-width:760px){ .hpk{min-height:340px} .hpk-h{display:none} }
 @media (prefers-reduced-motion:reduce){ .hpk-bg i{animation:none} .hpk{transform:none!important} .hpk-t.in .w{animation:none} }
+#tm-sec{margin-top:clamp(64px,8vw,110px)}
+.tm-val{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.tm-val li{padding:20px 22px;border-radius:14px;background:#fff;box-shadow:0 0 0 1px var(--line);font-size:13.5px;line-height:1.7;color:var(--ink-2)}
+.tm-val b{display:block;font-size:16px;color:var(--ink);margin-bottom:4px}
+.tm{margin-top:28px}
+.tm-tabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
+.tm-tabs::-webkit-scrollbar{display:none}
+.tm-tabs button{all:unset;cursor:pointer;flex:none;display:grid;gap:2px;padding:12px 18px;border-radius:12px;box-shadow:0 0 0 1px var(--line);background:#fff;transition:background .3s,color .3s}
+.tm-tabs b{font-size:15px;font-weight:600}.tm-tabs small{font-size:11px;color:var(--ink-2)}
+.tm-tabs button[aria-selected=true]{background:var(--ink);color:#fff}.tm-tabs button[aria-selected=true] small{color:rgba(255,255,255,.65)}
+.tm-tabs button:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.tm-pn{margin-top:18px;animation:exIn .6s var(--ease)}
+.tm-hd{display:flex;align-items:baseline;gap:12px;margin-bottom:16px}.tm-hd b{font-size:20px;font-weight:600}.tm-hd span{font-size:13px;color:var(--ink-2)}
+.tm-board{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2vw,28px);padding:clamp(22px,3vw,40px);border-radius:18px;background:#EFEDE8;box-shadow:inset 0 0 0 1px rgba(0,0,0,.04)}
+.tm-ph{all:unset;cursor:zoom-in;display:grid;gap:10px;padding:10px 10px 14px;background:#fff;box-shadow:0 18px 34px -22px rgba(0,0,0,.4);transform:rotate(var(--r));transition:transform .5s var(--ease),box-shadow .5s}
+.tm-ph:hover{transform:rotate(0) translateY(-6px) scale(1.02);box-shadow:0 30px 50px -28px rgba(0,0,0,.45)}
+.tm-ph img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.tm-ph span{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);text-align:center}
+.tm-empty{grid-column:1/-1;margin:0;padding:40px 0;text-align:center;font-size:14px;color:var(--ink-2)}
+@media (max-width:760px){ .tm-val,.tm-board{grid-template-columns:minmax(0,1fr)} }
 .hp-pf{margin:0;display:grid;gap:10px;width:min(400px,100%)}
 .hp-pf img{width:100%;aspect-ratio:2/3;object-fit:cover;object-position:50% 30%;border-radius:6px;filter:none;transition:filter 1s var(--ease)}
 .hp-pf:hover img{filter:grayscale(1)}
@@ -4185,6 +4205,17 @@ go(0);})();
         <div class="hp-txt"><p>바쁘시다면 이 세 줄만 기억해 주십시오. 팀에 합류하는 날부터 회의실의 온도와 프로젝트의 속도가 함께 올라갑니다.</p></div>
       </div>
       <ol class="hp-why"><li style="--k:0"><span class="hp-wn">01</span><h4>Spark</h4><b>판을 여는 사람</b><p>새 프로젝트의 첫 불씨를 켜고, 흩어진 사람과 아이디어를 연결해 움직이게 만듭니다.</p><ul><li>반복 업무를 AI 에이전트 2종으로 직접 재설계</li><li>LinkFit에서 서비스 기획과 디자인을 1인 2역으로 수행</li></ul></li><li style="--k:1"><span class="hp-wn">02</span><h4>Deep Focus</h4><b>깊게 잠기는 몰입</b><p>한 번 잠기면 끝을 봅니다. 압박 속에서도 침착하게 본질만 남기는 집중력이 있습니다.</p><ul><li>캐릭터 IP 5종 세계관 설계부터 저작권 등록까지</li><li>K-FutureTech CI·BI를 리서치부터 가이드라인까지</li></ul></li><li style="--k:2"><span class="hp-wn">03</span><h4>Full-Stack Execution</h4><b>혼자서도 끝까지</b><p>리서치, 기획, 디자인, 제작, 배포까지 한 사람이 이어서 처리해 팀의 속도를 바꿉니다.</p><ul><li>업계 리서치 시간 주 6시간 → 1시간</li><li>소재 발굴부터 LinkedIn 게시까지 잇는 사내 AI 플랫폼 구축·운영</li></ul></li></ol>
+
+      <div class="hp-sec" id="tm-sec">
+        <div class="hp-cap"><span class="hp-no">04 — People I Worked With</span><h3 class="hp-h">Great work,<br><em>better people.</em></h3></div>
+        <div class="hp-txt"><p>좋은 결과물은 결국 좋은 팀에서 나온다고 믿습니다. 회사가 바뀌어도 함께한 동료들과의 인연을 오래 이어 가는 편이고, 회의실 밖에서도 편하게 웃을 수 있는 사이가 될 때 협업의 속도와 질이 함께 올라간다는 것을 매번 경험했습니다.</p></div>
+      </div>
+      <ul class="tm-val"><li><b>Open Communication</b>직급과 국적에 상관없이 먼저 말을 걸고, 의견을 편하게 꺼낼 수 있는 분위기를 만듭니다.</li><li><b>Synergy</b>디자인·기획·개발·마케팅 사이에서 서로의 강점이 이어지도록 연결하는 역할을 즐깁니다.</li><li><b>Lasting Bonds</b>프로젝트가 끝나도, 회사를 옮겨도 이어지는 관계를 소중하게 여깁니다.</li></ul>
+      <div class="tm" id="tm">
+        <div class="tm-tabs" role="tablist" aria-label="회사별 팀 사진"><button type="button" role="tab" data-c="kaon" aria-selected="false"><b>가온그룹</b><small>KAON GROUP</small></button><button type="button" role="tab" data-c="egong" aria-selected="false"><b>이공이공</b><small>2020 COMPANY</small></button><button type="button" role="tab" data-c="amway" aria-selected="true"><b>한국암웨이</b><small>Asia Innovation Center</small></button><button type="button" role="tab" data-c="linkfit" aria-selected="false"><b>LinkFit</b><small>Side Project</small></button><button type="button" role="tab" data-c="greyd" aria-selected="false"><b>ARBAIM</b><small>greyd · Side Project</small></button></div>
+        <div class="tm-pn" role="tabpanel" data-c="kaon" hidden><div class="tm-hd"><b>가온그룹</b><span>KAON GROUP · 2021 — 현재</span></div><div class="tm-board"><p class="tm-empty">가온그룹에서 함께한 동료들과의 사진을 정리하고 있습니다.</p></div></div><div class="tm-pn" role="tabpanel" data-c="egong" hidden><div class="tm-hd"><b>이공이공</b><span>2020 COMPANY · 2021</span></div><div class="tm-board"><p class="tm-empty">이공이공에서 함께한 동료들과의 사진을 정리하고 있습니다.</p></div></div><div class="tm-pn" role="tabpanel" data-c="amway"><div class="tm-hd"><b>한국암웨이</b><span>Asia Innovation Center · 2018 — 2020</span></div><div class="tm-board"><button class="tm-ph" type="button" data-tm-lb="amway-1" style="--r:-2.2deg" aria-label="한국암웨이 팀원들과 — 과천과학관 앞, 팀 외부 행사 크게 보기"><img src="assets/team/amway-1.webp" alt="한국암웨이 팀원들과 — 과천과학관 앞, 팀 외부 행사" loading="lazy" decoding="async"><span>Summer · Outing</span></button><button class="tm-ph" type="button" data-tm-lb="amway-2" style="--r:1.6deg" aria-label="한국암웨이 팀원들과 — 사무실 저녁, 해외 동료와 함께한 테이블 크게 보기"><img src="assets/team/amway-2.webp" alt="한국암웨이 팀원들과 — 사무실 저녁, 해외 동료와 함께한 테이블" loading="lazy" decoding="async"><span>Team Dinner</span></button><button class="tm-ph" type="button" data-tm-lb="amway-3" style="--r:-1deg" aria-label="한국암웨이 팀원들과 — 퇴근 후 한자리에 모인 팀 크게 보기"><img src="assets/team/amway-3.webp" alt="한국암웨이 팀원들과 — 퇴근 후 한자리에 모인 팀" loading="lazy" decoding="async"><span>After Work</span></button></div></div><div class="tm-pn" role="tabpanel" data-c="linkfit" hidden><div class="tm-hd"><b>LinkFit</b><span>Side Project · 2025 —</span></div><div class="tm-board"><p class="tm-empty">LinkFit에서 함께한 동료들과의 사진을 정리하고 있습니다.</p></div></div><div class="tm-pn" role="tabpanel" data-c="greyd" hidden><div class="tm-hd"><b>ARBAIM</b><span>greyd · Side Project · 2022 — 2024</span></div><div class="tm-board"><p class="tm-empty">ARBAIM에서 함께한 동료들과의 사진을 정리하고 있습니다.</p></div></div>
+        <p class="f3-note">※ 동료들의 얼굴은 개인정보 보호를 위해 블러 처리했습니다.</p>
+      </div>
 
       <div class="hp-end">
         <figure class="hp-focus"><img src="assets/profile/focus.webp?v=4" alt="팔짱을 끼고 진지하게 정면을 바라보는 김동영" loading="lazy" decoding="async"><figcaption><span>Focus mode</span><span>집중할 때의 얼굴</span></figcaption></figure>
@@ -6658,6 +6689,14 @@ addEventListener('keydown',e=>{ if(lb.hidden) return; if(e.key==='Escape'){e.sto
   const base=LB.length; E.forEach(e=>LB.push({src:e.src,alt:e.alt,cap:e.cap,g:e.g}));
   pg.querySelectorAll('[data-sp-lb]').forEach(b=>b.addEventListener('click',()=>{ const k=E.findIndex(e=>e.k===b.dataset.spLb); if(k>=0) lbOpen(base+k); }));
 })();
+(()=>{ const pg=document.getElementById('pg-human'), tm=document.getElementById('tm'); if(!pg||!tm) return; const E=[{"k": "amway-1", "src": "assets/team/amway-1.webp", "alt": "한국암웨이 팀원들과 — 과천과학관 앞, 팀 외부 행사", "cap": "한국암웨이 · Asia Innovation Center — Summer · Outing", "g": "team"}, {"k": "amway-2", "src": "assets/team/amway-2.webp", "alt": "한국암웨이 팀원들과 — 사무실 저녁, 해외 동료와 함께한 테이블", "cap": "한국암웨이 · Asia Innovation Center — Team Dinner", "g": "team"}, {"k": "amway-3", "src": "assets/team/amway-3.webp", "alt": "한국암웨이 팀원들과 — 퇴근 후 한자리에 모인 팀", "cap": "한국암웨이 · Asia Innovation Center — After Work", "g": "team"}];
+  const base=LB.length; E.forEach(e=>LB.push({src:e.src,alt:e.alt,cap:e.cap,g:e.g}));
+  tm.querySelectorAll('[data-tm-lb]').forEach(b=>b.addEventListener('click',()=>{ const k=E.findIndex(e=>e.k===b.dataset.tmLb); if(k>=0) lbOpen(base+k); }));
+  const tabs=[...tm.querySelectorAll('.tm-tabs button')];
+  const sel=t=>{ tabs.forEach(x=>x.setAttribute('aria-selected',String(x===t))); tm.querySelectorAll('.tm-pn').forEach(p=>p.hidden=p.dataset.c!==t.dataset.c); };
+  tabs.forEach((t,i)=>{ t.addEventListener('click',()=>sel(t)); t.addEventListener('keydown',e=>{ const d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0; if(!d) return; e.preventDefault(); const n=tabs[(i+d+tabs.length)%tabs.length]; n.focus(); sel(n); }); });
+})();
+
 
 
 (()=>{ const pg=document.getElementById('pg-signage'); if(!pg) return; const D={"broadcom": {"n": "Broadcom", "d": "브로드컴 로고의 파형 라인을 살린 레드 포인트", "src": "assets/signage/broadcom.mp4", "po": "assets/signage/broadcom.webp"}, "kt": {"n": "KT", "d": "폴리곤 네트워크 라인이 화면을 가로지르는 화이트 톤 · 국문 환영 문구", "src": "assets/signage/kt.mp4", "po": "assets/signage/kt.webp"}, "netflix": {"n": "Netflix", "d": "넷플릭스 레드 로고를 무대 위 오브제처럼", "src": "assets/signage/netflix.mp4", "po": "assets/signage/netflix.webp"}, "lguplus": {"n": "LG U+", "d": "LG U+ 마젠타 심볼과 그레이 무대", "src": "assets/signage/lguplus.mp4", "po": "assets/signage/lguplus.webp"}, "hyundai": {"n": "Hyundai", "d": "구름이 흐르는 밝은 하늘 배경과 현대 블루", "src": "assets/signage/hyundai.mp4", "po": "assets/signage/hyundai.webp"}};
