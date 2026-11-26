@@ -1286,6 +1286,18 @@ a.tl-card:hover{transform:translateY(-3px);box-shadow:0 0 0 1.5px #2F6BE0,0 26px
 .spk .ib-ph{border-radius:10px;box-shadow:0 30px 60px -36px rgba(0,60,110,.55)}
 .spk .ib-ph img{width:100%;height:auto;display:block}
 .spk figcaption{display:grid;gap:2px;font-size:13px;color:var(--ink-2)}.spk figcaption b{font-size:15px;color:var(--ink)}
+.sp-pw{display:block;border-radius:16px;overflow:hidden;box-shadow:0 0 0 1px var(--line),0 30px 60px -40px rgba(0,60,110,.5)}
+.sp-pw img{width:100%;height:auto;display:block}
+.sp-hl{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.sp-hl li{font-size:13.5px;line-height:1.7;color:var(--ink-2);padding:18px 20px;border-radius:12px;background:#fff;box-shadow:0 0 0 1px var(--line)}
+.sp-hl b{display:block;font-size:15px;color:var(--ink);margin-bottom:4px}
+.sp-pks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.sp-pk{all:unset;cursor:zoom-in;display:grid;gap:8px}
+.sp-pk img{width:100%;height:auto;display:block;border-radius:8px;box-shadow:0 18px 36px -26px rgba(0,0,0,.45);transition:transform .5s var(--ease)}
+.sp-pk:hover img{transform:translateY(-4px) rotate(-.6deg)}
+.sp-pk span{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);display:flex;align-items:center;gap:6px}
+.sp-pk span::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--tc);box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+@media (max-width:760px){ .sp-hl{grid-template-columns:minmax(0,1fr)} .sp-pks{grid-template-columns:minmax(0,1fr)} }
 .sp-tp{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
 .sp-tp li{display:grid;gap:4px;padding:22px;border-radius:14px;background:#fff;box-shadow:0 0 0 1px var(--line)}
 .sp-tp small{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#1BA6E8}
@@ -5459,7 +5471,7 @@ go(0);})();
     <dl class="ix-stats">
       <div><dt>Date</dt><dd>05.15<br><small>2026 · 창립 25주년</small></dd></div>
       <div><dt>Theme</dt><dd>Connect<br><small>&amp; Play</small></dd></div>
-      <div><dt>Teams</dt><dd>5<br><small>STAFF · ONE · NICE · KING · ACE</small></dd></div>
+      <div><dt>Teams</dt><dd>4 + Staff<br><small>KING · ACE · NICE · ONE</small></dd></div>
       <div><dt>Scope</dt><dd>KV → Space<br><small>스테이지 · 부스 · 포토월 · 현수막</small></dd></div>
     </dl>
   </div></div>
@@ -5478,8 +5490,23 @@ go(0);})();
   </div></div></section>
 
   <section class="cl-sec"><div class="wrap"><div class="c">
-    <div class="cl-h"><span class="no" style="color:#1BA6E8">03 — Touchpoints</span><h3>키비주얼에서 행사장까지</h3><p>하나의 키비주얼을 행사 당일 공간 곳곳의 매체로 확장했습니다.</p></div>
-    <ul class="sp-tp"><li><small>Stage</small><b>스테이지 디자인</b><span>무대 배경 그래픽</span></li><li><small>Booth</small><b>부스 디자인</b><span>종목·먹거리 부스 사인</span></li><li><small>Photo Wall</small><b>포토월 디자인</b><span>기념 촬영용 포토월</span></li><li><small>Banner</small><b>현수막 디자인</b><span>행사장 안내 현수막</span></li><li><small>Poster</small><b>포스터</b><span>사내 공지 · 게시용</span></li><li><small>Monitor</small><b>세로형 모니터 키비주얼</b><span>사옥 로비 디지털 모니터</span></li></ul>
+    <div class="cl-h"><span class="no" style="color:#1BA6E8">03 — Photo Wall</span><h3>가온프렌즈의 운동회, 그 앞에서 한 컷</h3><p>트랙 위에서 계주·축구·시상식이 한꺼번에 벌어지는 장면을 한 장의 일러스트로 그렸습니다. 25주년 현수막, 응원단, 심판, 낮잠 자는 캐릭터까지 숨은 장면을 찾아보는 재미를 더했습니다.</p></div>
+    <button class="ib-ph sp-pw" type="button" data-sp-lb="photowall" aria-label="KAON SPORTS DAY 포토월 일러스트 크게 보기"><img src="assets/sports/photowall.webp" alt="KAON SPORTS DAY 포토월 — 트랙 위 가온프렌즈 운동회 일러스트" loading="lazy" decoding="async"></button>
+    <ul class="sp-hl">
+      <li><b>스코어보드 타이틀</b>경기장 전광판처럼 만든 KAON SPORTS DAY 타이틀과 2026 숫자 플립 보드</li>
+      <li><b>가치를 담은 푸드트럭</b>닭강정 · 떡볶이 · 타코야키 부스에 OPENNESS · PRIDE · AHEAD 핵심가치를 하나씩 걸었습니다</li>
+      <li><b>팀 띠와 응원</b>캐릭터마다 KING · ACE · NICE · ONE 팀 띠를 두르고 "이겨라!", "힘내라!" 응원을 나눕니다</li>
+    </ul>
+  </div></div></section>
+
+  <section class="cl-sec"><div class="wrap"><div class="c">
+    <div class="cl-h"><span class="no" style="color:#1BA6E8">04 — Team Pickets</span><h3>We are team ___</h3><p>네 팀의 응원 피켓입니다. 팀 컬러 테두리와 말풍선, 팀 띠를 두른 가온프렌즈를 같은 틀에 넣어 팀만 바꿔 쓸 수 있게 했습니다.</p></div>
+    <div class="sp-pks"><button class="sp-pk" type="button" data-sp-lb="pk-king" style="--tc:#FFE500" aria-label="팀 KING 피켓 크게 보기"><img src="assets/sports/pk-king.webp" alt="팀 KING 응원 피켓 — We are team KING" loading="lazy" decoding="async"><span>Team KING</span></button><button class="sp-pk" type="button" data-sp-lb="pk-ace" style="--tc:#E52521" aria-label="팀 ACE 피켓 크게 보기"><img src="assets/sports/pk-ace.webp" alt="팀 ACE 응원 피켓 — We are team ACE" loading="lazy" decoding="async"><span>Team ACE</span></button><button class="sp-pk" type="button" data-sp-lb="pk-nice" style="--tc:#1BA6E8" aria-label="팀 NICE 피켓 크게 보기"><img src="assets/sports/pk-nice.webp" alt="팀 NICE 응원 피켓 — We are team NICE" loading="lazy" decoding="async"><span>Team NICE</span></button><button class="sp-pk" type="button" data-sp-lb="pk-one" style="--tc:#1F9A3C" aria-label="팀 ONE 피켓 크게 보기"><img src="assets/sports/pk-one.webp" alt="팀 ONE 응원 피켓 — We are team ONE" loading="lazy" decoding="async"><span>Team ONE</span></button></div>
+  </div></div></section>
+
+  <section class="cl-sec"><div class="wrap"><div class="c">
+    <div class="cl-h"><span class="no" style="color:#1BA6E8">05 — Touchpoints</span><h3>키비주얼에서 행사장까지</h3><p>하나의 키비주얼을 행사 당일 공간 곳곳의 매체로 확장했습니다.</p></div>
+    <ul class="sp-tp"><li><small>Stage</small><b>스테이지 디자인</b><span>무대 배경 그래픽</span></li><li><small>Booth</small><b>부스 디자인</b><span>종목·먹거리 부스 사인</span></li><li><small>Photo Wall</small><b>포토월 디자인</b><span>운동회 일러스트 포토월 · 03</span></li><li><small>Picket</small><b>팀별 응원 피켓</b><span>KING · ACE · NICE · ONE · 04</span></li><li><small>Banner</small><b>현수막 디자인</b><span>행사장 안내 현수막</span></li><li><small>Poster</small><b>포스터</b><span>사내 공지 · 게시용</span></li><li><small>Monitor</small><b>세로형 모니터 키비주얼</b><span>사옥 로비 디지털 모니터</span></li></ul>
     <div class="sn-rel" style="margin-top:clamp(28px,4vw,44px)"><a href="#signage"><small>Digital Signage</small><b>KAON Welcome Board</b><span>같은 로비 모니터에 송출되는 콘텐츠 ↗</span></a><a href="#keycap"><small>Character Goods</small><b>KAON ESG Campaign Goods</b><span>가온프렌즈를 활용한 사내 캠페인 ↗</span></a></div>
   </div></div></section>
 
@@ -6608,7 +6635,7 @@ addEventListener('keydown',e=>{ if(lb.hidden) return; if(e.key==='Escape'){e.sto
   const base=LB.length; E.forEach(e=>LB.push({src:e.src,alt:e.alt,cap:e.cap,g:e.g}));
   pg.querySelectorAll('[data-sc-lb]').forEach(b=>b.addEventListener('click',()=>{ const k=E.findIndex(e=>e.k===b.dataset.scLb); if(k>=0) lbOpen(base+k); }));
 })();
-(()=>{ const pg=document.getElementById('pg-sports'); if(!pg) return; const E=[{"k": "kv-a", "src": "assets/sports/kv-a.webp", "alt": "2026 KAON SPORTS DAY 포스터 — Connect & Play", "cap": "KAON SPORTS DAY 2026 — Key Visual · Poster", "g": "sports"}, {"k": "kv-v", "src": "assets/sports/kv-v.webp", "alt": "2026 KAON SPORTS DAY 세로형 키비주얼 — 25주년 로고", "cap": "KAON SPORTS DAY 2026 — Key Visual · Vertical (25th Anniversary)", "g": "sports"}];
+(()=>{ const pg=document.getElementById('pg-sports'); if(!pg) return; const E=[{"k": "kv-a", "src": "assets/sports/kv-a.webp", "alt": "2026 KAON SPORTS DAY 포스터 — Connect & Play", "cap": "KAON SPORTS DAY 2026 — Key Visual · Poster", "g": "sports"}, {"k": "kv-v", "src": "assets/sports/kv-v.webp", "alt": "2026 KAON SPORTS DAY 세로형 키비주얼 — 25주년 로고", "cap": "KAON SPORTS DAY 2026 — Key Visual · Vertical (25th Anniversary)", "g": "sports"}, {"k": "photowall", "src": "assets/sports/photowall.webp", "alt": "KAON SPORTS DAY 포토월 일러스트", "cap": "KAON SPORTS DAY 2026 — Photo Wall", "g": "sports"}, {"k": "pk-king", "src": "assets/sports/pk-king.webp", "alt": "팀 KING 응원 피켓", "cap": "KAON SPORTS DAY 2026 — Team Picket · KING", "g": "sports"}, {"k": "pk-ace", "src": "assets/sports/pk-ace.webp", "alt": "팀 ACE 응원 피켓", "cap": "KAON SPORTS DAY 2026 — Team Picket · ACE", "g": "sports"}, {"k": "pk-nice", "src": "assets/sports/pk-nice.webp", "alt": "팀 NICE 응원 피켓", "cap": "KAON SPORTS DAY 2026 — Team Picket · NICE", "g": "sports"}, {"k": "pk-one", "src": "assets/sports/pk-one.webp", "alt": "팀 ONE 응원 피켓", "cap": "KAON SPORTS DAY 2026 — Team Picket · ONE", "g": "sports"}];
   const base=LB.length; E.forEach(e=>LB.push({src:e.src,alt:e.alt,cap:e.cap,g:e.g}));
   pg.querySelectorAll('[data-sp-lb]').forEach(b=>b.addEventListener('click',()=>{ const k=E.findIndex(e=>e.k===b.dataset.spLb); if(k>=0) lbOpen(base+k); }));
 })();
